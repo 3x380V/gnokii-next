@@ -1,6 +1,6 @@
 /*
 
-  $Id: file.c,v 1.8 2003-02-26 00:15:50 pkot Exp $
+  $Id: file.c,v 1.9 2003-04-08 09:43:34 bozo Exp $
 
   S M S D
 
@@ -37,6 +37,7 @@
 #include <glib.h>
 #include "smsd.h"
 #include "gnokii.h"
+#include "compat.h"
 
 static gchar *action;
 static gchar *spool;
