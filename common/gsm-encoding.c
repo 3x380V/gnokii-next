@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-encoding.c,v 1.54 2004-01-18 16:26:15 uid66849 Exp $
+  $Id: gsm-encoding.c,v 1.55 2004-01-26 00:09:14 uid66843 Exp $
 
   G N O K I I
 
@@ -370,11 +370,14 @@ void char_ucs2_decode(unsigned char* dest, const unsigned char* src, int len)
 		switch (length = char_uni_alphabet_decode(strtol(buf, NULL, 16), dest + o_len)) {
 		case -1:
 			o_len++;
+			length = 1;
 			break;
 		default:
 			o_len += length;
 			break;
 		}
+		if ((length == 1) && (dest[o_len-1] == 0))
+			return;
 	}
 	dest[o_len] = 0;
 	return;
