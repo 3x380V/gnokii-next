@@ -1,6 +1,6 @@
 /*
 
-  $Id: datapump.c,v 1.9 2002-02-21 00:56:33 pkot Exp $
+  $Id: datapump.c,v 1.10 2002-02-21 01:12:04 pkot Exp $
 
   G N O K I I
 
@@ -36,10 +36,15 @@
 #include "misc.h"
 #include "gsm-common.h"
 #include "gsm-api.h"
+#include "device.h"
 #include "data/at-emulator.h"
 #include "data/virtmodem.h"
 #include "data/datapump.h"
 #include "data/rlp-common.h"
+
+/* Prototypes */
+static int	DP_CallBack(RLP_UserInds ind, u8 *buffer, int length);
+static int	DP_SendRLPFrame(RLP_F96Frame *frame, bool out_dtx);
 
 /* Global variables */
 extern bool CommandMode;
@@ -69,7 +74,7 @@ bool DP_Initialise(int read_fd, int write_fd)
 }
 
 
-int DP_CallBack(RLP_UserInds ind, u8 *buffer, int length)
+static int DP_CallBack(RLP_UserInds ind, u8 *buffer, int length)
 {
 	int temp;
 
@@ -177,7 +182,7 @@ void DP_CallPassup(GSM_CallStatus CallStatus, GSM_CallInfo *CallInfo)
 	}
 }
 
-int DP_SendRLPFrame(RLP_F96Frame *frame, bool out_dtx)
+static int DP_SendRLPFrame(RLP_F96Frame *frame, bool out_dtx)
 {
 	data.RLP_Frame = frame;
 	data.RLP_OutDTX = out_dtx;
