@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.20 2002-02-01 15:07:47 chris Exp $
+  $Id: atgen.c,v 1.21 2002-02-03 23:05:41 pkot Exp $
 
   G N O K I I
 
@@ -996,16 +996,18 @@ static GSM_Error Initialise(GSM_Data *setupdata, GSM_Statemachine *state)
 	case GCT_Serial:
 	case GCT_Irda:
 		if (!strcmp(setupdata->Model, "dancall"))
-			CBUS_Initialise(state);
+			ret = CBUS_Initialise(state);
 		else if (!strcmp(setupdata->Model, "AT-HW"))
-			ATBUS_Initialise(state, true);
+			ret = ATBUS_Initialise(state, true);
 		else
-			ATBUS_Initialise(state, false);
+			ret = ATBUS_Initialise(state, false);
 		break;
 	default:
 		return GE_NOTSUPPORTED;
 		break;
 	}
+	if (ret != GE_NONE) return ret;
+
 	SM_Initialise(state);
 
 	SoftReset(&data, state);
