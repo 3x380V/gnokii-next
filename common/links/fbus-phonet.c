@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus-phonet.c,v 1.14 2002-03-28 21:37:46 pkot Exp $
+  $Id: fbus-phonet.c,v 1.15 2002-07-12 18:10:01 pkot Exp $
 
   G N O K I I
 
@@ -243,7 +243,7 @@ static GSM_Error PHONET_SendMessage(u16 messagesize, u8 messagetype, unsigned ch
 
 GSM_Error PHONET_Initialise(GSM_Link *newlink, GSM_Statemachine *state)
 {
-	GSM_Error error = GE_INTERNALERROR;
+	GSM_Error error = GE_FAILED;
 
 	/* 'Copy in' the global structures */
 	glink = newlink;
@@ -260,11 +260,7 @@ GSM_Error PHONET_Initialise(GSM_Link *newlink, GSM_Statemachine *state)
 			/* Init variables */
 			imessage.state = FBUS_RX_Sync;
 			imessage.BufferCount = 0;
-		} else {
-			error = GE_DEVICEOPENFAILED;
 		}
-	} else {
-		error = GE_DEVICEOPENFAILED;	/* ConnectionType == GCT_Serial etc */
 	}
 
 	return error;

@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus-3110.c,v 1.9 2002-03-28 21:37:46 pkot Exp $
+  $Id: fbus-3110.c,v 1.10 2002-07-12 18:10:01 pkot Exp $
 
   G N O K I I
 
@@ -335,7 +335,7 @@ GSM_Error FB3110_Initialise(GSM_Link *newlink, GSM_Statemachine *state)
 	static int try = 0;
 
 	try++;
-	if (try > 2) return GE_DEVICEOPENFAILED;
+	if (try > 2) return GE_FAILED;
 	/* 'Copy in' the global structures */
 	glink = newlink;
 	statemachine = state;
@@ -352,7 +352,7 @@ GSM_Error FB3110_Initialise(GSM_Link *newlink, GSM_Statemachine *state)
 
 	flink.RequestSequenceNumber = 0x10;
 
-	if (!FB3110_OpenSerial()) return GE_DEVICEOPENFAILED;
+	if (!FB3110_OpenSerial()) return GE_FAILED;
 
 	/* Send init string to phone, this is a bunch of 0x55 characters.
 	   Timing is empirical. I believe that we need/can do this for any

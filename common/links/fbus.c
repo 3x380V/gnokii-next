@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus.c,v 1.26 2002-04-13 00:58:38 bozo Exp $
+  $Id: fbus.c,v 1.27 2002-07-12 18:10:01 pkot Exp $
 
   G N O K I I
 
@@ -495,7 +495,7 @@ GSM_Error FBUS_Initialise(GSM_Link *newlink, GSM_Statemachine *state, int type)
 	unsigned char init_char = 0x55;
 	int count;
 
-	if (type > 2) return GE_DEVICEOPENFAILED;
+	if (type > 2) return GE_FAILED;
 	/* 'Copy in' the global structures */
 	glink = newlink;
 	statemachine = state;
@@ -513,12 +513,12 @@ GSM_Error FBUS_Initialise(GSM_Link *newlink, GSM_Statemachine *state, int type)
 
 	if (glink->ConnectionType == GCT_Infrared) {
 		if (!FBUS_OpenIR())
-			return GE_DEVICEOPENFAILED;
+			return GE_FAILED;
 	} else {		/* ConnectionType == GCT_Serial */
 		/* FBUS_OpenSerial(0) - try dau-9p
 		 * FBUS_OpenSerial(n != 0) - try dlr-3p */
 		if (!FBUS_OpenSerial(type))
-			return GE_DEVICEOPENFAILED;
+			return GE_FAILED;
 	}
 
 	/* Send init string to phone, this is a bunch of 0x55 characters. Timing is

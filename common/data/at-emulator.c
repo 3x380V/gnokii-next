@@ -1,6 +1,6 @@
 /*
 
-  $Id: at-emulator.c,v 1.21 2002-05-27 01:38:37 bozo Exp $
+  $Id: at-emulator.c,v 1.22 2002-07-12 18:10:01 pkot Exp $
 
   G N O K I I
 
@@ -728,7 +728,7 @@ bool	ATEM_CommandPlusC(char **buf)
 						ATEM_StringOut(buffer);
 					}
 					break;
-				case GE_EMPTYSMSLOCATION:
+				case GE_EMPTYLOCATION:
 					/* don't care if this storage is empty */
 					break;
 				default:

@@ -1,6 +1,6 @@
 /*
 
-  $Id: lowlevel.c,v 1.17 2002-07-07 22:07:38 ja Exp $
+  $Id: lowlevel.c,v 1.18 2002-07-12 18:10:01 pkot Exp $
 
   S M S D
 
@@ -266,7 +266,7 @@ static void RefreshSMS (const gint number)
 
       pthread_mutex_unlock (&smsMutex);
     }
-    else if (error == GE_INVALIDSMSLOCATION)   /* All positions are readed */
+    else if (error == GE_INVALIDLOCATION)   /* All positions are readed */
     {
       g_free (msg);
       pthread_cond_signal (&smsCond);

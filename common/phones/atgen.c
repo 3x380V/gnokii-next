@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.45 2002-07-08 23:31:31 pkot Exp $
+  $Id: atgen.c,v 1.46 2002-07-12 18:10:01 pkot Exp $
 
   G N O K I I
 
@@ -734,7 +734,7 @@ static GSM_Error ReplyReadPhonebook(int messagetype, unsigned char *buffer, int 
 	int l;
 
 	if (buffer[0] != GEAT_OK)
-		return GE_INVALIDPHBOOKLOCATION;
+		return GE_INVALIDLOCATION;
 
 	buf.line1 = buffer + 1;
 	buf.length = length;
@@ -982,7 +982,7 @@ static GSM_Error ReplySendSMS(int messagetype, unsigned char *buffer, int length
 	AT_LineBuffer buf;
 
 	if (buffer[0] != GEAT_OK)
-		return GE_SMSSENDFAILED;
+		return GE_FAILED;
 
 	buf.line1 = buffer + 1;
 	buf.length = length;
