@@ -1,6 +1,6 @@
 /*
 
-  $Id: vcal.lx,v 1.12 2003-09-03 09:14:14 pkot Exp $
+  $Id: vcal.lx,v 1.13 2004-02-15 23:04:59 uid66843 Exp $
 
   G N O K I I
 
@@ -201,7 +201,7 @@ int gn_calnote_fill(gn_calnote *note, char *type, char *text,
 		note->type = GN_CALNOTE_CALL;
 	} else if (!strcmp(type, "MEETING"))
 		note->type = GN_CALNOTE_MEETING;
-	else if (!strcmp(type, "SPECIAL OCASSION"))
+	else if (!strcmp(type, "SPECIAL OCCASION"))
 		note->type = GN_CALNOTE_BIRTHDAY;
 	else
 		note->type = GN_CALNOTE_REMINDER;
