@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnapplet.c,v 1.15 2004-06-27 20:27:03 pkot Exp $
+  $Id: gnapplet.c,v 1.16 2004-07-09 22:30:34 pkot Exp $
 
   G N O K I I
 
@@ -160,7 +160,7 @@ static unsigned char gnapplet_get_semi(const unsigned char *addr)
 	if (!addr[0]) return 0;
 
 	l = 2 * (addr[0] - 1);
-	return (addr[addr[0]] & 0xf0 == 0xf0) ? l - 1 : l;
+	return ((addr[addr[0]] & 0xf0) == 0xf0) ? l - 1 : l;
 }
 
 
