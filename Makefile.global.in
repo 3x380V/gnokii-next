@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile.global.in,v 1.47 2004-06-17 18:37:43 pkot Exp $
+# $Id: Makefile.global.in,v 1.48 2004-06-17 21:42:10 pkot Exp $
 #
 # Global Makefiles configuration for the GNOKII.
 #
@@ -50,7 +50,7 @@ LIBS           = @LIBS@
 LEX            = @LEX@
 AR             = @AR@
 RANLIB         = @RANLIB@
-LIBTOOL        = @LIBTOOL@ --tag CXX
+LIBTOOL        = @LIBTOOL@
 
 GTK_CFLAGS     = @GTK_CFLAGS@
 GTK_LIBS       = @GTK_LIBS@
