@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus-3110.c,v 1.16 2002-12-26 17:04:40 bozo Exp $
+  $Id: fbus-3110.c,v 1.17 2002-12-26 17:36:51 bozo Exp $
 
   G N O K I I
 
@@ -323,7 +323,7 @@ static void fb3110_tx_ack_send(u8 *message, int length)
  * anything about state. State is only passed around to allow for
  * muliple state machines (one day...)
  */
-gn_error fb3110_initialise(gn_link *newlink, struct gn_statemachine *state)
+gn_error fb3110_initialise(struct gn_statemachine *state)
 {
 	unsigned char init_char = 0x55;
 	unsigned char count;

@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.124 2002-12-26 17:04:40 bozo Exp $
+  $Id: nk6100.c,v 1.125 2002-12-26 17:36:52 bozo Exp $
 
   G N O K I I
 
@@ -508,13 +508,13 @@ static gn_error Initialise(struct gn_statemachine *state)
 #ifndef WIN32
 	case GN_CT_Tekram:
 #endif
-		err = fbus_initialise(&(state->link), state, 0);
+		err = fbus_initialise(0, state);
 		break;
 	case GN_CT_Irda:
-		err = phonet_initialise(&(state->link), state);
+		err = phonet_initialise(state);
 		break;
 	case GN_CT_M2BUS:
-		err = m2bus_initialise(&(state->link), state);
+		err = m2bus_initialise(state);
 		break;
 	default:
 		FREE(DRVINSTANCE(state));

@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus.c,v 1.36 2002-12-26 17:04:40 bozo Exp $
+  $Id: fbus.c,v 1.37 2002-12-26 17:36:51 bozo Exp $
 
   G N O K I I
 
@@ -528,7 +528,7 @@ static int fbus_tx_send_ack(u8 message_type, u8 message_seq, struct gn_statemach
 /* Initialise variables and start the link */
 /* state is only passed around to allow for muliple state machines (one day...) */
 
-gn_error fbus_initialise(gn_link *newlink, struct gn_statemachine *state, int try)
+gn_error fbus_initialise(int try, struct gn_statemachine *state)
 {
 	unsigned char init_char = 0x55;
 	int count;

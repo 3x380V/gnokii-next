@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk7110.c,v 1.128 2002-12-24 01:42:41 bozo Exp $
+  $Id: nk7110.c,v 1.129 2002-12-26 17:36:52 bozo Exp $
 
   G N O K I I
 
@@ -303,14 +303,14 @@ static gn_error NK7110_Initialise(struct gn_statemachine *state)
 				break;
 			}
 		case GN_CT_Serial:
-			err = fbus_initialise(&(state->link), state, try++);
+			err = fbus_initialise(try++, state);
 			break;
 		case GN_CT_Infrared:
 		case GN_CT_Irda:
-			err = phonet_initialise(&(state->link), state);
+			err = phonet_initialise(state);
 			break;
 		case GN_CT_M2BUS:
-			err = m2bus_initialise(&(state->link), state);
+			err = m2bus_initialise(state);
 			break;
 		default:
 			return GN_ERR_NOTSUPPORTED;

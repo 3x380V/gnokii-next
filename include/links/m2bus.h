@@ -1,6 +1,6 @@
 /*
 
-  $Id: m2bus.h,v 1.4 2002-12-24 01:43:28 bozo Exp $
+  $Id: m2bus.h,v 1.5 2002-12-26 17:36:52 bozo Exp $
 
   G N O K I I
 
@@ -92,6 +92,6 @@ typedef struct{
 
 #define M2BUSINST(s) ((m2bus_link *)((s)->link.link_instance))
 
-gn_error m2bus_initialise(gn_link *newlink, struct gn_statemachine *state);
+gn_error m2bus_initialise(struct gn_statemachine *state);
 
 #endif   /* #ifndef _gnokii_links_m2bus_h */

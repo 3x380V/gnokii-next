@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6160.c,v 1.10 2002-12-16 12:24:40 ladis Exp $
+  $Id: nk6160.c,v 1.11 2002-12-26 17:36:52 bozo Exp $
 
   G N O K I I
 
@@ -142,7 +142,7 @@ static gn_error initialise(struct gn_statemachine *lstate)
 	switch (lstate->link.connection_type) {
 	case GN_CT_Serial:
 	case GN_CT_Infrared:
-		err = m2bus_initialise(&(lstate->link), lstate);
+		err = m2bus_initialise(lstate);
 		break;
 	default:
 		return GN_ERR_NOTSUPPORTED;

@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus-phonet.c,v 1.22 2002-12-26 17:04:40 bozo Exp $
+  $Id: fbus-phonet.c,v 1.23 2002-12-26 17:36:51 bozo Exp $
 
   G N O K I I
 
@@ -236,7 +236,7 @@ static gn_error phonet_send_message(u16 messagesize, u8 messagetype, unsigned ch
 
 /* Initialise variables and start the link */
 
-gn_error phonet_initialise(gn_link *newlink, struct gn_statemachine *state)
+gn_error phonet_initialise(struct gn_statemachine *state)
 {
 	gn_error error = GN_ERR_FAILED;
 
@@ -267,7 +267,7 @@ gn_error phonet_initialise(gn_link *newlink, struct gn_statemachine *state)
 
 #else /* HAVE_IRDA */
 
-gn_error phonet_initialise(gn_link *newlink, struct gn_statemachine *state)
+gn_error phonet_initialise(struct gn_statemachine *state)
 {
 	return GN_ERR_NOTSUPPORTED;
 }
