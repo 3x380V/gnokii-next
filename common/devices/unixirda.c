@@ -1,6 +1,6 @@
 /*
  *
- * $Id: unixirda.c,v 1.15 2002-08-01 18:40:17 plail Exp $
+ * $Id: unixirda.c,v 1.16 2002-08-05 20:37:26 pkot Exp $
  *
  * G N O K I I
  *
@@ -42,10 +42,13 @@ static char *phone[] = {
 	"Nokia 6310i",
 	"Nokia 6510",
 	"Nokia 7110",
-	"Nokia 7650",
 	"Nokia 7190",
+	"Nokia 7650",
 	"Nokia 8210",
-	"Nokia 8310"
+	"Nokia 8290",
+	"Nokia 8310",
+	"Nokia 9110",
+	"Nokia 9210"
 };
 
 double d_time(void)
