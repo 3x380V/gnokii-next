@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.378 2004-01-06 00:32:34 uid66849 Exp $
+  $Id: gnokii.c,v 1.379 2004-01-19 00:24:34 uid66849 Exp $
 
   G N O K I I
 
@@ -4269,7 +4269,8 @@ static int playringtone(int argc, char *argv[])
 		tone.volume = volume;
 		gn_ringtone_get_tone(&ringtone, i, &tone.frequency, &ulen);
 		if ((error = gn_sm_functions(GN_OP_PlayTone, &data, &state)) != GN_ERR_NONE) break;
-		usleep(ulen - 2 * dt.tv_usec - 20000);
+		if (ulen > 2 * dt.tv_usec + 20000)
+			usleep(ulen - 2 * dt.tv_usec - 20000);
 		tone.volume = 0;
 		if ((error = gn_sm_functions(GN_OP_PlayTone, &data, &state)) != GN_ERR_NONE) break;
 		usleep(20000);
