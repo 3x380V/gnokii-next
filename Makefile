@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.122 2003-04-09 09:00:15 pkot Exp $
+# $Id: Makefile,v 1.123 2004-01-02 13:35:48 uid66843 Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -31,6 +31,9 @@ DIRS =  common/phones \
 	$(BIN_DIRS)
 
 GTK_DIRS =	xgnokii
+
+INSTALL_DIRS =	$(BIN_DIRS) \
+		common
 
 DOCS_DIR = 	Docs
 INCLUDE_DIR =	include
@@ -112,7 +115,7 @@ test:
 	( cd testsuite; ./testit )
 
 install: all
-	@for dir in $(DIRS); do \
+	@for dir in $(INSTALL_DIRS); do \
 		if [ -e $$dir/Makefile ]; then \
 			$(MAKE) -C $$dir install; \
 		fi; \
@@ -141,7 +144,7 @@ install-docs:
 	@echo "done"
 
 install-strip:
-	@for dir in $(DIRS); do \
+	@for dir in $(INSTALL_DIRS); do \
 		if [ -e $$dir/Makefile ]; then \
 			$(MAKE) -C $$dir install-strip; \
 		fi; \
@@ -158,7 +161,7 @@ install-strip:
 	@echo "done"
 
 install-suid:
-	@for dir in $(DIRS); do \
+	@for dir in $(INSTALL_DIRS); do \
 		if [ -e $$dir/Makefile ]; then \
 			$(MAKE) -C $$dir install-suid; \
 		fi; \
@@ -175,7 +178,7 @@ install-suid:
 	@echo "done"
 
 install-ss:
-	@for dir in $(DIRS); do \
+	@for dir in $(INSTALL_DIRS); do \
 		if [ -e $$dir/Makefile ]; then \
 			$(MAKE) -C $$dir install-ss; \
 		fi; \
