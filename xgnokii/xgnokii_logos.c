@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_logos.c,v 1.17 2002-07-24 19:59:17 plail Exp $
+  $Id: xgnokii_logos.c,v 1.18 2002-07-26 21:42:49 pkot Exp $
    
   X G N O K I I
 
@@ -1018,7 +1018,7 @@ void GetLogoEvent(GtkWidget * widget)
 	e->event = Event_GetBitmap;
 	e->data = data;
 	if (phoneMonitor.supported & PM_CALLERGROUP) {
-		for (i = 0; i < 6; i++)
+		for (i = 0; i < GSM_MAX_CALLER_GROUPS; i++)
 			if (strcmp(gtk_entry_get_text(GTK_ENTRY(GTK_COMBO(callerCombo)->entry)),
 				   xgnokiiConfig.callerGroups[i]) == 0)
 				bitmap.number = i;
@@ -1060,7 +1060,7 @@ void SetLogoEvent(GtkWidget * widget)
 		 * callerGroups are available, you will see segfault - callerGroups not initialized 
 		 */
 		if (phoneMonitor.supported & PM_CALLERGROUP) {
-			for (i = 0; i < 6; i++)
+			for (i = 0; i < GSM_MAX_CALLER_GROUPS; i++)
 				if (strcmp
 				    (gtk_entry_get_text(GTK_ENTRY(GTK_COMBO(callerCombo)->entry)),
 				     xgnokiiConfig.callerGroups[i]) == 0)
