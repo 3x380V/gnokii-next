@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus-3110.c,v 1.23 2003-03-04 19:57:10 bozo Exp $
+  $Id: fbus-3110.c,v 1.24 2003-03-06 22:27:55 pkot Exp $
 
   G N O K I I
 
@@ -393,7 +393,6 @@ static void fb3110_sequence_number_update(struct gn_statemachine *state)
 static int fb3110_message_type_fold(int type)
 {
 	switch (type) {
-	case 0x15:
 	case 0x16:
 	case 0x17:
 		return 0x16;	/* initialization */
