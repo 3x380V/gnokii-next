@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.2 2001-02-21 19:57:05 chris Exp $
+# $Id: Makefile,v 1.3 2001-03-11 11:18:39 machek Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -20,7 +20,9 @@ include $(TOPDIR)/Makefile.global
 CFLAGS += $(PTHREAD_CFLAGS)
 
 OBJS =	fbus.o \
-	fbus-phonet.o
+	fbus-phonet.o \
+	cbus.o \
+	utils.o
 
 all: LINKS.o
 
