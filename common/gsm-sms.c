@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-sms.c,v 1.56 2002-04-24 00:40:02 bozo Exp $
+  $Id: gsm-sms.c,v 1.57 2002-04-25 10:41:57 machek Exp $
 
   G N O K I I
 
@@ -683,7 +683,7 @@ static GSM_Error EncodePDUSMS(GSM_SMSMessage *SMS, char *message, unsigned int n
 		if (SMS->UDH[i].Type == SMS_MultipartMessage) mm = 1;
 		if (error != GE_NONE) return error;
 	}
-	SMS->UDH_Length = ((SMS->UDH_No > 0) ? message[llayout.UserData] : 0);
+	SMS->UDH_Length = ((SMS->UDH_No > 0) ? message[llayout.UserData]+1 : 0);
 
 	/* User Data */
 	EncodeData(SMS, message + llayout.DataCodingScheme, message + llayout.UserData + SMS->UDH_Length, mm, &clen);
