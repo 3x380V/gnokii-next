@@ -1,6 +1,6 @@
 /*
 
-  $Id: unixserial.c,v 1.25 2002-10-08 00:58:27 bozo Exp $
+  $Id: unixserial.c,v 1.26 2002-10-30 00:52:07 bozo Exp $
 
   G N O K I I
 
@@ -59,6 +59,10 @@
 
 #ifdef HAVE_SYS_MODEM_H
 #  include <sys/modem.h>
+#endif
+
+#ifdef HAVE_SYS_FILIO_H
+#  include <sys/filio.h>
 #endif
 
 /* If the target operating system does not have cfsetspeed, we can emulate
