@@ -1,6 +1,6 @@
 /*
 
-  $Id: sms.h,v 1.23 2002-03-19 01:56:22 pkot Exp $
+  $Id: sms.h,v 1.24 2002-03-20 22:07:07 pkot Exp $
 
   G N O K I I
 
@@ -52,17 +52,26 @@ typedef struct {
 	int Number;		/* Number of all messages */
 } GSM_SMSMemoryStatus;
 
+typedef struct {
+	unsigned int Number;	/* Number of message we get from GetSMSStatus */
+	unsigned int Unread;	/* Number of unread messages we get from GetSMSStatus */
+	unsigned int Changed;	/* because when a message is moved between folders status wouldn't change */
+	unsigned int NumberOfFolders;	/* Number of Folders we get from GetFolders */
+} SMS_Status;
+
 
 /*** DATE AND TIME ***/
 
 typedef struct {
-	int Year;          /* The complete year specification - e.g. 1999. Y2K :-) */
-	int Month;	     /* January = 1 */
+	int Year;	/* The complete year specification - e.g. 1999. Y2K :-) */
+	int Month;	/* January = 1 */
 	int Day;
 	int Hour;
 	int Minute;
 	int Second;
-	int Timezone;      /* The difference between local time and GMT */
+	int Timezone;	/* The difference between local time and GMT.
+			   Not that different SMSC software treat this field
+			   in the different way. */
 } SMS_DateTime;
 
 /*** USER DATA HEADER ***/
@@ -318,13 +327,6 @@ typedef struct {
 	unsigned int Changed;
 	unsigned int Used;	/* because 'Used' can vary from 'Number' when we have deleted messages */
 } SMS_FolderStats;
-
-typedef struct {
-	unsigned int Number;	/* Number of message we get from GetSMSStatus */
-	unsigned int Unread;	/* Number of unread messages we get from GetSMSStatus */
-	unsigned int Changed;	/* because when a message is moved between folders status wouldn't change */
-	unsigned int NumberOfFolders;	/* Number of Folders we get from GetFolders */
-} SMS_Status;
 
 typedef struct {
 	SMS_DataType Type;

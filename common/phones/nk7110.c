@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk7110.c,v 1.59 2002-03-19 01:56:22 pkot Exp $
+  $Id: nk7110.c,v 1.60 2002-03-20 22:07:07 pkot Exp $
 
   G N O K I I
 
@@ -833,7 +833,7 @@ static GSM_Error P7110_IncomingFolder(int messagetype, unsigned char *message, i
 
 		for (j = 0; j < message[4]; j++) {
 			int len;
-			strcpy(data->SMSFolderList->Folder[j].Name, "               \0");
+			strcpy(data->SMSFolderList->Folder[j].Name, "               ");
 			data->SMSFolderList->FolderID[j] = message[i];
 			dprintf("Folder Index: %d", data->SMSFolderList->FolderID[j]);
 			i += 2;
