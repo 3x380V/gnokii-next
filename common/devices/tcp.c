@@ -1,6 +1,6 @@
 /*
   
-  $Id: tcp.c,v 1.10 2003-03-06 21:58:00 pkot Exp $
+  $Id: tcp.c,v 1.11 2003-12-28 22:29:16 uid66843 Exp $
 
   G N O K I I
 
@@ -62,6 +62,8 @@
 #ifndef O_NONBLOCK
 #  define O_NONBLOCK  0
 #endif
+
+#ifndef WIN32
 
 /* Open the serial port and store the settings. */
 
@@ -205,3 +207,5 @@ size_t tcp_write(int fd, const __ptr_t buf, size_t n, struct gn_statemachine *st
 {
 	return write(fd, buf, n);
 }
+
+#endif /* WIN32 */
