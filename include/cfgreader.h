@@ -1,6 +1,6 @@
 /*
 
-  $Id: cfgreader.h,v 1.10 2002-08-07 23:03:15 pkot Exp $
+  $Id: cfgreader.h,v 1.11 2002-08-18 15:00:52 pkot Exp $
 
   G N O K I I
 
@@ -57,7 +57,7 @@ extern API struct gn_cfg_header *gn_cfg_info;
 
 /* Functions */
 API char *gn_cfg_get(struct gn_cfg_header *cfg, const char *section, const char *key);
-API int gn_readconfig(char **model, char **port, char **initlength, char **connection, char **bindir);
+API int gn_cfg_readconfig(char **model, char **port, char **initlength, char **connection, char **bindir);
 
 /*
  * Exported things

@@ -1,6 +1,6 @@
 /*
 
-  $Id: cfgreader.c,v 1.24 2002-08-07 23:03:15 pkot Exp $
+  $Id: cfgreader.c,v 1.25 2002-08-18 15:00:52 pkot Exp $
 
   G N O K I I
 
@@ -269,8 +269,8 @@ char *cfg_set(struct gn_cfg_header *cfg, const char *section, const char *key,
 	return NULL;
 }
 
-API int gn_readconfig(char **model, char **port, char **initlength,
-		      char **connection, char **bindir)
+API int gn_cfg_readconfig(char **model, char **port, char **initlength,
+			  char **connection, char **bindir)
 {
 	char *homedir;
 	char rcfile[200];

@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.292 2002-08-15 23:26:24 pkot Exp $
+  $Id: gnokii.c,v 1.293 2002-08-18 15:00:52 pkot Exp $
 
   G N O K I I
 
@@ -4470,7 +4470,7 @@ int main(int argc, char *argv[])
 	short_version();
 
 	/* Read config file */
-	if (gn_readconfig(&model, &Port, &Initlength, &Connection, &BinDir) < 0) {
+	if (gn_cfg_readconfig(&model, &Port, &Initlength, &Connection, &BinDir) < 0) {
 		exit(1);
 	}
 
