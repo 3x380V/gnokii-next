@@ -1,6 +1,6 @@
 /*
 
-  $Id: atsoer.h,v 1.1 2004-07-01 22:17:03 pkot Exp $
+  $Id: atsoer.h,v 1.2 2004-07-03 22:56:52 pkot Exp $
 
   G N O K I I
 
@@ -29,8 +29,8 @@
 
 */
 
-#ifndef _gnokii_ateric_h
-#define _gnokii_ateric_h
+#ifndef _gnokii_atsoer_h
+#define _gnokii_atsoer_h
 
 #include "gnokii-internal.h"
 
