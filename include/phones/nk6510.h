@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.h,v 1.21 2003-10-24 12:49:07 bozo Exp $
+  $Id: nk6510.h,v 1.22 2004-02-18 21:49:43 uid66843 Exp $
 
   G N O K I I
 
@@ -131,7 +131,7 @@ typedef enum {
 #define NK6510_MEMORY_SPEEDDIALS	0x0e	/* Speed dials */
 #define NK6510_MEMORY_GROUPS		0x10	/* Caller groups */
 
-#define NK6510_MEMORY_DC		0x01	/* ME dialled calls list */
+#define NK6510_MEMORY_DC		0x01	/* ME dialed calls list */
 #define NK6510_MEMORY_MC		0x02	/* ME missed (unanswered received) calls list */
 #define NK6510_MEMORY_RC		0x03	/* ME received calls list */
 #define NK6510_MEMORY_FD		0x04	/* ?? SIM fixdialling-phonebook */
