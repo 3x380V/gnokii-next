@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii.c,v 1.62 2003-01-01 21:29:06 pkot Exp $
+  $Id: xgnokii.c,v 1.63 2003-01-02 23:29:38 pkot Exp $
   
   X G N O K I I
 
@@ -27,6 +27,15 @@
 
 */
 
+#include "config.h"
+#include "compat.h"
+#include "misc.h"
+
+#ifdef HAVE_ASPRINTF
+#  define _GNU_SOURCE
+#  include <stdio.h>
+#endif
+
 #include <stdlib.h>		/* for getenv */
 #include <locale.h>
 #include <string.h>
@@ -46,10 +55,6 @@
 
 #include <gdk/gdkkeysyms.h>
 #include <gtk/gtk.h>
-
-#include "config.h"
-#include "compat.h"
-#include "misc.h"
 
 #include "gsm-api.h"
 
