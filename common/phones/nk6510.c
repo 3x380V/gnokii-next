@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.c,v 1.70 2002-08-02 07:56:07 plail Exp $
+  $Id: nk6510.c,v 1.71 2002-08-02 13:11:52 plail Exp $
 
   G N O K I I
 
@@ -940,6 +940,8 @@ static GSM_Error P6510_DeleteSMS(GSM_Data *data, GSM_Statemachine *state)
 
 	error = ValidateSMS(data, state);
 	if (error != GE_NONE) return error;
+
+	data->RawSMS->Number = data->SMSFolder->Locations[data->RawSMS->Number - 1];
 
 	if ((data->RawSMS->MemoryType == GMT_IN) || (data->RawSMS->MemoryType == GMT_OU)) {
 		if (data->RawSMS->Number > 1024) {
