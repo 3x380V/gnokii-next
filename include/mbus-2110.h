@@ -1,6 +1,6 @@
 /*
 
-  $Id: mbus-2110.h,v 1.22 2001-12-31 09:35:47 pkot Exp $
+  $Id: mbus-2110.h,v 1.23 2002-01-21 12:31:24 machek Exp $
 
   G N O K I I
 
@@ -21,7 +21,6 @@
 
 /* Global variables */
 extern bool			MB21_LinkOK;
-extern GSM_Functions		MB21_Functions;
 extern GSM_Information		MB21_Information;
 
 #endif	/* __mbus_2110_h */

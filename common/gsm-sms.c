@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-sms.c,v 1.25 2002-01-16 17:13:41 pkot Exp $
+  $Id: gsm-sms.c,v 1.26 2002-01-21 12:31:21 machek Exp $
 
   G N O K I I
 
@@ -546,11 +546,6 @@ static GSM_Error EncodeSMSSubmitHeader(GSM_SMSMessage *SMS, char *frame)
 		if (SMS->RejectDuplicates) frame[llayout.RejectDuplicates] |= 0x04;
 	}
 
-	/* Message Type is already set */
-
-	/* Message Reference */
-	/* Can we set this? */
-
 	/* Protocol Identifier */
 	/* FIXME: allow to change this in better way.
 	   currently only 0x5f == `Return Call Message' is used */
@@ -587,12 +582,14 @@ static GSM_Error EncodeSMSSubmitHeader(GSM_SMSMessage *SMS, char *frame)
 	/* Validity Period */
 	switch (SMS->Validity.VPF) {
 	case SMS_EnhancedFormat:
-		break;
+		return GE_NOTSUPPORTED;
 	case SMS_RelativeFormat:
+		frame[llayout.Validity] = SMS->Validity.u.Relative;
 		break;
 	case SMS_AbsoluteFormat:
 		break;
 	default:
+		return GE_SMSWRONGFORMAT;
 		break;
 	}
 	return error;

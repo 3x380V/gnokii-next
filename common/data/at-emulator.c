@@ -1,6 +1,6 @@
 /*
 
-  $Id: at-emulator.c,v 1.10 2002-01-02 15:18:29 pkot Exp $
+  $Id: at-emulator.c,v 1.11 2002-01-21 12:31:23 machek Exp $
 
   G N O K I I
 
@@ -220,8 +220,8 @@ void	ATEM_ParseAT(char *cmd_buffer)
 			buf++;
 			/* For now we'll also initialise the datapump + rlp code again */
 			DP_Initialise(PtyRDFD, PtyWRFD);
-			GSM->DialData(NULL, -1, &DP_CallPassup);
-			GSM->AnswerCall(IncomingCallNo);
+/*			GSM->DialData(NULL, -1, &DP_CallPassup);
+			GSM->AnswerCall(IncomingCallNo);*/
 			CommandMode = false;
 			return;
 			break;
@@ -234,8 +234,8 @@ void	ATEM_ParseAT(char *cmd_buffer)
 			if (toupper(*buf) == 'T') buf++;
 			if (*buf == ' ') buf++;
 			strncpy(number, buf, 30);
-			if (ModemRegisters[S35] == 0) GSM->DialData(number, 1, &DP_CallPassup);
-			else GSM->DialData(number, 0, &DP_CallPassup);
+/*			if (ModemRegisters[S35] == 0) GSM->DialData(number, 1, &DP_CallPassup);
+			else GSM->DialData(number, 0, &DP_CallPassup);*/
 			ATEM_StringOut("\n\r");
 			CommandMode = false;
 			return;
@@ -244,7 +244,7 @@ void	ATEM_ParseAT(char *cmd_buffer)
 			/* Hang Up */
 			buf++;
 			RLP_SetUserRequest(Disc_Req, true);
-			GSM->CancelCall();
+/*			GSM->CancelCall();*/
 			break;
 		case 'S':
 			/* Change registers - only no. 35 for now */
