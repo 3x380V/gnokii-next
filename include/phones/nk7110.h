@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk7110.h,v 1.11 2002-01-27 23:38:32 pkot Exp $
+  $Id: nk7110.h,v 1.12 2002-02-01 23:09:36 pkot Exp $
 
   G N O K I I
 
@@ -136,4 +136,8 @@ extern bool P7110_LinkOK;
 #define P7110_ENTRYTYPE_LOGOSWITCH	0x1c	/* Group logo on/off */
 #define P7110_ENTRYTYPE_GROUP		0x1e	/* Group number for phonebook entry */
 
-#endif  /* #ifndef __phones_nk7110_h */
+/* Entry types for the security commands */
+#define P7110_SUBSEC_ENABLE_EXTENDED_CMDS 0x64  /* Enable extended commands */
+#define P7110_SUBSEC_NETMONITOR         0x7e    /* Netmonitor */
+
+#endif  /* __phones_nk7110_h */

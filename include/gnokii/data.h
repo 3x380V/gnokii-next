@@ -1,6 +1,6 @@
 /*
 
-  $Id: data.h,v 1.12 2002-02-01 14:49:40 chris Exp $
+  $Id: data.h,v 1.13 2002-02-01 23:09:36 pkot Exp $
 
   G N O K I I
 
@@ -51,6 +51,7 @@ typedef struct {
 	GSM_Error (*OnSMS)(GSM_SMSMessage *Message);
 	int *DisplayStatus;
 	void (*OnCellBroadcast)(GSM_CBMessage *Message);
+	GSM_NetMonitor *NetMonitor;
 } GSM_Data;
 
 /* Global structures intended to be independant of phone etc */
@@ -123,6 +124,7 @@ typedef enum {
 	GOP_PollDisplay,
 	GOP_SaveSMS,
 	GOP_SetCellBroadcast,
+	GOP_NetMonitor,
 	GOP_Max,	/* don't append anything after this entry */
 } GSM_Operation;
 

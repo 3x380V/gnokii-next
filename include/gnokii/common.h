@@ -1,6 +1,6 @@
 /*
 
-  $Id: common.h,v 1.90 2002-01-27 23:38:31 pkot Exp $
+  $Id: common.h,v 1.91 2002-02-01 23:09:36 pkot Exp $
 
   G N O K I I
 
@@ -434,5 +434,9 @@ typedef struct {
 	struct timeval Last;
 } GSM_DisplayOutput;
 
+typedef struct {
+	int Field;
+	char Screen[50];
+} GSM_NetMonitor;
 
 #endif	/* __gsm_common_h */
