@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-sms.c,v 1.50 2002-04-04 22:35:36 pkot Exp $
+  $Id: gsm-sms.c,v 1.51 2002-04-08 08:21:09 pkot Exp $
 
   G N O K I I
 
@@ -1067,7 +1067,9 @@ static GSM_Error DecodeSMSHeader(unsigned char *message, GSM_SMSMessage *SMS)
 	/* Delivery date */
 	if (llayout.Time > -1) {
 		UnpackDateTime(message + llayout.Time, &(SMS->SMSCTime));
+#ifdef DEBUG /* Required for VC */
 		dprintf("\tDelivery date: %s\n", PrintDateTime(message + llayout.Time));
+#endif
 	}
 
 	/* Remote number */
