@@ -1,6 +1,6 @@
 /*
 
-  $Id: misc.h,v 1.30 2002-01-27 23:38:32 pkot Exp $
+  $Id: misc.h,v 1.31 2002-01-27 23:41:51 pkot Exp $
 
   G N O K I I
 
@@ -206,6 +206,9 @@ typedef struct {
 
 extern char *GetModel (const char *);
 extern PhoneModel *GetPhoneModel (const char *);
+
+extern char *lock_device(const char*);
+extern bool unlock_device(char *);
 
 #endif /* __misc_h */
 
