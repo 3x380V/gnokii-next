@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.c,v 1.78 2002-08-23 09:07:31 plail Exp $
+  $Id: nk6510.c,v 1.79 2002-08-23 13:42:03 plail Exp $
 
   G N O K I I
 
@@ -3878,11 +3878,13 @@ static int EncodeSMS(GSM_Data *data, GSM_Statemachine *state, unsigned char *req
 	
 	/* FIXME: real date/time */
 	if (data->RawSMS->Type == SMS_Deliver) {
-		memcpy(req + pos, "\x20\x80\x30\x51\x20\x00\x00\x55\x55\x55", 10);
-		pos += 10;
+		memcpy(req + pos, data->RawSMS->SMSCTime, 7);
+		pos += 7;
+		memcpy(req + pos, "\x55\x55\x55", 3);
+		pos += 3;
+		/* Magic. Nokia new ideas: coding SMS in the sequent blocks */
 		req[pos++] = 0x03; /* total blocks */
 	} else {
-		/* Magic. Nokia new ideas: coding SMS in the sequent blocks */
 		req[pos++] = 0x04; /* total blocks */
 	}
 
