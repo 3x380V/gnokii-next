@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-filetypes.c,v 1.56 2004-05-07 22:52:06 pkot Exp $
+  $Id: gsm-filetypes.c,v 1.57 2004-08-10 19:31:07 pkot Exp $
 
   G N O K I I
 
@@ -1461,6 +1461,8 @@ API gn_error gn_file_phonebook_raw_parse(gn_phonebook_entry *entry, char *line)
 	char number[10];
 	int length, o, offset = 0;
 	gn_error error = GN_ERR_NONE;
+
+	memset(entry, 0, sizeof(gn_phonebook_entry));
 
 	length = strlen(line);
 	strcpy(backline, line);
