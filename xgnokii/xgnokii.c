@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii.c,v 1.41 2002-02-09 00:05:20 pkot Exp $
+  $Id: xgnokii.c,v 1.42 2002-02-19 00:19:55 pkot Exp $
   
   X G N O K I I
 
@@ -111,7 +111,6 @@ gint max_phonebook_sim_name_length;
 gint max_phonebook_sim_number_length;
 char folders[MAX_SMS_FOLDERS][15];
 gint foldercount = 0, lastfoldercount = 0;
-static GSM_Statemachine state;
 
 /* Local variables */
 static char *DefaultXGnokiiDir = XGNOKIIDIR;
