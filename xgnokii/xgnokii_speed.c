@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_speed.c,v 1.13 2002-12-23 01:04:15 bozo Exp $
+  $Id: xgnokii_speed.c,v 1.14 2004-06-30 22:24:02 pkot Exp $
 
   X G N O K I I
 
@@ -302,7 +302,7 @@ static bool ParseLine(D_SpeedDial * d, gchar * buf)
 	}
 
 	d->entry.location = atoi(strings[2]);
-	if (d->entry.location == LONG_MIN || d->entry.location == LONG_MAX || d->entry.location < 0) {
+	if (d->entry.location == INT_MAX || d->entry.location < 0) {
 		g_strfreev(strings);
 		return FALSE;
 	}
