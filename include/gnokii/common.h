@@ -1,6 +1,6 @@
 /*
 
-  $Id: common.h,v 1.94 2002-02-16 16:04:44 pkot Exp $
+  $Id: common.h,v 1.95 2002-02-21 00:56:33 pkot Exp $
 
   G N O K I I
 
@@ -464,7 +464,10 @@ typedef enum {
 typedef enum {
 	GSM_CS_IncomingCall,		/* Incoming call */
 	GSM_CS_LocalHangup,		/* Local end terminated the call */
-	GSM_CS_RemoteHangup		/* Remote end terminated the call */
+	GSM_CS_RemoteHangup,		/* Remote end terminated the call */
+	GSM_CS_Established,		/* Remote end answered the call */
+	GSM_CS_CallHeld,		/* Call placed on hold */
+	GSM_CS_CallResumed		/* Held call resumed */
 } GSM_CallStatus;
 
 typedef struct {

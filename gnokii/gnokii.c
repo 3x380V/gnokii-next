@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.198 2002-02-21 00:47:20 pkot Exp $
+  $Id: gnokii.c,v 1.199 2002-02-21 00:56:33 pkot Exp $
 
   G N O K I I
 
@@ -1208,6 +1208,15 @@ static void callnotifier(GSM_CallStatus CallStatus, GSM_CallInfo *CallInfo)
 		break;
 	case GSM_CS_RemoteHangup:
 		fprintf(stdout, "CALL %d TERMINATED (REMOTE)\n", CallInfo->CallID);
+		break;
+	case GSM_CS_Established:
+		fprintf(stdout, "CALL %d ACCEPTED BY THE REMOTE SIDE\n", CallInfo->CallID);
+		break;
+	case GSM_CS_CallHeld:
+		fprintf(stdout, "CALL %d PLACED ON HOLD\n", CallInfo->CallID);
+		break;
+	case GSM_CS_CallResumed:
+		fprintf(stdout, "CALL %d RETRIEVED FROM HOLD\n", CallInfo->CallID);
 		break;
 	default:
 	}
