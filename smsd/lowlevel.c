@@ -8,10 +8,13 @@
 
   Released under the terms of the GNU GPL, see file COPYING for more details.
 
-  $Id: lowlevel.c,v 1.2 2001-02-02 08:09:57 ja Exp $
+  $Id: lowlevel.c,v 1.3 2001-03-29 08:42:59 ja Exp $
   
   $Log: lowlevel.c,v $
-  Revision 1.2  2001-02-02 08:09:57  ja
+  Revision 1.3  2001-03-29 08:42:59  ja
+  Enabling compilation of smsd.
+
+  Revision 1.2  2001/02/02 08:09:57  ja
   New dialogs for 6210/7110 in xgnokii. Fixed the smsd for new capabilty code.
 
   
@@ -132,7 +135,7 @@ static GSM_Error fbusinit(bool enable_monitoring)
 
   if (error == GE_NOLINK)
     error = GSM_Initialise (smsdConfig.model, smsdConfig.port,
-                            smsdConfig.initlength, connection, RLP_DisplayF96Frame);
+                            smsdConfig.initlength, connection, NULL);
 
 #ifdef XDEBUG
   g_print ("fbusinit: error %d\n", error);
