@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.h,v 1.47 2003-03-06 09:53:07 ja Exp $
+  $Id: gnokii.h,v 1.48 2003-03-06 21:29:04 pkot Exp $
 
   G N O K I I
 
@@ -30,16 +30,20 @@
 
 */
 
-#ifndef _gnokii_gsm_api_h
-#define _gnokii_gsm_api_h
+#ifndef _gnokii_h
+#define _gnokii_h
 
-#include "gnokii/sms.h"
-#include "gnokii/call.h"
-#include "gnokii/common.h"
-#include "gnokii/data.h"
-#include "gnokii/networks.h"
-#include "gnokii/statemachine.h"
-#include "gnokii/virtmodem.h"
+#ifndef API
+#  define API
+#endif
+
+#include <gnokii/sms.h>
+#include <gnokii/call.h>
+#include <gnokii/common.h>
+#include <gnokii/data.h>
+#include <gnokii/networks.h>
+#include <gnokii/statemachine.h>
+#include <gnokii/virtmodem.h>
 
 API struct gn_cfg_header *gn_cfg_info;
 
@@ -140,4 +144,4 @@ API char *gn_model_get(const char *);
 API gn_phone_model *gn_phone_model_get(const char *);
 
 
-#endif	/* _gnokii_gsm_api_h */
+#endif	/* _gnokii_h */

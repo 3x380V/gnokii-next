@@ -1,6 +1,6 @@
 /*
 
-  $Id: winserial.h,v 1.7 2003-02-26 00:15:49 pkot Exp $
+  $Id: winserial.h,v 1.8 2003-03-06 21:32:33 pkot Exp $
 
   G N O K I I
 
@@ -29,8 +29,10 @@
 #ifndef __devices_winserial_h_
 #define __devices_winserial_h_
 
+#include "config.h"
+#include "compat.h"
 #include "misc.h"
-#include "gnokii/error.h"
+#include "gnokii.h"
 
 int serial_open(const char *file, int oflag);
 int serial_close(int fd, struct gn_statemachine *state);

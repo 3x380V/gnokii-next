@@ -1,6 +1,6 @@
 /*
 
-  $Id: unixserial.h,v 1.13 2003-02-26 00:15:49 pkot Exp $
+  $Id: unixserial.h,v 1.14 2003-03-06 21:32:33 pkot Exp $
 
   G N O K I I
 
@@ -29,6 +29,9 @@
 #ifndef __devices_unixserial_h
 #define __devices_unixserial_h
 
+#include "config.h"
+#include "compat.h"
+
 #ifdef WIN32
 #  include <stddef.h>
 #else
@@ -36,7 +39,7 @@
 #endif	/* WIN32 */
 
 #include "misc.h"
-#include "gnokii/error.h"
+#include "gnokii.h"
 
 int serial_open(const char *file, int oflag);
 int serial_close(int fd, struct gn_statemachine *state);

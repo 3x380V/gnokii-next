@@ -1,6 +1,6 @@
 /*
 
-  $Id: device.h,v 1.22 2003-02-26 00:15:48 pkot Exp $
+  $Id: device.h,v 1.23 2003-03-06 21:29:04 pkot Exp $
 
   G N O K I I
 
@@ -31,9 +31,10 @@
 #ifndef _gnokii_device_h
 #define _gnokii_device_h
 
+#include "config.h"
+#include "compat.h"
 #include "misc.h"
-#include "gnokii/common.h"
-#include "gnokii/error.h"
+#include "gnokii.h"
 
 #ifdef HAVE_UNISTD_H
 #  include <unistd.h>

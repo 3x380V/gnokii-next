@@ -1,6 +1,6 @@
 /*
 
-  $Id: datapump.h,v 1.11 2003-02-26 00:15:48 pkot Exp $
+  $Id: datapump.h,v 1.12 2003-03-06 21:31:08 pkot Exp $
 
   G N O K I I
 
@@ -31,8 +31,9 @@
 #ifndef _gnokii_data_datapump_h
 #define _gnokii_data_datapump_h
 
-#include "gnokii/statemachine.h"
-#include "gnokii/call.h"
+#include "config.h"
+#include "compat.h"
+#include "gnokii.h"
 
 /* Prototypes */
 bool	dp_Initialise(int read_fd, int write_fd);
