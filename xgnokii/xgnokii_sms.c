@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_sms.c,v 1.49 2003-01-08 21:29:14 pkot Exp $
+  $Id: xgnokii_sms.c,v 1.50 2003-01-16 00:24:59 pkot Exp $
 
   X G N O K I I
 
@@ -356,8 +356,15 @@ static void InsertFolderElement(gpointer d, gpointer userData)
 static inline void RefreshFolder(void)
 {
 	dprintf("RefreshFolder\n\n\n\n\n");
-	gtk_clist_freeze(GTK_CLIST(SMS.smsClist));
 
+	/* Clear the SMS text window */
+
+	gtk_text_freeze(GTK_TEXT(SMS.smsText));
+	gtk_text_set_point(GTK_TEXT(SMS.smsText), 0);
+	gtk_text_forward_delete(GTK_TEXT(SMS.smsText), gtk_text_get_length(GTK_TEXT(SMS.smsText)));
+	gtk_text_thaw(GTK_TEXT(SMS.smsText));
+
+	gtk_clist_freeze(GTK_CLIST(SMS.smsClist));
 	gtk_clist_clear(GTK_CLIST(SMS.smsClist));
 
 	SMS.row_i = 0;
