@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_lowlevel.c,v 1.60 2002-08-18 22:29:58 pkot Exp $
+  $Id: xgnokii_lowlevel.c,v 1.61 2002-08-18 23:30:48 pkot Exp $
   
   X G N O K I I
 
@@ -944,7 +944,7 @@ static gint A_DialVoice(gpointer data)
 	g_free(number);
 
 	gdat.CallInfo = &CallInfo;
-	error = GN_CallDial(&CallId, &gdat, &statemachine);
+	error = gn_call_dial(&CallId, &gdat, &statemachine);
 	gdat.CallInfo = NULL;
 
 	return (error);
@@ -1124,7 +1124,7 @@ void *GUI_Connect(void *a)
 	gint displaystatus, i, j;
 	time_t newtime, oldtime;
 
-	GN_API_Call *call;
+	gn_call *call;
 	PhoneEvent *event;
 	GSM_Error error;
 
@@ -1159,7 +1159,7 @@ void *GUI_Connect(void *a)
 /* FIXME - this loop goes mad on my 7110 - so I've put in a usleep */
 		usleep(50000);
 
-		if ((call = GN_CallGetActive(0)) != NULL) {
+		if ((call = gn_call_get_active(0)) != NULL) {
 #ifdef XDEBUG
 			g_print("Call in progress: %s\n", phoneMonitor.call.callNum);
 #endif
