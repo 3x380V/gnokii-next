@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-error.c,v 1.13 2002-09-28 23:51:36 pkot Exp $
+  $Id: gsm-error.c,v 1.14 2002-12-09 00:41:13 pkot Exp $
 
   G N O K I I
 
@@ -66,7 +66,7 @@ API char *gn_error_print(gn_error e)
 	}
 }
 
-API gn_error isdn_cause2gn_error(char **src, char **msg, unsigned char loc, unsigned char cause)
+API gn_error isdn_cause_to_gn_error(char **src, char **msg, unsigned char loc, unsigned char cause)
 {
 	char *s, *m;
 	gn_error err = GN_ERR_UNKNOWN;
