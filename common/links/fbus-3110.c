@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus-3110.c,v 1.6 2002-03-26 01:10:29 pkot Exp $
+  $Id: fbus-3110.c,v 1.7 2002-03-26 01:22:10 pkot Exp $
 
   G N O K I I
 
@@ -31,7 +31,6 @@
 #include "gsm-ringtones.h"
 #include "gsm-networks.h"
 #include "gsm-statemachine.h"
-#include "links/utils.h"
 
 #include "device.h"
 #ifdef WIN32

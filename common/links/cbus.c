@@ -1,6 +1,6 @@
 /* -*- linux-c -*-
 
-  $Id: cbus.c,v 1.11 2002-03-26 01:10:29 pkot Exp $
+  $Id: cbus.c,v 1.12 2002-03-26 01:22:10 pkot Exp $
 
   G N O K I I
 
@@ -30,7 +30,6 @@
 #include "gsm-ringtones.h"
 #include "gsm-networks.h"
 #include "device.h"
-#include "links/utils.h"
 
 #include "links/cbus.h"
 
