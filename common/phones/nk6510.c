@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.c,v 1.111 2003-03-09 13:37:31 pkot Exp $
+  $Id: nk6510.c,v 1.112 2003-03-31 08:59:58 pkot Exp $
 
   G N O K I I
 
@@ -1441,6 +1441,7 @@ static gn_error NK6510_IncomingPhonebook(int messagetype, unsigned char *message
 	case 0x10:
 		if (message[6] == 0x0f) {
 			switch (message[10]) {
+			case 0x33: return GN_ERR_WRONGDATAFORMAT;
 			case 0x34: return GN_ERR_INVALIDLOCATION;
 			default:   return GN_ERR_UNHANDLEDFRAME;
 			}
