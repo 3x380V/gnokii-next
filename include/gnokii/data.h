@@ -1,6 +1,6 @@
 /*
 
-  $Id: data.h,v 1.34 2002-07-17 13:49:17 plail Exp $
+  $Id: data.h,v 1.35 2002-07-18 15:36:48 plail Exp $
 
   G N O K I I
 
@@ -182,6 +182,7 @@ typedef enum {
 	GOP_PressPhoneKey,
 	GOP_ReleasePhoneKey,
 	GOP_EnterChar,
+	GOP_Subscribe,
 	GOP_Max,	/* don't append anything after this entry */
 } GSM_Operation;
 
