@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.10 2001-12-28 16:00:31 pkot Exp $
+  $Id: nk6100.c,v 1.11 2002-01-04 17:20:37 pkot Exp $
 
   G N O K I I
 
@@ -464,7 +464,7 @@ static GSM_Error IncomingSMS(int messagetype, unsigned char *message, int length
 		memset(data->SMSMessage, 0, sizeof(GSM_SMSMessage));
 
 		/* Short Message status */
-		DecodePDUSMS(message, data->SMSMessage, length);
+		/* DecodePDUSMS(message, data->SMSMessage, length); */
 
                 break;
 	/* read sms failed */

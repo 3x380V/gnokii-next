@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk3110.c,v 1.8 2001-12-31 09:35:46 pkot Exp $
+  $Id: nk3110.c,v 1.9 2002-01-04 17:20:37 pkot Exp $
 
   G N O K I I
 
@@ -756,7 +756,7 @@ static GSM_Error P3110_IncomingSMSHeader(int messagetype, unsigned char *message
 
 	/* Extract data from message into SMSMessage */
 
-	DecodePDUSMS(message, data->SMSMessage, length);
+	/* DecodePDUSMS(message, data->SMSMessage, length); */
 
 	/* All these moved to gsm-sms.c
 	Set memory type
@@ -906,7 +906,7 @@ static GSM_Error P3110_IncomingSMSDelivered(int messagetype, unsigned char *mess
 	U1 = message[2];
 	U2 = message[17];
 
-	DecodePDUSMS(message, data->SMSMessage, length);
+	/* DecodePDUSMS(message, data->SMSMessage, length); */
 
 	/* All these are moved fo gsm-sms.c
 	P3110_DecodeTime(message+3, &(data->SMSMessage->Time));
