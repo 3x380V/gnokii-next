@@ -1,6 +1,6 @@
 /*
 
-  $Id: m2bus.c,v 1.14 2003-02-26 00:15:48 pkot Exp $
+  $Id: m2bus.c,v 1.15 2003-02-26 22:02:17 pkot Exp $
 
   G N O K I I
 
@@ -42,6 +42,7 @@
 /* Various header file */
 
 #include "config.h"
+#include "compat.h"
 #include "misc.h"
 #include "gnokii/common.h"
 #include "gnokii/ringtones.h"

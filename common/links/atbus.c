@@ -1,6 +1,6 @@
 /*
 
-  $Id: atbus.c,v 1.33 2003-02-26 00:15:48 pkot Exp $
+  $Id: atbus.c,v 1.34 2003-02-26 22:02:17 pkot Exp $
 
   G N O K I I
 
@@ -34,6 +34,7 @@
 
 /* Various header file */
 #include "config.h"
+#include "compat.h"
 #include "misc.h"
 #include "links/atbus.h"
 #include "links/utils.h"

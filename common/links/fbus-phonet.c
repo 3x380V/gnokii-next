@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus-phonet.c,v 1.27 2003-02-26 00:15:48 pkot Exp $
+  $Id: fbus-phonet.c,v 1.28 2003-02-26 22:02:17 pkot Exp $
 
   G N O K I I
 
@@ -32,7 +32,6 @@
 
 */
 
-#include "config.h"
 
 /* System header files */
 #include <stdio.h>
@@ -40,6 +39,8 @@
 #include <stdlib.h>
 
 /* Various header file */
+#include "config.h"
+#include "compat.h"
 #include "misc.h"
 #include "gnokii/statemachine.h"
 #include "gnokii/common.h"

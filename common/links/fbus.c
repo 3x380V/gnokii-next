@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus.c,v 1.49 2003-02-26 00:15:48 pkot Exp $
+  $Id: fbus.c,v 1.50 2003-02-26 22:02:17 pkot Exp $
 
   G N O K I I
 
@@ -41,6 +41,7 @@
 /* Various header file */
 
 #include "config.h"
+#include "compat.h"
 #include "misc.h"
 #include "gnokii/statemachine.h"
 #include "device.h"

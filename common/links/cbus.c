@@ -1,6 +1,6 @@
 /* -*- linux-c -*-
 
-  $Id: cbus.c,v 1.25 2003-02-11 00:13:47 bozo Exp $
+  $Id: cbus.c,v 1.26 2003-02-26 22:02:17 pkot Exp $
 
   G N O K I I
 
@@ -35,6 +35,7 @@
 
 /* Various header files */
 #include "config.h"
+#include "compat.h"
 #include "misc.h"
 
 #include "gnokii-internal.h"

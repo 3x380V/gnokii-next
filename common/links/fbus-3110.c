@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus-3110.c,v 1.19 2003-02-11 00:13:47 bozo Exp $
+  $Id: fbus-3110.c,v 1.20 2003-02-26 22:02:17 pkot Exp $
 
   G N O K I I
 
@@ -40,6 +40,7 @@
 /* Various header file */
 
 #include "config.h"
+#include "compat.h"
 #include "misc.h"
 #include "gnokii-internal.h"
 #include "device.h"
