@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-bitmaps.c,v 1.16 2002-04-04 11:27:36 plail Exp $
+  $Id: gsm-bitmaps.c,v 1.17 2002-04-23 23:56:31 pkot Exp $
 
   G N O K I I
 
@@ -39,6 +39,17 @@
 #include "gsm-api.h"
 
 /* A few useful functions for bitmaps */
+
+GSM_Error GSM_NullBitmap(GSM_Bitmap *bmp, GSM_Information *info)
+{
+	if (!bmp || !info) return GE_INTERNALERROR;
+	strcpy(bmp->netcode, "000 00");
+	bmp->width = info->OpLogoW;
+	bmp->height = info->OpLogoH;
+	bmp->size = bmp->width * bmp->height / 8;
+	GSM_ClearBitmap(bmp);
+	return GE_NONE;
+}
 
 void GSM_SetPointBitmap(GSM_Bitmap *bmp, int x, int y)
 {
