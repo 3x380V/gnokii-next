@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.h,v 1.19 2003-03-06 22:52:16 pkot Exp $
+  $Id: nk6510.h,v 1.20 2003-10-23 00:35:02 bozo Exp $
 
   G N O K I I
 
@@ -184,5 +184,7 @@ typedef enum {
 /* Entry types for the security commands */
 #define NK6510_SUBSEC_ENABLE_EXTENDED_CMDS	0x64	/* Enable extended commands */
 #define NK6510_SUBSEC_NETMONITOR         	0x7e	/* Netmonitor */
+
+#define	NK6510_RINGTONE_USERDEF_LOCATION	231
 
 #endif  /* _gnokii_phones_nk6510_h */
