@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.c,v 1.102 2003-02-07 22:40:26 pkot Exp $
+  $Id: nk6510.c,v 1.103 2003-02-09 21:39:41 pkot Exp $
 
   G N O K I I
 
@@ -469,7 +469,7 @@ static gn_error NK6510_Identify(gn_data *data, struct gn_statemachine *state)
 	sm_error_get(0x1b, state);
 
 	/* Check that we are back at state Initialised */
-	if (gn_sm_loop(0i, state) != GN_SM_Initialised) return GN_ERR_UNKNOWN;
+	if (gn_sm_loop(0, state) != GN_SM_Initialised) return GN_ERR_UNKNOWN;
 	return GN_ERR_NONE;
 }
 
