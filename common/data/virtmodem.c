@@ -1,5 +1,5 @@
 /*
-  $Id: virtmodem.c,v 1.13 2002-02-21 00:56:33 pkot Exp $
+  $Id: virtmodem.c,v 1.14 2002-03-13 00:12:04 pkot Exp $
 
   G N O K I I
 
@@ -51,6 +51,15 @@
 #include "data/rlp-common.h"
 #include "device.h"
 
+/* Defines */
+
+#ifndef AF_LOCAL 
+#  ifdef AF_UNIX
+#    define AF_LOCAL AF_UNIX
+#  else
+#    error AF_LOCAL not defined
+#  endif
+#endif
 /* Prototypes */
 static int  VM_PtySetup(char *bindir);
 static void VM_ThreadLoop(void);
