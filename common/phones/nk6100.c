@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.115 2002-11-21 01:42:30 bozo Exp $
+  $Id: nk6100.c,v 1.116 2002-11-29 08:13:07 pkot Exp $
 
   G N O K I I
 
@@ -1583,6 +1583,7 @@ static gn_error IncomingSMS(int messagetype, unsigned char *message, int length,
 		if (data->RawSMS->Type == SMS_Delivery_Report) {
 			data->RawSMS->ReplyViaSameSMSC = message[11];
 			memcpy(data->RawSMS->Time, message + 42, 7);
+			data->RawSMS->ReportStatus = message[22];
 		}
 		if (data->RawSMS->Type != SMS_Submit) {
 			memcpy(data->RawSMS->SMSCTime, &getdata(36, 35, 0), 7);
