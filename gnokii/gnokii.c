@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.414 2005-01-01 18:33:53 pkot Exp $
+  $Id: gnokii.c,v 1.415 2005-03-20 18:50:06 pkot Exp $
 
   G N O K I I
 
@@ -742,6 +742,8 @@ static int sendsms(int argc, char *argv[])
 		if (gn_sm_functions(GN_OP_GetSMSCenter, &data, &state) == GN_ERR_NONE) {
 			strcpy(sms.smsc.number, data.message_center->smsc.number);
 			sms.smsc.type = data.message_center->smsc.type;
+		} else {
+			fprintf(stderr, _("Cannot read the SMSC number from your phone. If the sms send will fail, please use --smsc option explicitely giving the number.\n"));
 		}
 		free(data.message_center);
 	}
