@@ -1,6 +1,6 @@
 /*
 
-  $Id: compat.h,v 1.15 2002-12-08 23:32:42 pkot Exp $
+  $Id: compat.h,v 1.16 2003-02-10 17:50:38 ladis Exp $
 
   G N O K I I
 
@@ -40,6 +40,7 @@
 #ifdef WIN32
 #  include <windows.h>
 #  include <string.h>
+#  include <direct.h>
 #endif
 
 #ifdef HAVE_STDARG_H
@@ -153,6 +154,7 @@ int vasprintf(char **ptr, const char *format, va_list ap);
 #endif
 
 #ifdef WIN32
+#  define mkdir(dirname, accessrights)	_mkdir(dirname)
 /*
  * This is inspired by Marcin Wiacek <marcin-wiacek@topnet.pl>, it should help
  * windows compilers (MS VC 6)

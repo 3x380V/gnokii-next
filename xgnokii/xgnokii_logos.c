@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_logos.c,v 1.23 2003-01-01 21:29:06 pkot Exp $
+  $Id: xgnokii_logos.c,v 1.24 2003-02-10 17:50:38 ladis Exp $
    
   X G N O K I I
 
@@ -65,8 +65,6 @@
 #include "xpm/Tool_line.xpm"
 #include "xpm/Tool_rectangle.xpm"
 #include "xpm/Tool_filled_rectangle.xpm"
-
-extern gn_network networks[];
 
 GtkWidget *GUI_LogosWindow;
 
@@ -1523,6 +1521,7 @@ void GUI_CreateLogosWindow(void)
 	GList *glistNetwork = NULL;
 
 	int i = 0;
+	gn_network network;
 
 	previewPixmapWidth = PREVIEWWIDTH;
 	previewPixmapHeight = PREVIEWHEIGHT;
@@ -1623,9 +1622,10 @@ void GUI_CreateLogosWindow(void)
 
 	networkCombo = gtk_combo_new();
 	gtk_combo_set_use_arrows_always(GTK_COMBO(networkCombo), 1);
-	while (strcmp(networks[i].name, "unknown"))
+
+	while (gn_network_get(&network, i++))
 		glistNetwork = g_list_insert_sorted(glistNetwork,
-						    networks[i++].name, (GCompareFunc) strcmp);
+						    network.name, (GCompareFunc) strcmp);
 	gtk_combo_set_popdown_strings(GTK_COMBO(networkCombo), glistNetwork);
 	gtk_entry_set_editable(GTK_ENTRY(GTK_COMBO(networkCombo)->entry), FALSE);
 	gtk_toolbar_append_widget(GTK_TOOLBAR(toolBar), networkCombo, "", "");
