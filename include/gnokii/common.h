@@ -1,6 +1,6 @@
 /*
 
-  $Id: common.h,v 1.117 2002-12-22 23:55:01 bozo Exp $
+  $Id: common.h,v 1.118 2003-01-13 11:47:15 pkot Exp $
 
   G N O K I I
 
@@ -589,5 +589,12 @@ typedef struct {
 	int field;
 	char screen[50];
 } gn_netmonitor;
+
+typedef struct {
+	bool  userlock;		/* TRUE = user lock, FALSE = factory lock */
+	bool  closed;
+	char  data[12];
+	int   counter;
+} gn_locks_info;
 
 #endif	/* _gnokii_gsm_common_h */
