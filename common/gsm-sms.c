@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-sms.c,v 1.120 2002-12-10 12:59:34 ladis Exp $
+  $Id: gsm-sms.c,v 1.121 2002-12-29 13:17:41 pkot Exp $
 
   G N O K I I
 
@@ -711,7 +711,7 @@ API gn_error gn_sms_request(gn_data *data, struct gn_statemachine *state)
 }
 
 /**
- * gn_sms _get- High-level function for reading SMS
+ * gn_sms_get- High-level function for reading SMS
  * @data: GSM data for the phone driver
  * @state: current statemachine state
  *
