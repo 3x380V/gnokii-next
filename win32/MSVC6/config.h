@@ -1,6 +1,6 @@
 /*
 
-  $Id: config.h,v 1.13 2004-01-19 22:40:55 uid66843 Exp $
+  $Id: config.h,v 1.14 2004-02-01 16:00:55 uid66843 Exp $
 
   G N O K I I
 
@@ -40,7 +40,7 @@
 
 	
 #undef VERSION
-#define VERSION "0.5.9"
+#define VERSION "0.5.10"
 
 /* No bluetooth and no IRDA */
 #undef HAVE_BLUETOOTH
