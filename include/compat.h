@@ -1,6 +1,6 @@
 /*
 
-  $Id: compat.h,v 1.28 2003-05-06 20:52:59 pkot Exp $
+  $Id: compat.h,v 1.29 2003-05-06 21:00:02 pkot Exp $
 
   G N O K I I
 
@@ -65,6 +65,10 @@
 
 #ifdef HAVE_SYS_TYPES_H
 #  include <sys/types.h>
+#endif
+
+#ifdef HAVE_CTYPE_H
+#  include <ctype.h>
 #endif
 
 #ifdef HAVE_SYS_FILE_H
