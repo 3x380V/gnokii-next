@@ -1,6 +1,6 @@
 /*
 
-  $Id: bitmaps.h,v 1.22 2002-09-28 23:51:38 pkot Exp $
+  $Id: bitmaps.h,v 1.23 2002-12-09 00:27:29 pkot Exp $
 
   G N O K I I
 
@@ -69,17 +69,5 @@ typedef struct {
 	char number;             /* Caller group number */
 	char ringtone;           /* Ringtone no sent with caller group */
 } gn_bmp;
-
-API gn_error gn_bmp_null(gn_bmp *bmp, GSM_Information *info);
-API void gn_bmp_set_point(gn_bmp *bmp, int x, int y);
-API void gn_bmp_clear_point(gn_bmp *bmp, int x, int y);
-API bool gn_bmp_is_point(gn_bmp *bmp, int x, int y);
-API void gn_bmp_clear(gn_bmp *bmp);
-API void gn_bmp_resize(gn_bmp *bitmap, gn_bmp_types target, GSM_Information *info);
-API void gn_bmp_print(gn_bmp *bitmap, FILE *f);
-
-/* SMS bitmap functions */
-API int gn_bmp_encode_sms(gn_bmp *bitmap, unsigned char *message);
-API gn_error gn_bmp_read_sms(int type, unsigned char *message, unsigned char *code, gn_bmp *bitmap);
 
 #endif /* _gnokii_gsm_bitmaps_h */
