@@ -1,6 +1,6 @@
 /*
 
-  $Id: compat.h,v 1.5 2002-03-29 20:51:25 pkot Exp $
+  $Id: compat.h,v 1.6 2002-04-03 01:03:58 bozo Exp $
 
   G N O K I I
 
@@ -39,7 +39,13 @@
 
 #ifndef	HAVE_TIMEOPS
 
-/* The following code is borrowed from glibc */
+#undef timerisset
+#undef timerclear
+#undef timercmp
+#undef timeradd
+#undef timersub
+
+/* The following code is borrowed from glibc, please don't reindent it */
 
 /* Convenience macros for operations on timevals.
    NOTE: `timercmp' does not work for >= or <=.  */
