@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.21 2002-02-03 23:05:41 pkot Exp $
+  $Id: atgen.c,v 1.22 2002-02-06 00:37:17 pkot Exp $
 
   G N O K I I
 
@@ -876,11 +876,13 @@ static GSM_Error ReplySendSMS(int messagetype, unsigned char *buffer, int length
 	 * can show up in the SMS text. therefore the OK is found in line 3
 	 */
 	if ((buf.line3 && !strncmp("OK", buf.line3, 2))) {
-		if (!strncmp("+CMGW:", buf.line2, 6))
+		/* SendSMS or SaveSMS */
+		if (!strncmp("+CMGW:", buf.line2, 6) ||
+		    !strncmp("+CMGS:", buf.line2, 6))
 			data->SMSMessage->Number = atoi(buf.line2 + 6);
 		else
 			data->SMSMessage->Number = -1;
-		return GE_NONE;
+		return GE_SMSSENDOK;
 	}
 	return GE_SMSSENDFAILED;
 }
