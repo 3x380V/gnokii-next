@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.223 2002-04-22 16:28:27 machek Exp $
+  $Id: gnokii.c,v 1.224 2002-04-22 19:49:47 machek Exp $
 
   G N O K I I
 
@@ -1435,7 +1435,7 @@ static int sendlogo(int argc, char *argv[])
 	/* Send the message. */
 	data.SMSMessage = &SMS;
 
-	SendSMS(&data, &State);
+	error = SendSMS(&data, &State);
 
 	if (error == GE_NONE)
 		fprintf(stdout, _("Send succeeded!\n"));
