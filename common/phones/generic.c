@@ -1,6 +1,6 @@
 /*
 
-  $Id: generic.c,v 1.16 2002-12-09 15:27:20 ladis Exp $
+  $Id: generic.c,v 1.17 2004-09-07 11:37:28 bozo Exp $
 
   G N O K I I
 
@@ -39,7 +39,7 @@
 gn_error pgen_incoming_default(int messagetype, unsigned char *buffer, int length, struct gn_statemachine *state)
 {
 	dprintf("Unknown Message received [type (%02x) length (%d): \n", messagetype, length);
-	sm_message_dump(messagetype, buffer, length);
+	sm_message_dump(gn_log_debug, messagetype, buffer, length);
 
 	return GN_ERR_NONE;
 }
