@@ -1,6 +1,6 @@
 /*
 
-  $Id: misc.c,v 1.79 2004-04-13 21:20:27 bozo Exp $
+  $Id: misc.c,v 1.80 2004-06-10 15:18:50 bozo Exp $
 
   G N O K I I
 
@@ -509,8 +509,7 @@ char **gnokii_strsplit(const char *string, const char *delimiter, int tokens)
 	if (!string || !delimiter || !tokens)
 		return NULL;
 
-	strings = malloc(sizeof(char *) * (tokens + 1));
-	strings[tokens] = NULL; /* last element in array */
+	strings = calloc(tokens + 1, sizeof(char *));
 
 	while ((tmp = strstr(left, delimiter)) != NULL && (count < tokens)) {
 		str = malloc((tmp - left) + 1);
