@@ -1,6 +1,6 @@
 /*
 
-  $Id: pq.c,v 1.10 2002-07-07 22:07:38 ja Exp $
+  $Id: pq.c,v 1.11 2002-07-16 16:31:54 pkot Exp $
 
   S M S D
 
@@ -183,7 +183,7 @@ void DB_Look (void)
       error = WriteSMS (&sms);
       sleep (1);
     }
-    while ((error == GE_TIMEOUT || error == GE_SMSSENDFAILED) && numError++ < 3);
+    while ((error == GE_TIMEOUT || error == GE_FAILED) && numError++ < 3);
 
     g_string_sprintf (buf, "UPDATE outbox SET processed='t', error='%d', \
                             processed_date='now' WHERE id='%s'",
