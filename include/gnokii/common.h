@@ -1,6 +1,6 @@
 /*
 
-  $Id: common.h,v 1.107 2002-07-16 11:15:16 plail Exp $
+  $Id: common.h,v 1.108 2002-07-20 17:44:54 plail Exp $
 
   G N O K I I
 
@@ -173,6 +173,7 @@ typedef enum {
 	GSM_Postal  = 0x09,
 	GSM_Email   = 0x08,
 	GSM_Name    = 0x07,
+	GSM_URL     = 0x2c,
 	GSM_Date    = 0x13   /* Date is used for DC,RC,etc (last calls) */
 } GSM_EntryType;
 
