@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-sms.c,v 1.90 2002-06-04 11:13:17 machek Exp $
+  $Id: gsm-sms.c,v 1.91 2002-06-04 21:21:29 machek Exp $
 
   G N O K I I
 
@@ -1183,6 +1183,13 @@ GSM_Error EncodeData(GSM_API_SMS *sms, GSM_SMSMessage *rawsms)
 			rawsms->Length += size;
 			rawsms->UserDataLength += size;
 			rawsms->DCS = 0xf5;
+			break;
+
+		case SMS_Concat:
+			printf("Encoding concat header\n");
+			al = SMS_8bit;
+			rawsms->DCS = 0xf5;
+			EncodeConcatHeader(rawsms, sms->UserData[i].u.Concat.this, sms->UserData[i].u.Concat.total);
 			break;
 
 		case SMS_NoData:
