@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.c,v 1.16 2002-05-26 15:09:58 pkot Exp $
+  $Id: nk6510.c,v 1.17 2002-05-26 23:26:17 bozo Exp $
 
   G N O K I I
 
@@ -817,13 +817,13 @@ static GSM_Error P6510_GetSMS(GSM_Data *data, GSM_Statemachine *state)
 		if ((error = P6510_GetSMSFolderStatus(data, state)) != GE_NONE) return error;
 	}
 
-	if (data->SMSFolder->number + 2 < data->RawSMS->Number) {
+	if (data->SMSFolder->Number + 2 < data->RawSMS->Number) {
 		if (data->RawSMS->Number > MAX_SMS_MESSAGES)
 			return GE_INVALIDSMSLOCATION;
 		else
 			return GE_EMPTYSMSLOCATION;
 	} else {
-		data->RawSMS->Number = data->SMSFolder->locations[data->RawSMS->Number - 1];
+		data->RawSMS->Number = data->SMSFolder->Locations[data->RawSMS->Number - 1];
 	}
 
 	error = P6510_GetSMSMessageStatus(data, state);
