@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.373 2003-12-28 19:21:11 uid66843 Exp $
+  $Id: gnokii.c,v 1.374 2003-12-28 20:26:25 uid66843 Exp $
 
   G N O K I I
 
@@ -262,7 +262,9 @@ static int usage(FILE *f, int retval)
 	fprintf(f, _("   usage: gnokii [--help|--monitor [delay]|--version]\n"
 		     "          gnokii --getphonebook memory_type start_number [end_number|end]\n"
 		     "                 [[-r|--raw]|[-v|--vcard]|[-l|--ldif]]\n"
-		     "          gnokii --writephonebook [-f|--force][[-v|--vcard]|[-l|--ldif]]\n"
+		     "          gnokii --writephonebook [[-o|--overwrite]|[-f|--find-free]]\n"
+		     "                 [-m|--memory-type|--memory] [-n|--memory-location|--memory]\n"
+		     "                 [[-v|--vcard]|[-l|--ldif]]\n"
 		     "          gnokii --getwapbookmark number\n"
 		     "          gnokii --writewapbookmark name URL\n"
 		     "          gnokii --deletewapbookmark number\n"
