@@ -1,6 +1,6 @@
 /*
 
-  $Id: data.h,v 1.40 2002-07-29 10:29:13 plail Exp $
+  $Id: data.h,v 1.41 2002-07-31 16:55:11 plail Exp $
 
   G N O K I I
 
@@ -52,6 +52,8 @@ typedef struct {
 	char *Model;
 	char *Manufacturer;
 	GSM_NetworkInfo *NetworkInfo;
+	GSM_WAPBookmark *WAPBookmark;
+	GSM_WAPSetting *WAPSetting;
 	GSM_ToDoList *ToDoList;
 	GSM_ToDo *ToDo;
 	GSM_CalendarNotesList *CalendarNotesList;
@@ -189,6 +191,9 @@ typedef enum {
 	GOP_ReleasePhoneKey,
 	GOP_EnterChar,
 	GOP_Subscribe,
+	GOP_GetWAPBookmark,
+	GOP_DeleteWAPBookmark,
+	GOP_GetWAPSetting,
 	GOP_Max,	/* don't append anything after this entry */
 } GSM_Operation;
 
