@@ -1,6 +1,6 @@
 /*
 
-  $Id: fake.c,v 1.6 2002-05-15 22:45:43 manfred Exp $
+  $Id: fake.c,v 1.7 2002-05-19 19:52:23 machek Exp $
 
   G N O K I I
 
@@ -26,8 +26,6 @@
 #include "gsm-api.h"
 
 /* Some globals */
-
-static SMSMessage_PhoneLayout fake_layout;
 
 static GSM_Error Pfake_Functions(GSM_Operation op, GSM_Data *data, GSM_Statemachine *state);
 
@@ -89,16 +87,6 @@ static GSM_Error Pfake_Initialise(GSM_Statemachine *state)
 	/* Copy in the phone info */
 	memcpy(&(state->Phone), &phone_fake, sizeof(GSM_Phone));
 
-	/* SMS Layout */
-	fake_layout.Type = 8; /* Locate the Type of the mesage field. */
-	fake_layout.SendHeader = 6;
-	fake_layout.ReadHeader = 4;
-	fake_layout.Deliver = at_deliver;
-	fake_layout.Submit =  at_submit;
-	fake_layout.DeliveryReport = at_deliver;
-	fake_layout.Picture = at_deliver;
-	layout = fake_layout;
-
 	dprintf("Connecting\n");
 
 	/* Now test the link and get the model */
@@ -129,7 +117,6 @@ static GSM_Error AT_WriteSMS(GSM_Data *data, GSM_Statemachine *state, char* cmd)
 
 static GSM_Error Pfake_Functions(GSM_Operation op, GSM_Data *data, GSM_Statemachine *state)
 {
-	printf("Doing operation #%d\n", op);
 	switch (op) {
 	case GOP_Init:
 		return Pfake_Initialise(state);
