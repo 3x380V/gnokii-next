@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile.global.in,v 1.37 2003-04-07 21:24:09 pkot Exp $
+# $Id: Makefile.global.in,v 1.38 2003-04-23 23:19:27 bozo Exp $
 #
 # Global Makefiles configuration for the GNOKII.
 #
@@ -61,6 +61,10 @@ HAVE_XGNOKII   = @HAVE_XGNOKII@
 WIN32          = @WIN32@
 
 DESTDIR        =
+
+ifeq (@USE_NLS@, yes)
+	LIBS += @INTLLIBS@
+endif
 
 #
 # Global include directory
