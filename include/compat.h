@@ -1,6 +1,6 @@
 /*
 
-  $Id: compat.h,v 1.12 2002-04-17 01:38:20 bozo Exp $
+  $Id: compat.h,v 1.11 2002-04-17 01:37:09 bozo Exp $
 
   G N O K I I
 
@@ -41,11 +41,7 @@
 #endif
 
 #ifdef HAVE_STDARG_H
-#  include <stdarg.h>
-#endif
-
-#ifdef HAVE_SYS_SOCKET_H
-#  include <sys/socket.h>
+#include <stdarg.h>
 #endif
 
 
