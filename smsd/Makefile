@@ -3,7 +3,7 @@
 #
 # Copyright (C) 1999 Hugh Blemings & Pavel Janík ml. & Jan Derfinak
 #               2000 Karel Zak
-# $Id: Makefile,v 1.24 2003-11-03 21:16:41 bozo Exp $
+# $Id: Makefile,v 1.25 2004-01-02 13:08:16 uid66843 Exp $
 #
 
 GLIBCFLAGS = glib-config --cflags
@@ -45,7 +45,7 @@ all: smsd
 
 
 smsd: $(OBJS) $(TOPDIR)/common/libgnokii.so
-	gcc $(LDFLAGS) $(OBJS) $(LDLIBS) -o $@
+	$(CC) $(LDFLAGS) $(OBJS) $(LDLIBS) -o $@
 
 
 ### DB Modules
@@ -54,17 +54,17 @@ smsd: $(OBJS) $(TOPDIR)/common/libgnokii.so
 
 # PostgreSQL support
 libpq.so: smsd.h pq.c
-	gcc -s -shared -o libpq.so $(CFLAGS) -I../include \
+	$(CC) -s -shared -o libpq.so $(CFLAGS) -I../include \
 	-I/usr/include/pgsql pq.c $(shell $(GLIBLDLIBS)) -lpq
 
 # MySQL support
 libmysql.so: smsd.h mysql.c
-	gcc -s -shared -o libmysql.so $(CFLAGS) -I../include \
+	$(CC) -s -shared -o libmysql.so $(CFLAGS) -I../include \
 	$(shell mysql_config --cflags) mysql.c $(shell $(GLIBLDLIBS)) $(shell mysql_config --libs)
 
 # File support
 libfile.so: smsd.h file.c
-	gcc -s -shared -o libfile.so $(CFLAGS) -I../include \
+	$(CC) -s -shared -o libfile.so $(CFLAGS) -I../include \
         file.c $(shell $(GLIBLDLIBS))
 
 ### End of DB Modules
