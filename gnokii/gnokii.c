@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.405 2004-08-10 20:56:32 pkot Exp $
+  $Id: gnokii.c,v 1.406 2004-08-28 13:17:09 pkot Exp $
 
   G N O K I I
 
@@ -3581,10 +3581,11 @@ static int deletephonebook(int argc, char *argv[])
 				 gn_memory_type2str(entry.memory_type), entry.location);
 			break;
 		default:
-			fprintf (stderr, _("Phonebook entry removal FAILED (%s): memory type: %s, loc: %d\n"), 
-				 gn_error_print(error), gn_memory_type2str(entry.memory_type), entry.location);
 			if (last_location == INT_MAX)
 				last_location = 0;
+			else
+				fprintf (stderr, _("Phonebook entry removal FAILED (%s): memory type: %s, loc: %d\n"), 
+					 gn_error_print(error), gn_memory_type2str(entry.memory_type), entry.location);
 			break;
 		}
 	}
