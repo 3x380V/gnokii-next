@@ -1,6 +1,6 @@
 /*
 
-  $Id: atbosch.h,v 1.3 2002-12-16 12:24:41 ladis Exp $
+  $Id: atbosch.h,v 1.4 2002-12-31 00:10:22 pkot Exp $
 
   G N O K I I
 
@@ -22,7 +22,7 @@
   along with gnokii; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-  Copyright 2002 Ladislav Michl <ladis@psi.cz>
+  Copyright (C) 2002 Ladislav Michl <ladis@linux-mips.org>
 
   This file provides functions specific to at commands on ericsson
   phones. See README for more details on supported mobile phones.

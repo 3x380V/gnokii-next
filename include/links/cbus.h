@@ -1,6 +1,6 @@
 /* -*- linux-c -*-
 
-  $Id: cbus.h,v 1.10 2002-12-16 07:30:39 ladis Exp $
+  $Id: cbus.h,v 1.11 2002-12-31 00:10:22 pkot Exp $
 
   G N O K I I
 
@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
   Copyright (C) 2001 Pavel Machek <pavel@ucw.cz>
-  Copyright (C) 2001 Michl Ladislav <ladis@psi.cz>
+  Copyright (C) 2001, 2002 Ladislav Michl <ladis@linux-mips.org>
 
  */
 
@@ -61,7 +61,8 @@ typedef struct{
 	int frame_type2;
 	int message_len;
 	unsigned char buffer[CBUS_MAX_FRAME_LENGTH];
-	u8 prev_rx_byte;
+	unsigned char prev_rx_byte;
+	unsigned char at_reply[CBUS_MAX_MSG_LENGTH];
 } cbus_instance;
 
 #define CBUSINST(s) ((cbus_instance *)((s)->link.link_instance))
