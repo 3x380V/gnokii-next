@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.130 2004-01-20 22:43:38 uid66843 Exp $
+# $Id: Makefile,v 1.131 2004-07-03 20:04:36 pkot Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -53,7 +53,7 @@ all: intl $(DIRS)
 	@echo "##########################################"
 	@echo "###"
 	@echo "### It is strongly recommended to run:"
-	@echo "### make install"
+	@echo "### $(MAKE) install"
 	@echo "### now. Otherwise gnokii may not work."
 	@echo "###"
 	@echo "##########################################"
