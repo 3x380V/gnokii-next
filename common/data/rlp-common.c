@@ -1,6 +1,6 @@
 /*
 
-  $Id: rlp-common.c,v 1.13 2003-10-23 01:16:26 bozo Exp $
+  $Id: rlp-common.c,v 1.14 2003-10-23 17:45:41 bozo Exp $
 
   G N O K I I
 
@@ -1768,6 +1768,9 @@ void rlp_xid_display(u8 *frame)
 		count--;
 		frame++;
 	}
+
+	fprintf(stdout, "\n");
+
 	return;
 }
 

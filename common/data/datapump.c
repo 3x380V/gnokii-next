@@ -1,6 +1,6 @@
 /*
 
-  $Id: datapump.c,v 1.22 2003-10-23 01:16:26 bozo Exp $
+  $Id: datapump.c,v 1.23 2003-10-23 17:45:41 bozo Exp $
 
   G N O K I I
 
@@ -139,6 +139,7 @@ static int DP_CallBack(rlp_user_inds ind, u8 *buffer, int length)
 				/* Set the call passup back to the at emulator */
 				data.call_notification = gn_atem_call_passup;
 				gn_sm_functions(GN_OP_SetCallNotification, &data, sm);
+				gn_atem_string_out("\r\n");
 				gn_atem_modem_result(MR_OK);
 				break;
 			}
@@ -171,6 +172,8 @@ void dp_CallPassup(gn_call_status CallStatus, gn_call_info *CallInfo, struct gn_
 		gn_atem_modem_result(MR_NOCARRIER);
 		rlp_user_request_set(Disc_Req, true);
 		connected = false;
+		/* send the hangup event to the at emulator */
+		gn_atem_call_passup(CallStatus, CallInfo, state);
 		break;
 	default:
 		break;
