@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.h,v 1.18 2002-12-12 23:21:32 pkot Exp $
+  $Id: nk6100.h,v 1.19 2003-01-16 00:06:08 bozo Exp $
 
   G N O K I I
 
@@ -73,6 +73,7 @@ typedef struct {
 	gn_display_output *display_output;
 	nk6100_keytable keytable[256];
 	int capabilities;
+	int max_sms;
 
 	char model[GN_MODEL_MAX_LENGTH];
 	char imei[GN_IMEI_MAX_LENGTH];
