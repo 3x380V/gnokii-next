@@ -4,7 +4,7 @@ dnl
 dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janík ml.
 dnl                2000 Karel Zak, Pawe³ Kot
 dnl
-dnl  $Id: configure.in,v 1.59 2002-02-13 21:17:51 pkot Exp $
+dnl  $Id: configure.in,v 1.60 2002-02-15 21:31:15 pkot Exp $
 dnl
 
 AC_INIT(gnokii/gnokii.c)
@@ -421,8 +421,8 @@ int main()
    ]
 )
 
-AC_TRY_COMPILE( [#include <sys/socket.h>
-		 #include <sys/uio.h>],
+AC_TRY_COMPILE( [#include <sys/types.h>
+		 #include <sys/socket.h>],
 		[struct msghdr msg; msg.msg_control;],
 		AC_DEFINE(HAVE_MSGHDR_MSG_CONTROL)
 )
