@@ -5,7 +5,7 @@ dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janík ml.
 dnl                2000 Karel Zak, Pawe³ Kot
 dnl                2002 BORBELY Zoltan
 dnl
-dnl  $Id: configure.in,v 1.90 2002-10-30 00:52:07 bozo Exp $
+dnl  $Id: configure.in,v 1.91 2002-12-07 12:38:42 pkot Exp $
 dnl
 
 AC_INIT(gnokii/gnokii.c)
@@ -26,7 +26,7 @@ AC_PROG_INSTALL
 
 dnl ======================== Default setting
 ALL_LINGUAS="cs de et fi nl sk pl it sl"
-AM_GNU_GETTEXT
+AM_GNU_GETTEXT([external])
 
 dnl ======================== Check for include/config.h.in
 AC_MSG_CHECKING([for include/config.h.in])
