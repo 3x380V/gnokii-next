@@ -1,3 +1,5 @@
+$Id: nk6510.txt,v 1.3 2002-07-24 17:43:58 plail Exp $
+
 Assembled by
         Markus Plail <plail@web.de>
 	... and other members of gnokii mailing list
