@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-sms.c,v 1.133 2003-03-06 21:23:58 pkot Exp $
+  $Id: gsm-sms.c,v 1.134 2003-04-06 20:10:44 pkot Exp $
 
   G N O K I I
 
@@ -1223,6 +1223,7 @@ gn_error sms_prepare(gn_sms *sms, gn_sms_raw *rawsms)
 	return GN_ERR_NONE;
 }
 
+#ifdef DEBUG
 static void sms_dump_raw(gn_sms_raw *rawsms)
 {
 	char buf[10240];
@@ -1236,6 +1237,7 @@ static void sms_dump_raw(gn_sms_raw *rawsms)
 	bin2hex(buf, rawsms->user_data, rawsms->user_data_length);
 	dprintf("user_data: %s\n", buf);
 }
+#endif
 
 static gn_error sms_send_long(gn_data *data, struct gn_statemachine *state);
 
