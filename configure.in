@@ -5,7 +5,7 @@ dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janík ml.
 dnl                2000 Karel Zak, Pawe³ Kot
 dnl                2002 BORBELY Zoltan
 dnl
-dnl  $Id: configure.in,v 1.121 2003-11-20 21:10:29 bozo Exp $
+dnl  $Id: configure.in,v 1.122 2003-11-22 15:37:46 bozo Exp $
 dnl
 
 AC_INIT(gnokii/gnokii.c)
@@ -268,6 +268,30 @@ if test $ac_cv_have_iobluetooth = yes; then
 	AC_DEFINE(HAVE_BLUETOOTH_MACOSX,[],[Compile on Darwin / Mac OSX])
 	USE_BLUETOOTH="yes"
 	LIBS="$LIBS $PTHREAD_LIBS -framework CoreFoundation -framework IOBluetooth -framework Foundation"
+fi
+
+
+dnl ======================== Checks for FreeBSD/netgraph Bluetooth support
+
+AC_MSG_CHECKING([for the FreeBSD/netgraph bluetooth support])
+echo
+AC_CACHE_CHECK(for the struct sockaddr_rfcomm in <netgraph/.../ng_btsocket.h>, ac_cv_have_sockaddr_rfcomm,
+	[AC_TRY_COMPILE([#include <sys/types.h>
+			#include <sys/socket.h>
+			#include <bitstring.h>
+			#include <netgraph/bluetooth/include/ng_hci.h>
+			#include <netgraph/bluetooth/include/ng_l2cap.h>
+			#include <netgraph/bluetooth/include/ng_btsocket.h>],
+		[struct sockaddr_rfcomm rc;],
+		ac_cv_have_sockaddr_rfcomm=yes,
+		ac_cv_have_sockaddr_rfcomm=no)])
+
+if test $ac_cv_have_sockaddr_rfcomm = yes; then
+	AC_DEFINE(HAVE_BLUETOOTH)
+	AC_DEFINE(HAVE_BLUETOOTH_NETGRAPH,[],[Compile on FreeBSD])
+	USE_BLUETOOTH="yes"
+	AC_CHECK_LIB(bluetooth, bt_aton,
+		    [LIBS="$LIBS -lbluetooth" AC_DEFINE(HAVE_BT_ATON,[],[Define to 1 if you have the `bt_aton' function.])])
 fi
 
 
