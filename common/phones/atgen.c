@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.46 2002-07-12 18:10:01 pkot Exp $
+  $Id: atgen.c,v 1.47 2002-07-13 17:28:51 pkot Exp $
 
   G N O K I I
 
@@ -644,7 +644,10 @@ static GSM_Error AT_WriteSMS(GSM_Data *data, GSM_Statemachine *state, unsigned c
 	req[length * 2 + 1] = 0;
 	dprintf("Sending frame: %s\n", req);
 	if (SM_SendMessage(state, strlen(req), GOP_SendSMS, req) != GE_NONE) return GE_NOTREADY;
-	return SM_BlockNoRetry(state, data, GOP_SendSMS);
+	do {
+		error = SM_BlockNoRetryTimeout(state, data, GOP_SendSMS, state->Link.SMSTimeout);
+	} while (!state->Link.SMSTimeout && error == GE_TIMEOUT);
+	return error;
 }
 
 static GSM_Error AT_GetSMS(GSM_Data *data, GSM_Statemachine *state)
