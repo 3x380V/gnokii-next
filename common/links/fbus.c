@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus.c,v 1.45 2003-02-18 22:22:50 pkot Exp $
+  $Id: fbus.c,v 1.46 2003-02-19 00:01:00 pkot Exp $
 
   G N O K I I
 
@@ -106,12 +106,14 @@ static bool at2fbus_serial_open(struct gn_statemachine *state, gn_connection_typ
 	res = device_read(buffer, 255, state);
  
 	device_changespeed(115200, state);
- 
-	for (count = 0; count < 32; count++) {
-		device_write(&init_char, 1, state);
+
+	if (type != GN_CT_Bluetooth) { 
+		for (count = 0; count < 32; count++) {
+			device_write(&init_char, 1, state);
+		}
+		device_write(&end_init_char, 1, state);
+		usleep(1000000);
 	}
-	device_write(&end_init_char, 1, state);
-	usleep(1000000);
  
 	return true;
 }
