@@ -1,6 +1,6 @@
 /*
 
-  $Id: pkt.h,v 1.3 2004-05-08 20:52:41 bozo Exp $
+  $Id: pkt.h,v 1.4 2004-06-27 20:38:34 pkot Exp $
 
   G N O K I I
 
@@ -30,6 +30,9 @@
 
 #ifndef _gnokii_pkt_h
 #define _gnokii_pkt_h
+
+#include "config.h"
+#include "compat.h"
 
 typedef struct {
 	uint8_t *addr;
