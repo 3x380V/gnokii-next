@@ -1,6 +1,6 @@
 /*
 
-  $Id: common.h,v 1.122 2003-02-26 21:59:49 pkot Exp $
+  $Id: common.h,v 1.123 2003-03-03 22:28:43 pkot Exp $
 
   G N O K I I
 
@@ -33,6 +33,7 @@
 #define _gnokii_gsm_common_h
 
 #include <stdlib.h>
+#include <sys/time.h>
 #include <gnokii/rlp-common.h>
 
 /* Type of connection. Now we support serial connection with FBUS cable and
