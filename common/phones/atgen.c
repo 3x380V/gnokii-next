@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.32 2002-05-05 09:34:22 machek Exp $
+  $Id: atgen.c,v 1.33 2002-05-15 20:26:53 manfred Exp $
 
   G N O K I I
 
@@ -653,6 +653,11 @@ static GSM_Error AT_GetSMS(GSM_Data *data, GSM_Statemachine *state)
 	return SM_Block(state, data, GOP_GetSMS);
 }
 
+/* Hey nokia users. don't expect this to return anything useful */
+/* You can't read the number set by the phone menu with this */
+/* command, nor can you change this number by AT commands. Worse, */
+/* an ATZ will clear a SMS Center Number set by AT commands. This */
+/* doesn't affect the number set by the phone menu */
 static GSM_Error AT_GetSMSCenter(GSM_Data *data, GSM_Statemachine *state)
 {
 	unsigned char req[16];
