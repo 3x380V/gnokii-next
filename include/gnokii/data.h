@@ -1,6 +1,6 @@
 /*
 
-  $Id: data.h,v 1.53 2002-12-31 00:07:10 bozo Exp $
+  $Id: data.h,v 1.54 2003-01-01 21:29:06 pkot Exp $
 
   G N O K I I
 
@@ -34,6 +34,13 @@
 #include "gsm-call.h"
 #include "gsm-error.h"
 #include "data/rlp-common.h"
+
+/* For models table */
+typedef struct {
+	char *model;
+	char *number;
+	int flags;
+} gn_phone_model;
 
 /* This is a generic holder for high level information - eg a gn_bmp */
 typedef struct {

@@ -1,6 +1,6 @@
 /*
 
-  $Id: unixserial.c,v 1.29 2002-12-27 18:47:41 bozo Exp $
+  $Id: unixserial.c,v 1.30 2003-01-01 21:29:05 pkot Exp $
 
   G N O K I I
 
@@ -122,7 +122,7 @@ int device_script(int fd, const char *section, struct gn_statemachine *state)
 		return -1;
 
 	case 0: /* child */
-		cfg_get_foreach(gn_cfg_info, section, device_script_cfgfunc);
+		cfg_foreach(gn_cfg_info, section, device_script_cfgfunc);
 		errno = 0;
 		if (dup2(fd, 0) != 0 || dup2(fd, 1) != 1 || close(fd)) {
 			fprintf(stderr, _("device_script(\"%s\"): file descriptor prepare: %s\n"), scriptname, strerror(errno));

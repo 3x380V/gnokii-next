@@ -1,6 +1,6 @@
 /*
 
-  $Id: atbus.c,v 1.26 2002-12-31 00:10:21 pkot Exp $
+  $Id: atbus.c,v 1.27 2003-01-01 21:29:05 pkot Exp $
 
   G N O K I I
 
@@ -35,15 +35,13 @@
 /* Various header file */
 #include "config.h"
 #include "misc.h"
-#include "gsm-common.h"
-#include "gsm-ringtones.h"
-#include "gsm-networks.h"
-#include "gsm-api.h"
-#include "device.h"
-#include "gsm-statemachine.h"
 #include "links/atbus.h"
+#include "links/utils.h"
 
 #include "gnokii-internal.h"
+#include "gsm-api.h"
+
+#include "device.h"
 
 /* 
  * FIXME - when sending an AT command while another one is still in progress,

@@ -1,6 +1,6 @@
 /*
 
-  $Id: virtmodem.c,v 1.33 2002-12-27 17:03:19 bozo Exp $
+  $Id: virtmodem.c,v 1.34 2003-01-01 21:29:05 pkot Exp $
 
   G N O K I I
 
@@ -115,7 +115,7 @@ bool gn_vm_initialise(const char *iname, char *bindir, bool debug_mode, bool GSM
 
 	if (GSMInit) {
 		dprintf("Initialising GSM\n");
-		if (!gn_cfg_load_phone(iname, sm)) return false;
+		if (!gn_cfg_phone_load(iname, sm)) return false;
 		if ((VM_GSMInitialise(sm) != GN_ERR_NONE)) {
 			fprintf (stderr, _("gn_vm_initialise - VM_GSMInitialise failed!\n"));
 			return (false);

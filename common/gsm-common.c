@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-common.c,v 1.16 2002-12-12 15:07:19 ladis Exp $
+  $Id: gsm-common.c,v 1.17 2003-01-01 21:29:05 pkot Exp $
 
   G N O K I I
 
@@ -34,7 +34,7 @@ gn_error unimplemented(void)
 	return GN_ERR_NOTIMPLEMENTED;
 }
 
-API gn_memory_type gn_str_to_memory_type(const char *s)
+API gn_memory_type gn_str2memory_type(const char *s)
 {
 #define X(a) if (!strcmp(s, #a)) return GN_MT_##a;
 	X(ME);
