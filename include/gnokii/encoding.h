@@ -1,6 +1,6 @@
 /*
 
-  $Id: encoding.h,v 1.13 2002-08-27 23:23:01 pkot Exp $
+  $Id: encoding.h,v 1.14 2002-09-27 14:19:57 plail Exp $
 
   G N O K I I
 
@@ -41,8 +41,8 @@ int char_unpack_7bit(unsigned int offset, unsigned int in_length, unsigned int o
 int char_pack_7bit(unsigned int offset, unsigned char *input, unsigned char *output,
 		   unsigned int *in_len);
 
-void char_decode_unicode(unsigned char* dest, const unsigned char* src, int len);
-void char_encode_unicode(unsigned char* dest, const unsigned char* src, int len);
+unsigned int char_decode_unicode(unsigned char* dest, const unsigned char* src, int len);
+unsigned int char_encode_unicode(unsigned char* dest, const unsigned char* src, int len);
 
 void char_decode_ascii(unsigned char* dest, const unsigned char* src, int len);
 unsigned int char_encode_ascii(unsigned char* dest, const unsigned char* src, unsigned int len);
