@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.3 2001-03-11 11:18:39 machek Exp $
+# $Id: Makefile,v 1.4 2001-06-27 09:30:40 machek Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -27,7 +27,7 @@ OBJS =	fbus.o \
 all: LINKS.o
 
 LINKS.o: $(OBJS)
-	$(LD) $(LDREL) $(LDOUT) LINKS.o $(OBJS)
+	$(LD) LINKS.o $(OBJS)
 
 clean:
 	$(RM) $(OBJS) *~ depend LINKS.o

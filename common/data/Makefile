@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.1 2001-02-16 14:29:51 chris Exp $
+# $Id: Makefile,v 1.2 2001-06-27 09:30:39 machek Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -30,7 +30,7 @@ OBJS =	at-emulator.o \
 all: DATA.o
 
 DATA.o: $(OBJS)
-	$(LD) $(LDREL) $(LDOUT) DATA.o $(OBJS)
+	$(LD) DATA.o $(OBJS)
 
 clean:
 	$(RM) $(OBJS) *~ depend DATA.o

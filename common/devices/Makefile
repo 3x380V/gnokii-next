@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.2 2001-03-06 22:27:46 pkot Exp $
+# $Id: Makefile,v 1.3 2001-06-27 09:30:40 machek Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -31,7 +31,7 @@ endif
 all: DEVICES.o
 
 DEVICES.o: $(OBJS)
-	$(LD) $(LDREL) $(LDOUT) DEVICES.o $(OBJS)
+	$(LD) DEVICES.o $(OBJS)
 
 clean:
 	$(RM) $(OBJS) *~ depend LINKS.o
