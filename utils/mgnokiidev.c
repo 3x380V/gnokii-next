@@ -1,6 +1,6 @@
 /*
 
-  $Id: mgnokiidev.c,v 1.20 2003-04-08 08:39:37 bozo Exp $
+  $Id: mgnokiidev.c,v 1.21 2003-07-21 20:41:17 bozo Exp $
 
   G N O K I I
 
@@ -36,6 +36,13 @@
 #ifdef	__OpenBSD__
 #  include <sys/types.h>
 #  define HAVE_MSGHDR_MSG_CONTROL 1
+#endif
+
+/* See common/data/virtmodem.c for explanation */
+#ifdef	__FreeBSD__
+#  include <sys/types.h>
+#  undef	__BSD_VISIBLE
+#  define	__BSD_VISIBLE	1
 #endif
 
 /* See common/data/virtmodem.c for explanation */

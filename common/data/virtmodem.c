@@ -1,6 +1,6 @@
 /*
 
-  $Id: virtmodem.c,v 1.39 2003-04-28 14:07:38 pkot Exp $
+  $Id: virtmodem.c,v 1.40 2003-07-21 20:41:17 bozo Exp $
 
   G N O K I I
 
@@ -43,6 +43,13 @@
 #ifdef	__OpenBSD__
 #  include <sys/types.h>
 #  define HAVE_MSGHDR_MSG_CONTROL 1
+#endif
+
+/* same for FreeBSD */
+#ifdef	__FreeBSD__
+#  include <sys/types.h>
+#  undef	__BSD_VISIBLE
+#  define	__BSD_VISIBLE	1
 #endif
 
 /* This is the correct way to include stdlib with _XOPEN_SOURCE = 500 defined.
