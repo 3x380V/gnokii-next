@@ -1,6 +1,6 @@
 /*
 
-  $Id: common.h,v 1.132 2004-02-17 21:19:10 uid66843 Exp $
+  $Id: common.h,v 1.133 2004-02-20 11:02:25 uid66849 Exp $
 
   G N O K I I
 
@@ -660,5 +660,10 @@ typedef struct {
 	int userdef_count;
 	gn_ringtone_info ringtone[GN_RINGTONE_MAX_COUNT];
 } gn_ringtone_list;
+
+typedef enum {
+	GN_LOG_T_NONE = 0,
+	GN_LOG_T_STDERR = 1
+} gn_log_target;
 
 #endif	/* _gnokii_common_h */

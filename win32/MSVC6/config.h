@@ -1,6 +1,6 @@
 /*
 
-  $Id: config.h,v 1.14 2004-02-01 16:00:55 uid66843 Exp $
+  $Id: config.h,v 1.15 2004-02-20 11:02:26 uid66849 Exp $
 
   G N O K I I
 
@@ -97,9 +97,9 @@
 #undef HAVE_STRSEP
 
 /* Define debug level */
-#undef DEBUG
-#undef XDEBUG
-#undef RLP_DEBUG
+#define DEBUG 1
+#define XDEBUG 1
+#define RLP_DEBUG 1
 
 /* Define debug level */
 #ifdef _DEBUG

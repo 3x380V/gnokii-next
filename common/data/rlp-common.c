@@ -1,6 +1,6 @@
 /*
 
-  $Id: rlp-common.c,v 1.14 2003-10-23 17:45:41 bozo Exp $
+  $Id: rlp-common.c,v 1.15 2004-02-20 11:02:25 uid66849 Exp $
 
   G N O K I I
 
@@ -52,7 +52,7 @@
 #ifndef RLP_DEBUG
 #  define rlpprintf(a...) do { } while (0)
 #else
-#  define rlpprintf(a...) do { fprintf(stderr, a); fflush(stderr); } while (0)
+#  define rlpprintf(a...) do { gn_log_rlpdebug(a); } while (0)
 #endif
 
 /* Our state machine which handles all of nine possible states of RLP
