@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.396 2004-06-17 19:05:42 pkot Exp $
+  $Id: gnokii.c,v 1.397 2004-06-17 19:21:25 pkot Exp $
 
   G N O K I I
 
@@ -289,11 +289,11 @@ static int usage(FILE *f, int retval)
 		     "          gnokii --deletephonebook memory_type start_number [end_number]\n"
 		     "Calendar options:\n"
 		     "          gnokii --getcalendarnote start_number [end_number|end] [-v]\n"
-		     "          gnokii --writecalendarnote vcardfile number\n"
+		     "          gnokii --writecalendarnote vcalendarfile number\n"
 		     "          gnokii --deletecalendarnote start [end]\n"
 		     "ToDo options:\n"
-		     "          gnokii --gettodo start [end] [-v]\n"
-		     "          gnokii --writetodo vcardfile number\n"
+		     "          gnokii --gettodo start_number [end_number|end] [-v]\n"
+		     "          gnokii --writetodo vcalendarfile number\n"
 		     "          gnokii --deletealltodos\n"
 		     "Dialling and call options:\n"
 		     "          gnokii --getspeeddial number\n"
