@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus-phonet.h,v 1.10 2003-05-06 08:49:42 pkot Exp $
+  $Id: fbus-phonet.h,v 1.11 2004-12-14 01:02:56 chriskemp Exp $
 
   G N O K I I
 
@@ -45,6 +45,9 @@
 /* This byte is at the beginning of all GSM Frames sent over Bluetooth to Nokia 6310
    family phones. */
 #define FBUS_PHONET_BLUETOOTH_FRAME_ID  0x19
+
+#define FBUS_PHONET_DKU2_FRAME_ID  0x1b
+#define FBUS_PHONET_DKU2_DEVICE_PC  0x0c
 
 /* Our PC in the Nokia 6310 family over Bluetooth. */
 #define FBUS_PHONET_BLUETOOTH_DEVICE_PC 0x10

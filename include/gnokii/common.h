@@ -1,6 +1,6 @@
 /*
 
-  $Id: common.h,v 1.133 2004-02-20 11:02:25 uid66849 Exp $
+  $Id: common.h,v 1.134 2004-12-14 01:02:56 chriskemp Exp $
 
   G N O K I I
 
@@ -45,7 +45,8 @@ typedef enum {
 	GN_CT_Bluetooth,/* Linux Bluetooth support */
 	GN_CT_Tekram,   /* Tekram Ir-Dongle */
 	GN_CT_TCP,      /* TCP network connection */
-	GN_CT_M2BUS	/* Serial connection with M2BUS protocol */
+	GN_CT_M2BUS,	/* Serial connection with M2BUS protocol */
+	GN_CT_DKU2	/* DKU2 usb connection */
 } gn_connection_type;
 
 /* Maximum length of device name for serial port */
