@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_lowlevel.h,v 1.18 2002-03-28 21:37:50 pkot Exp $
+  $Id: xgnokii_lowlevel.h,v 1.19 2002-04-04 11:00:32 plail Exp $
   
   X G N O K I I
 
@@ -209,4 +209,5 @@ extern void GUI_InitPhoneMonitor(void);
 extern void *GUI_Connect(void *a);
 extern void GUI_InsertEvent(PhoneEvent * event);
 extern GSM_Error GUI_InitSMSFolders(void);
+extern int isSMSactivated;
 #endif
