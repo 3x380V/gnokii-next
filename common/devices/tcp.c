@@ -1,6 +1,6 @@
 /*
   
-  $Id: tcp.c,v 1.8 2002-12-27 18:47:41 bozo Exp $
+  $Id: tcp.c,v 1.9 2003-02-26 00:15:48 pkot Exp $
 
   G N O K I I
 
@@ -27,7 +27,7 @@
 */
 
 #include "misc.h"
-#include "gsm-api.h"
+#include "gnokii.h"
 
 #include <stdio.h>
 #include <fcntl.h>

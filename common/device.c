@@ -1,6 +1,6 @@
 /*
 
-  $Id: device.c,v 1.28 2003-02-20 23:26:44 pkot Exp $
+  $Id: device.c,v 1.29 2003-02-26 00:15:47 pkot Exp $
 
   G N O K I I
 
@@ -27,7 +27,7 @@
 */
 
 #include "misc.h"
-#include "gsm-api.h"
+#include "gnokii.h"
 #include "device.h"
 #include "devices/unixirda.h"
 #include "devices/unixbluetooth.h"

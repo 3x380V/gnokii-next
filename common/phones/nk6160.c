@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6160.c,v 1.15 2003-01-06 08:21:33 ladis Exp $
+  $Id: nk6160.c,v 1.16 2003-02-26 00:15:48 pkot Exp $
 
   G N O K I I
 
@@ -44,7 +44,7 @@
 #include "links/m2bus.h"
 
 #include "gnokii-internal.h"
-#include "gsm-api.h"
+#include "gnokii.h"
 
 #define SEND_MESSAGE_BLOCK(type, length) \
 do { \

@@ -1,6 +1,6 @@
 /*
 
-  $Id: virtmodem.c,v 1.35 2003-01-15 09:42:29 pkot Exp $
+  $Id: virtmodem.c,v 1.36 2003-02-26 00:15:48 pkot Exp $
 
   G N O K I I
 
@@ -59,12 +59,12 @@
 #include <sys/param.h>
 
 #include "misc.h"
-#include "gsm-api.h"
-#include "gsm-common.h"
+#include "gnokii.h"
+#include "gnokii/common.h"
 #include "data/at-emulator.h"
 #include "data/datapump.h"
-#include "data/virtmodem.h"
-#include "data/rlp-common.h"
+#include "gnokii/virtmodem.h"
+#include "gnokii/rlp-common.h"
 #include "device.h"
 
 /* Defines */

@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-api.c,v 1.62 2003-02-04 22:42:49 pkot Exp $
+  $Id: gsm-api.c,v 1.63 2003-02-26 00:15:47 pkot Exp $
 
   G N O K I I
 
@@ -41,11 +41,11 @@
 #include <stdlib.h>
 
 #include "misc.h"
-#include "gsm-common.h"
+#include "gnokii/common.h"
 #include "cfgreader.h"
-#include "gsm-api.h"
-#include "data/rlp-common.h"
-#include "gsm-statemachine.h"
+#include "gnokii.h"
+#include "gnokii/rlp-common.h"
+#include "gnokii/statemachine.h"
 #include "phones/nk6510.h"
 #include "phones/nk7110.h"
 #include "phones/nk6100.h"

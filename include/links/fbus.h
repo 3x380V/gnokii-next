@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus.h,v 1.17 2003-02-18 00:40:46 pkot Exp $
+  $Id: fbus.h,v 1.18 2003-02-26 00:15:49 pkot Exp $
 
   G N O K I I
 
@@ -44,8 +44,8 @@
 #include "compat.h"
 
 #include "fbus-common.h"
-#include "gsm-statemachine.h"
-#include "gsm-data.h"
+#include "gnokii/statemachine.h"
+#include "gnokii/data.h"
 
 #define FBUS_FRAME_MAX_LENGTH    256
 #define FBUS_MESSAGE_MAX_TYPES   256

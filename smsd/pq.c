@@ -1,6 +1,6 @@
 /*
 
-  $Id: pq.c,v 1.20 2003-02-10 09:10:58 ja Exp $
+  $Id: pq.c,v 1.21 2003-02-26 00:15:52 pkot Exp $
 
   S M S D
 
@@ -34,7 +34,7 @@
 #include <glib.h>
 #include <libpq-fe.h>
 #include "smsd.h"
-#include "gsm-api.h"
+#include "gnokii.h"
 
 static PGconn *connIn = NULL;
 static PGconn *connOut = NULL;

@@ -1,6 +1,6 @@
 /*
 
-  $Id: m2bus.h,v 1.5 2002-12-26 17:36:52 bozo Exp $
+  $Id: m2bus.h,v 1.6 2003-02-26 00:15:49 pkot Exp $
 
   G N O K I I
 
@@ -40,7 +40,7 @@
 #include "config.h"
 #include "compat.h"
 
-#include "gsm-data.h"
+#include "gnokii/data.h"
 
 #ifdef WIN32
 #  include <sys/types.h>

@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-internal.h,v 1.9 2003-02-11 00:13:47 bozo Exp $
+  $Id: gnokii-internal.h,v 1.10 2003-02-26 00:15:48 pkot Exp $
 
   G N O K I I
 
@@ -31,10 +31,11 @@
 #ifndef _gnokii_internal_h
 #define _gnokii_internal_h
 
-#include "gsm-sms.h"
-#include "gsm-common.h"
-#include "gsm-data.h"
-#include "gsm-statemachine.h"
+#include "misc.h"
+#include "gnokii/sms.h"
+#include "gnokii/common.h"
+#include "gnokii/data.h"
+#include "gnokii/statemachine.h"
 
 /* SMS */
 gn_error sms_parse(int offset, gn_data *data);

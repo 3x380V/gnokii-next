@@ -1,6 +1,6 @@
 /*
 
-  $Id: rlp-common.c,v 1.10 2002-12-13 02:01:29 bozo Exp $
+  $Id: rlp-common.c,v 1.11 2003-02-26 00:15:48 pkot Exp $
 
   G N O K I I
 
@@ -37,9 +37,9 @@
 #include <ctype.h>
 #include <stdlib.h>
 
-#include "data/rlp-common.h"
+#include "gnokii/rlp-common.h"
 #include "data/rlp-crc24.h"
-#include "gsm-common.h" /* For GSM error and RLP send function. */
+#include "gnokii/common.h" /* For GSM error and RLP send function. */
 #include "misc.h" /* For u8, u32 etc. */
 
 #ifdef WIN32

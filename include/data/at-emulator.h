@@ -1,6 +1,6 @@
 /*
 
-  $Id: at-emulator.h,v 1.9 2002-12-10 23:27:19 pkot Exp $
+  $Id: at-emulator.h,v 1.10 2003-02-26 00:15:48 pkot Exp $
 
   G N O K I I
 
@@ -30,6 +30,9 @@
 
 #ifndef _gnokii_data_at_emulator_h
 #define _gnokii_data_at_emulator_h
+
+#include "gnokii/statemachine.h"
+#include "gnokii/call.h"
 
 	/* Prototypes */
 bool	gn_atem_initialise(int read_fd, int write_fd, struct gn_statemachine *sm);

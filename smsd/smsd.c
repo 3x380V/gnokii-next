@@ -1,6 +1,6 @@
 /*
 
-  $Id: smsd.c,v 1.35 2003-02-24 07:42:28 ja Exp $
+  $Id: smsd.c,v 1.36 2003-02-26 00:15:52 pkot Exp $
 
   S M S D
 
@@ -50,7 +50,7 @@
 
 #include "misc.h"
 
-#include "gsm-api.h"
+#include "gnokii.h"
 #include "smsd.h"
 #include "lowlevel.h"
 #include "db.h"

@@ -1,6 +1,6 @@
 /* -*- linux-c -*-
 
-  $Id: nk2110.c,v 1.35 2002-09-28 23:51:37 pkot Exp $
+  $Id: nk2110.c,v 1.36 2003-02-26 00:15:48 pkot Exp $
 
   G N O K I I
 
@@ -49,13 +49,14 @@
 
 #undef DEBUG
 #include "misc.h"
-#include "gsm-common.h"
+#include "gnokii/common.h"
 #include "device.h"
-#include "gsm-api.h"
-#include "gsm-statemachine.h"
+#include "gnokii/statemachine.h"
 #include "phones/generic.h"
 #include "phones/nk2110.h"
 #include "phones/nokia.h"
+
+#include "gnokii.h"
 
 #define MYID 0x78
 #define ddprintf(x...)

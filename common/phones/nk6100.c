@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.135 2003-02-18 09:29:05 plail Exp $
+  $Id: nk6100.c,v 1.136 2003-02-26 00:15:48 pkot Exp $
 
   G N O K I I
 
@@ -50,7 +50,7 @@
 #include "links/m2bus.h"
 
 #include "gnokii-internal.h"
-#include "gsm-api.h"
+#include "gnokii.h"
 
 #define	DRVINSTANCE(s) ((nk6100_driver_instance *)((s)->driver.driver_instance))
 #define	FREE(p) do { free(p); (p) = NULL; } while (0)

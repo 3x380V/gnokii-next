@@ -1,6 +1,6 @@
 /*
 
-  $Id: call.h,v 1.5 2002-12-11 00:11:41 pkot Exp $
+  $Id: call.h,v 1.6 2003-02-26 00:15:49 pkot Exp $
 
   G N O K I I
 
@@ -31,7 +31,7 @@
 #ifndef _gnokii_gsm_call_h
 #define _gnokii_gsm_call_h
 
-#include "gsm-error.h"
+#include <gnokii/error.h>
 
 typedef enum {
 	GN_CALL_Voice,		/* Voice call */

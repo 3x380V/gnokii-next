@@ -1,6 +1,6 @@
 /*
 
-  $Id: m2bus.c,v 1.13 2003-02-12 19:08:07 bozo Exp $
+  $Id: m2bus.c,v 1.14 2003-02-26 00:15:48 pkot Exp $
 
   G N O K I I
 
@@ -43,10 +43,10 @@
 
 #include "config.h"
 #include "misc.h"
-#include "gsm-common.h"
-#include "gsm-ringtones.h"
-#include "gsm-networks.h"
-#include "gsm-statemachine.h"
+#include "gnokii/common.h"
+#include "gnokii/ringtones.h"
+#include "gnokii/networks.h"
+#include "gnokii/statemachine.h"
 #include "device.h"
 #include "links/m2bus.h"
 

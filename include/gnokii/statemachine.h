@@ -1,6 +1,6 @@
 /*
 
-  $Id: statemachine.h,v 1.15 2002-12-31 00:07:10 bozo Exp $
+  $Id: statemachine.h,v 1.16 2003-02-26 00:15:49 pkot Exp $
 
   G N O K I I
 
@@ -31,13 +31,13 @@
 #ifndef _gnokii_gsm_statemachine_h
 #define _gnokii_gsm_statemachine_h
 
-#include "gsm-error.h"
-#include "gsm-data.h"
+#include <gnokii/error.h>
+#include <gnokii/data.h>
 
 /* Small structure used in gn_driver */
 /* Messagetype is passed to the function in case it is a 'generic' one */
 typedef struct {
-	u8 message_type;
+	unsigned char message_type;
 	gn_error (*functions)(int messagetype, unsigned char *buffer, int length,
 			      gn_data *data, struct gn_statemachine *state);
 } gn_incoming_function_type;
@@ -74,8 +74,8 @@ struct gn_statemachine {
 	gn_driver driver;
 	
 	/* Store last message for resend purposes */
-	u8 last_msg_type;
-	u16 last_msg_size;
+	unsigned char last_msg_type;
+	unsigned int last_msg_size;
 	void *last_msg;
 
 	/* The responses we are waiting for */

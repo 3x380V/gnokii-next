@@ -1,6 +1,6 @@
 /*
 
-  $Id: unixbluetooth.c,v 1.6 2003-02-20 23:26:44 pkot Exp $
+  $Id: unixbluetooth.c,v 1.7 2003-02-26 00:15:48 pkot Exp $
  
   G N O K I I
 
@@ -30,7 +30,7 @@
 #include "config.h"
 #include "compat.h"
 #include "misc.h"
-#include "gsm-api.h"
+#include "gnokii.h"
 
 #ifdef HAVE_BLUETOOTH
 

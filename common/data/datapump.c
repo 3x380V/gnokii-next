@@ -1,6 +1,6 @@
 /*
 
-  $Id: datapump.c,v 1.19 2002-12-13 02:01:29 bozo Exp $
+  $Id: datapump.c,v 1.20 2003-02-26 00:15:48 pkot Exp $
 
   G N O K I I
 
@@ -47,13 +47,13 @@
 
 
 #include "misc.h"
-#include "gsm-common.h"
-#include "gsm-api.h"
+#include "gnokii/common.h"
+#include "gnokii.h"
 #include "device.h"
 #include "data/at-emulator.h"
-#include "data/virtmodem.h"
+#include "gnokii/virtmodem.h"
 #include "data/datapump.h"
-#include "data/rlp-common.h"
+#include "gnokii/rlp-common.h"
 
 /* Prototypes */
 static int	DP_CallBack(rlp_user_inds ind, u8 *buffer, int length);

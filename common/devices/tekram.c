@@ -1,6 +1,6 @@
 /*
  *
- * $Id: tekram.c,v 1.11 2003-02-09 21:38:19 pkot Exp $
+ * $Id: tekram.c,v 1.12 2003-02-26 00:15:48 pkot Exp $
  *
  * G N O K I I
  *
@@ -26,7 +26,7 @@
  */
 
 #include "misc.h"
-#include "gsm-api.h"
+#include "gnokii.h"
 
 #include <stdio.h>
 #ifdef HAVE_FCNTL_H

@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-networks.c,v 1.30 2003-02-11 22:40:54 pkot Exp $
+  $Id: gsm-networks.c,v 1.31 2003-02-26 00:15:47 pkot Exp $
 
   G N O K I I
 
@@ -32,7 +32,7 @@
 #include "compat.h"
 #include "misc.h"
 #include <string.h>
-#include "gsm-networks.h"
+#include "gnokii/networks.h"
 
 static gn_country countries[] = {
 	{ "202", "Greece" },

@@ -1,6 +1,6 @@
 /*
 
-  $Id: nokia.h,v 1.17 2002-12-16 12:24:41 ladis Exp $
+  $Id: nokia.h,v 1.18 2003-02-26 00:15:49 pkot Exp $
 
   G N O K I I
 
@@ -35,7 +35,7 @@
 #ifndef _gnokii_phones_nokia_h
 #define _gnokii_phones_nokia_h
 
-#include "gsm-error.h"
+#include "gnokii/error.h"
 
 #define	PNOK_MSG_ID_SMS 0x02
 

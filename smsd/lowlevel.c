@@ -1,6 +1,6 @@
 /*
 
-  $Id: lowlevel.c,v 1.32 2003-02-24 07:42:28 ja Exp $
+  $Id: lowlevel.c,v 1.33 2003-02-26 00:15:50 pkot Exp $
 
   S M S D
 
@@ -32,7 +32,7 @@
 #include <string.h>
 #include <glib.h>
 #include "misc.h"
-#include "gsm-api.h"
+#include "gnokii.h"
 #include "smsd.h"
 #include "lowlevel.h"
 

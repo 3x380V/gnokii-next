@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii.c,v 1.65 2003-02-04 22:00:15 pkot Exp $
+  $Id: xgnokii.c,v 1.66 2003-02-26 00:15:53 pkot Exp $
   
   X G N O K I I
 
@@ -56,7 +56,7 @@
 #include <gdk/gdkkeysyms.h>
 #include <gtk/gtk.h>
 
-#include "gsm-api.h"
+#include "gnokii.h"
 
 #include "xgnokii.h"
 #include "xgnokii_common.h"

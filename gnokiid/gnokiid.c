@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokiid.c,v 1.36 2003-02-04 22:00:16 pkot Exp $
+  $Id: gnokiid.c,v 1.37 2003-02-26 00:15:48 pkot Exp $
 
   G N O K I I
 
@@ -40,8 +40,7 @@
 #include <string.h>
 
 #include "misc.h"
-#include "gsm-api.h"
-#include "data/virtmodem.h"
+#include "gnokii.h"
 
 /* Global variables */
 bool DebugMode;		/* When true, run in debug mode */

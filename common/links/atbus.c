@@ -1,6 +1,6 @@
 /*
 
-  $Id: atbus.c,v 1.32 2003-02-20 23:26:44 pkot Exp $
+  $Id: atbus.c,v 1.33 2003-02-26 00:15:48 pkot Exp $
 
   G N O K I I
 
@@ -39,7 +39,7 @@
 #include "links/utils.h"
 
 #include "gnokii-internal.h"
-#include "gsm-api.h"
+#include "gnokii.h"
 
 #include "device.h"
 

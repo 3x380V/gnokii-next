@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_logos.c,v 1.24 2003-02-10 17:50:38 ladis Exp $
+  $Id: xgnokii_logos.c,v 1.25 2003-02-26 00:15:53 pkot Exp $
    
   X G N O K I I
 
@@ -36,7 +36,7 @@
 #include <gtk/gtk.h>
 
 #include "misc.h"
-#include "gsm-api.h"
+#include "gnokii.h"
 
 #include "xgnokii_logos.h"
 #include "xgnokii_common.h"

@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-sms.c,v 1.131 2003-02-18 00:40:46 pkot Exp $
+  $Id: gsm-sms.c,v 1.132 2003-02-26 00:15:47 pkot Exp $
 
   G N O K I I
 
@@ -32,17 +32,17 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "gsm-data.h"
-#include "gsm-encoding.h"
-#include "gsm-statemachine.h"
+#include "gnokii/data.h"
+#include "gnokii/encoding.h"
+#include "gnokii/statemachine.h"
 
-#include "gsm-ringtones.h"
-#include "gsm-bitmaps.h"
+#include "gnokii/ringtones.h"
+#include "gnokii/bitmaps.h"
 
 #include "sms-nokia.h"
 
 #include "gnokii-internal.h"
-#include "gsm-api.h"
+#include "gnokii.h"
 
 #undef ERROR
 #define ERROR() do { if (error != GN_ERR_NONE) return error; } while (0)

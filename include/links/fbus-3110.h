@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus-3110.h,v 1.8 2002-12-26 17:36:52 bozo Exp $
+  $Id: fbus-3110.h,v 1.9 2003-02-26 00:15:49 pkot Exp $
 
   G N O K I I
 
@@ -34,9 +34,9 @@
 #ifndef _gnokii_links_fbus_3110_h
 #define _gnokii_links_fbus_3110_h
 
-#include "gsm-statemachine.h"
 #include "config.h"
 #include "compat.h"
+#include "gnokii/statemachine.h"
 
 #ifdef WIN32
 #  include <sys/types.h>

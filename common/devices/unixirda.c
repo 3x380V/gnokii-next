@@ -1,6 +1,6 @@
 /*
  *
- * $Id: unixirda.c,v 1.20 2003-02-25 00:22:27 pkot Exp $
+ * $Id: unixirda.c,v 1.21 2003-02-26 00:15:48 pkot Exp $
  *
  * G N O K I I
  *
@@ -26,7 +26,7 @@
  */
 
 #include "misc.h"
-#include "gsm-api.h"
+#include "gnokii.h"
 
 #ifdef HAVE_IRDA
 

@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus-phonet.c,v 1.26 2003-02-11 00:13:47 bozo Exp $
+  $Id: fbus-phonet.c,v 1.27 2003-02-26 00:15:48 pkot Exp $
 
   G N O K I I
 
@@ -41,14 +41,15 @@
 
 /* Various header file */
 #include "misc.h"
-#include "gsm-common.h"
-#include "gsm-ringtones.h"
-#include "gsm-networks.h"
-#include "gsm-api.h"
+#include "gnokii/statemachine.h"
+#include "gnokii/common.h"
+#include "gnokii/ringtones.h"
+#include "gnokii/networks.h"
 #include "device.h"
 #include "links/fbus-phonet.h"
 
 #include "gnokii-internal.h"
+#include "gnokii.h"
 
 #ifdef HAVE_IRDA
 

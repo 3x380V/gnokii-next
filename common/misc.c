@@ -1,6 +1,6 @@
 /*
 
-  $Id: misc.c,v 1.59 2003-02-25 00:22:27 pkot Exp $
+  $Id: misc.c,v 1.60 2003-02-26 00:15:47 pkot Exp $
 
   G N O K I I
 
@@ -35,11 +35,14 @@
 #include <fcntl.h>
 #include <signal.h>
 
+#include "compat.h"
+
 #ifdef HAVE_UNISTD_H
 #  include <unistd.h>
 #endif
 
-#include "gsm-data.h"
+#include "misc.h"
+#include "gnokii/data.h"
 
 API void (*gn_elog_handler)(const char *fmt, va_list ap) = NULL;
 

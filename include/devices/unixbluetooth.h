@@ -1,6 +1,6 @@
 /*
 
-  $Id: unixbluetooth.h,v 1.4 2003-02-20 23:26:45 pkot Exp $
+  $Id: unixbluetooth.h,v 1.5 2003-02-26 00:15:49 pkot Exp $
  
   G N O K I I
 
@@ -49,7 +49,7 @@
 #include "config.h"
 #include "compat.h"
 #include "misc.h"
-#include "gsm-api.h"
+#include "gnokii.h"
 
 #ifdef HAVE_BLUETOOTH
 int bluetooth_open(bdaddr_t *bdaddr, uint8_t channel, struct gn_statemachine *state);

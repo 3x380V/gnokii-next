@@ -1,6 +1,6 @@
 /*
  *
- * $Id: unixirda.h,v 1.10 2003-02-20 23:26:45 pkot Exp $
+ * $Id: unixirda.h,v 1.11 2003-02-26 00:15:49 pkot Exp $
  *
  * G N O K I I
  *
@@ -44,7 +44,7 @@
 #endif
 
 #include "misc.h"
-#include "gsm-api.h"
+#include "gnokii.h"
 
 int irda_open(struct gn_statemachine *state);
 int irda_close(int fd, struct gn_statemachine *state);

@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_data.c,v 1.10 2002-12-27 17:03:20 bozo Exp $
+  $Id: xgnokii_data.c,v 1.11 2003-02-26 00:15:53 pkot Exp $
 
   X G N O K I I
 
@@ -34,7 +34,6 @@
 #include "xgnokii.h"
 #include "xgnokii_lowlevel.h"
 #include "xgnokii_data.h"
-//#include "data/virtmodem.h"
 
 static GtkWidget *GUI_DataWindow;
 bool GTerminateThread = false;

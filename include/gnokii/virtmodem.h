@@ -1,6 +1,6 @@
 /*
 
-  $Id: virtmodem.h,v 1.10 2002-12-27 17:03:20 bozo Exp $
+  $Id: virtmodem.h,v 1.11 2003-02-26 00:15:49 pkot Exp $
 
   G N O K I I
 
@@ -31,10 +31,7 @@
 #ifndef _gnokii_data_virtmodem_h
 #define _gnokii_data_virtmodem_h
 
-#include "compat.h"
-
-struct vm_queue
-{
+struct vm_queue {
 	int n;
 	int head;
 	int tail;
@@ -42,7 +39,6 @@ struct vm_queue
 };
 
 extern struct vm_queue queue;
-
 
 /* Prototypes */
 API bool gn_vm_initialise(const char *iname,

@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.h,v 1.16 2002-12-12 22:39:08 pkot Exp $
+  $Id: nk6510.h,v 1.17 2003-02-26 00:15:49 pkot Exp $
 
   G N O K I I
 
@@ -34,7 +34,7 @@
 #ifndef _gnokii_phones_nk6510_h
 #define _gnokii_phones_nk6510_h
 
-#include "gsm-data.h"
+#include "gnokii/data.h"
 
 typedef enum {
 	GN_OP_NK6510_GetSMSFolders = GN_OP_Max,

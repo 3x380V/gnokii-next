@@ -1,6 +1,6 @@
 /*
 
-  $Id: vcal.lx,v 1.9 2003-01-16 22:20:25 pkot Exp $
+  $Id: vcal.lx,v 1.10 2003-02-26 00:15:47 pkot Exp $
 
   G N O K I I
 
@@ -29,7 +29,10 @@
 %{
 #include <string.h>
 
-#include "gsm-common.h"
+#include "config.h"
+#include "compat.h"
+#include "misc.h"
+#include "gnokii/common.h"
 #include "gsm-filetypes.h"
 
 #define YY_DECL int yylex(char *type, char *text, char *desc, char *time, char *alarm, char *todo_priority, int lexnumber)

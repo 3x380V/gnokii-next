@@ -1,6 +1,6 @@
 /*
 
-  $Id: atbus.h,v 1.12 2002-12-16 12:24:41 ladis Exp $
+  $Id: atbus.h,v 1.13 2003-02-26 00:15:49 pkot Exp $
 
   G N O K I I
 
@@ -29,7 +29,7 @@
 #ifndef _gnokii_atbus_h
 #define _gnokii_atbus_h
 
-#include "gsm-statemachine.h"
+#include "gnokii/statemachine.h"
 
 gn_error atbus_initialise(int mode, struct gn_statemachine *state);
 

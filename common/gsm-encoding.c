@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-encoding.c,v 1.38 2003-02-19 22:01:16 pkot Exp $
+  $Id: gsm-encoding.c,v 1.39 2003-02-26 00:15:47 pkot Exp $
 
   G N O K I I
 
@@ -33,8 +33,8 @@
 #include <string.h>
 
 #include "misc.h"
-#include "gsm-common.h"
-#include "gsm-encoding.h"
+#include "gnokii/common.h"
+#include "gnokii/encoding.h"
 
 #define GN_CHAR_ALPHABET_SIZE 128
 

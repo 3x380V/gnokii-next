@@ -1,6 +1,6 @@
 /*
 
-  $Id: unixserial.c,v 1.31 2003-02-12 19:02:25 bozo Exp $
+  $Id: unixserial.c,v 1.32 2003-02-26 00:15:48 pkot Exp $
 
   G N O K I I
 
@@ -27,7 +27,7 @@
 */
 
 #include "misc.h"
-#include "gsm-api.h"
+#include "gnokii.h"
 #include "gnokii-internal.h"
 
 /* Do not compile this file under Win32 systems. */

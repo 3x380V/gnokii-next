@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.h,v 1.19 2003-01-16 00:06:08 bozo Exp $
+  $Id: nk6100.h,v 1.20 2003-02-26 00:15:49 pkot Exp $
 
   G N O K I I
 
@@ -33,7 +33,7 @@
 #ifndef _gnokii_phones_nk6100_h
 #define _gnokii_phones_nk6100_h
 
-#include "gsm-data.h"
+#include "gnokii/data.h"
 
 /* Phone Memory types */
 

@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.81 2003-02-19 22:01:15 pkot Exp $
+  $Id: atgen.c,v 1.82 2003-02-26 00:15:48 pkot Exp $
 
   G N O K I I
 
@@ -35,7 +35,7 @@
 #include <ctype.h>
 
 #include "gnokii-internal.h"
-#include "gsm-api.h"
+#include "gnokii.h"
 #include "phones/generic.h"
 #include "phones/atgen.h"
 #include "phones/atbosch.h"

@@ -1,6 +1,6 @@
 /*
 
-  $Id: sms.h,v 1.56 2003-02-18 00:40:46 pkot Exp $
+  $Id: sms.h,v 1.57 2003-02-26 00:15:49 pkot Exp $
 
   G N O K I I
 
@@ -31,12 +31,11 @@
 #ifndef _gnokii_gsm_sms_h
 #define _gnokii_gsm_sms_h
 
-#include "misc.h"
-#include "gsm-error.h"
-#include "gsm-common.h"
-#include "gsm-bitmaps.h"
-#include "gsm-ringtones.h"
-#include "gsm-encoding.h"
+#include <gnokii/error.h>
+#include <gnokii/common.h>
+#include <gnokii/bitmaps.h>
+#include <gnokii/ringtones.h>
+#include <gnokii/encoding.h>
 
 /* Maximum length of SMS center name */
 #define GN_SMS_CENTER_NAME_MAX_LENGTH  20

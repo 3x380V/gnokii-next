@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_lowlevel.h,v 1.26 2003-01-03 23:16:46 pkot Exp $
+  $Id: xgnokii_lowlevel.h,v 1.27 2003-02-26 00:15:53 pkot Exp $
   
   X G N O K I I
 
@@ -32,7 +32,7 @@
 
 #include <pthread.h>
 #include <glib.h>
-#include "gsm-api.h"
+#include "gnokii.h"
 
 #define INCALL_NUMBER_LENGTH	20
 #define NETMON_SCREEN_LENGTH	60

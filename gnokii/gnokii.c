@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.340 2003-02-18 00:40:46 pkot Exp $
+  $Id: gnokii.c,v 1.341 2003-02-26 00:15:48 pkot Exp $
 
   G N O K I I
 
@@ -71,9 +71,8 @@
 #  include <locale.h>
 #endif
 
+#include "gnokii-app.h"
 #include "gnokii.h"
-
-#include "gsm-api.h"
 
 #define MAX_INPUT_LINE_LEN 512
 

@@ -1,6 +1,6 @@
 /*
 
-  $Id: sms-nokia.c,v 1.7 2003-01-01 21:29:05 pkot Exp $
+  $Id: sms-nokia.c,v 1.8 2003-02-26 00:15:47 pkot Exp $
 
   G N O K I I
 
@@ -33,7 +33,7 @@
 #include "sms-nokia.h"
 
 #include "gnokii-internal.h"
-#include "gsm-api.h"
+#include "gnokii.h"
 
 /**
  * PackSmartMessagePart - Adds Smart Message header to the certain part of the message

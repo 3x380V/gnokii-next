@@ -1,6 +1,6 @@
 /*
 
-  $Id: unixserial.h,v 1.12 2002-12-27 18:47:41 bozo Exp $
+  $Id: unixserial.h,v 1.13 2003-02-26 00:15:49 pkot Exp $
 
   G N O K I I
 
@@ -36,7 +36,7 @@
 #endif	/* WIN32 */
 
 #include "misc.h"
-#include "gsm-error.h"
+#include "gnokii/error.h"
 
 int serial_open(const char *file, int oflag);
 int serial_close(int fd, struct gn_statemachine *state);
