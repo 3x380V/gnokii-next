@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-sms.c,v 1.71 2002-05-25 16:34:51 pkot Exp $
+  $Id: gsm-sms.c,v 1.72 2002-05-25 16:37:34 pkot Exp $
 
   G N O K I I
 
@@ -537,7 +537,7 @@ static GSM_Error DecodeSMSHeader(GSM_SMSMessage *rawsms, GSM_API_SMS *sms, SMS_U
 	dprintf("\tSMS center number: %s\n", sms->SMSC.Number);
 
 	/* Delivery time */
-	if (sms->Type = SMS_DeliveryReport) {
+	if (sms->Type == SMS_Delivery_Report) {
 		UnpackDateTime(rawsms->Time, &(sms->Time));
 		dprintf("\tDelivery date: %s\n", PrintDateTime(rawsms->Time));
 	}
