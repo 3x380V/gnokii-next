@@ -5,7 +5,7 @@ dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janík ml.
 dnl                2000 Karel Zak, Pawe³ Kot
 dnl                2002 BORBELY Zoltan
 dnl
-dnl  $Id: configure.in,v 1.144 2004-11-23 14:51:15 bozo Exp $
+dnl  $Id: configure.in,v 1.145 2005-01-24 17:43:05 bozo Exp $
 dnl
 
 AC_INIT(gnokii/gnokii.c)
@@ -489,7 +489,7 @@ int main()
                 ],
                 AC_DEFINE(USE_UNIX98PTYS),
                 AC_MSG_WARN("No unix98ptys"),
-		AC_MSG_WARN("Ensure to disable unix98ptys when crosscompiling"))
+		AC_DEFINE(USE_UNIX98PTYS))
    ]
 )
 
