@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.192 2002-02-01 23:09:35 pkot Exp $
+  $Id: gnokii.c,v 1.193 2002-02-04 22:09:22 pkot Exp $
 
   G N O K I I
 
@@ -3295,7 +3295,6 @@ int main(int argc, char *argv[])
 		{ OPT_SENDLOGO,          3, 4, GAL_XOR },
 		{ OPT_SENDRINGTONE,      2, 2, 0 },
 		{ OPT_GETSMSC,           0, 3, 0 },
-		{ OPT_SETSMSC,           0, 0, 0 },
 		{ OPT_GETWELCOMENOTE,    1, 1, 0 },
 		{ OPT_SETWELCOMENOTE,    1, 1, 0 },
 		{ OPT_NETMONITOR,        1, 1, 0 },
@@ -3306,7 +3305,6 @@ int main(int argc, char *argv[])
 		{ OPT_SETRINGTONE,       1, 1, 0 },
 		{ OPT_RESET,             0, 1, 0 },
 		{ OPT_GETPROFILE,        0, 3, 0 },
-		{ OPT_SETPROFILE,        0, 0, 0 },
 		{ OPT_WRITEPHONEBOOK,    0, 1, 0 },
 		{ OPT_DIVERT,            6, 10, 0 },
 
