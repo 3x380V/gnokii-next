@@ -1,6 +1,6 @@
 /*
 
-  $Id: lowlevel.c,v 1.11 2002-03-28 21:37:50 pkot Exp $
+  $Id: lowlevel.c,v 1.12 2002-04-20 22:24:02 machek Exp $
 
   S M S D
 
@@ -127,6 +127,8 @@ static GSM_Error fbusinit (bool enable_monitoring)
 
   if (!strcmp(smsdConfig.connection, "infrared"))
     connection = GCT_Infrared;
+  if (!strcmp(smsdConfig.connection, "tcp"))
+    connection = GCT_TCP;
 
   /* Initialise the code for the GSM interface. */     
 

@@ -1,6 +1,6 @@
 /*
 
-  $Id: unixserial.c,v 1.19 2002-03-28 21:37:46 pkot Exp $
+  $Id: unixserial.c,v 1.20 2002-04-20 22:24:01 machek Exp $
 
   G N O K I I
 
@@ -94,7 +94,7 @@ static void device_script_cfgfunc(const char *section, const char *key, const ch
 #endif
 }
 
-static int device_script(int fd, const char *section)
+int device_script(int fd, const char *section)
 {
 	pid_t pid;
 	const char *scriptname = CFG_Get(CFG_Info, "global", section);
@@ -139,7 +139,7 @@ static int device_script(int fd, const char *section)
 int serial_close_all_openfds[0x10];	/* -1 when entry not used, fd otherwise */
 int serial_close(int fd);
 
-static void serial_close_all(void)
+void serial_close_all(void)
 {
 	int i;
 

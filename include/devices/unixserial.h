@@ -1,6 +1,6 @@
 /*
 
-  $Id: unixserial.h,v 1.6 2002-03-28 21:37:49 pkot Exp $
+  $Id: unixserial.h,v 1.7 2002-04-20 22:24:02 machek Exp $
 
   G N O K I I
 
@@ -50,5 +50,10 @@ size_t serial_read(int fd, __ptr_t buf, size_t nbytes);
 size_t serial_write(int fd, const __ptr_t buf, size_t n);
 
 int serial_select(int fd, struct timeval *timeout);
+
+extern int serial_close_all_openfds[0x10];
+extern void serial_close_all(void);
+extern int device_script(int fd, const char *section);
+extern void unixserial_interrupted(int signo);
 
 #endif  /* __devices_unixserial_h */

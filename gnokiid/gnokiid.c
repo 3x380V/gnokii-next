@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokiid.c,v 1.22 2002-03-29 20:51:25 pkot Exp $
+  $Id: gnokiid.c,v 1.23 2002-04-20 22:24:02 machek Exp $
 
   G N O K I I
 
@@ -119,9 +119,10 @@ int main(int argc, char *argv[])
 		DebugMode = false;
 	}
 
-	if (!strcmp(Connection, "infrared")) {
+	if (!strcmp(Connection, "infrared"))
 		connection = GCT_Infrared;
-	}
+	if (!strcmp(Connection, "tcp"))
+		connection = GCT_TCP;
 
 	GTerminateThread = false;
 

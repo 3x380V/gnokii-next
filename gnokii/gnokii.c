@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.221 2002-04-18 19:39:34 machek Exp $
+  $Id: gnokii.c,v 1.222 2002-04-20 22:24:02 machek Exp $
 
   G N O K I I
 
@@ -330,6 +330,8 @@ static void fbusinit(void (*rlp_handler)(RLP_F96Frame *frame))
 	if (!strcasecmp(Connection, "dau9p"))    connection = GCT_DAU9P; /* Use only with 6210/7110 for faster connection with such cable */
 	if (!strcasecmp(Connection, "infrared")) connection = GCT_Infrared;
 	if (!strcasecmp(Connection, "irda"))     connection = GCT_Irda;
+	if (!strcasecmp(Connection, "tcp"))      connection = GCT_TCP;
+	
 
 	aux = CFG_Get(CFG_Info, "global", "use_locking");
 	/* Defaults to 'no' */

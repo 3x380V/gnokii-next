@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_lowlevel.c,v 1.40 2002-04-17 00:19:17 pkot Exp $
+  $Id: xgnokii_lowlevel.c,v 1.41 2002-04-20 22:24:02 machek Exp $
   
   X G N O K I I
 
@@ -218,10 +218,10 @@ static GSM_Error fbusinit(bool enable_monitoring)
 
 	if (!strcmp(xgnokiiConfig.connection, "infrared"))
 		connection = GCT_Infrared;
-
 	if (!strcmp(xgnokiiConfig.connection, "irda"))
 		connection = GCT_Irda;
-
+	if (!strcmp(xgnokiiConfig.connection, "tcp"))
+		connection = GCT_TCP;
 	if (!strcmp(xgnokiiConfig.connection, "dau9p"))
 		connection = GCT_DAU9P;
 

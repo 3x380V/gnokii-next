@@ -1,6 +1,6 @@
 /*
 
-  $Id: common.h,v 1.102 2002-04-04 22:35:37 pkot Exp $
+  $Id: common.h,v 1.103 2002-04-20 22:24:02 machek Exp $
 
   G N O K I I
 
@@ -44,7 +44,8 @@ typedef enum {
 	GCT_DAU9P,     /* Serial connection using DAU9P cable; use only with 6210/7110 if you want faster initialization */
 	GCT_Infrared, /* Infrared connection. */
 	GCT_Tekram,   /* Tekram Ir-Dongle */
-	GCT_Irda
+	GCT_Irda,
+	GCT_TCP,      /* TCP network connection */
 } GSM_ConnectionType;
 
 /* Maximum length of device name for serial port */

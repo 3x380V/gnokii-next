@@ -1,6 +1,6 @@
 /*
 
-  $Id: device.h,v 1.15 2002-04-03 22:21:55 bozo Exp $
+  $Id: device.h,v 1.16 2002-04-20 22:24:02 machek Exp $
 
   G N O K I I
 
@@ -56,6 +56,7 @@ int device_select(struct timeval *timeout);
 #  include "devices/unixserial.h"
 #  include "devices/unixirda.h"
 #  include "devices/tekram.h"
+#  include "devices/tcp.h"
 #else
 #  include "devices/winserial.h"
 #endif
