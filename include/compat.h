@@ -1,6 +1,6 @@
 /*
 
-  $Id: compat.h,v 1.26 2003-04-28 14:07:38 pkot Exp $
+  $Id: compat.h,v 1.27 2003-05-05 21:58:33 bozo Exp $
 
   G N O K I I
 
@@ -32,6 +32,8 @@
 #define	_gnokii_compat_h
 
 #include "config.h"
+
+#include <stdlib.h>
 
 #ifdef WIN32
 #  include <windows.h>
