@@ -5,7 +5,7 @@ dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janík ml.
 dnl                2000 Karel Zak, Pawe³ Kot
 dnl                2002 BORBELY Zoltan
 dnl
-dnl  $Id: configure.in,v 1.130 2004-01-18 13:02:13 uid66849 Exp $
+dnl  $Id: configure.in,v 1.131 2004-01-18 15:34:51 uid66849 Exp $
 dnl
 
 AC_INIT(gnokii/gnokii.c)
@@ -292,7 +292,7 @@ if test $ac_cv_have_sockaddr_rfcomm = yes; then
 	AC_DEFINE(HAVE_BLUETOOTH_NETGRAPH,[],[Compile on FreeBSD])
 	USE_BLUETOOTH="yes"
 	AC_CHECK_LIB(bluetooth, bt_aton,
-		    [LIBS="$LIBS -lbluetooth" AC_DEFINE(HAVE_BT_ATON,[],[Define to 1 if you have the `bt_aton' function.])])
+		    [LIBS="$LIBS -lbluetooth" AC_DEFINE(HAVE_BT_ATON,[],[Define to 1 if you have the \`bt_aton' function.])])
 fi
 
 
