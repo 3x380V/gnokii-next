@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-statemachine.c,v 1.53 2004-06-09 13:58:14 bozo Exp $
+  $Id: gsm-statemachine.c,v 1.54 2004-07-20 19:10:36 bozo Exp $
 
   G N O K I I
 
@@ -202,7 +202,8 @@ gn_error sm_wait_for(unsigned char messagetype, gn_data *data, struct gn_statema
 
 void sm_incoming_acknowledge(struct gn_statemachine *state)
 {
-	state->current_state = GN_SM_WaitingForResponse;
+	if (state->current_state == GN_SM_MessageSent)
+		state->current_state = GN_SM_WaitingForResponse;
 }
 
 

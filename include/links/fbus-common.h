@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus-common.h,v 1.5 2003-03-06 21:38:45 pkot Exp $
+  $Id: fbus-common.h,v 1.6 2004-07-20 19:10:36 bozo Exp $
 
   G N O K I I
 
@@ -49,7 +49,12 @@ enum fbus_rx_state {
 	FBUS_RX_GetType,
 	FBUS_RX_GetLength1,
 	FBUS_RX_GetLength2,
-	FBUS_RX_GetMessage
+	FBUS_RX_GetMessage,
+	FBUS_RX_EchoSource,
+	FBUS_RX_EchoType,
+	FBUS_RX_EchoLength1,
+	FBUS_RX_EchoLength2,
+	FBUS_RX_EchoMessage
 };
 
 #endif /* _gnokii_links_fbus_common_h */
