@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-statemachine.c,v 1.42 2003-02-16 23:53:10 pkot Exp $
+  $Id: gsm-statemachine.c,v 1.43 2003-02-17 23:23:49 pkot Exp $
 
   G N O K I I
 
@@ -231,7 +231,7 @@ static gn_error __sm_block_timeout(int waitfor, int t, gn_data *data, struct gn_
 		do {
 			s = gn_sm_loop(1, state);  /* Timeout=100ms */
 			gettimeofday(&now, NULL);
-		} while (timercmp(&next, &now, >) && (s == GN_SM_MessageSent || s == GN_SM_Initialised));
+		} while (timercmp(&next, &now, >) && (s == GN_SM_MessageSent));
 
 		if (s == GN_SM_WaitingForResponse || s == GN_SM_ResponseReceived) break;
 
