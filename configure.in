@@ -5,7 +5,7 @@ dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janík ml.
 dnl                2000 Karel Zak, Pawe³ Kot
 dnl                2002 BORBELY Zoltan
 dnl
-dnl  $Id: configure.in,v 1.128 2004-01-18 00:49:54 uid66849 Exp $
+dnl  $Id: configure.in,v 1.129 2004-01-18 01:28:04 uid66849 Exp $
 dnl
 
 AC_INIT(gnokii/gnokii.c)
@@ -35,8 +35,8 @@ ALL_LINGUAS="cs de et fi nl sk pl it sl fr"
 AC_CHECK_HEADERS(libintl.h)
 AM_GNU_GETTEXT([use-libtool])
 AC_CHECK_FUNCS(locale_charset)
-if test x$ac_cv_have_langinfo_codeset != xyes -a x$ac_cv_have_locale_charset != xyes ; then
-	AC_DEFINE(NEED_LOCALE_CHARSET,[],[Define if you need locale_charset])
+if test x$am_cv_langinfo_codeset != xyes -a x$ac_cv_func_locale_charset != xyes ; then
+	NEED_LOCALE_CHARSET=1
 fi
 
 dnl ======================== Check for include/config.h.in
