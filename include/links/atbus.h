@@ -1,6 +1,6 @@
 /*
 
-  $Id: atbus.h,v 1.7 2002-03-28 21:37:49 pkot Exp $
+  $Id: atbus.h,v 1.8 2002-04-25 23:33:30 machek Exp $
 
   G N O K I I
 
@@ -29,7 +29,7 @@
 #ifndef __atbus_h
 #define __atbus_h
 
-GSM_Error ATBUS_Initialise(GSM_Statemachine *state, int hw_handshake);
+GSM_Error ATBUS_Initialise(GSM_Statemachine *state, int mode);
 
 /* Define some result/error codes internal to the AT command functions.
    Also define a code for an unterminated message. */
