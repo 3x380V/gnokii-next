@@ -1,6 +1,6 @@
 /*
 
-  $Id: nokia.h,v 1.13 2002-09-28 23:51:38 pkot Exp $
+  $Id: nokia.h,v 1.14 2002-12-04 00:47:22 bozo Exp $
 
   G N O K I I
 
@@ -48,5 +48,13 @@ size_t PNOK_EncodeString(unsigned char *dest, size_t max, const unsigned char *s
 gn_error PNOK_CallDivert(GSM_Data *data, GSM_Statemachine *state);
 gn_error PNOK_IncomingCallDivert(int messagetype, unsigned char *message, int length, GSM_Data *data, GSM_Statemachine *state);
 int PNOK_FBUS_EncodeSMS(GSM_Data *data, GSM_Statemachine *state, unsigned char *req);
+
+/* Security functions: nk6100, nk7100 */
+gn_error PNOK_enable_extended_cmds(GSM_Data *data, GSM_Statemachine *state, unsigned char type);
+gn_error PNOK_make_call(GSM_Data *data, GSM_Statemachine *state);
+gn_error PNOK_answer_call(GSM_Data *data, GSM_Statemachine *state);
+gn_error PNOK_cancel_call(GSM_Data *data, GSM_Statemachine *state);
+gn_error PNOK_netmonitor(GSM_Data *data, GSM_Statemachine *state);
+gn_error PNOK_IncomingSecurity(int messagetype, unsigned char *message, int length, GSM_Data *data, GSM_Statemachine *state);
 
 #endif
