@@ -5,7 +5,7 @@ dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janík ml.
 dnl                2000 Karel Zak, Pawe³ Kot
 dnl                2002 BORBELY Zoltan
 dnl
-dnl  $Id: configure.in,v 1.133 2004-02-22 20:00:55 uid66849 Exp $
+dnl  $Id: configure.in,v 1.134 2004-02-22 21:12:03 uid66843 Exp $
 dnl
 
 AC_INIT(gnokii/gnokii.c)
@@ -37,6 +37,10 @@ AM_GNU_GETTEXT([use-libtool])
 AC_CHECK_FUNCS(locale_charset)
 if test x$am_cv_langinfo_codeset != xyes -a x$ac_cv_func_locale_charset != xyes ; then
 	NEED_LOCALE_CHARSET=1
+fi
+# if msgfmt or xgettext is not present on the system, disable nls build
+if test "$MSGFMT" = ":" -o "$XGETTEXT" = ":"; then
+	USE_NLS="no"
 fi
 
 dnl ======================== Check for include/config.h.in
