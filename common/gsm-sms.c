@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-sms.c,v 1.92 2002-06-04 22:41:30 machek Exp $
+  $Id: gsm-sms.c,v 1.93 2002-06-10 22:43:44 pkot Exp $
 
   G N O K I I
 
@@ -58,9 +58,9 @@ static struct udh_data headers[] = {
 	{ 0x06, "\x05\x04\x23\xf5\x00\x00" }, /* WAP vCalendar */
 	{ 0x06, "\x05\x04\x23\xf6\x00\x00" }, /* WAP vCardSecure */
 	{ 0x06, "\x05\x04\x23\xf7\x00\x00" }, /* WAP vCalendarSecure */
-	{ 0x04, "\x03\x01\x00\x00" },         /* Voice Messages */
-	{ 0x04, "\x03\x01\x01\x00" },         /* Fax Messages */
-	{ 0x04, "\x03\x01\x02\x00" },         /* Email Messages */
+	{ 0x04, "\x01\x02\x00\x00" },         /* Voice Messages */
+	{ 0x04, "\x01\x02\x01\x00" },         /* Fax Messages */
+	{ 0x04, "\x01\x02\x02\x00" },         /* Email Messages */
 	{ 0x00, "" },
 };
 
