@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.309 2002-10-29 20:37:34 pkot Exp $
+  $Id: gnokii.c,v 1.310 2002-10-30 23:35:58 pkot Exp $
 
   G N O K I I
 
@@ -3195,7 +3195,7 @@ static int writephonebook(int argc, char *args[])
 	if (argc && (strcmp("-i", args[0])) && (strcmp("-v", args[0])))
 		usage(stderr, -1);
 
-	if (!strcmp("-v", args[0]))
+	if (argc && !strcmp("-v", args[0]))
 		vcard = 1;
 
 	Line = OLine;
