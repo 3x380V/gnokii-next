@@ -1,4 +1,4 @@
-$Id: nk6510.txt,v 1.11 2003-10-28 01:43:25 bozo Exp $
+$Id: nk6510.txt,v 1.12 2003-11-29 11:49:05 bozo Exp $
 
 Assembled by
         Markus Plail <plail@web.de>
@@ -183,6 +183,22 @@ Correct format is FBUS version 2/MBUS version 2/IrDA/Bluetooth
     r Get operator logo     { 0x24, 0x00, 0x01, 0x00, 0x00, 0x00, 
                               0x02, 0x0c, 0x08, netcode (3 octets), 0x02, 0x00, 0x00, 
 			      0x1a, size, width, height, logo size (2 octets), logo size (2 octets), logo }
+
+0x0c: KEYPRESS
+
+    s ?                     { 0x01, ... }
+    r ?                     { 0x02, ... }
+
+    s ?                     { 0x03, ... }
+    r ?                     { 0x04, ... }
+
+    s ?                     { 0x0e, ... }
+    r ?                     { 0x0f, ... }
+
+    s ?                     { 0x11, 0x00, number of blocks, block... }
+                            where block is: { action, 0x00, ?, repeat count }
+			       where: action: 0x00 - press, 0x01 - release
+    r ?                     { 0x12, err, 0x00 }
 
 0x10: SUBSCRIBE
 

@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.369 2003-11-04 23:27:31 bozo Exp $
+  $Id: gnokii.c,v 1.370 2003-11-29 11:49:06 bozo Exp $
 
   G N O K I I
 
@@ -4349,7 +4349,8 @@ static int presskey(void)
 	error = gn_sm_functions(GN_OP_PressPhoneKey, &data, &state);
 	if (error == GN_ERR_NONE)
 		error = gn_sm_functions(GN_OP_ReleasePhoneKey, &data, &state);
-	fprintf(stderr, _("Failed to press key: %s\n"), gn_error_print(error));
+	if (error != GN_ERR_NONE)
+		fprintf(stderr, _("Failed to press key: %s\n"), gn_error_print(error));
 	return error;
 }
 
