@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.385 2004-02-17 21:31:09 uid66843 Exp $
+  $Id: gnokii.c,v 1.386 2004-02-22 17:34:00 uid66843 Exp $
 
   G N O K I I
 
@@ -248,7 +248,7 @@ static void version(void)
 	fprintf(stderr, _("Copyright (C) Hugh Blemings <hugh@blemings.org>, 1999, 2000\n"
 			  "Copyright (C) Pavel Janik ml. <Pavel.Janik@suse.cz>, 1999, 2000\n"
 			  "Copyright (C) Pavel Machek <pavel@ucw.cz>, 2001\n"
-			  "Copyright (C) Pawel Kot <pkot@linuxnews.pl>, 2001-2003\n"
+			  "Copyright (C) Pawel Kot <pkot@linuxnews.pl>, 2001-2004\n"
 			  "Copyright (C) BORBELY Zoltan <bozo@andrews.hu>, 2002\n"
 			  "gnokii is free software, covered by the GNU General Public License, and you are\n"
 			  "welcome to change it and/or distribute copies of it under certain conditions.\n"
