@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-encoding.c,v 1.24 2002-07-25 09:53:35 pkot Exp $
+  $Id: gsm-encoding.c,v 1.25 2002-07-25 10:11:24 pkot Exp $
 
   G N O K I I
 
@@ -112,7 +112,7 @@ static bool IsDefaultAlphabetExtensionChar(unsigned char value)
 static unsigned char DecodeWithDefaultAlphabetExtension(unsigned char value)
 {
 	switch (value) {
-	case 0x0a: return 0x0c; break; /* from feed */
+	case 0x0a: return 0x0c; break; /* form feed */
 	case 0x14: return '^';  break;
 	case 0x28: return '{';  break;
 	case 0x29: return '}';  break;
