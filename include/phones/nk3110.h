@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk3110.h,v 1.5 2002-03-28 21:37:49 pkot Exp $
+  $Id: nk3110.h,v 1.6 2003-02-14 23:44:47 pkot Exp $
 
   G N O K I I
 
@@ -38,9 +38,6 @@
 /* Phone Memory Sizes */
 #define P3110_MEMORY_SIZE_SM 20
 #define P3110_MEMORY_SIZE_ME 0
-
-/* 2 seconds idle timeout */
-#define P3110_KEEPALIVE_TIMEOUT 20;
 
 /* Number of times to try resending SMS (empirical) */
 #define P3110_SMS_SEND_RETRY_COUNT 4
