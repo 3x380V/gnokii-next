@@ -1,6 +1,6 @@
 /*
 
-  $Id: rlp-crc24.c,v 1.2 2001-02-21 19:57:02 chris Exp $
+  $Id: rlp-crc24.c,v 1.3 2002-01-01 22:54:33 pkot Exp $
 
   G N O K I I
 
@@ -11,11 +11,6 @@
   Released under the terms of the GNU GPL, see file COPYING for more details.
 
   CRC24 (aka FCS) implementation in RLP.
-
-  $Log: rlp-crc24.c,v $
-  Revision 1.2  2001-02-21 19:57:02  chris
-  More fiddling with the directory layout
-
 
 */
 

@@ -1,6 +1,6 @@
 /*
 
-  $Id: rlp-common.c,v 1.5 2001-03-26 23:39:36 pkot Exp $
+  $Id: rlp-common.c,v 1.6 2002-01-01 22:54:33 pkot Exp $
 
   G N O K I I
 
@@ -15,23 +15,6 @@
 
   Actual implementation of RLP protocol. Based on GSM 04.22 version 7.1.0,
   downloadable from www.etsi.org (if you register with them)
-
-  $Log: rlp-common.c,v $
-  Revision 1.5  2001-03-26 23:39:36  pkot
-  Minor updates:
-   - Windows INLINE patch (Manfred Jonsson)
-   - patch to configure.in to compile under FreeBSD (Panagiotis Astithas)
-   - other cleanups (me)
-
-  Revision 1.4  2001/03/13 01:23:18  pkot
-  Windows updates (Manfred Jonsson)
-
-  Revision 1.3  2001/02/21 19:57:00  chris
-  More fiddling with the directory layout
-
-  Revision 1.2  2001/02/17 22:40:51  chris
-  ATA support
-
 
 */
 

@@ -1,6 +1,6 @@
 /*
 
-  $Id: virtmodem.h,v 1.1 2001-02-21 19:57:11 chris Exp $
+  $Id: virtmodem.h,v 1.2 2002-01-01 22:54:33 pkot Exp $
 
   G N O K I I
 
@@ -11,11 +11,6 @@
   Released under the terms of the GNU GPL, see file COPYING for more details.
 
   Header file for virtmodem code in virtmodem.c
-
-  $Log: virtmodem.h,v $
-  Revision 1.1  2001-02-21 19:57:11  chris
-  More fiddling with the directory layout
-
 
 */
 

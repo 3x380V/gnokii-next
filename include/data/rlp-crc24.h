@@ -1,6 +1,6 @@
 /*
 
-  $Id: rlp-crc24.h,v 1.2 2001-11-27 12:19:01 pkot Exp $
+  $Id: rlp-crc24.h,v 1.3 2002-01-01 22:54:33 pkot Exp $
 
   G N O K I I
 
@@ -13,14 +13,6 @@
   This file:  rlp-crc24.h   Version 0.3.1
 
   Header file for CRC24 (aka FCS) implementation in RLP.
-
-  $Log: rlp-crc24.h,v $
-  Revision 1.2  2001-11-27 12:19:01  pkot
-  Cleanup, indentation, ANSI complaint preprocesor symbols (Jan Kratochvil, me)
-
-  Revision 1.1  2001/02/21 19:57:11  chris
-  More fiddling with the directory layout
-
 
 */
 
