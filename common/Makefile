@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.38 2002-04-03 22:21:55 bozo Exp $
+# $Id: Makefile,v 1.39 2002-04-14 16:57:38 pkot Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -71,8 +71,8 @@ clean:
 	$(RM) $(OBJS) *~ depend libgnokii.a libgnokii.so gsm-filetypes.o vcal.c phones/PHONES.o links/LINKS.o devices/DEVICES.o
 
 install:
-	$(INSTALL) -d $(libdir)
-	$(INSTALL) libgnokii.so $(libdir)
+	$(INSTALL) -d $(DESTDIR)/$(libdir)
+	$(INSTALL) libgnokii.so $(DESTDIR)/$(libdir)
 	@echo
 
 install-strip: install

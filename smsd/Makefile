@@ -3,7 +3,7 @@
 #
 # Copyright (C) 1999 Hugh Blemings & Pavel Janík ml. & Jan Derfinak
 #               2000 Karel Zak
-# $Id: Makefile,v 1.12 2002-02-19 00:11:00 pkot Exp $
+# $Id: Makefile,v 1.13 2002-04-14 16:57:39 pkot Exp $
 #
 
 TOPDIR=..
@@ -57,10 +57,10 @@ clean:
 	$(RM) $(OBJS) *~ depend smsd libpq.so libmysql.so core*
 
 install: all
-	$(INSTALL) -d $(bindir)
-	$(INSTALL) -m 755 -s smsd $(bindir)
-	$(INSTALL) -d ${prefix}/share/smsd
-	$(INSTALL) lib*.so ${prefix}/share/smsd
+	$(INSTALL) -d $(DESTDIR)/$(bindir)
+	$(INSTALL) -m 755 -s smsd $(DESTDIR)/$(bindir)
+	$(INSTALL) -d $(DESTDIR)/${prefix}/share/smsd
+	$(INSTALL) lib*.so $(DESTDIR)/${prefix}/share/smsd
 
 depend dep:
 	$(CC) $(CFLAGS) -MM *.c >depend
