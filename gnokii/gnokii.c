@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.310 2002-10-30 23:35:58 pkot Exp $
+  $Id: gnokii.c,v 1.311 2002-11-01 23:23:20 pkot Exp $
 
   G N O K I I
 
@@ -3012,7 +3012,7 @@ static int getphonebook(int argc, char *argv[])
 				sprintf(buf, "X_GSM_STORE_AT:%s%d\n", memory_type_string, entry.Location);
 				phonebook2vcard(stdout, &entry, buf);
 			} else {
-				fprintf(stdout, _("%d. Name: %s\nNumber: %s\nGroup id: %d\n"), entry.Location, entry.Name, entry.Number, entry.Location);
+				fprintf(stdout, _("%d. Name: %s\nNumber: %s\nGroup id: %d\n"), entry.Location, entry.Name, entry.Number, entry.Group);
 				for (i = 0; i < entry.SubEntriesCount; i++) {
 					switch (entry.SubEntries[i].EntryType) {
 					case 0x08:
