@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus-3110.c,v 1.12 2002-12-10 11:05:56 ladis Exp $
+  $Id: fbus-3110.c,v 1.13 2002-12-10 11:20:32 ladis Exp $
 
   G N O K I I
 
@@ -147,7 +147,7 @@ static void fb3110_rx_state_machine(unsigned char rx_byte)
 					/* FIXME: modify Buffer[0] to code FAX frame types */
 				}
 
-				dprintf("--> %02x:%02x:", i->frame_type, i->frame+len);
+				dprintf("--> %02x:%02x:", i->frame_type, i->frame_len);
 				for (count = 0; count < i->buffer_count; count++)
 					dprintf("%02hhx:", i->buffer[count]);
 				dprintf("\n");
