@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.143 2003-06-18 20:41:37 bozo Exp $
+  $Id: nk6100.c,v 1.144 2003-07-03 22:57:46 bozo Exp $
 
   G N O K I I
 
@@ -881,7 +881,7 @@ static gn_error IncomingPhonebook(int messagetype, unsigned char *message, int l
 		case 0x6f:
 			return GN_ERR_TIMEOUT;
 		case 0x7d:
-			return GN_ERR_INTERNALERROR;
+			return GN_ERR_INVALIDMEMORYTYPE;
 		case 0x8d:
 			return GN_ERR_INVALIDSECURITYCODE;
 		default:
