@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-sms.c,v 1.78 2002-05-27 22:24:18 pkot Exp $
+  $Id: gsm-sms.c,v 1.79 2002-05-27 22:51:10 pkot Exp $
 
   G N O K I I
 
@@ -389,7 +389,7 @@ static GSM_Error DecodeUDH(unsigned char *message, SMS_UserDataHeader *udh)
 	unsigned char length, pos, nr;
 
 	udh->Length = length = message[0];
-	pos = 0;
+	pos = 1;
 	nr = 0;
 	while (length > 1) {
 		unsigned char udh_length;
