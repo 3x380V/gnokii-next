@@ -1,6 +1,6 @@
 /*
 
-  $Id: sms.h,v 1.60 2003-03-06 22:32:29 pkot Exp $
+  $Id: sms.h,v 1.61 2003-08-18 18:07:38 pkot Exp $
 
   G N O K I I
 
@@ -347,7 +347,7 @@ typedef struct {
 	gn_sms_data_type type;
 	unsigned int length;
 	union {
-		unsigned char text[GN_SMS_MAX_LENGTH + 1];
+		unsigned char text[10 * GN_SMS_MAX_LENGTH + 1];
 		gn_sms_multi multi;
 		gn_bmp bitmap;
 		gn_ringtone ringtone;

@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.50 2003-06-03 19:31:08 pkot Exp $
+# $Id: Makefile,v 1.51 2003-08-18 18:07:38 pkot Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -18,7 +18,7 @@ TOPDIR=..
 include $(TOPDIR)/Makefile.global
 
 MAJOR_NUMBER = 1
-MINOR_NUMBER = 0
+MINOR_NUMBER = 1
 
 OBJS =	gsm-api.o \
 	gsm-error.o \
