@@ -1,6 +1,6 @@
 /*
 
-  $Id: at-emulator.c,v 1.17 2002-04-22 20:16:37 pkot Exp $
+  $Id: at-emulator.c,v 1.18 2002-04-23 23:19:26 bozo Exp $
 
   G N O K I I
 
@@ -579,7 +579,7 @@ bool	ATEM_CommandPlusC(char **buf)
 		switch (**buf) {
 		case '=':
 			buf[0]++;
-			sscanf(*buf, "%d", &index);
+			index = atoi(*buf);
 			buf[0] += strlen(*buf);
 
 			data.SMSMessage->MemoryType = SMSType;
@@ -637,7 +637,7 @@ bool	ATEM_CommandPlusC(char **buf)
 		switch (**buf) {
 		case '=':
 			buf[0]++;
-			sscanf(*buf, "%d", &index);
+			index = atoi(*buf);
 			buf[0] += strlen(*buf);
 
 			data.SMSMessage->MemoryType = SMSType;
