@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk7110.c,v 1.71 2002-04-04 22:35:37 pkot Exp $
+  $Id: nk7110.c,v 1.72 2002-04-17 00:19:16 pkot Exp $
 
   G N O K I I
 
@@ -735,7 +735,7 @@ static GSM_Error P7110_IncomingFolder(int messagetype, unsigned char *message, i
 {
 	int i, j;
 	int nextfolder = 0x10;
-	bool found;
+	/* bool found; */
 
 	switch (message[3]) {
 	/* getsms */
@@ -1379,7 +1379,6 @@ long P7110_GetNoteAlarmDiff(GSM_DateTime *time, GSM_DateTime *alarm)
 static GSM_Error P7110_FirstCalendarFreePos(GSM_Data *data, GSM_Statemachine *state)
 {
 	unsigned char req[] = { FBUS_FRAME_HEADER, 0x31 };
-	GSM_Error error;
 
  	if (SM_SendMessage(state, 4, P7110_MSG_CALENDAR, req) != GE_NONE) return GE_NOTREADY;
 	return SM_WaitFor(state, data, P7110_MSG_CALENDAR);

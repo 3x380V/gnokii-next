@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_lowlevel.c,v 1.39 2002-04-15 10:39:53 plail Exp $
+  $Id: xgnokii_lowlevel.c,v 1.40 2002-04-17 00:19:17 pkot Exp $
   
   X G N O K I I
 
@@ -308,7 +308,6 @@ static void RefreshSMS(const gint number)
 	GSM_RawData *raw;
 	GSList *tmp_list;
 	gint i, j, dummy;
-	GSM_MemoryType memtypes;
 
 #ifdef XDEBUG
 	g_print("RefreshSMS is running...\n");
@@ -563,7 +562,6 @@ static gint A_WriteMemoryLocationAll(gpointer data)
 {
 	GSM_Error error;
 	D_MemoryLocationAll *mla = (D_MemoryLocationAll *) data;
-	GSM_Data gdat;
 
 	error = mla->status = GE_UNKNOWN;
 

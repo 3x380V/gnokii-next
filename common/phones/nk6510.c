@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.c,v 1.9 2002-04-05 09:57:00 plail Exp $
+  $Id: nk6510.c,v 1.10 2002-04-17 00:19:16 pkot Exp $
 
   G N O K I I
 
@@ -1059,7 +1059,6 @@ static GSM_Error P6510_ReadPhonebook(GSM_Data *data, GSM_Statemachine *state)
 					0x00, 0x00, 0x00, 0x00, 
 				         0x00, 0x01, /*location */
 				         0x00, 0x00};
-	GSM_Error error;
 
 	/*       00 01 00 07 01 01 00 01 
 		FE 10 

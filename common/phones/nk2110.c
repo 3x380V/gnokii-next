@@ -1,6 +1,6 @@
 /* -*- linux-c -*-
 
-  $Id: nk2110.c,v 1.31 2002-04-16 23:44:58 machek Exp $
+  $Id: nk2110.c,v 1.32 2002-04-17 00:19:16 pkot Exp $
 
   G N O K I I
 
@@ -51,7 +51,7 @@
 #include "misc.h"
 #include "gsm-common.h"
 #include "device.h"
-#include "gsm-sms.h"
+#include "gsm-api.h"
 #include "gsm-statemachine.h"
 #include "phones/generic.h"
 #include "phones/nk2110.h"
@@ -420,7 +420,7 @@ GetSMSMessage(GSM_Data *data)
 
 	data->RawData->Length = 180;
 	data->RawData->Data = calloc(data->RawData->Length, 1);
-	memcpy(data->RawData->Data, SMSData+1, 180);
+	memcpy(data->RawData->Data, (void *)SMSData+1, 180);
 	if (ParseSMS(data, 0))
 		eprintf("Error in parsesms?\n");
 
