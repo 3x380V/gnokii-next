@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-bitmaps.c,v 1.14 2002-04-02 14:06:59 plail Exp $
+  $Id: gsm-bitmaps.c,v 1.15 2002-04-04 00:35:50 pkot Exp $
 
   G N O K I I
 
@@ -63,30 +63,22 @@ bool GSM_IsPointBitmap(GSM_Bitmap *bmp, int x, int y)
 {
 	int i = 0;
 
-
-	if (bmp->type == GSM_OperatorLogo || bmp->type == GSM_CallerLogo){
+	switch (bmp->type) {
+	case GSM_OperatorLogo:
+	case GSM_CallerLogo:
 		i = (bmp->bitmap[(y*bmp->width+x)/8] & 1 << (7-((y*bmp->width+x)%8)));
-		if (i) 
-			return true;
-		else 
-			return false;
-	}
-
-	if (bmp->type == SMS_Picture) {
+		break;
+/*	case SMS_Picture:
 		i = (bmp->bitmap[9 * y + (x / 8)] & 1 << (7 - (x % 8)));
-		if (i) 
-			return true;
-		else 
-			return false;
-	}
-
-	if ((bmp->type == GSM_StartupLogo) || (bmp->type == GSM_NewOperatorLogo)){
+		break;*/
+	case GSM_StartupLogo:
+	case GSM_NewOperatorLogo:
 		i = (bmp->bitmap[((y/8)*bmp->width) + x] & 1<<((y%8)));
-		if (i) 
-			return true;
-		else 
-			return false;
+		break;
+	default:
+		break;
 	}
+	return ((i == 0) ? false : true);
 }
 
 void GSM_ClearBitmap(GSM_Bitmap *bmp)
