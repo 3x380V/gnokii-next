@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_contacts.c,v 1.53 2004-02-16 23:06:25 uid66843 Exp $
+  $Id: xgnokii_contacts.c,v 1.54 2004-02-17 20:14:09 uid66843 Exp $
   
   X G N O K I I
 
@@ -2664,9 +2664,9 @@ static void ExportNative(FILE * f)
 			}
 
 			if (pbEntry->entry.memory_type == GN_MT_ME)
-				sprintf(buf2, "B;%d;%d;", i + 1, pbEntry->entry.caller_group);
+				sprintf(buf2, "ME;%d;%d;", i + 1, pbEntry->entry.caller_group);
 			else
-				sprintf(buf2, "A;%d;%d;", i - memoryStatus.MaxME + 1,
+				sprintf(buf2, "SM;%d;%d;", i - memoryStatus.MaxME + 1,
 					pbEntry->entry.caller_group);
 			strcat(buf, buf2);
 
