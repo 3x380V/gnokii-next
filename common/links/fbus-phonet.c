@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus-phonet.c,v 1.35 2004-04-29 22:13:12 pkot Exp $
+  $Id: fbus-phonet.c,v 1.36 2004-06-27 20:24:14 pkot Exp $
 
   G N O K I I
 
@@ -74,7 +74,7 @@ static bool phonet_open(struct gn_statemachine *state)
 					 0x05};
 
 	if (!state)
-		return;
+		return false;
 
 	memset(&init_resp, 0, 7);
 
