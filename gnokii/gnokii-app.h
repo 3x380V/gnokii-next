@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-app.h,v 1.34 2002-03-28 21:37:48 pkot Exp $
+  $Id: gnokii-app.h,v 1.35 2002-04-03 01:08:51 bozo Exp $
 
   G N O K I I
 
@@ -27,19 +27,6 @@
   Header file for test utility.
 
 */
-
-struct gnokii_arg_len {
-	int gal_opt;
-	int gal_min;
-	int gal_max;
-	int gal_flags;
-};
-
-/* This is used for checking correct argument count. If it is used then if
-   the user specifies some argument, their count should be equivalent to the
-   count the programmer expects. */
-
-#define GAL_XOR 0x01
 
 /* Constants for Profiles. */
 
