@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-encoding.c,v 1.7 2002-01-11 11:11:44 pkot Exp $
+  $Id: gsm-encoding.c,v 1.8 2002-01-11 17:51:44 pkot Exp $
 
   G N O K I I
 
@@ -230,7 +230,7 @@ void DecodeUnicode (unsigned char* dest, const unsigned char* src, int len)
 		wc = src[(2*i)+1] | (src[2*i] << 8);
 		dest[i] = DecodeWithUnicodeAlphabet(wc);
 	}
-	dest[len]=0;
+	dest[len] = 0;
 	return;
 }
 
