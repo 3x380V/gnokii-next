@@ -1,6 +1,6 @@
 /*
  *
- * $Id: unixirda.h,v 1.11 2003-02-26 00:15:49 pkot Exp $
+ * $Id: unixirda.h,v 1.12 2004-06-19 23:20:46 pkot Exp $
  *
  * G N O K I I
  *
@@ -27,29 +27,5 @@
 
 #ifndef __unix_irda_h_
 #define __unix_irda_h_
-
-#ifdef HAVE_IRDA
-
-#include <stdlib.h>
-#include <unistd.h>
-#include <stdio.h>
-#include <fcntl.h>
-#include <errno.h>
-#include <string.h>
-#include <sys/time.h>
-#include <sys/socket.h>
-#include <linux/types.h>
-#include <linux/irda.h>
-
-#endif
-
-#include "misc.h"
-#include "gnokii.h"
-
-int irda_open(struct gn_statemachine *state);
-int irda_close(int fd, struct gn_statemachine *state);
-int irda_write(int fd, const __ptr_t bytes, int size, struct gn_statemachine *state);
-int irda_read(int fd, __ptr_t bytes, int size, struct gn_statemachine *state);
-int irda_select(int fd, struct timeval *timeout, struct gn_statemachine *state);
 
 #endif

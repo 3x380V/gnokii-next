@@ -1,6 +1,6 @@
 /*
 
-  $Id: device.c,v 1.33 2003-11-20 21:10:33 bozo Exp $
+  $Id: device.c,v 1.34 2004-06-19 23:20:34 pkot Exp $
 
   G N O K I I
 
@@ -31,7 +31,7 @@
 #include "misc.h"
 #include "gnokii.h"
 #include "device.h"
-#include "devices/unixirda.h"
+#include "devices/irda.h"
 #include "devices/unixbluetooth.h"
 #ifndef WIN32
 #  include "devices/unixserial.h"
