@@ -1,13 +1,13 @@
 /*
 
-  $Id: nk7110.h,v 1.12 2002-02-01 23:09:36 pkot Exp $
+  $Id: nk7110.h,v 1.13 2002-03-21 00:26:49 pkot Exp $
 
   G N O K I I
 
   A Linux/Unix toolset and driver for Nokia mobile phones.
 
   Copyright (C) 2000 Hugh Blemings & Pavel Janík ml.
-  Copytight (C) 2000 Chris Kemp
+  Copyright (C) 2000 Chris Kemp
 
   Released under the terms of the GNU GPL, see file COPYING for more details.
 

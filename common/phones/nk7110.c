@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk7110.c,v 1.60 2002-03-20 22:07:07 pkot Exp $
+  $Id: nk7110.c,v 1.61 2002-03-21 00:26:48 pkot Exp $
 
   G N O K I I
 
@@ -890,7 +890,7 @@ static GSM_Error P7110_GetSMS(GSM_Data *data, GSM_Statemachine *state)
 
 	/* see if the message we want is from the last read folder, i.e. */
 	/* we don't have to get folder status again */
-	if (data->SMSMessage->MemoryType != data->SMSFolder->FolderID) {
+	if ((data->SMSFolder) && (data->SMSMessage->MemoryType != data->SMSFolder->FolderID)) {
 		dprintf("Getting list of SMS folders...\n");
 		if (SM_SendMessage(state, 6, 0x14, req_folders) != GE_NONE) return GE_NOTREADY;
 		error = SM_Block(state, data, 0x14);

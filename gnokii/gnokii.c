@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.207 2002-03-20 22:07:07 pkot Exp $
+  $Id: gnokii.c,v 1.208 2002-03-21 00:26:48 pkot Exp $
 
   G N O K I I
 
@@ -869,6 +869,7 @@ static int getsms(int argc, char *argv[])
 	for (count = start_message; count <= end_message; count ++) {
 		int offset = 0;
 
+		message.MemoryType = StrToMemoryType(memory_type_string);
 		message.Number = count;
 		data.SMSMessage = &message;
 		dprintf("MemoryType (gnokii.c) : %i\n", message.MemoryType);

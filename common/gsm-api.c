@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-api.c,v 1.38 2002-02-09 00:13:34 pkot Exp $
+  $Id: gsm-api.c,v 1.39 2002-03-21 00:26:48 pkot Exp $
 
   G N O K I I
 
@@ -29,6 +29,7 @@
 #include "gsm-common.h"
 #include "data/rlp-common.h"
 #include "gsm-statemachine.h"
+#include "phones/nk6510.h"
 #include "phones/nk7110.h"
 #include "phones/nk6100.h"
 #include "phones/nk3110.h"
@@ -81,6 +82,7 @@ GSM_Error GSM_Initialise(char *model, char *device, char *initlength, GSM_Connec
 	strncpy(sm->Link.PortDevice, device, sizeof(sm->Link.PortDevice) - 1);
 
 	REGISTER_PHONE(nokia_7110, NULL);
+	REGISTER_PHONE(nokia_6510, NULL);
 	REGISTER_PHONE(nokia_6100, NULL);
 	REGISTER_PHONE(nokia_3110, NULL);
 	REGISTER_PHONE(nokia_2110, NULL);

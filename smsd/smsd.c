@@ -8,7 +8,7 @@
 
   Released under the terms of the GNU GPL, see file COPYING for more details.
 
-  $Id: smsd.c,v 1.13 2002-02-14 12:03:10 ja Exp $
+  $Id: smsd.c,v 1.14 2002-03-21 00:26:49 pkot Exp $
 */
 
 #include <string.h>
@@ -36,6 +36,7 @@
 #include "gsm-common.h"
 #include "gsm-api.h"
 #include "phones/nk7110.h"
+#include "phones/nk6510.h"
 #include "phones/nk6100.h"
 #include "phones/nk3110.h"
 #include "phones/nk2110.h"
