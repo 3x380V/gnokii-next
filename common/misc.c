@@ -1,6 +1,6 @@
 /*
 
-  $Id: misc.c,v 1.36 2002-04-04 21:32:42 bozo Exp $
+  $Id: misc.c,v 1.37 2002-04-17 01:37:09 bozo Exp $
 
   G N O K I I
 
@@ -124,53 +124,6 @@ char *GetModel (const char *num)
 {
 	return (GetPhoneModel(num)->model);
 }
-
-#ifndef HAVE_VASPRINTF
-/* Adapted from snprintf(3) man page: */
-int gvasprintf(char **destp, const char *fmt, va_list ap)
-{
-	int n, size = 0x100;
-	char *p, *pnew;
-
-	if (!(p = malloc(size))) {
-		*destp = NULL;
-		return(-1);
-	}
-	for (;;) {
-		/* Try to print in the allocated space. */
-		n = gvsprintf(p, size, fmt, ap);
-		/* If that worked, return the string. */
-		if (n > -1 && n < size) {
-			*destp = p;
-			return(n);
-		}
-		/* Else try again with more space. */
-		if (n > -1)	/* glibc 2.1 */
-			size = n + 1;	/* precisely what is needed */
-		else		/* glibc 2.0 */
-			size *= 2;	/* twice the old size */
-		if (!(pnew = realloc(p, size))) {
-			free(p);
-			*destp = NULL;
-			return(-1);
-		}
-		p = pnew;
-	}
-}
-#endif
-
-#ifndef HAVE_ASPRINTF
-int gasprintf(char **destp, const char *fmt, ...)
-{
-	va_list ap;
-	int r;
-
-	va_start(ap, fmt);
-	r = gvasprintf(destp, fmt, ap);
-	va_end(ap);
-	return(r);
-}
-#endif
 
 void GSM_WriteErrorLog(const char *fmt, ...)
 {

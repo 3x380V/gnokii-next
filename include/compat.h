@@ -1,6 +1,6 @@
 /*
 
-  $Id: compat.h,v 1.10 2002-04-08 08:15:54 pkot Exp $
+  $Id: compat.h,v 1.12 2002-04-17 01:38:20 bozo Exp $
 
   G N O K I I
 
@@ -41,7 +41,11 @@
 #endif
 
 #ifdef HAVE_STDARG_H
-#include <stdarg.h>
+#  include <stdarg.h>
+#endif
+
+#ifdef HAVE_SYS_SOCKET_H
+#  include <sys/socket.h>
 #endif
 
 
@@ -107,6 +111,23 @@ int asprintf(char **ptr, const char *format, ...);
 
 #ifndef HAVE_VASPRINTF
 int vasprintf(char **ptr, const char *format, va_list ap);
+#endif
+
+/*
+ * The following code was taken from W. Richard Stevens'
+ * "UNIX Network Programming", Volume 1, Second Edition.
+ *
+ * We need the newer CMSG_LEN() and CMSG_SPACE() macros, but few
+ * implementations support them today.  These two macros really need
+ * an ALIGN() macro, but each implementation does this differently.
+ */
+
+#ifndef CMSG_LEN
+#  define CMSG_LEN(size) (sizeof(struct cmsghdr) + (size))
+#endif
+
+#ifndef CMSG_SPACE
+#  define CMSG_SPACE(size) (sizeof(struct cmsghdr) + (size))
 #endif
 
 #ifdef WIN32
