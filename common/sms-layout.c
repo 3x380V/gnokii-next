@@ -1,6 +1,6 @@
 /*
 
-  $Id: sms-layout.c,v 1.2 2002-05-19 21:52:21 machek Exp $
+  $Id: sms-layout.c,v 1.3 2002-05-20 09:27:17 machek Exp $
 
   G N O K I I
 
@@ -153,12 +153,10 @@ static GSM_Error EncodeSMSSubmitHeader(SMSMessage_Layout *layout, GSM_API_SMS *s
 		if (rawsms->Report) frame[layout->Report] |= 0x20;
 	}
 
-#if 0
 	/* Validity Period Format: mask - 0x00, 0x10, 0x08, 0x18 */
 	if (layout->Validity > -1) {
-		frame[layout->Validity] |= ((SMS->Validity.VPF & 0x03) << 3);
+		frame[layout->Validity] |= 0xab; // rawsms->Validity[0];
 	}
-#endif
 
 	/* Reject Duplicates */
 	if (layout->RejectDuplicates > -1) {
