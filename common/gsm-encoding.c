@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-encoding.c,v 1.23 2002-07-24 23:01:02 pkot Exp $
+  $Id: gsm-encoding.c,v 1.24 2002-07-25 09:53:35 pkot Exp $
 
   G N O K I I
 
@@ -94,6 +94,9 @@ static bool IsEscapeChar(unsigned char value)
 
 static bool IsDefaultAlphabetExtensionChar(unsigned char value)
 {
+	wchar_t retval;
+
+	if (mbtowc(&retval, &value, 1) == -1) return false;
 	return (value == 0x0c ||
 		value == '^' ||
 		value == '{' ||
@@ -103,7 +106,7 @@ static bool IsDefaultAlphabetExtensionChar(unsigned char value)
 		value == '~' ||
 		value == ']' ||
 		value == '|' ||
-		value == 0xa4);
+		retval == 0x20ac);
 }
 
 static unsigned char DecodeWithDefaultAlphabetExtension(unsigned char value)
