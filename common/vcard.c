@@ -1,6 +1,6 @@
 /*
 
-  $Id: vcard.c,v 1.2 2002-12-09 23:41:15 pkot Exp $
+  $Id: vcard.c,v 1.3 2002-12-10 12:59:34 ladis Exp $
   
   G N O K I I
 
@@ -50,7 +50,7 @@ API int phonebook2vcard(FILE * f, gn_phonebook_entry *entry, char *addon)
 	for (i = 0; i < entry->subentries_count; i++) {
 		switch (entry->subentries[i].entry_type) {
 		case 0x08:
-			fprintf(f, "EMAIL;INTERNET:%s\n", entry->subrntries[i].data.number);
+			fprintf(f, "EMAIL;INTERNET:%s\n", entry->subentries[i].data.number);
 			break;
 		case 0x09:
 			fprintf(f, "ADR;HOME:%s\n", entry->subentries[i].data.number);

@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-networks.c,v 1.21 2002-12-09 00:42:41 pkot Exp $
+  $Id: gsm-networks.c,v 1.22 2002-12-10 12:59:34 ladis Exp $
 
   G N O K I I
 
@@ -29,7 +29,7 @@
 */
 
 #include "config.h"
-
+#include "compat.h"
 #include <string.h>
 #include "gsm-networks.h"
 

@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-sms.c,v 1.119 2002-12-09 00:44:02 pkot Exp $
+  $Id: gsm-sms.c,v 1.120 2002-12-10 12:59:34 ladis Exp $
 
   G N O K I I
 
@@ -42,7 +42,7 @@
 #include "sms-nokia.h"
 
 #include "gnokii-internal.h"
-#include "gnokii-api.h"
+#include "gsm-api.h"
 
 #define ERROR() do { if (error != GN_ERR_NONE) return error; } while (0)
 

@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-statemachine.c,v 1.34 2002-12-09 00:24:16 pkot Exp $
+  $Id: gsm-statemachine.c,v 1.35 2002-12-10 12:59:34 ladis Exp $
 
   G N O K I I
 
@@ -31,7 +31,7 @@
 #include "gsm-statemachine.h"
 
 #include "gnokii-internal.h"
-#include "gnokii-api.h"
+#include "gsm-api.h"
 
 gn_error SM_Initialise(struct gn_statemachine *state)
 {

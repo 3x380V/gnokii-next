@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-filetypes.c,v 1.38 2002-12-09 00:42:04 pkot Exp $
+  $Id: gsm-filetypes.c,v 1.39 2002-12-10 12:59:34 ladis Exp $
 
   G N O K I I
 
@@ -38,6 +38,9 @@
 #include "gsm-filetypes.h"
 #include "gsm-bitmaps.h"
 #include "gsm-ringtones.h"
+
+#include "gnokii-internal.h"
+#include "gsm-api.h"
 
 #ifdef XPM
 #include <X11/xpm.h>

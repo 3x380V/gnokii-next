@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-call.c,v 1.4 2002-12-09 00:36:01 pkot Exp $
+  $Id: gsm-call.c,v 1.5 2002-12-10 12:59:34 ladis Exp $
 
   G N O K I I
 
@@ -36,7 +36,7 @@
 #include "gsm-call.h"
 
 #include "gnokii-internal.h"
-#include "gnokii-api.h"
+#include "gsm-api.h"
 
 static gn_call calltable[GN_CALL_MAX_PARALLEL];
 

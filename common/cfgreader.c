@@ -1,6 +1,6 @@
 /*
 
-  $Id: cfgreader.c,v 1.25 2002-08-18 15:00:52 pkot Exp $
+  $Id: cfgreader.c,v 1.26 2002-12-10 12:59:34 ladis Exp $
 
   G N O K I I
 
@@ -39,6 +39,7 @@
 #include <errno.h>
 
 #include "cfgreader.h"
+#include "gnokii-internal.h"
 
 API struct gn_cfg_header *gn_cfg_info;
 
