@@ -1,4 +1,4 @@
-$Id: nk6110.txt,v 1.7 2002-02-24 16:44:30 pkot Exp $
+$Id: nk6110.txt,v 1.8 2002-02-25 23:06:44 pkot Exp $
 
 Assembled by
 	Balazs Nagy (js@lsc.hu)
@@ -76,6 +76,7 @@ Correct format is FBUS version 2/Direct IRDA/MBUS version 2
       data call		             0x07,0xa3,0xb8,0x81,0x20,0x15,0x63,0x80,
       (non digital lines)            0x01,0x60 }
     s Send DTMF             { 0x0050, length, {ascii codes for DTMF}, 0x01 }
+    r Send DTMF ok          { 0x0051 }
     
     Note:
       to make data call (non digital lines):

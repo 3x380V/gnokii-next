@@ -1,5 +1,5 @@
 /*
-  $Id: nk6100.h,v 1.6 2002-01-27 23:38:32 pkot Exp $
+  $Id: nk6100.h,v 1.7 2002-02-25 23:06:55 pkot Exp $
 
   G N O K I I
 
@@ -34,5 +34,7 @@
 #define P6100_MEMORY_VOICE 0x0b /* Voice Mailbox */
 /* This is used when the memory type is unknown. */
 #define P6100_MEMORY_XX 0xff
+
+#define	P6100_MAX_SMS_MESSAGES	12 /* maximum number of sms messages */
 
 #endif  /* #ifndef __phones_nk6100_h */

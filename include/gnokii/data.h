@@ -1,6 +1,6 @@
 /*
 
-  $Id: data.h,v 1.18 2002-02-24 16:44:31 pkot Exp $
+  $Id: data.h,v 1.19 2002-02-25 23:06:54 pkot Exp $
 
   G N O K I I
 
@@ -62,6 +62,8 @@ typedef struct {
 	bool RLP_OutDTX;
 	void (*RLP_RX_Callback)(RLP_F96Frame *Frame);
 	GSM_SecurityCode *SecurityCode;
+	const char *DTMFString;
+	unsigned char ResetType;
 } GSM_Data;
 
 /* Global structures intended to be independant of phone etc */
@@ -148,6 +150,8 @@ typedef enum {
 	GOP_EnterSecurityCode,
 	GOP_GetSecurityCodeStatus,
 	GOP_ChangeSecurityCode,
+	GOP_SendDTMF,
+	GOP_Reset,
 	GOP_Max,	/* don't append anything after this entry */
 } GSM_Operation;
 

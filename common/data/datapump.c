@@ -1,6 +1,6 @@
 /*
 
-  $Id: datapump.c,v 1.10 2002-02-21 01:12:04 pkot Exp $
+  $Id: datapump.c,v 1.11 2002-02-25 23:06:51 pkot Exp $
 
   G N O K I I
 
@@ -161,6 +161,8 @@ static int DP_CallBack(RLP_UserInds ind, u8 *buffer, int length)
 
 void DP_CallPassup(GSM_CallStatus CallStatus, GSM_CallInfo *CallInfo)
 {
+	dprintf("DP_CallPassup called with %d\n", CallStatus);
+
 	switch (CallStatus) {
 	case GSM_CS_IncomingCall:
 		if (CommandMode == false) ATEM_ModemResult(MR_CARRIER);

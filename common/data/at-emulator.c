@@ -1,6 +1,6 @@
 /*
 
-  $Id: at-emulator.c,v 1.13 2002-02-16 16:04:43 pkot Exp $
+  $Id: at-emulator.c,v 1.14 2002-02-25 23:06:50 pkot Exp $
 
   G N O K I I
 
@@ -147,6 +147,8 @@ void	ATEM_InitRegisters(void)
 /* This gets called to indicate an incoming call */
 void ATEM_CallPassup(GSM_CallStatus CallStatus, GSM_CallInfo *CallInfo)
 {
+	dprintf("ATEM_CallPassup called with %d\n", CallStatus);
+
 	if (CallStatus == GSM_CS_IncomingCall) {
 		ATEM_ModemResult(MR_RING);
 		IncomingCallNo = CallInfo->CallID;
