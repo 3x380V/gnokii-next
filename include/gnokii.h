@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.h,v 1.64 2003-11-30 18:55:13 bozo Exp $
+  $Id: gnokii.h,v 1.65 2004-01-17 23:41:06 uid66849 Exp $
 
   G N O K I I
 
@@ -50,7 +50,11 @@ typedef unsigned char uint8_t;
 #include <stdarg.h>
 	
 #ifndef API
-#  define API
+#  if defined(WIN32) && defined(GNOKIIDLL_IMPORTS)
+#    define API __declspec(dllimport)
+#  else
+#    define API
+#  endif
 #endif
 
 struct gn_statemachine;
