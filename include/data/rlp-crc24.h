@@ -1,6 +1,6 @@
 /*
 
-  $Id: rlp-crc24.h,v 1.4 2002-03-28 21:37:48 pkot Exp $
+  $Id: rlp-crc24.h,v 1.5 2002-12-10 23:27:19 pkot Exp $
 
   G N O K I I
 
@@ -28,16 +28,13 @@
 
 */
 
-#ifndef __data_rlp_crc24_h
-#define __data_rlp_crc24_h
+#ifndef _gnokii_data_rlp_crc24_h
+#define _gnokii_data_rlp_crc24_h
 
-#ifndef __misc_h
-#  include    "misc.h"
-#endif
+#include "misc.h"
 
 /* Prototypes for functions */
-
-void RLP_CalculateCRC24Checksum(u8 *data, int length, u8 *crc);
-bool RLP_CheckCRC24FCS(u8 *data, int length);
+void rlp_crc24checksum_calculate(u8 *data, int length, u8 *crc);
+bool rlp_crc24fcs_check(u8 *data, int length);
 
 #endif

@@ -1,6 +1,6 @@
 /*
 
-  $Id: virtmodem.h,v 1.7 2002-11-19 00:07:27 bozo Exp $
+  $Id: virtmodem.h,v 1.8 2002-12-10 23:27:19 pkot Exp $
 
   G N O K I I
 
@@ -28,10 +28,10 @@
 
 */
 
-#ifndef __data_virtmodem_h
-#define __data_virtmodem_h
+#ifndef _gnokii_data_virtmodem_h
+#define _gnokii_data_virtmodem_h
 
-struct VM_queue
+struct vm_queue
 {
 	int n;
 	int head;
@@ -39,19 +39,18 @@ struct VM_queue
 	unsigned char buf[256];
 };
 
-extern struct VM_queue queue;
+extern struct vm_queue queue;
 
 
 /* Prototypes */
-
-bool VM_Initialise(char *model,
+bool vm_initialise(char *model,
 		   char *port,
 		   char *initlength,
 		   const char *connection,
 		   char *bindir,
 		   bool debug_mode,
 		   bool GSM_Init);
-void VM_Loop(void);
-void VM_Terminate(void);
+void vm_loop(void);
+void vm_terminate(void);
 
-#endif	/* __virtmodem_h */
+#endif	/* _gnokii_data_virtmodem_h */
