@@ -2,7 +2,7 @@ GNOKII FAQ
 Pawe³ Kot, pkot@linuxnews.pl
 Hugh Blemings, hugh@blemings.org
 
-$Id: FAQ,v 1.28 2005-01-10 22:39:56 bozo Exp $
+$Id: FAQ,v 1.29 2005-01-16 13:05:47 pkot Exp $
 
 -------------------------------------------------------------------------------
 Q. What is gnokii?
@@ -154,7 +154,7 @@ A. gnokii didn't install correctly. You probably had gnokii installed already
    'make install'.
 
 -------------------------------------------------------------------------------
-Q. I had problems during compilation with vcal.lx/vcal.c. What should I do?
+Q. I had problems during compilation with gnvcal.lx/gnvcal.c. What should I do?
 
 A. Install flex. It should be available in every Linux distribution as well
    as in CygWin.
