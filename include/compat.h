@@ -1,6 +1,6 @@
 /*
 
-  $Id: compat.h,v 1.7 2002-04-03 22:21:55 bozo Exp $
+  $Id: compat.h,v 1.8 2002-04-04 21:32:42 bozo Exp $
 
   G N O K I I
 
@@ -110,8 +110,10 @@ int vasprintf(char **ptr, const char *format, va_list ap);
 #  define inline /* Not supported */
 #  define strcasecmp stricmp
 #  define strncasecmp strnicmp
-#  define sleep(x) Sleep((x) * 1000)
-#  define usleep(x) Sleep(((x) < 1000) ? 1 : ((x) / 1000))
+#  ifndef HAVE_UNISTD_H
+#    define sleep(x) Sleep((x) * 1000)
+#    define usleep(x) Sleep(((x) < 1000) ? 1 : ((x) / 1000))
+#  endif /* HAVE_UNISTD_H */
 #endif
 
 #endif
