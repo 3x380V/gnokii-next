@@ -1,6 +1,6 @@
 /*
 
-  $Id: bitmaps.h,v 1.17 2002-06-10 21:16:36 pkot Exp $
+  $Id: bitmaps.h,v 1.18 2002-06-10 21:29:50 pkot Exp $
 
   G N O K I I
 
@@ -73,7 +73,7 @@ API void GSM_ClearPointBitmap(GSM_Bitmap *bmp, int x, int y);
 API bool GSM_IsPointBitmap(GSM_Bitmap *bmp, int x, int y);
 API void GSM_ClearBitmap(GSM_Bitmap *bmp);
 API void GSM_ResizeBitmap(GSM_Bitmap *bitmap, GSM_Bitmap_Types target, GSM_Information *info);
-API void GSM_PrintBitmap(GSM_Bitmap *bitmap);
+API void GSM_PrintBitmap(GSM_Bitmap *bitmap, FILE *f);
 
 /* SMS bitmap functions */
 int GSM_EncodeSMSBitmap(GSM_Bitmap *bitmap, unsigned char *message);

@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-bitmaps.c,v 1.30 2002-06-10 21:16:36 pkot Exp $
+  $Id: gsm-bitmaps.c,v 1.31 2002-06-10 21:29:50 pkot Exp $
 
   G N O K I I
 
@@ -30,8 +30,6 @@
   Functions for common bitmap operations.
 
 */
-
-//#define DEBUG
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -172,19 +170,19 @@ API void GSM_ResizeBitmap(GSM_Bitmap *bitmap, GSM_Bitmap_Types target, GSM_Infor
 	}
 }
 
-API void GSM_PrintBitmap(GSM_Bitmap *bitmap)
+API void GSM_PrintBitmap(GSM_Bitmap *bitmap, FILE *f)
 {
 	int x, y;
 
 	for (y = 0; y < bitmap->height; y++) {
 		for (x = 0; x < bitmap->width; x++) {
 			if (GSM_IsPointBitmap(bitmap, x, y)) {
-				fprintf(stdout, "#");
+				fprintf(f, "#");
 			} else {
-				fprintf(stdout, " ");
+				fprintf(f, " ");
 			}
 		}
-		fprintf(stdout, "\n");
+		fprintf(f, "\n");
 	}
 }
 
