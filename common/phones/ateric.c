@@ -1,6 +1,6 @@
 /*
 
-  $Id: ateric.c,v 1.4 2002-03-28 21:37:47 pkot Exp $
+  $Id: ateric.c,v 1.5 2002-07-26 21:00:59 bozo Exp $
 
   G N O K I I
 
@@ -59,7 +59,7 @@ static GSM_Error GetMemoryStatus(GSM_Data *data,  GSM_Statemachine *state)
 }
 
 
-static GSM_Error ReplyMemoryStatus(int messagetype, unsigned char *buffer, int length, GSM_Data *data)
+static GSM_Error ReplyMemoryStatus(int messagetype, unsigned char *buffer, int length, GSM_Data *data, GSM_Statemachine *state)
 {
 	AT_LineBuffer buf;
 	char *pos;

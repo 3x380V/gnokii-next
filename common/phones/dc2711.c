@@ -1,6 +1,6 @@
 /*
 
-  $Id: dc2711.c,v 1.11 2002-04-18 21:10:53 pkot Exp $
+  $Id: dc2711.c,v 1.12 2002-07-26 21:00:59 bozo Exp $
 
   G N O K I I
 
@@ -77,7 +77,7 @@ static void Terminate()
 
 /* ----------------------------------------------------------------------------------- */
 
-static GSM_Error Reply(int messagetype, unsigned char *buffer, int length, GSM_Data *data)
+static GSM_Error Reply(int messagetype, unsigned char *buffer, int length, GSM_Data *data, GSM_Statemachine *state)
 {
 	printf("[ack]");
 	return GE_NONE;

@@ -1,6 +1,6 @@
 /*
 
-  $Id: generic.c,v 1.12 2002-05-15 22:45:43 manfred Exp $
+  $Id: generic.c,v 1.13 2002-07-26 21:00:59 bozo Exp $
 
   G N O K I I
 
@@ -43,7 +43,7 @@
 #include "links/utils.h"
 
 /* If we do not support a message type, print out some debugging info */
-GSM_Error PGEN_IncomingDefault(int messagetype, unsigned char *buffer, int length)
+GSM_Error PGEN_IncomingDefault(int messagetype, unsigned char *buffer, int length, GSM_Statemachine *state)
 {
 	dprintf("Unknown Message received [type (%02x) length (%d): \n", messagetype, length);
 	SM_DumpMessage(messagetype, buffer, length);

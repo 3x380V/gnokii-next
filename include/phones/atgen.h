@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.h,v 1.7 2002-03-28 21:37:49 pkot Exp $
+  $Id: atgen.h,v 1.8 2002-07-26 21:00:59 bozo Exp $
 
   G N O K I I
 
@@ -49,7 +49,7 @@ typedef enum {
 	CHARUCS2
 } GSMAT_Charset;
 
-typedef GSM_Error (*GSM_RecvFunctionType)(int type, unsigned char *buffer, int length, GSM_Data *data);
+typedef GSM_Error (*GSM_RecvFunctionType)(int type, unsigned char *buffer, int length, GSM_Data *data, GSM_Statemachine *state);
 typedef GSM_Error (*AT_SendFunctionType)(GSM_Data *data, GSM_Statemachine *s);
 
 typedef struct {

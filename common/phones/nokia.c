@@ -1,6 +1,6 @@
 /*
 
-  $Id: nokia.c,v 1.15 2002-07-13 17:28:51 pkot Exp $
+  $Id: nokia.c,v 1.16 2002-07-26 21:00:59 bozo Exp $
 
   G N O K I I
 
@@ -138,7 +138,7 @@ GSM_Error PNOK_CallDivert(GSM_Data *data, GSM_Statemachine *state)
 	return SM_BlockTimeout(state, data, 0x06, 100);
 }
 
-GSM_Error PNOK_IncomingCallDivert(int messagetype, unsigned char *message, int length, GSM_Data *data)
+GSM_Error PNOK_IncomingCallDivert(int messagetype, unsigned char *message, int length, GSM_Data *data, GSM_Statemachine *state)
 {
 	unsigned char *pos;
 	GSM_CallDivert *cd;
