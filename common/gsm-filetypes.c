@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-filetypes.c,v 1.34 2002-07-24 10:21:51 plail Exp $
+  $Id: gsm-filetypes.c,v 1.35 2002-08-07 10:45:02 plail Exp $
 
   G N O K I I
 
@@ -1303,9 +1303,9 @@ void savenlm(FILE *file, GSM_Bitmap *bitmap)
 			if (pos2 == 7) buffer[pos] = 0;
 			if (GSM_IsPointBitmap(bitmap, x, y)) buffer[pos] |= (1 << pos2);
 			pos2--;
-			if (pos2 < 0) {pos2 = 7; pos++;} //going to new line
+			if (pos2 < 0) {pos2 = 7; pos++;} /* going to new line */
 		}
-		if (pos2 != 7) {pos2 = 7; pos++;} //for startup logos - new line with new byte
+		if (pos2 != 7) {pos2 = 7; pos++;} /* for startup logos - new line with new byte */
 	}
 
 	division = div(bitmap->width, 8);
