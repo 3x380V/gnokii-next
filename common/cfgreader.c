@@ -1,6 +1,6 @@
 /*
 
-  $Id: cfgreader.c,v 1.37 2003-02-18 22:10:03 pkot Exp $
+  $Id: cfgreader.c,v 1.38 2003-02-19 00:07:54 pkot Exp $
 
   G N O K I I
 
@@ -301,14 +301,10 @@ static bool cfg_psection_load(gn_config *cfg, const char *section, const gn_conf
 			cfg->connection_type = GN_CT_Infrared;
 		else if (!strcasecmp(val, "m2bus"))
 			cfg->connection_type = GN_CT_M2BUS;
-#ifdef HAVE_IRDA
 		else if (!strcasecmp(val, "irda"))
 			cfg->connection_type = GN_CT_Irda;
-#endif
-#ifdef HAVE_BLUETOOTH
 		else if (!strcasecmp(val, "bluetooth"))
 			cfg->connection_type = GN_CT_Bluetooth;
-#endif
 #ifndef WIN32
 		else if (!strcasecmp(val, "tcp"))
 			cfg->connection_type = GN_CT_TCP;

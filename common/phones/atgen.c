@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.79 2003-02-18 00:08:57 pkot Exp $
+  $Id: atgen.c,v 1.80 2003-02-19 00:07:54 pkot Exp $
 
   G N O K I I
 
@@ -1191,9 +1191,7 @@ static gn_error Initialise(gn_data *setupdata, struct gn_statemachine *state)
 	switch (state->config.connection_type) {
 	case GN_CT_Serial:
 	case GN_CT_Bluetooth:
-#ifdef HAVE_IRDA
 	case GN_CT_Irda:
-#endif
 		if (!strcmp(setupdata->model, "dancall"))
 			ret = cbus_initialise(state);
 		else if (!strcmp(setupdata->model, "AT-HW"))
