@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile.global.in,v 1.22 2001-09-27 23:29:31 pkot Exp $
+# $Id: Makefile.global.in,v 1.23 2001-11-14 11:01:58 pkot Exp $
 #
 # Global Makefiles configuration for the GNOKII.
 #
@@ -23,7 +23,7 @@ exec_prefix    = @exec_prefix@
 bindir         = @bindir@
 sbindir        = @sbindir@
 xbindir        = ${prefix}/X11R6/bin/
-libdir         = @libdir@/${PACKAGE}
+libdir         = @libdir@
 xgnokii_libdir = @XGNOKIIDIR@/@XPACKAGE@
 man1dir        = @mandir@/man1/
 man8dir        = @mandir@/man8/
@@ -73,5 +73,5 @@ endif
 
 
 CFLAGS += -I$(GNOKII_INCLUDE)
-LDFLAGS = $(LIBS)
+LDFLAGS = $(LIBS) -Wl,--rpath -Wl,$(libdir)
 
