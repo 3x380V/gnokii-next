@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.278 2002-07-26 10:22:57 plail Exp $
+  $Id: gnokii.c,v 1.279 2002-07-26 22:14:44 pkot Exp $
 
   G N O K I I
 
@@ -81,6 +81,8 @@
 #include "gsm-bitmaps.h"
 #include "gsm-ringtones.h"
 #include "gsm-statemachine.h"
+
+#define MAX_INPUT_LINE_LEN 512
 
 struct gnokii_arg_len {
 	int gal_opt;
@@ -2833,8 +2835,7 @@ static int writephonebook(int argc, char *args[])
 	char *memory_type_string;
 	int line_count = 0;
 	int subentry;
-
-	char *Line, OLine[500], BackLine[500];
+	char *Line, OLine[MAX_INPUT_LINE_LEN], BackLine[MAX_INPUT_LINE_LEN];
 	char *ptr;
 
 	/* Check argument */
@@ -2846,7 +2847,7 @@ static int writephonebook(int argc, char *args[])
 	memset(&entry, 0, sizeof(GSM_PhonebookEntry));
 
 	/* Go through data from stdin. */
-	while (GetLine(stdin, Line, 499)) {
+	while (GetLine(stdin, Line, MAX_INPUT_LINE_LEN)) {
 		strcpy(BackLine, Line);
 		line_count++;
 
