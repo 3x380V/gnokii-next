@@ -4,7 +4,7 @@ dnl
 dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janík ml.
 dnl                2000 Karel Zak, Pawe³ Kot
 dnl
-dnl  $Id: configure.in,v 1.38 2001-03-06 22:27:45 pkot Exp $
+dnl  $Id: configure.in,v 1.39 2001-03-08 23:21:47 pkot Exp $
 dnl
 
 AC_INIT(gnokii/gnokii.c)
@@ -182,9 +182,6 @@ fi
 if test x"$USE_NLS" = xyes; then
   AC_DEFINE(USE_NLS)
 fi
-
-CFLAGS="$CFLAGS $NLS_FLAGS"
-LIBS="$LIBS $NLS_LIBS"
 
 dnl ======================== Checks for libraries.
 
@@ -397,6 +394,9 @@ AC_FUNC_MEMCMP
 AC_TYPE_SIGNAL
 AC_FUNC_STRFTIME
 AC_CHECK_FUNCS(mktime select strdup strstr strtol strtok strsep snprintf)
+
+CFLAGS="$CFLAGS $NLS_FLAGS"
+LIBS="$LIBS $NLS_LIBS"
 
 PACKAGE=gnokii
 XPACKAGE=xgnokii
