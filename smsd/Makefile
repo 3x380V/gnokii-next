@@ -3,14 +3,14 @@
 #
 # Copyright (C) 1999 Hugh Blemings & Pavel Janík ml. & Jan Derfinak
 #               2000 Karel Zak
-# $Id: Makefile,v 1.22 2003-09-30 21:30:37 ja Exp $
+# $Id: Makefile,v 1.23 2003-10-05 19:42:41 ja Exp $
 #
 
 GLIBCFLAGS = glib-config --cflags
 GLIBLDLIBS = glib-config --libs
 
-# Comment out above and uncomment below lines if you want compile smsd
-# with glib2 instead of glib1. This is not well tested so be careful.
+# Comment out above lines and uncomment below lines if you want compile smsd
+# with glib2 instead of glib1.
 #
 #GLIBCFLAGS = pkg-config --cflags glib-2.0
 #GLIBLDLIBS = pkg-config --libs glib-2.0

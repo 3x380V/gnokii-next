@@ -1,6 +1,6 @@
 /*
 
-  $Id: lowlevel.h,v 1.10 2003-02-26 00:15:51 pkot Exp $
+  $Id: lowlevel.h,v 1.11 2003-10-05 19:42:41 ja Exp $
 
   S M S D
 
@@ -72,7 +72,7 @@ extern pthread_cond_t  smsCond;
 extern pthread_mutex_t sendSMSMutex;
 extern pthread_cond_t  sendSMSCond;
 extern void InitPhoneMonitor (void);
-extern void *Connect (void *a);
+extern void *Connect (void *);
 extern void InsertEvent (PhoneEvent *event);
 
 #endif
