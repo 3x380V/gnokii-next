@@ -1,6 +1,6 @@
 /*
 
-  $Id: nokia.h,v 1.19 2003-03-06 22:52:20 pkot Exp $
+  $Id: nokia.h,v 1.20 2003-10-01 00:13:26 bozo Exp $
 
   G N O K I I
 
@@ -55,6 +55,8 @@ gn_error pnok_call_make(gn_data *data, struct gn_statemachine *state);
 gn_error pnok_call_answer(gn_data *data, struct gn_statemachine *state);
 gn_error pnok_call_cancel(gn_data *data, struct gn_statemachine *state);
 gn_error pnok_netmonitor(gn_data *data, struct gn_statemachine *state);
+gn_error pnok_get_locks_info(gn_data *data, struct gn_statemachine *state);
+gn_error pnok_play_tone(gn_data *data, struct gn_statemachine *state);
 gn_error pnok_security_incoming(int messagetype, unsigned char *message, int length, gn_data *data, struct gn_statemachine *state);
 
 #endif
