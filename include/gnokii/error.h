@@ -1,6 +1,6 @@
 /*
 
-  $Id: error.h,v 1.9 2002-04-30 18:56:12 pkot Exp $
+  $Id: error.h,v 1.10 2002-07-01 23:30:41 bozo Exp $
 
   G N O K I I
 
@@ -91,5 +91,6 @@ typedef enum {
 } GSM_Error;
 
 API char *print_error(GSM_Error e);
+API GSM_Error ISDNCauseToGSMError(char **src, char **msg, unsigned char loc, unsigned char cause);
 
 #endif
