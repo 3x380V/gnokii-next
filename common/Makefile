@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.14 2000-12-19 16:18:15 pkot Exp $
+# $Id: Makefile,v 1.15 2001-01-12 14:09:12 pkot Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -34,7 +34,8 @@ OBJS =	cfgreader.o \
 	rlp-crc24.o \
 	vcal.o \
 	misc.o \
-	gsm-bitmaps.o
+	gsm-bitmaps.o \
+	gsm-common.o
 
 DATA_OBJS = virtmodem.o \
 	at-emulator.o \
