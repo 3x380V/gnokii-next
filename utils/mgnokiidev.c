@@ -1,6 +1,6 @@
 /*
 
-  $Id: mgnokiidev.c,v 1.18 2003-01-15 09:42:30 pkot Exp $
+  $Id: mgnokiidev.c,v 1.19 2003-03-25 09:58:44 bozo Exp $
 
   G N O K I I
 
@@ -38,6 +38,7 @@
 #include "misc.h"
 
 #include <stdlib.h>
+#include <string.h>
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <sys/stat.h>
