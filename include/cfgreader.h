@@ -1,6 +1,6 @@
 /*
 
-  $Id: cfgreader.h,v 1.8 2002-04-30 18:56:12 pkot Exp $
+  $Id: cfgreader.h,v 1.9 2002-07-30 15:48:13 pkot Exp $
 
   G N O K I I
 
@@ -51,7 +51,7 @@ struct CFG_Header {
 
 /* Global variables */
 
-API struct CFG_Header *CFG_Info;
+extern API struct CFG_Header *CFG_Info;
 
 /* Function prototypes */
 
