@@ -1,6 +1,6 @@
 /*
 
-  $Id: data.h,v 1.9 2002-01-27 23:38:31 pkot Exp $
+  $Id: data.h,v 1.10 2002-01-28 12:14:19 pkot Exp $
 
   G N O K I I
 
@@ -105,6 +105,7 @@ typedef enum {
 	GOP_SendSMS,
 	GOP_GetSpeedDial,
 	GOP_GetSMSCenter,
+	GOP_SetSMSCenter,
 	GOP_GetDateTime,
 	GOP_GetCalendarNote,
 	GOP_CallDivert,
