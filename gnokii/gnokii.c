@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.197 2002-02-16 16:04:43 pkot Exp $
+  $Id: gnokii.c,v 1.198 2002-02-21 00:47:20 pkot Exp $
 
   G N O K I I
 
@@ -2058,7 +2058,7 @@ static int monitormode(void)
 	GSM_MemoryStatus ON_MemoryStatus   = {GMT_ON, 0, 0};
 	GSM_MemoryStatus RC_MemoryStatus   = {GMT_RC, 0, 0};
 
-	GSM_SMSMemoryStatus SMSStatus = {0, 0};
+	SMS_Status SMSStatus = {0, 0, 0, 0};
 
 //	char Number[20];
 
