@@ -1,6 +1,6 @@
 /*
 
-  $Id: fake.c,v 1.10 2002-07-07 23:04:47 pkot Exp $
+  $Id: fake.c,v 1.11 2002-07-08 23:31:31 pkot Exp $
 
   G N O K I I
 
@@ -93,8 +93,7 @@ static GSM_Error AT_WriteSMS(GSM_Data *data, GSM_Statemachine *state, char* cmd)
 	if (!data->RawSMS) return GE_INTERNALERROR;
 
 	/* Prepare the message and count the size */
-	memcpy(req2, data->RawSMS->MessageCenter, data->RawSMS->MessageCenter[0] + 1);
-	offset += data->RawSMS->MessageCenter[0];
+	req[offset] = 0x00; /* Message Center */
 
 	req2[offset + 1] = 0x01 | 0x10; /* Validity period in relative format */
 	if (data->RawSMS->RejectDuplicates) req2[offset + 1] |= 0x04;
@@ -111,11 +110,11 @@ static GSM_Error AT_WriteSMS(GSM_Data *data, GSM_Statemachine *state, char* cmd)
 
 	req2[offset + 4] = data->RawSMS->PID;
 	req2[offset + 5] = data->RawSMS->DCS;
-	req2[offset + 6] = 0xaa; /* Validity period */
+	req2[offset + 6] = 0x00; /* Validity period */
 	req2[offset + 7] = data->RawSMS->Length;
-	memcpy(req2 + offset + 8, data->RawSMS->UserData, data->RawSMS->Length);
+	memcpy(req2 + offset + 8, data->RawSMS->UserData, data->RawSMS->UserDataLength);
 
-	length = data->RawSMS->Length + offset + 8;
+	length = data->RawSMS->UserDataLength + offset + 8;
 
 	fprintf(stdout, "AT+%s=%d\n", cmd, length - data->RawSMS->MessageCenter[0] - 1);
 
