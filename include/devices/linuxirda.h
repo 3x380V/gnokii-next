@@ -1,4 +1,4 @@
- * This file is part of gnokii.
+/* This file is part of gnokii.
  *
  * Gnokii is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -44,7 +44,7 @@
  ********************************************************************/
 
 /*
- * $Id: linuxirda.h,v 1.2 2002-03-28 21:37:49 pkot Exp $
+ * $Id: linuxirda.h,v 1.3 2002-03-29 09:27:56 hugh Exp $
  *
  * GNOKII modifications:
  * Fixes for Solaris compile (Artur Kubiak and Michael Wiedmann)
