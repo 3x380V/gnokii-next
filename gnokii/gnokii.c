@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.335 2003-02-09 22:00:47 pkot Exp $
+  $Id: gnokii.c,v 1.336 2003-02-09 22:01:44 pkot Exp $
 
   G N O K I I
 
@@ -54,7 +54,8 @@
 
 #  include <windows.h>
 #  include <process.h>
-#  include "getopt.h"
+#  include <dirent.h>
+#  include "win32/getopt.h"
 
 #else
 
