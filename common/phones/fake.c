@@ -1,6 +1,6 @@
 /*
 
-  $Id: fake.c,v 1.15 2002-12-09 14:45:54 ladis Exp $
+  $Id: fake.c,v 1.16 2002-12-12 23:21:57 pkot Exp $
 
   G N O K I I
 
@@ -36,6 +36,8 @@
 #include "gsm-common.h"
 #include "phones/generic.h"
 #include "gsm-encoding.h"
+
+#include "gnokii-internal.h"
 #include "gsm-api.h"
 
 /* Some globals */
