@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.101 2004-04-11 14:15:13 pkot Exp $
+  $Id: atgen.c,v 1.102 2004-04-25 15:57:50 pkot Exp $
 
   G N O K I I
 
@@ -599,9 +599,9 @@ static gn_error AT_WritePhonebook(gn_data *data, struct gn_statemachine *state)
 	ret = at_memory_type_set(data->phonebook_entry->memory_type, state);
 	if (ret)
 		return ret;
-	if (data->phonebook_entry->empty || (!(*(data->phonebook_entry->name)) && !(*(data->phonebook_entry->number))))
+	if (data->phonebook_entry->empty) {
 		return AT_DeletePhonebook(data, state);
-	else {
+	} else {
 		ret = state->driver.functions(GN_OP_AT_SetCharset, data, state);
 		if (ret)
 			return ret;

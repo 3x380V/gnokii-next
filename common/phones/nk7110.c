@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk7110.c,v 1.163 2004-02-22 22:29:08 uid66843 Exp $
+  $Id: nk7110.c,v 1.164 2004-04-25 15:57:50 pkot Exp $
 
   G N O K I I
 
@@ -849,7 +849,7 @@ static gn_error NK7110_WritePhonebookLocation(gn_data *data, struct gn_statemach
 	req[12] = (entry->location >> 8);
 	req[13] = entry->location & 0xff;
 	block = 1;
-	if (!entry->empty && (*(entry->name)) && (*(entry->number))) {
+	if (!entry->empty) {
 		/* Name */
 		i = strlen(entry->name);
 		char_unicode_encode((string + 1), entry->name, i);
