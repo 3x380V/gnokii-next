@@ -1,6 +1,6 @@
 /*
 
-  $Id: virtmodem.h,v 1.12 2003-02-26 21:59:49 pkot Exp $
+  $Id: virtmodem.h,v 1.13 2003-03-06 08:11:19 ja Exp $
 
   G N O K I I
 
@@ -30,6 +30,8 @@
 
 #ifndef _gnokii_data_virtmodem_h
 #define _gnokii_data_virtmodem_h
+
+#include "../compat.h"
 
 struct vm_queue {
 	int n;
