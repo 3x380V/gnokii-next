@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.286 2002-08-07 11:25:36 plail Exp $
+  $Id: gnokii.c,v 1.287 2002-08-07 15:36:04 plail Exp $
 
   G N O K I I
 
@@ -3271,6 +3271,12 @@ static int getwapsetting(int argc, char *argv[])
 			case GWP_GPRS: 
 				fprintf(stdout, _("GPRS\n"));
 				break;
+			case GWP_SMS: 
+				fprintf(stdout, _("SMS\n"));
+				break;
+			case GWP_USSD: 
+				fprintf(stdout, _("USSD\n"));
+				break;
 			default: 
 				fprintf(stdout, _("unknown\n"));
 				break;
@@ -3372,6 +3378,9 @@ static int getwapsetting(int argc, char *argv[])
 			fprintf(stdout, _("   IP: %s\n"), WAPSetting.GPRSIP);
 			fprintf(stdout, _("   Username: %s\n"), WAPSetting.GPRSUsername);
 			fprintf(stdout, _("   Password: %s\n"), WAPSetting.GPRSPassword);
+			fprintf(stdout, _("SMS\n"));
+			fprintf(stdout, _("   Service number: %s\n"), WAPSetting.SMSServiceNumber);
+			fprintf(stdout, _("   Server number: %s\n"), WAPSetting.SMSServerNumber);
 		}
 		break;
 	default:
