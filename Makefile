@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.115 2002-05-27 15:01:35 pkot Exp $
+# $Id: Makefile,v 1.116 2002-07-14 20:15:39 pkot Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -79,7 +79,8 @@ endif
 
 	@echo "done"
 
-distclean:	clean
+distclean: clean
+	$(MAKE) -C common distclean
 	@if [ -e $(PO_DIR)/Makefile ]; then \
 		$(MAKE) -C $(PO_DIR) distclean; \
 	fi
