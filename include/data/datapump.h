@@ -1,6 +1,6 @@
 /*
 
-  $Id: datapump.h,v 1.9 2002-12-10 23:27:19 pkot Exp $
+  $Id: datapump.h,v 1.10 2002-12-11 07:37:46 ladis Exp $
 
   G N O K I I
 
@@ -31,7 +31,7 @@
 #ifndef _gnokii_data_datapump_h
 #define _gnokii_data_datapump_h
 
-#include "gsm-statemachine"
+#include "gsm-statemachine.h"
 #include "gsm-call.h"
 
 /* Prototypes */
