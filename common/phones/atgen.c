@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.42 2002-07-07 23:00:18 pkot Exp $
+  $Id: atgen.c,v 1.43 2002-07-07 23:11:56 pkot Exp $
 
   G N O K I I
 
@@ -144,28 +144,6 @@ GSM_Phone phone_at = {
 		0, 0			/* Caller logo size */
 	},
 	Functions
-};
-
-static const SMSMessage_Layout at_deliver = {
-	true,						/* Is the SMS type supported */
-	 1, true, false,				/* SMSC */
-	 2,  2, -1,  2, -1, -1,  4, -1, 13,  5,  2,
-	 -1, -1, -1,					/* Validity */
-	 3, true, false,				/* Remote Number */
-	 6, -1,						/* Time */
-	-1, -1,						/* Nonstandard fields */
-	14, true					/* User Data */
-};
-
-static const SMSMessage_Layout at_submit = {
-	true,						/* Is the SMS type supported */
-	-1, true, false,				/* SMSC */
-	-1,  1,  1,  1, -1,  2,  4, -1,  7,  5,  1,
-	 6, -1, -1,					/* Validity */
-	 3, true, false,				/* Remote Number */
-	-1, -1,						/* Time */
-	-1, -1,						/* Nonstandard fields */
-	 8, true					/* User Data */
 };
 
 static GSM_MemoryType memorytype = GMT_XX;
