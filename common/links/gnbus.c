@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnbus.c,v 1.2 2004-04-08 23:33:07 bozo Exp $
+  $Id: gnbus.c,v 1.3 2004-04-29 22:13:12 pkot Exp $
 
   G N O K I I
 
@@ -60,6 +60,9 @@ static void gnbus_rx_statemachine(unsigned char rx_byte, struct gn_statemachine 
 {
 	struct timeval time_diff;
 	gnbus_incoming_message *i = &GNBUSINST(state)->i;
+
+	if (!i)
+		return;
 
 	/* XOR the byte with the current checksum */
 	i->checksum[i->checksum_idx] ^= rx_byte;
@@ -273,6 +276,9 @@ gn_error gnbus_initialise(struct gn_statemachine *state)
 {
 	int conn_type;
 	gn_error err;
+
+	if (!state)
+		return GN_ERR_FAILED;
 
 	/* Fill in the link functions */
 	state->link.loop = gnbus_loop;

@@ -1,6 +1,6 @@
 /*
 
-  $Id: utils.c,v 1.17 2003-03-06 21:10:39 pkot Exp $
+  $Id: utils.c,v 1.18 2004-04-29 22:13:12 pkot Exp $
 
   G N O K I I
 
@@ -41,6 +41,9 @@
 
 gn_error link_terminate(struct gn_statemachine *state)
 {
+	if (!state)
+		return GN_ERR_FAILED;
+
 	/* device_close(&(state->Device)); */
 	if (state->link.link_instance) {
 		free(state->link.link_instance);
