@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk3110.c,v 1.38 2003-06-03 17:28:41 osma Exp $
+  $Id: nk3110.c,v 1.39 2003-06-04 06:50:01 osma Exp $
 
   G N O K I I
 
@@ -826,6 +826,9 @@ static gn_error P3110_IncomingSMSHeader(int messagetype, unsigned char *message,
 		remote[remote_length] = '\0';
 		l = char_semi_octet_pack(remote, data->raw_sms->remote_number + 1, remote_number_type);
 		data->raw_sms->remote_number[0] = l;
+	} else {
+		remote[0] = '\0';
+		smsc[0] = '\0';
 	}
 
 	dprintf("PID:%02x DCS:%02x Timezone:%02x Stat1:%02x Stat2:%02x\n",
