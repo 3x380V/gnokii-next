@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.372 2003-12-01 23:33:03 bozo Exp $
+  $Id: gnokii.c,v 1.373 2003-12-28 19:21:11 uid66843 Exp $
 
   G N O K I I
 
@@ -3080,6 +3080,10 @@ static int getphonebook(int argc, char *argv[])
 				3 - LDIF
 			*/
 	bool all = false;
+
+	if (argc < 2) {
+		usage(stderr, -1);
+	}
 
 	/* Handle command line args that set type, start and end locations. */
 	memory_type_string = argv[0];
