@@ -1,6 +1,6 @@
 /*
 
-  $Id: dc2711.c,v 1.15 2002-12-31 00:10:22 pkot Exp $
+  $Id: dc2711.c,v 1.16 2003-01-05 20:57:06 ladis Exp $
 
   G N O K I I
 
@@ -43,7 +43,7 @@
 static gn_error GetCharset(gn_data *data, struct gn_statemachine *state)
 {
 	AT_DRVINST(state)->charset = AT_CHAR_GSM;
-	strcpy(data->model, "GSM");
+	strcpy(AT_DRVINST(state)->charsetstr, "GSM");
 	return GN_ERR_NONE;
 }
 
