@@ -1,6 +1,6 @@
 /*
 
-  $Id: common.h,v 1.125 2003-04-28 12:48:46 pkot Exp $
+  $Id: common.h,v 1.126 2003-06-18 20:41:38 bozo Exp $
 
   G N O K I I
 
@@ -593,5 +593,10 @@ typedef struct {
 	char  data[12];
 	int   counter;
 } gn_locks_info;
+
+typedef struct {
+	int frequency;
+	int volume;
+} gn_tone;
 
 #endif	/* _gnokii_common_h */

@@ -1,6 +1,6 @@
 /*
 
-  $Id: ringtones.h,v 1.15 2003-04-28 12:48:46 pkot Exp $
+  $Id: ringtones.h,v 1.16 2003-06-18 20:41:38 bozo Exp $
 
   G N O K I I
 
@@ -152,5 +152,6 @@ API gn_error gn_file_ringtone_save(char *filename, gn_ringtone *ringtone);
 API unsigned char gn_ringtone_pack(gn_ringtone *ringtone, unsigned char *package, int *maxlength);
 API gn_error gn_ringtone_unpack(gn_ringtone *ringtone, unsigned char *package, int maxlength);
 API int gn_note_get(int number);
+API void gn_ringtone_get_tone(const gn_ringtone *ringtone, int n, int *freq, int *ulen);
 
 #endif	/* _gnokii_ringtones_h */
