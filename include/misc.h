@@ -1,6 +1,6 @@
 /*
 
-  $Id: misc.h,v 1.50 2003-10-05 19:42:41 ja Exp $
+  $Id: misc.h,v 1.51 2004-01-02 14:57:41 uid66843 Exp $
 
   G N O K I I
 
@@ -119,5 +119,8 @@
 #define PM_EXTPBK		0x0100
 #define PM_AUTHENTICATION	0x0200
 #define PM_FOLDERS		0x0400
+
+char **gnokii_strsplit(const char *string, const char *delimiter, int tokens);
+void gnokii_strfreev(char **str_array);
 
 #endif /* _gnokii_misc_h */
