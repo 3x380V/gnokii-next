@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.4 2003-01-01 23:48:55 pkot Exp $
+# $Id: Makefile,v 1.5 2004-01-12 01:52:15 uid66849 Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -17,19 +17,20 @@
 TOPDIR=../..
 include $(TOPDIR)/Makefile.global
 
-OBJS =	at-emulator.o \
-	datapump.o \
-	rlp-common.o \
-	rlp-crc24.o \
-	virtmodem.o
+OBJS =	at-emulator.lo \
+	datapump.lo \
+	rlp-common.lo \
+	rlp-crc24.lo \
+	virtmodem.lo
 
-all: DATA.o
+all: libDATA.la
 
-DATA.o: $(OBJS)
-	$(LD) DATA.o $(OBJS)
+libDATA.la: $(OBJS)
+	$(LIBTOOL) --mode=link $(CC) -o libDATA.la $(OBJS)
 
 clean:
-	$(RM) $(OBJS) *~ depend DATA.o
+	$(LIBTOOL) --mode=clean $(RM) libDATA.la $(OBJS)
+	$(RM) *~ depend
 
 install:
 	@echo

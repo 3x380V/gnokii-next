@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.18 2003-02-26 10:05:30 ladis Exp $
+# $Id: Makefile,v 1.19 2004-01-12 01:52:15 uid66849 Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -17,30 +17,31 @@
 TOPDIR=../..
 include $(TOPDIR)/Makefile.global
 
-OBJS =	generic.o \
-	nokia.o \
-	nk7110.o \
-	nk6510.o \
-	nk6160.o \
-	nk6100.o \
-	nk3110.o \
-	atgen.o \
-	atbosch.o \
-	ateric.o \
-	atnok.o \
-	atsie.o \
-	fake.o
+OBJS =	generic.lo \
+	nokia.lo \
+	nk7110.lo \
+	nk6510.lo \
+	nk6160.lo \
+	nk6100.lo \
+	nk3110.lo \
+	atgen.lo \
+	atbosch.lo \
+	ateric.lo \
+	atnok.lo \
+	atsie.lo \
+	fake.lo
 
-#	nk2110.o
-#	dc2711.o
+#	nk2110.lo
+#	dc2711.lo
 
-all: PHONES.o
+all: libPHONES.la
 
-PHONES.o: $(OBJS)
-	$(LD) PHONES.o $(OBJS)
+libPHONES.la: $(OBJS)
+	$(LIBTOOL) --mode=link $(CC) -o libPHONES.la $(OBJS)
 
 clean:
-	$(RM) $(OBJS) *~ depend PHONES.o
+	$(LIBTOOL) --mode=clean $(RM) libPHONES.la $(OBJS)
+	$(RM) *~ depend
 
 install:
 	@echo

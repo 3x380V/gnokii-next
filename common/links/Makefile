@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.13 2003-02-26 10:05:30 ladis Exp $
+# $Id: Makefile,v 1.14 2004-01-12 01:52:15 uid66849 Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -17,22 +17,23 @@
 TOPDIR=../..
 include $(TOPDIR)/Makefile.global
 
-OBJS =	atbus.o \
-	fbus.o \
-	fbus-phonet.o \
-	fbus-3110.o \
-	m2bus.o \
-	utils.o
+OBJS =	atbus.lo \
+	fbus.lo \
+	fbus-phonet.lo \
+	fbus-3110.lo \
+	m2bus.lo \
+	utils.lo
 
-#	cbus.o
+#	cbus.lo
 
-all: LINKS.o
+all: libLINKS.la
 
-LINKS.o: $(OBJS)
-	$(LD) LINKS.o $(OBJS)
+libLINKS.la: $(OBJS)
+	$(LIBTOOL) --mode=link $(CC) -o libLINKS.la $(OBJS)
 
 clean:
-	$(RM) $(OBJS) *~ depend LINKS.o
+	$(LIBTOOL) --mode=clean $(RM) libLINKS.la $(OBJS)
+	$(RM) *~ depend
 
 install:
 	@echo
