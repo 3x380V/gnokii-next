@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.h,v 1.29 2002-07-29 21:49:04 pkot Exp $
+  $Id: gnokii.h,v 1.30 2002-08-02 16:34:58 plail Exp $
 
   G N O K I I
 
@@ -56,6 +56,7 @@ API GSM_Error GetSMS(GSM_Data *data, GSM_Statemachine *state);
 API GSM_Error GetSMSnoValidate(GSM_Data *data, GSM_Statemachine *state);
 API GSM_Error GetFolderChanges(GSM_Data *data, GSM_Statemachine *state, int has_folders);
 API GSM_Error DeleteSMS(GSM_Data *data, GSM_Statemachine *state);
+API GSM_Error DeleteSMSnoValidate(GSM_Data *data, GSM_Statemachine *state);
 /* Default values */
 API void DefaultSubmitSMS(GSM_API_SMS *SMS);
 API void DefaultDeliverSMS(GSM_API_SMS *SMS);

@@ -1,6 +1,6 @@
 /*
 
-  $Id: data.h,v 1.42 2002-08-01 18:44:18 plail Exp $
+  $Id: data.h,v 1.43 2002-08-02 16:34:58 plail Exp $
 
   G N O K I I
 
@@ -148,6 +148,7 @@ typedef enum {
 	GOP_GetIncomingSMS,
 	GOP_GetUnreadMessages,
 	GOP_GetNextSMS,
+	GOP_DeleteSMSnoValidate,
 	GOP_DeleteSMS,
 	GOP_SendSMS,
 	GOP_GetSpeedDial,

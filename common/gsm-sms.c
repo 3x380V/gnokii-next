@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-sms.c,v 1.109 2002-08-02 13:09:16 plail Exp $
+  $Id: gsm-sms.c,v 1.110 2002-08-02 16:34:58 plail Exp $
 
   G N O K I I
 
@@ -738,6 +738,18 @@ API GSM_Error GetSMSnoValidate(GSM_Data *data, GSM_Statemachine *state)
 	ERROR();
 	data->SMS->Status = rawsms.Status;
 	return ParseSMS(data);
+}
+
+API GSM_Error DeleteSMSnoValidate(GSM_Data *data, GSM_Statemachine *state)
+{
+	GSM_SMSMessage rawsms;
+
+	if (!data->SMS) return GE_INTERNALERROR;
+	memset(&rawsms, 0, sizeof(GSM_SMSMessage));
+	rawsms.Number = data->SMS->Number;
+	rawsms.MemoryType = data->SMS->MemoryType;
+	data->RawSMS = &rawsms;
+	return SM_Functions(GOP_DeleteSMSnoValidate, data, state);
 }
 
 static GSM_Error FreeDeletedMessages(GSM_Data *data, int folder)
