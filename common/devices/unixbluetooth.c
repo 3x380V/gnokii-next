@@ -1,6 +1,6 @@
 /*
 
-  $Id: unixbluetooth.c,v 1.7 2003-02-26 00:15:48 pkot Exp $
+  $Id: unixbluetooth.c,v 1.8 2003-04-06 19:54:06 pkot Exp $
  
   G N O K I I
 
@@ -37,6 +37,7 @@
 #include "devices/unixbluetooth.h"
 
 static char *phone[] = {
+	"Nokia 3650",
 	"Nokia 6210",
 	"Nokia 6310",
 	"Nokia 6310i",
