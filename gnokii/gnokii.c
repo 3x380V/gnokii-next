@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.393 2004-05-09 20:05:58 pkot Exp $
+  $Id: gnokii.c,v 1.394 2004-06-01 21:45:47 pkot Exp $
 
   G N O K I I
 
@@ -166,7 +166,6 @@ typedef enum {
 	OPT_SHOWSMSFOLDERSTATUS,
 } opt_index;
 
-static char *bindir;     /* Binaries directory from .gnokiirc file - not used here yet */
 static FILE *logfile = NULL;
 static char *lockfile = NULL;
 
@@ -5205,7 +5204,7 @@ int main(int argc, char *argv[])
 	}
 
 	/* Read config file */
-	if (gn_cfg_read_default(&bindir) < 0) {
+	if (gn_cfg_read_default() < 0) {
 		exit(1);
 	}
 	if (!gn_cfg_phone_load("", &state)) exit(1);
