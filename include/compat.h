@@ -1,6 +1,6 @@
 /*
 
-  $Id: compat.h,v 1.17 2003-02-12 10:44:44 ladis Exp $
+  $Id: compat.h,v 1.18 2003-02-16 22:08:56 godehardt Exp $
 
   G N O K I I
 
@@ -117,7 +117,7 @@ int gettimeofday(struct timeval *tv, void *tz);
 #endif
 
 #ifndef	HAVE_STRSEP
-API char *strsep(char **stringp, const char *delim);
+char *strsep(char **stringp, const char *delim);
 #endif
 
 #if !defined(HAVE_SNPRINTF) || !defined(HAVE_C99_SNPRINTF)

@@ -1,6 +1,6 @@
 /*
 
-  $Id: compat.c,v 1.7 2002-04-30 18:56:12 pkot Exp $
+  $Id: compat.c,v 1.8 2003-02-16 22:11:38 godehardt Exp $
 
   G N O K I I
 
@@ -117,7 +117,7 @@ static char sccsid[] = "@(#)strsep.c	8.1 (Berkeley) 6/4/93";
  * If *stringp is NULL, strsep returns NULL.
  */
 
-API char *strsep(char **stringp, const char *delim)
+char *strsep(char **stringp, const char *delim)
 {
 	register char *s;
 	register const char *spanp;
