@@ -1,6 +1,6 @@
 /*
 
-  $Id: nokia.c,v 1.28 2003-02-26 00:15:48 pkot Exp $
+  $Id: nokia.c,v 1.29 2003-03-06 21:17:17 pkot Exp $
 
   G N O K I I
 
@@ -35,6 +35,8 @@
 
 #include <string.h>
 
+#include "config.h"
+#include "compat.h"
 #include "gnokii-internal.h"
 #include "gnokii.h"
 #include "links/fbus.h"

@@ -1,6 +1,6 @@
 /*
 
-  $Id: atsie.c,v 1.11 2003-02-26 00:15:48 pkot Exp $
+  $Id: atsie.c,v 1.12 2003-03-06 21:17:12 pkot Exp $
 
   G N O K I I
 
@@ -33,9 +33,10 @@
 #include <stdlib.h>
 #include <ctype.h>
 
+#include "config.h"
+#include "compat.h"
 #include "misc.h"
-#include "gnokii/common.h"
-#include "gnokii/statemachine.h"
+#include "gnokii.h"
 #include "phones/generic.h"
 #include "phones/atgen.h"
 #include "phones/atsie.h"

@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk3110.c,v 1.34 2003-03-03 22:26:11 bozo Exp $
+  $Id: nk3110.c,v 1.35 2003-03-06 21:17:15 pkot Exp $
 
   G N O K I I
 
@@ -39,15 +39,14 @@
 #  include <unistd.h>
 #endif
 
+#include "compat.h"
 #include "misc.h"
-#include "gnokii/common.h"
+#include "gnokii.h"
 #include "phones/generic.h"
 #include "phones/nk3110.h"
 #include "links/fbus-3110.h"
 #include "phones/nokia.h"
-
 #include "gnokii-internal.h"
-#include "gnokii.h"
 
 
 #define DRVINSTANCE(s) ((nk3110_driver_instance *)((s)->driver.driver_instance))

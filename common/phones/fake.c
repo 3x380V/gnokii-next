@@ -1,6 +1,6 @@
 /*
 
-  $Id: fake.c,v 1.18 2003-02-26 00:15:48 pkot Exp $
+  $Id: fake.c,v 1.19 2003-03-06 21:17:12 pkot Exp $
 
   G N O K I I
 
@@ -32,13 +32,12 @@
 #include <stdlib.h>
 #include <ctype.h>
 
+#include "config.h"
+#include "compat.h"
 #include "misc.h"
-#include "gnokii/common.h"
-#include "phones/generic.h"
-#include "gnokii/encoding.h"
-
-#include "gnokii-internal.h"
 #include "gnokii.h"
+#include "phones/generic.h"
+#include "gnokii-internal.h"
 
 /* Some globals */
 
