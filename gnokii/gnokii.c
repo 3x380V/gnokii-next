@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.333 2003-02-09 21:42:07 pkot Exp $
+  $Id: gnokii.c,v 1.334 2003-02-09 21:57:56 pkot Exp $
 
   G N O K I I
 
@@ -4252,7 +4252,7 @@ static int getsecuritycode()
 
 static void list_gsm_networks(void)
 {
-	extern gn_network networks[];
+	API extern gn_network networks[];
 	int i;
 
 	printf("Network  Name\n");

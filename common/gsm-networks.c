@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-networks.c,v 1.27 2003-02-06 20:50:50 pkot Exp $
+  $Id: gsm-networks.c,v 1.28 2003-02-09 21:57:56 pkot Exp $
 
   G N O K I I
 
@@ -154,7 +154,7 @@ static gn_country countries[] = {
 	{ "undefined", "unknown" }
 };
 
-gn_network networks[] = {
+API gn_network networks[] = {
 	{ "202 01", "Cosmote" },
 	{ "202 05", "Vodafone (PANAFON)" },
 	{ "202 10", "TELESTET" },
