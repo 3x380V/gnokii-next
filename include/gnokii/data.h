@@ -1,6 +1,6 @@
 /*
 
-  $Id: data.h,v 1.19 2002-02-25 23:06:54 pkot Exp $
+  $Id: data.h,v 1.20 2002-02-28 21:44:18 pkot Exp $
 
   G N O K I I
 
@@ -152,6 +152,10 @@ typedef enum {
 	GOP_ChangeSecurityCode,
 	GOP_SendDTMF,
 	GOP_Reset,
+	GOP_GetRingtone,
+	GOP_SetRingtone,
+	GOP_GetRawRingtone,
+	GOP_SetRawRingtone,
 	GOP_Max,	/* don't append anything after this entry */
 } GSM_Operation;
 

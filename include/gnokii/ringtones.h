@@ -1,6 +1,6 @@
 /*
 
-  $Id: ringtones.h,v 1.4 2002-01-27 23:38:32 pkot Exp $
+  $Id: ringtones.h,v 1.5 2002-02-28 21:44:18 pkot Exp $
 
   G N O K I I
 
@@ -42,6 +42,7 @@ typedef struct {
 /* Structure to hold ringtones. */
 
 typedef struct {
+	int Location;
 	char name[20];
 	u8 tempo;
 	u8 NrNotes;
