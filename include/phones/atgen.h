@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.h,v 1.18 2004-07-01 22:17:03 pkot Exp $
+  $Id: atgen.h,v 1.19 2004-09-20 22:07:05 bozo Exp $
 
   G N O K I I
 
@@ -65,6 +65,7 @@ typedef struct {
 	gn_incoming_function_type incoming_functions[GN_OP_AT_Max];
 	at_error_function_type manufacturer_error;
 	int if_pos;
+	int no_smsc;
 
 	gn_memory_type memorytype;
 	int memoryoffset;
