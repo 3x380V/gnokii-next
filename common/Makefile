@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.24 2001-03-06 22:27:46 pkot Exp $
+# $Id: Makefile,v 1.25 2001-03-21 23:36:04 chris Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -32,7 +32,8 @@ OBJS =	cfgreader.o \
 	vcal.o \
 	misc.o \
 	gsm-bitmaps.o \
-	gsm-common.o
+	gsm-common.o \
+	gsm-statemachine.o
 
 all: COMMON.o gsm-filetypes.o
 

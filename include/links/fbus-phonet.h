@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus-phonet.h,v 1.1 2001-02-21 19:57:12 chris Exp $
+  $Id: fbus-phonet.h,v 1.2 2001-03-21 23:36:07 chris Exp $
 
   G N O K I I
 
@@ -17,7 +17,11 @@
   The various routines are called PHONET_(whatever).
 
   $Log: fbus-phonet.h,v $
-  Revision 1.1  2001-02-21 19:57:12  chris
+  Revision 1.2  2001-03-21 23:36:07  chris
+  Added the statemachine
+  This will break gnokii --identify and --monitor except for 6210/7110
+
+  Revision 1.1  2001/02/21 19:57:12  chris
   More fiddling with the directory layout
 
   Revision 1.1  2001/02/06 21:15:37  chris
@@ -39,7 +43,7 @@
 #define FBUS_PHONET_FRAME_ID 0x14
 
 
-GSM_Error PHONET_Initialise(GSM_Link *newlink, GSM_Phone *newphone);
+GSM_Error PHONET_Initialise(GSM_Link *newlink, GSM_Statemachine *state);
 
 
 #ifdef __links_fbus_phonet_c  /* Prototype functions for fbus-phonet.c only */

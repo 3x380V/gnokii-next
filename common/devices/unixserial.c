@@ -1,6 +1,6 @@
 /*
   
-  $Id: unixserial.c,v 1.5 2001-03-19 23:43:46 pkot Exp $
+  $Id: unixserial.c,v 1.6 2001-03-21 23:36:04 chris Exp $
 
   G N O K I I
 
@@ -11,8 +11,12 @@
   Released under the terms of the GNU GPL, see file COPYING for more details.
 
   $Log: unixserial.c,v $
-  Revision 1.5  2001-03-19 23:43:46  pkot
-  Solaris/*BSD '#if defined' cleanup
+  Revision 1.6  2001-03-21 23:36:04  chris
+  Added the statemachine
+  This will break gnokii --identify and --monitor except for 6210/7110
+
+  Revision 1.5  2001/03/19 23:43:46  pkot
+  Solaris/ *BSD '#if defined' cleanup
 
   Revision 1.4  2001/03/13 01:21:38  pkot
   *BSD updates (Bert Driehuis)
