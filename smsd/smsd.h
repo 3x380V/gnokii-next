@@ -1,6 +1,6 @@
 /*
 
-  $Id: smsd.h,v 1.7 2002-12-26 21:16:14 pkot Exp $
+  $Id: smsd.h,v 1.8 2002-12-27 17:03:20 bozo Exp $
 
   S M S D
 
@@ -39,10 +39,6 @@ typedef enum {
 } SMSDSettings;
 
 typedef struct {
-  gchar *initlength; /* Init length from .gnokiirc file */
-  gchar *model;      /* Model from .gnokiirc file. */
-  gchar *port;       /* Serial port from .gnokiirc file */
-  gchar *connection; /* Connection type from .gnokiirc file */
   gchar *bindir;
   gchar *dbMod;
   gchar *libDir;

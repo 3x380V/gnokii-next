@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii.h,v 1.18 2002-12-26 23:43:19 pkot Exp $
+  $Id: xgnokii.h,v 1.19 2002-12-27 17:03:20 bozo Exp $
 
   X G N O K I I
 
@@ -53,7 +53,7 @@ typedef struct {
 	gchar *initlength;	/* Init length from .gnokiirc file */
 	gchar *model;		/* Model from .gnokiirc file. */
 	gchar *port;		/* Serial port from .gnokiirc file */
-	gchar *connection;	/* Connection type from .gnokiirc file */
+	gn_connection_type connection;	/* Connection type from .gnokiirc file */
 	gchar *bindir;
 	gchar *xgnokiidir;
 	gchar *helpviewer;	/* Program to showing help files */

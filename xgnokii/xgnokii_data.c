@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_data.c,v 1.9 2002-12-26 23:43:18 pkot Exp $
+  $Id: xgnokii_data.c,v 1.10 2002-12-27 17:03:20 bozo Exp $
 
   X G N O K I I
 
@@ -97,8 +97,7 @@ static inline void EnableData(GtkWidget * widget, gpointer data)
 {
 
 	GTerminateThread = false;
-	gn_vm_initialise(xgnokiiConfig.model, xgnokiiConfig.port,
-		      0, 0, xgnokiiConfig.bindir, false, false);
+	gn_vm_initialise("", xgnokiiConfig.bindir, false, false);
 	enabled = true;
 	UpdateStatus();
 }

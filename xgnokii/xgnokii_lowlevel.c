@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_lowlevel.c,v 1.70 2002-12-26 23:43:18 pkot Exp $
+  $Id: xgnokii_lowlevel.c,v 1.71 2002-12-27 17:03:20 bozo Exp $
   
   X G N O K I I
 
@@ -233,9 +233,7 @@ static gn_error fbusinit(bool enable_monitoring)
 	}
 
 	/* Initialise the code for the GSM interface. */
-	error = gn_gsm_initialise(xgnokiiConfig.model, xgnokiiConfig.port,
-				  xgnokiiConfig.initlength, xgnokiiConfig.connection,
-				  &statemachine);
+	error = gn_gsm_initialise(&statemachine);
 
 #ifdef XDEBUG
 	g_print("fbusinit: error %d\n", error);
