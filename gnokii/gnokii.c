@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.246 2002-06-02 21:36:44 machek Exp $
+  $Id: gnokii.c,v 1.247 2002-06-03 21:20:04 machek Exp $
 
   G N O K I I
 
@@ -1462,7 +1462,6 @@ static int sendlogo(int argc, char *argv[])
 		sms.UserData[1].Type = SMS_NokiaText;
 		readtext(&sms.UserData[1], 120);
 		sms.UserData[2].Type = SMS_NoData;
-		//		strcpy(sms.UserData[1].u.Text, "Ahoj, tohle je mala zprava na testovani telefonu");
 	}
 
 	/* Send the message. */
