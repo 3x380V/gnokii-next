@@ -1,6 +1,6 @@
 /*
 
-  $Id: common.h,v 1.95 2002-02-21 00:56:33 pkot Exp $
+  $Id: common.h,v 1.96 2002-02-24 16:44:31 pkot Exp $
 
   G N O K I I
 
@@ -81,6 +81,7 @@ typedef enum {
 typedef struct {
 	GSM_SecurityCodeType Type; /* Type of the code. */
 	char Code[10];             /* Actual code. */
+	char NewCode[10];          /* New code. */
 } GSM_SecurityCode;
 
 /* This structure is used to get the current network status */
