@@ -1,6 +1,6 @@
 /*
 
-  $Id: data.h,v 1.38 2002-07-26 21:00:59 bozo Exp $
+  $Id: data.h,v 1.39 2002-07-26 22:01:50 bozo Exp $
 
   G N O K I I
 
@@ -200,6 +200,7 @@ typedef struct {
 	GSM_Error (*DefaultFunction)(int messagetype, unsigned char *buffer, int length, GSM_Statemachine *state);
 	GSM_Information Info;
 	GSM_Error (*Functions)(GSM_Operation op, GSM_Data *data, GSM_Statemachine *state);
+	void *DriverInstance;
 } GSM_Phone;
 
 

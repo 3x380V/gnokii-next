@@ -1,6 +1,6 @@
 /*
 
-  $Id: fake.c,v 1.11 2002-07-08 23:31:31 pkot Exp $
+  $Id: fake.c,v 1.12 2002-07-26 22:01:50 bozo Exp $
 
   G N O K I I
 
@@ -61,7 +61,8 @@ GSM_Phone phone_fake = {
 		21, 78,                /* Op logo size */
 		14, 72                 /* Caller logo size */
 	},
-	Pfake_Functions
+	Pfake_Functions,
+	NULL
 };
 
 

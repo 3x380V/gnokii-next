@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6160.c,v 1.4 2002-07-26 21:00:59 bozo Exp $
+  $Id: nk6160.c,v 1.5 2002-07-26 22:01:50 bozo Exp $
 
   G N O K I I
 
@@ -101,7 +101,8 @@ GSM_Phone phone_nokia_6160 = {
 		14, 72,                /* Op logo size */
 		14, 72                 /* Caller logo size */
 	},
-	Functions
+	Functions,
+	NULL
 };
 
 static GSM_Error Functions(GSM_Operation op, GSM_Data *data, GSM_Statemachine *state)

@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk7110.c,v 1.105 2002-07-26 21:00:59 bozo Exp $
+  $Id: nk7110.c,v 1.106 2002-07-26 22:01:50 bozo Exp $
 
   G N O K I I
 
@@ -145,7 +145,8 @@ GSM_Phone phone_nokia_7110 = {
 		21, 78,                /* Op logo size */
 		14, 72                 /* Caller logo size */
 	},
-	P7110_Functions
+	P7110_Functions,
+	NULL
 };
 
 /* FIXME - a little macro would help here... */

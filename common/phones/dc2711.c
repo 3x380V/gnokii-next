@@ -1,6 +1,6 @@
 /*
 
-  $Id: dc2711.c,v 1.12 2002-07-26 21:00:59 bozo Exp $
+  $Id: dc2711.c,v 1.13 2002-07-26 22:01:50 bozo Exp $
 
   G N O K I I
 
@@ -67,7 +67,8 @@ GSM_Information D2711_Information = INFO;
 GSM_Phone phone_dancall_2711 = {
 	D2711_IncomingFunctions,
 	PGEN_IncomingDefault,
-	INFO
+	INFO,
+	NULL
 };
 
 static void Terminate()

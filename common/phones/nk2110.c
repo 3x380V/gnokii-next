@@ -1,6 +1,6 @@
 /* -*- linux-c -*-
 
-  $Id: nk2110.c,v 1.33 2002-05-15 22:45:43 manfred Exp $
+  $Id: nk2110.c,v 1.34 2002-07-26 22:01:50 bozo Exp $
 
   G N O K I I
 
@@ -107,7 +107,8 @@ GSM_Phone phone_nokia_2110 = {
 	NULL,
 	NULL,
 	INFO,
-	P2110_Functions
+	P2110_Functions,
+	NULL
 };
 
 /* Local variables */
