@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.325 2003-01-07 00:21:02 bozo Exp $
+  $Id: gnokii.c,v 1.326 2003-01-08 20:32:16 pkot Exp $
 
   G N O K I I
 
@@ -3204,7 +3204,7 @@ static int writephonebook(int argc, char *args[])
 		if (argc) {
 			gn_phonebook_entry aux;
 
-			aux.location = entry.location;
+			memcpy(&aux, &entry, sizeof(gn_phonebook_entry));
 	      		data.phonebook_entry = &aux;
 			error = gn_sm_functions(GN_OP_ReadPhonebook, &data, &state);
 
