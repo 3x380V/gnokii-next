@@ -4,7 +4,7 @@ dnl
 dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janík ml.
 dnl                2000 Karel Zak, Pawe³ Kot
 dnl
-dnl  $Id: configure.in,v 1.36 2001-02-01 21:10:26 machek Exp $
+dnl  $Id: configure.in,v 1.37 2001-02-05 10:05:37 pkot Exp $
 dnl
 
 AC_INIT(gnokii/gnokii.c)
@@ -294,6 +294,7 @@ if test "$no_x" = yes -o "$with_x" = "no"; then
    GTK_LIBS=""
 else
    AC_PATH_X
+   CPPFLAGS="$CPPFLAGS -I$x_includes"
    AC_CHECK_HEADERS(X11/xpm.h,
                     [ XPMINC="yes" ],
                     [ XPMINC="no" ])

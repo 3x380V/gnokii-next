@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.18 2001-02-03 23:56:12 chris Exp $
+# $Id: Makefile,v 1.19 2001-02-05 10:05:37 pkot Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -61,7 +61,7 @@ DATA.o: $(DATA_OBJS)
 	$(LD) $(LDREL) $(LDOUT) DATA.o $(DATA_OBJS)
 
 gsm-filetypes.o: gsm-filetypes.c 
-	$(CC) $(CFLAGS) $(XPM_FLAGS) -c gsm-filetypes.c
+	$(CC) $(CFLAGS) $(XPM_CFLAGS) -c gsm-filetypes.c
 
 vcal.c: vcal.lx
 	$(LEX) -ovcal.c vcal.lx
