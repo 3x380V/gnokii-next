@@ -1,6 +1,6 @@
 /*
 
-  $Id: pkt.c,v 1.5 2004-05-08 20:52:40 bozo Exp $
+  $Id: pkt.c,v 1.6 2004-05-31 22:11:07 pkot Exp $
 
   G N O K I I
 
@@ -117,6 +117,7 @@ void pkt_put_string(pkt_buffer *buf, const char *x)
 	pkt_put_uint16(buf, n);
 
 	b = buffer_expand(buf, 2 * n);
+	/* FIXME: check the return code (size of the written buffer) */
 	char_unicode_encode(b, x, n);
 }
 
