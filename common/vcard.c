@@ -1,6 +1,6 @@
 /*
 
-  $Id: vcard.c,v 1.13 2005-03-21 21:01:33 pkot Exp $
+  $Id: vcard.c,v 1.14 2005-03-21 22:54:41 pkot Exp $
   
   G N O K I I
 
@@ -129,7 +129,6 @@ API int gn_vcard2phonebook(FILE *f, gn_phonebook_entry *entry)
 	}
 
 	while (1) {
-		char *cr, *lf;
 		int line_len;
 		if (!fgets(buf, 1024, f)) {
 			ERROR("Vcard began but not ended?");
