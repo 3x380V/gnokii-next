@@ -1,6 +1,6 @@
 /*
 
-  $Id: mysql.c,v 1.17 2002-12-26 21:16:14 pkot Exp $
+  $Id: mysql.c,v 1.18 2003-02-10 09:10:58 ja Exp $
 
   S M S D
 
@@ -23,13 +23,14 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
   Copyright (C) 1999 Pavel Janík ml., Hugh Blemings
-  & Ján Derfiòák <ja@mail.upjs.sk>.
+  & Jan Derfinak <ja@mail.upjs.sk>.
 
   This file is a module to smsd for MySQL db server.
   
 */
 
 #include <string.h>
+#include <stdlib.h>
 #include <glib.h>
 #include <mysql.h>
 #include "smsd.h"
@@ -128,7 +129,7 @@ void DB_Look (void)
 
   buf = g_string_sized_new (128);
 
-  g_string_sprintf (buf, "SELECT id, number, text FROM outbox \
+  g_string_sprintf (buf, "SELECT id, number, text dreport FROM outbox \
                           WHERE processed='0'");
 
   if (mysql_real_query (&mysqlOut, buf->str, buf->len))
@@ -153,7 +154,7 @@ void DB_Look (void)
 
     gn_sms_default_submit (&sms);    
     memset (&sms.remote.number, 0, sizeof (sms.remote.number));
-    sms.delivery_report = (smsdConfig.smsSets & SMSD_READ_REPORTS);
+    sms.delivery_report = atoi (row[3]);
 
     strncpy (sms.remote.number, row[1], sizeof (sms.remote.number) - 1);
     sms.remote.number[sizeof(sms.remote.number) - 1] = '\0';

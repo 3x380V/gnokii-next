@@ -1,6 +1,6 @@
 /*
 
-  $Id: file.c,v 1.6 2002-12-27 16:55:34 bozo Exp $
+  $Id: file.c,v 1.7 2003-02-10 09:10:58 ja Exp $
 
   S M S D
 
@@ -196,7 +196,7 @@ void DB_Look (void)
      
     fclose (smsFile);
     
-    sms.delivery_report = (smsdConfig.smsSets & SMSD_READ_REPORTS);
+//    sms.delivery_report = (smsdConfig.smsSets & SMSD_READ_REPORTS);
 
     if (sms.remote.number[0] == '+')
       sms.remote.type = GN_GSM_NUMBER_International;
