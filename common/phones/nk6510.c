@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.c,v 1.91 2002-12-27 00:11:40 bozo Exp $
+  $Id: nk6510.c,v 1.92 2002-12-28 23:57:45 pkot Exp $
 
   G N O K I I
 
@@ -49,13 +49,13 @@
 #include "gnokii-internal.h"
 #include "gsm-api.h"
 
-#define SEND_MESSAGE_BLOCK(type, length) \
+#define SEND_MESSAGE_BLOCK(length, type) \
 do { \
 	if (sm_message_send(length, type, req, state)) return GN_ERR_NOTREADY; \
 	return sm_block(type, data, state); \
 } while (0)
 
-#define SEND_MESSAGE_WAITFOR(type, length) \
+#define SEND_MESSAGE_WAITFOR(length, type) \
 do { \
 	if (sm_message_send(length, type, req, state)) return GN_ERR_NOTREADY; \
 	return sm_wait_for(type, data, state); \
