@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus-phonet.h,v 1.9 2003-04-28 12:50:51 pkot Exp $
+  $Id: fbus-phonet.h,v 1.10 2003-05-06 08:49:42 pkot Exp $
 
   G N O K I I
 
@@ -46,11 +46,8 @@
    family phones. */
 #define FBUS_PHONET_BLUETOOTH_FRAME_ID  0x19
 
-/* Nokia mobile phone in the Nokia 6310 family over Bluetooth. */
-#define FBUS_PHONET_BLUETOOTH_DEVICE_PHONE 0x10
-
 /* Our PC in the Nokia 6310 family over Bluetooth. */
-#define FBUS_PHONET_BLUETOOTH_DEVICE_PC 0x00
+#define FBUS_PHONET_BLUETOOTH_DEVICE_PC 0x10
 
 gn_error phonet_initialise(struct gn_statemachine *state);
 
