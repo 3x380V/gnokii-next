@@ -4,7 +4,7 @@ dnl
 dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janík ml.
 dnl                2000 Karel Zak, Pawe³ Kot
 dnl
-dnl  $Id: configure.in,v 1.62 2002-03-13 21:21:01 pkot Exp $
+dnl  $Id: configure.in,v 1.63 2002-03-25 01:35:30 pkot Exp $
 dnl
 
 AC_INIT(gnokii/gnokii.c)
@@ -240,9 +240,17 @@ AC_TRY_LINK([#include <time.h>],
 dnl The following is taken from inn sources
 AC_MSG_CHECKING(for timersub)
 AC_TRY_LINK([#include <sys/time.h>],
-        [timersub(NULL, NULL, NULL)],
+        [struct timeval tv; timersub(&tv, &tv, &tv)],
         [AC_DEFINE(HAVE_TIMEOPS)
          AC_DEFINE(HAVE_TIMEOPS)
+         AC_MSG_RESULT(yes)],
+        [AC_MSG_RESULT(no)])
+
+AC_MSG_CHECKING(for gettimeofday)
+AC_TRY_LINK([#include <sys/time.h>],
+        [gettimeofday(0, 0)],
+        [AC_DEFINE(HAVE_GETTIMEOFDAY)
+         AC_DEFINE(HAVE_GETTIMEOFDAY)
          AC_MSG_RESULT(yes)],
         [AC_MSG_RESULT(no)])
 

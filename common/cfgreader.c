@@ -1,6 +1,6 @@
 /*
 
-  $Id: cfgreader.c,v 1.18 2002-01-27 23:38:30 pkot Exp $
+  $Id: cfgreader.c,v 1.19 2002-03-25 01:35:31 pkot Exp $
 
   G N O K I I
 
@@ -281,6 +281,17 @@ int readconfig(char **model, char **port, char **initlength,
 	strncat(rcfile, "/.gnokiirc", 200);
 #endif
 
+#ifdef WIN32
+	/* Try opening .gnokirc from users home directory first */
+	if ((CFG_Info = CFG_ReadFile(rcfile)) == NULL) {
+		/* It failed so try for gnokiirc */
+		if ((CFG_Info = CFG_ReadFile("gnokiirc")) == NULL) {
+			/* That failed too so exit */
+			fprintf(stderr, _("Couldn't open %s or gnokiirc. Exiting now...\n"), rcfile);
+			return -1;
+		}
+	}
+#else
 	/* Try opening .gnokirc from users home directory first */
 	if ((CFG_Info = CFG_ReadFile(rcfile)) == NULL) {
 		/* It failed so try for /etc/gnokiirc */
@@ -290,6 +301,7 @@ int readconfig(char **model, char **port, char **initlength,
 			return -1;
 		}
 	}
+#endif
 
 	(char *)*model = CFG_Get(CFG_Info, "global", "model");
 	if (!*model) {

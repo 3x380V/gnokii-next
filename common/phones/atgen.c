@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.25 2002-02-18 14:31:54 manfred Exp $
+  $Id: atgen.c,v 1.26 2002-03-25 01:35:31 pkot Exp $
 
   G N O K I I
 
@@ -29,8 +29,9 @@
 #include "phones/atsie.h"
 #include "phones/atnok.h"
 #include "links/atbus.h"
+#ifndef WIN32
 #include "links/cbus.h"
-
+#endif
 
 static GSM_Error Initialise(GSM_Data *setupdata, GSM_Statemachine *state);
 static GSM_Error Functions(GSM_Operation op, GSM_Data *data, GSM_Statemachine *state);

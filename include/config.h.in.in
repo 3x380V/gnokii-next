@@ -1,6 +1,6 @@
 /*
 
-  $Id: config.h.in.in,v 1.4 2002-02-13 00:34:06 pkot Exp $
+  $Id: config.h.in.in,v 1.5 2002-03-25 01:35:32 pkot Exp $
 
   G N O K I I
 
@@ -23,6 +23,9 @@
 
 /* Define if you have timersub() */
 #undef HAVE_TIMEOPS
+
+/* Define if you have gettimeofday() */
+#undef HAVE_GETTIMEOFDAY
 
 /* Define if you have tm_gmtoff field in tm structure */
 #undef HAVE_TM_GMTON

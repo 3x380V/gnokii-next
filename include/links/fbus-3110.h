@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus-3110.h,v 1.2 2002-01-27 23:38:32 pkot Exp $
+  $Id: fbus-3110.h,v 1.3 2002-03-25 01:35:33 pkot Exp $
 
   G N O K I I
 
@@ -22,10 +22,11 @@
 
 #include <time.h>
 #include "gsm-statemachine.h"
+#include "config.h"
+#include "compat.h"
 
 #ifdef WIN32
-#include <sys/types.h>
-#include <sys/timeb.h>
+#  include <sys/types.h>
 #endif
 
 #define FB3110_MAX_FRAME_LENGTH 256

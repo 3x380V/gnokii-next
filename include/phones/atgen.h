@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.h,v 1.5 2002-01-27 23:38:32 pkot Exp $
+  $Id: atgen.h,v 1.6 2002-03-25 01:35:33 pkot Exp $
 
   G N O K I I
 
@@ -14,6 +14,9 @@
   phones. See README for more details on supported mobile phones.
 
 */
+
+#ifndef __atgen_h_
+#define __atgen_h_
 
 typedef enum {
 	GOPAT_GetCharset = GOP_Max,
@@ -53,3 +56,4 @@ void splitlines(AT_LineBuffer *buf);
 char *skipcrlf(unsigned char *str);
 char *findcrlf(unsigned char *str, int test, int maxlength);
 
+#endif

@@ -1,5 +1,5 @@
 /*
- * $Id: unixirda.h,v 1.3 2002-01-27 23:38:32 pkot Exp $
+ * $Id: unixirda.h,v 1.4 2002-03-25 01:35:33 pkot Exp $
  *
  * G N O K I I
  *
@@ -41,8 +41,8 @@
 
 int irda_open(void);
 int irda_close(int fd);
-int irda_write(int __fd, __const __ptr_t __bytes, int __size);
-int irda_read(int __fd, __ptr_t __bytes, int __size);
+int irda_write(int fd, const __ptr_t bytes, int size);
+int irda_read(int fd, __ptr_t bytes, int size);
 int irda_select(int fd, struct timeval *timeout);
 
 #endif

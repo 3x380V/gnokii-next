@@ -1,5 +1,5 @@
 /*
-  $Id: virtmodem.c,v 1.14 2002-03-13 00:12:04 pkot Exp $
+  $Id: virtmodem.c,v 1.15 2002-03-25 01:35:31 pkot Exp $
 
   G N O K I I
 
@@ -17,9 +17,11 @@
 
 */
 
-#include <config.h>
+#include "config.h"
 
-/* This is the right way to include stdlib with __USE_XOPEN defined */
+/* This is the correct way to include stdlib with __USE_XOPEN defined.
+ * Needed for clean unlockpt() declaration.
+ */
 #ifdef USE_UNIX98PTYS
 #  define _XOPEN_SOURCE 500
 #  include <features.h>

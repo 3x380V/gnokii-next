@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus.h,v 1.7 2002-02-21 01:12:05 pkot Exp $
+  $Id: fbus.h,v 1.8 2002-03-25 01:35:33 pkot Exp $
 
   G N O K I I
 
@@ -23,10 +23,11 @@
 
 #include <time.h>
 #include "gsm-statemachine.h"
+#include "config.h"
+#include "compat.h"
 
 #ifdef WIN32
-#include <sys/types.h>
-#include <sys/timeb.h>
+#  include <sys/types.h>
 #endif
 
 #define FBUS_MAX_FRAME_LENGTH 256
@@ -72,13 +73,8 @@ enum FBUS_RX_States {
 typedef struct{
 	int checksum[2];
 	int BufferCount;
-#ifndef WIN32
 	struct timeval time_now;
 	struct timeval time_last;
-#else
-	struct _timeb time_now;
-	struct _timeb time_last;
-#endif
 	enum FBUS_RX_States state;
 	int MessageSource;
 	int MessageDestination;

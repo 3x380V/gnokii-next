@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.48 2002-03-19 22:51:18 pkot Exp $
+  $Id: nk6100.c,v 1.49 2002-03-25 01:35:32 pkot Exp $
 
   G N O K I I
 
@@ -20,7 +20,9 @@
 #include <string.h>
 #include <stdlib.h>
 #include <ctype.h>
-#include <unistd.h>
+#ifndef WIN32
+#  include <unistd.h>
+#endif
 
 #include "misc.h"
 #include "gsm-common.h"
@@ -33,7 +35,7 @@
 #include "gsm-api.h"
 
 #ifdef WIN32
-#define snprintf _snprintf
+#  define snprintf _snprintf
 #endif
 
 /* Some globals */
