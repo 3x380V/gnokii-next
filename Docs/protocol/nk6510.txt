@@ -1,4 +1,4 @@
-$Id: nk6510.txt,v 1.3 2002-07-24 17:43:58 plail Exp $
+$Id: nk6510.txt,v 1.4 2003-04-29 10:24:00 pkot Exp $
 
 Assembled by
         Markus Plail <plail@web.de>
@@ -16,7 +16,7 @@ notify us via e-mail.  Thank you.
 
 Document describing frames used in
 GSM Nokia 6510 and derivatives (?)
-Correct format is FBUS version 2/Infrared/MBUS version 2
+Correct format is FBUS version 2/MBUS version 2/IrDA/Bluetooth
 (see nokia.txt for protocol details):
 
 
