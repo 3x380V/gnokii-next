@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.83 2003-02-26 10:05:30 ladis Exp $
+  $Id: atgen.c,v 1.84 2003-06-12 22:09:36 pkot Exp $
 
   G N O K I I
 
@@ -177,7 +177,7 @@ static gn_error Functions(gn_operation op, gn_data *data, struct gn_statemachine
 	at_driver_instance *drvinst = AT_DRVINST(state);
 	if (op == GN_OP_Init)
 		return Initialise(data, state);
-	if (!drvinst && op == GN_OP_Terminate)
+	if (drvinst && op == GN_OP_Terminate)
 		return Terminate(data, state);
 	if (!drvinst)
 		return GN_ERR_INTERNALERROR;
