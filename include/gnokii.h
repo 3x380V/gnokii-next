@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.h,v 1.34 2002-12-08 23:47:01 pkot Exp $
+  $Id: gnokii.h,v 1.35 2002-12-09 23:41:15 pkot Exp $
 
   G N O K I I
 
@@ -112,5 +112,8 @@ API int gn_get_note(int number);
 /* Functions */
 API char *gn_cfg_get(struct gn_cfg_header *cfg, const char *section, const char *key);
 API int gn_cfg_readconfig(char **model, char **port, char **initlength, char **connection, char **bindir);
+
+API int gn_phonebook2vcard(FILE *f, gn_phonebook_entry *entry, char *addon);
+API int gn_vcard2phonebook(FILE *f, gn_phonebook_entry *entry);
 
 #endif	/* _gnokii_gsm_api_h */
