@@ -1,5 +1,5 @@
 /*
- * $Id: unixirda.h,v 1.4 2002-03-25 01:35:33 pkot Exp $
+ * $Id: unixirda.h,v 1.5 2002-03-26 01:59:59 pkot Exp $
  *
  * G N O K I I
  *
@@ -36,7 +36,7 @@
 #include <sys/time.h>
 #include <sys/socket.h>
 
-#include "linuxirda.h"
+#include "devices/linuxirda.h"
 #include "misc.h"
 
 int irda_open(void);

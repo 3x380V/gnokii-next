@@ -24,7 +24,7 @@
  ********************************************************************/
 
 /*
- * $Id: linuxirda.h,v 1.4 2002-01-27 23:38:32 pkot Exp $
+ * $Id: linuxirda.h,v 1.1 2002-03-26 01:59:59 pkot Exp $
  *
  * GNOKII modifications:
  * Fixes for Solaris compile (Artur Kubiak and Michael Wiedmann)
