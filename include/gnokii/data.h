@@ -1,6 +1,6 @@
 /*
 
-  $Id: data.h,v 1.21 2002-03-02 21:03:18 pkot Exp $
+  $Id: data.h,v 1.22 2002-03-25 22:37:42 pkot Exp $
 
   G N O K I I
 
@@ -218,6 +218,6 @@ extern GSM_Error Unimplemented(void);
 
 extern GSM_MemoryType StrToMemoryType (const char *s);
 
-inline void GSM_DataClear(GSM_Data *data);
+void GSM_DataClear(GSM_Data *data);
 
 #endif	/* __gsm_data_h */

@@ -1,6 +1,6 @@
 /*
 
-  $Id: misc.c,v 1.30 2002-03-25 01:44:50 pkot Exp $
+  $Id: misc.c,v 1.31 2002-03-25 22:37:42 pkot Exp $
 
   G N O K I I
 
@@ -101,7 +101,7 @@ PhoneModel *GetPhoneModel (const char *num)
 	return (&models[0]);
 }
 
-inline char *GetModel (const char *num)
+char *GetModel (const char *num)
 {
 	return (GetPhoneModel(num)->model);
 }

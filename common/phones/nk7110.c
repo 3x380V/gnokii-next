@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk7110.c,v 1.62 2002-03-21 22:55:25 pkot Exp $
+  $Id: nk7110.c,v 1.63 2002-03-25 22:37:42 pkot Exp $
 
   G N O K I I
 
@@ -1453,7 +1453,7 @@ static GSM_Error GetCallerBitmap(GSM_Data *data, GSM_Statemachine *state)
 	return SM_Block(state, data, 0x03);
 }
 
-static inline unsigned char PackBlock(u8 id, u8 size, u8 no, u8 *buf, u8 *block)
+static unsigned char PackBlock(u8 id, u8 size, u8 no, u8 *buf, u8 *block)
 {
 	*(block++) = id;
 	*(block++) = 0;

@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-common.c,v 1.10 2001-12-31 09:35:46 pkot Exp $
+  $Id: gsm-common.c,v 1.11 2002-03-25 22:37:42 pkot Exp $
 
   G N O K I I
 
@@ -63,7 +63,7 @@ GSM_MemoryType StrToMemoryType(const char *s)
 
 /* This very small function is just to make it */
 /* easier to clear the data struct every time one is created */
-inline void GSM_DataClear(GSM_Data *data)
+void GSM_DataClear(GSM_Data *data)
 {
 	memset(data, 0, sizeof(GSM_Data));
 }
