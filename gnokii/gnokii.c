@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.368 2003-10-30 21:43:50 bozo Exp $
+  $Id: gnokii.c,v 1.369 2003-11-04 23:27:31 bozo Exp $
 
   G N O K I I
 
@@ -3270,11 +3270,11 @@ static int decodephonebook(gn_phonebook_entry *entry, char *oline)
 
 	/* This is to send other exports (like from 6110) to 7110 */
 	if (!entry->subentries_count) {
-		entry->subentries_count = 1;
 		entry->subentries[entry->subentries_count].entry_type   = GN_PHONEBOOK_ENTRY_Number;
 		entry->subentries[entry->subentries_count].number_type  = GN_PHONEBOOK_NUMBER_General;
 		entry->subentries[entry->subentries_count].id = 2;
 		strcpy(entry->subentries[entry->subentries_count].data.number, entry->number);
+		entry->subentries_count = 1;
 	}
 	return 1;
 }
