@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-encoding.c,v 1.20 2002-07-07 20:49:58 pkot Exp $
+  $Id: gsm-encoding.c,v 1.21 2002-07-21 15:45:06 pkot Exp $
 
   G N O K I I
 
@@ -76,6 +76,18 @@ static void SetupReverse()
 		GSM_ReverseDefaultAlphabet[ GSM_DefaultAlphabet[i] ] = i;
 	GSM_ReverseDefaultAlphabet['?'] = 0x3f;
 	reversed = true;
+}
+
+bool IsDefaultAlphabetString(unsigned char *string)
+{
+	unsigned int i, len = strlen(string);
+
+	SetupReverse();
+	for (i = 0; i < len; i++)
+		if (GSM_ReverseDefaultAlphabet[string[i]] == 0x3f &&
+		    string[i] != '?')
+			return false;
+	return true;
 }
 
 static unsigned char EncodeWithDefaultAlphabet(unsigned char value)
