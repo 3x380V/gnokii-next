@@ -1,6 +1,6 @@
 /*
 
-  $Id: compat.h,v 1.25 2003-04-22 17:12:25 ladis Exp $
+  $Id: compat.h,v 1.26 2003-04-28 14:07:38 pkot Exp $
 
   G N O K I I
 
@@ -40,7 +40,9 @@
 #endif
 
 #ifdef HAVE_STDARG_H
-#  include <stdarg.h>
+#  ifndef _VA_LIST
+#    include <stdarg.h>
+#  endif
 #endif
 
 #ifdef HAVE_STRINGS_H

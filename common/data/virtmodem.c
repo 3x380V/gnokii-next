@@ -1,6 +1,6 @@
 /*
 
-  $Id: virtmodem.c,v 1.38 2003-04-08 08:39:37 bozo Exp $
+  $Id: virtmodem.c,v 1.39 2003-04-28 14:07:38 pkot Exp $
 
   G N O K I I
 
@@ -69,6 +69,7 @@
 #include <sys/uio.h>
 #include <sys/param.h>
 
+#include "compat.h"
 #include "misc.h"
 #include "gnokii.h"
 #include "data/at-emulator.h"
