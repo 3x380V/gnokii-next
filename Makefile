@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.129 2004-01-20 22:42:11 uid66843 Exp $
+# $Id: Makefile,v 1.130 2004-01-20 22:43:38 uid66843 Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -28,7 +28,6 @@ DIRS =  common/phones \
 	$(DATA_DIR) \
 	po \
 	common \
-	intl \
 	$(BIN_DIRS)
 
 GTK_DIRS =	xgnokii
@@ -42,7 +41,7 @@ INSTALL_SIMPLE =	po \
 
 DOCS_DIR = 	Docs
 
-all: $(DIRS)
+all: intl $(DIRS)
 	@if [ "$(GTK_LIBS)" ]; then \
 		for dir in $(GTK_DIRS); do \
 		    if [ -e $$dir/Makefile ]; then \
