@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_lowlevel.c,v 1.63 2002-08-28 22:18:09 pkot Exp $
+  $Id: xgnokii_lowlevel.c,v 1.64 2002-08-30 08:13:10 pkot Exp $
   
   X G N O K I I
 
@@ -1134,7 +1134,7 @@ void *GUI_Connect(void *a)
 	phoneMonitor.working = _("Connecting...");
 	if (fbusinit(true) != GE_NONE) {
 #ifdef XDEBUG
-		g_printf("Initialization failed...\n");
+		g_print("Initialization failed...\n");
 #endif
 		/* FIXME: Add some popup */
 		exit(1);
