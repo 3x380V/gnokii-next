@@ -1,6 +1,6 @@
 /*
 
-  $Id: misc.c,v 1.77 2004-02-25 21:16:44 uid66843 Exp $
+  $Id: misc.c,v 1.78 2004-04-12 13:16:16 bozo Exp $
 
   G N O K I I
 
@@ -277,6 +277,7 @@ static gn_phone_model models[] = {
 	{"D211",  "DTE-1", 0},
 	{"N-Gage", "NEM-4", 0},
 	{"RinGo", "NHX-7", 0},
+	{"sx1",  "SX1", PM_CALLERGROUP | PM_CALENDAR | PM_SPEEDDIAL | PM_NETMONITOR | PM_EXTPBK | PM_SMS | PM_FOLDERS },
 	{NULL,    NULL, 0 }
 };
 
