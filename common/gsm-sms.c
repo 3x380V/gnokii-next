@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-sms.c,v 1.67 2002-05-23 09:59:20 machek Exp $
+  $Id: gsm-sms.c,v 1.68 2002-05-23 21:05:42 bozo Exp $
 
   G N O K I I
 
@@ -538,8 +538,8 @@ static GSM_Error DecodeSMSHeader(GSM_SMSMessage *rawsms, GSM_API_SMS *sms, SMS_U
 
 
 	/* Sending time */
-	UnpackDateTime(rawsms->SMSCTime, &(sms->Time));
-	dprintf("\tDate: %s\n", PrintDateTime(rawsms->SMSCTime));
+	UnpackDateTime(rawsms->Time, &(sms->Time));
+	dprintf("\tDate: %s\n", PrintDateTime(rawsms->Time));
 
 	/* Data Coding Scheme */
 	sms->DCS.Type = rawsms->DCS;
