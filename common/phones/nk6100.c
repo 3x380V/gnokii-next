@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.64 2002-04-16 23:51:31 bozo Exp $
+  $Id: nk6100.c,v 1.65 2002-04-17 00:05:53 bozo Exp $
 
   G N O K I I
 
@@ -2667,7 +2667,6 @@ static GSM_Error AnswerCall(GSM_Data *data, GSM_Statemachine *state)
 				0xa2, 0x88, 0x81, 0x21, 0x15, 0x63, 0xa8, 0x00, 0x00,
 				0x07, 0xa3, 0xb8, 0x81, 0x20, 0x15, 0x63, 0x80};
 	unsigned char req2[] = {FBUS_FRAME_HEADER, 0x06, 0x00, 0x00};
-	GSM_Error error;
 
 	if (SM_SendMessage(state, sizeof(req1), 0x01, req1) != GE_NONE) return GE_NOTREADY;
 
