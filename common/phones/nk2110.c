@@ -1,6 +1,6 @@
 /* -*- linux-c -*-
 
-  $Id: nk2110.c,v 1.17 2001-11-29 17:54:56 pkot Exp $
+  $Id: nk2110.c,v 1.18 2001-12-24 10:41:13 pkot Exp $
 
   G N O K I I
 
@@ -346,7 +346,7 @@ DecodeIncomingSMS(GSM_SMSMessage *m)
 	case 1: m->Type = SMS_Deliver; /* m->Status = GSS_SENTREAD;    */ ddprintf("read\n"); break;
 	}
 
-	UnpackDateTime(SMSData+7, &m->Time);
+	UnpackDateTime((u8 *)SMSData+7, &m->Time);
 
 	m->Length = len = SMSData[14];
 	ddprintf("%d bytes: ", len );

@@ -1,6 +1,6 @@
 /*
 
-  $Id: sms.h,v 1.11 2001-12-14 14:37:45 pkot Exp $
+  $Id: sms.h,v 1.12 2001-12-24 10:41:12 pkot Exp $
 
   G N O K I I
 
@@ -407,5 +407,6 @@ extern GSM_Error DecodeTextSMS(unsigned char *message, GSM_SMSMessage *SMS);
 /* We really do need this in the other code */
 extern char *GetBCDNumber(u8 *Number);
 extern int SemiOctetPack(char *Number, unsigned char *Output, SMS_NumberType type);
+extern SMS_DateTime *UnpackDateTime(u8 *Number, SMS_DateTime *dt);
 
 #endif /* __gnokii_sms_h_ */
