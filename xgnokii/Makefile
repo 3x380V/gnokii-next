@@ -1,7 +1,7 @@
 
 
 #
-# $Id: Makefile,v 1.50 2003-09-07 23:24:42 pkot Exp $
+# $Id: Makefile,v 1.51 2003-10-05 22:44:30 bozo Exp $
 #
 # Makefile for the xGNOKII tool suite.
 #
@@ -36,6 +36,7 @@ OBJS = 	xgnokii.o \
 	xgnokii_xkeyb.o \
 	xgnokii_calendar.o \
 	xgnokii_logos.o \
+	xgnokii_xring.o \
 	xgnokii_lowlevel.o \
 	xgnokii_data.o
 
