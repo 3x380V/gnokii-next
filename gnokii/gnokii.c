@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.358 2003-09-22 19:45:31 pkot Exp $
+  $Id: gnokii.c,v 1.359 2003-09-22 19:49:17 pkot Exp $
 
   G N O K I I
 
@@ -2756,14 +2756,12 @@ static int displayoutput(void)
 		while (!bshutdown) {
 			char buf[105];
 			memset(&buf[0], 0, 102);
-			while (read(0, buf, 100) > 0) {
-				/*
+/*			while (read(0, buf, 100) > 0) {
 				fprintf(stderr, _("handling keys (%d).\n"), strlen(buf));
 				if (GSM && GSM->HandleString && GSM->HandleString(buf) != GN_ERR_NONE)
 					fprintf(stdout, _("Key press simulation failed.\n"));
-				*/
 				memset(buf, 0, 102);
-			}
+			}*/
 			gn_sm_loop(1, &state);
 			gn_sm_functions(GN_OP_PollDisplay, &data, &state);
 		}
