@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk7110.c,v 1.78 2002-05-24 14:24:15 plail Exp $
+  $Id: nk7110.c,v 1.79 2002-05-24 22:17:33 bozo Exp $
 
   G N O K I I
 
@@ -2040,7 +2040,7 @@ static GSM_Error P7110_WritePhonebookLocation(GSM_Data *data, GSM_Statemachine *
 		}
 		/* Rest of the numbers */
 		for (i = 0; i < entry->SubEntriesCount; i++)
-			if (entry->SubEntries[i].EntryType == GSM_Number)
+			if (entry->SubEntries[i].EntryType == GSM_Number) {
 				if (i != defaultn) {
 					string[0] = entry->SubEntries[i].NumberType;
 					string[1] = string[2] = string[3] = 0;
