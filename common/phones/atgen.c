@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.22 2002-02-06 00:37:17 pkot Exp $
+  $Id: atgen.c,v 1.23 2002-02-09 00:13:35 pkot Exp $
 
   G N O K I I
 
@@ -165,9 +165,6 @@ static char *memorynames[] = {
 	"TA", /* for compatibility only: TA=computer memory */
 	"CB", /* Currently selected memory */
 };
-
-/* LinkOK is always true for now... */
-bool ATGEN_LinkOK = true;
 
 
 GSM_RecvFunctionType AT_InsertRecvFunction(int type, GSM_RecvFunctionType func)

@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-api.c,v 1.37 2002-01-27 23:38:30 pkot Exp $
+  $Id: gsm-api.c,v 1.38 2002-02-09 00:13:34 pkot Exp $
 
   G N O K I I
 
@@ -37,12 +37,6 @@
 GSM_Statemachine GSM_SM;
 GSM_Error (*GSM_F)(GSM_Operation op, GSM_Data *data, GSM_Statemachine *state);
 
-
-/* GSM_LinkOK is set to true once normal communications with the phone have
-   been established. */
-
-bool *GSM_LinkOK;
-bool LinkAlwaysOK = true;
 
 /* Define pointer to the GSM_Information structure used by external code to
    obtain information that varies from model to model. This structure is also
@@ -81,7 +75,6 @@ GSM_Error GSM_Initialise(char *model, char *device, char *initlength, GSM_Connec
 	GSM_Error ret;
 #ifndef WIN32  /* MB21 not supported in win32 */
 
-	GSM_LinkOK = &LinkAlwaysOK;
 	sm->Link.ConnectionType = connection;
 	sm->Link.InitLength = atoi(initlength);
 	memset(&sm->Link.PortDevice, 0, sizeof(sm->Link.PortDevice));

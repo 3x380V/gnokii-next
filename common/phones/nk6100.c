@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.32 2002-02-07 22:58:31 pkot Exp $
+  $Id: nk6100.c,v 1.33 2002-02-09 00:13:35 pkot Exp $
 
   G N O K I I
 
@@ -254,8 +254,6 @@ static GSM_Error Functions(GSM_Operation op, GSM_Data *data, GSM_Statemachine *s
 		return GE_NOTIMPLEMENTED;
 	}
 }
-
-/* static bool LinkOK = true; */
 
 /* Initialise is the only function allowed to 'use' state */
 static GSM_Error Initialise(GSM_Statemachine *state)

@@ -1,6 +1,6 @@
 /*
 
-  $Id: dc2711.c,v 1.7 2002-01-27 23:38:31 pkot Exp $
+  $Id: dc2711.c,v 1.8 2002-02-09 00:13:35 pkot Exp $
 
   G N O K I I
 
@@ -55,8 +55,6 @@ static GSM_Phone phone = {
 	INFO
 };
 
-/* LinkOK is always true for now... */
-bool D2711_LinkOK = true;
 char reply_buf[10240];
 
 static void Terminate()

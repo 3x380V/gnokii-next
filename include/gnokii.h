@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.h,v 1.20 2002-01-31 10:28:45 pkot Exp $
+  $Id: gnokii.h,v 1.21 2002-02-09 00:13:36 pkot Exp $
 
   G N O K I I
 
@@ -24,7 +24,6 @@
 
 /* Define these as externs so that app code can pick them up. */
 
-extern bool *GSM_LinkOK;
 extern GSM_Information *GSM_Info;
 extern GSM_Error (*GSM_F)(GSM_Operation op, GSM_Data *data, GSM_Statemachine *state);
 

@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk7110.c,v 1.54 2002-02-08 23:57:37 pkot Exp $
+  $Id: nk7110.c,v 1.55 2002-02-09 00:13:35 pkot Exp $
 
   G N O K I I
 
@@ -244,9 +244,6 @@ static GSM_Error P7110_Functions(GSM_Operation op, GSM_Data *data, GSM_Statemach
 	}
 	return GE_NONE;
 }
-
-/* LinkOK is always true for now... */
-bool P7110_LinkOK = true;
 
 /* Initialise is the only function allowed to 'use' state */
 static GSM_Error P7110_Initialise(GSM_Statemachine *state)
