@@ -1,6 +1,6 @@
 /*
 
-  $Id: smsd.c,v 1.31 2003-01-01 21:29:06 pkot Exp $
+  $Id: smsd.c,v 1.32 2003-01-21 00:41:14 bozo Exp $
 
   S M S D
 
@@ -180,7 +180,7 @@ static void ReadConfig (gint argc, gchar *argv[])
   while (1)
   {
     gint optionIndex = 0;
-    gchar c;
+    gint c;
     static struct option longOptions[] =
     {
       {"user", 1, 0, 'u'},
