@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_lowlevel.h,v 1.28 2003-10-05 22:44:30 bozo Exp $
+  $Id: xgnokii_lowlevel.h,v 1.29 2003-10-25 13:17:18 bozo Exp $
   
   X G N O K I I
 
@@ -75,6 +75,8 @@ typedef enum {
 	Event_PlayTone,
 	Event_GetRingtone,
 	Event_SetRingtone,
+	Event_DeleteRingtone,
+	Event_GetRingtoneList,
 	Event_Exit
 } PhoneAction;
 
