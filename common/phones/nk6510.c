@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.c,v 1.106 2003-02-18 00:40:46 pkot Exp $
+  $Id: nk6510.c,v 1.107 2003-02-25 00:22:26 pkot Exp $
 
   G N O K I I
 
@@ -201,7 +201,7 @@ gn_driver driver_nokia_6510 = {
 	pgen_incoming_default,
 	/* Mobile phone information */
 	{
-		"6510|6310|8310|6310i",      /* Supported models */
+		"6510|6310|8310|6310i|6360",      /* Supported models */
 		7,                     /* Max RF Level */
 		0,                     /* Min RF Level */
 		GN_RF_Percentage,      /* RF level units */
