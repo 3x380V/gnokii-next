@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.h,v 1.53 2003-04-28 13:19:15 pkot Exp $
+  $Id: gnokii.h,v 1.54 2003-04-28 13:21:31 pkot Exp $
 
   G N O K I I
 
@@ -38,6 +38,9 @@ extern "C" {
 /* Some portability definitions first */
 #if defined(__linux__)
 #  include <stdint.h>
+#  include <sys/time.h>
+#elif defined(__svr4__)
+#  include <inttypes.h>
 #  include <sys/time.h>
 #elif defined(_MSC_VER) && defined(WIN32)
 #  include <Winsock2.h>
