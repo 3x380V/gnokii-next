@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.271 2002-07-21 15:45:06 pkot Exp $
+  $Id: gnokii.c,v 1.272 2002-07-21 15:47:53 pkot Exp $
 
   G N O K I I
 
@@ -620,7 +620,7 @@ static int sendsms(int argc, char *argv[])
 		sms.UserData[curpos].Type = SMS_PlainText;
 		if (!IsDefaultAlphabetString(sms.UserData[curpos].u.Text))
 			sms.DCS.u.General.Alphabet = SMS_UCS2;
-		sms.UserData[curpos].Type = SMS_NoData;
+		sms.UserData[++curpos].Type = SMS_NoData;
 	}
 
 	data.SMS = &sms;
