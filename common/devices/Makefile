@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.7 2002-08-27 21:39:10 pkot Exp $
+# $Id: Makefile,v 1.8 2002-08-27 23:44:02 pkot Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -27,7 +27,7 @@ else
 		tcp.o
 endif
 
-ifdef HAVE_BLUETOOTH
+ifdef USE_BLUETOOTH
 	OBJS += unixbluetooth.o
 endif
 
