@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.h,v 1.38 2002-12-26 21:06:01 pkot Exp $
+  $Id: gnokii.h,v 1.39 2002-12-26 22:39:29 pkot Exp $
 
   G N O K I I
 
@@ -39,6 +39,7 @@
 #include "gsm-data.h"
 #include "gsm-networks.h"
 #include "gsm-statemachine.h"
+#include "data/virtmodem.h"
 
 API struct gn_cfg_header *gn_cfg_info;
 
