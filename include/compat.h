@@ -1,6 +1,6 @@
 /*
 
-  $Id: compat.h,v 1.32 2004-01-18 16:26:15 uid66849 Exp $
+  $Id: compat.h,v 1.33 2004-02-22 20:00:55 uid66849 Exp $
 
   G N O K I I
 
@@ -81,6 +81,10 @@
 
 #ifdef HAVE_SYS_SOCKET_H
 #  include <sys/socket.h>
+#endif
+
+#ifdef HAVE_WCHAR_H
+#  include <wchar.h>
 #endif
 
 /*
@@ -234,6 +238,16 @@ int vasprintf(char **ptr, const char *format, va_list ap);
 /* for Linux Bluetooth compability */
 #if !defined(HAVE_STDINT_H) && !defined(HAVE_INTTYPES_H)
 	typedef unsigned char uint8_t;
+#endif
+
+#ifdef HAVE_WCRTOMB
+#define MBSTATE mbstate_t
+#define MBSTATE_ENC_CLEAR(x) memset(&(x), 0, sizeof(mbstate_t))
+#define MBSTATE_DEC_CLEAR(x) memset(&(x), 0, sizeof(mbstate_t))
+#else
+#define MBSTATE char
+#define MBSTATE_ENC_CLEAR(x) mbtowc(NULL, NULL, 0)
+#define MBSTATE_DEC_CLEAR(x) wctomb(NULL, NULL)
 #endif
 
 #endif
