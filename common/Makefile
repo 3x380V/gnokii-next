@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.49 2003-04-07 21:24:10 pkot Exp $
+# $Id: Makefile,v 1.50 2003-06-03 19:31:08 pkot Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -88,7 +88,7 @@ install:
 	cd $(DESTDIR)$(libdir) && ln -sf $(GNOKII_LIBMM) $(GNOKII_LIBM)
 	cd $(DESTDIR)$(libdir) && ln -sf $(GNOKII_LIBM) $(GNOKII_LIB)
 	$(INSTALL) -d $(DESTDIR)$(libdir)/pkgconfig
-	$(INSTALL) gnokii.pc $(DESTDIR)$(libdir)/pkgconfig
+	$(INSTALL_DATA) gnokii.pc $(DESTDIR)$(libdir)/pkgconfig
 	@echo
 
 install-strip: install

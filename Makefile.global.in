@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile.global.in,v 1.38 2003-04-23 23:19:27 bozo Exp $
+# $Id: Makefile.global.in,v 1.39 2003-06-03 19:31:08 pkot Exp $
 #
 # Global Makefiles configuration for the GNOKII.
 #
@@ -26,8 +26,9 @@ xbindir        = @XGNOKIIDIR@/bin/
 libdir         = @libdir@
 xgnokii_libdir = @XGNOKIIDIR@/share/@XPACKAGE@
 includedir     = @includedir@
-man1dir        = @mandir@/man1/
-man8dir        = @mandir@/man8/
+mandir         = @mandir@
+man1dir        = ${mandir}/man1/
+man8dir        = ${mandir}/man8/
 xmandir        = @XGNOKIIDIR@/man/man1/
 docdir         = ${prefix}/doc/${PACKAGE}
 locdir         = @datadir@/locale
@@ -36,6 +37,7 @@ BIN_MODE       = 0755
 TEXT_MODE      = 0444
 
 INSTALL        = @INSTALL@
+INSTALL_DATA   = @INSTALL_DATA@
 RM             = @RM@ -f
 FIND           = @FIND@
 MAKE           = @MAKE@
