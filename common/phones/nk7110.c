@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk7110.c,v 1.98 2002-07-19 10:33:39 plail Exp $
+  $Id: nk7110.c,v 1.99 2002-07-19 11:11:41 plail Exp $
 
   G N O K I I
 
@@ -1078,7 +1078,7 @@ static GSM_Error P7110_IncomingSMS(int messagetype, unsigned char *message, int 
 			sprintf(data->MessageCenter->SMSC.Number, "(none)");
 		}
 		if(strlen(data->MessageCenter->Name) == 0) {
-			data->MessageCenter->Name = '\0';
+			data->MessageCenter->Name[0] = '\0';
 		}
 
 		break;
