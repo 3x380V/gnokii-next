@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-internal.h,v 1.11 2003-03-06 21:29:04 pkot Exp $
+  $Id: gnokii-internal.h,v 1.12 2003-06-14 12:39:31 osma Exp $
 
   G N O K I I
 
@@ -54,6 +54,7 @@ gn_error sm_block_timeout(int waitfor, int t, gn_data *data, struct gn_statemach
 gn_error sm_block(int waitfor, gn_data *data, struct gn_statemachine *state);
 gn_error sm_block_no_retry_timeout(int waitfor, int t, gn_data *data, struct gn_statemachine *state);
 gn_error sm_block_no_retry(int waitfor, gn_data *data, struct gn_statemachine *state);
+gn_error sm_block_ack(struct gn_statemachine *state);
 void sm_message_dump(int messagetype, unsigned char *message, int length);
 void sm_unhandled_frame_dump(int messagetype, unsigned char *message, int length, struct gn_statemachine *state);
 

@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-statemachine.c,v 1.49 2003-04-28 12:43:39 pkot Exp $
+  $Id: gsm-statemachine.c,v 1.50 2003-06-14 12:39:31 osma Exp $
 
   G N O K I I
 
@@ -285,6 +285,37 @@ gn_error sm_block_no_retry_timeout(int waitfor, int t, gn_data *data, struct gn_
 gn_error sm_block_no_retry(int waitfor, gn_data *data, struct gn_statemachine *state)
 {
 	return sm_block_no_retry_timeout(waitfor, 100, data, state);
+}
+
+/* Block waiting for an ack, don't wait for a reply message of any sort */
+gn_error sm_block_ack(struct gn_statemachine *state)
+{
+	int retry;
+	gn_state s;
+	gn_error err;
+	struct timeval now, next, timeout;
+
+	s = state->current_state;
+	timeout.tv_sec = 3;
+	timeout.tv_usec = 0;
+	gettimeofday(&now, NULL);
+	for (retry = 0; retry < 2; retry++) {
+		timeradd(&now, &timeout, &next);
+		do {
+			s = gn_sm_loop(1, state);  /* Timeout=100ms */
+			gettimeofday(&now, NULL);
+		} while (timercmp(&next, &now, >) && (s == GN_SM_MessageSent));
+
+		if (s == GN_SM_WaitingForResponse || s == GN_SM_ResponseReceived)
+			return GN_ERR_NONE;
+
+		dprintf("sm_block_ack Retry - %d\n", retry);
+		sm_reset(state);
+		err = sm_message_send(state->last_msg_size, state->last_msg_type, state->last_msg, state);
+		if (err != GN_ERR_NONE) return err;
+	}
+
+	return GN_ERR_TIMEOUT;
 }
 
 /* Just to do things neatly */
