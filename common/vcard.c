@@ -1,6 +1,6 @@
 /*
 
-  $Id: vcard.c,v 1.3 2002-12-10 12:59:34 ladis Exp $
+  $Id: vcard.c,v 1.4 2002-12-12 15:07:19 ladis Exp $
   
   G N O K I I
 
@@ -32,7 +32,7 @@
 
 #include "gsm-common.h"
 
-API int phonebook2vcard(FILE * f, gn_phonebook_entry *entry, char *addon)
+API int gn_phonebook2vcard(FILE * f, gn_phonebook_entry *entry, char *addon)
 {
 	char buf2[1024];
 	int i;
@@ -103,7 +103,7 @@ API int phonebook2vcard(FILE * f, gn_phonebook_entry *entry, char *addon)
 
 #define ERROR(a) fprintf(stderr, "%s\n", a)
 
-API int vcard2phonebook(FILE *f, gn_phonebook_entry *entry)
+API int gn_vcard2phonebook(FILE *f, gn_phonebook_entry *entry)
 {
 	char buf[10240];
 

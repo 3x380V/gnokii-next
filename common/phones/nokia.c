@@ -1,6 +1,6 @@
 /*
 
-  $Id: nokia.c,v 1.24 2002-12-11 00:12:32 pkot Exp $
+  $Id: nokia.c,v 1.25 2002-12-12 15:07:19 ladis Exp $
 
   G N O K I I
 
@@ -392,7 +392,7 @@ gn_error pnok_netmonitor(gn_data *data, struct gn_statemachine *state)
 	return sm_block(state, data, 0x40);
 }
 
-gn_error pnok_securty_incoming(int messagetype, unsigned char *message, int length, gn_data *data, struct gn_statemachine *state)
+gn_error pnok_security_incoming(int messagetype, unsigned char *message, int length, gn_data *data, struct gn_statemachine *state)
 {
 	switch (message[2]) {
 	/* Enable extended commands */
