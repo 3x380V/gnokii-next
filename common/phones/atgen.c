@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.76 2003-02-04 20:42:47 pkot Exp $
+  $Id: atgen.c,v 1.77 2003-02-04 22:56:54 pkot Exp $
 
   G N O K I I
 
@@ -516,7 +516,7 @@ static gn_error AT_WritePhonebook(gn_data *data, struct gn_statemachine *state)
 			len = char_ascii_encode(tmp, data->phonebook_entry->name, len);
 			break;
 		case AT_CHAR_HEXGSM:
-			char_hex_encode(tmp, data->phonebook_entry->name, len);
+			char_hex_encode(tmp, data->phonebook_entry->name, 2 * len);
 			len *= 2;
 			break;
 		case AT_CHAR_UCS2:
