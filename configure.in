@@ -5,7 +5,7 @@ dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janík ml.
 dnl                2000 Karel Zak, Pawe³ Kot
 dnl                2002 BORBELY Zoltan
 dnl
-dnl  $Id: configure.in,v 1.71 2002-04-14 00:52:59 bozo Exp $
+dnl  $Id: configure.in,v 1.72 2002-04-14 16:01:08 pkot Exp $
 dnl
 
 AC_INIT(gnokii/gnokii.c)
@@ -466,7 +466,7 @@ AC_CACHE_CHECK(for long double, ac_cv_c_long_double,
 	[AC_TRY_RUN([int main() { long double foo = 0.0; exit(sizeof(long double) < sizeof(double)); }],
 		ac_cv_c_long_double=yes, ac_cv_c_long_double=no, ac_cv_c_long_double=no)])
 if test $ac_cv_c_long_double = yes; then
-	AC_DEFINE(HAVE_LONG_DOUBLE)
+	AC_DEFINE(HAVE_LONG_DOUBLE, 1, [Define if your compiler supports the \`long double' type.])
 fi
 
 
