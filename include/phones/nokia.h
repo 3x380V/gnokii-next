@@ -1,6 +1,6 @@
 /*
 
-  $Id: nokia.h,v 1.3 2001-12-31 09:35:47 pkot Exp $
+  $Id: nokia.h,v 1.4 2002-01-14 09:26:18 pkot Exp $
 
   G N O K I I
 
@@ -24,5 +24,7 @@
 #include "gsm-error.h"
 
 GSM_Error PNOK_GetManufacturer(char *manufacturer);
+void PNOK_DecodeString(unsigned char *dest, size_t max, const unsigned char *src, size_t len);
+size_t PNOK_EncodeString(unsigned char *dest, size_t max, const unsigned char *src);
 
 #endif
