@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.h,v 1.58 2003-05-13 08:44:05 pkot Exp $
+  $Id: gnokii.h,v 1.59 2003-09-03 09:34:30 pkot Exp $
 
   G N O K I I
 
@@ -89,6 +89,9 @@ API int gn_cfg_phone_load(const char *iname, struct gn_statemachine *state);
 
 API int gn_phonebook2vcard(FILE *f, gn_phonebook_entry *entry, char *location);
 API int gn_vcard2phonebook(FILE *f, gn_phonebook_entry *entry);
+
+API int gn_phonebook2ldif(FILE *f, gn_phonebook_entry *entry);
+API int gn_ldif2phonebook(FILE *f, gn_phonebook_entry *entry);
 
 API int gn_vcal_file_event_read(char *filename, gn_calnote *cnote, int number);
 API int gn_vcal_file_todo_read(char *filename, gn_todo *ctodo, int number);
