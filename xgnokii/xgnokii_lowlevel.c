@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_lowlevel.c,v 1.78 2003-02-26 00:15:53 pkot Exp $
+  $Id: xgnokii_lowlevel.c,v 1.79 2003-06-24 11:13:54 ladis Exp $
   
   X G N O K I I
 
@@ -432,8 +432,7 @@ static void RefreshSMS(const gint number)
 				if (phoneMonitor.sms.number == number) {
 					g_free(list);
 					g_free(fld);
-					g_free(msg);
-					return;
+					break;
 				}
 			} else if (error == GN_ERR_INVALIDLOCATION) {	/* All positions are read */
 				g_free(list);
