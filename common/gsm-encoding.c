@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-encoding.c,v 1.32 2002-11-12 13:53:07 bozo Exp $
+  $Id: gsm-encoding.c,v 1.33 2002-11-25 21:06:44 pkot Exp $
 
   G N O K I I
 
@@ -129,17 +129,17 @@ static unsigned char char_decode_def_alphabet_ext(unsigned char value)
 static unsigned char char_encode_def_alphabet_ext(unsigned char value)
 {
 	switch (value) {
-	case 0x0c: return 0x0a; break; /* from feed */
-	case '^':  return 0x14; break;
-	case '{':  return '{';  break;
-	case '}':  return '}';  break;
-	case '\\': return '\\'; break;
-	case '[':  return '[';  break;
-	case '~':  return '~';  break;
-	case ']':  return ']';  break;
-	case '|':  return '|';  break;
-	case 0xa4: return 0x65; break; /* euro */
-	default: return 0x00;   break; /* invalid character */
+	case 0x0c: return 0x0a; /* from feed */
+	case '^':  return 0x14;
+	case '{':  return 0x28;
+	case '}':  return 0x29;
+	case '\\': return 0x2f;
+	case '[':  return 0x3c;
+	case '~':  return 0x3d;
+	case ']':  return 0x3e;
+	case '|':  return 0x40;
+	case 0xa4: return 0x65; /* euro */
+	default: return 0x00; /* invalid character */
 	}
 }
 
