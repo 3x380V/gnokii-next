@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-error.c,v 1.15 2003-01-01 21:29:05 pkot Exp $
+  $Id: gsm-error.c,v 1.16 2003-02-17 23:16:04 pkot Exp $
 
   G N O K I I
 
@@ -51,7 +51,7 @@ API char *gn_error_print(gn_error e)
 	case GN_ERR_WAITING:               return "Waiting for the next part of the message.";
 	case GN_ERR_NOTREADY:              return "Device not ready.";
 	case GN_ERR_BUSY:                  return "Command is still being executed.";
-	case GN_ERR_INVALIDLOCATION:       return "The given memory location is empty.";
+	case GN_ERR_INVALIDLOCATION:       return "The given memory location is invalid.";
 	case GN_ERR_INVALIDMEMORYTYPE:     return "Invalid type of memory.";
 	case GN_ERR_EMPTYLOCATION:         return "The given location is empty.";
 	case GN_ERR_ENTRYTOOLONG:          return "The given entry is too long";
