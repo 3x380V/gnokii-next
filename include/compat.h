@@ -1,6 +1,6 @@
 /*
 
-  $Id: compat.h,v 1.35 2004-02-23 23:13:12 uid66849 Exp $
+  $Id: compat.h,v 1.36 2004-02-23 23:18:30 uid66843 Exp $
 
   G N O K I I
 
@@ -241,13 +241,13 @@ int vasprintf(char **ptr, const char *format, va_list ap);
 #endif
 
 #ifdef HAVE_WCRTOMB
-#define MBSTATE mbstate_t
-#define MBSTATE_ENC_CLEAR(x) memset(&(x), 0, sizeof(mbstate_t))
-#define MBSTATE_DEC_CLEAR(x) memset(&(x), 0, sizeof(mbstate_t))
+#  define MBSTATE mbstate_t
+#  define MBSTATE_ENC_CLEAR(x) memset(&(x), 0, sizeof(mbstate_t))
+#  define MBSTATE_DEC_CLEAR(x) memset(&(x), 0, sizeof(mbstate_t))
 #else
-#define MBSTATE char
-#define MBSTATE_ENC_CLEAR(x) mbtowc(NULL, NULL, 0)
-#define MBSTATE_DEC_CLEAR(x) wctomb(NULL, 0)
+#  define MBSTATE char
+#  define MBSTATE_ENC_CLEAR(x) mbtowc(NULL, NULL, 0)
+#  define MBSTATE_DEC_CLEAR(x) wctomb(NULL, 0)
 #endif
 
 #endif
