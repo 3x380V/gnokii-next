@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.c,v 1.30 2002-07-10 22:33:01 pkot Exp $
+  $Id: nk6510.c,v 1.31 2002-07-11 07:38:36 pkot Exp $
 
   G N O K I I
 
@@ -134,7 +134,7 @@ GSM_Phone phone_nokia_6510 = {
 	PGEN_IncomingDefault,
 	/* Mobile phone information */
 	{
-		"6510|6310|8310|6310i",      /* Supported models */
+		"6510|6310|8310|6310i|7650",      /* Supported models */
 		7,                     /* Max RF Level */
 		0,                     /* Min RF Level */
 		GRF_Percentage,        /* RF level units */
