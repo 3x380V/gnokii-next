@@ -3,7 +3,7 @@
 #
 # Copyright (C) 1999 Hugh Blemings & Pavel Janík ml. & Jan Derfinak
 #               2000 Karel Zak
-# $Id: Makefile,v 1.27 2004-01-23 00:15:15 uid66849 Exp $
+# $Id: Makefile,v 1.28 2004-06-20 14:14:08 pkot Exp $
 #
 
 GLIBCFLAGS = glib-config --cflags
@@ -38,8 +38,8 @@ ifdef ICONV_LIBS
 	LDLIBS += $(ICONV_LIBS)
 endif
 
-OBJS = 	smsd.o \
-	lowlevel.o
+OBJS = 	smsd.lo \
+	lowlevel.lo
 
 all: smsd
 
