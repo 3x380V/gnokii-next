@@ -1,6 +1,6 @@
 /*
 
-  $Id: cfgreader.c,v 1.53 2005-01-02 14:21:45 pkot Exp $
+  $Id: cfgreader.c,v 1.54 2005-03-21 23:04:53 pkot Exp $
 
   G N O K I I
 
@@ -499,7 +499,7 @@ API int gn_cfg_file_read(const char *file)
 	gn_config_default.sm_retry = 0;
 
 	if (!cfg_psection_load(&gn_config_global, "global", &gn_config_default)) {
-		fprintf(stderr, _("No global section in % config file.\n"), file);
+		fprintf(stderr, _("No global section in %s config file.\n"), file);
 		return -2;
 	}
 
