@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-sms.c,v 1.134 2003-04-06 20:10:44 pkot Exp $
+  $Id: gsm-sms.c,v 1.135 2003-05-06 19:41:00 pkot Exp $
 
   G N O K I I
 
@@ -1264,7 +1264,8 @@ API gn_error gn_sms_send(gn_data *data, struct gn_statemachine *state)
 
 	data->raw_sms->message_center[0] = char_semi_octet_pack(data->sms->smsc.number, data->raw_sms->message_center + 1, data->sms->smsc.type);
 	if (data->raw_sms->message_center[0] % 2) data->raw_sms->message_center[0]++;
-	data->raw_sms->message_center[0] = data->raw_sms->message_center[0] / 2 + 1;
+	if (data->raw_sms->message_center[0])
+		data->raw_sms->message_center[0] = data->raw_sms->message_center[0] / 2 + 1;
 
 	error = sms_prepare(data->sms, data->raw_sms);
 	ERROR();
@@ -1330,7 +1331,8 @@ API gn_error gn_sms_save(gn_data *data, struct gn_statemachine *state)
 		data->raw_sms->message_center[0] = 
 			char_semi_octet_pack(data->sms->smsc.number, data->raw_sms->message_center + 1, data->sms->smsc.type);
 		if (data->raw_sms->message_center[0] % 2) data->raw_sms->message_center[0]++;
-		data->raw_sms->message_center[0] = data->raw_sms->message_center[0] / 2 + 1;
+		if (data->raw_sms->message_center[0])
+			data->raw_sms->message_center[0] = data->raw_sms->message_center[0] / 2 + 1;
 	}
 	error = sms_prepare(data->sms, data->raw_sms);
 	ERROR();
