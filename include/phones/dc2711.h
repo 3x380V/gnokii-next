@@ -1,6 +1,6 @@
 /*
 
-  $Id: dc2711.h,v 1.1 2003-01-01 21:55:41 pkot Exp $
+  $Id: dc2711.h,v 1.2 2003-01-05 21:02:41 ladis Exp $
 
   G N O K I I
 
@@ -24,8 +24,8 @@
 
   Copyright (C) 2002 Ladislav Michl <ladis@linux-mips.org>
 
-  This file provides functions specific to at commands on Dancall
-  phones. See README for more details on supported mobile phones.
+  This file provides functions specific to Dancall phones.
+  See README for more details on supported mobile phones.
 
 */
 
