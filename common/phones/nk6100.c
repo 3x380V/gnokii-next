@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.111 2002-09-28 23:51:37 pkot Exp $
+  $Id: nk6100.c,v 1.112 2002-10-08 23:47:09 bozo Exp $
 
   G N O K I I
 
@@ -183,7 +183,7 @@ GSM_Phone phone_nokia_6100 = {
 	PGEN_IncomingDefault,
 	/* Mobile phone information */
 	{
-		"6110|6130|6150|6190|5110|5130|5190|3210|3310|3330|3360|3410|8210|8290", /* Supported models */
+		"6110|6130|6150|6190|5110|5130|5190|3210|3310|3330|3360|3410|8210|8250|8290", /* Supported models */
 		4,                     /* Max RF Level */
 		0,                     /* Min RF Level */
 		GRF_Arbitrary,         /* RF level units */
@@ -216,6 +216,7 @@ struct {
 	{ "NHM-5",      NULL,           P6100_CAP_PB_UNICODE },
 	{ "NHM-6",      NULL,           P6100_CAP_PB_UNICODE },
 	{ "NHM-2",      NULL,           P6100_CAP_PB_UNICODE },
+	{ "NSM-3D",     NULL,           P6100_CAP_PB_UNICODE },
 	{ NULL,		NULL,		0 }
 };
 
