@@ -1,6 +1,6 @@
 /*
 
-  $Id: lowlevel.h,v 1.7 2002-09-28 23:51:38 pkot Exp $
+  $Id: lowlevel.h,v 1.8 2002-12-23 16:00:22 bozo Exp $
 
   S M S D
 
@@ -47,7 +47,7 @@ typedef struct {
 } PhoneEvent;
 
 typedef struct {
-  GSM_API_SMS *sms;
+  gn_sms *sms;
   gn_error status;
 } D_SMSMessage;
 

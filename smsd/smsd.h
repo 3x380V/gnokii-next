@@ -1,6 +1,6 @@
 /*
 
-  $Id: smsd.h,v 1.5 2002-06-25 09:59:26 ja Exp $
+  $Id: smsd.h,v 1.6 2002-12-23 16:00:22 bozo Exp $
 
   S M S D
 
@@ -58,6 +58,6 @@ typedef struct {
 
 extern gchar *strEscape (const gchar *const);
 extern SmsdConfig smsdConfig;
-extern gint WriteSMS (GSM_API_SMS *);
+extern gint WriteSMS (gn_sms *);
 
 #endif
