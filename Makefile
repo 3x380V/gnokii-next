@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.119 2002-08-28 15:53:11 pkot Exp $
+# $Id: Makefile,v 1.120 2003-02-05 01:36:03 bozo Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -19,12 +19,13 @@ BIN_DIRS = gnokii
 
 ifndef WIN32
 BIN_DIRS += gnokiid utils
+DATA_DIR = common/data
 endif
 
 DIRS =  common/phones \
 	common/links \
 	common/devices \
-	common/data \
+	$(DATA_DIR) \
 	po \
 	common \
 	$(BIN_DIRS)
