@@ -5,7 +5,7 @@ dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janík ml.
 dnl                2000 Karel Zak, Pawe³ Kot
 dnl                2002 BORBELY Zoltan
 dnl
-dnl  $Id: configure.in,v 1.114 2003-04-28 14:22:24 pkot Exp $
+dnl  $Id: configure.in,v 1.115 2003-04-28 15:16:08 pkot Exp $
 dnl
 
 AC_INIT(gnokii/gnokii.c)
@@ -200,7 +200,7 @@ AC_CHECK_FUNC(getopt_long, , [
 
 dnl ======================== Checks for gethostbyname support
 AC_CHECK_FUNC(gethostbyname, ,
-	AC_CHECK_LIB(nsl, gethostbyname, LIBS="$LIBS -lnsl")])
+	AC_CHECK_LIB(nsl, gethostbyname, LIBS="$LIBS -lnsl"))
 
 dnl ======================== Checks for Linux IrDA support
 USE_IRDA="no"
