@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk7110.c,v 1.147 2003-04-08 10:18:29 ladis Exp $
+  $Id: nk7110.c,v 1.148 2003-04-28 12:51:42 pkot Exp $
 
   G N O K I I
 
@@ -307,6 +307,7 @@ static gn_error NK7110_Initialise(struct gn_statemachine *state)
 			err = fbus_initialise(attempt++, state);
 			break;
 		case GN_CT_Bluetooth:
+			state->config.rfcomm_cn = 1;
 			attempt = 2;
 			err = fbus_initialise(attempt++, state);
 			break;
