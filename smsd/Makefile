@@ -3,27 +3,26 @@
 #
 # Copyright (C) 1999 Hugh Blemings & Pavel Janík ml. & Jan Derfinak
 #               2000 Karel Zak
-# $Id: Makefile,v 1.6 2001-12-03 15:34:54 pkot Exp $
+# $Id: Makefile,v 1.7 2002-01-14 22:14:36 ja Exp $
 #
 
 TOPDIR=..
 include $(TOPDIR)/Makefile.global
 
-CFLAGS += $(PTHREAD_CFLAGS) \
+CFLAGS += -DXDEBUG -g $(PTHREAD_CFLAGS) \
 	  `glib-config --cflags`
 
 LDFLAGS += $(PTHREAD_LIBS) \
 	   `glib-config --libs`
 
-LDFLAGS += -L$(TOPDIR) -lgnokii
+LDFLAGS += -g -L$(TOPDIR)/common -lgnokii
 
 # Change this according to your system
 # FIXME: detect it in configure
 CFLAGS += -I/usr/include/pgsql
-# CFLAGS += -I/usr/include/psql
-LDFLAGS += -L/usr/lib/pgsql -lpq
-# LDFLAGS += -L/usr/lib/psql -lpq
-# LDFLAGS += -lpq
+
+LDFLAGS += -lpq
+#LDFLAGS += -L/usr/lib/pgsql -lpq
 
 ifdef XPM_LIBS
     LDFLAGS +=$(XPM_LIBS)
@@ -36,13 +35,14 @@ OBJS = 	db.o \
 all: smsd
 
 
-smsd: $(OBJS) $(TOPDIR)/common/data/DATA.o $(TOPDIR)/common/gsm-filetypes.o
-
-$(TOPDIR)/common/data/DATA.o:
-	$(MAKE) -C $(TOPDIR)/common/data DATA.o
+smsd: $(OBJS) $(TOPDIR)/common/gsm-filetypes.o $(TOPDIR)/common/libgnokii.so
+	gcc $(LDFLAGS) $(OBJS) $(TOPDIR)/common/gsm-filetypes.o -o $@
 
 $(TOPDIR)/common/gsm-filetypes.o:
 	$(MAKE) -C $(TOPDIR)/common gsm-filetypes.o
+
+$(TOPDIR)/common/libgnokii.so:
+	$(MAKE) -C $(TOPDIR)/common libgnokii.so
 
 clean:
 	$(RM) $(OBJS) *~ depend smsd

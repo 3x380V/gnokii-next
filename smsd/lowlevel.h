@@ -8,12 +8,7 @@
 
   Released under the terms of the GNU GPL, see file COPYING for more details.
 
-  $Id: lowlevel.h,v 1.2 2001-02-02 08:09:57 ja Exp $
-  
-  $Log: lowlevel.h,v $
-  Revision 1.2  2001-02-02 08:09:57  ja
-  New dialogs for 6210/7110 in xgnokii. Fixed the smsd for new capabilty code.
-
+  $Id: lowlevel.h,v 1.3 2002-01-14 22:14:36 ja Exp $
   
 */
 

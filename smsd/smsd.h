@@ -8,9 +8,9 @@
 
   Released under the terms of the GNU GPL, see file COPYING for more details.
 
-  Last modification: Sun Dec 17 2000
-  Modified by Jan Derfinak
 
+  $Id: smsd.h,v 1.2 2002-01-14 22:14:36 ja Exp $
+  
 */
 
 #ifndef SMSD_H
@@ -27,6 +27,7 @@ typedef struct {
   gint   smsSets:4;
 } SmsdConfig;
 
+extern gchar *strEscape (const gchar *const);
 extern SmsdConfig smsdConfig;
 extern gint WriteSMS (GSM_SMSMessage *);
 
