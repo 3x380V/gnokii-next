@@ -1,6 +1,6 @@
 /*
 
-  $Id: rlp-common.h,v 1.8 2003-02-26 21:59:49 pkot Exp $
+  $Id: rlp-common.h,v 1.9 2003-02-26 22:37:20 pkot Exp $
 
   G N O K I I
 
@@ -33,8 +33,6 @@
 
 #ifndef _gnokii_data_rlp_common_h
 #define _gnokii_data_rlp_common_h
-
-#include "misc.h"
 
 /* Typedef for frame type - they are the same for RLP version 0, 1 and 2. */
 typedef enum {

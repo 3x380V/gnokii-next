@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk7110.h,v 1.20 2003-02-26 00:15:49 pkot Exp $
+  $Id: nk7110.h,v 1.21 2003-02-26 22:37:20 pkot Exp $
 
   G N O K I I
 
@@ -35,6 +35,7 @@
 #ifndef _gnokii_phones_nk7110_h
 #define _gnokii_phones_nk7110_h
 
+#include "misc.h"
 #include "gnokii/data.h"
 
 typedef enum {
