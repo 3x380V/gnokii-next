@@ -1,6 +1,6 @@
 /*
 
-  $Id: lowlevel.c,v 1.12 2002-04-20 22:24:02 machek Exp $
+  $Id: lowlevel.c,v 1.13 2002-04-22 20:16:37 pkot Exp $
 
   S M S D
 
@@ -267,7 +267,7 @@ static gint A_SendSMSMessage (gpointer data)
     pthread_mutex_unlock (&sendSMSMutex);
   }
 
-  if (d->status == GE_SMSSENDOK)
+  if (d->status == GE_NONE)
     return (GE_NONE);
   else
     return (error);

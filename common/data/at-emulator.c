@@ -1,6 +1,6 @@
 /*
 
-  $Id: at-emulator.c,v 1.16 2002-04-13 00:58:38 bozo Exp $
+  $Id: at-emulator.c,v 1.17 2002-04-22 20:16:37 pkot Exp $
 
   G N O K I I
 
@@ -475,7 +475,7 @@ void	ATEM_ParseSMSText(char *buff)
 			/* FIXME: set more SMS fields before sending */
 			error = SendSMS(&data, sm);
 
-			if (error == GE_NONE || error == GE_SMSSENDOK) {
+			if (error == GE_NONE) {
 				gsprintf(buffer, MAX_LINE_LENGTH, "\n\r+CMGS: %d", data.SMSMessage->Number);
 				ATEM_StringOut(buffer);
 				ATEM_ModemResult(MR_OK);

@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-sms.c,v 1.53 2002-04-18 21:22:50 pkot Exp $
+  $Id: gsm-sms.c,v 1.54 2002-04-22 20:16:37 pkot Exp $
 
   G N O K I I
 
@@ -722,7 +722,7 @@ GSM_Error SendSMS(GSM_Data *data, GSM_Statemachine *state)
 		if (error == GE_NONE) error = SM_Functions(GOP_SendSMS, data, state);
 		dprintf("%d\n", data->SMSMessage->Length);
 		free(data->RawData->Data);
-		if (error != GE_SMSSENDOK) break;
+		if (error != GE_NONE) break;
 	}
 	data->RawData = NULL;
 	return error;
