@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.145 2003-07-28 22:35:07 bozo Exp $
+  $Id: nk6100.c,v 1.146 2003-09-29 17:12:42 bozo Exp $
 
   G N O K I I
 
@@ -2826,9 +2826,9 @@ static gn_error play_tone(gn_data *data, struct gn_statemachine *state)
 {
 	unsigned char req[] = {0x00, 0x01, 0x8f, 0x00, 0x00, 0x00};
 
-	req[3] = data->tone->frequency % 256;
+	req[3] = data->tone->volume;
 	req[4] = data->tone->frequency / 256;
-	req[5] = data->tone->volume;
+	req[5] = data->tone->frequency % 256;
 
 	if (sm_message_send(6, 0x40, req, state)) return GN_ERR_NOTREADY;
 	return sm_block(0x40, data, state);
