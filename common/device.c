@@ -1,6 +1,6 @@
 /*
 
-  $Id: device.c,v 1.24 2003-02-05 01:20:39 bozo Exp $
+  $Id: device.c,v 1.25 2003-02-09 21:35:19 pkot Exp $
 
   G N O K I I
 
@@ -34,11 +34,11 @@
 #endif
 #ifndef WIN32
 #  include "devices/unixserial.h"
-#  include "devices/tekram.h"
 #  include "devices/tcp.h"
 #else
 #  include "devices/winserial.h"
 #endif
+#include "devices/tekram.h"
 
 
 int device_getfd(struct gn_statemachine *state)
