@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.122 2002-12-22 23:48:50 bozo Exp $
+  $Id: nk6100.c,v 1.123 2002-12-22 23:55:01 bozo Exp $
 
   G N O K I I
 
@@ -46,6 +46,7 @@
 #include "phones/nk6100.h"
 #include "links/fbus.h"
 #include "links/fbus-phonet.h"
+#include "links/m2bus.h"
 #include "phones/nokia.h"
 #include "gsm-encoding.h"
 #include "gsm-api.h"
@@ -511,6 +512,9 @@ static gn_error Initialise(struct gn_statemachine *state)
 		break;
 	case GN_CT_Irda:
 		err = phonet_initialise(&(state->link), state);
+		break;
+	case GN_CT_M2BUS:
+		err = m2bus_initialise(&(state->link), state);
 		break;
 	default:
 		FREE(DRVINSTANCE(state));

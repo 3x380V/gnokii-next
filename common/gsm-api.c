@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-api.c,v 1.55 2002-12-12 23:33:31 bozo Exp $
+  $Id: gsm-api.c,v 1.56 2002-12-22 23:55:01 bozo Exp $
 
   G N O K I I
 
@@ -133,6 +133,8 @@ API gn_error gn_gsm_initialise(char *model, char *device, char *initlength,
 		sm->link.connection_type = GN_CT_DLR3P;
 	else if (!strcasecmp(connection, "infrared"))
 		sm->link.connection_type = GN_CT_Infrared;
+	else if (!strcasecmp(connection, "m2bus"))
+		sm->link.connection_type = GN_CT_M2BUS;
 #ifdef HAVE_IRDA
 	else if (!strcasecmp(connection, "irda"))
 		sm->link.connection_type = GN_CT_Irda;

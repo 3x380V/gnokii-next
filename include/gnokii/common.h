@@ -1,6 +1,6 @@
 /*
 
-  $Id: common.h,v 1.116 2002-12-12 22:39:07 pkot Exp $
+  $Id: common.h,v 1.117 2002-12-22 23:55:01 bozo Exp $
 
   G N O K I I
 
@@ -48,6 +48,7 @@ typedef enum {
 	GN_CT_Irda,     /* Linux IrDA support */
 	GN_CT_Tekram,   /* Tekram Ir-Dongle */
 	GN_CT_TCP,      /* TCP network connection */
+	GN_CT_M2BUS	/* Serial connection with M2BUS protocol */
 } gn_connection_type;
 
 /* Maximum length of device name for serial port */
