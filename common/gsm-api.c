@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-api.c,v 1.61 2003-01-05 20:44:59 ladis Exp $
+  $Id: gsm-api.c,v 1.62 2003-02-04 22:42:49 pkot Exp $
 
   G N O K I I
 
@@ -142,8 +142,8 @@ API gn_error gn_gsm_initialise(struct gn_statemachine *sm)
 	REGISTER_DRIVER(nokia_7110, NULL);
 	REGISTER_DRIVER(nokia_6510, NULL);
 	REGISTER_DRIVER(nokia_6100, NULL);
-#if 0
 	REGISTER_DRIVER(nokia_3110, NULL);
+#if 0
 #ifndef WIN32
 	REGISTER_DRIVER(nokia_2110, NULL);
 #endif
