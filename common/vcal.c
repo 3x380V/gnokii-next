@@ -1,6 +1,6 @@
 /*
 
-  $Id: vcal.c,v 1.2 2004-06-20 15:01:35 pkot Exp $
+  $Id: vcal.c,v 1.3 2004-07-26 19:25:02 bozo Exp $
 
   G N O K I I
 
@@ -361,7 +361,6 @@ API int gn_ical2calnote(FILE *f, gn_calnote *calnote, int id)
 
 API int gn_todo2ical(FILE *f, gn_todo *ctodo)
 {
-	int retval = GN_ERR_FAILED;
 #ifdef HAVE_LIBICAL
 	icalcomponent *pIcal = NULL;
 	char compuid[64];
@@ -396,10 +395,17 @@ API int gn_todo2ical(FILE *f, gn_todo *ctodo)
 		icalcomponent_free(pIcal);
 		pIcal = NULL;
 	}
+	return GN_ERR_NONE;
 #else
-	retval = GN_ERR_NOTIMPLEMENTED;
+	fprintf(f, "BEGIN:VCALENDAR\r\n");
+	fprintf(f, "VERSION:1.0\r\n"); 	 
+	fprintf(f, "BEGIN:VTODO\r\n"); 	 
+	fprintf(f, "PRIORITY:%i\r\n", ctodo->priority); 	 
+	fprintf(f, "SUMMARY:%s\r\n", ctodo->text); 	 
+	fprintf(f, "END:VTODO\r\n"); 	 
+	fprintf(f, "END:VCALENDAR\r\n");
+	return GN_ERR_NONE;
 #endif /* HAVE_LIBICAL */
-	return retval;
 }
 
 /* read the entry identified by id from the vcal file f and write it to the phone */
@@ -450,14 +456,7 @@ API int gn_ical2todo(FILE *f, gn_todo *ctodo, int id)
 
 	return GN_ERR_NONE;
 #else
-	fprintf(f, "BEGIN:VCALENDAR\r\n");
-	fprintf(f, "VERSION:1.0\r\n"); 	 
-	fprintf(f, "BEGIN:VTODO\r\n"); 	 
-	fprintf(f, "PRIORITY:%i\r\n", ctodo->priority); 	 
-	fprintf(f, "SUMMARY:%s\r\n", ctodo->text); 	 
-	fprintf(f, "END:VTODO\r\n"); 	 
-	fprintf(f, "END:VCALENDAR\r\n");
-	return GN_ERR_NONE;
+	return GN_ERR_NOTIMPLEMENTED;
 #endif /* HAVE_LIBICAL */
 }
 
