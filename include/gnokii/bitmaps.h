@@ -1,6 +1,6 @@
 /*
 
-  $Id: bitmaps.h,v 1.7 2002-02-08 23:57:38 pkot Exp $
+  $Id: bitmaps.h,v 1.8 2002-03-25 01:44:50 pkot Exp $
 
   G N O K I I
 
@@ -28,7 +28,8 @@ typedef enum {
 	GSM_CallerLogo,
 	GSM_PictureImage,
 	GSM_WelcomeNoteText,
-	GSM_DealerNoteText
+	GSM_DealerNoteText,
+	GSM_NewOperatorLogo
 } GSM_Bitmap_Types;
 
 #define GSM_MAX_BITMAP_SIZE 864

@@ -1,6 +1,6 @@
 /*
 
-  $Id: sms.h,v 1.25 2002-03-21 00:26:49 pkot Exp $
+  $Id: sms.h,v 1.26 2002-03-25 01:44:50 pkot Exp $
 
   G N O K I I
 
@@ -248,8 +248,7 @@ typedef enum {                     /* Bits meaning */
 	SMS_Picture         = 0x07, /* Looks like Happy N*kia Engineers (TM) invention */
 	SMS_TextTemplate    = 0x08, /* text template necessary for 6510 */
 	SMS_PictureTemplate = 0x09, /* picture template  "" */
-	SMS_OutboxSent      = 0x10  /* outbox sent template "" */
-
+	SMS_SubmitSent      = 0x0A  /* outbox sent template "" */
 } SMS_MessageType;
 
 typedef enum {
@@ -443,6 +442,7 @@ typedef struct {
 	SMSMessage_Layout Picture;
 	SMSMessage_Layout TextTemplate;
 	SMSMessage_Layout PictureTemplate;
+	SMSMessage_Layout SubmitSent;
 } SMSMessage_PhoneLayout;
 
 extern SMSMessage_PhoneLayout layout;

@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_lowlevel.h,v 1.15 2002-03-25 01:39:30 pkot Exp $
+  $Id: xgnokii_lowlevel.h,v 1.16 2002-03-25 01:44:51 pkot Exp $
   
   X G N O K I I
 
@@ -118,8 +118,8 @@ typedef struct {
 
 typedef struct {
 	gint status;
-	 gint(*InsertEntry) (GSM_CalendarNote *);
-	 gint(*ReadFailed) (gint);
+	gint(*InsertEntry) (GSM_CalendarNote *);
+	gint(*ReadFailed) (gint);
 } D_CalendarNoteAll;
 
 typedef struct {

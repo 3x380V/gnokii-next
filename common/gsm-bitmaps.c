@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-bitmaps.c,v 1.11 2002-03-20 22:07:06 pkot Exp $
+  $Id: gsm-bitmaps.c,v 1.12 2002-03-25 01:44:50 pkot Exp $
 
   G N O K I I
 
@@ -49,11 +49,15 @@ bool GSM_IsPointBitmap(GSM_Bitmap *bmp, int x, int y)
 {
 	int i = 0;
 
-	if (bmp->type == GSM_StartupLogo) i = (bmp->bitmap[((y/8)*bmp->width) + x] & 1<<((y%8)));
+
 	if (bmp->type == GSM_OperatorLogo || bmp->type == GSM_CallerLogo)
 		i = (bmp->bitmap[(y*bmp->width+x)/8] & 1 << (7-((y*bmp->width+x)%8)));
-	/* Testing only ! */
-	if (bmp->type == SMS_Picture) i = (bmp->bitmap[9 * y + (x / 8)] & 1 << (7 - (x % 8)));
+
+	if (bmp->type == SMS_Picture) 
+		i = (bmp->bitmap[9 * y + (x / 8)] & 1 << (7 - (x % 8)));
+
+	if ((bmp->type == GSM_StartupLogo) || (bmp->type == GSM_NewOperatorLogo))
+		i = (bmp->bitmap[((y/8)*bmp->width) + x] & 1<<((y%8)));
 
 	if (i) return true;
 	else return false;
