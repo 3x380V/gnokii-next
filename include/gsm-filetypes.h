@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-filetypes.h,v 1.20 2003-10-02 23:20:57 bozo Exp $
+  $Id: gsm-filetypes.h,v 1.21 2003-12-26 21:43:21 pkot Exp $
 
   G N O K I I
 
@@ -43,7 +43,7 @@ typedef enum {
 	GN_FT_BMP,
 	GN_FT_OTA,
 	GN_FT_XPMF,
-	GN_FT_RTTL,
+	GN_FT_RTTTL,
 	GN_FT_OTT,
 	GN_FT_MIDI,
 	GN_FT_NOKRAW_TONE
