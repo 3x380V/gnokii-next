@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.35 2002-05-15 23:37:03 manfred Exp $
+  $Id: atgen.c,v 1.36 2002-05-16 11:27:14 manfred Exp $
 
   G N O K I I
 
@@ -693,7 +693,7 @@ static GSM_Error AT_EnterSecurityCode(GSM_Data *data, GSM_Statemachine *state)
 		return (GE_NOTIMPLEMENTED);
 
 	sprintf(req, "AT+CPIN=\"%s\"\r", data->SecurityCode->Code);
- 	if (SM_SendMessage(state, strlen(req), GOP_GetSMSCenter, req) != GE_NONE)
+ 	if (SM_SendMessage(state, strlen(req), GOP_EnterSecurityCode, req) != GE_NONE)
 		return GE_NOTREADY;
 	return SM_Block(state, data, GOP_EnterSecurityCode);
 }
