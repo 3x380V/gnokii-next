@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii.c,v 1.76 2005-01-25 23:24:51 pkot Exp $
+  $Id: xgnokii.c,v 1.77 2005-01-28 07:50:02 pkot Exp $
   
   X G N O K I I
 
@@ -2369,6 +2369,8 @@ static void ReadConfig(void)
 		if (pos)
 			xgnokiiConfig.help_locale = g_strndup(xgnokiiConfig.locale,
 							      pos - xgnokiiConfig.locale);
+		else
+			xgnokiiConfig.help_locale = NULL;
 		if (!LocaleHelpExists(xgnokiiConfig.help_locale)) {
 			g_free(xgnokiiConfig.help_locale);
 			xgnokiiConfig.help_locale = g_strdup("en_US");
