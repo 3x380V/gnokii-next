@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-api.c,v 1.44 2002-04-30 18:56:12 pkot Exp $
+  $Id: gsm-api.c,v 1.45 2002-05-29 22:58:30 machek Exp $
 
   G N O K I I
 
@@ -130,10 +130,12 @@ API GSM_Error GSM_Initialise(char *model, char *device, char *initlength, GSM_Co
 	REGISTER_PHONE(nokia_7110, NULL);
 	REGISTER_PHONE(nokia_6510, NULL);
 	REGISTER_PHONE(nokia_6100, NULL);
+#if 0
 	REGISTER_PHONE(nokia_3110, NULL);
 #ifndef WIN32
 	REGISTER_PHONE(nokia_2110, NULL);
 	REGISTER_PHONE(dancall_2711, NULL);
+#endif
 #endif
 	REGISTER_PHONE(fake, NULL);
 	REGISTER_PHONE(at, model);
