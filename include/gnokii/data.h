@@ -1,6 +1,6 @@
 /*
 
-  $Id: data.h,v 1.72 2004-12-20 14:26:16 chriskemp Exp $
+  $Id: data.h,v 1.73 2005-01-02 14:21:45 pkot Exp $
 
   G N O K I I
 
@@ -133,6 +133,7 @@ typedef struct {
 	char connect_script[256];			/* Script to run when device connection established */
 	char disconnect_script[256];			/* Script to run when device connection closed */
 	uint8_t rfcomm_cn;				/* RFCOMM channel number to connect */
+	unsigned int sm_retry;				/* Indicates whether statemachine should to retries. Defaults to off. Use with caution -- may break newer DCT4 phones */
 } gn_config;
 
 typedef struct {
