@@ -1,6 +1,6 @@
 /*
 
-  $Id: atbus.c,v 1.37 2003-04-28 12:59:15 pkot Exp $
+  $Id: atbus.c,v 1.38 2003-10-28 00:03:40 bozo Exp $
 
   G N O K I I
 
@@ -223,6 +223,7 @@ gn_error atbus_initialise(int mode, struct gn_statemachine *state)
 	switch (state->config.connection_type) {
 	case GN_CT_Serial:
 	case GN_CT_Irda:
+	case GN_CT_TCP:
 		if (!atbus_serial_open(mode, state->config.port_device, state)) {
 			error = GN_ERR_FAILED;
 			goto err;

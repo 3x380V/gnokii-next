@@ -1,6 +1,6 @@
 /*
 
-  $Id: m2bus.c,v 1.18 2003-10-15 00:08:44 bozo Exp $
+  $Id: m2bus.c,v 1.19 2003-10-28 00:03:40 bozo Exp $
 
   G N O K I I
 
@@ -61,8 +61,15 @@ static int m2bus_tx_send_ack(u8 message_seq, struct gn_statemachine *state);
 
 static bool m2bus_serial_open(struct gn_statemachine *state)
 {
+	int type;
+
+	if (state->config.connection_type == GN_CT_TCP)
+		type = GN_CT_TCP;
+	else
+		type = GN_CT_Serial;
+
 	/* Open device. */
-	if (!device_open(state->config.port_device, true, false, false, GN_CT_Serial, state)) {
+	if (!device_open(state->config.port_device, true, false, false, type, state)) {
 		perror(_("Couldn't open M2BUS device"));
 		return false;
 	}

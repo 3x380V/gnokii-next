@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.84 2003-06-12 22:09:36 pkot Exp $
+  $Id: atgen.c,v 1.85 2003-10-28 00:03:40 bozo Exp $
 
   G N O K I I
 
@@ -1187,6 +1187,7 @@ static gn_error Initialise(gn_data *setupdata, struct gn_statemachine *state)
 	case GN_CT_Serial:
 	case GN_CT_Bluetooth:
 	case GN_CT_Irda:
+	case GN_CT_TCP:
 		if (!strcmp(setupdata->model, "AT-HW"))
 			ret = atbus_initialise(true, state);
 		else

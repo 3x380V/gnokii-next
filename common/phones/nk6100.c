@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.155 2003-10-24 12:49:04 bozo Exp $
+  $Id: nk6100.c,v 1.156 2003-10-28 00:03:40 bozo Exp $
 
   G N O K I I
 
@@ -523,6 +523,7 @@ static gn_error Initialise(struct gn_statemachine *state)
 	case GN_CT_Infrared:
 	case GN_CT_DAU9P:
 	case GN_CT_Tekram:
+	case GN_CT_TCP:
 		err = fbus_initialise(0, state);
 		break;
 	case GN_CT_Irda:

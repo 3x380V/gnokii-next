@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.c,v 1.126 2003-10-24 12:49:05 bozo Exp $
+  $Id: nk6510.c,v 1.127 2003-10-28 00:03:40 bozo Exp $
 
   G N O K I I
 
@@ -401,6 +401,7 @@ static gn_error NK6510_Initialise(struct gn_statemachine *state)
 				break;
 			}
 		case GN_CT_Serial:
+		case GN_CT_TCP:
 			err = fbus_initialise(attempt++, state);
 			break;
 		case GN_CT_Bluetooth:

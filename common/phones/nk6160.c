@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6160.c,v 1.19 2003-03-31 08:46:01 pkot Exp $
+  $Id: nk6160.c,v 1.20 2003-10-28 00:03:40 bozo Exp $
 
   G N O K I I
 
@@ -146,6 +146,7 @@ static gn_error initialise(struct gn_statemachine *state)
 	switch (state->config.connection_type) {
 	case GN_CT_Serial:
 	case GN_CT_Infrared:
+	case GN_CT_TCP:
 		error = m2bus_initialise(state);
 		break;
 	case GN_CT_DLR3P:
