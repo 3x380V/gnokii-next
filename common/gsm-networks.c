@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-networks.c,v 1.24 2003-01-01 21:29:05 pkot Exp $
+  $Id: gsm-networks.c,v 1.25 2003-02-03 22:02:14 pkot Exp $
 
   G N O K I I
 
@@ -245,7 +245,7 @@ gn_network networks[] = {
 	{ "262 01", "D1 TELEKOM" },
 	{ "262 02", "D2 PRIVAT" },
 	{ "262 03", "E-Plus" },
-	{ "262 07", "Interkom" },
+	{ "262 07", "O2 Germany" },
 	{ "266 01", "Gibtel GSM" },
 	{ "268 01", "TELECEL" },
 	{ "268 03", "OPTIMUS" },
