@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.344 2003-04-29 10:12:32 ladis Exp $
+  $Id: gnokii.c,v 1.345 2003-05-05 23:07:28 bozo Exp $
 
   G N O K I I
 
@@ -3794,6 +3794,19 @@ static int sendringtone(int argc, char *argv[])
 		sms.remote.type = GN_GSM_NUMBER_International;
 	else
 		sms.remote.type = GN_GSM_NUMBER_Unknown;
+
+	/* Get the SMS Center */
+	if (!sms.smsc.number[0]) {
+		data.message_center = calloc(1, sizeof(gn_sms_message_center));
+		data.message_center->id = 1;
+		if (gn_sm_functions(GN_OP_GetSMSCenter, &data, &state) == GN_ERR_NONE) {
+			strcpy(sms.smsc.number, data.message_center->smsc.number);
+			sms.smsc.type = data.message_center->smsc.type;
+		}
+		free(data.message_center);
+	}
+
+	if (!sms.smsc.type) sms.smsc.type = GN_GSM_NUMBER_Unknown;
 
 	/* Send the message. */
 	data.sms = &sms;
