@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk7110.c,v 1.134 2003-01-15 22:28:25 pkot Exp $
+  $Id: nk7110.c,v 1.135 2003-01-15 23:42:05 pkot Exp $
 
   G N O K I I
 
@@ -690,6 +690,8 @@ static gn_error GetCallerBitmap(gn_data *data, struct gn_statemachine *state)
 				  0x00, 0x00};
 
 	req[11] = GNOKII_MIN(data->bitmap->number + 1, GN_PHONEBOOK_CALLER_GROUPS_MAX_NUMBER);
+	ll_memtype = 0x10;
+	ll_location = req[11];
 	dprintf("Getting caller(%d) logo...\n", req[11]);
 	SEND_MESSAGE_BLOCK(NK7110_MSG_PHONEBOOK, 14);
 }
