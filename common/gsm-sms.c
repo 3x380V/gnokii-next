@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-sms.c,v 1.68 2002-05-23 21:05:42 bozo Exp $
+  $Id: gsm-sms.c,v 1.69 2002-05-23 22:51:43 machek Exp $
 
   G N O K I I
 
@@ -1050,6 +1050,7 @@ GSM_Error EncodeData(GSM_API_SMS *sms, GSM_SMSMessage *rawsms, bool multipart)
 			break;
 		default:
 			fprintf(stderr, "What kind of ninja-mutant UserData is this?\n");
+			break;
 		}
 	}
 
