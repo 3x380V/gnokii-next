@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-ringtones.c,v 1.9 2002-05-17 00:22:09 pkot Exp $
+  $Id: gsm-ringtones.c,v 1.10 2002-05-23 09:13:16 machek Exp $
 
   G N O K I I
 
@@ -579,5 +579,6 @@ GSM_Error GSM_ReadRingtoneFromSMS(GSM_API_SMS *message, GSM_Ringtone *ringtone)
 int GSM_EncodeSMSRingtone(char *message, GSM_Ringtone *ringtone)
 {
 	int j = GSM_MAX_8BIT_SMS_LENGTH;
-	return GSM_PackRingtone(ringtone, message, &j);
+	GSM_PackRingtone(ringtone, message, &j);
+	return j;
 }
