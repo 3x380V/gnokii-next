@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-sms.c,v 1.16 2001-12-03 15:30:50 pkot Exp $
+  $Id: gsm-sms.c,v 1.17 2001-12-14 14:37:41 pkot Exp $
 
   G N O K I I
 
@@ -50,7 +50,7 @@ static struct udh_data headers[] = {
 
 /* This function implements packing of numbers (SMS Center number and
    destination number) for SMS sending function. */
-static int SemiOctetPack(char *Number, unsigned char *Output, SMS_NumberType type)
+int SemiOctetPack(char *Number, unsigned char *Output, SMS_NumberType type)
 {
 	unsigned char *IN = Number;  /* Pointer to the input number */
 	unsigned char *OUT = Output; /* Pointer to the output */

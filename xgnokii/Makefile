@@ -1,7 +1,7 @@
 
 
 #
-# $Id: Makefile,v 1.40 2001-11-14 11:01:59 pkot Exp $
+# $Id: Makefile,v 1.41 2001-12-14 14:37:45 pkot Exp $
 #
 # Makefile for the xGNOKII tool suite.
 #
@@ -23,7 +23,7 @@ CFLAGS += $(PTHREAD_CFLAGS) \
 LDFLAGS += $(PTHREAD_LIBS) \
 	   $(GTK_LIBS)
 
-LDFLAGS += -L$(TOPDIR) -lgnokii
+LDFLAGS += -L$(TOPDIR)/common -lgnokii
 
 OBJS = 	xgnokii.o \
 	xgnokii_common.o \

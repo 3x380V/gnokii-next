@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-statemachine.c,v 1.8 2001-11-29 17:54:55 pkot Exp $
+  $Id: gsm-statemachine.c,v 1.9 2001-12-14 14:37:41 pkot Exp $
 
   G N O K I I
 
@@ -199,7 +199,7 @@ GSM_Error SM_Block(GSM_Statemachine *state, GSM_Data *data, int waitfor)
 
 		dprintf("SM_Block Retry - %d\n\r", retry);
 		SM_Reset(state);
-		if (retry<2) SM_SendMessage(state, state->LastMsgSize, state->LastMsgType, state->LastMsg);
+		if (retry < 2) SM_SendMessage(state, state->LastMsgSize, state->LastMsgType, state->LastMsg);
 	}
 
 	return GE_TIMEOUT;
