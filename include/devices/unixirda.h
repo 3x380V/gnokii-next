@@ -1,6 +1,6 @@
 /*
  *
- * $Id: unixirda.h,v 1.8 2002-12-10 11:27:51 ladis Exp $
+ * $Id: unixirda.h,v 1.9 2002-12-27 00:11:40 bozo Exp $
  *
  * G N O K I I
  *
@@ -45,10 +45,10 @@
 
 #include "misc.h"
 
-int irda_open(void);
-int irda_close(int fd);
-int irda_write(int fd, const __ptr_t bytes, int size);
-int irda_read(int fd, __ptr_t bytes, int size);
-int irda_select(int fd, struct timeval *timeout);
+int irda_open(struct gn_statemachine *state);
+int irda_close(int fd, struct gn_statemachine *state);
+int irda_write(int fd, const __ptr_t bytes, int size, struct gn_statemachine *state);
+int irda_read(int fd, __ptr_t bytes, int size, struct gn_statemachine *state);
+int irda_select(int fd, struct timeval *timeout, struct gn_statemachine *state);
 
 #endif

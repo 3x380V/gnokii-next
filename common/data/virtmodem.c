@@ -1,6 +1,6 @@
 /*
 
-  $Id: virtmodem.c,v 1.31 2002-12-26 22:39:29 pkot Exp $
+  $Id: virtmodem.c,v 1.32 2002-12-27 00:11:39 bozo Exp $
 
   G N O K I I
 
@@ -153,7 +153,7 @@ void gn_vm_loop(void)
 	int i, n;
 	char buf[256];
 
-	devfd = device_getfd();
+	devfd = device_getfd(sm);
 	nfd = (PtyRDFD > devfd) ? PtyRDFD + 1 : devfd + 1;
 
 	while (!GTerminateThread) {

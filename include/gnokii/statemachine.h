@@ -1,6 +1,6 @@
 /*
 
-  $Id: statemachine.h,v 1.13 2002-12-12 15:07:19 ladis Exp $
+  $Id: statemachine.h,v 1.14 2002-12-27 00:11:40 bozo Exp $
 
   G N O K I I
 
@@ -68,6 +68,7 @@ typedef enum {
 /* All properties of the state machine */
 struct gn_statemachine {
 	gn_state current_state;
+	gn_config config;
 	gn_link link;
 	gn_driver driver;
 	

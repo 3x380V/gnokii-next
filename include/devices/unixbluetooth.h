@@ -1,6 +1,6 @@
 /*
 
-  $Id: unixbluetooth.h,v 1.1 2002-08-27 21:39:10 pkot Exp $
+  $Id: unixbluetooth.h,v 1.2 2002-12-27 00:11:40 bozo Exp $
  
   G N O K I I
 
@@ -44,10 +44,10 @@
 
 #include "misc.h"
 
-int bluetooth_open(bdaddr_t *bdaddr, int channel);
-int bluetooth_close(int fd);
-int bluetooth_write(int fd, const __ptr_t bytes, int size);
-int bluetooth_read(int fd, __ptr_t bytes, int size);
-int bluetooth_select(int fd, struct timeval *timeout);
+int bluetooth_open(bdaddr_t *bdaddr, int channel, struct gn_statemachine *state);
+int bluetooth_close(int fd, struct gn_statemachine *state);
+int bluetooth_write(int fd, const __ptr_t bytes, int size, struct gn_statemachine *state);
+int bluetooth_read(int fd, __ptr_t bytes, int size, struct gn_statemachine *state);
+int bluetooth_select(int fd, struct timeval *timeout, struct gn_statemachine *state);
 
 #endif /* _gnokii_unix_bluetooth_h */

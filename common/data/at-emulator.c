@@ -1,6 +1,6 @@
 /*
 
-  $Id: at-emulator.c,v 1.31 2002-12-13 07:09:47 ladis Exp $
+  $Id: at-emulator.c,v 1.32 2002-12-27 00:11:39 bozo Exp $
 
   G N O K I I
 
@@ -813,7 +813,7 @@ bool	gn_atem_command_plusg(char **buf)
 	if (strncasecmp(*buf, "MM", 3) == 0) {
 		buf[0] += 2;
 
-		gsprintf(buffer, MAX_LINE_LENGTH, _("\n\rgnokii configured on %s for models %s"), sm->link.port_device, sm->driver.phone.models);
+		gsprintf(buffer, MAX_LINE_LENGTH, _("\n\rgnokii configured on %s for models %s"), sm->config.port_device, sm->driver.phone.models);
 		gn_atem_string_out(buffer);
 		return (false);
 	}
