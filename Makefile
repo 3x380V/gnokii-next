@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.125 2004-01-16 01:02:26 uid66849 Exp $
+# $Id: Makefile,v 1.126 2004-01-16 01:44:41 uid66849 Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -59,7 +59,9 @@ all: intl $(DIRS)
 dummy:
 
 intl: dummy
-	$(MAKE) -C intl CFLAGS=-I../include
+	-ln -sf include/config.h config.h
+	$(MAKE) -C intl
+	-$(RM) config.h
 
 $(DIRS): dummy
 	$(MAKE) -C $@

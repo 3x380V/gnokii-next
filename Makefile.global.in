@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile.global.in,v 1.43 2004-01-16 01:02:26 uid66849 Exp $
+# $Id: Makefile.global.in,v 1.44 2004-01-16 01:44:41 uid66849 Exp $
 #
 # Global Makefiles configuration for the GNOKII.
 #
@@ -69,7 +69,7 @@ WIN32_CROSS    = @WIN32_CROSS@
 DESTDIR        =
 
 ifeq (@USE_NLS@, yes)
-	LIBS += @INTLLIBS@
+	LIBS += @LTLIBINTL@
 endif
 ifeq (@USE_INCLUDED_LIBINTL@, yes)
 	CFLAGS += -I$(TOPDIR)/intl
