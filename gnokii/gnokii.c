@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.284 2002-08-07 00:18:03 bozo Exp $
+  $Id: gnokii.c,v 1.285 2002-08-07 10:59:07 pkot Exp $
 
   G N O K I I
 
@@ -1277,7 +1277,9 @@ static int getsms(int argc, char *argv[])
 			}
 			break;
 		default:
-			fprintf(stderr, _("GetSMS %s %d failed! (%s)\n\n"), memory_type_string, count, print_error(error));
+			fprintf(stderr, _("GetSMS %s %d failed! (%s)\n"), memory_type_string, count, print_error(error));
+			if (error == GE_INVALIDMEMORYTYPE)
+				fprintf(stderr, _("See the gnokii manual page for the supported memory types with the phone\nyou use\n"));
 			break;
 		}
 	}
