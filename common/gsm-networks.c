@@ -1,5 +1,7 @@
 /*
 
+  $Id: gsm-networks.c,v 1.14 2001-06-28 00:28:45 pkot Exp $
+
   G N O K I I
 
   A Linux/Unix toolset and driver for Nokia mobile phones.
@@ -10,8 +12,10 @@
 	
   This file implements GSM networks searching.
 
-  Last modification: Mon Mar 20 22:02:15 CET 2000
-  Modified by Pavel Janík ml. <Pavel.Janik@linux.cz>
+  $Log: gsm-networks.c,v $
+  Revision 1.14  2001-06-28 00:28:45  pkot
+  Small docs updates (Pawel Kot)
+
 
 */
 
