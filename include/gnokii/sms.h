@@ -1,6 +1,6 @@
 /*
 
-  $Id: sms.h,v 1.49 2002-08-18 22:29:58 pkot Exp $
+  $Id: sms.h,v 1.50 2002-08-23 09:04:12 plail Exp $
 
   G N O K I I
 
@@ -57,7 +57,7 @@
 
 #define MAX_DATETIME_LENGTH   7
 #define MAX_SMSC_NAME_LEN    16
-#define MAX_NUMBER_LEN       12
+#define MAX_NUMBER_LEN       14
 #define SMS_USER_DATA_LEN   512
 #define MAX_VALIDITY_LENGTH   8
 
