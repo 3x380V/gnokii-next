@@ -1,5 +1,5 @@
 /*
-  $Id: virtmodem.c,v 1.10 2002-02-13 00:34:06 pkot Exp $
+  $Id: virtmodem.c,v 1.11 2002-02-13 21:16:37 pkot Exp $
 
   G N O K I I
 
@@ -40,6 +40,7 @@
 #include <unistd.h>
 #include <sys/socket.h>
 #include <sys/wait.h>
+#include <sys/uio.h>
 
 #include "misc.h"
 #include "gsm-api.h"

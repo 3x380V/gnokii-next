@@ -1,6 +1,6 @@
 /*
 
-  $Id: mgnokiidev.c,v 1.12 2002-02-13 00:34:06 pkot Exp $
+  $Id: mgnokiidev.c,v 1.13 2002-02-13 21:16:35 pkot Exp $
 
   G N O K I I
 
@@ -27,6 +27,8 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <unistd.h>
+#include <sys/uio.h>
+#include <errno.h>
 
 static int gwrite(int fd, void *ptr, size_t nbytes, int sendfd)
 {
