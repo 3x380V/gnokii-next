@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6160.c,v 1.14 2003-01-01 21:29:05 pkot Exp $
+  $Id: nk6160.c,v 1.15 2003-01-06 08:21:33 ladis Exp $
 
   G N O K I I
 
@@ -39,12 +39,9 @@
 #endif
 
 #include "misc.h"
-#include "gsm-common.h"
 #include "phones/generic.h"
-#include "links/m2bus.h"
 #include "phones/nokia.h"
-#include "gsm-encoding.h"
-#include "gsm-api.h"
+#include "links/m2bus.h"
 
 #include "gnokii-internal.h"
 #include "gsm-api.h"
