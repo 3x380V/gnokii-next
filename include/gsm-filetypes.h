@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-filetypes.h,v 1.14 2002-03-28 21:37:48 pkot Exp $
+  $Id: gsm-filetypes.h,v 1.15 2002-07-29 10:29:13 plail Exp $
 
   G N O K I I
 
@@ -36,11 +36,13 @@
 #include "gsm-bitmaps.h"
 #include "gsm-ringtones.h"
 
-int GSM_ReadVCalendarFile(char *FileName, GSM_CalendarNote *cnote, int number);
+int GSM_ReadVCalendarFileEvent(char *FileName, GSM_CalendarNote *cnote, int number);
+int GSM_ReadVCalendarFileTodo(char *FileName, GSM_ToDo *cnote, int number);
 
 int GetvCalTime(GSM_DateTime *dt, char *time);
 int FillCalendarNote(GSM_CalendarNote *note, char *type,
-		     char *text, char *time, char *alarm);
+		     char *text, char *desc, char *time, char *alarm);
+int FillToDo(GSM_ToDo *note, char *text, char *todo_priority);
 
 
 /* Ringtone Files */

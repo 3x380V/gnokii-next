@@ -1,6 +1,6 @@
 /*
 
-  $Id: data.h,v 1.39 2002-07-26 22:01:50 bozo Exp $
+  $Id: data.h,v 1.40 2002-07-29 10:29:13 plail Exp $
 
   G N O K I I
 
@@ -161,6 +161,7 @@ typedef enum {
 	GOP_SetDateTime,
 	GOP_GetProfile,
 	GOP_SetProfile,
+	GOP_WriteToDo,
 	GOP_WriteCalendarNote,
 	GOP_DeleteCalendarNote,
 	GOP_SetSpeedDial,
