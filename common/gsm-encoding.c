@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-encoding.c,v 1.59 2004-07-04 14:11:38 pkot Exp $
+  $Id: gsm-encoding.c,v 1.60 2005-01-24 23:36:30 pkot Exp $
 
   G N O K I I
 
@@ -519,8 +519,9 @@ int char_semi_octet_pack(char *number, unsigned char *output, gn_gsm_number_type
 	   only international and unknown number. */
 
 	*out_num++ = type;
-	if (type == GN_GSM_NUMBER_International) in_num++; /* Skip '+' */
-	if ((type == GN_GSM_NUMBER_Unknown) && (*in_num == '+')) in_num++; /* Optional '+' in Unknown number type */
+
+	if ((type == GN_GSM_NUMBER_International || type == GN_GSM_NUMBER_Unknown) && *in_num == '+')
+		in_num++; /* skip leading '+' */
 
 	/* The next field is the number. It is in semi-octet representation - see
 	   GSM scpecification 03.40 version 6.1.0, section 9.1.2.3, page 31. */
