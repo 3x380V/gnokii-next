@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.96 2000-12-19 16:18:14 pkot Exp $
+# $Id: Makefile,v 1.97 2000-12-19 16:27:16 pkot Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -35,12 +35,7 @@ GTK_DIRS =  xgnokii \
 PO_DIR   = 	po
 DOCS_DIR = 	Docs
 
-all:
-	@for dir in $(DIRS); do \
-	    if [ -e $$dir/Makefile ]; then \
-		$(MAKE) -C $$dir; \
-	    fi; \
-	done
+all: $(DIRS)
 	@if [ "x$(USE_NLS)" = xyes ]; then \
 		$(MAKE) -C $(PO_DIR); \
 	fi
@@ -53,6 +48,11 @@ all:
 		done \
 	fi
 	@echo "done"
+
+dummy:
+
+$(DIRS): dummy
+       $(MAKE) -C $@
 
 clean:
 	$(RM) *~
