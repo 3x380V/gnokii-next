@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.55 2002-09-15 18:25:48 machek Exp $
+  $Id: atgen.c,v 1.56 2002-09-18 11:01:39 pkot Exp $
 
   G N O K I I
 
@@ -1027,7 +1027,7 @@ static GSM_Error ReplyGetSMS(int messagetype, unsigned char *buffer, int length,
 	hex2bin(tmp, buf.line3, sms_len);
 	memcpy(data->RawSMS->MessageCenter, tmp, tmp[offset] + 1);
 	offset += tmp[offset] + 1;
-	data->RawSMS->Type             = tmp[offset] & 0x03;
+	data->RawSMS->Type             = (tmp[offset] & 0x03) << 1;
 	data->RawSMS->UDHIndicator     = tmp[offset];
 	data->RawSMS->MoreMessages     = tmp[offset];
 	data->RawSMS->ReportStatus     = tmp[offset];
