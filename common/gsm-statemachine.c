@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-statemachine.c,v 1.17 2002-01-27 23:38:30 pkot Exp $
+  $Id: gsm-statemachine.c,v 1.18 2002-02-01 14:49:24 chris Exp $
 
   G N O K I I
 
@@ -94,10 +94,14 @@ void SM_IncomingFunction(GSM_Statemachine *state, u8 messagetype, void *message,
 			dprintf("Received message type %02x\n", messagetype);
 			res = state->Phone.IncomingFunctions[c].Functions(messagetype, message, messagesize, data);
 			temp = 0;
+			break;
 		}
 		c++;
 	}
-	if (res == GE_UNHANDLEDFRAME)
+	if (res == GE_UNSOLICITED) {
+		dprintf("Unsolicited frame, skipping...\n");
+		return;
+	} else if (res == GE_UNHANDLEDFRAME)
 		SM_DumpUnhandledFrame(state, messagetype, message, messagesize);
 	if (temp != 0) {
 		dprintf("Unknown Frame Type %02x\n", messagetype);

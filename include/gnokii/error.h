@@ -1,6 +1,6 @@
 /*
 
-  $Id: error.h,v 1.5 2002-01-27 23:38:31 pkot Exp $
+  $Id: error.h,v 1.6 2002-02-01 14:49:40 chris Exp $
 
   G N O K I I
 
@@ -71,6 +71,7 @@ typedef enum {
 	/* The following value signals the current frame is unhandled */
 
 	GE_UNHANDLEDFRAME,        /* 43. The current frame isn't handled by the incoming function */
+	GE_UNSOLICITED            /* 44. Unsolicited message received. */
 } GSM_Error;
 
 extern char *print_error(GSM_Error e);
