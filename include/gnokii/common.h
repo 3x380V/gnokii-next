@@ -1,6 +1,6 @@
 /*
 
-  $Id: common.h,v 1.129 2003-11-30 18:55:14 bozo Exp $
+  $Id: common.h,v 1.130 2004-01-15 23:13:57 uid66843 Exp $
 
   G N O K I I
 
@@ -290,8 +290,9 @@ typedef struct {
 
 /* List of Calendar Notes in phone */
 typedef struct {
-	int number;                          /* The number of notes in phone */
-	int location[GN_CALNOTE_MAX_NUMBER]; /* Location of the nth note */
+	unsigned int number;                          /* The number of notes in phone */
+	unsigned int location[GN_CALNOTE_MAX_NUMBER]; /* Location of the nth note */
+	unsigned int last;                            /* Index of the last allocated note */
 } gn_calnote_list;
 
 /* ToDo things. It is only supported by the newer phones. */
