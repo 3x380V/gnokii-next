@@ -1,6 +1,6 @@
 /*
  *
- * $Id: tekram.c,v 1.9 2003-02-05 01:20:39 bozo Exp $
+ * $Id: tekram.c,v 1.10 2003-02-05 01:27:47 bozo Exp $
  *
  * G N O K I I
  *
@@ -50,7 +50,11 @@
 
 int tekram_open(const char *file, struct gn_statemachine *state)
 {
+#if defined(O_NOCTTY) && defined(O_NONBLOCK)
 	return serial_open(file, O_RDWR | O_NOCTTY | O_NONBLOCK);
+#else
+	return serial_open(file, O_RDWR);
+#endif
 }
 
 void tekram_close(int fd, struct gn_statemachine *state)
