@@ -1,6 +1,6 @@
 /*
 
-  $Id: atsie.h,v 1.3 2002-03-28 21:37:49 pkot Exp $
+  $Id: atsie.h,v 1.4 2002-12-09 13:05:54 ladis Exp $
 
   G N O K I I
 
@@ -29,9 +29,11 @@
 
 */
 
-#ifndef __atsie_h_
-#define __atsie_h_
+#ifndef _gnokii_atsie_h_
+#define _gnokii_atsie_h_
 
-void AT_InitSiemens(GSM_Statemachine *state, char* foundmodel, char* setupmodel);
+#include "gsm-data.h"
+
+void at_siemens_init(struct gn_statemachine *state, char* foundmodel, char* setupmodel);
 
 #endif

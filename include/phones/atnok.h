@@ -1,6 +1,6 @@
 /*
 
-  $Id: atnok.h,v 1.3 2002-03-28 21:37:49 pkot Exp $
+  $Id: atnok.h,v 1.4 2002-12-09 13:05:54 ladis Exp $
 
   G N O K I I
 
@@ -29,9 +29,11 @@
 
 */
 
-#ifndef __atnok_h_
-#define __atnok_h_
+#ifndef _gnokii_atnok_h
+#define _gnokii_atnok_h
 
-void AT_InitNokia(GSM_Statemachine *state, char* foundmodel, char* setupmodel);
+#include "gnokii-internal.h"
+
+void at_nokia_init(struct gn_statemachine *state, char* foundmodel, char* setupmodel);
 
 #endif

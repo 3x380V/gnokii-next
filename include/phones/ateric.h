@@ -1,6 +1,6 @@
 /*
 
-  $Id: ateric.h,v 1.3 2002-03-28 21:37:49 pkot Exp $
+  $Id: ateric.h,v 1.4 2002-12-09 13:05:54 ladis Exp $
 
   G N O K I I
 
@@ -29,9 +29,11 @@
 
 */
 
-#ifndef __ateric_h_
-#define __ateric_h_
+#ifndef _gnokii_ateric_h
+#define _gnokii_ateric_h
 
-void AT_InitEricsson(GSM_Statemachine *state, char* foundmodel, char* setupmodel);
+#include "gnokii-internal.h"
+
+void at_ericsson_init(struct gn_statemachine *state, char* foundmodel, char* setupmodel);
 
 #endif
