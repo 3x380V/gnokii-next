@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.h,v 1.46 2003-03-06 08:11:19 ja Exp $
+  $Id: gnokii.h,v 1.47 2003-03-06 09:53:07 ja Exp $
 
   G N O K I I
 
@@ -33,7 +33,6 @@
 #ifndef _gnokii_gsm_api_h
 #define _gnokii_gsm_api_h
 
-#include "compat.h"
 #include "gnokii/sms.h"
 #include "gnokii/call.h"
 #include "gnokii/common.h"
