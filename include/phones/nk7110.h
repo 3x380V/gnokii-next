@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk7110.h,v 1.25 2003-10-01 23:33:48 bozo Exp $
+  $Id: nk7110.h,v 1.26 2003-11-12 20:13:34 bozo Exp $
 
   G N O K I I
 
@@ -191,6 +191,7 @@ typedef struct {
 	bool new_sms;	/* Do we have a new SMS? */
 	int ll_memtype;
 	int ll_location;
+	int userdef_location;
 } nk7110_driver_instance;
 
 #endif  /* _gnokii_phones_nk7110_h */
