@@ -1,7 +1,7 @@
 
 
 #
-# $Id: Makefile,v 1.36 2001-08-09 12:02:04 pkot Exp $
+# $Id: Makefile,v 1.37 2001-09-14 12:53:00 pkot Exp $
 #
 # Makefile for the xGNOKII tool suite.
 #
@@ -79,6 +79,11 @@ install: all
 	$(INSTALL) -m 0444 xpm/Preview_6110.xpm $(xgnokii_libdir)/xpm
 	$(INSTALL) -m 0444 xpm/Preview_6150.xpm $(xgnokii_libdir)/xpm
 	$(INSTALL) -m 0444 xpm/Preview_6210.xpm $(xgnokii_libdir)/xpm
+	$(INSTALL) -m 0444 xpm/Preview_3310.xpm $(xgnokii_libdir)/xpm
+	$(INSTALL) -m 0444 xpm/Preview_5110.xpm $(xgnokii_libdir)/xpm
+	$(INSTALL) -m 0444 xpm/Preview_3210.xpm $(xgnokii_libdir)/xpm
+	$(INSTALL) -m 0444 xpm/Preview_6250.xpm $(xgnokii_libdir)/xpm
+	$(INSTALL) -m 0444 xpm/Preview_7110.xpm $(xgnokii_libdir)/xpm
 
 install-strip: all
 	$(INSTALL) -d $(bindir)
@@ -102,6 +107,11 @@ install-strip: all
 	$(INSTALL) -m 0444 xpm/Preview_6110.xpm $(xgnokii_libdir)/xpm
 	$(INSTALL) -m 0444 xpm/Preview_6150.xpm $(xgnokii_libdir)/xpm
 	$(INSTALL) -m 0444 xpm/Preview_6210.xpm $(xgnokii_libdir)/xpm
+	$(INSTALL) -m 0444 xpm/Preview_3310.xpm $(xgnokii_libdir)/xpm
+	$(INSTALL) -m 0444 xpm/Preview_5110.xpm $(xgnokii_libdir)/xpm
+	$(INSTALL) -m 0444 xpm/Preview_3210.xpm $(xgnokii_libdir)/xpm
+	$(INSTALL) -m 0444 xpm/Preview_6250.xpm $(xgnokii_libdir)/xpm
+	$(INSTALL) -m 0444 xpm/Preview_7110.xpm $(xgnokii_libdir)/xpm
 	@echo "done"
 
 install-suid: all
@@ -129,6 +139,11 @@ install-suid: all
 	$(INSTALL) -o root -g gnokii -m 0440 xpm/Preview_6110.xpm $(xgnokii_libdir)/xpm
 	$(INSTALL) -o root -g gnokii -m 0440 xpm/Preview_6150.xpm $(xgnokii_libdir)/xpm
 	$(INSTALL) -o root -g gnokii -m 0440 xpm/Preview_6210.xpm $(xgnokii_libdir)/xpm
+	$(INSTALL) -o root -g gnokii -m 0440 xpm/Preview_3310.xpm $(xgnokii_libdir)/xpm
+	$(INSTALL) -o root -g gnokii -m 0440 xpm/Preview_5110.xpm $(xgnokii_libdir)/xpm
+	$(INSTALL) -o root -g gnokii -m 0440 xpm/Preview_3210.xpm $(xgnokii_libdir)/xpm
+	$(INSTALL) -o root -g gnokii -m 0440 xpm/Preview_6250.xpm $(xgnokii_libdir)/xpm
+	$(INSTALL) -o root -g gnokii -m 0440 xpm/Preview_7110.xpm $(xgnokii_libdir)/xpm
 	@echo
 
 install-ss: all
@@ -156,6 +171,11 @@ install-ss: all
 	$(INSTALL) -o root -g gnokii -m 0440 xpm/Preview_6110.xpm $(xgnokii_libdir)/xpm
 	$(INSTALL) -o root -g gnokii -m 0440 xpm/Preview_6150.xpm $(xgnokii_libdir)/xpm
 	$(INSTALL) -o root -g gnokii -m 0440 xpm/Preview_6210.xpm $(xgnokii_libdir)/xpm
+	$(INSTALL) -o root -g gnokii -m 0440 xpm/Preview_3310.xpm $(xgnokii_libdir)/xpm
+	$(INSTALL) -o root -g gnokii -m 0440 xpm/Preview_5110.xpm $(xgnokii_libdir)/xpm
+	$(INSTALL) -o root -g gnokii -m 0440 xpm/Preview_3210.xpm $(xgnokii_libdir)/xpm
+	$(INSTALL) -o root -g gnokii -m 0440 xpm/Preview_6250.xpm $(xgnokii_libdir)/xpm
+	$(INSTALL) -o root -g gnokii -m 0440 xpm/Preview_7110.xpm $(xgnokii_libdir)/xpm
 	@echo
 
 depend dep:
