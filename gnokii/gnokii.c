@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.389 2004-04-04 12:21:10 bozo Exp $
+  $Id: gnokii.c,v 1.390 2004-04-13 22:59:45 bozo Exp $
 
   G N O K I I
 
@@ -4284,12 +4284,17 @@ static int playringtone(int argc, char *argv[])
 		return error;
 	}
 
+#ifndef WIN32
 	gettimeofday(&t1, NULL);
 	tone.frequency = 0;
 	tone.volume = 0;
 	gn_sm_functions(GN_OP_PlayTone, &data, &state);
 	gettimeofday(&t2, NULL);
 	timersub(&t2, &t1, &dt);
+#else
+	dt.tv_sec = 0;
+	dt.tv_usec = 20000;
+#endif
 
 	signal(SIGINT, interrupted);
 	for (i = 0; !bshutdown && i < ringtone.notes_count; i++) {
