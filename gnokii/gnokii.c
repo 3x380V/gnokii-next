@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.253 2002-06-26 23:34:02 pkot Exp $
+  $Id: gnokii.c,v 1.254 2002-06-28 21:20:28 pkot Exp $
 
   G N O K I I
 
@@ -1529,6 +1529,15 @@ static int sendlogo(int argc, char *argv[])
 		readtext(&sms.UserData[1], 120);
 		sms.UserData[2].Type = SMS_NoData;
 	}
+
+	data.MessageCenter = calloc(1, sizeof(SMS_MessageCenter));
+	data.MessageCenter->No = 1;
+	if (SM_Functions(GOP_GetSMSCenter, &data, &State) == GE_NONE)
+		strcpy(sms.SMSC.Number, data.MessageCenter->Number);
+	free(data.MessageCenter);
+
+	if (sms.SMSC.Number[0] == '+') sms.SMSC.Type = SMS_International;
+	else sms.SMSC.Type = SMS_Unknown;
 
 	/* Send the message. */
 	data.SMS = &sms;
