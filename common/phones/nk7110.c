@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk7110.c,v 1.66 2002-03-28 21:37:47 pkot Exp $
+  $Id: nk7110.c,v 1.67 2002-04-02 00:15:24 bozo Exp $
 
   G N O K I I
 
@@ -700,8 +700,7 @@ static GSM_Error P7110_IncomingIdentify(int messagetype, unsigned char *message,
 			int n;
 			unsigned char *s = strchr(message + 22, '\n');
 
-			if (s) n = s - message - 21;
-			else n = GSM_MAX_MODEL_LENGTH;
+			n = s ? s - message - 21 : GSM_MAX_MODEL_LENGTH;
 			snprintf(data->Model, GNOKII_MIN(n, GSM_MAX_MODEL_LENGTH), "%s", message + 22);
 			dprintf("Received model %s\n",data->Model);
 		}
@@ -709,8 +708,7 @@ static GSM_Error P7110_IncomingIdentify(int messagetype, unsigned char *message,
 			int n;
 			unsigned char *s = strchr(message + 7, '\n');
 
-			if (s) n = s - message - 6;
-			else n = GSM_MAX_REVISION_LENGTH;
+			n = s ? s - message - 6 : GSM_MAX_REVISION_LENGTH;
 			snprintf(data->Revision, GNOKII_MIN(n, GSM_MAX_REVISION_LENGTH), "%s", message + 7);
 			dprintf("Received revision %s\n",data->Revision);
 		}

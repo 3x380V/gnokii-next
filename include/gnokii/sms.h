@@ -1,6 +1,6 @@
 /*
 
-  $Id: sms.h,v 1.27 2002-03-28 21:37:48 pkot Exp $
+  $Id: sms.h,v 1.28 2002-04-02 00:15:24 bozo Exp $
 
   G N O K I I
 
@@ -125,7 +125,7 @@ typedef struct {
 			char NetworkCode[6];
 		} Logo; /* SMS_OpLogo, SMS_CallerIDLogo */
 		struct {
-//			...
+			char _dummy; /* FIXME: don't leave structs empty */
 		} Ringtone; /* SMS_Ringtone */
 	} u;
 } SMS_UDHInfo;
