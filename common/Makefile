@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.62 2004-01-15 02:03:53 uid66849 Exp $
+# $Id: Makefile,v 1.63 2004-01-16 01:02:26 uid66849 Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -66,7 +66,7 @@ gnokii-debug: $(OBJS) phones/libPHONES.la links/libLINKS.la devices/libDEVICES.l
 	$(LIBTOOL) --mode=link $(CC) -o gnokii-debug $(OBJS) phones/libPHONES.la links/libLINKS.la devices/libDEVICES.la ../gnokii/gnokii.o
 
 libgnokii.la: $(OBJS) phones/libPHONES.la links/libLINKS.la devices/libDEVICES.la
-	$(LIBTOOL) --mode=link $(CC) $(LIBTOOL_UNDEF) -o libgnokii.la $(OBJS) phones/libPHONES.la links/libLINKS.la devices/libDEVICES.la $(LIBTOOL_VER) $(LIBTOOL_RPATH)
+	$(LIBTOOL) --mode=link $(CC) $(LIBTOOL_UNDEF) -o libgnokii.la $(OBJS) phones/libPHONES.la links/libLINKS.la devices/libDEVICES.la $(INTL_LIBS) $(LIBTOOL_VER) $(LIBTOOL_RPATH)
 
 vcal.c: vcal.lx
 	$(LEX) -ovcal.c vcal.lx

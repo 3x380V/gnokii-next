@@ -5,7 +5,7 @@ dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janík ml.
 dnl                2000 Karel Zak, Pawe³ Kot
 dnl                2002 BORBELY Zoltan
 dnl
-dnl  $Id: configure.in,v 1.125 2004-01-15 02:03:52 uid66849 Exp $
+dnl  $Id: configure.in,v 1.126 2004-01-16 01:02:26 uid66849 Exp $
 dnl
 
 AC_INIT(gnokii/gnokii.c)
@@ -34,12 +34,6 @@ dnl ======================== Default setting
 ALL_LINGUAS="cs de et fi nl sk pl it sl fr"
 AC_CHECK_HEADERS(libintl.h)
 AM_GNU_GETTEXT
-if test x$USE_NLS = xyes -a x$ac_cv_header_libintl_h != xyes; then
-	echo '*************************************************'
-	echo 'libintl.h is missing, use --disable-nls'
-	echo '*************************************************'
-	exit 1
-fi
 
 dnl ======================== Check for include/config.h.in
 AC_MSG_CHECKING([for include/config.h.in])
@@ -586,6 +580,7 @@ AC_SUBST(WIN32_CROSS)
 
 AC_OUTPUT(
    Makefile.global
+   intl/Makefile 
    po/Makefile.in
    po/Makefile
    packaging/RedHat/gnokii.spec
