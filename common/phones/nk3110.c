@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk3110.c,v 1.29 2003-02-14 23:54:12 pkot Exp $
+  $Id: nk3110.c,v 1.30 2003-02-16 23:56:46 pkot Exp $
 
   G N O K I I
 
@@ -800,6 +800,11 @@ static gn_error P3110_IncomingSMSHeader(int messagetype, unsigned char *message,
 	int smsc_length, remote_length, l;
 	gn_gsm_number_type smsc_number_type, remote_number_type;
 	unsigned char smsc[256], remote[256];	/* should be enough for anyone */
+
+	if (!data->raw_sms) {
+		dprintf("Unrequested SMS header received. Ignoring.\n");
+		return GN_ERR_INTERNALERROR;
+	}
 
 	data->raw_sms->status = message[4];
 
