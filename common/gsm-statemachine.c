@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-statemachine.c,v 1.11 2002-01-07 15:29:49 pkot Exp $
+  $Id: gsm-statemachine.c,v 1.12 2002-01-10 10:11:25 pkot Exp $
 
   G N O K I I
 
@@ -92,14 +92,14 @@ void SM_IncomingFunction(GSM_Statemachine *state, u8 messagetype, void *message,
 	c = 0;
 	while (state->Phone.IncomingFunctions[c].Functions) {
 		if (state->Phone.IncomingFunctions[c].MessageType == messagetype) {
-			dprintf("Received message type %02x\n\r", messagetype);
+			dprintf("Received message type %02x\n", messagetype);
 			res = state->Phone.IncomingFunctions[c].Functions(messagetype, message, messagesize, data);
 			temp = 0;
 		}
 		c++;
 	}
 	if (temp != 0) {
-		dprintf("Unknown Frame Type %02x\n\r", messagetype);
+		dprintf("Unknown Frame Type %02x\n", messagetype);
 		state->Phone.DefaultFunction(messagetype, message, messagesize);
 
 		return;
@@ -189,7 +189,7 @@ GSM_Error SM_Block(GSM_Statemachine *state, GSM_Data *data, int waitfor)
 		
 		if (s == ResponseReceived) return SM_GetError(state, waitfor);
 
-		dprintf("SM_Block Retry - %d\n\r", retry);
+		dprintf("SM_Block Retry - %d\n", retry);
 		SM_Reset(state);
 		if (retry < 2) SM_SendMessage(state, state->LastMsgSize, state->LastMsgType, state->LastMsg);
 	}
