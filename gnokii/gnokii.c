@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.260 2002-07-09 21:58:15 pkot Exp $
+  $Id: gnokii.c,v 1.261 2002-07-10 10:54:52 pkot Exp $
 
   G N O K I I
 
@@ -1149,6 +1149,7 @@ static int getsms(int argc, char *argv[])
 					fprintf(stdout, _("Linked (%d/%d):\n"),
 						message.UDH.UDH[0].u.ConcatenatedShortMessage.CurrentNumber,
 						message.UDH.UDH[0].u.ConcatenatedShortMessage.MaximumNumber);
+					break;
 				case SMS_WAPvCard:
 					fprintf(stdout, _("WAP vCard:\n"));
 					break;
