@@ -8,7 +8,7 @@
 
   Released under the terms of the GNU GPL, see file COPYING for more details.
 
-  $Id: db.h,v 1.3 2002-01-27 14:54:43 ja Exp $
+  $Id: db.h,v 1.4 2002-02-01 13:43:31 ja Exp $
   
 */
 
@@ -19,14 +19,9 @@
 #include "smsd.h"
 #include "gsm-sms.h"
 
-/* extern void DB_Bye (void);
-extern gint DB_Connect (const DBConfig);
-extern gint DB_InsertSMS (const GSM_SMSMessage * const);
-extern void DB_Look (void);
-*/
-
 extern void (*DB_Bye) (void);
-extern gint (*DB_Connect) (const DBConfig);
+extern gint (*DB_ConnectInbox) (const DBConfig);
+extern gint (*DB_ConnectOutbox) (const DBConfig);
 extern gint (*DB_InsertSMS) (const GSM_SMSMessage * const);
 extern void (*DB_Look) (void);
 
