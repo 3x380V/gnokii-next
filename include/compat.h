@@ -1,6 +1,6 @@
 /*
 
-  $Id: compat.h,v 1.39 2004-06-27 20:36:16 pkot Exp $
+  $Id: compat.h,v 1.40 2004-08-01 20:31:53 pkot Exp $
 
   G N O K I I
 
@@ -214,7 +214,7 @@ int vasprintf(char **ptr, const char *format, va_list ap);
 #endif
 
 /* Get rid of long defines. Use #if __unices__ */
-#define __unices__ defined(__svr4__) || defined(__FreeBSD__) || defined(__bsdi__) || defined(__MACH__) || defined(__OpenBSD__)
+#define __unices__ defined(__svr4__) || defined(__FreeBSD__) || defined(__bsdi__) || defined(__MACH__) || defined(__OpenBSD__) || defined(__NetBSD__)
 
 /* This one is for NLS. */
 #ifdef ENABLE_NLS

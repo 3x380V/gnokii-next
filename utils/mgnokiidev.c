@@ -1,6 +1,6 @@
 /*
 
-  $Id: mgnokiidev.c,v 1.22 2003-10-14 21:39:24 bozo Exp $
+  $Id: mgnokiidev.c,v 1.23 2004-08-01 20:31:53 pkot Exp $
 
   G N O K I I
 
@@ -43,6 +43,11 @@
 #  include <sys/types.h>
 #  undef	__BSD_VISIBLE
 #  define	__BSD_VISIBLE	1
+#endif
+
+/* See common/data/virtmodem.c for explanation */
+#ifdef	__NetBSD__
+#  include <sys/types.h>
 #endif
 
 /* See common/data/virtmodem.c for explanation */

@@ -1,6 +1,6 @@
 /*
 
-  $Id: virtmodem.c,v 1.41 2003-10-23 17:45:41 bozo Exp $
+  $Id: virtmodem.c,v 1.42 2004-08-01 20:31:53 pkot Exp $
 
   G N O K I I
 
@@ -50,6 +50,11 @@
 #  include <sys/types.h>
 #  undef	__BSD_VISIBLE
 #  define	__BSD_VISIBLE	1
+#endif
+
+/* same for NetBSD */
+#ifdef	__NetBSD__
+#  include <sys/types.h>
 #endif
 
 /* This is the correct way to include stdlib with _XOPEN_SOURCE = 500 defined.
