@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-encoding.c,v 1.37 2003-01-01 21:29:05 pkot Exp $
+  $Id: gsm-encoding.c,v 1.38 2003-02-19 22:01:16 pkot Exp $
 
   G N O K I I
 
@@ -303,6 +303,7 @@ void char_hex_decode(unsigned char* dest, const unsigned char* src, int len)
 		buf[0] = *(src + i * 2); buf[1] = *(src + i * 2 + 1);
 		dest[i] = char_def_alphabet_decode(strtol(buf, NULL, 16));
 	}
+	dest[i] = 0;
 	return;
 }
 
@@ -364,6 +365,7 @@ void char_ucs2_decode(unsigned char* dest, const unsigned char* src, int len)
 			break;
 		}
 	}
+	dest[o_len] = 0;
 	return;
 }
 

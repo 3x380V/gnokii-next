@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.80 2003-02-19 00:07:54 pkot Exp $
+  $Id: atgen.c,v 1.81 2003-02-19 22:01:15 pkot Exp $
 
   G N O K I I
 
@@ -788,19 +788,16 @@ static gn_error ReplyReadPhonebook(int messagetype, unsigned char *buffer, int l
 			switch (drvinst->charset) {
 			case AT_CHAR_GSM:
 				char_ascii_decode(data->phonebook_entry->name, pos, l);
-				*(data->phonebook_entry->name + l) = '\0';
 				break;
 			case AT_CHAR_HEXGSM:
 				char_hex_decode(data->phonebook_entry->name, pos, l);
-				*(data->phonebook_entry->name + (l / 2)) = '\0';
 				break;
 			case AT_CHAR_UCS2:
 				char_ucs2_decode(data->phonebook_entry->name, pos, l);
-				*(data->phonebook_entry->name + (l / 4)) = '\0';
 				break;
 			default:
 				memcpy(data->phonebook_entry->name, pos, l);
-				*(data->phonebook_entry->name + l) = '\0';
+				*(data->phonebook_entry->name + l) = 0;
 				break;
 			}
 		}
