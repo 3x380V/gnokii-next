@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.52 2002-03-26 01:10:29 pkot Exp $
+  $Id: nk6100.c,v 1.53 2002-03-27 23:27:19 pkot Exp $
 
   G N O K I I
 
@@ -828,11 +828,11 @@ static GSM_Error IncomingPhonebook(int messagetype, unsigned char *message, int 
 
 static GSM_Error GetIMEI(GSM_Data *data, GSM_Statemachine *state)
 {
-	unsigned char req[] = {FBUS_FRAME_HEADER, 0x01};
+	unsigned char req[] = {FBUS_FRAME_HEADER, 0x10};
 
 	dprintf("Getting imei...\n");
-	if (SM_SendMessage(state, 4, 0x1b, req) != GE_NONE) return GE_NOTREADY;
-	return SM_Block(state, data, 0x1b);
+	if (SM_SendMessage(state, 4, 0x64, req) != GE_NONE) return GE_NOTREADY;
+	return SM_Block(state, data, 0x64);
 }
 
 static GSM_Error PhoneInfo(GSM_Data *data, GSM_Statemachine *state)
