@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-statemachine.c,v 1.47 2003-03-06 21:23:59 pkot Exp $
+  $Id: gsm-statemachine.c,v 1.48 2003-03-31 08:46:01 pkot Exp $
 
   G N O K I I
 
@@ -330,5 +330,5 @@ void sm_unhandled_frame_dump(int messagetype, unsigned char *message, int messag
 	dump(_("reply: "));
 	sm_message_dump(messagetype, message, messagesize);
 
-	dump(_("Please read Docs/Reporting-HOWTO and send a bug report!\n"));
+	dump(_("Please read Docs/Bugs and send a bug report!\n"));
 }

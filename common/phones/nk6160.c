@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6160.c,v 1.18 2003-03-04 23:37:52 pkot Exp $
+  $Id: nk6160.c,v 1.19 2003-03-31 08:46:01 pkot Exp $
 
   G N O K I I
 
@@ -181,7 +181,7 @@ static gn_error initialise(struct gn_statemachine *state)
 	dprintf("model: '%s'\n", model);
 	if ((pm = gn_phone_model_get(model)) == NULL) {
 		dump("Unsupported phone model \"%s\"\n", model);
-		dump("Please read Docs/Reporting-HOWTO and send a bug report!\n");
+		dump("Please read Docs/Bugs and send a bug report!\n");
 		error = GN_ERR_INTERNALERROR;
 	}
 out:	
