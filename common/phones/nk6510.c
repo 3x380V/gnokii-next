@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.c,v 1.22 2002-06-30 19:00:53 pkot Exp $
+  $Id: nk6510.c,v 1.23 2002-07-03 22:53:39 pkot Exp $
 
   G N O K I I
 
@@ -263,7 +263,6 @@ static GSM_Error P6510_Initialise(GSM_Statemachine *state)
 			break;
 		default:
 			return GE_NOTSUPPORTED;
-			break;
 		}
 
 		if (err != GE_NONE) {

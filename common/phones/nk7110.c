@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk7110.c,v 1.89 2002-06-30 19:00:53 pkot Exp $
+  $Id: nk7110.c,v 1.90 2002-07-03 22:53:39 pkot Exp $
 
   G N O K I I
 
@@ -258,7 +258,6 @@ static GSM_Error P7110_Initialise(GSM_Statemachine *state)
 			break;
 		default:
 			return GE_NOTSUPPORTED;
-			break;
 		}
 
 		if (err != GE_NONE) {
