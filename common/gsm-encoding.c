@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-encoding.c,v 1.44 2003-09-22 19:33:42 pkot Exp $
+  $Id: gsm-encoding.c,v 1.45 2003-09-22 20:01:08 pkot Exp $
 
   G N O K I I
 
@@ -569,14 +569,16 @@ int utf8_encode(char *outstring, char *instring, int inlen)
 {
 	int aux = inlen;
 	int outlen = inlen * 2;
+	int len = 0;
 #ifdef HAVE_ICONV
 	iconv_t cd;
 
 	cd = iconv_open("UTF-8", nl_langinfo(CODESET));
-	retval = iconv(cd, &instring, &inlen, &outstring, &outlen);
+	len = iconv(cd, &instring, &inlen, &outstring, &outlen);
 	iconv_close(cd);
 #endif
-	return 2 * aux - outlen;
+	if (len < 0) return -1;
+	else return 2 * aux - outlen;
 }
 
 
