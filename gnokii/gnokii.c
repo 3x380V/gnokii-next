@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.399 2004-06-27 20:31:50 pkot Exp $
+  $Id: gnokii.c,v 1.400 2004-06-27 20:34:42 pkot Exp $
 
   G N O K I I
 
@@ -4299,7 +4299,10 @@ static int playringtone(int argc, char *argv[])
 	gn_tone tone;
 	gn_error error;
 	int i, ulen;
-	struct timeval t1, t2, dt;
+	struct timeval dt;
+#if (defined HAVE_TIMEOPS) && (defined HAVE_GETTIMEOFDAY)
+	struct timeval t1, t2;
+#endif
 
 	int volume = 5;
 	struct option options[] = {
@@ -4339,7 +4342,7 @@ static int playringtone(int argc, char *argv[])
 		return error;
 	}
 
-#ifndef WIN32
+#if (defined HAVE_TIMEOPS) && (defined HAVE_GETTIMEOFDAY)
 	gettimeofday(&t1, NULL);
 	tone.frequency = 0;
 	tone.volume = 0;
