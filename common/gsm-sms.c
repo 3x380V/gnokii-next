@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-sms.c,v 1.77 2002-05-27 10:35:08 pkot Exp $
+  $Id: gsm-sms.c,v 1.78 2002-05-27 22:24:18 pkot Exp $
 
   G N O K I I
 
@@ -676,6 +676,7 @@ API GSM_Error GetSMS(GSM_Data *data, GSM_Statemachine *state)
 	rawsms.MemoryType = data->SMS->MemoryType;
 	data->RawSMS = &rawsms;
 	error = RequestSMS(data, state);
+	data->SMS->Status = rawsms.Status;
 	if (error != GE_NONE) return error;
 	return ParseSMS(data);
 }
