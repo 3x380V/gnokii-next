@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.167 2002-01-10 14:23:38 pkot Exp $
+  $Id: gnokii.c,v 1.168 2002-01-10 17:44:55 pkot Exp $
   
   G N O K I I
 
@@ -455,16 +455,13 @@ static int sendsms(int argc, char *argv[])
 	data.SMSMessage = &SMS;
 
 	/* Send the message. */
-	/* SendSMS(&data, &State); */
-	error = SM_Functions(GOP_SendSMS, &data, &State);
+	error = SendSMS(&data, &State);
 
 	if (error == GE_SMSSENDOK) {
 		fprintf(stdout, _("Send succeeded!\n"));
 	} else {
 		fprintf(stdout, _("SMS Send failed (error=%d)\n"), error);
 	}
-
-	if (GSM && GSM->Terminate) GSM->Terminate();
 
 	return 0;
 }
