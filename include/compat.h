@@ -1,6 +1,6 @@
 /*
 
-  $Id: compat.h,v 1.31 2004-01-15 02:03:53 uid66849 Exp $
+  $Id: compat.h,v 1.32 2004-01-18 16:26:15 uid66849 Exp $
 
   G N O K I I
 
@@ -92,11 +92,13 @@
  * from a DLL, wheras this DLL sees symbols defined with this macro as being 
  * exported.
  */
-#if defined(WIN32) && (defined(_USRDLL) || defined(DLL_EXPORT))
-#  if defined(GNOKIIDLL_EXPORTS) || defined(DLL_EXPORT)
+#if defined(WIN32)
+#  if defined(GNOKIIDLL_EXPORTS) || defined(_USRDLL) || defined(DLL_EXPORT)
 #    define API __declspec(dllexport)
-#  else
+#  elif defined(GNOKIIDLL_IMPORTS)
 #    define API __declspec(dllimport)
+#  else
+#    define API
 #  endif
 #else /* !WIN32 */
 #  define API

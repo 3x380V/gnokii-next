@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-encoding.c,v 1.53 2004-01-18 00:49:54 uid66849 Exp $
+  $Id: gsm-encoding.c,v 1.54 2004-01-18 16:26:15 uid66849 Exp $
 
   G N O K I I
 
@@ -78,6 +78,7 @@ static unsigned char gsm_default_alphabet[GN_CHAR_ALPHABET_SIZE] = {
 
 static unsigned char gsm_reverse_default_alphabet[256];
 static bool reversed = false;
+extern const char *locale_charset(void); /* from ../intl/localcharset.c */
 
 static void tbl_setup_reverse()
 {
