@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile.global.in,v 1.39 2003-06-03 19:31:08 pkot Exp $
+# $Id: Makefile.global.in,v 1.40 2003-09-14 12:02:18 bozo Exp $
 #
 # Global Makefiles configuration for the GNOKII.
 #
@@ -49,6 +49,8 @@ CFLAGS         = @CFLAGS@
 CPPFLAGS       = @CPPFLAGS@
 LIBS           = @LIBS@
 LEX            = @LEX@
+AR             = @AR@
+RANLIB         = @RANLIB@
 
 GTK_CFLAGS     = @GTK_CFLAGS@
 GTK_LIBS       = @GTK_LIBS@
@@ -61,6 +63,7 @@ NO_SHARED      = @NO_SHARED@
 
 HAVE_XGNOKII   = @HAVE_XGNOKII@
 WIN32          = @WIN32@
+WIN32_CROSS    = @WIN32_CROSS@
 
 DESTDIR        =
 

@@ -1,6 +1,6 @@
 /*
 
-  $Id: ldif.c,v 1.3 2003-09-05 08:17:36 pkot Exp $
+  $Id: ldif.c,v 1.4 2003-09-14 12:02:19 bozo Exp $
   
   G N O K I I
 
@@ -48,7 +48,7 @@ API int gn_phonebook2ldif(FILE *f, gn_phonebook_entry *entry)
 	fprintf(f, "objectclass: inetOrgPerson\n");
 	fprintf(f, "objectclass: mozillaAbPersonObsolete\n");
 
-	aux = rindex(entry->name, ' ');
+	aux = strrchr(entry->name, ' ');
 	if (aux) *aux = 0;
 	fprintf(f, "givenName: %s\n", entry->name);
 	fprintf(f, "sn: %s\n", aux+1);

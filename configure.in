@@ -5,7 +5,7 @@ dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janík ml.
 dnl                2000 Karel Zak, Pawe³ Kot
 dnl                2002 BORBELY Zoltan
 dnl
-dnl  $Id: configure.in,v 1.118 2003-09-03 22:34:05 bozo Exp $
+dnl  $Id: configure.in,v 1.119 2003-09-14 12:02:18 bozo Exp $
 dnl
 
 AC_INIT(gnokii/gnokii.c)
@@ -22,6 +22,8 @@ AC_PROG_LEX
 AC_PATH_PROG(RM, rm, no)
 AC_PATH_PROG(FIND, find, no)
 AC_CHECK_PROGS(MAKE, gmake make)
+AC_CHECK_PROGS(AR, ar)
+AC_PROG_RANLIB
 AC_PROG_INSTALL
 
 dnl ======================== Default setting
@@ -518,6 +520,7 @@ AC_SUBST(XPM_CFLAGS)
 AC_SUBST(XPM_LIBS)
 AC_SUBST(HAVE_XGNOKII)
 AC_SUBST(WIN32)
+AC_SUBST(WIN32_CROSS)
 
 AC_OUTPUT(
    Makefile.global
