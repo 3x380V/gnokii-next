@@ -1,6 +1,6 @@
 /*
 
-  $Id: data.h,v 1.36 2002-07-25 22:47:04 pkot Exp $
+  $Id: data.h,v 1.37 2002-07-26 10:22:58 plail Exp $
 
   G N O K I I
 
@@ -36,7 +36,6 @@
 
 /* This is a generic holder for high level information - eg a GSM_Bitmap */
 typedef struct {
-	int nk6510_SIM_Inbox_Number;	/* I know this is ugly, if someone finds a better solution... */
 	SMS_Folder *SMSFolder;
 	SMS_FolderList *SMSFolderList;
 	GSM_SMSMessage *RawSMS;		/* This is for phone driver, application using libgnokii should not touch this */
@@ -53,6 +52,8 @@ typedef struct {
 	char *Model;
 	char *Manufacturer;
 	GSM_NetworkInfo *NetworkInfo;
+	GSM_ToDoList *ToDoList;
+	GSM_ToDo *ToDo;
 	GSM_CalendarNotesList *CalendarNotesList;
 	GSM_CalendarNote *CalendarNote;
 	GSM_Bitmap *Bitmap;
@@ -149,6 +150,7 @@ typedef enum {
 	GOP_GetSMSCenter,
 	GOP_SetSMSCenter,
 	GOP_GetDateTime,
+	GOP_GetToDo,
 	GOP_GetCalendarNote,
 	GOP_CallDivert,
 	GOP_OnSMS,
