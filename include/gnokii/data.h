@@ -1,6 +1,6 @@
 /*
 
-  $Id: data.h,v 1.55 2003-01-13 11:47:15 pkot Exp $
+  $Id: data.h,v 1.56 2003-01-15 21:40:11 bozo Exp $
 
   G N O K I I
 
@@ -123,7 +123,7 @@ typedef struct {
 	int serial_write_usleep;			/* Inter character delay or <0 to disable */
 	bool hardware_handshake;			/* Select between hardware and software handshake */
 	bool require_dcd;				/* DCD signal check */
-	unsigned int smsc_timeout;			/* How many seconds should we wait for the SMSC response, defaults to 10 seconds */
+	int smsc_timeout;				/* How many seconds should we wait for the SMSC response, defaults to 10 seconds */
 	char connect_script[256];			/* Script to run when device connection established */
 	char disconnect_script[256];			/* Script to run when device connection closed */
 } gn_config;
