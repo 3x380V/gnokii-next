@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus-3110.c,v 1.28 2003-06-14 14:18:37 osma Exp $
+  $Id: fbus-3110.c,v 1.29 2003-06-14 14:59:30 osma Exp $
 
   G N O K I I
 
@@ -111,6 +111,7 @@ static void fb3110_rx_frame_handle(fb3110_incoming_frame *i, struct gn_statemach
 		sm_incoming_function(fb3110_message_type_fold(i->buffer[0]), i->buffer, i->frame_len, state);
 
 	} else { /* ack frame */
+		dprintf("Received ack for message type 0x%02x\n", i->buffer[0]);
 		sm_incoming_acknowledge(state);
 	}
 }
