@@ -1,6 +1,6 @@
 /*
 
-  $Id: phone-generic.h,v 1.4 2001-01-29 17:14:44 chris Exp $
+  $Id: generic.h,v 1.1 2001-02-21 19:57:12 chris Exp $
 
   G N O K I I
 
@@ -16,8 +16,11 @@
 
   The various routines are called PGEN_...
 
-  $Log: phone-generic.h,v $
-  Revision 1.4  2001-01-29 17:14:44  chris
+  $Log: generic.h,v $
+  Revision 1.1  2001-02-21 19:57:12  chris
+  More fiddling with the directory layout
+
+  Revision 1.4  2001/01/29 17:14:44  chris
   dprintf now in misc.h (and fiddling with 7110 code)
 
   Revision 1.3  2001/01/23 15:32:44  chris
@@ -31,8 +34,8 @@
 
 */
 
-#ifndef __phone_generic_h
-#define __phone_generic_h
+#ifndef __phones_generic_h
+#define __phones_generic_h
 
 #include "gsm-common.h"
 #include "misc.h"

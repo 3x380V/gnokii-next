@@ -1,5 +1,5 @@
 /*
- * $Id: unixirda.h,v 1.4 2001-02-20 21:55:12 pkot Exp $
+ * $Id: unixirda.h,v 1.1 2001-02-21 19:57:11 chris Exp $
  *
  * G N O K I I
  *
@@ -23,7 +23,10 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
  * $Log: unixirda.h,v $
- * Revision 1.4  2001-02-20 21:55:12  pkot
+ * Revision 1.1  2001-02-21 19:57:11  chris
+ * More fiddling with the directory layout
+ *
+ * Revision 1.4  2001/02/20 21:55:12  pkot
  * Small #include updates
  *
  * Revision 1.3  2001/02/06 21:15:37  chris

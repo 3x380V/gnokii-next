@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.1 2001-02-16 14:29:53 chris Exp $
+# $Id: Makefile,v 1.2 2001-02-21 19:57:06 chris Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -19,9 +19,9 @@ include $(TOPDIR)/Makefile.global
 
 CFLAGS += $(PTHREAD_CFLAGS)
 
-OBJS =	phone-generic.o \
-	phone-nokia.o \
-	phone-nk7110.o
+OBJS =	generic.o \
+	nokia.o \
+	nk7110.o
 
 all: PHONES.o
 

@@ -1,5 +1,5 @@
 /*
- * $Id: tekram.h,v 1.1 2001-02-09 18:12:54 chris Exp $
+ * $Id: tekram.h,v 1.1 2001-02-21 19:57:11 chris Exp $
  *
  *
  * G N O K I I
@@ -24,13 +24,16 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
  * $Log: tekram.h,v $
- * Revision 1.1  2001-02-09 18:12:54  chris
+ * Revision 1.1  2001-02-21 19:57:11  chris
+ * More fiddling with the directory layout
+ *
+ * Revision 1.1  2001/02/09 18:12:54  chris
  * Marcel's tekram support
  *
  */
 
-#ifndef __tekram_h
-#define __tekram_h
+#ifndef __devices_tekram_h
+#define __devices_tekram_h
 
 #ifdef WIN32
   #include <stddef.h>
@@ -64,4 +67,8 @@ size_t tekram_write(int __fd, __const __ptr_t __buf, size_t __n);
 
 int tekram_select(int fd, struct timeval *timeout);
 
-#endif  /* __tekram_h */
+#endif  /* __devices_tekram_h */
+
+
+
+

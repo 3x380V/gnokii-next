@@ -1,6 +1,6 @@
 /*
 
-  $Id: phone-nokia.h,v 1.1 2001-02-01 15:19:41 pkot Exp $
+  $Id: nokia.h,v 1.1 2001-02-21 19:57:13 chris Exp $
 
   G N O K I I
 
@@ -16,15 +16,18 @@
 
   The various routines are called PNOK_...
 
-  $Log: phone-nokia.h,v $
-  Revision 1.1  2001-02-01 15:19:41  pkot
+  $Log: nokia.h,v $
+  Revision 1.1  2001-02-21 19:57:13  chris
+  More fiddling with the directory layout
+
+  Revision 1.1  2001/02/01 15:19:41  pkot
   Fixed --identify and added Manfred's manufacturer patch
 
 
 */
 
-#ifndef __phone_nokia_h
-#define __phone_nokia_h
+#ifndef __phones_nokia_h
+#define __phones_nokia_h
 
 
 #define PNOK_MAX_MANUFACTURER_LENGTH 16 
