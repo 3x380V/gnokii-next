@@ -2,7 +2,7 @@ GNOKII FAQ
 Pawe³ Kot, pkot@linuxnews.pl
 Hugh Blemings, hugh@blemings.org
 
-$Id: FAQ,v 1.20 2003-01-20 21:59:51 pkot Exp $
+$Id: FAQ,v 1.21 2003-09-12 10:51:44 bozo Exp $
 
 -------------------------------------------------------------------------------
 Q. What is gnokii?
@@ -118,6 +118,10 @@ A. In general yes, but it depends on hardware -- your serial port
    must support at least 115200 baud rate. Sun Enterprise 250 machine is known
    to work with gnokii.  Earlier Sparc machines (IPC, IPX, Classic) probably
    won't work due to hardware limitations.
+
+   If your hardware doesn't support 115200 baud rate you can try the M2BUS
+   mode (don't forget it needs an M2BUS capable cable). It is much slower
+   but it should work.
 
 -------------------------------------------------------------------------------
 Q. Could you tell me the key for on, off and select menu in
