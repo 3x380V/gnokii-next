@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk7110.c,v 1.77 2002-05-17 00:22:10 pkot Exp $
+  $Id: nk7110.c,v 1.78 2002-05-24 14:24:15 plail Exp $
 
   G N O K I I
 
@@ -2050,6 +2050,14 @@ static GSM_Error P7110_WritePhonebookLocation(GSM_Data *data, GSM_Statemachine *
 					string[4] = j * 2;
 					count += PackBlock(0x0b, j * 2 + 6, block++, string, req + count);
 				}
+			} else {
+				j = strlen(entry->SubEntries[i].data.Number);
+				string[0] = j * 2;
+				EncodeUnicode((string + 1), entry->SubEntries[i].data.Number, j);
+				string[j * 2 + 1] = 0;
+				count += PackBlock(entry->SubEntries[i].EntryType, j * 2 + 2, block++, string, req + count);
+			}
+
 		req[17] = block - 1;
 		dprintf("Writing phonebook entry %s...\n",entry->Name);
 	} else {
