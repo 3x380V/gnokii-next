@@ -5,7 +5,7 @@ dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janík ml.
 dnl                2000 Karel Zak, Pawe³ Kot
 dnl                2002 BORBELY Zoltan
 dnl
-dnl  $Id: configure.in,v 1.76 2002-04-30 21:00:51 bozo Exp $
+dnl  $Id: configure.in,v 1.77 2002-07-27 14:20:38 pkot Exp $
 dnl
 
 AC_INIT(gnokii/gnokii.c)
@@ -364,15 +364,13 @@ else
          GTK_LIBS=`$GTK_CONFIG --libs`
          x_support="yes"   
 
-         XGNOKIIDIR='${prefix}/share'
-         XGNOKIIPATH=${prefix}/share
+         XGNOKIIDIR='${prefix}'
          AC_ARG_WITH(xgnokiidir,
             [  --with-xgnokiidir=DIR   specifies the base for xgnokii],
             [ if test x$withval = xyes; then 
                  AC_MSG_WARN(Usage is: --with-xgnokiilib=DIR)
               else
                  XGNOKIIDIR="$withval"
-                 XGNOKIIPATH="$withval"
               fi
             ]
          )
@@ -569,7 +567,6 @@ AC_SUBST(VERSION)
 AC_SUBST(XVERSION)
 AC_SUBST(XPACKAGE)
 AC_SUBST(XGNOKIIDIR)
-AC_SUBST(XGNOKIIPATH)
 AC_SUBST(exec_prefix)
 AC_SUBST(USE_NLS)
 AC_SUBST(GTK_CFLAGS)
