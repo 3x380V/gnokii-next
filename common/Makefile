@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.61 2004-01-12 01:52:15 uid66849 Exp $
+# $Id: Makefile,v 1.62 2004-01-15 02:03:53 uid66849 Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -19,8 +19,14 @@ include $(TOPDIR)/Makefile.global
 
 MAJOR_NUMBER = 1
 MINOR_NUMBER = 6
+ifdef WIN32_CROSS
+LIBTOOL_UNDEF = -no-undefined
+LIBTOOL_VER = -version-info $(MAJOR_NUMBER):$(MINOR_NUMBER):0 -avoid-version
+LIBTOOL_RPATH=-rpath $(libdir)
+else
 LIBTOOL_VER = -version-info $(MAJOR_NUMBER):$(MINOR_NUMBER):0
 LIBTOOL_RPATH=-rpath $(libdir)
+endif
 
 OBJS =	gsm-api.lo \
 	gsm-error.lo \
@@ -60,7 +66,7 @@ gnokii-debug: $(OBJS) phones/libPHONES.la links/libLINKS.la devices/libDEVICES.l
 	$(LIBTOOL) --mode=link $(CC) -o gnokii-debug $(OBJS) phones/libPHONES.la links/libLINKS.la devices/libDEVICES.la ../gnokii/gnokii.o
 
 libgnokii.la: $(OBJS) phones/libPHONES.la links/libLINKS.la devices/libDEVICES.la
-	$(LIBTOOL) --mode=link $(CC) -o libgnokii.la $(OBJS) phones/libPHONES.la links/libLINKS.la devices/libDEVICES.la $(LIBTOOL_VER) $(LIBTOOL_RPATH)
+	$(LIBTOOL) --mode=link $(CC) $(LIBTOOL_UNDEF) -o libgnokii.la $(OBJS) phones/libPHONES.la links/libLINKS.la devices/libDEVICES.la $(LIBTOOL_VER) $(LIBTOOL_RPATH)
 
 vcal.c: vcal.lx
 	$(LEX) -ovcal.c vcal.lx

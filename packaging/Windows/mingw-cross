@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $Id: mingw-cross,v 1.1 2003-11-05 01:22:52 bozo Exp $
+# $Id: mingw-cross,v 1.2 2004-01-15 02:03:53 uid66849 Exp $
 #
 
 [ -r VERSION ] || exit 1
@@ -11,17 +11,10 @@ ZIPFILE=`pwd`/gnokii-$VERSION-win32.zip
 
 rm -r $BUILD_ROOT
 win32/mingw-cross/mingw-cross.sh
-make
 
-make DESTDIR=$BUILD_ROOT includedir=/include -C include install
+make DESTDIR=$BUILD_ROOT install
 
-install -d $BUILD_ROOT/lib
-install common/gnokii.lib $BUILD_ROOT/lib
-install common/gnokii.def $BUILD_ROOT/lib
-
-install -d $BUILD_ROOT/bin
-install common/gnokii.dll $BUILD_ROOT/bin
-install gnokii/gnokii.exe $BUILD_ROOT/bin
+mv $BUILD_ROOT/lib/gnokii.dll $BUILD_ROOT/bin/
 
 install COPYRIGHT $BUILD_ROOT
 install COPYING $BUILD_ROOT
