@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-sms.c,v 1.106 2002-07-18 08:41:19 plail Exp $
+  $Id: gsm-sms.c,v 1.107 2002-07-18 13:07:25 plail Exp $
 
   G N O K I I
 
@@ -705,7 +705,6 @@ API GSM_Error GetSMS(GSM_Data *data, GSM_Statemachine *state)
  */
 API GSM_Error DeleteSMS(GSM_Data *data, GSM_Statemachine *state)
 {
-	GSM_Error error;
 	GSM_SMSMessage rawsms;
 
 	if (!data->SMS) return GE_INTERNALERROR;
