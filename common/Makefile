@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.32 2001-11-20 16:22:22 pkot Exp $
+# $Id: Makefile,v 1.33 2002-01-23 10:21:15 machek Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -41,6 +41,9 @@ links/LINKS.o:
 
 devices/DEVICES.o:
 	$(MAKE) -C devices DEVICES.o
+
+gnokii-debug: $(OBJS) phones/PHONES.o links/LINKS.o devices/DEVICES.o gsm-filetypes.o ../gnokii/gnokii.o
+	$(CC) -o gnokii-debug $(OBJS) phones/PHONES.o links/LINKS.o devices/DEVICES.o gsm-filetypes.o ../gnokii/gnokii.o
 
 libgnokii.so: $(OBJS) phones/PHONES.o links/LINKS.o devices/DEVICES.o
 	$(CC) -shared -o libgnokii.so $(OBJS) phones/PHONES.o links/LINKS.o devices/DEVICES.o
