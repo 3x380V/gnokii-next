@@ -2,7 +2,7 @@ GNOKII FAQ
 Pawe³ Kot, pkot@linuxnews.pl
 Hugh Blemings, hugh@blemings.org
 
-$Id: FAQ,v 1.12 2002-07-01 13:45:30 pkot Exp $
+$Id: FAQ,v 1.13 2002-07-10 19:43:56 machek Exp $
 
 -------------------------------------------------------------------------------
 Q. What is gnokii?
@@ -112,6 +112,12 @@ Q. Does gnokii work under Sun's Solaris?
 A. Generally yes, but in fact it depends on hardware -- your serial port
    must support at least 115200 baud rate. Sun Enterprise 250 machine is known
    to work with gnokii.
+
+-------------------------------------------------------------------------------
+Q. Could somebody tell me the key for on, off and select menu in
+    gnokii --keysequence function?
+
+A. Menu is M, power is P. Usefull keys are "0123456789#*PGR+-UDMN".
 
 -------------------------------------------------------------------------------
 Q. I get 'undefined symbol: GSM_ELogHandler' when runnig gnokii. What's
