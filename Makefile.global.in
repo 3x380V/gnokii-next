@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile.global.in,v 1.36 2003-03-04 23:32:55 pkot Exp $
+# $Id: Makefile.global.in,v 1.37 2003-04-07 21:24:09 pkot Exp $
 #
 # Global Makefiles configuration for the GNOKII.
 #
@@ -8,7 +8,7 @@
 #               2000 Karel Zak
 #
 
-
+VERSION        = @VERSION@
 
 SHELL          = @SHELL@
 
