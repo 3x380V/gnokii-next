@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-ringtones.c,v 1.21 2003-06-18 20:41:37 bozo Exp $
+  $Id: gsm-ringtones.c,v 1.22 2003-08-18 18:00:55 pkot Exp $
 
   G N O K I I
 
@@ -632,7 +632,7 @@ API void gn_ringtone_get_tone(const gn_ringtone *ringtone, int n, int *freq, int
 		case 1: *freq = f * 2; break;
 		case 2: *freq = f * 4; break;
 		case 3: *freq = f * 8; break;
-		defalt: *freq = 0; break;
+		default: *freq = 0; break;
 		}
 	}
 
