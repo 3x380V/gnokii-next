@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk7110.c,v 1.37 2002-01-11 17:51:44 pkot Exp $
+  $Id: nk7110.c,v 1.38 2002-01-16 12:05:33 pkot Exp $
 
   G N O K I I
 
@@ -1612,7 +1612,7 @@ static GSM_Error P7110_WritePhonebookLocation(GSM_Data *data, GSM_Statemachine *
 					j = strlen(entry->SubEntries[i].data.Number);
 					EncodeUnicode((string + 5), entry->SubEntries[i].data.Number, j);
 					string[i * 2 + 1] = 0;
-					string[4] = j + 2;
+					string[4] = j * 2;
 					count += PackBlock(0x0b, j * 2 + 6, block++, string, req + count);
 				} 
 		req[17] = block - 1;
