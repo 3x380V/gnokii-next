@@ -1,5 +1,5 @@
 /*
- * $Id: unixirda.c,v 1.8 2001-12-29 23:41:54 pkot Exp $
+ * $Id: unixirda.c,v 1.9 2002-02-05 20:56:45 pkot Exp $
  *
  * G N O K I I
  *
@@ -35,7 +35,7 @@
 #define DISCOVERY_SLEEP		0.4
 
 static char *phone[] = {
-	"Nokia 7110", "Nokia 6210"
+	"Nokia 7110", "Nokia 6210", "Nokia 8210", "Nokia 8310"
 };
 
 double d_time(void)
