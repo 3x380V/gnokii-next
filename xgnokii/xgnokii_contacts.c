@@ -8,10 +8,13 @@
 
   Released under the terms of the GNU GPL, see file COPYING for more details.
 
-  $Id: xgnokii_contacts.c,v 1.27 2001-03-13 01:21:39 pkot Exp $
+  $Id: xgnokii_contacts.c,v 1.28 2001-03-19 23:43:47 pkot Exp $
   
   $Log: xgnokii_contacts.c,v $
-  Revision 1.27  2001-03-13 01:21:39  pkot
+  Revision 1.28  2001-03-19 23:43:47  pkot
+  Solaris/*BSD '#if defined' cleanup
+
+  Revision 1.27  2001/03/13 01:21:39  pkot
   *BSD updates (Bert Driehuis)
 
   Revision 1.26  2001/03/05 10:42:03  ja
@@ -27,6 +30,8 @@
 */
 
 
+#include "misc.h"
+
 #include <stdio.h>
 #include <pthread.h>
 
@@ -41,11 +46,11 @@
 
 #include <stdlib.h>
 #include <string.h>
-#if defined(__svr4__) || defined(__FreeBSD__) || defined(__bsdi__)
+#if __unices__
 # include <strings.h>
 #endif
 #include <gtk/gtk.h>
-#include "misc.h"
+
 #include "gsm-common.h"
 #include "xgnokii_contacts.h"
 #include "xgnokii_lowlevel.h"
