@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.127 2004-01-18 00:49:54 uid66849 Exp $
+# $Id: Makefile,v 1.128 2004-01-18 20:43:22 uid66843 Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -97,8 +97,7 @@ distclean: clean
 		include/config.h \
 		packaging/RedHat/gnokii.spec \
 		packaging/Slackware/SlackBuild \
-		po/Makefile.in \
-		debian
+		po/Makefile.in
 	$(RM) `$(FIND) . -name "*~"`
 	@echo "done"
 
