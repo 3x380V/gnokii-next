@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-statemachine.c,v 1.23 2002-03-19 22:51:17 pkot Exp $
+  $Id: gsm-statemachine.c,v 1.24 2002-03-26 01:10:28 pkot Exp $
 
   G N O K I I
 
@@ -14,6 +14,7 @@
 
 #include "gsm-common.h"
 #include "gsm-statemachine.h"
+#include "misc.h"
 
 GSM_Error SM_Initialise(GSM_Statemachine *state)
 {

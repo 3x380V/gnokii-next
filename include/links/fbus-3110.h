@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus-3110.h,v 1.3 2002-03-25 01:35:33 pkot Exp $
+  $Id: fbus-3110.h,v 1.4 2002-03-26 01:10:30 pkot Exp $
 
   G N O K I I
 
@@ -71,18 +71,5 @@ typedef struct{
 } FB3110_Link;
 
 GSM_Error FB3110_Initialise(GSM_Link *newlink, GSM_Statemachine *state);
-
-
-
-#ifdef __links_fbus_3110_c  /* Prototype functions for fbus-generic.c only */
-
-bool FB3110_OpenSerial(void);
-void FB3110_RX_StateMachine(unsigned char rx_byte);
-GSM_Error FB3110_TX_SendFrame(u8 message_length, u8 message_type, u8 sequence_byte, u8 *buffer);
-GSM_Error FB3110_SendMessage(u16 messagesize, u8 messagetype, void *message);
-void FB3110_TX_SendAck(u8 *message, int length);
-void FB3110_UpdateSequenceNumber(void);
-
-#endif   /* #ifdef __links_fbus_3110_c */
 
 #endif   /* #ifndef __links_fbus_3110_h */

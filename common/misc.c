@@ -1,6 +1,6 @@
 /*
 
-  $Id: misc.c,v 1.31 2002-03-25 22:37:42 pkot Exp $
+  $Id: misc.c,v 1.32 2002-03-26 01:10:28 pkot Exp $
 
   G N O K I I
 
@@ -14,7 +14,9 @@
 
 #include <string.h>
 #include <stdlib.h>
-#include <unistd.h>
+#ifndef WIN32
+#  include <unistd.h>
+#endif
 #include <errno.h>
 #include <sys/types.h>
 #include <sys/stat.h>

@@ -1,6 +1,6 @@
 /*
 
-  $Id: nokia.h,v 1.6 2002-02-21 01:10:15 pkot Exp $
+  $Id: nokia.h,v 1.7 2002-03-26 01:10:30 pkot Exp $
 
   G N O K I I
 
@@ -26,6 +26,5 @@
 GSM_Error PNOK_GetManufacturer(char *manufacturer);
 void PNOK_DecodeString(unsigned char *dest, size_t max, const unsigned char *src, size_t len);
 size_t PNOK_EncodeString(unsigned char *dest, size_t max, const unsigned char *src);
-void PNOK_GetNokiaAuth(unsigned char *Imei, unsigned char *MagicBytes, unsigned char *MagicResponse);
 
 #endif

@@ -1,6 +1,6 @@
 /*
 
-  $Id: data.h,v 1.22 2002-03-25 22:37:42 pkot Exp $
+  $Id: data.h,v 1.23 2002-03-26 01:10:30 pkot Exp $
 
   G N O K I I
 
@@ -85,7 +85,7 @@ typedef struct {
 
 	/* A pointer to the function used to send out a message */
 	/* This is used by the phone specific code to send a message over the link */
-	GSM_Error (*SendMessage)(u16 messagesize, u8 messagetype, void *message);
+	GSM_Error (*SendMessage)(u16 messagesize, u8 messagetype, unsigned char *message);
 } GSM_Link;
 
 /* Small structure used in GSM_Phone */

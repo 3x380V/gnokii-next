@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.c,v 1.2 2002-03-25 01:44:50 pkot Exp $
+  $Id: nk6510.c,v 1.3 2002-03-26 01:10:29 pkot Exp $
 
   G N O K I I
 
@@ -30,10 +30,6 @@
 #include "phones/nokia.h"
 #include "gsm-encoding.h"
 #include "gsm-api.h"
-
-#ifdef WIN32
-#define snprintf _snprintf
-#endif
 
 /* Functions prototypes */
 static GSM_Error P6510_Functions(GSM_Operation op, GSM_Data *data, GSM_Statemachine *state);
@@ -410,7 +406,7 @@ static GSM_Error P6510_IncomingIdentify(int messagetype, unsigned char *message,
 	case 0x01:
 		if (data->Imei) {
 			int n;
-			unsigned char *s = index(message + 10, '\n');
+			unsigned char *s = strchr(message + 10, '\n');
 
 			if (s) n = s - message - 9;
 			else n = GSM_MAX_IMEI_LENGTH;
@@ -421,7 +417,7 @@ static GSM_Error P6510_IncomingIdentify(int messagetype, unsigned char *message,
 	case 0x08:
 		if (data->Model) {
 			int n;
-			unsigned char *s = index(message + 27, '\n');
+			unsigned char *s = strchr(message + 27, '\n');
 
 			if (s) n = s - message - 26;
 			else n = GSM_MAX_MODEL_LENGTH;
@@ -430,7 +426,7 @@ static GSM_Error P6510_IncomingIdentify(int messagetype, unsigned char *message,
 		}
 		if (data->Revision) {
 			int n;
-			unsigned char *s = index(message + 10, '\n');
+			unsigned char *s = strchr(message + 10, '\n');
 
 			if (s) n = s - message - 9;
 			else n = GSM_MAX_REVISION_LENGTH;
@@ -846,8 +842,6 @@ static GSM_Error P6510_IncomingPhonebook(int messagetype, unsigned char *message
 	char *str;
 	int i;
 	GSM_SubPhonebookEntry* subEntry = NULL;
-
-	PGEN_DebugMessage(messagetype, message, length);
 
 	switch (message[3]) {
 	case 0x04:  /* Get status response */

@@ -1,5 +1,5 @@
 /*
-  $Id: nk6100.h,v 1.8 2002-03-02 21:03:18 pkot Exp $
+  $Id: nk6100.h,v 1.9 2002-03-26 01:10:30 pkot Exp $
 
   G N O K I I
 
@@ -41,5 +41,7 @@ typedef struct {
 	GSM_KeyCode Key;
 	int Repeat;
 } NK6100_Keytable;
+
+void PNOK_GetNokiaAuth(unsigned char *Imei, unsigned char *MagicBytes, unsigned char *MagicResponse);
 
 #endif  /* #ifndef __phones_nk6100_h */

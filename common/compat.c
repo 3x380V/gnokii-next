@@ -1,6 +1,6 @@
 /*
 
-  $Id: compat.c,v 1.1 2002-03-25 01:35:31 pkot Exp $
+  $Id: compat.c,v 1.2 2002-03-26 01:10:28 pkot Exp $
 
   G N O K I I
 
@@ -14,21 +14,22 @@
 
 */
 
-#include <sys/time.h>
+#ifdef WIN32
+#  include <windows.h>
+#  include <sys/timeb.h>
+#  include <time.h>
+#else
+#  include <sys/time.h>
+#endif
 
 #include "config.h"
 #include "compat.h"
-
-#ifdef WIN32
-#include <windows.h>
-#include <sys/timeb.h>
-#endif
 
 #ifndef	HAVE_GETTIMEOFDAY
 
 int gettimeofday(struct timeval *tv, struct timezone *tz)
 {
-	struct timeb t;
+	struct _timeb t;
 
 	_ftime(&t);
 

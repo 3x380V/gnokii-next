@@ -1,6 +1,6 @@
 /*
 
-  $Id: atbus.h,v 1.5 2002-02-18 14:31:53 manfred Exp $
+  $Id: atbus.h,v 1.6 2002-03-26 01:10:30 pkot Exp $
 
   G N O K I I
 
@@ -28,13 +28,5 @@ typedef enum {
 	GEAT_CMS,		/* SMS Command failed */
 	GEAT_CME,		/* Extended error code found */
 } GSMAT_Result;
-
-#ifdef __atbus_c  /* Prototype functions for atbus.c only */
-
-GSM_Error ATBUS_Loop(struct timeval *timeout);
-bool ATBUS_OpenSerial(int hw_handshake, char *device);
-void ATBUS_RX_StateMachine(unsigned char rx_char);
-
-#endif   /* #ifdef __atbus_c */
 
 #endif   /* #ifndef __atbus_h */

@@ -1,6 +1,6 @@
 /*
 
-  $Id: generic.h,v 1.5 2002-01-27 23:38:32 pkot Exp $
+  $Id: generic.h,v 1.6 2002-03-26 01:10:30 pkot Exp $
 
   G N O K I I
 
@@ -25,7 +25,6 @@
 
 /* Generic Functions */
 
-GSM_Error PGEN_DebugMessage(int type, unsigned char *mes, int len);
 GSM_Error PGEN_IncomingDefault(int messagetype, unsigned char *buffer, int length);
 
 

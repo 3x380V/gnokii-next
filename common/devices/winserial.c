@@ -1,6 +1,6 @@
 /*
 
-  $Id: winserial.c,v 1.1 2002-03-25 01:35:31 pkot Exp $
+  $Id: winserial.c,v 1.2 2002-03-26 01:10:28 pkot Exp $
 
   G N O K I I
 
@@ -137,6 +137,7 @@ void serial_setdtrrts(int fd, int dtr, int rts)
 
 int serial_select(int fd, struct timeval *timeout)
 {
+	usleep(timeout->tv_sec*60+timeout->tv_usec);
 	return 1;
 }
 

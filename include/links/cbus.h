@@ -1,6 +1,6 @@
 /* -*- linux-c -*-
 
-  $Id: cbus.h,v 1.4 2001-12-31 09:35:47 pkot Exp $
+  $Id: cbus.h,v 1.5 2002-03-26 01:10:30 pkot Exp $
 
   G N O K I I
 
@@ -54,17 +54,6 @@ typedef struct{
 
 GSM_Error CBUS_Initialise(GSM_Statemachine *state);
 
-void sendat(char *msg);
-
-#ifdef __cbus_c  /* Prototype functions for cbus.c only */
-
-GSM_Error CBUS_Loop(struct timeval *timeout);
-bool CBUS_OpenSerial();
-void CBUS_RX_StateMachine(unsigned char rx_byte);
-int CBUS_TX_SendFrame(u8 message_length, u8 message_type, u8 *buffer);
-int CBUS_SendMessage(u16 messagesize, u8 messagetype, void *message);
-int CBUS_TX_SendAck(u8 message_type, u8 message_seq);
-
-#endif   /* #ifdef __cbus_c */
+void sendat(unsigned char *msg);
 
 #endif   /* #ifndef __cbus_h */
