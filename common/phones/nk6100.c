@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.94 2002-07-28 21:00:22 bozo Exp $
+  $Id: nk6100.c,v 1.95 2002-07-28 22:22:32 bozo Exp $
 
   G N O K I I
 
@@ -470,7 +470,7 @@ static bool match_phone(NK6100_DriverInstance *drvinst, int i)
 			return true;
 		if (P6100_capabilities[i].SWVersion[0] == '+' && strcmp(P6100_capabilities[i].SWVersion + 1, drvinst->SWVersion) <= 0)
 			return true;
-		if (!strcmp(P6100_capabilities[i].SWVersion + 1, drvinst->SWVersion))
+		if (!strcmp(P6100_capabilities[i].SWVersion, drvinst->SWVersion))
 			return true;
 		return false;
 	}
