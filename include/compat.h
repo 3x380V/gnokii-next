@@ -1,6 +1,6 @@
 /*
 
-  $Id: compat.h,v 1.38 2004-06-20 16:12:10 pkot Exp $
+  $Id: compat.h,v 1.39 2004-06-27 20:36:16 pkot Exp $
 
   G N O K I I
 
@@ -243,6 +243,11 @@ int vasprintf(char **ptr, const char *format, va_list ap);
 /* for Linux Bluetooth compability */
 #if !defined(HAVE_STDINT_H) && !defined(HAVE_INTTYPES_H)
 	typedef unsigned char uint8_t;
+	typedef unsigned short uint16_t;
+	typedef unsigned int uint32_t;
+	typedef char int8_t;
+	typedef short int16_t;
+	typedef int int32_t;
 #endif
 
 #ifdef HAVE_WCRTOMB
