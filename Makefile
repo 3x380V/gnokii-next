@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.101 2001-02-17 22:40:48 chris Exp $
+# $Id: Makefile,v 1.102 2001-02-20 00:17:15 pkot Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -59,7 +59,7 @@ $(DIRS): dummy
 	$(MAKE) -C $@
 
 clean:
-	$(RM) *~
+	$(RM) *~ *.orig *.rej include/*~ include/*.orig include/*.rej
 	@for dir in $(DIRS); do \
 	    if [ -e $$dir/Makefile ]; then \
 		$(MAKE) -C $$dir clean; \
