@@ -5,7 +5,7 @@ dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janík ml.
 dnl                2000 Karel Zak, Pawe³ Kot
 dnl                2002 BORBELY Zoltan
 dnl
-dnl  $Id: configure.in,v 1.108 2003-04-08 21:53:31 pkot Exp $
+dnl  $Id: configure.in,v 1.109 2003-04-09 09:08:05 pkot Exp $
 dnl
 
 AC_INIT(gnokii/gnokii.c)
@@ -226,6 +226,7 @@ if test $ac_cv_have_sockaddr_rc = yes; then
 	LIBS="$LIBS -lbluetooth"
 else
 	HAVE_BLUETOOTH_EXP="0"
+	USE_BLUETOOTH="no"
 fi
 
 dnl ======================== Checks for X base support 
