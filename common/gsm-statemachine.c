@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-statemachine.c,v 1.45 2003-02-26 00:15:47 pkot Exp $
+  $Id: gsm-statemachine.c,v 1.46 2003-03-03 21:40:49 bozo Exp $
 
   G N O K I I
 
@@ -216,16 +216,20 @@ void sm_incoming_acknowledge(struct gn_statemachine *state)
 static gn_error __sm_block_timeout(int waitfor, int t, gn_data *data, struct gn_statemachine *state)
 {
 	int retry;
-	gn_state s = GN_SM_Startup;
+	gn_state s;
 	gn_error err;
 	struct timeval now, next, timeout;
 
+	s = state->current_state;
 	timeout.tv_sec = 3;
 	timeout.tv_usec = 0;
 	gettimeofday(&now, NULL);
 	for (retry = 0; retry < 2; retry++) {
 		err = sm_wait_for(waitfor, data, state);
 		if (err != GN_ERR_NONE) return err;
+
+		/* if no packet has been sent, don't wait for ack */
+		if (s == GN_SM_Initialised) break;
 
 		timeradd(&now, &timeout, &next);
 		do {
@@ -248,7 +252,7 @@ static gn_error __sm_block_timeout(int waitfor, int t, gn_data *data, struct gn_
 	do {
 		s = gn_sm_loop(1, state);  /* Timeout=100ms */
 		gettimeofday(&now, NULL);
-	} while (timercmp(&next, &now, >) && (s == GN_SM_WaitingForResponse));
+	} while (timercmp(&next, &now, >) && (s != GN_SM_ResponseReceived));
 
 	if (s == GN_SM_ResponseReceived) return sm_error_get(waitfor, state);
 
