@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii.c,v 1.36 2001-06-20 21:27:36 pkot Exp $
+  $Id: xgnokii.c,v 1.37 2001-06-27 23:52:52 pkot Exp $
   
   X G N O K I I
 
@@ -11,8 +11,11 @@
   Released under the terms of the GNU GPL, see file COPYING for more details.
 
   $Log: xgnokii.c,v $
-  Revision 1.36  2001-06-20 21:27:36  pkot
-  IrDA patch (Martin Jancar)
+  Revision 1.37  2001-06-27 23:52:52  pkot
+  7110/6210 updates (Marian Jancar)
+
+  Revision 1.36  2001/06/20 21:27:36  pkot
+  IrDA patch (Marian Jancar)
 
   Revision 1.35  2001/05/24 20:47:30  chris
   More updating of 7110 code and some of xgnokii_lowlevel changed over.
