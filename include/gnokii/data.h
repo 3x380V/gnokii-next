@@ -1,6 +1,6 @@
 /*
 
-  $Id: data.h,v 1.3 2002-01-14 09:32:32 pkot Exp $
+  $Id: data.h,v 1.4 2002-01-15 14:42:34 pkot Exp $
 
   G N O K I I
 
@@ -112,6 +112,7 @@ typedef enum {
 	GOP_SetDateTime,
 	GOP_GetProfile,
 	GOP_SetProfile,
+	GOP_WriteCalendarNote,
 	GOP_Max,	/* don't append anything after this entry */
 } GSM_Operation;
 
