@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.h,v 1.57 2003-04-29 15:20:17 ladis Exp $
+  $Id: gnokii.h,v 1.58 2003-05-13 08:44:05 pkot Exp $
 
   G N O K I I
 
@@ -46,6 +46,8 @@ extern "C" {
 #  include <Winsock.h>	/* for struct timeval */
 typedef unsigned char uint8_t;
 #endif
+
+#include <stdarg.h>
 	
 #ifndef API
 #  define API
