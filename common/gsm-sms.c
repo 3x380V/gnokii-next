@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-sms.c,v 1.22 2002-01-10 17:44:54 pkot Exp $
+  $Id: gsm-sms.c,v 1.23 2002-01-15 00:38:08 pkot Exp $
 
   G N O K I I
 
@@ -937,11 +937,15 @@ static void change_offsets(unsigned char *message)
 			change_offsets2(message, llayout.MessageCenter, message[llayout.MessageCenter]);
 		if (!llayout.HasRemoteNumberFixedLen && llayout.RemoteNumber > -1)
 			change_offsets2(message, llayout.RemoteNumber,
-					(message[llayout.RemoteNumber] + message[llayout.RemoteNumber] % 2) / 2 + 1);
+					(llayout.IsRemoteNumberCoded ?
+					 message[llayout.RemoteNumber] + message[llayout.RemoteNumber] % 2) / 2 + 1 :
+					 message[llayout.RemoteNumber]);
 	} else {
 		if (!llayout.HasRemoteNumberFixedLen && llayout.RemoteNumber > -1)
 			change_offsets2(message, llayout.RemoteNumber,
-					(message[llayout.RemoteNumber] + message[llayout.RemoteNumber] % 2) / 2 + 1);
+					(llayout.IsRemoteNumberCoded ?
+					 message[llayout.RemoteNumber] + message[llayout.RemoteNumber] % 2) / 2 + 1 :
+					 message[llayout.RemoteNumber]);
 		if (!llayout.HasMessageCenterFixedLen && llayout.MessageCenter > -1)
 			change_offsets2(message, llayout.MessageCenter, message[llayout.MessageCenter]);
 	}
