@@ -1,6 +1,6 @@
 /*
 
-  $Id: ldif.c,v 1.2 2003-09-03 21:52:35 pkot Exp $
+  $Id: ldif.c,v 1.3 2003-09-05 08:17:36 pkot Exp $
   
   G N O K I I
 
@@ -102,20 +102,23 @@ API int gn_phonebook2ldif(FILE *f, gn_phonebook_entry *entry)
 }
 
 #define BEGINS(a) ( !strncmp(buf, a, strlen(a)) )
-#define STORE2(a, b, c) if (BEGINS(a)) { c; strcpy(b, buf+strlen(a)+1); continue; }
+#define STORE2(a, b, c) if (BEGINS(a)) { c; strncpy(b, buf+strlen(a), strlen(buf)-strlen(a)-1); continue; }
+
 #define STORE(a, b) STORE2(a, b, (void) 0)
 
-#define STORESUB(a, c) STORE2(a, entry->subentries[entry->subentries_count++].data.number, entry->subentries[entry->subentries_count].entry_type = c);
-#define STORENUM(a, c) STORE2(a, entry->subentries[entry->subentries_count++].data.number, entry->subentries[entry->subentries_count].entry_type = 0x0b; entry->subentries[entry->subentries_count].number_type = c);
+#define STORESUB(a, c) STORE2(a, entry->subentries[entry->subentries_count++].data.number, \
+				entry->subentries[entry->subentries_count].entry_type = c);
+#define STORENUM(a, c) STORE2(a, entry->subentries[entry->subentries_count++].data.number, \
+				entry->subentries[entry->subentries_count].entry_type = GN_PHONEBOOK_ENTRY_Number; \
+				entry->subentries[entry->subentries_count].number_type = c);
 
 #undef ERROR
 #define ERROR(a) fprintf(stderr, "%s\n", a)
 
+/* We assume gn_phonebook_entry is ready for writing in, ie. no rubbish inside */
 API int gn_ldif2phonebook(FILE *f, gn_phonebook_entry *entry)
 {
 	char buf[10240];
-
-	memset(entry, 0, sizeof(*entry));
 
 	while (1) {
 		if (!fgets(buf, 1024, f))
