@@ -1,6 +1,6 @@
 /*
 
-  $Id: acconfig.h,v 1.4 2002-08-27 21:39:10 pkot Exp $
+  $Id: acconfig.h,v 1.5 2002-08-28 15:53:11 pkot Exp $
 
   G N O K I I
 
@@ -50,9 +50,6 @@
 
 /* Define if you want security options enabled */
 #undef SECURITY
-
-/* Define if you want NLS support */
-#undef USE_NLS
 
 /* Use UNIX98 style pty support instead of the traditional */
 #undef USE_UNIX98PTYS

@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile.global.in,v 1.31 2002-08-27 23:44:02 pkot Exp $
+# $Id: Makefile.global.in,v 1.32 2002-08-28 15:53:11 pkot Exp $
 #
 # Global Makefiles configuration for the GNOKII.
 #
@@ -56,7 +56,6 @@ XPM_CFLAGS     = @XPM_CFLAGS@
 OWN_GETOPT     = @OWN_GETOPT@
 NO_SHARED      = @NO_SHARED@
 
-USE_NLS        = @USE_NLS@
 USE_BLUETOOTH  = @USE_BLUETOOTH@
 HAVE_XGNOKII   = @HAVE_XGNOKII@
 WIN32          = @WIN32@

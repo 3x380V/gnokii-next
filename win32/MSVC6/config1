@@ -1,7 +1,7 @@
 /* include/config.win32.h.  Win32 configuration files.  */
 /*
 
-  $Id: config1,v 1.2 2002-04-30 18:56:12 pkot Exp $
+  $Id: config1,v 1.3 2002-08-28 15:53:12 pkot Exp $
 
   G N O K I I
 
@@ -75,8 +75,8 @@
 #undef XPM
 
 /* Define if you want NLS */
-//#define USE_NLS 1
-#undef USE_NLS
+//#define ENABLE_NLS 1
+#undef ENABLE_NLS
 
 /* Define if you want to use Unix98 PTYs */
 //#define USE_UNIX98PTYS 1

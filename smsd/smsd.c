@@ -1,6 +1,6 @@
 /*
 
-  $Id: smsd.c,v 1.25 2002-08-18 18:03:11 pkot Exp $
+  $Id: smsd.c,v 1.26 2002-08-28 15:53:12 pkot Exp $
 
   S M S D
 
@@ -425,7 +425,7 @@ static void Run (void)
 
 int main (int argc, char *argv[])
 {
-#ifdef USE_NLS
+#ifdef ENABLE_NLS
   textdomain("gnokii");
 #endif
 

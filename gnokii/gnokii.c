@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.299 2002-08-27 23:23:00 pkot Exp $
+  $Id: gnokii.c,v 1.300 2002-08-28 15:53:11 pkot Exp $
 
   G N O K I I
 
@@ -66,7 +66,7 @@
 #endif
 
 
-#ifdef USE_NLS
+#ifdef ENABLE_NLS
 #  include <locale.h>
 #endif
 
@@ -4534,7 +4534,7 @@ int main(int argc, char *argv[])
 	opterr = 0;
 
 	/* For GNU gettext */
-#ifdef USE_NLS
+#ifdef ENABLE_NLS
 	textdomain("gnokii");
 	setlocale(LC_ALL, "");
 #endif

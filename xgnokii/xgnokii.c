@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii.c,v 1.56 2002-08-27 00:44:00 pkot Exp $
+  $Id: xgnokii.c,v 1.57 2002-08-28 15:53:12 pkot Exp $
   
   X G N O K I I
 
@@ -2322,7 +2322,7 @@ static void ReadConfig(void)
 
 int main(int argc, char *argv[])
 {
-#ifdef USE_NLS
+#ifdef ENABLE_NLS
 	textdomain("gnokii");
 #endif
 

@@ -1,6 +1,6 @@
 /*
 
-  $Id: mgnokiidev.c,v 1.16 2002-04-23 23:19:27 bozo Exp $
+  $Id: mgnokiidev.c,v 1.17 2002-08-28 15:53:12 pkot Exp $
 
   G N O K I I
 
@@ -148,7 +148,7 @@ int main(int argc, char **argv)
 	char *name = NULL; /* Device name */
 
 	/* For GNU gettext */
-#ifdef USE_NLS
+#ifdef ENABLE_NLS
 	textdomain("gnokii");
 #endif
 

@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokiid.c,v 1.27 2002-08-18 17:51:29 pkot Exp $
+  $Id: gnokiid.c,v 1.28 2002-08-28 15:53:12 pkot Exp $
 
   G N O K I I
 
@@ -101,7 +101,7 @@ int main(int argc, char *argv[])
 	static bool atexit_registered = false;
 
 	/* For GNU gettext */
-#ifdef USE_NLS
+#ifdef ENABLE_NLS
 	textdomain("gnokii");
 #endif
 
