@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-sms.c,v 1.128 2003-02-09 22:04:53 pkot Exp $
+  $Id: gsm-sms.c,v 1.129 2003-02-12 22:59:00 pkot Exp $
 
   G N O K I I
 
@@ -1346,6 +1346,11 @@ API gn_error gn_sms_save(gn_data *data, struct gn_statemachine *state)
 	}
 
 	error = gn_sm_functions(GN_OP_SaveSMS, data, state);
+
+	/* the message was perhaps not stored at the specified location,
+	   but the phone driver probably knows where, so copy it over */
+	data->sms->number = data->raw_sms->number;
+
 cleanup:
 	data->raw_sms = NULL;
 	return error;
