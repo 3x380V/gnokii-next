@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.316 2002-12-15 11:16:23 bozo Exp $
+  $Id: gnokii.c,v 1.317 2002-12-16 12:24:41 ladis Exp $
 
   G N O K I I
 
@@ -2777,7 +2777,7 @@ static int displayoutput(void)
 				*/
 				memset(buf, 0, 102);
 			}
-			gn_sm_loop(&state, 1);
+			gn_sm_loop(1, &state);
 			gn_sm_functions(GN_OP_PollDisplay, &data, &state);
 		}
 		fprintf (stderr, _("Shutting down\n"));
@@ -4246,7 +4246,7 @@ static int smsreader(void)
 		fprintf(stderr, _("Entered sms reader mode...\n"));
 
 		while (!bshutdown) {
-			gn_sm_loop(&state, 1);
+			gn_sm_loop(1, &state);
 			/* Some phones may not be able to notify us, thus we give
 			   lowlevel chance to poll them */
 			error = gn_sm_functions(GN_OP_PollSMS, &data, &state);

@@ -1,6 +1,6 @@
 /*
 
-  $Id: m2bus.c,v 1.7 2002-12-16 07:30:38 ladis Exp $
+  $Id: m2bus.c,v 1.8 2002-12-16 12:24:40 ladis Exp $
 
   G N O K I I
 
@@ -244,7 +244,7 @@ static void m2bus_rx_statemachine(unsigned char rx_byte)
 
 					/* Finally dispatch if ready */
 
-					sm_incoming_function(statemachine, i->message_type, i->message_buffer, i->message_length);
+					sm_incoming_function(i->message_type, i->message_buffer, i->message_length, statemachine);
 				}
 			} else {
 				dprintf("M2BUS: Bad checksum!\n");

@@ -1,6 +1,6 @@
 /*
 
-  $Id: virtmodem.c,v 1.29 2002-12-13 02:01:29 bozo Exp $
+  $Id: virtmodem.c,v 1.30 2002-12-16 12:24:40 ladis Exp $
 
   G N O K I I
 
@@ -197,7 +197,7 @@ void vm_loop(void)
 				queue.n++;
 			}
 		}
-		if (FD_ISSET(devfd, &rfds)) gn_sm_loop(sm, 1);
+		if (FD_ISSET(devfd, &rfds)) gn_sm_loop(1, sm);
 	}
 }
 

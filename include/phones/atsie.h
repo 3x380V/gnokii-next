@@ -1,6 +1,6 @@
 /*
 
-  $Id: atsie.h,v 1.4 2002-12-09 13:05:54 ladis Exp $
+  $Id: atsie.h,v 1.5 2002-12-16 12:24:41 ladis Exp $
 
   G N O K I I
 
@@ -34,6 +34,6 @@
 
 #include "gsm-data.h"
 
-void at_siemens_init(struct gn_statemachine *state, char* foundmodel, char* setupmodel);
+void at_siemens_init(char* foundmodel, char* setupmodel, struct gn_statemachine *state);
 
 #endif

@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus-phonet.c,v 1.20 2002-12-16 07:30:38 ladis Exp $
+  $Id: fbus-phonet.c,v 1.21 2002-12-16 12:24:40 ladis Exp $
 
   G N O K I I
 
@@ -158,7 +158,7 @@ static void phonet_rx_statemachine(unsigned char rx_byte)
 		/* Is that it? */
 
 		if (i->buffer_count == i->message_length) {
-			sm_incoming_function(statemachine, i->message_type, i->message_buffer, i->message_length);
+			sm_incoming_function(i->message_type, i->message_buffer, i->message_length, statemachine);
 			i->state = FBUS_RX_Sync;
 		}
 		break;

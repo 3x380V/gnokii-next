@@ -1,6 +1,6 @@
 /*
 
-  $Id: atbus.h,v 1.11 2002-12-16 07:30:39 ladis Exp $
+  $Id: atbus.h,v 1.12 2002-12-16 12:24:41 ladis Exp $
 
   G N O K I I
 
@@ -31,7 +31,7 @@
 
 #include "gsm-statemachine.h"
 
-gn_error atbus_initialise(struct gn_statemachine *state, int mode);
+gn_error atbus_initialise(int mode, struct gn_statemachine *state);
 
 /* 
  * Define some result/error codes internal to the AT command functions.

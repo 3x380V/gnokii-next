@@ -1,6 +1,6 @@
 /*
 
-  $Id: atbosch.h,v 1.2 2002-12-09 13:05:54 ladis Exp $
+  $Id: atbosch.h,v 1.3 2002-12-16 12:24:41 ladis Exp $
 
   G N O K I I
 
@@ -34,6 +34,6 @@
 
 #include "gnokii-internal.h"
 
-void at_bosch_init(struct gn_statemachine *state, char* foundmodel, char* setupmodel);
+void at_bosch_init(char* foundmodel, char* setupmodel, struct gn_statemachine *state);
 
 #endif

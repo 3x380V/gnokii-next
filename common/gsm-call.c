@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-call.c,v 1.5 2002-12-10 12:59:34 ladis Exp $
+  $Id: gsm-call.c,v 1.6 2002-12-16 12:24:40 ladis Exp $
 
   G N O K I I
 
@@ -40,7 +40,7 @@
 
 static gn_call calltable[GN_CALL_MAX_PARALLEL];
 
-static gn_call *search_call(struct gn_statemachine *state, int call_id)
+static gn_call *search_call(int call_id, struct gn_statemachine *state)
 {
 	int i;
 

@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.h,v 1.36 2002-12-12 23:33:31 bozo Exp $
+  $Id: gnokii.h,v 1.37 2002-12-16 12:24:40 ladis Exp $
 
   G N O K I I
 
@@ -61,7 +61,7 @@ API gn_error gn_call_answer(int call_id);
 API gn_error gn_call_cancel(int call_id);
 
 /* Statemachine */
-API gn_state gn_sm_loop(struct gn_statemachine *state, int timeout);
+API gn_state gn_sm_loop(int timeout, struct gn_statemachine *state);
 API gn_error gn_sm_functions(gn_operation op, gn_data *data, struct gn_statemachine *sm);
 
 /* Define these as externs so that app code can pick them up. */
