@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_lowlevel.c,v 1.24 2002-02-09 00:13:36 pkot Exp $
+  $Id: xgnokii_lowlevel.c,v 1.25 2002-02-09 17:16:48 pkot Exp $
   
   X G N O K I I
 
@@ -131,8 +131,8 @@ static void InitModelInf (void)
   GSM_Data data;
 
   GSM_DataClear(&data);
-  data.Model=buf;
-  while ((error = SM_Functions(GOP_GetModel,&data,&statemachine)) != GE_NONE && i++ < 15)
+  data.Model = buf;
+  while ((error = SM_Functions(GOP_GetModel, &data, &statemachine)) != GE_NONE && i++ < 5)
     sleep(1);
 
   if (error == GE_NONE)
@@ -148,7 +148,7 @@ static void InitModelInf (void)
 
   i = 0;
   data.Revision=buf;
-  while ((error = SM_Functions(GOP_GetRevision,&data,&statemachine)) != GE_NONE && i++ < 5)
+  while ((error = SM_Functions(GOP_GetRevision, &data, &statemachine)) != GE_NONE && i++ < 5)
     sleep(1);
 
   if (error == GE_NONE)
