@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.2 2001-06-27 09:30:39 machek Exp $
+# $Id: Makefile,v 1.3 2002-11-19 00:07:26 bozo Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -16,8 +16,6 @@
 
 TOPDIR=../..
 include $(TOPDIR)/Makefile.global
-
-CFLAGS += $(PTHREAD_CFLAGS)
 
 OBJS =	at-emulator.o \
 	datapump.o \
