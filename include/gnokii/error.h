@@ -1,6 +1,6 @@
 /*
 
-  $Id: error.h,v 1.13 2002-12-09 00:30:14 pkot Exp $
+  $Id: error.h,v 1.14 2003-01-06 21:37:50 pkot Exp $
 
   G N O K I I
 
@@ -57,7 +57,7 @@ typedef enum {
 	 GN_ERR_BUSY,                  /* Command is still being executed. */
 	
 	/* Locations */
-	 GN_ERR_INVALIDLOCATION,       /* The given memory location is empty. */
+	 GN_ERR_INVALIDLOCATION,       /* The given memory location has not valid location. */
 	 GN_ERR_INVALIDMEMORYTYPE,     /* Invalid type of memory. */
 	 GN_ERR_EMPTYLOCATION,         /* The given location is empty. */
 
