@@ -1,6 +1,6 @@
 /*
 
-  $Id: pq.c,v 1.18 2002-12-23 16:00:22 bozo Exp $
+  $Id: pq.c,v 1.19 2002-12-26 21:16:14 pkot Exp $
 
   S M S D
 
@@ -34,8 +34,6 @@
 #include <libpq-fe.h>
 #include "smsd.h"
 #include "gsm-api.h"
-#include "gsm-sms.h"
-#include "gsm-encoding.h"
 
 static PGconn *connIn = NULL;
 static PGconn *connOut = NULL;

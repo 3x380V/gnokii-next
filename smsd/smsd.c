@@ -1,6 +1,6 @@
 /*
 
-  $Id: smsd.c,v 1.28 2002-12-23 16:00:22 bozo Exp $
+  $Id: smsd.c,v 1.29 2002-12-26 21:16:14 pkot Exp $
 
   S M S D
 
@@ -47,14 +47,7 @@
 
 #include "misc.h"
 
-#include "gsm-common.h"
 #include "gsm-api.h"
-#include "phones/nk7110.h"
-#include "phones/nk6510.h"
-#include "phones/nk6100.h"
-#include "phones/nk3110.h"
-#include "phones/nk2110.h"
-#include "cfgreader.h"
 #include "smsd.h"
 #include "lowlevel.h"
 #include "db.h"

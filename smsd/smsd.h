@@ -1,6 +1,6 @@
 /*
 
-  $Id: smsd.h,v 1.6 2002-12-23 16:00:22 bozo Exp $
+  $Id: smsd.h,v 1.7 2002-12-26 21:16:14 pkot Exp $
 
   S M S D
 
@@ -31,7 +31,7 @@
 #define SMSD_H
 
 #include <glib.h>
-#include "gsm-sms.h"
+#include "gsm-api.h"
 
 
 typedef enum {

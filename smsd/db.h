@@ -1,6 +1,6 @@
 /*
 
-  $Id: db.h,v 1.7 2002-12-23 16:00:22 bozo Exp $
+  $Id: db.h,v 1.8 2002-12-26 21:16:14 pkot Exp $
 
   S M S D
 
@@ -32,7 +32,7 @@
 
 #include <glib.h>
 #include "smsd.h"
-#include "gsm-sms.h"
+#include "gsm-api.h"
 
 extern void (*DB_Bye) (void);
 extern gint (*DB_ConnectInbox) (const DBConfig);

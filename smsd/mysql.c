@@ -1,6 +1,6 @@
 /*
 
-  $Id: mysql.c,v 1.16 2002-12-23 16:00:22 bozo Exp $
+  $Id: mysql.c,v 1.17 2002-12-26 21:16:14 pkot Exp $
 
   S M S D
 
@@ -33,8 +33,7 @@
 #include <glib.h>
 #include <mysql.h>
 #include "smsd.h"
-#include "gsm-sms.h"
-#include "gsm-encoding.h"
+#include "gsm-api.h"
 
 static MYSQL mysqlIn;
 static MYSQL mysqlOut;

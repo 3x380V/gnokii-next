@@ -1,6 +1,6 @@
 /*
 
-  $Id: file.c,v 1.4 2002-09-28 23:51:38 pkot Exp $
+  $Id: file.c,v 1.5 2002-12-26 21:16:14 pkot Exp $
 
   S M S D
 
@@ -36,8 +36,7 @@
 #include <string.h>
 #include <glib.h>
 #include "smsd.h"
-#include "gsm-sms.h"
-#include "gsm-encoding.h"
+#include "gsm-api.h"
 
 static gchar *action;
 static gchar *spool;

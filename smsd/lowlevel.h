@@ -1,6 +1,6 @@
 /*
 
-  $Id: lowlevel.h,v 1.8 2002-12-23 16:00:22 bozo Exp $
+  $Id: lowlevel.h,v 1.9 2002-12-26 21:16:14 pkot Exp $
 
   S M S D
 
@@ -32,8 +32,7 @@
 
 #include <pthread.h>
 #include <glib.h>
-#include "gsm-error.h"
-#include "gsm-sms.h"
+#include "gsm-api.h"
 
 typedef enum {
   Event_SendSMSMessage,
