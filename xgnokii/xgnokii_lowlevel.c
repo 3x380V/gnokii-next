@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_lowlevel.c,v 1.28 2002-02-21 00:51:50 pkot Exp $
+  $Id: xgnokii_lowlevel.c,v 1.29 2002-02-22 00:12:41 pkot Exp $
   
   X G N O K I I
 
@@ -1100,8 +1100,7 @@ void *GUI_Connect (void *a)
 		if ((GetFolderChanges(&gdat, &statemachine, (phoneMonitor.supported & PM_FOLDERS))) == GE_NONE) {
 			dprintf("old UR: %i, new UR: %i, old total: %i, new total: %i\n", 
 				phoneMonitor.sms.unRead, gdat.SMSStatus->Unread,phoneMonitor.sms.number,gdat.SMSStatus->Number);
-				
-			if (phoneMonitor.sms.changed == 0) phoneMonitor.sms.changed = gdat.SMSStatus->Changed;
+			phoneMonitor.sms.changed += gdat.SMSStatus->Changed;
 			if (gdat.SMSStatus->Changed) {
 				phoneMonitor.working = _("Refreshing SMSes...");
 				RefreshSMS(gdat.SMSStatus->Number);
