@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.44 2002-07-26 10:59:57 plail Exp $
+# $Id: Makefile,v 1.45 2002-08-07 21:19:11 bozo Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -33,7 +33,8 @@ OBJS =	cfgreader.o \
 	gsm-statemachine.o \
 	compat.o \
 	snprintf.o \
-	nokia-decoding.o
+	nokia-decoding.o \
+	gsm-call.o
 
 ifdef NO_SHARED
 GNOKII_LIB=libgnokii.a
