@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.h,v 1.14 2001-06-28 00:28:45 pkot Exp $
+  $Id: gnokii.h,v 1.15 2001-11-27 12:19:01 pkot Exp $
 
   G N O K I I
 
@@ -14,7 +14,10 @@
   the handset interface.  See gsm-api.c for more details.
 
   $Log: gnokii.h,v $
-  Revision 1.14  2001-06-28 00:28:45  pkot
+  Revision 1.15  2001-11-27 12:19:01  pkot
+  Cleanup, indentation, ANSI complaint preprocesor symbols (Jan Kratochvil, me)
+
+  Revision 1.14  2001/06/28 00:28:45  pkot
   Small docs updates (Pawel Kot)
 
 
@@ -27,12 +30,12 @@
    sense so we include it here if required. */
 
 #ifndef __gsm_common_h
-  #include "gsm-common.h"
+#  include "gsm-common.h"
 #endif
 
 /* Ditto rlp_common.h... */
 #ifndef __data_rlp_common_h
-  #include "data/rlp-common.h"
+#  include "data/rlp-common.h"
 #endif
 
 #include "gsm-statemachine.h"
