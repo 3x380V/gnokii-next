@@ -1,6 +1,6 @@
 /*
 
-  $Id: compat.h,v 1.36 2004-02-23 23:18:30 uid66843 Exp $
+  $Id: compat.h,v 1.37 2004-06-17 21:47:49 pkot Exp $
 
   G N O K I I
 
@@ -22,7 +22,8 @@
   along with gnokii; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-  Copyright (C) 2002, BORBELY Zoltan
+  Copyright (C) 2002-2004, BORBELY Zoltan
+  Copyright (C) 2002-2004, Pawel Kot
 
   Header file for various platform compatibility.
 
@@ -37,8 +38,9 @@
 
 #ifdef WIN32
 #  include <windows.h>
-#  include <string.h>
-#  include <direct.h>
+#  ifdef HAVE_DIRECT_H
+#    include <direct.h>
+#  endif
 #endif
 
 #ifdef HAVE_STDARG_H
