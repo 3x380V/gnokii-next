@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-sms.c,v 1.79 2002-05-27 22:51:10 pkot Exp $
+  $Id: gsm-sms.c,v 1.80 2002-05-27 22:56:50 pkot Exp $
 
   G N O K I I
 
@@ -361,7 +361,7 @@ static GSM_Error DecodeData(unsigned char *message, unsigned char *output, unsig
 		/* 8bit SMS */
 		if ((dcs.Type & 0xf4) == 0xf4) {
 			dprintf("8bit message\n");
-			memcpy(output, message, length);
+			memcpy(output, message + udhlen, length);
 		/* 7bit SMS */
 		} else {
 			dprintf("Default Alphabet\n");
