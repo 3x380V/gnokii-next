@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.3 2002-11-19 00:07:26 bozo Exp $
+# $Id: Makefile,v 1.4 2003-01-01 23:48:55 pkot Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -22,8 +22,6 @@ OBJS =	at-emulator.o \
 	rlp-common.o \
 	rlp-crc24.o \
 	virtmodem.o
-
-
 
 all: DATA.o
 

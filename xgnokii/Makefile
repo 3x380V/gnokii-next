@@ -1,7 +1,7 @@
 
 
 #
-# $Id: Makefile,v 1.46 2002-09-18 12:53:39 pkot Exp $
+# $Id: Makefile,v 1.47 2003-01-01 23:47:29 pkot Exp $
 #
 # Makefile for the xGNOKII tool suite.
 #
@@ -50,8 +50,8 @@ endif
 all: xgnokii
 
 
-xgnokii: $(OBJS) $(TOPDIR)/common/data/DATA.o $(TOPDIR)/common/gsm-filetypes.o $(TOPDIR)/common/$(GNOKII_LIB)
-	$(CC) $(LDFLAGS) $(GLDLIBS) $(OBJS) $(TOPDIR)/common/data/DATA.o $(TOPDIR)/common/gsm-filetypes.o $(LDLIBS) -o $@
+xgnokii: $(OBJS) $(TOPDIR)/common/data/DATA.o $(TOPDIR)/common/$(GNOKII_LIB)
+	$(CC) $(LDFLAGS) $(GLDLIBS) $(OBJS) $(TOPDIR)/common/data/DATA.o $(LDLIBS) -o $@
 
 clean:
 	$(RM) $(OBJS) *~ xpm/*~ depend xgnokii
