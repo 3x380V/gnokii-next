@@ -1,6 +1,6 @@
 /*
 
-  $Id: common.h,v 1.118 2003-01-13 11:47:15 pkot Exp $
+  $Id: common.h,v 1.119 2003-01-15 00:06:09 pkot Exp $
 
   G N O K I I
 
@@ -271,7 +271,7 @@ typedef enum {
 	GN_CALNOTE_YEARLY  = 65535
 } gn_calnote_recurrence;
 
-#define GN_CALNOTE_MAX_NUMBER        500 /* FIXME how many are possible? */
+#define GN_CALNOTE_MAX_NUMBER       1024 /* FIXME how many are possible? */
 #define GN_CALNOTE_MAX_LENGTH        258
 #define GN_CALNOTE_NUMBER_MAX_LENGTH  49
 
