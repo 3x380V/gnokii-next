@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-sms.c,v 1.108 2002-07-24 23:01:02 pkot Exp $
+  $Id: gsm-sms.c,v 1.109 2002-08-02 13:09:16 plail Exp $
 
   G N O K I I
 
@@ -872,11 +872,6 @@ API GSM_Error GetFolderChanges(GSM_Data *data, GSM_Statemachine *state, int has_
 		error = SM_Functions(GOP_GetSMSFolderStatus, data, state);
 		ERROR();
 
-		if (i == 0) {
-			dprintf("GetFolderChanges: Reading unread messages for folder #%i\n", i); /* Only for INBOX */
-			error = SM_Functions(GOP_GetUnreadMessages, data, state);
-			ERROR();
-		}
 		memcpy(&tmp_folder, data->SMSFolder, sizeof(SMS_Folder));	/* We need it because data->SMSFolder can get garbled */
 
 		tmp_folder.FolderID = i;	/* so we don't need to do a modulo 8 each time */
