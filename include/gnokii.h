@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.h,v 1.18 2002-01-27 23:38:31 pkot Exp $
+  $Id: gnokii.h,v 1.19 2002-01-27 23:45:16 pkot Exp $
 
   G N O K I I
 
@@ -33,7 +33,11 @@ extern GSM_Error (*GSM_F)(GSM_Operation op, GSM_Data *data, GSM_Statemachine *st
 GSM_Error GSM_Initialise(char *model, char *device, char *initlength, GSM_ConnectionType connection, void (*rlp_handler)(RLP_F96Frame *frame), GSM_Statemachine *sm);
 
 /* SMS Functions */
+/* Sending */
 GSM_Error SendSMS(GSM_Data *data, GSM_Statemachine *state);
+/* Reading */
+GSM_Error ParseSMS(GSM_Data *data, int offset);
+GSM_Error RequestSMS(GSM_Data *data, GSM_Statemachine *state);
 GSM_Error GetSMS(GSM_Data *data, GSM_Statemachine *state);
 
 /* All the rest of the API functions are contained in the GSM_Function
