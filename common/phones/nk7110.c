@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk7110.c,v 1.150 2003-04-28 13:45:26 pkot Exp $
+  $Id: nk7110.c,v 1.151 2003-04-28 15:08:12 pkot Exp $
 
   G N O K I I
 
@@ -296,6 +296,7 @@ static gn_error NK7110_Initialise(struct gn_statemachine *state)
 	while (!connected) {
 		if (attempt > 2) break;
 		switch (state->config.connection_type) {
+		case GN_CT_Bluetooth:
 		case GN_CT_DAU9P:
 			attempt++;
 		case GN_CT_DLR3P:
@@ -304,11 +305,6 @@ static gn_error NK7110_Initialise(struct gn_statemachine *state)
 				break;
 			}
 		case GN_CT_Serial:
-			err = fbus_initialise(attempt++, state);
-			break;
-		case GN_CT_Bluetooth:
-			state->config.rfcomm_cn = 1;
-			attempt = 2;
 			err = fbus_initialise(attempt++, state);
 			break;
 		case GN_CT_Infrared:
