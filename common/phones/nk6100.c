@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.83 2002-07-25 22:47:04 pkot Exp $
+  $Id: nk6100.c,v 1.84 2002-07-25 23:04:02 pkot Exp $
 
   G N O K I I
 
@@ -663,7 +663,13 @@ static GSM_Error IncomingPhonebook(int messagetype, unsigned char *message, int 
 			pos = message + 5;
 			pe->Empty = false;
 			n = *pos++;
-			PNOK_DecodeString(pe->Name, sizeof(pe->Name), pos, n);
+			/* It seems that older phones (at least Nokia 5110 and 6130)
+			   set message[4] to 0. Newer ones set is to the location
+			   number. It can be the distinction when to read the name */
+			if (message[4] != 0)
+				DecodeUnicode(pe->Name, pos, n / 2);
+			else
+				PNOK_DecodeString(pe->Name, sizeof(pe->Name), pos, n);
 			pos += n;
 			n = *pos++;
 			PNOK_DecodeString(pe->Number, sizeof(pe->Number), pos, n);
