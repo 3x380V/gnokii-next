@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile.global.in,v 1.26 2002-03-26 00:55:18 pkot Exp $
+# $Id: Makefile.global.in,v 1.27 2002-03-29 20:51:20 pkot Exp $
 #
 # Global Makefiles configuration for the GNOKII.
 #
@@ -58,6 +58,7 @@ NO_SHARED      = @NO_SHARED@
 
 USE_NLS        = @USE_NLS@
 HAVE_XGNOKII   = @HAVE_XGNOKII@
+WIN32          = @WIN32@
 
 #
 # Global include directory

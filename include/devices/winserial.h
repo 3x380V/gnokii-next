@@ -1,6 +1,6 @@
 /*
 
-  $Id: winserial.h,v 1.2 2002-03-28 21:37:49 pkot Exp $
+  $Id: winserial.h,v 1.3 2002-03-29 20:51:25 pkot Exp $
 
   G N O K I I
 
@@ -32,10 +32,10 @@
 #include "misc.h"
 #include "gsm-error.h"
 
-int serial_open(char *file, int oflag);
+int serial_open(const char *file, int oflag);
 int serial_close(int fd);
 
-int serial_opendevice(char *file, int with_odd_parity, int with_async, int with_hw_handshake);
+int serial_opendevice(const char *file, int with_odd_parity, int with_async, int with_hw_handshake);
 
 void serial_setdtrrts(int fd, int dtr, int rts);
 GSM_Error serial_changespeed(int fd, int speed);

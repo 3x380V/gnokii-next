@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokiid.c,v 1.21 2002-03-28 21:37:48 pkot Exp $
+  $Id: gnokiid.c,v 1.22 2002-03-29 20:51:25 pkot Exp $
 
   G N O K I I
 
@@ -53,7 +53,7 @@ char *Port;		/* Serial port from .gnokiirc file */
 char *Initlength;	/* Init length from .gnokiirc file */
 char *Connection;	/* Connection type from .gnokiirc file */
 char *BinDir;		/* Directory of the mgnokiidev command */
-bool TerminateThread;
+bool GTerminateThread;
 
 /* Local variables */
 char *DefaultConnection = "serial";
@@ -123,14 +123,14 @@ int main(int argc, char *argv[])
 		connection = GCT_Infrared;
 	}
 
-	TerminateThread=false;
+	GTerminateThread = false;
 
 	if (VM_Initialise(Model, Port, Initlength, connection, BinDir, DebugMode, true) == false) {
 		exit (-1);
 	}
 
 	while (1) {
-		if (TerminateThread == true) {
+		if (GTerminateThread == true) {
 			VM_Terminate();
 			exit(1);
 		}

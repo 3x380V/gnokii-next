@@ -1,6 +1,6 @@
 /*
 
-  $Id: compat.h,v 1.4 2002-03-28 21:37:48 pkot Exp $
+  $Id: compat.h,v 1.5 2002-03-29 20:51:25 pkot Exp $
 
   G N O K I I
 
@@ -31,11 +31,10 @@
 #ifndef	__gnokii_compat_h
 #define	__gnokii_compat_h
 
+#include <sys/time.h>
 #ifdef WIN32
 #  include <windows.h>
 #  include <string.h>
-#else
-#  include <sys/time.h>
 #endif
 
 #ifndef	HAVE_TIMEOPS
@@ -82,9 +81,8 @@ int gettimeofday(struct timeval *tv, void *tz);
  * windows compilers (MS VC 6)
  */
 #  define inline /* Not supported */
-#  define snprintf _snprintf
 #  define strcasecmp stricmp
-#  define strncasecmp _strnicmp
+#  define strncasecmp strnicmp
 #  define sleep(x) Sleep((x) * 1000)
 #  define usleep(x) Sleep(((x) < 1000) ? 1 : ((x) / 1000))
 #endif

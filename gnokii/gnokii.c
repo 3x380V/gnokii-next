@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.212 2002-03-28 21:37:47 pkot Exp $
+  $Id: gnokii.c,v 1.213 2002-03-29 20:51:22 pkot Exp $
 
   G N O K I I
 
@@ -53,7 +53,7 @@
 #ifdef WIN32
 
 #  include <windows.h>
-#  define stat _stat
+#  include <process.h>
 #  include "getopt.h"
 
 #else

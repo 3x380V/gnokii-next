@@ -1,6 +1,6 @@
 /*
 
-  $Id: common.h,v 1.98 2002-03-28 21:37:48 pkot Exp $
+  $Id: common.h,v 1.99 2002-03-29 20:51:25 pkot Exp $
 
   G N O K I I
 
@@ -34,6 +34,7 @@
 
 #include <stdlib.h>
 
+#include "misc.h"
 #include "data/rlp-common.h"
 
 /* Type of connection. Now we support serial connection with FBUS cable and

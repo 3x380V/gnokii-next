@@ -1,6 +1,6 @@
 /*
 
-  $Id: smsd.c,v 1.16 2002-03-28 21:37:50 pkot Exp $
+  $Id: smsd.c,v 1.17 2002-03-29 20:51:25 pkot Exp $
 
   S M S D
 
@@ -64,7 +64,7 @@
 SmsdConfig smsdConfig;
 
 /* Global variables */
-bool TerminateThread;
+bool GTerminateThread;
 
 /* Local variables */
 static DBConfig connect;
@@ -423,7 +423,7 @@ int main (int argc, char *argv[])
 #endif
 
   ReadConfig (argc, argv);
-  TerminateThread = false;
+  GTerminateThread = false;
   Run ();
 
   return(0);

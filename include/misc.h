@@ -1,6 +1,6 @@
 /*
 
-  $Id: misc.h,v 1.37 2002-03-28 21:37:48 pkot Exp $
+  $Id: misc.h,v 1.38 2002-03-29 20:51:25 pkot Exp $
 
   G N O K I I
 
@@ -158,7 +158,7 @@ extern int gvasprintf(char **destp, const char *fmt, va_list ap);
 #endif
 
 #include <sys/types.h>
-#ifndef _BSD_SOURCE
+#if (!defined _BSD_SOURCE) && (!defined _BSDTYPES_DEFINED)
 	typedef unsigned char u_char;
 #endif
 
@@ -195,6 +195,5 @@ extern PhoneModel *GetPhoneModel (const char *);
 
 extern char *lock_device(const char*);
 extern bool unlock_device(char *);
-
 
 #endif /* __misc_h */

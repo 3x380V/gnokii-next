@@ -1,6 +1,6 @@
 /*
 
-  $Id: generic.c,v 1.10 2002-03-28 21:37:47 pkot Exp $
+  $Id: generic.c,v 1.11 2002-03-29 20:51:22 pkot Exp $
 
   G N O K I I
 
@@ -36,9 +36,9 @@
 #include <string.h>
 #include <ctype.h>
 
+#include "misc.h"
 #include "gsm-common.h"
 #include "phones/generic.h"
-#include "misc.h"
 #include "gsm-statemachine.h"
 
 /* If we do not support a message type, print out some debugging info */
