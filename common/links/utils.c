@@ -1,6 +1,6 @@
 /*
 
-  $Id: utils.c,v 1.11 2002-12-09 15:27:20 ladis Exp $
+  $Id: utils.c,v 1.12 2002-12-16 07:30:38 ladis Exp $
 
   G N O K I I
 
@@ -42,6 +42,10 @@
 gn_error link_terminate(struct gn_statemachine *state)
 {
 	/* device_close(&(state->Device)); */
+	if (state->link.link_instance) {
+		free(state->link.link_instance);
+		state->link.link_instance = NULL;
+	}
 	device_close();
 	return GN_ERR_NONE; /* FIXME */
 }

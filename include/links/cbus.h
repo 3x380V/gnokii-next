@@ -1,6 +1,6 @@
 /* -*- linux-c -*-
 
-  $Id: cbus.h,v 1.9 2002-12-09 15:27:19 ladis Exp $
+  $Id: cbus.h,v 1.10 2002-12-16 07:30:39 ladis Exp $
 
   G N O K I I
 
@@ -62,16 +62,9 @@ typedef struct{
 	int message_len;
 	unsigned char buffer[CBUS_MAX_FRAME_LENGTH];
 	u8 prev_rx_byte;
-} cbus_incoming_frame;
+} cbus_instance;
 
-typedef struct {
-	int message_length;
-	unsigned char buffer[CBUS_MAX_MSG_LENGTH];
-} cbus_outgoing_message;
-
-typedef struct{
-	cbus_incoming_frame frame;
-} cbus_link;
+#define CBUSINST(s) ((cbus_instance *)((s)->link.link_instance))
 
 gn_error cbus_initialise(struct gn_statemachine *state);
 
