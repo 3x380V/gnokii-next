@@ -1,6 +1,6 @@
 /*
 
-  $Id: misc.c,v 1.67 2003-05-15 09:17:29 pkot Exp $
+  $Id: misc.c,v 1.68 2003-10-17 00:50:32 bozo Exp $
 
   G N O K I I
 
@@ -75,6 +75,7 @@ static gn_phone_model models[] = {
 	{"3310",  "NHM-5", PM_SMS | PM_DTMF },
 	{"3330",  "NHM-6", PM_SMS | PM_DTMF },
 	{"3360",  "NPW-6", PM_SMS | PM_DTMF },
+	{"3390",  "NPB-1", PM_SMS | PM_DTMF | PM_KEYBOARD },
 	{"3410",  "NHM-2", PM_SMS | PM_DTMF | PM_NETMONITOR },
 	{"3650",  "NHL-8", PM_CALLERGROUP | PM_CALENDAR | PM_SPEEDDIAL | PM_NETMONITOR | PM_EXTPBK | PM_SMS | PM_FOLDERS },
 	{"3810",  "0305" , PM_SMS | PM_DTMF | PM_DATA }, /* NHE-9 */
