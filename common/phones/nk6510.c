@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.c,v 1.6 2002-04-02 14:31:13 plail Exp $
+  $Id: nk6510.c,v 1.7 2002-04-04 11:35:39 plail Exp $
 
   G N O K I I
 
@@ -775,8 +775,8 @@ static GSM_Error P6510_IncomingSMS(int messagetype, unsigned char *message, int 
 		sprintf(data->MessageCenter->Name, "%s", message + 33);
 		data->MessageCenter->DefaultName = -1;	/* FIXME */
 
-		strcpy(data->MessageCenter->Recipient, GetBCDNumber(message + 30));
-		strcpy(data->MessageCenter->Number, GetBCDNumber(message + 18));
+		strcpy(data->MessageCenter->Recipient, GetBCDNumber(message + 30, GSM_MAX_SMS_CENTER_LENGTH - 1));
+		strcpy(data->MessageCenter->Number, GetBCDNumber(message + 18, GSM_MAX_SMS_CENTER_LENGTH - 1));
 		data->MessageCenter->Type = message[22];
 
 		if (strlen(data->MessageCenter->Recipient) == 0) {
