@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-sms.c,v 1.89 2002-06-03 22:59:48 machek Exp $
+  $Id: gsm-sms.c,v 1.90 2002-06-04 11:13:17 machek Exp $
 
   G N O K I I
 
@@ -1112,7 +1112,6 @@ GSM_Error EncodeData(GSM_API_SMS *sms, GSM_SMSMessage *rawsms)
 			int j;
 			error = GE_NONE;
 			for (j=0; j<4; j++) {
-				printf("UserdataLength = %d\n", rawsms->UserDataLength);
 				size = GSM_EncodeSMSBitmap(&(sms->UserData[i].u.Animation[j]), rawsms->UserData + rawsms->UserDataLength);
 				rawsms->Length += size;
 				rawsms->UserDataLength += size;
