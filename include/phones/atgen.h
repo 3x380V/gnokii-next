@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.h,v 1.15 2003-01-21 11:07:58 ladis Exp $
+  $Id: atgen.h,v 1.16 2004-02-18 23:15:55 uid66843 Exp $
 
   G N O K I I
 
@@ -39,6 +39,7 @@ typedef enum {
 	GN_OP_AT_SetCharset,
 	GN_OP_AT_SetPDUMode,
 	GN_OP_AT_Prompt,
+	GN_OP_AT_GetMemoryRange,
 	GN_OP_AT_Max	/* don't append anything after this entry */
 } at_operation;
 
@@ -63,6 +64,8 @@ typedef struct {
 	int if_pos;
 
 	gn_memory_type memorytype;
+	int memoryoffset;
+	int memorysize;
 	gn_memory_type smsmemorytype;
 	at_charset availcharsets;
 	at_charset defaultcharset;
