@@ -1,6 +1,6 @@
 /*
 
-  $Id: unixbluetooth.c,v 1.8 2003-04-06 19:54:06 pkot Exp $
+  $Id: unixbluetooth.c,v 1.9 2003-04-28 12:57:48 pkot Exp $
  
   G N O K I I
 
@@ -79,6 +79,7 @@ int bluetooth_open(bdaddr_t *bdaddr, uint8_t channel, struct gn_statemachine *st
 
 int bluetooth_close(int fd, struct gn_statemachine *state)
 {
+	sleep(2);
 	return close(fd);
 }
 

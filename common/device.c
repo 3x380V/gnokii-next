@@ -1,6 +1,6 @@
 /*
 
-  $Id: device.c,v 1.30 2003-03-06 21:23:56 pkot Exp $
+  $Id: device.c,v 1.31 2003-04-28 12:57:48 pkot Exp $
 
   G N O K I I
 
@@ -65,7 +65,7 @@ int device_open(const char *file, int with_odd_parity, int with_async,
 		break;
 #ifdef HAVE_BLUETOOTH
 	case GN_CT_Bluetooth:
-		state->device.fd = bluetooth_open(&state->config.bt_address, state->config.rfcomm_cn, state);
+		state->device.fd = bluetooth_open((bdaddr_t *)&state->config.port_device, state->config.rfcomm_cn, state);
 		break;
 #endif
 	case GN_CT_Tekram:
