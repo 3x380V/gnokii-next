@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk7110.c,v 1.84 2002-05-26 15:09:58 pkot Exp $
+  $Id: nk7110.c,v 1.85 2002-06-10 21:17:54 pkot Exp $
 
   G N O K I I
 
@@ -786,7 +786,7 @@ static GSM_Error P7110_IncomingFolder(int messagetype, unsigned char *message, i
 		data->RawSMS->ReportStatus     = 0;
 
 		memcpy(data->RawSMS->SMSCTime,      message + getdata(T, 37, 38, 36, 34), 7);
-		if (T == SMS_Delivery_Report) memcpy(data->RawSMS->Time, message + 42, 7);
+		if (T == SMS_Delivery_Report) memcpy(data->RawSMS->Time, message + 43, 7);
 		memcpy(data->RawSMS->MessageCenter, message + 9,  12);
 		memcpy(data->RawSMS->RemoteNumber,  message + getdata(T, 25, 26, 24, 22), 12);
 
@@ -798,7 +798,7 @@ static GSM_Error P7110_IncomingFolder(int messagetype, unsigned char *message, i
 			offset = 303;
 		data->RawSMS->Length           = message[getdata(T, 24, 25, 0, offset)];
 		if (T == SMS_Picture) data->RawSMS->Length += 256;
-		data->RawSMS->UDHIndicator     = message[getdata(T, 21, 22, 0, 18)];
+		data->RawSMS->UDHIndicator     = message[getdata(T, 21, 22, 0, 21)];
 		memcpy(data->RawSMS->UserData,      message + getdata(T, 44, 45, 0, 47), data->RawSMS->Length);
 
 		data->RawSMS->UserDataLength = length - getdata(T, 44, 45, 0, 47);
