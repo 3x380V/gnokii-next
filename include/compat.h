@@ -1,6 +1,6 @@
 /*
 
-  $Id: compat.h,v 1.19 2003-02-20 23:26:45 pkot Exp $
+  $Id: compat.h,v 1.20 2003-03-06 21:02:26 pkot Exp $
 
   G N O K I I
 
@@ -63,9 +63,7 @@
  * whose source files include this file see API functions as being imported 
  * from a DLL, wheras this DLL sees symbols defined with this macro as being 
  * exported.
- *
  */
-
 #if defined(WIN32) && defined(_USRDLL)
 #  ifdef GNOKIIDLL_EXPORTS
 #    define API __declspec(dllexport)
