@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-networks.c,v 1.29 2003-02-10 17:50:37 ladis Exp $
+  $Id: gsm-networks.c,v 1.30 2003-02-11 22:40:54 pkot Exp $
 
   G N O K I I
 
@@ -358,6 +358,7 @@ static gn_network networks[] = {
 	{ "525 01", "SingTel Mobile" },
 	{ "525 02", "ST-PCN" },
 	{ "525 03", "MOBILEONE" },
+	{ "525 05", "Starhub" },
 	{ "528 11", "DSTCom" },
 	{ "530 01", "Vodafone New Zealand Limited" },
 	{ "542 01", "Vodafone" },
