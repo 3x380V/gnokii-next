@@ -4,7 +4,7 @@ dnl
 dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janík ml.
 dnl                2000 Karel Zak, Pawe³ Kot
 dnl
-dnl  $Id: configure.in,v 1.48 2001-06-20 22:34:45 pkot Exp $
+dnl  $Id: configure.in,v 1.49 2001-06-27 09:32:57 machek Exp $
 dnl
 
 AC_INIT(gnokii/gnokii.c)
@@ -22,7 +22,6 @@ dnl ======================== Checks for programs.
 AC_PROG_CC
 AC_PROG_CPP
 AC_PROG_LEX
-AC_PATH_PROG(LD, ld, no)
 AC_PATH_PROG(RM, rm, no)
 AC_PATH_PROG(FIND, find, no)
 AC_CHECK_PROGS(MAKE, gmake make)
