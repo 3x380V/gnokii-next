@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.46 2002-09-18 12:53:38 pkot Exp $
+# $Id: Makefile,v 1.47 2002-10-08 20:10:31 machek Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -34,6 +34,7 @@ OBJS =	cfgreader.o \
 	compat.o \
 	snprintf.o \
 	nokia-decoding.o \
+	vcard.o \
 	gsm-call.o
 
 ifdef NO_SHARED
