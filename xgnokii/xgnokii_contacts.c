@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_contacts.c,v 1.51 2003-04-29 10:12:32 ladis Exp $
+  $Id: xgnokii_contacts.c,v 1.52 2003-08-25 13:35:50 pkot Exp $
   
   X G N O K I I
 
@@ -61,6 +61,8 @@
 #include "xpm/sim.xpm"
 #include "xpm/phone.xpm"
 #include "xpm/quest.xpm"
+
+#define strip_white(x) g_strjoinv("", g_strsplit(x, " ", 0))
 
 typedef struct {
 	GtkWidget *dialog;
@@ -1049,7 +1051,7 @@ static void OkEditSubEntriesDialog(GtkWidget * clist, gpointer data)
 	strncpy(clist_row[0], temp_row1, 1);
 	gtk_clist_remove(GTK_CLIST(editNumbersData.clist), row);
 
-	clist_row[1] = gtk_entry_get_text(GTK_ENTRY(editSubEntriesData.number));
+	clist_row[1] = strip_white(gtk_entry_get_text(GTK_ENTRY(editSubEntriesData.number)));
 	clist_row[2] = malloc(sizeof(gchar) * 15);
 	inttotype(editSubEntriesData.newType, clist_row[2]);
 	gtk_clist_insert(GTK_CLIST(editNumbersData.clist), row, clist_row);
