@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-encoding.c,v 1.58 2004-06-30 22:16:49 pkot Exp $
+  $Id: gsm-encoding.c,v 1.59 2004-07-04 14:11:38 pkot Exp $
 
   G N O K I I
 
@@ -44,6 +44,13 @@
 #ifdef HAVE_LANGINFO_CODESET
 #  include <langinfo.h>
 #endif
+#ifdef HAVE_LOCALE_CHARSET
+#  include <libcharset.h>
+#else
+/* FIXME: We should include here somehow ../intl/localcharset.h, but it may
+ * cause problems with MSVC. */
+extern const char *locale_charset(void); /* from ../intl/localcharset.c */
+#endif
 
 static const char *base64_alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
 
@@ -78,7 +85,6 @@ static unsigned char gsm_default_alphabet[GN_CHAR_ALPHABET_SIZE] = {
 
 static unsigned char gsm_reverse_default_alphabet[256];
 static bool reversed = false;
-extern const char *locale_charset(void); /* from ../intl/localcharset.c */
 
 static void tbl_setup_reverse()
 {
