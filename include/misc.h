@@ -1,6 +1,6 @@
 /*
 
-  $Id: misc.h,v 1.42 2002-04-17 22:06:08 bozo Exp $
+  $Id: misc.h,v 1.43 2002-04-24 22:32:14 pkot Exp $
 
   G N O K I I
 
@@ -154,6 +154,12 @@ extern void GSM_WriteErrorLog(const char *fmt, ...);
 #endif /* __ptr_t */
 
 extern int GetLine(FILE *File, char *Line, int count);
+
+/* This is for the bitmaps mostly, but may be useful also for the other
+ * things. Counts how many octets we need to cover the given ammount of
+ * the bits.
+ */
+#define ceiling_to_octet(x) ((x) + 7) / 8
 
 /* For models table */
 typedef struct {
