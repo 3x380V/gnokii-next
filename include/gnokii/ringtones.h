@@ -1,6 +1,6 @@
 /*
 
-  $Id: ringtones.h,v 1.11 2003-02-26 08:57:51 ladis Exp $
+  $Id: ringtones.h,v 1.12 2003-02-26 21:59:49 pkot Exp $
 
   G N O K I I
 
@@ -48,16 +48,16 @@
 /* Structure to hold note of ringtone. */
 
 typedef struct {
-	u8 duration;
-	u8 note;
+	unsigned char duration;
+	unsigned char note;
 } gn_ringtone_note;
 
 /* Structure to hold ringtones. */
 typedef struct {
 	int location;
 	char name[20];
-	u8 tempo;
-	u8 notes_count;
+	unsigned char tempo;
+	unsigned char notes_count;
 	gn_ringtone_note notes[GN_RINGTONE_MAX_NOTES];
 } gn_ringtone;
 

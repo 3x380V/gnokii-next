@@ -1,6 +1,6 @@
 /*
 
-  $Id: call.h,v 1.6 2003-02-26 00:15:49 pkot Exp $
+  $Id: call.h,v 1.7 2003-02-26 21:59:49 pkot Exp $
 
   G N O K I I
 
@@ -75,7 +75,7 @@ typedef struct {
 	char remote_name[GN_PHONEBOOK_NAME_MAX_LENGTH + 1];
 	struct timeval start_time;
 	struct timeval answer_time;
-	bool local_originated;
+	int local_originated;
 } gn_call;
 
 #define	GN_CALL_MAX_PARALLEL 2

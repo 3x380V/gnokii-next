@@ -1,6 +1,6 @@
 /*
 
-  $Id: virtmodem.h,v 1.11 2003-02-26 00:15:49 pkot Exp $
+  $Id: virtmodem.h,v 1.12 2003-02-26 21:59:49 pkot Exp $
 
   G N O K I I
 
@@ -41,10 +41,10 @@ struct vm_queue {
 extern struct vm_queue queue;
 
 /* Prototypes */
-API bool gn_vm_initialise(const char *iname,
-			  char *bindir,
-			  bool debug_mode,
-			  bool gn_init);
+API int gn_vm_initialise(const char *iname,
+			 char *bindir,
+			 int debug_mode,
+			 int gn_init);
 API void gn_vm_loop(void);
 API void gn_vm_terminate(void);
 
