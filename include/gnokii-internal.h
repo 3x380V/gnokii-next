@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-internal.h,v 1.12 2003-06-14 12:39:31 osma Exp $
+  $Id: gnokii-internal.h,v 1.13 2003-09-20 19:51:43 pkot Exp $
 
   G N O K I I
 
@@ -142,5 +142,8 @@ char *cfg_set(struct gn_cfg_header *cfg, const char *section, const char *key, c
 int cfg_file_write(struct gn_cfg_header *cfg, const char *filename);
 
 gn_error isdn_cause2gn_error(char **src, char **msg, unsigned char loc, unsigned char cause);
+
+int base64_decode(char *dest, char *src, int length);
+int base64_encode(char *dest, char *src, int convertToUTF8);
 
 #endif /* _gnokii_internal_h */
