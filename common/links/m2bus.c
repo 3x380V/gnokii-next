@@ -1,6 +1,6 @@
 /*
 
-  $Id: m2bus.c,v 1.12 2003-02-11 00:13:47 bozo Exp $
+  $Id: m2bus.c,v 1.13 2003-02-12 19:08:07 bozo Exp $
 
   G N O K I I
 
@@ -237,6 +237,8 @@ static void m2bus_rx_statemachine(unsigned char rx_byte, struct gn_statemachine 
 					/* Send an ack (for all for now) */
 
 					m2bus_tx_send_ack(i->message_buffer[i->message_length], state);
+
+					sm_incoming_acknowledge(state);
 
 					/* Finally dispatch if ready */
 
