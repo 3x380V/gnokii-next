@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk7110.c,v 1.90 2002-07-03 22:53:39 pkot Exp $
+  $Id: nk7110.c,v 1.91 2002-07-08 15:52:01 plail Exp $
 
   G N O K I I
 
@@ -1216,18 +1216,26 @@ static GSM_Error P7110_IncomingCalendar(int messagetype, unsigned char *message,
 		switch (message[6]) {
 		case P7110_NOTE_MEETING:
 			data->CalendarNote->Type = GCN_MEETING;
+			data->CalendarNote->Recurrence = (((unsigned int)block[4]) << 8) + block[5];
+			dprintf("Recurrence: %04x\n", data->CalendarNote->Recurrence);
 			P7110_GetNoteTimes(block, data->CalendarNote);
 			DecodeUnicode(data->CalendarNote->Text, (block + 8), block[6]);
 			break;
 		case P7110_NOTE_CALL:
 			data->CalendarNote->Type = GCN_CALL;
+			data->CalendarNote->Recurrence = (((unsigned int)block[4]) << 8) + block[5];
+			dprintf("Recurrence: %04x\n", data->CalendarNote->Recurrence);
 			P7110_GetNoteTimes(block, data->CalendarNote);
 			DecodeUnicode(data->CalendarNote->Text, (block + 8), block[6]);
 			DecodeUnicode(data->CalendarNote->Phone, (block + 8 + block[6] * 2), block[7]);
 			break;
 		case P7110_NOTE_REMINDER:
 			data->CalendarNote->Type = GCN_REMINDER;
+			data->CalendarNote->Recurrence = (((unsigned int)block[0]) << 8) + block[1];
+			dprintf("Recurrence: %04x\n", data->CalendarNote->Recurrence);
+			/*
 			data->CalendarNote->Recurrence = ((((unsigned int)block[0]) << 8) + block[1]) * 60;
+			*/
 			DecodeUnicode(data->CalendarNote->Text, (block + 4), block[2]);
 			break;
 		case P7110_NOTE_BIRTHDAY:
