@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk3110.h,v 1.9 2003-03-06 22:52:16 pkot Exp $
+  $Id: nk3110.h,v 1.10 2003-06-03 17:28:41 osma Exp $
 
   G N O K I I
 
@@ -45,6 +45,7 @@
 
 typedef struct {
 	bool sim_available;
+	unsigned char user_data[GN_SMS_MAX_LENGTH];
 	int user_data_count;
 } nk3110_driver_instance;
 
