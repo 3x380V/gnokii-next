@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.99 2001-01-02 09:09:06 pkot Exp $
+# $Id: Makefile,v 1.100 2001-02-16 14:29:50 chris Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -16,8 +16,11 @@ TOPDIR=.
 include ${TOPDIR}/Makefile.global
 
 
-DIRS =  common \
-        gnokii
+DIRS =  common/phones \
+	common/links \
+	common/devices \
+        common \
+	gnokii
 
 #
 # For now gnokiid and utils only make sense on Unix like systems.
