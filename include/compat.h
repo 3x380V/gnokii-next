@@ -1,6 +1,6 @@
 /*
 
-  $Id: compat.h,v 1.27 2003-05-05 21:58:33 bozo Exp $
+  $Id: compat.h,v 1.28 2003-05-06 20:52:59 pkot Exp $
 
   G N O K I I
 
@@ -49,6 +49,10 @@
 
 #ifdef HAVE_STRINGS_H
 #  include <strings.h>
+#endif
+
+#ifdef HAVE_STRING_H
+#  include <string.h>
 #endif
 
 #ifdef HAVE_STDINT_H
