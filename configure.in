@@ -5,7 +5,7 @@ dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janík ml.
 dnl                2000 Karel Zak, Pawe³ Kot
 dnl                2002 BORBELY Zoltan
 dnl
-dnl  $Id: configure.in,v 1.70 2002-04-14 00:49:24 bozo Exp $
+dnl  $Id: configure.in,v 1.71 2002-04-14 00:52:59 bozo Exp $
 dnl
 
 AC_INIT(gnokii/gnokii.c)
@@ -226,7 +226,7 @@ if test "x$PTHREAD_LIBS" = xerror; then
 fi
 
 AC_CACHE_CHECK(for tm_gmtoff in struct tm, ac_cv_have_tm_gmtoff,
-	[AC_TRY_LINK([#include <time.h>],
+	[AC_TRY_COMPILE([#include <time.h>],
 		[struct tm t; t.tm_gmtoff = 0],
 		ac_cv_have_tm_gmtoff=yes,
 		ac_cv_have_tm_gmtoff=no)])
