@@ -5,7 +5,7 @@ dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janík ml.
 dnl                2000 Karel Zak, Pawe³ Kot
 dnl                2002 BORBELY Zoltan
 dnl
-dnl  $Id: configure.in,v 1.120 2003-09-20 19:46:51 pkot Exp $
+dnl  $Id: configure.in,v 1.121 2003-11-20 21:10:29 bozo Exp $
 dnl
 
 AC_INIT(gnokii/gnokii.c)
@@ -243,6 +243,33 @@ if test $ac_cv_have_sockaddr_rc = yes; then
 	USE_BLUETOOTH="yes"
 	LIBS="$LIBS -lbluetooth"
 fi
+
+
+dnl ======================== Checks for MacOSX Bluetooth support
+
+AC_MSG_CHECKING([for the MacOS X bluetooth support])
+echo
+AC_CHECK_HEADERS(CoreFoundation/CoreFoundation.h)
+AC_CHECK_HEADERS(IOBluetooth/Bluetooth.h)
+AC_CHECK_HEADERS(IOBluetooth/IOBluetoothUserLib.h)
+AC_TRY_COMPILE([#include <CoreFoundation/CoreFoundation.h>
+			#include <IOBluetooth/Bluetooth.h>
+			#include <IOBluetooth/IOBluetoothUserLib.h>],
+
+			[CFStringRef strDevice;
+			strDevice = CFStringCreateWithCString(NULL, NULL, NULL);
+			IOBluetoothNSStringToDeviceAddress(NULL, NULL);],
+
+		ac_cv_have_iobluetooth=yes,
+		ac_cv_have_iobluetooth=no)
+
+if test $ac_cv_have_iobluetooth = yes; then
+	AC_DEFINE(HAVE_BLUETOOTH)
+	AC_DEFINE(HAVE_BLUETOOTH_MACOSX,[],[Compile on Darwin / Mac OSX])
+	USE_BLUETOOTH="yes"
+	LIBS="$LIBS $PTHREAD_LIBS -framework CoreFoundation -framework IOBluetooth -framework Foundation"
+fi
+
 
 dnl ======================== Checks for X base support 
 
