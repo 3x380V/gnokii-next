@@ -1,6 +1,6 @@
 /* -*- linux-c -*-
 
-  $Id: nk2110.c,v 1.24 2002-01-25 23:39:29 machek Exp $
+  $Id: nk2110.c,v 1.25 2002-01-27 23:16:46 machek Exp $
 
   G N O K I I
 
@@ -1233,7 +1233,14 @@ GSM_Error P2110_Functions(GSM_Operation op, GSM_Data *data, GSM_Statemachine *st
 			err = SMS_Reserve(state);
 		}
 		break;		
-	case GOP_PollSMS:			/* Our phone is able to notify us */
+	case GOP_PollSMS:			/* Our phone is able to notify us... but we do not want to burn 100% CPU polling */
+		{
+			struct timeval tm;
+			tm.tv_sec = 0;
+			tm.tv_usec = 50000;
+			device_select(&tm);
+		}
+		break;
 	case GOP_PollDisplay:
 		break;
 	default:
