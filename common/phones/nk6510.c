@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.c,v 1.51 2002-07-18 17:35:26 plail Exp $
+  $Id: nk6510.c,v 1.52 2002-07-19 10:33:39 plail Exp $
 
   G N O K I I
 
@@ -1008,7 +1008,7 @@ static GSM_Error P6510_IncomingSMS(int messagetype, unsigned char *message, int 
 			sprintf(data->MessageCenter->SMSC.Number, "(none)");
 		}
 		if(strlen(data->MessageCenter->Name) == 0) {
-			sprintf(data->MessageCenter->Name, "(none)");
+			data->MessageCenter->Name[0] = '\0';
 		}
 
 		break;
