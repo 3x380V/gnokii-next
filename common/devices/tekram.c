@@ -1,6 +1,6 @@
 /*
  *
- * $Id: tekram.c,v 1.8 2003-01-19 22:56:05 pkot Exp $
+ * $Id: tekram.c,v 1.9 2003-02-05 01:20:39 bozo Exp $
  *
  * G N O K I I
  *
@@ -25,14 +25,20 @@
  *
  */
 
-#include <stdio.h>
-#include <fcntl.h>
-#include <sys/ioctl.h>
-#include <termios.h>
-#include <string.h>
-
 #include "misc.h"
 #include "gsm-api.h"
+
+#include <stdio.h>
+#ifdef HAVE_FCNTL_H
+#  include <fcntl.h>
+#endif
+#ifdef HAVE_SYS_IOCTL_H
+#  include <sys/ioctl.h>
+#endif
+#ifdef HAVE_TERMIOS_H
+#  include <termios.h>
+#endif
+#include <string.h>
 
 #ifndef WIN32
 #  include "devices/unixserial.h"
@@ -96,8 +102,5 @@ size_t tekram_write(int fd, const __ptr_t buf, size_t n, struct gn_statemachine 
 
 int tekram_select(int fd, struct timeval *timeout, struct gn_statemachine *state)
 {
-	fd_set readfds;
-	FD_ZERO(&readfds);
-	FD_SET(fd, &readfds);
-	return select(fd + 1, &readfds, NULL, NULL, timeout);
+	return serial_select(fd, timeout, state);
 }
