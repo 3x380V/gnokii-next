@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.305 2002-10-15 09:34:27 bozo Exp $
+  $Id: gnokii.c,v 1.306 2002-10-15 10:18:20 bozo Exp $
 
   G N O K I I
 
@@ -373,6 +373,7 @@ static void businit(void (*rlp_handler)(RLP_F96Frame *frame))
 #endif
 #ifndef WIN32
 	if (!strcasecmp(Connection, "tcp"))      connection = GCT_TCP;
+	if (!strcasecmp(Connection, "tekram"))   connection = GCT_Tekram;
 #endif
 
 	/* register cleanup function */

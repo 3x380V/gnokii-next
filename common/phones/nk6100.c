@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.112 2002-10-08 23:47:09 bozo Exp $
+  $Id: nk6100.c,v 1.113 2002-10-15 10:18:19 bozo Exp $
 
   G N O K I I
 
@@ -502,6 +502,9 @@ static gn_error Initialise(GSM_Statemachine *state)
 		state->Link.ConnectionType = GCT_DAU9P;
 	case GCT_Infrared:
 	case GCT_DAU9P:
+#ifndef WIN32
+	case GCT_Tekram:
+#endif
 		err = FBUS_Initialise(&(state->Link), state, 0);
 		break;
 #ifdef HAVE_IRDA

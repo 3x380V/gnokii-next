@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokiid.c,v 1.28 2002-08-28 15:53:12 pkot Exp $
+  $Id: gnokiid.c,v 1.29 2002-10-15 10:18:20 bozo Exp $
 
   G N O K I I
 
@@ -133,6 +133,8 @@ int main(int argc, char *argv[])
 		connection = GCT_Infrared;
 	if (!strcmp(Connection, "tcp"))
 		connection = GCT_TCP;
+	if (!strcmp(Connection, "tekram"))
+		connection = GCT_Tekram;
 
 	/* register cleanup function */
 	if (!atexit_registered) {

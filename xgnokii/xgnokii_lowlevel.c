@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_lowlevel.c,v 1.66 2002-09-28 23:51:38 pkot Exp $
+  $Id: xgnokii_lowlevel.c,v 1.67 2002-10-15 10:18:20 bozo Exp $
   
   X G N O K I I
 
@@ -230,6 +230,8 @@ static gn_error fbusinit(bool enable_monitoring)
 #ifndef WIN32
 	if (!strcmp(xgnokiiConfig.connection, "tcp"))
 		connection = GCT_TCP;
+	if (!strcmp(xgnokiiConfig.connection, "tekram"))
+		connection = GCT_Tekram;
 #endif
 	if (!strcmp(xgnokiiConfig.connection, "dau9p"))
 		connection = GCT_DAU9P;

@@ -1,6 +1,6 @@
 /*
 
-  $Id: lowlevel.c,v 1.25 2002-09-28 23:51:38 pkot Exp $
+  $Id: lowlevel.c,v 1.26 2002-10-15 10:18:20 bozo Exp $
 
   S M S D
 
@@ -153,6 +153,8 @@ static gn_error fbusinit (bool enable_monitoring)
 #ifndef WIN32
   if (!strcmp(smsdConfig.connection, "tcp"))
     connection = GCT_TCP;
+  if (!strcmp(smsdConfig.connection, "tekram"))
+    connection = GCT_Tekram;
 #endif
 	/* register cleanup function */
 	if (!atexit_registered) {
