@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.h,v 1.19 2004-09-20 22:07:05 bozo Exp $
+  $Id: atgen.h,v 1.20 2005-03-29 08:55:07 bozo Exp $
 
   G N O K I I
 
@@ -76,7 +76,7 @@ typedef struct {
 	at_charset charset;
 } at_driver_instance;
 
-#define AT_DRVINST(s) ((at_driver_instance *)((s)->driver.driver_instance))
+#define AT_DRVINST(s) (*((at_driver_instance **)(&(s)->driver.driver_instance)))
 
 typedef struct {
 	char *line1;

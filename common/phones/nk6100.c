@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.169 2005-03-20 19:05:56 pkot Exp $
+  $Id: nk6100.c,v 1.170 2005-03-29 08:55:06 bozo Exp $
 
   G N O K I I
 
@@ -52,7 +52,7 @@
 #include "gnokii-internal.h"
 #include "gnokii.h"
 
-#define	DRVINSTANCE(s) ((nk6100_driver_instance *)((s)->driver.driver_instance))
+#define	DRVINSTANCE(s) (*((nk6100_driver_instance **)(&(s)->driver.driver_instance)))
 #define	FREE(p) do { free(p); (p) = NULL; } while (0)
 
 /* static functions prototypes */

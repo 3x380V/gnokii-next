@@ -1,6 +1,6 @@
 /*
 
-  $Id: atbus.h,v 1.14 2003-03-06 21:38:42 pkot Exp $
+  $Id: atbus.h,v 1.15 2005-03-29 08:55:07 bozo Exp $
 
   G N O K I I
 
@@ -55,6 +55,6 @@ typedef struct {
 	int binlen;
 } atbus_instance;
 
-#define AT_BUSINST(s) ((atbus_instance *)((s)->link.link_instance))
+#define AT_BUSINST(s) (*((atbus_instance **)(&(s)->link.link_instance)))
 
 #endif   /* #ifndef _gnokii_atbus_h */

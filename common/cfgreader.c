@@ -1,6 +1,6 @@
 /*
 
-  $Id: cfgreader.c,v 1.54 2005-03-21 23:04:53 pkot Exp $
+  $Id: cfgreader.c,v 1.55 2005-03-29 08:55:06 bozo Exp $
 
   G N O K I I
 
@@ -459,7 +459,7 @@ API int gn_cfg_read(char **bindir)
 
 	retval = gn_cfg_read_default();
 
-	(char *)*bindir = gn_cfg_get(gn_cfg_info, "global", "bindir");
+	*bindir = gn_cfg_get(gn_cfg_info, "global", "bindir");
 	if (!*bindir) *bindir = gn_cfg_get(gn_cfg_info, "gnokiid", "bindir");
 	if (!*bindir) *bindir = "/usr/local/sbin";
 

@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk7110.c,v 1.172 2005-01-24 23:18:01 bozo Exp $
+  $Id: nk7110.c,v 1.173 2005-03-29 08:55:06 bozo Exp $
 
   G N O K I I
 
@@ -50,7 +50,7 @@
 
 #include "gnokii-internal.h"
 
-#define DRVINSTANCE(s) ((nk7110_driver_instance *)((s)->driver.driver_instance))
+#define DRVINSTANCE(s) (*((nk7110_driver_instance **)(&(s)->driver.driver_instance)))
 #define FREE(p) do { free(p); (p) = NULL; } while (0)
 
 #define SEND_MESSAGE_BLOCK(type, length) \

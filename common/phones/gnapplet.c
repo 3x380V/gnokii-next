@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnapplet.c,v 1.24 2005-03-24 00:12:55 bozo Exp $
+  $Id: gnapplet.c,v 1.25 2005-03-29 08:55:06 bozo Exp $
 
   G N O K I I
 
@@ -48,7 +48,7 @@
 #include "gnokii-internal.h"
 #include "gnokii.h"
 
-#define	DRVINSTANCE(s) ((gnapplet_driver_instance *)((s)->driver.driver_instance))
+#define	DRVINSTANCE(s) (*((gnapplet_driver_instance **)(&(s)->driver.driver_instance)))
 #define	FREE(p) do { free(p); (p) = NULL; } while (0)
 
 #define	REQUEST_DEFN(n) \

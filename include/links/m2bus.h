@@ -1,6 +1,6 @@
 /*
 
-  $Id: m2bus.h,v 1.7 2003-03-06 21:38:46 pkot Exp $
+  $Id: m2bus.h,v 1.8 2005-03-29 08:55:07 bozo Exp $
 
   G N O K I I
 
@@ -90,7 +90,7 @@ typedef struct{
 	u8 request_sequence_number;
 } m2bus_link;
 
-#define M2BUSINST(s) ((m2bus_link *)((s)->link.link_instance))
+#define M2BUSINST(s) (*((m2bus_link **)(&(s)->link.link_instance)))
 
 gn_error m2bus_initialise(struct gn_statemachine *state);
 

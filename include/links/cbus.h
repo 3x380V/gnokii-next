@@ -1,6 +1,6 @@
 /* -*- linux-c -*-
 
-  $Id: cbus.h,v 1.13 2003-02-27 08:18:26 ladis Exp $
+  $Id: cbus.h,v 1.14 2005-03-29 08:55:07 bozo Exp $
 
   G N O K I I
 
@@ -57,7 +57,7 @@ typedef struct{
 	unsigned char prev_rx_byte;
 } cbus_instance;
 
-#define CBUSINST(s) ((cbus_instance *)((s)->link.link_instance))
+#define CBUSINST(s) (*((cbus_instance **)(&(s)->link.link_instance)))
 
 gn_error cbus_initialise(struct gn_statemachine *state);
 

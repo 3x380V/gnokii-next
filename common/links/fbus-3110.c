@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus-3110.c,v 1.33 2004-04-29 22:13:12 pkot Exp $
+  $Id: fbus-3110.c,v 1.34 2005-03-29 08:55:06 bozo Exp $
 
   G N O K I I
 
@@ -58,7 +58,7 @@ static int fb3110_message_type_fold(int type);
 
 /* FIXME - win32 stuff! */
 
-#define FBUSINST(s) ((fb3110_link *)((s)->link.link_instance))
+#define FBUSINST(s) (*((fb3110_link **)(&(s)->link.link_instance)))
 
 
 /*--------------------------------------------*/

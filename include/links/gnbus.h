@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnbus.h,v 1.1 2004-03-26 10:12:43 bozo Exp $
+  $Id: gnbus.h,v 1.2 2005-03-29 08:55:07 bozo Exp $
 
   G N O K I I
 
@@ -77,7 +77,7 @@ typedef struct{
 	gnbus_incoming_message i;
 } gnbus_link;
 
-#define GNBUSINST(s) ((gnbus_link *)((s)->link.link_instance))
+#define GNBUSINST(s) (*((gnbus_link **)(&(s)->link.link_instance)))
 
 gn_error gnbus_initialise(struct gn_statemachine *state);
 

@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6160.c,v 1.20 2003-10-28 00:03:40 bozo Exp $
+  $Id: nk6160.c,v 1.21 2005-03-29 08:55:06 bozo Exp $
 
   G N O K I I
 
@@ -58,7 +58,7 @@ typedef struct {
 	int logoslice;
 } nk6160_driver_instance;
 
-#define NK6160_DRVINST(s) ((nk6160_driver_instance *)((s)->driver.driver_instance))
+#define NK6160_DRVINST(s) (*((nk6160_driver_instance **)(&(s)->driver.driver_instance)))
 
 /* static functions prototypes */
 static gn_error functions(gn_operation op, gn_data *data, struct gn_statemachine *state);

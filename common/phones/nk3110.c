@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk3110.c,v 1.43 2003-06-14 15:00:56 osma Exp $
+  $Id: nk3110.c,v 1.44 2005-03-29 08:55:06 bozo Exp $
 
   G N O K I I
 
@@ -49,7 +49,7 @@
 #include "gnokii-internal.h"
 
 
-#define DRVINSTANCE(s) ((nk3110_driver_instance *)((s)->driver.driver_instance))
+#define DRVINSTANCE(s) (*((nk3110_driver_instance **)(&(s)->driver.driver_instance)))
 #define FREE(p) do { free(p); (p) = NULL; } while (0)
 
 /* Prototypes */
