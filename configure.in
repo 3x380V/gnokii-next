@@ -5,7 +5,7 @@ dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janík ml.
 dnl                2000 Karel Zak, Pawe³ Kot
 dnl                2002 BORBELY Zoltan
 dnl
-dnl  $Id: configure.in,v 1.140 2004-06-17 21:47:49 pkot Exp $
+dnl  $Id: configure.in,v 1.141 2004-06-27 21:23:19 pkot Exp $
 dnl
 
 AC_INIT(gnokii/gnokii.c)
@@ -27,6 +27,8 @@ AC_LIBTOOL_WIN32_DLL
 define([AC_PROVIDE_AC_LIBTOOL_WIN32_DLL])
 AC_PROG_LIBTOOL
 AC_PROG_INSTALL
+
+AC_RELOCATABLE
 
 AM_ICONV
 
