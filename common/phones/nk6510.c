@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.c,v 1.45 2002-07-17 13:43:36 plail Exp $
+  $Id: nk6510.c,v 1.46 2002-07-18 07:12:55 plail Exp $
 
   G N O K I I
 
@@ -1115,6 +1115,9 @@ static GSM_Error P6510_IncomingPhonebook(int messagetype, unsigned char *message
 			data->PhonebookEntry->Date.Minute = 0;
 			data->PhonebookEntry->Date.Second = 0;
 		}
+		if (data->Bitmap) {
+			data->Bitmap->text[0] = '\0';
+		}
 		if (message[6] == 0x0f) { /* not found */
 			switch (message[10]) {
 			case 0x30:
@@ -1374,7 +1377,8 @@ static GSM_Error GetCallerBitmap(GSM_Data *data, GSM_Statemachine *state)
 	/* You can only get logos which have been altered, */
 	/* the standard logos can't be read!! */
 
-	req[15] = GNOKII_MIN(data->Bitmap->number + 1, GSM_MAX_CALLER_GROUPS);
+	//	req[15] = GNOKII_MIN(data->Bitmap->number + 1, GSM_MAX_CALLER_GROUPS);
+	req[15] = data->Bitmap->number + 1;
 	dprintf("Getting caller(%d) logo...\n", req[15]);
 
 	if (SM_SendMessage(state, 18, P6510_MSG_PHONEBOOK, req) != GE_NONE) return GE_NOTREADY;

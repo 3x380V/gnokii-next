@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk7110.c,v 1.95 2002-07-17 13:37:07 plail Exp $
+  $Id: nk7110.c,v 1.96 2002-07-18 07:12:55 plail Exp $
 
   G N O K I I
 
@@ -469,6 +469,9 @@ static GSM_Error P7110_IncomingPhonebook(int messagetype, unsigned char *message
 			data->PhonebookEntry->Date.Hour = 0;
 			data->PhonebookEntry->Date.Minute = 0;
 			data->PhonebookEntry->Date.Second = 0;
+		}
+		if (data->Bitmap) {
+			data->Bitmap->text[0] = '\0';
 		}
 		if (message[6] == 0x0f) { /* not found */
 			switch (message[10]) {
