@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-internal.h,v 1.17 2003-10-02 23:20:57 bozo Exp $
+  $Id: gnokii-internal.h,v 1.18 2003-10-03 10:17:33 bozo Exp $
 
   G N O K I I
 
@@ -96,6 +96,7 @@ int todo_fill(gn_todo *note, char *text, char *todo_priority);
 /* Ringtone Files */
 gn_error file_rttl_save(FILE *file, gn_ringtone *ringtone);
 gn_error file_ott_save(FILE *file, gn_ringtone *ringtone);
+gn_error file_midi_save(FILE *file, gn_ringtone *ringtone);
 gn_error file_nokraw_save(FILE *file, gn_ringtone *ringtone);
 
 gn_error file_rttl_load(FILE *file, gn_ringtone *ringtone);
