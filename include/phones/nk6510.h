@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.h,v 1.20 2003-10-23 00:35:02 bozo Exp $
+  $Id: nk6510.h,v 1.21 2003-10-24 12:49:07 bozo Exp $
 
   G N O K I I
 
@@ -51,6 +51,7 @@ typedef enum {
 #define NK6510_MSG_DIVERT	0x06	/* Call Divert */
 #define NK6510_MSG_SECURITY	0x08	/* PIN and stuff */
 #define NK6510_MSG_NETSTATUS	0x0a	/* Network status */
+#define NK6510_MSG_SOUND	0x0b	/* Sound */
 #define NK6510_MSG_KEYPRESS	0x0c	/* keypress emulation? */
 #define NK6510_MSG_SUBSCRIBE	0x10	/* subscribe to channels */
 #define NK6510_MSG_CALENDAR	0x13	/* Calendar notes */

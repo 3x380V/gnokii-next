@@ -1,6 +1,6 @@
 /*
 
-  $Id: data.h,v 1.68 2003-10-19 21:17:54 bozo Exp $
+  $Id: data.h,v 1.69 2003-10-24 12:49:07 bozo Exp $
 
   G N O K I I
 
@@ -224,6 +224,7 @@ typedef enum {
 	GN_OP_SetActiveProfile,
 	GN_OP_PlayTone,
 	GN_OP_GetRingtoneList,
+	GN_OP_DeleteRingtone,
 	GN_OP_Max,	/* don't append anything after this entry */
 } gn_operation;
 
