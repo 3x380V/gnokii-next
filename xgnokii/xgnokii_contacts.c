@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_contacts.c,v 1.48 2002-12-27 20:07:44 bozo Exp $
+  $Id: xgnokii_contacts.c,v 1.49 2003-01-05 16:17:38 pkot Exp $
   
   X G N O K I I
 
@@ -3265,7 +3265,7 @@ gchar *GUI_GetNumber(gchar * name)
 		if (pbEntry->status == E_Empty || pbEntry->status == E_Deleted)
 			continue;
 
-		if (strcmp(pbEntry->entry.name, name) == 0)
+		if (strcmp(g_strstrip(pbEntry->entry.name), g_strstrip(name)) == 0)
 			return pbEntry->entry.number;
 	}
 
