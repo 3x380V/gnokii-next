@@ -1,6 +1,6 @@
 /*
 
-  $Id: misc.c,v 1.22 2001-12-29 23:41:54 pkot Exp $
+  $Id: misc.c,v 1.23 2002-01-21 11:53:56 pkot Exp $
 
   G N O K I I
 
@@ -15,6 +15,8 @@
 #include <string.h>
 #include <stdlib.h>
 #include "misc.h"
+
+void (*GSM_ELogHandler)(const char *fmt, va_list ap) = NULL;
 
 int GetLine(FILE *File, char *Line, int count)
 {
@@ -140,3 +142,19 @@ int gasprintf(char **destp, const char *fmt, ...)
 	return(r);
 }
 #endif
+
+void GSM_WriteErrorLog(const char *fmt, ...)
+{
+	va_list ap;
+
+	va_start(ap, fmt);
+
+	if (GSM_ELogHandler) {
+		GSM_ELogHandler(fmt, ap);
+	} else {
+		vfprintf(stderr, fmt, ap);
+		fflush(stderr);
+	}
+
+	va_end(ap);
+}

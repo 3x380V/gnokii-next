@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.19 2002-01-16 12:51:51 pkot Exp $
+  $Id: nk6100.c,v 1.20 2002-01-21 11:53:56 pkot Exp $
 
   G N O K I I
 
@@ -550,7 +550,7 @@ static GSM_Error IncomingPhonebook(int messagetype, unsigned char *message, int 
 			n = bmp->height * bmp->width / 8;
 			if (bmp->size > n) bmp->size = n;
 			if (bmp->size > sizeof(bmp->bitmap))
-				return GE_INTERNALERROR;
+				return GE_UNHANDLEDFRAME;
 			memcpy(bmp->bitmap, pos, bmp->size);
 		}
 		break;
@@ -1210,7 +1210,7 @@ static GSM_Error IncomingProfile(int messagetype, unsigned char *message, int le
 					bmp->width = *pos++;
 					bmp->size = bmp->height * bmp->width / 8;
 					if (bmp->size > sizeof(bmp->bitmap)) {
-						return GE_INTERNALERROR;
+						return GE_UNHANDLEDFRAME;
 					}
 					memcpy(bmp->bitmap, pos, bmp->size);
 					pos += bmp->size;
@@ -1305,7 +1305,7 @@ static GSM_Error IncomingProfile(int messagetype, unsigned char *message, int le
 			i = bmp->height * bmp->width / 8;
 			if (bmp->size > i) bmp->size = i;
 			if (bmp->size > sizeof(bmp->bitmap)) {
-				return GE_INTERNALERROR;
+				return GE_UNHANDLEDFRAME;
 			}
 			memcpy(bmp->bitmap, pos, bmp->size);
 		}
