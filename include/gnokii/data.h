@@ -1,6 +1,6 @@
 /*
 
-  $Id: data.h,v 1.29 2002-05-17 00:22:10 pkot Exp $
+  $Id: data.h,v 1.30 2002-05-19 11:22:11 machek Exp $
 
   G N O K I I
 
@@ -38,8 +38,8 @@
 typedef struct {
 	SMS_Folder *SMSFolder;
 	SMS_FolderList *SMSFolderList;
-	GSM_SMSMessage *RawSMS;
-	GSM_API_SMS *SMS;
+	GSM_SMSMessage *RawSMS;		/* This is for phone driver, application using libgnokii should not touch this */
+	GSM_API_SMS *SMS;		/* This is for user communication, phone driver should not have to touch this one */
 	GSM_PhonebookEntry *PhonebookEntry;
 	GSM_SpeedDial *SpeedDial;
 	GSM_MemoryStatus *MemoryStatus;
