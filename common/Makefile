@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.25 2001-03-21 23:36:04 chris Exp $
+# $Id: Makefile,v 1.26 2001-03-26 23:39:20 pkot Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -50,7 +50,7 @@ COMMON.o: $(OBJS) phones/PHONES.o links/LINKS.o devices/DEVICES.o
 	$(LD) $(LDREL) $(LDOUT) COMMON.o $(OBJS) phones/PHONES.o links/LINKS.o devices/DEVICES.o
 
 gsm-filetypes.o: gsm-filetypes.c
-	$(CC) $(CFLAGS) $(XPM_CFLAGS) -c gsm-filetypes.c
+	$(CC) $(CFLAGS) $(CPPFLAGS) $(XPM_CFLAGS) -c gsm-filetypes.c
 
 vcal.c: vcal.lx
 	$(LEX) -ovcal.c vcal.lx

@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile.global.in,v 1.17 2001-03-13 01:18:48 pkot Exp $
+# $Id: Makefile.global.in,v 1.18 2001-03-26 23:39:04 pkot Exp $
 #
 # Global Makefiles configuration for the GNOKII.
 #
@@ -42,6 +42,7 @@ MSGFMT         = @MSGFMT@
 
 CC             = @CC@
 CFLAGS         = @CFLAGS@
+CPPFLAGS       = @CPPFLAGS@
 LIBS           = @LIBS@
 LEX            = @LEX@
 
