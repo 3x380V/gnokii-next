@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-filetypes.c,v 1.30 2002-05-29 10:29:57 machek Exp $
+  $Id: gsm-filetypes.c,v 1.31 2002-06-02 22:16:38 machek Exp $
 
   G N O K I I
 
@@ -574,19 +574,8 @@ GSM_Error loadxpm(char *filename, GSM_Bitmap *bitmap)
 
 	if (image.ncolors != 2) return GE_WRONGNUMBEROFCOLORS;
 
-	/* All xpms are loaded as startup logos - but can be resized later */
-
-	switch (bitmap->type) {
-	case GSM_PictureMessage:
-		bitmap->height = 72;
-		bitmap->width = 48;
-		break;
-	case GSM_EMSPicture:
-	default:
-		bitmap->height = image.height;
-		bitmap->width = image.width;
-		break;
-	}
+	bitmap->height = image.height;
+	bitmap->width = image.width;
 	bitmap->size = ((bitmap->width + 7) / 8) * bitmap->height;
 
 	if (bitmap->size > GSM_MAX_BITMAP_SIZE) {
