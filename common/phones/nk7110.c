@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk7110.c,v 1.162 2004-01-29 22:55:50 uid66843 Exp $
+  $Id: nk7110.c,v 1.163 2004-02-22 22:29:08 uid66843 Exp $
 
   G N O K I I
 
@@ -371,6 +371,7 @@ static gn_error NK7110_Initialise(struct gn_statemachine *state)
 		FREE(DRVINSTANCE(state));
 		return err;
 	}
+
 	/* Check for 7110 and alter the startup logo size */
 	if (strcmp(model, "NSE-5") == 0) {
 		state->driver.phone.startup_logo_height = 65;
