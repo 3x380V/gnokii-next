@@ -1,6 +1,6 @@
 /*
 
-  $Id: virtmodem.c,v 1.19 2002-04-13 01:06:28 bozo Exp $
+  $Id: virtmodem.c,v 1.20 2002-04-17 00:28:22 bozo Exp $
 
   G N O K I I
 
@@ -34,13 +34,11 @@
 
 #include "config.h"
 
-/* This is the correct way to include stdlib with __USE_XOPEN defined.
+/* This is the correct way to include stdlib with _XOPEN_SOURCE = 500 defined.
  * Needed for clean unlockpt() declaration.
+ * msghdr structure in Solaris depends on _XOPEN_SOURCE = 500 too. - bozo
  */
-#ifdef USE_UNIX98PTYS
-#  define _XOPEN_SOURCE 500
-#  include <features.h>
-#endif
+#define _XOPEN_SOURCE 500
 
 #include <stdio.h>
 #include <errno.h>

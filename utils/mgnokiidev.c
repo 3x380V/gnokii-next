@@ -1,6 +1,6 @@
 /*
 
-  $Id: mgnokiidev.c,v 1.14 2002-03-28 21:37:50 pkot Exp $
+  $Id: mgnokiidev.c,v 1.15 2002-04-17 00:28:22 bozo Exp $
 
   G N O K I I
 
@@ -32,9 +32,11 @@
 
 */
 
+/* See common/data/virtmodem.c for explanation */
+#define _XOPEN_SOURCE 500
+
 #include "misc.h"
 
-#define __USE_XOPEN
 #include <stdlib.h>
 #include <sys/types.h>
 #include <sys/socket.h>

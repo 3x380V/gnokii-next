@@ -5,7 +5,7 @@ dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janík ml.
 dnl                2000 Karel Zak, Pawe³ Kot
 dnl                2002 BORBELY Zoltan
 dnl
-dnl  $Id: configure.in,v 1.72 2002-04-14 16:01:08 pkot Exp $
+dnl  $Id: configure.in,v 1.73 2002-04-17 00:28:21 bozo Exp $
 dnl
 
 AC_INIT(gnokii/gnokii.c)
@@ -402,7 +402,6 @@ AC_CHECK_FUNC(grantpt,
    [ AC_TRY_RUN([
 #define  _XOPEN_SOURCE 500
 
-#include <features.h>
 #include <stdlib.h>
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -436,7 +435,8 @@ int main()
    ]
 )
 
-AC_TRY_COMPILE( [#include <sys/types.h>
+AC_TRY_COMPILE( [#define _XOPEN_SOURCE 500
+		 #include <sys/types.h>
 		 #include <sys/socket.h>],
 		[struct msghdr msg; msg.msg_control;],
 		AC_DEFINE(HAVE_MSGHDR_MSG_CONTROL)
