@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6160.c,v 1.16 2003-02-26 00:15:48 pkot Exp $
+  $Id: nk6160.c,v 1.17 2003-02-27 21:15:04 bozo Exp $
 
   G N O K I I
 
@@ -145,6 +145,18 @@ static gn_error initialise(struct gn_statemachine *state)
 	case GN_CT_Serial:
 	case GN_CT_Infrared:
 		error = m2bus_initialise(state);
+		break;
+	case GN_CT_DLR3P:
+		if ((error = fbus_initialise(0, state)) == GN_ERR_NONE) break;
+		/*FALLTHROUGH*/
+	case GN_CT_DAU9P:
+		error = fbus_initialise(1, state);
+		break;
+	case GN_CT_Bluetooth:
+		error = fbus_initialise(2, state);
+		break;
+	case GN_CT_Irda:
+		error = phonet_initialise(state);
 		break;
 	default:
 		error = GN_ERR_NOTSUPPORTED;
