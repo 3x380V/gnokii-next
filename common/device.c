@@ -1,6 +1,6 @@
 /*
 
-  $Id: device.c,v 1.16 2002-04-20 22:24:01 machek Exp $
+  $Id: device.c,v 1.17 2002-05-31 21:50:19 bozo Exp $
 
   G N O K I I
 
@@ -213,4 +213,32 @@ int device_select(struct timeval *timeout)
 		break;
 	}
 	return -1;
+}
+
+GSM_Error device_nreceived(int *n)
+{
+	*n = -1;
+
+	switch (devicetype) {
+	case GCT_Serial:
+	case GCT_Infrared:
+		return serial_nreceived(device_portfd, n);
+		break;
+	default:
+		return GE_NOTSUPPORTED;
+		break;
+	}
+}
+
+GSM_Error device_flush(void)
+{
+	switch (devicetype) {
+	case GCT_Serial:
+	case GCT_Infrared:
+		return serial_flush(device_portfd);
+		break;
+	default:
+		return GE_NOTSUPPORTED;
+		break;
+	}
 }

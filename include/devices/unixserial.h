@@ -1,6 +1,6 @@
 /*
 
-  $Id: unixserial.h,v 1.8 2002-05-15 22:45:44 manfred Exp $
+  $Id: unixserial.h,v 1.9 2002-05-31 21:50:20 bozo Exp $
 
   G N O K I I
 
@@ -50,6 +50,9 @@ size_t serial_read(int fd, __ptr_t buf, size_t nbytes);
 size_t serial_write(int fd, const __ptr_t buf, size_t n);
 
 int serial_select(int fd, struct timeval *timeout);
+
+GSM_Error serial_nreceived(int fd, int *n);
+GSM_Error serial_flush(int fd);
 
 extern int device_script(int fd, const char *section);
 

@@ -1,6 +1,6 @@
 /*
 
-  $Id: unixserial.c,v 1.21 2002-05-15 22:45:43 manfred Exp $
+  $Id: unixserial.c,v 1.22 2002-05-31 21:50:20 bozo Exp $
 
   G N O K I I
 
@@ -459,6 +459,26 @@ size_t serial_write(int fd, const __ptr_t buf, size_t n)
 			usleep(serial_write_usleep);
 	}
 	return(r);
+}
+
+GSM_Error serial_nreceived(int fd, int *n)
+{
+	if (ioctl(fd, FIONREAD, n)) {
+		dprintf("serial_nreceived: cannot get the received data size\n");
+		return GE_INTERNALERROR;
+	}
+
+	return GE_NONE;
+}
+
+GSM_Error serial_flush(int fd)
+{
+	if (tcdrain(fd)) {
+		dprintf("serial_flush: cannot flush serial device\n");
+		return GE_INTERNALERROR;
+	}
+
+	return GE_NONE;
 }
 
 #endif /* WIN32 */
