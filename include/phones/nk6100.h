@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.h,v 1.10 2002-03-28 21:37:49 pkot Exp $
+  $Id: nk6100.h,v 1.11 2002-07-26 23:04:35 bozo Exp $
 
   G N O K I I
 
@@ -56,6 +56,19 @@ typedef struct {
 	GSM_KeyCode Key;
 	int Repeat;
 } NK6100_Keytable;
+
+typedef struct {
+	void (*OnCellBroadcast)(GSM_CBMessage *Message);
+	void (*CallNotification)(GSM_CallStatus CallStatus, GSM_CallInfo *CallInfo);
+	void (*RLP_RXCallback)(RLP_F96Frame *Frame);
+	GSM_Error (*OnSMS)(GSM_API_SMS *Message);
+
+	unsigned char MagicBytes[4];
+	bool sms_notification_in_progress;
+	bool sms_notification_lost;
+	GSM_DisplayOutput *DisplayOutput;
+	NK6100_Keytable Keytable[256];
+} NK6100_DriverInstance;
 
 void PNOK_GetNokiaAuth(unsigned char *Imei, unsigned char *MagicBytes, unsigned char *MagicResponse);
 
