@@ -1,6 +1,6 @@
 /*
 
-  $Id: misc.c,v 1.89 2005-01-01 18:05:35 pkot Exp $
+  $Id: misc.c,v 1.90 2005-01-01 18:33:53 pkot Exp $
 
   G N O K I I
 
@@ -23,6 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
   Copyright (C) 1999, 2000 Hugh Blemings & Pavel Janík ml.
+  Copyright (C) 2002-2005 Pawel Kot
 
 */
 

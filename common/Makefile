@@ -1,11 +1,11 @@
-
 #
-# $Id: Makefile,v 1.74 2005-01-01 18:10:16 pkot Exp $
+# $Id: Makefile,v 1.75 2005-01-01 18:33:53 pkot Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
 # Copyright (C) 1999 Hugh Blemings & Pavel Janík ml.
 #               2000 Karel Zak
+#		2002-2005 Pawel Kot
 #
 
 #

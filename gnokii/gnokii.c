@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.413 2005-01-01 18:05:35 pkot Exp $
+  $Id: gnokii.c,v 1.414 2005-01-01 18:33:53 pkot Exp $
 
   G N O K I I
 
@@ -24,7 +24,7 @@
 
   Copyright (C) 1999-2000  Hugh Blemings & Pavel Janík ml.
   Copyright (C) 2001-2002  Pavel Machek
-  Copyright (C) 2001-2002  Pawe³ Kot
+  Copyright (C) 2001-2005  Pawe³ Kot
   Copyright (C) 2002       BORBELY Zoltan
 
   Mainline code for gnokii utility.  Handles command line parsing and

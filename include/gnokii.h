@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.h,v 1.74 2005-01-01 18:09:07 pkot Exp $
+  $Id: gnokii.h,v 1.75 2005-01-01 18:33:53 pkot Exp $
 
   G N O K I I
 
@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
   Copyright (C) 1999, 2000 Hugh Blemings & Pavel Janík ml.
-  Copyright (C) 2001, 2002, 2003 Pawe³ Kot
+  Copyright (C) 2001-2005 Pawe³ Kot
   
   Main header file for gnokii. Include just this file in your app.
 */
