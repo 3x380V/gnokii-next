@@ -1,7 +1,7 @@
 
 
 #
-# $Id: Makefile,v 1.43 2002-03-13 00:22:24 pkot Exp $
+# $Id: Makefile,v 1.44 2002-04-13 15:32:41 pkot Exp $
 #
 # Makefile for the xGNOKII tool suite.
 #
@@ -23,7 +23,7 @@ CFLAGS += $(PTHREAD_CFLAGS) \
 LDLIBS += $(PTHREAD_LIBS) \
 	  $(GTK_LIBS)
 
-LDLIBS += -L$(TOPDIR)/common -lgnokii
+GLDLIBS += -L$(TOPDIR)/common -lgnokii
 
 OBJS = 	xgnokii.o \
 	xgnokii_common.o \
@@ -51,7 +51,7 @@ all: xgnokii
 
 
 xgnokii: $(OBJS) $(TOPDIR)/common/data/DATA.o $(TOPDIR)/common/gsm-filetypes.o $(TOPDIR)/common/$(GNOKII_LIB)
-	$(CC) $(LDFLAGS) $(OBJS) $(TOPDIR)/common/data/DATA.o $(TOPDIR)/common/gsm-filetypes.o $(LDLIBS) -o $@
+	$(CC) $(LDFLAGS) $(GLDLIBS) $(OBJS) $(TOPDIR)/common/data/DATA.o $(TOPDIR)/common/gsm-filetypes.o $(LDLIBS) -o $@
 
 clean:
 	$(RM) $(OBJS) *~ xpm/*~ depend xgnokii
