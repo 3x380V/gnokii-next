@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-api.c,v 1.66 2004-05-08 20:52:39 bozo Exp $
+  $Id: gsm-api.c,v 1.67 2005-01-02 15:00:33 pkot Exp $
 
   G N O K I I
 
@@ -135,6 +135,7 @@ API gn_error gn_gsm_initialise(struct gn_statemachine *sm)
 	dprintf("connect_script: %s\n", sm->config.connect_script);
 	dprintf("disconnect_script: %s\n", sm->config.disconnect_script);
 	dprintf("rfcomm_cn: %d\n", (int)sm->config.rfcomm_cn);
+	dprintf("sm_retry: %s\n", sm->config.sm_retry ? "on" : "off");
 
 	if (sm->config.model[0] == '\0') return GN_ERR_UNKNOWNMODEL;
 	if (sm->config.port_device[0] == '\0') return GN_ERR_FAILED;
