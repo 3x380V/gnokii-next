@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-filetypes.c,v 1.50 2003-10-24 12:49:04 bozo Exp $
+  $Id: gsm-filetypes.c,v 1.51 2003-11-03 22:03:34 bozo Exp $
 
   G N O K I I
 
@@ -39,6 +39,7 @@
 #include "gnokii-internal.h"
 #include "gnokii.h"
 #include "gsm-filetypes.h"
+#include "phones/nokia.h"
 
 #ifdef HAVE_X11_XPM_H
 #  include <X11/xpm.h>
@@ -514,10 +515,11 @@ gn_error file_rttl_save(FILE *file, gn_ringtone *ringtone)
 
 gn_error file_nokraw_save(FILE *file, gn_ringtone *ringtone, int dct4)
 {
-	int n = 4096;
-	char buf[n];
+	int n;
+	char buf[4096];
 	gn_error err;
 
+	n = sizeof(buf);
 	if ((err = pnok_ringtone_to_raw(buf, &n, ringtone, dct4)) != GN_ERR_NONE) return err;
 
 	if (fwrite(buf, n, 1, file) != 1) return GN_ERR_UNKNOWN;
