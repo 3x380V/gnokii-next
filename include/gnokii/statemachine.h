@@ -1,6 +1,6 @@
 /*
 
-  $Id: statemachine.h,v 1.4 2001-12-31 09:35:47 pkot Exp $
+  $Id: statemachine.h,v 1.5 2002-01-16 12:39:21 pkot Exp $
 
   G N O K I I
 
@@ -29,5 +29,6 @@ GSM_Error SM_GetError(GSM_Statemachine *state, unsigned char messagetype);
 GSM_Error SM_Block(GSM_Statemachine *state, GSM_Data *data, int waitfor);
 GSM_Error SM_BlockNoRetry(GSM_Statemachine *state, GSM_Data *data, int waitfor);
 GSM_Error SM_Functions(GSM_Operation op, GSM_Data *data, GSM_Statemachine *sm);
+void SM_DumpUnhandledFrame(GSM_Statemachine *state, int messagetype, unsigned char *message, int length);
 
 #endif	/* __gsm_statemachine_h */
