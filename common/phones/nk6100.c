@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.138 2003-03-03 22:39:06 pkot Exp $
+  $Id: nk6100.c,v 1.139 2003-03-04 23:35:09 pkot Exp $
 
   G N O K I I
 
@@ -549,7 +549,7 @@ static gn_error Initialise(struct gn_statemachine *state)
 		}
 	}
 
-	if (DRVINSTANCE(state)->pm->flags & PM_KEYBOARD)
+	if (DRVINSTANCE(state)->pm->flags & PM_KEYBOARD) {
 		if (DRVINSTANCE(state)->capabilities & NK6100_CAP_OLD_KEY_API) {
 			/* FIXME: build a default table */
 		} else {
@@ -558,6 +558,7 @@ static gn_error Initialise(struct gn_statemachine *state)
 				return GN_ERR_NOTSUPPORTED;
 			}
 		}
+	}
 
 	if (!strcmp(DRVINSTANCE(state)->model, "RPM-1")) {
 		state->driver.phone.max_battery_level = 1;
