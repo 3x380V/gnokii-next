@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.387 2004-02-23 18:58:39 uid66849 Exp $
+  $Id: gnokii.c,v 1.388 2004-03-27 01:20:01 bozo Exp $
 
   G N O K I I
 
@@ -3481,6 +3481,7 @@ static int deletephonebook(int argc, char *argv[])
 	for (i = start_number; i <= end_number; i++) {
 		entry.location = i;
 		entry.empty = true;
+		data.phonebook_entry = &entry;
 		error = gn_sm_functions(GN_OP_DeletePhonebook, &data, &state);
 		switch (error) {
 		case GN_ERR_NONE:

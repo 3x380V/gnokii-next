@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnapplet.h,v 1.2 2004-03-26 14:46:13 bozo Exp $
+  $Id: gnapplet.h,v 1.3 2004-03-27 01:20:01 bozo Exp $
 
   G N O K I I
 
@@ -36,7 +36,7 @@
 
 
 #define	GNAPPLET_MAJOR_VERSION	0
-#define	GNAPPLET_MINOR_VERSION	1
+#define	GNAPPLET_MINOR_VERSION	2
 
 #define	GNAPPLET_MSG_INFO	1
 #define	GNAPPLET_MSG_PHONEBOOK	2
