@@ -1,6 +1,6 @@
 /*
 
-  $Id: encoding.h,v 1.15 2002-11-12 13:53:09 bozo Exp $
+  $Id: encoding.h,v 1.16 2002-12-09 00:29:50 pkot Exp $
 
   G N O K I I
 
@@ -30,37 +30,5 @@
 
 #ifndef _gnokii_gsm_encoding_h
 #define _gnokii_gsm_encoding_h
-
-#include "gsm-common.h"
-
-extern void hex2bin(unsigned char *dest, const unsigned char *src, unsigned int len);
-extern void bin2hex(unsigned char *dest, const unsigned char *src, unsigned int len);
-
-int char_unpack_7bit(unsigned int offset, unsigned int in_length, unsigned int out_length,
-		     unsigned char *input, unsigned char *output);
-int char_pack_7bit(unsigned int offset, unsigned char *input, unsigned char *output,
-		   unsigned int *in_len);
-
-unsigned int char_decode_unicode(unsigned char* dest, const unsigned char* src, int len);
-unsigned int char_encode_unicode(unsigned char* dest, const unsigned char* src, int len);
-
-void char_decode_ascii(unsigned char* dest, const unsigned char* src, int len);
-unsigned int char_encode_ascii(unsigned char* dest, const unsigned char* src, unsigned int len);
-
-void char_decode_hex(unsigned char* dest, const unsigned char* src, int len);
-void char_encode_hex(unsigned char* dest, const unsigned char* src, int len);
-
-void char_decode_ucs2(unsigned char* dest, const unsigned char* src, int len);
-void char_encode_ucs2(unsigned char* dest, const unsigned char* src, int len);
-
-API bool gn_char_def_alphabet(unsigned char *string);
-
-extern char *char_get_bcd_number(u8 *Number);
-extern int char_semi_octet_pack(char *Number, unsigned char *Output, SMS_NumberType type);
-
-unsigned char char_encode_def_alphabet(unsigned char value);
-unsigned char char_decode_def_alphabet(unsigned char value);
-int char_encode_uni_alphabet(unsigned char const *value, wchar_t *dest);
-int char_decode_uni_alphabet(wchar_t value, unsigned char *dest);
 
 #endif /* _gnokii_gsm_encoding_h */
