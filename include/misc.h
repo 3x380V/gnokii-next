@@ -1,6 +1,6 @@
 /*
 
-  $Id: misc.h,v 1.40 2002-04-03 22:21:55 bozo Exp $
+  $Id: misc.h,v 1.41 2002-04-08 11:18:47 pkot Exp $
 
   G N O K I I
 
@@ -83,8 +83,13 @@
 #    define dprintf(a...) do { fprintf(stderr, a); fflush(stderr); } while (0)
 #  endif /* DEBUG */
 #else
-#  define dump printf
-#  define dprintf printf
+#  ifndef DEBUG
+#    define dump while (0)
+#    define dprintf while (0)
+#  else
+#    define dump printf
+#    define dprintf printf
+#  endif /* DEBUG */
 #endif /* __GNUC__ */
 
 extern void (*GSM_ELogHandler)(const char *fmt, va_list ap);
