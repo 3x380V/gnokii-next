@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.c,v 1.159 2004-10-31 15:03:10 pkot Exp $
+  $Id: nk6510.c,v 1.160 2004-12-19 15:34:34 bozo Exp $
 
   G N O K I I
 
@@ -809,6 +809,7 @@ static gn_error NK6510_IncomingFolder(int messagetype, unsigned char *message, i
 			dprintf("SMS successfully deleted\n");
 			break;
 		case 0x02:
+		case 0x0a:
 			printf("SMS deleting failed: Invalid location?\n");
 			return GN_ERR_INVALIDLOCATION;
 		case 0x05:
