@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus.h,v 1.16 2002-12-26 17:36:52 bozo Exp $
+  $Id: fbus.h,v 1.17 2003-02-18 00:40:46 pkot Exp $
 
   G N O K I I
 
@@ -98,7 +98,7 @@ typedef struct {
 	u8 request_sequence_number;
 } fbus_link;
 
-gn_error fbus_initialise(int try, struct gn_statemachine *state);
+gn_error fbus_initialise(int attempt, struct gn_statemachine *state);
 
 int fbus_tx_send_frame(u8 message_length, u8 message_type, u8 *buffer, struct gn_statemachine *state);
 
