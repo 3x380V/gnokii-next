@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.327 2003-01-13 11:47:15 pkot Exp $
+  $Id: gnokii.c,v 1.328 2003-01-15 23:52:16 pkot Exp $
 
   G N O K I I
 
@@ -301,7 +301,7 @@ static int usage(FILE *f, int retval)
 		     "          gnokii --setlogo {dealer|text} [text]\n"
 		     "          gnokii --getlogo op [logofile] [network code]\n"
 		     "          gnokii --getlogo startup [logofile] [network code]\n"
-		     "          gnokii --getlogo caller [logofile][caller group number][network code]\n"
+		     "          gnokii --getlogo caller [caller group number] [logofile] [network code]\n"
 		     "          gnokii --getlogo {dealer|text}\n"
 		     "          gnokii --viewlogo logofile\n"
 		     "          gnokii --getringtone rtttlfile [location] [-r|--raw]\n"
@@ -1745,13 +1745,16 @@ static int getlogo(int argc, char *argv[])
 	bitmap.type = set_bitmap_type(argv[0]);
 
 	/* There is caller group number missing in argument list. */
-	if ((bitmap.type == GN_BMP_CallerLogo) && (argc == 3)) {
-		bitmap.number = (argv[2][0] < '0') ? 0 : argv[2][0] - '0';
+	if ((bitmap.type == GN_BMP_CallerLogo) && (argc >= 2)) {
+		bitmap.number = (argv[1][0] < '0') ? 0 : argv[1][0] - '0';
 		if (bitmap.number > 9) bitmap.number = 0;
+		argv++;
+		argc--;
 	}
 
 	if (bitmap.type != GN_BMP_None) {
 		data.bitmap = &bitmap;
+
 		error = gn_sm_functions(GN_OP_GetBitmap, &data, &state);
 
 		gn_bmp_print(&bitmap, stderr);
