@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.95 2002-07-28 22:22:32 bozo Exp $
+  $Id: nk6100.c,v 1.96 2002-07-29 21:29:48 bozo Exp $
 
   G N O K I I
 
@@ -2770,12 +2770,21 @@ static GSM_Error MakeCall1(GSM_Data *data, GSM_Statemachine *state)
 						  0x88,0x90,0x21,0x48,0x40,0xbb };
 	unsigned char *pos;
 	int n;
+	GSM_Data dtemp;
 
 	n = strlen(data->CallInfo->Number);
 	if (n > GSM_MAX_PHONEBOOK_NUMBER_LENGTH) {
 		dprintf("number too long\n");
 		return GE_ENTRYTOOLONG;
 	}
+
+	/*
+	 * FIXME:
+	 * Ugly hack. The phone seems to drop the SendSMS message if the link
+	 * had been idle too long. -- bozo
+	 */
+	GSM_DataClear(&dtemp);
+	GetNetworkInfo(&dtemp, state);
 
 	pos = req + 4;
 	*pos++ = (unsigned char)n;
