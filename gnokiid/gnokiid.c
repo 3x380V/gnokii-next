@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokiid.c,v 1.25 2002-08-07 23:03:15 pkot Exp $
+  $Id: gnokiid.c,v 1.26 2002-08-09 22:01:05 pkot Exp $
 
   G N O K I I
 
@@ -79,9 +79,9 @@ static void usage()
 {
 
 	fprintf(stderr, _("   usage: gnokiid {--help|--version}\n"
-"          --help            display usage information."
-"          --version         displays version and copyright information."
-"          --debug           uses stdin/stdout for virtual modem comms.\n"));
+"          --help            display usage information\n"
+"          --version         displays version and copyright information\n"
+"          --debug           uses stdin/stdout for virtual modem comms\n"));
 }
 
 /* cleanup function registered by atexit() and called at exit() */
