@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.93 2004-01-25 23:33:28 uid66843 Exp $
+  $Id: atgen.c,v 1.94 2004-01-31 20:59:17 uid66843 Exp $
 
   G N O K I I
 
@@ -569,6 +569,9 @@ static gn_error AT_DeletePhonebook(gn_data *data, struct gn_statemachine *state)
 	int len;
 	char req[64];
 	gn_error ret;
+
+	if (!data->phonebook_entry)
+		return GN_ERR_INTERNALERROR;
 
 	ret = at_memory_type_set(data->phonebook_entry->memory_type, state);
 	if (ret)
