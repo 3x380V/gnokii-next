@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.77 2003-02-04 22:56:54 pkot Exp $
+  $Id: atgen.c,v 1.78 2003-02-07 22:55:19 pkot Exp $
 
   G N O K I I
 
@@ -644,7 +644,7 @@ static gn_error AT_WriteSMS(gn_data *data, struct gn_statemachine *state,
 
 	/* Length in AT mode is the length of the full message minus
 	 * SMSC field length */
-	sprintf(req, "AT+%s=%d\r", cmd, length - 1);
+	sprintf(req, "AT+%s=%d\r", cmd, length - data->raw_sms->message_center[0] - 1);
 	dprintf("Sending initial sequence\n");
 	if (sm_message_send(strlen(req), GN_OP_AT_Prompt, req, state))
 		return GN_ERR_NOTREADY;
