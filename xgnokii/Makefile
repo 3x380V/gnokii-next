@@ -1,7 +1,7 @@
 
 
 #
-# $Id: Makefile,v 1.35 2001-06-20 22:34:45 pkot Exp $
+# $Id: Makefile,v 1.36 2001-08-09 12:02:04 pkot Exp $
 #
 # Makefile for the xGNOKII tool suite.
 #
@@ -12,16 +12,16 @@
 TOPDIR=..
 include $(TOPDIR)/Makefile.global
 
+ifdef XPM_LIBS
+    LDFLAGS += $(XPM_LIBS)
+    CFLAGS  += $(XPM_CFLAGS)
+endif
+
 CFLAGS += $(PTHREAD_CFLAGS) \
 	  $(GTK_CFLAGS)
 
 LDFLAGS += $(PTHREAD_LIBS) \
 	   $(GTK_LIBS)
-
-ifdef XPM_LIBS
-    LDFLAGS += $(XPM_LIBS)
-    CFLAGS  += $(XPM_CFLAGS)
-endif
 
 OBJS = 	xgnokii.o \
 	xgnokii_common.o \

@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.104 2001-06-20 22:34:45 pkot Exp $
+# $Id: Makefile,v 1.105 2001-08-09 12:02:04 pkot Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -90,7 +90,7 @@ endif
 	@echo "done"
 
 distclean:	clean
-	@if [ "x$(USE_NLS)" = xyes ]; then \
+	@if [ -e $(PO_DIR)/Makefile ]; then \
 		$(MAKE) -C $(PO_DIR) distclean; \
 	fi
 	$(RM) Makefile.global config.cache config.log config.status \
