@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.194 2002-02-08 23:57:37 pkot Exp $
+  $Id: gnokii.c,v 1.195 2002-02-09 00:05:19 pkot Exp $
 
   G N O K I I
 
@@ -2107,7 +2107,7 @@ static int monitormode(void)
 }
 
 
-static void  PrintDisplayStatus(int Status)
+static void PrintDisplayStatus(int Status)
 {
 	fprintf(stdout, _("Call in progress: %-3s\n"),
 		Status & (1 << DS_Call_In_Progress) ? _("on") : _("off"));

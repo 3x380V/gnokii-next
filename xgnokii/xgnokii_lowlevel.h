@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_lowlevel.h,v 1.11 2001-12-31 09:35:47 pkot Exp $
+  $Id: xgnokii_lowlevel.h,v 1.12 2002-02-09 00:05:20 pkot Exp $
   
   X G N O K I I
 
@@ -189,5 +189,5 @@ extern pthread_cond_t  getNetworkInfoCond;
 extern void GUI_InitPhoneMonitor (void);
 extern void *GUI_Connect (void *a);
 extern void GUI_InsertEvent (PhoneEvent *event);
-
+extern void GUI_InitSMSFolders (void);
 #endif
