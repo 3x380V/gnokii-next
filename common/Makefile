@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.55 2003-09-20 23:02:09 pkot Exp $
+# $Id: Makefile,v 1.56 2003-09-29 20:46:03 bozo Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -30,6 +30,7 @@ OBJS =	gsm-api.o \
 	ldif.o \
 	gsm-networks.o \
 	gsm-filetypes.o \
+	readmidi.o \
 	gsm-ringtones.o \
 	gsm-bitmaps.o \
 	gsm-sms.o \

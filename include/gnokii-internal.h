@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-internal.h,v 1.15 2003-09-22 19:55:39 pkot Exp $
+  $Id: gnokii-internal.h,v 1.16 2003-09-29 20:46:03 bozo Exp $
 
   G N O K I I
 
@@ -99,6 +99,7 @@ gn_error file_ott_save(FILE *file, gn_ringtone *ringtone);
 
 gn_error file_rttl_load(FILE *file, gn_ringtone *ringtone);
 gn_error file_ott_load(FILE *file, gn_ringtone *ringtone);
+gn_error file_midi_load(FILE *file, gn_ringtone *ringtone);
 
 /* Bitmap Files */
 
