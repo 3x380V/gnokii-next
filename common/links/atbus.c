@@ -1,6 +1,6 @@
 /*
 
-  $Id: atbus.c,v 1.36 2003-03-25 10:07:45 bozo Exp $
+  $Id: atbus.c,v 1.37 2003-04-28 12:59:15 pkot Exp $
 
   G N O K I I
 
@@ -31,6 +31,10 @@
 #include <string.h>
 #include <stdlib.h>
 #include <errno.h>
+
+#ifdef HAVE_BLUETOOTH
+#  include <bluetooth/bluetooth.h>
+#endif
 
 /* Various header file */
 #include "config.h"
@@ -226,10 +230,6 @@ gn_error atbus_initialise(int mode, struct gn_statemachine *state)
 		break;
 #ifdef HAVE_BLUETOOTH
 	case GN_CT_Bluetooth:
-		/* If there's no valid configuration in the .gnokiirc, try
-		 * to connect over tty interface */
-		if (!bacmp(BDADDR_ANY, &state->config.bt_address))
-			state->config.connection_type = GN_CT_Serial;
 		if (!device_open(state->config.port_device, false, false, false, state->config.connection_type, state)) {
 			error = GN_ERR_FAILED;
 			goto err;
