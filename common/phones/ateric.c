@@ -1,6 +1,6 @@
 /*
 
-  $Id: ateric.c,v 1.1 2001-11-19 13:03:18 pkot Exp $
+  $Id: ateric.c,v 1.2 2001-12-29 23:41:54 pkot Exp $
 
   G N O K I I
 
@@ -12,10 +12,6 @@
 
   This file provides functions specific to at commands on ericsson
   phones. See README for more details on supported mobile phones.
-
-  $Log: ateric.c,v $
-  Revision 1.1  2001-11-19 13:03:18  pkot
-  nk3110.c cleanup
 
 */
 
@@ -74,7 +70,8 @@ static GSM_Error ReplyMemoryStatus(int messagetype, unsigned char *buffer, int l
 } 
 
 
-void AT_InitEricsson(GSM_Statemachine *state, char *foundmodel, char *setupmodel) {
+void AT_InitEricsson(GSM_Statemachine *state, char *foundmodel, char *setupmodel)
+{
 	AT_InsertRecvFunction(GOP_GetMemoryStatus, ReplyMemoryStatus);
 	AT_InsertSendFunction(GOP_GetMemoryStatus, GetMemoryStatus);
 }

@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.9 2001-12-28 16:00:31 pkot Exp $
+  $Id: atgen.c,v 1.10 2001-12-29 23:41:54 pkot Exp $
 
   G N O K I I
 
@@ -90,7 +90,7 @@ GSM_Phone phone_at = {
 	IncomingFunctions,
 	PGEN_IncomingDefault,
 	{
-		"AT|AT-HW|dancall",			/* Supported models */
+		"AT|AT-HW|dancall",	/* Supported models */
 		99,			/* Max RF Level */
 		0,			/* Min RF Level */
 		GRF_CSQ,		/* RF level units */
