@@ -1,6 +1,6 @@
 /*
 
-  $Id: common.h,v 1.103 2002-04-20 22:24:02 machek Exp $
+  $Id: common.h,v 1.104 2002-05-17 00:22:10 pkot Exp $
 
   G N O K I I
 
@@ -437,8 +437,8 @@ typedef enum {
 #define MAX_BCD_STRING_LENGTH		40
 
 typedef struct {
-	SMS_NumberType type;
-	char number[MAX_BCD_STRING_LENGTH];
+	SMS_NumberType Type;
+	char Number[MAX_BCD_STRING_LENGTH];
 } SMS_Number;
 
 typedef struct {

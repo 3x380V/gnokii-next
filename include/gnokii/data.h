@@ -1,6 +1,6 @@
 /*
 
-  $Id: data.h,v 1.28 2002-05-15 22:45:44 manfred Exp $
+  $Id: data.h,v 1.29 2002-05-17 00:22:10 pkot Exp $
 
   G N O K I I
 
@@ -38,7 +38,8 @@
 typedef struct {
 	SMS_Folder *SMSFolder;
 	SMS_FolderList *SMSFolderList;
-	GSM_SMSMessage *SMSMessage;
+	GSM_SMSMessage *RawSMS;
+	GSM_API_SMS *SMS;
 	GSM_PhonebookEntry *PhonebookEntry;
 	GSM_SpeedDial *SpeedDial;
 	GSM_MemoryStatus *MemoryStatus;
@@ -66,7 +67,7 @@ typedef struct {
 	GSM_DateTime *DateTime;
 	GSM_RawData *RawData;
 	GSM_CallDivert *CallDivert;
-	GSM_Error (*OnSMS)(GSM_SMSMessage *Message);
+	GSM_Error (*OnSMS)(GSM_API_SMS *Message);
 	int *DisplayStatus;
 	void (*OnCellBroadcast)(GSM_CBMessage *Message);
 	GSM_NetMonitor *NetMonitor;
