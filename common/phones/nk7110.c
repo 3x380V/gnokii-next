@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk7110.c,v 1.52 2002-02-01 23:09:35 pkot Exp $
+  $Id: nk7110.c,v 1.53 2002-02-02 14:56:48 pkot Exp $
 
   G N O K I I
 
@@ -990,7 +990,7 @@ static GSM_Error P7110_GetIncomingSMS(GSM_Data *data, GSM_Statemachine *state)
 	/* Mark reregistering */
 	SMSLoop = true;
 
-	memset(&rawdata, sizeof(GSM_RawData), 0);
+	memset(&rawdata, 0, sizeof(GSM_RawData));
 
 	/* Check overall SMS Status */
 	error = P7110_GetSMSStatus(data, state);
