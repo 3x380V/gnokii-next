@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus-phonet.h,v 1.5 2002-03-28 21:37:49 pkot Exp $
+  $Id: fbus-phonet.h,v 1.6 2002-09-28 23:51:38 pkot Exp $
 
   G N O K I I
 
@@ -42,7 +42,7 @@
 /* This byte is at the beginning of all GSM Frames sent over PhoNet. */
 #define FBUS_PHONET_FRAME_ID 0x14
 
-GSM_Error PHONET_Initialise(GSM_Link *newlink, GSM_Statemachine *state);
+gn_error PHONET_Initialise(GSM_Link *newlink, GSM_Statemachine *state);
 
 typedef struct {
 	int BufferCount;

@@ -1,6 +1,6 @@
 /*
 
-  $Id: utils.h,v 1.4 2002-05-16 09:34:47 manfred Exp $
+  $Id: utils.h,v 1.5 2002-09-28 23:51:38 pkot Exp $
 
   G N O K I I
 
@@ -34,6 +34,6 @@
 #ifndef LINKS_UTILS
 #define LINKS_UTILS
 
-GSM_Error LINK_Terminate(GSM_Statemachine *state);
+gn_error LINK_Terminate(GSM_Statemachine *state);
 
 #endif

@@ -1,6 +1,6 @@
 /*
 
-  $Id: atsie.c,v 1.5 2002-03-28 21:37:47 pkot Exp $
+  $Id: atsie.c,v 1.6 2002-09-28 23:51:37 pkot Exp $
 
   G N O K I I
 
@@ -44,13 +44,13 @@
 
 static AT_SendFunctionType writephonebook;
 
-static GSM_Error WritePhonebook(GSM_Data *data,  GSM_Statemachine *state)
+static gn_error WritePhonebook(GSM_Data *data,  GSM_Statemachine *state)
 {
 	GSM_PhonebookEntry newphone;
 	char *rptr, *wptr;
 
 	if (writephonebook == NULL)
-		return GE_UNKNOWN;
+		return GN_ERR_UNKNOWN;
 	if (data->PhonebookEntry != NULL) {
 		memcpy(&newphone, data->PhonebookEntry, sizeof(GSM_PhonebookEntry));
 		rptr = data->PhonebookEntry->Name;

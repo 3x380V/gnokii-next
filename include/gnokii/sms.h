@@ -1,6 +1,6 @@
 /*
 
-  $Id: sms.h,v 1.50 2002-08-23 09:04:12 plail Exp $
+  $Id: sms.h,v 1.51 2002-09-28 23:51:38 pkot Exp $
 
   G N O K I I
 
@@ -445,7 +445,7 @@ typedef struct {
 	int New;
 } GSM_CBMessage;
 
-GSM_Error sms_prepare(GSM_API_SMS *sms, GSM_SMSMessage *rawsms);
+gn_error sms_prepare(GSM_API_SMS *sms, GSM_SMSMessage *rawsms);
 
 /* Utils */
 SMS_DateTime *UnpackDateTime(u8 *Number, SMS_DateTime *dt);

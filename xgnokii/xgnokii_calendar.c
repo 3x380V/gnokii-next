@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_calendar.c,v 1.19 2002-08-27 11:13:39 plail Exp $
+  $Id: xgnokii_calendar.c,v 1.20 2002-09-28 23:51:38 pkot Exp $
 
   X G N O K I I
 
@@ -251,7 +251,7 @@ static gint InsertCalendarEntry(GSM_CalendarNote * note)
 	if (*row[4] != '\0')
 		g_free(row[4]);
 
-	return (GE_NONE);
+	return GN_ERR_NONE;
 }
 
 static void ClickEntry(GtkWidget * clist,
@@ -501,7 +501,7 @@ static gint ReverseSelection(gconstpointer a, gconstpointer b)
 
 static gint AddCalendarNote(GSM_CalendarNote * cnote)
 {
-	GSM_Error error;
+	gn_error error;
 	PhoneEvent *e = (PhoneEvent *) g_malloc(sizeof(PhoneEvent));
 	D_CalendarNote *dnote = (D_CalendarNote *) g_malloc(sizeof(D_CalendarNote));
 
@@ -520,7 +520,7 @@ static gint AddCalendarNote(GSM_CalendarNote * cnote)
 	error = dnote->status;
 	g_free(dnote);
 
-	if (error != GE_NONE) {
+	if (error != GN_ERR_NONE) {
 		gchar *buf = g_strdup_printf(_("Saving failed failed\n(error=%d)"), error);
 		gtk_label_set_text(GTK_LABEL(errorDialog.text), buf);
 		gtk_widget_show(errorDialog.dialog);

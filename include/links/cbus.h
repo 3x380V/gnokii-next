@@ -1,6 +1,6 @@
 /* -*- linux-c -*-
 
-  $Id: cbus.h,v 1.6 2002-03-28 21:37:49 pkot Exp $
+  $Id: cbus.h,v 1.7 2002-09-28 23:51:38 pkot Exp $
 
   G N O K I I
 
@@ -66,7 +66,7 @@ typedef struct{
 	CBUS_IncomingFrame i;
 } CBUS_Link;
 
-GSM_Error CBUS_Initialise(GSM_Statemachine *state);
+gn_error CBUS_Initialise(GSM_Statemachine *state);
 
 void sendat(unsigned char *msg);
 

@@ -1,6 +1,6 @@
 /*
 
-  $Id: unixserial.h,v 1.9 2002-05-31 21:50:20 bozo Exp $
+  $Id: unixserial.h,v 1.10 2002-09-28 23:51:38 pkot Exp $
 
   G N O K I I
 
@@ -44,15 +44,15 @@ int serial_close(int fd);
 int serial_opendevice(const char *file, int with_odd_parity, int with_async, int with_hw_handshake);
 
 void serial_setdtrrts(int fd, int dtr, int rts);
-GSM_Error serial_changespeed(int fd, int speed);
+gn_error serial_changespeed(int fd, int speed);
 
 size_t serial_read(int fd, __ptr_t buf, size_t nbytes);
 size_t serial_write(int fd, const __ptr_t buf, size_t n);
 
 int serial_select(int fd, struct timeval *timeout);
 
-GSM_Error serial_nreceived(int fd, int *n);
-GSM_Error serial_flush(int fd);
+gn_error serial_nreceived(int fd, int *n);
+gn_error serial_flush(int fd);
 
 extern int device_script(int fd, const char *section);
 

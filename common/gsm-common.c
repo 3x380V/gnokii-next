@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-common.c,v 1.13 2002-04-30 18:56:12 pkot Exp $
+  $Id: gsm-common.c,v 1.14 2002-09-28 23:51:36 pkot Exp $
 
   G N O K I I
 
@@ -29,9 +29,9 @@
 #include <string.h>
 #include "gsm-data.h"
 
-GSM_Error Unimplemented(void)
+gn_error Unimplemented(void)
 {
-	return GE_NOTIMPLEMENTED;
+	return GN_ERR_NOTIMPLEMENTED;
 }
 
 API GSM_MemoryType StrToMemoryType(const char *s)

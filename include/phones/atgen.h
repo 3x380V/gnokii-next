@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.h,v 1.8 2002-07-26 21:00:59 bozo Exp $
+  $Id: atgen.h,v 1.9 2002-09-28 23:51:38 pkot Exp $
 
   G N O K I I
 
@@ -49,8 +49,8 @@ typedef enum {
 	CHARUCS2
 } GSMAT_Charset;
 
-typedef GSM_Error (*GSM_RecvFunctionType)(int type, unsigned char *buffer, int length, GSM_Data *data, GSM_Statemachine *state);
-typedef GSM_Error (*AT_SendFunctionType)(GSM_Data *data, GSM_Statemachine *s);
+typedef gn_error (*GSM_RecvFunctionType)(int type, unsigned char *buffer, int length, GSM_Data *data, GSM_Statemachine *state);
+typedef gn_error (*AT_SendFunctionType)(GSM_Data *data, GSM_Statemachine *s);
 
 typedef struct {
 	char *line1;
@@ -63,7 +63,7 @@ typedef struct {
 GSM_RecvFunctionType AT_InsertRecvFunction(int type, GSM_RecvFunctionType func);
 AT_SendFunctionType AT_InsertSendFunction(int type, AT_SendFunctionType func);
 
-GSM_Error AT_SetMemoryType(GSM_MemoryType mt, GSM_Statemachine *state);
+gn_error AT_SetMemoryType(GSM_MemoryType mt, GSM_Statemachine *state);
 
 void splitlines(AT_LineBuffer *buf);
 

@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.h,v 1.16 2002-09-17 21:21:09 pkot Exp $
+  $Id: nk6100.h,v 1.17 2002-09-28 23:51:38 pkot Exp $
 
   G N O K I I
 
@@ -65,7 +65,7 @@ typedef struct {
 	void (*OnCellBroadcast)(GSM_CBMessage *Message);
 	void (*CallNotification)(GSM_CallStatus CallStatus, GSM_CallInfo *CallInfo, GSM_Statemachine *state);
 	void (*RLP_RXCallback)(RLP_F96Frame *Frame);
-	GSM_Error (*OnSMS)(GSM_API_SMS *Message);
+	gn_error (*OnSMS)(GSM_API_SMS *Message);
 
 	unsigned char MagicBytes[4];
 	bool sms_notification_in_progress;

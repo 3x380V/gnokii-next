@@ -1,6 +1,6 @@
 /*
 
-  $Id: m2bus.h,v 1.1 2002-05-29 02:09:02 bozo Exp $
+  $Id: m2bus.h,v 1.2 2002-09-28 23:51:38 pkot Exp $
 
   G N O K I I
 
@@ -89,6 +89,6 @@ typedef struct{
 } M2BUS_Link;
 
 
-GSM_Error M2BUS_Initialise(GSM_Link *newlink, GSM_Statemachine *state);
+gn_error M2BUS_Initialise(GSM_Link *newlink, GSM_Statemachine *state);
 
 #endif   /* #ifndef __links_m2bus_h */

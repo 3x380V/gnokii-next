@@ -1,6 +1,6 @@
 /*
 
-  $Id: device.h,v 1.18 2002-08-07 23:28:19 pkot Exp $
+  $Id: device.h,v 1.19 2002-09-28 23:51:38 pkot Exp $
 
   G N O K I I
 
@@ -54,7 +54,7 @@ size_t device_write(const __ptr_t buf, size_t n);
 
 int device_select(struct timeval *timeout);
 
-GSM_Error device_nreceived(int *n);
-GSM_Error device_flush(void);
+gn_error device_nreceived(int *n);
+gn_error device_flush(void);
 
 #endif  /* _gnokii_device_h */

@@ -1,6 +1,6 @@
 /*
 
-  $Id: lowlevel.h,v 1.6 2002-06-25 09:59:26 ja Exp $
+  $Id: lowlevel.h,v 1.7 2002-09-28 23:51:38 pkot Exp $
 
   S M S D
 
@@ -48,7 +48,7 @@ typedef struct {
 
 typedef struct {
   GSM_API_SMS *sms;
-  GSM_Error status;
+  gn_error status;
 } D_SMSMessage;
 
 typedef struct {

@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii.c,v 1.57 2002-08-28 15:53:12 pkot Exp $
+  $Id: xgnokii.c,v 1.58 2002-09-28 23:51:38 pkot Exp $
   
   X G N O K I I
 
@@ -235,7 +235,7 @@ void GUI_InitCallerGroupsInf(void)
 			pthread_cond_wait(&callerGroupCond, &callerGroupMutex);
 			pthread_mutex_unlock(&callerGroupMutex);
 
-			if (*cg->text != '\0' && cg->status == GE_NONE) {
+			if (*cg->text != '\0' && cg->status == GN_ERR_NONE) {
 				g_free(xgnokiiConfig.callerGroups[i]);
 				xgnokiiConfig.callerGroups[i] =
 				    g_strndup(cg->text, MAX_CALLER_GROUP_LENGTH);
@@ -644,7 +644,7 @@ void GUI_InitSMSSettings(void)
 		pthread_cond_wait(&smsCenterCond, &smsCenterMutex);
 		pthread_mutex_unlock(&smsCenterMutex);
 
-		if (c->status != GE_NONE)
+		if (c->status != GN_ERR_NONE)
 			break;
 
 		g_free(c);
@@ -715,7 +715,7 @@ void GUI_ShowOptions(void)
 	pthread_cond_wait(&alarmCond, &alarmMutex);
 	pthread_mutex_unlock(&alarmMutex);
 
-	if (alarm->status != GE_NONE) {
+	if (alarm->status != GN_ERR_NONE) {
 		xgnokiiConfig.alarmSupported = FALSE;
 		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(configDialogData.alarm.alarmSwitch),
 					     FALSE);

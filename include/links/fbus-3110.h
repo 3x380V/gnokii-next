@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus-3110.h,v 1.5 2002-03-28 21:37:49 pkot Exp $
+  $Id: fbus-3110.h,v 1.6 2002-09-28 23:51:38 pkot Exp $
 
   G N O K I I
 
@@ -84,6 +84,6 @@ typedef struct{
 	u8 RequestSequenceNumber;
 } FB3110_Link;
 
-GSM_Error FB3110_Initialise(GSM_Link *newlink, GSM_Statemachine *state);
+gn_error FB3110_Initialise(GSM_Link *newlink, GSM_Statemachine *state);
 
 #endif   /* #ifndef __links_fbus_3110_h */

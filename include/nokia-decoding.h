@@ -1,6 +1,6 @@
 /*
 
-  $Id: nokia-decoding.h,v 1.1 2002-07-26 10:59:57 plail Exp $
+  $Id: nokia-decoding.h,v 1.2 2002-09-28 23:51:38 pkot Exp $
 
   G N O K I I
 
@@ -58,8 +58,8 @@
 #define PNOKIA_NOTE_BIRTHDAY		0x04	/* Birthday */
 #define PNOKIA_NOTE_REMINDER		0x08	/* Reminder */
 
-GSM_Error DecodePhonebook(unsigned char *blockstart, int length, GSM_Data *data, int blocks, int memtype, int speeddialpos);
-GSM_Error DecodeCalendar(unsigned char *message, int length, GSM_Data *data);
+gn_error DecodePhonebook(unsigned char *blockstart, int length, GSM_Data *data, int blocks, int memtype, int speeddialpos);
+gn_error DecodeCalendar(unsigned char *message, int length, GSM_Data *data);
 
 
 #endif /* __nokia_decoding_h */

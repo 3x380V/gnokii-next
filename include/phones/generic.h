@@ -1,6 +1,6 @@
 /*
 
-  $Id: generic.h,v 1.9 2002-07-26 21:00:59 bozo Exp $
+  $Id: generic.h,v 1.10 2002-09-28 23:51:38 pkot Exp $
 
   G N O K I I
 
@@ -40,8 +40,8 @@
 
 /* Generic Functions */
 
-GSM_Error PGEN_IncomingDefault(int messagetype, unsigned char *buffer, int length, GSM_Statemachine *state);
-GSM_Error PGEN_Terminate(GSM_Data *data, GSM_Statemachine *state);
+gn_error PGEN_IncomingDefault(int messagetype, unsigned char *buffer, int length, GSM_Statemachine *state);
+gn_error PGEN_Terminate(GSM_Data *data, GSM_Statemachine *state);
 
 
 #endif

@@ -1,6 +1,6 @@
 /*
 
-  $Id: atnok.c,v 1.4 2002-03-28 21:37:47 pkot Exp $
+  $Id: atnok.c,v 1.5 2002-09-28 23:51:37 pkot Exp $
 
   G N O K I I
 
@@ -44,12 +44,12 @@
 
 static AT_SendFunctionType writephonebook;
 
-static GSM_Error WritePhonebook(GSM_Data *data,  GSM_Statemachine *state)
+static gn_error WritePhonebook(GSM_Data *data,  GSM_Statemachine *state)
 {
 	if (writephonebook == NULL)
-		return GE_UNKNOWN;
+		return GN_ERR_UNKNOWN;
 	if (data->MemoryStatus->MemoryType == GMT_ME)
-		return GE_NOTSUPPORTED;
+		return GN_ERR_NOTSUPPORTED;
 	return (*writephonebook)(data, state);
 }
 
