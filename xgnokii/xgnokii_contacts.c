@@ -8,11 +8,14 @@
 
   Released under the terms of the GNU GPL, see file COPYING for more details.
 
-  $Id: xgnokii_contacts.c,v 1.28 2001-03-19 23:43:47 pkot Exp $
+  $Id: xgnokii_contacts.c,v 1.29 2001-03-23 08:24:56 ja Exp $
   
   $Log: xgnokii_contacts.c,v $
-  Revision 1.28  2001-03-19 23:43:47  pkot
-  Solaris/*BSD '#if defined' cleanup
+  Revision 1.29  2001-03-23 08:24:56  ja
+  New preview for 6210 in xgnokii's logos module.
+
+  Revision 1.28  2001/03/19 23:43:47  pkot
+  Solaris/BSD '#if defined' cleanup
 
   Revision 1.27  2001/03/13 01:21:39  pkot
   *BSD updates (Bert Driehuis)
@@ -2364,6 +2367,7 @@ static void ExportVCARD (FILE *f)
       continue;
 
     fprintf (f, "BEGIN:VCARD\n");
+    fprintf (f, "VERSION:3.0\n");
     fprintf (f, "FN:%s\n", pbEntry->entry.Name);
     fprintf (f, "TEL;PREF:%s\n", pbEntry->entry.Number);
 

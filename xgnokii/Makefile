@@ -1,7 +1,7 @@
 
 
 #
-# $Id: Makefile,v 1.33 2001-03-06 22:27:48 pkot Exp $
+# $Id: Makefile,v 1.34 2001-03-23 08:24:56 ja Exp $
 #
 # Makefile for the xGNOKII tool suite.
 #
@@ -78,6 +78,7 @@ install: all
 	$(INSTALL) -m 0444 xpm/5110.xpm $(xgnokii_libdir)/xpm
 	$(INSTALL) -m 0444 xpm/Preview_6110.xpm $(xgnokii_libdir)/xpm
 	$(INSTALL) -m 0444 xpm/Preview_6150.xpm $(xgnokii_libdir)/xpm
+	$(INSTALL) -m 0444 xpm/Preview_6210.xpm $(xgnokii_libdir)/xpm
 
 depend dep:
 	$(CC) $(CFLAGS) -MM *.c >depend
