@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-encoding.c,v 1.15 2002-04-03 01:02:06 bozo Exp $
+  $Id: gsm-encoding.c,v 1.16 2002-04-04 11:25:03 plail Exp $
 
   G N O K I I
 
@@ -364,12 +364,13 @@ int SemiOctetPack(char *Number, unsigned char *Output, SMS_NumberType type)
 	return (2 * (OUT_NUM - Output - 1) - (count % 2));
 }
 
-char *GetBCDNumber(u8 *Number)
+char *GetBCDNumber(u8 *Number, int maxlen)
 {
 	static char Buffer[20] = "";
 	int length = Number[0]; /* This is the length of BCD coded number */
 	int count, Digit;
 
+	if (length > maxlen) length = maxlen;
 	memset(Buffer, 0, 20);
 	switch (Number[1]) {
 	case SMS_Alphanumeric:
