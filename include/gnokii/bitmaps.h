@@ -1,6 +1,6 @@
 /*
 
-  $Id: bitmaps.h,v 1.14 2002-05-20 21:54:53 machek Exp $
+  $Id: bitmaps.h,v 1.15 2002-05-23 09:33:12 machek Exp $
 
   G N O K I I
 
@@ -38,7 +38,7 @@
 typedef enum {
 	GSM_None = 0,
 	GSM_StartupLogo = 50,
-	GSM_PictureImage,
+	GSM_PictureMessage,
 	GSM_OperatorLogo,
 	GSM_CallerLogo,
 	GSM_WelcomeNoteText,

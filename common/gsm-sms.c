@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-sms.c,v 1.65 2002-05-23 09:13:16 machek Exp $
+  $Id: gsm-sms.c,v 1.66 2002-05-23 09:33:12 machek Exp $
 
   G N O K I I
 
@@ -585,7 +585,7 @@ static GSM_Error DecodePDUSMS(GSM_SMSMessage *rawsms, GSM_API_SMS *sms)
 			SMS->UDH[0].Type = SMS_MultipartMessage;
 			/* First part is a Picture */
 			SMS->UserData[0].Type = SMS_BitmapData;
-			GSM_ReadSMSBitmap(GSM_PictureImage, message + llayout.UserData, NULL, &SMS->UserData[0].u.Bitmap);
+			GSM_ReadSMSBitmap(GSM_PictureMessage, message + llayout.UserData, NULL, &SMS->UserData[0].u.Bitmap);
 			GSM_PrintBitmap(&SMS->UserData[0].u.Bitmap);
 
 			size = MessageLength - llayout.UserData - 4 - SMS->UserData[0].u.Bitmap.size;
