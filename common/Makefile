@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.26 2001-03-26 23:39:20 pkot Exp $
+# $Id: Makefile,v 1.27 2001-04-25 12:54:47 machek Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -26,7 +26,6 @@ OBJS =	cfgreader.o \
 	fbus-6110.o \
 	gsm-api.o \
 	gsm-networks.o \
-	mbus-2110.o \
 	mbus-6160.o \
 	mbus-640.o \
 	vcal.o \

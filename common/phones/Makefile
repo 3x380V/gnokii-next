@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.3 2001-03-11 11:27:02 machek Exp $
+# $Id: Makefile,v 1.4 2001-04-25 12:54:47 machek Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -22,6 +22,7 @@ CFLAGS += $(PTHREAD_CFLAGS)
 OBJS =	generic.o \
 	nokia.o \
 	nk7110.o \
+	nk2110.o \
 	dc2711.o
 
 all: PHONES.o
