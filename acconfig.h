@@ -1,6 +1,6 @@
 /*
 
-  $Id: acconfig.h,v 1.3 2002-04-18 22:48:56 pkot Exp $
+  $Id: acconfig.h,v 1.4 2002-08-27 21:39:10 pkot Exp $
 
   G N O K I I
 
@@ -57,6 +57,8 @@
 /* Use UNIX98 style pty support instead of the traditional */
 #undef USE_UNIX98PTYS
 
+/* Define if you want Bluetooth support. Linux only */
+#undef HAVE_BLUETOOTH
 
 /***** Compiler specific *****/
 

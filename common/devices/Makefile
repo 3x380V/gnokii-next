@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.6 2002-04-20 22:24:01 machek Exp $
+# $Id: Makefile,v 1.7 2002-08-27 21:39:10 pkot Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -25,6 +25,10 @@ else
 	OBJS += unixserial.o \
 	        unixirda.o \
 		tcp.o
+endif
+
+ifdef HAVE_BLUETOOTH
+	OBJS += unixbluetooth.o
 endif
 
 all: DEVICES.o
