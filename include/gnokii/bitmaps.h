@@ -1,6 +1,6 @@
 /*
 
-  $Id: bitmaps.h,v 1.19 2002-06-11 00:20:38 pkot Exp $
+  $Id: bitmaps.h,v 1.20 2002-07-24 10:22:47 plail Exp $
 
   G N O K I I
 
@@ -51,7 +51,7 @@ typedef enum {
 	GSM_EMSAnimation2,		/* ...second, third and fourth should have this type */
 } GSM_Bitmap_Types;
 
-#define GSM_MAX_BITMAP_SIZE 864
+#define GSM_MAX_BITMAP_SIZE 1000
 
 /* Structure to hold incoming/outgoing bitmaps (and welcome-notes). */
 
