@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_lowlevel.c,v 1.21 2002-01-21 12:31:25 machek Exp $
+  $Id: xgnokii_lowlevel.c,v 1.22 2002-02-03 00:13:42 pkot Exp $
   
   X G N O K I I
 
@@ -758,16 +758,15 @@ static gint A_SendDTMF (gpointer data)
 
 static gint A_NetMonOnOff (gpointer data)
 {
-  gchar screen[50];
   gint mode = GPOINTER_TO_INT (data);
-  GSM_Error error = GE_UNKNOWN;
+  GSM_Data gdat;
+  GSM_NetMonitor nm;
 
-//  if (mode)
-//    error = GSM->NetMonitor (0xf3, screen);
-//  else
-//    error = GSM->NetMonitor (0xf1, screen);
-
-  return (error);
+  GSM_DataClear(&gdat);
+  gdat.NetMonitor = &nm;
+  if (mode) nm.Field = 0xf3;
+  else nm.Field = 0xf1;
+  return SM_Functions(GOP_NetMonitor, &gdat, &statemachine);
 }
 
 
