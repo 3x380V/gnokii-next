@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk7110.c,v 1.10 2001-06-27 23:52:49 pkot Exp $
+  $Id: nk7110.c,v 1.11 2001-07-05 10:54:53 pkot Exp $
 
   G N O K I I
 
@@ -17,7 +17,10 @@
   The various routines are called P7110_(whatever).
 
   $Log: nk7110.c,v $
-  Revision 1.10  2001-06-27 23:52:49  pkot
+  Revision 1.11  2001-07-05 10:54:53  pkot
+  Solaris 2.7 fixes - should be harmless for other OSes (Michael Wiedmann)
+
+  Revision 1.10  2001/06/27 23:52:49  pkot
   7110/6210 updates (Marian Jancar)
 
   Revision 1.9  2001/06/10 23:49:49  pkot
@@ -790,7 +793,7 @@ GSM_Error P7110_GetNoteAlarm(int alarmdiff, GSM_DateTime *time, GSM_DateTime *al
 	tm_time.tm_hour = time->Hour;
 	tm_time.tm_min = time->Minute;
 
-	t_alarm = timelocal(&tm_time);
+	t_alarm = mktime(&tm_time);
 	t_alarm -= alarmdiff;
 	t_alarm += timezone;
 

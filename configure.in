@@ -4,7 +4,7 @@ dnl
 dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janík ml.
 dnl                2000 Karel Zak, Pawe³ Kot
 dnl
-dnl  $Id: configure.in,v 1.50 2001-06-28 00:49:47 pkot Exp $
+dnl  $Id: configure.in,v 1.51 2001-07-05 10:54:53 pkot Exp $
 dnl
 
 AC_INIT(gnokii/gnokii.c)
@@ -353,6 +353,9 @@ else
       fi
    fi
 fi
+
+dnl ======================== Check for libsocket
+AC_CHECK_LIB(socket, socket)
 
 dnl ======================== Additional switches
 
