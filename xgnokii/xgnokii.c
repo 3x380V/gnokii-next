@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii.c,v 1.48 2002-04-04 22:35:38 pkot Exp $
+  $Id: xgnokii.c,v 1.49 2002-04-05 09:59:04 plail Exp $
   
   X G N O K I I
 
@@ -2340,7 +2340,7 @@ int main(int argc, char *argv[])
 	TopLevelWindow();
 
 	splashRemoveHandler =
-	    gtk_timeout_add(5000, (GtkFunction) RemoveSplash, (gpointer) SplashWindow);
+	    gtk_timeout_add(2000, (GtkFunction) RemoveSplash, (gpointer) SplashWindow);
 
 	gtk_main();
 

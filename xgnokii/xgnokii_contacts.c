@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_contacts.c,v 1.37 2002-03-28 21:37:50 pkot Exp $
+  $Id: xgnokii_contacts.c,v 1.38 2002-04-05 09:59:04 plail Exp $
   
   X G N O K I I
 
@@ -45,7 +45,6 @@
 
 #include "gsm-common.h"
 #include "xgnokii_contacts.h"
-#include "xgnokii_lowlevel.h"
 #include "xgnokii.h"
 #include "xgnokii_common.h"
 #include "xgnokii_lowlevel.h"
@@ -2163,6 +2162,7 @@ Setting max SIM entries to 100!\n"));
 	if (memoryStatus.MaxME > 0) {
 		mla->min = 1;
 		mla->max = memoryStatus.MaxME;
+		mla->used = memoryStatus.UsedME;
 		mla->type = GMT_ME;
 		mla->InsertEntry = InsertPBEntryME;
 		mla->ReadFailed = ReadFailedPBEntry;
@@ -2184,6 +2184,7 @@ Setting max SIM entries to 100!\n"));
 
 	mla->min = 1;
 	mla->max = memoryStatus.MaxSM;
+	mla->used = memoryStatus.UsedSM;
 	mla->type = GMT_SM;
 	mla->InsertEntry = InsertPBEntrySM;
 	mla->ReadFailed = ReadFailedPBEntry;

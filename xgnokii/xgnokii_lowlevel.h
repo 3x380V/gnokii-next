@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_lowlevel.h,v 1.19 2002-04-04 11:00:32 plail Exp $
+  $Id: xgnokii_lowlevel.h,v 1.20 2002-04-05 09:59:04 plail Exp $
   
   X G N O K I I
 
@@ -120,6 +120,7 @@ typedef struct {
 typedef struct {
 	gint min;
 	gint max;
+	gint used;
 	GSM_MemoryType type;
 	gint status;
 	gint(*InsertEntry) (GSM_PhonebookEntry *);
@@ -210,4 +211,5 @@ extern void *GUI_Connect(void *a);
 extern void GUI_InsertEvent(PhoneEvent * event);
 extern GSM_Error GUI_InitSMSFolders(void);
 extern int isSMSactivated;
+
 #endif
