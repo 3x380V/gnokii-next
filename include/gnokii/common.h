@@ -1,6 +1,6 @@
 /*
 
-  $Id: common.h,v 1.106 2002-07-11 12:41:41 plail Exp $
+  $Id: common.h,v 1.107 2002-07-16 11:15:16 plail Exp $
 
   G N O K I I
 
@@ -135,7 +135,7 @@ typedef struct {
 /* Limits for sizing of array in GSM_PhonebookEntry. Individual handsets may
    not support these lengths so they have their own limits set. */
 
-#define GSM_MAX_PHONEBOOK_NAME_LENGTH   (50)	/* For 7110 */
+#define GSM_MAX_PHONEBOOK_NAME_LENGTH   (61)	/* For 6510 */
 #define GSM_MAX_PHONEBOOK_NUMBER_LENGTH (48)	/* For 7110 */
 #define GSM_MAX_PHONEBOOK_SUB_ENTRIES   (10)	/* For 6510 */
 						/* 7110 is able to in one

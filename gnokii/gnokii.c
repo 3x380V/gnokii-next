@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.266 2002-07-14 20:12:33 pkot Exp $
+  $Id: gnokii.c,v 1.267 2002-07-16 11:15:16 plail Exp $
 
   G N O K I I
 
@@ -2743,7 +2743,7 @@ static int writephonebook(int argc, char *args[])
 	int line_count = 0;
 	int subentry;
 
-	char *Line, OLine[256], BackLine[256];
+	char *Line, OLine[500], BackLine[500];
 	char *ptr;
 
 	/* Check argument */
@@ -2755,7 +2755,7 @@ static int writephonebook(int argc, char *args[])
 	memset(&entry, 0, sizeof(GSM_PhonebookEntry));
 
 	/* Go through data from stdin. */
-	while (GetLine(stdin, Line, 255)) {
+	while (GetLine(stdin, Line, 499)) {
 		strcpy(BackLine, Line);
 		line_count++;
 
