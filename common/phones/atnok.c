@@ -1,6 +1,6 @@
 /*
 
-  $Id: atnok.c,v 1.5 2002-09-28 23:51:37 pkot Exp $
+  $Id: atnok.c,v 1.6 2002-12-06 07:47:49 ladis Exp $
 
   G N O K I I
 
@@ -40,11 +40,11 @@
 #include "phones/atgen.h"
 #include "phones/atnok.h"
 #include "links/atbus.h"
-#include "links/cbus.h"
+
 
 static AT_SendFunctionType writephonebook;
 
-static gn_error WritePhonebook(GSM_Data *data,  GSM_Statemachine *state)
+static gn_error WritePhonebook(GSM_Data *data, GSM_Statemachine *state)
 {
 	if (writephonebook == NULL)
 		return GN_ERR_UNKNOWN;
@@ -53,12 +53,11 @@ static gn_error WritePhonebook(GSM_Data *data,  GSM_Statemachine *state)
 	return (*writephonebook)(data, state);
 }
 
-
 void AT_InitNokia(GSM_Statemachine *state, char *foundmodel, char *setupmodel)
 {
 	/* block writing of phone memory on nokia phones other than */
 	/* 8210. if you write to the phonebook of a eg 7110 all extended */
 	/* information will be lost. */
 	if (strncasecmp("8210", foundmodel, 4))
-		writephonebook = AT_InsertSendFunction(GOP_WritePhonebook,  WritePhonebook);
+		writephonebook = AT_InsertSendFunction(GOP_WritePhonebook, WritePhonebook, state);
 }
