@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk7110.c,v 1.99 2002-07-19 11:11:41 plail Exp $
+  $Id: nk7110.c,v 1.100 2002-07-20 17:40:33 plail Exp $
 
   G N O K I I
 
@@ -459,7 +459,7 @@ static GSM_Error P7110_IncomingPhonebook(int messagetype, unsigned char *message
 	case 0x08:  /* Read Memory response */
 		if (data->PhonebookEntry) {
 			data->PhonebookEntry->Empty = true;
-			data->PhonebookEntry->Group = 0;
+			data->PhonebookEntry->Group = 5; /* no group */
 			data->PhonebookEntry->Name[0] = '\0';
 			data->PhonebookEntry->Number[0] = '\0';
 			data->PhonebookEntry->SubEntriesCount = 0;
