@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_lowlevel.c,v 1.55 2002-08-07 23:03:15 pkot Exp $
+  $Id: xgnokii_lowlevel.c,v 1.56 2002-08-11 22:22:38 pkot Exp $
   
   X G N O K I I
 
@@ -494,12 +494,16 @@ static gint A_GetMemoryLocationAll(gpointer data)
 {
 	GSM_PhonebookEntry entry;
 	GSM_Error error;
-	D_MemoryLocationAll *mla = (D_MemoryLocationAll *) data;
+	D_MemoryLocationAll *mla = (D_MemoryLocationAll *)data;
 	register gint i, j, read = 0;
 
 	error = mla->status = GE_NONE;
 	entry.MemoryType = mla->type;
 	gdat.PhonebookEntry = &entry;
+
+	gdat.Bitmap = NULL; /* FIXME: do we need the bitmap here? I don't think so. Unfortunately
+			       gdat doesn't seem to be nulled at the moment. This is just workaround.
+			       The correct fix would be to be sure that unneded entries are nulled.*/
 
 	pthread_mutex_lock(&memoryMutex);
 	for (i = mla->min; i <= mla->max; i++) {
