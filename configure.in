@@ -4,7 +4,7 @@ dnl
 dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janík ml.
 dnl                2000 Karel Zak, Pawe³ Kot
 dnl
-dnl  $Id: configure.in,v 1.60 2002-02-15 21:31:15 pkot Exp $
+dnl  $Id: configure.in,v 1.61 2002-03-02 20:58:25 pkot Exp $
 dnl
 
 AC_INIT(gnokii/gnokii.c)
@@ -330,7 +330,7 @@ else
       AC_MSG_WARN(Disabling xgnokii.)
    else
       AC_CHECK_LIB(Xpm, XpmWriteFileFromXpmImage,
-            [ XPM_CFLAGS="-I$x_includes" XPM_LIBS="-L$x_libraries -lX11 -lXpm"
+            [ XPM_CFLAGS="-I$x_includes" XPM_LIBS="-L$x_libraries -lXpm -lX11"
               AC_DEFINE(XPM) ],
             AC_MSG_WARN(Cannot found library libXpm - disabling XPM support.),
             [ -L$x_libraries -lX11 ]

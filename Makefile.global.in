@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile.global.in,v 1.23 2001-11-14 11:01:58 pkot Exp $
+# $Id: Makefile.global.in,v 1.24 2002-03-02 20:58:25 pkot Exp $
 #
 # Global Makefiles configuration for the GNOKII.
 #
@@ -73,5 +73,6 @@ endif
 
 
 CFLAGS += -I$(GNOKII_INCLUDE)
-LDFLAGS = $(LIBS) -Wl,--rpath -Wl,$(libdir)
+LDFLAGS = -Wl,--rpath -Wl,$(libdir)
+LDLIBS = $(LIBS)
 
