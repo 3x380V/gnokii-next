@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.334 2003-02-09 21:57:56 pkot Exp $
+  $Id: gnokii.c,v 1.335 2003-02-09 22:00:47 pkot Exp $
 
   G N O K I I
 
@@ -4180,7 +4180,11 @@ static gn_error smsslave(gn_sms *message)
 		fprintf(stderr, _("### Exists?!\n"));
 		return GN_ERR_FAILED;
 	}
+#ifndef WIN32
 	mkdir(smsdir, 0700);
+#else
+	_mkdir(smsdir);
+#endif
 	if ((output = fopen(buf, "w+")) == NULL) {
 		fprintf(stderr, _("### Cannot create file %s\n"), buf);
 		return GN_ERR_FAILED;
