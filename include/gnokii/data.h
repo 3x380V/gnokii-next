@@ -1,6 +1,6 @@
 /*
 
-  $Id: data.h,v 1.26 2002-04-18 21:39:47 machek Exp $
+  $Id: data.h,v 1.27 2002-04-30 18:56:12 pkot Exp $
 
   G N O K I I
 
@@ -231,8 +231,8 @@ struct _GSM_Statemachine {
 extern GSM_Error Unimplemented(void);
 #define UNIMPLEMENTED (void *) Unimplemented
 
-extern GSM_MemoryType StrToMemoryType (const char *s);
+API GSM_MemoryType StrToMemoryType (const char *s);
 
-void GSM_DataClear(GSM_Data *data);
+API void GSM_DataClear(GSM_Data *data);
 
 #endif	/* __gsm_data_h */

@@ -1,6 +1,6 @@
 /*
 
-  $Id: ringtones.h,v 1.6 2002-03-28 21:37:48 pkot Exp $
+  $Id: ringtones.h,v 1.7 2002-04-30 18:56:12 pkot Exp $
 
   G N O K I I
 
@@ -163,9 +163,9 @@ typedef struct {
 #define GSM_MAX_RINGTONE_NOTES 130
 
 int GSM_EncodeSMSRingtone(char *message, GSM_Ringtone *ringtone);
-u8 GSM_PackRingtone(GSM_Ringtone *ringtone, char *package, int *maxlength);
-GSM_Error GSM_UnPackRingtone(GSM_Ringtone *ringtone, char *package, int maxlength);
+API u8 GSM_PackRingtone(GSM_Ringtone *ringtone, char *package, int *maxlength);
+API GSM_Error GSM_UnPackRingtone(GSM_Ringtone *ringtone, char *package, int maxlength);
 
-int GSM_GetNote(int number);
+API int GSM_GetNote(int number);
 
 #endif	/* __gsm_ringtones_h */

@@ -1,6 +1,6 @@
 /*
 
-  $Id: misc.c,v 1.38 2002-04-23 16:27:56 pkot Exp $
+  $Id: misc.c,v 1.39 2002-04-30 18:56:12 pkot Exp $
 
   G N O K I I
 
@@ -42,9 +42,9 @@
 #include "misc.h"
 
 
-void (*GSM_ELogHandler)(const char *fmt, va_list ap) = NULL;
+API void (*GSM_ELogHandler)(const char *fmt, va_list ap) = NULL;
 
-int GetLine(FILE *File, char *Line, int count)
+API int GetLine(FILE *File, char *Line, int count)
 {
 	char *ptr;
 

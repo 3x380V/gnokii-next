@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-error.c,v 1.8 2002-04-22 16:28:26 machek Exp $
+  $Id: gsm-error.c,v 1.9 2002-04-30 18:56:12 pkot Exp $
 
   G N O K I I
 
@@ -28,9 +28,10 @@
 
 */
 
+#include "config.h"
 #include "gsm-error.h"
 
-char *print_error(GSM_Error e)
+API char *print_error(GSM_Error e)
 {
 	switch (e) {
 	case GE_NONE:                     return "No error.";

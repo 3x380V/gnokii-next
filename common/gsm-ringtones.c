@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-ringtones.c,v 1.7 2002-03-28 21:37:44 pkot Exp $
+  $Id: gsm-ringtones.c,v 1.8 2002-04-30 18:56:12 pkot Exp $
 
   G N O K I I
 
@@ -189,7 +189,7 @@ int GSM_GetDuration(int number, unsigned char *spec)
 }
 
 
-int GSM_GetNote(int number)
+API int GSM_GetNote(int number)
 {
 	int note = 0;
 
@@ -249,7 +249,7 @@ int GSM_GetScale(int number)
    Function returns number of packed notes and changes maxlength to
    number of used chars in "package" */
 
-u8 GSM_PackRingtone(GSM_Ringtone *ringtone, char *package, int *maxlength)
+API u8 GSM_PackRingtone(GSM_Ringtone *ringtone, char *package, int *maxlength)
 {
 	int StartBit=0;
 	int i;
@@ -410,7 +410,7 @@ int OctetUnAlign(int CurrentBit)
 
 /* TODO: better checking, if contents of ringtone is OK */
 
-GSM_Error GSM_UnPackRingtone(GSM_Ringtone *ringtone, char *package, int maxlength)
+API GSM_Error GSM_UnPackRingtone(GSM_Ringtone *ringtone, char *package, int maxlength)
 {
 	int StartBit = 0;
 	int spec, duration, scale;

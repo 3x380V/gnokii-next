@@ -1,6 +1,6 @@
 /*
 
-  $Id: cfgreader.c,v 1.20 2002-03-28 21:37:44 pkot Exp $
+  $Id: cfgreader.c,v 1.21 2002-04-30 18:56:12 pkot Exp $
 
   G N O K I I
 
@@ -40,7 +40,7 @@
 
 #include "cfgreader.h"
 
-struct CFG_Header *CFG_Info;
+API struct CFG_Header *CFG_Info;
 
 /* Read configuration information from a ".INI" style file */
 struct CFG_Header *CFG_ReadFile(const char *filename)
@@ -188,7 +188,7 @@ int CFG_WriteFile(struct CFG_Header *cfg, const char *filename)
  * with key or NULL if no such key exists.
  */
 
-char *CFG_Get(struct CFG_Header *cfg, const char *section, const char *key)
+API char *CFG_Get(struct CFG_Header *cfg, const char *section, const char *key)
 {
 	struct CFG_Header *h;
 	struct CFG_Entry *e;
@@ -269,7 +269,7 @@ char *CFG_Set(struct CFG_Header *cfg, const char *section, const char *key,
 	return NULL;
 }
 
-int readconfig(char **model, char **port, char **initlength,
+API int readconfig(char **model, char **port, char **initlength,
 	       char **connection, char **bindir)
 {
 	char *homedir;
