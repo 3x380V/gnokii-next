@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_lowlevel.c,v 1.29 2002-02-22 00:12:41 pkot Exp $
+  $Id: xgnokii_lowlevel.c,v 1.30 2002-03-19 01:56:23 pkot Exp $
   
   X G N O K I I
 
@@ -97,7 +97,6 @@ GSM_Error GUI_InitSMSFolders(void)
 
 		if ((error = SM_Functions(GOP_GetSMSFolders, &gdat, &statemachine)) != GE_NONE) return error;
 		foldercount = gdat.SMSFolderList->number;
-		
 		for (i = 0; i < gdat.SMSFolderList->number; i++) {
 			strcpy(folders[i], gdat.SMSFolderList->Folder[i].Name);
 		}

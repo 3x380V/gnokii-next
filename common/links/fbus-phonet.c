@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus-phonet.c,v 1.11 2002-03-11 23:08:26 pkot Exp $
+  $Id: fbus-phonet.c,v 1.12 2002-03-19 01:56:22 pkot Exp $
 
   G N O K I I
 
@@ -44,7 +44,7 @@
 /* Some globals */
 
 GSM_Link *glink;
-GSM_Statemachine *statemachine;
+static GSM_Statemachine *statemachine;
 PHONET_IncomingMessage imessage;
 
 

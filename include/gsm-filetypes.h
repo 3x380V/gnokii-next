@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-filetypes.h,v 1.12 2002-01-27 23:38:31 pkot Exp $
+  $Id: gsm-filetypes.h,v 1.13 2002-03-19 01:56:22 pkot Exp $
 
   G N O K I I
 
@@ -49,14 +49,14 @@ GSM_Error loadott(FILE *file, GSM_Ringtone *ringtone);
 
 /* Bitmap Files */
 
-GSM_Error GSM_ReadBitmapFile(char *FileName, GSM_Bitmap *bitmap);
-GSM_Error GSM_SaveBitmapFile(char *FileName, GSM_Bitmap *bitmap);
+GSM_Error GSM_ReadBitmapFile(char *FileName, GSM_Bitmap *bitmap, GSM_Information *info);
+GSM_Error GSM_SaveBitmapFile(char *FileName, GSM_Bitmap *bitmap, GSM_Information *info);
 int GSM_SaveTextFile(char *FileName, char *text, int mode);
 GSM_Error GSM_ShowBitmapFile(char *FileName);
 
-void savenol(FILE *file, GSM_Bitmap *bitmap);
-void savengg(FILE *file, GSM_Bitmap *bitmap);
-void savensl(FILE *file, GSM_Bitmap *bitmap);
+void savenol(FILE *file, GSM_Bitmap *bitmap, GSM_Information *info);
+void savengg(FILE *file, GSM_Bitmap *bitmap, GSM_Information *info);
+void savensl(FILE *file, GSM_Bitmap *bitmap, GSM_Information *info);
 void savenlm(FILE *file, GSM_Bitmap *bitmap);
 void saveota(FILE *file, GSM_Bitmap *bitmap);
 void savebmp(FILE *file, GSM_Bitmap *bitmap);
@@ -65,11 +65,11 @@ void savebmp(FILE *file, GSM_Bitmap *bitmap);
 void savexpm(char *filename, GSM_Bitmap *bitmap);
 #endif
 
-GSM_Error loadngg(FILE *file, GSM_Bitmap *bitmap);
-GSM_Error loadnol(FILE *file, GSM_Bitmap *bitmap);
+GSM_Error loadngg(FILE *file, GSM_Bitmap *bitmap, GSM_Information *info);
+GSM_Error loadnol(FILE *file, GSM_Bitmap *bitmap, GSM_Information *info);
 GSM_Error loadnsl(FILE *file, GSM_Bitmap *bitmap);
 GSM_Error loadnlm(FILE *file, GSM_Bitmap *bitmap);
-GSM_Error loadota(FILE *file, GSM_Bitmap *bitmap);
+GSM_Error loadota(FILE *file, GSM_Bitmap *bitmap, GSM_Information *info);
 GSM_Error loadbmp(FILE *file, GSM_Bitmap *bitmap);
 
 #ifdef XPM

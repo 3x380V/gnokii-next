@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii.c,v 1.43 2002-02-21 00:51:50 pkot Exp $
+  $Id: xgnokii.c,v 1.44 2002-03-19 01:56:23 pkot Exp $
   
   X G N O K I I
 
@@ -109,7 +109,7 @@ gint max_phonebook_name_length;
 gint max_phonebook_number_length;
 gint max_phonebook_sim_name_length;
 gint max_phonebook_sim_number_length;
-char folders[MAX_SMS_FOLDERS][15];
+char folders[MAX_SMS_FOLDERS][MAX_SMS_FOLDER_NAME_LENGTH];
 gint foldercount = 0, lastfoldercount = 0;
 
 /* Local variables */

@@ -1,6 +1,6 @@
 /*
 
-  $Id: sms.h,v 1.22 2002-02-21 00:47:21 pkot Exp $
+  $Id: sms.h,v 1.23 2002-03-19 01:56:22 pkot Exp $
 
   G N O K I I
 
@@ -441,8 +441,9 @@ extern SMSMessage_PhoneLayout layout;
 /*** FOLDERS ***/
 
 /* Datatype for SMS folders ins 6210/7110 */
+#define MAX_SMS_FOLDER_NAME_LENGTH 16	/* Max name length is 15 characters and trailing \0 */
 typedef struct {
-	char Name[15];     /* Name for SMS folder */
+	char Name[MAX_SMS_FOLDER_NAME_LENGTH];	/* Name for SMS folder. */
 	bool SMSData;      /* if folder contains sender, SMSC number and sending date */
 	unsigned int locations[MAX_SMS_MESSAGES]; /* locations of SMS messages in that folder (6210 specific) */
 	unsigned int number;         /* number of SMS messages in that folder*/

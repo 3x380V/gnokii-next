@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-bitmaps.c,v 1.9 2002-01-27 23:38:30 pkot Exp $
+  $Id: gsm-bitmaps.c,v 1.10 2002-03-19 01:56:21 pkot Exp $
 
   G N O K I I
 
@@ -94,7 +94,7 @@ void GSM_ResizeBitmap(GSM_Bitmap *bitmap, GSM_Bitmap_Types target, GSM_Informati
 	}
 	if (target == GSM_PictureImage) {
 		bitmap->width = 72;
-		bitmap->height = 28;
+		bitmap->height = 48;
 		bitmap->size = bitmap->width * bitmap->height / 8;
 	}
 	bitmap->type = target;
