@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.67 2004-02-23 22:23:25 uid66843 Exp $
+# $Id: Makefile,v 1.68 2004-03-26 10:12:43 bozo Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -47,6 +47,7 @@ OBJS =	gsm-api.lo \
 	gsm-common.lo \
 	sms-nokia.lo \
 	nokia-decoding.lo \
+	pkt.lo \
 	compat.lo \
 	misc.lo \
 	snprintf.lo

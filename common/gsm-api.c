@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-api.c,v 1.64 2003-03-06 21:23:56 pkot Exp $
+  $Id: gsm-api.c,v 1.65 2004-03-26 10:12:43 bozo Exp $
 
   G N O K I I
 
@@ -150,6 +150,7 @@ API gn_error gn_gsm_initialise(struct gn_statemachine *sm)
 	REGISTER_DRIVER(fake, NULL);
 	REGISTER_DRIVER(at, sm->config.model);
 	REGISTER_DRIVER(nokia_6160, NULL);
+	REGISTER_DRIVER(gnapplet, NULL);
 
 	return GN_ERR_UNKNOWNMODEL;
 }

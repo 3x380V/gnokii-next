@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.19 2004-01-12 01:52:15 uid66849 Exp $
+# $Id: Makefile,v 1.20 2004-03-26 10:12:43 bozo Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -29,6 +29,7 @@ OBJS =	generic.lo \
 	ateric.lo \
 	atnok.lo \
 	atsie.lo \
+	gnapplet.lo \
 	fake.lo
 
 #	nk2110.lo
