@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.c,v 1.139 2004-01-29 22:55:50 uid66843 Exp $
+  $Id: nk6510.c,v 1.140 2004-01-30 20:04:02 uid66843 Exp $
 
   G N O K I I
 
@@ -1759,7 +1759,7 @@ static gn_error NK6510_WritePhonebookLocation(gn_data *data, struct gn_statemach
 			char_unicode_encode((string + 5), entry->number, j);
 			string[j * 2 + 1] = 0;
 			string[4] = j * 2;
-			count += PackBlock(0x0b, j * 2 + 6, block++, string, req + count);
+			count += PackBlock(0x0b, j * 2 + 5, block++, string, req + count, GN_PHONEBOOK_ENTRY_MAX_LENGTH - count);
 		} else {
 			/* Default Number */
 			defaultn = 999;
