@@ -1,10 +1,11 @@
-$Id: nk2110.txt,v 1.1 2001-07-03 15:45:43 pkot Exp $
+$Id: nk2110.txt,v 1.2 2002-04-05 10:15:04 machek Exp $
 
 Assembled by
 	Marcin Wiacek (Marcin-Wiacek@TOPNET.PL)
         Pavel Machek <pavel@ucw.cz>
 	... and other members of gnokii mailing list
-            and authors of some WWW pages.
+            and authors of some WWW pages
+	    (http://republika.pl/junk/mbus).
 
 The data provided is for information purposes only. 
 Some of the frames might be hazardous to your phone. Be careful!!! 
