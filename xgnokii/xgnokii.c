@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii.c,v 1.55 2002-08-18 15:00:52 pkot Exp $
+  $Id: xgnokii.c,v 1.56 2002-08-27 00:44:00 pkot Exp $
   
   X G N O K I I
 
@@ -126,7 +126,7 @@ char folders[MAX_SMS_FOLDERS][MAX_SMS_FOLDER_NAME_LENGTH];
 gint foldercount = 0, lastfoldercount = 0;
 
 /* Local variables */
-static char *DefaultXGnokiiDir = XGNOKIIDIR "/share";
+static char *DefaultXGnokiiDir = XGNOKIIDIR "/share/xgnokii";
 static bool SMSSettingsInitialized = FALSE;
 static bool CallersGroupsInitialized = FALSE;
 static gint hiddenCallDialog;
