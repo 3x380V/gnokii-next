@@ -1,6 +1,6 @@
 /*
 
-  $Id: compat.h,v 1.34 2004-02-23 22:19:14 uid66843 Exp $
+  $Id: compat.h,v 1.35 2004-02-23 23:13:12 uid66849 Exp $
 
   G N O K I I
 
@@ -247,7 +247,7 @@ int vasprintf(char **ptr, const char *format, va_list ap);
 #else
 #define MBSTATE char
 #define MBSTATE_ENC_CLEAR(x) mbtowc(NULL, NULL, 0)
-#define MBSTATE_DEC_CLEAR(x) wctomb(NULL, (wchar_t)NULL)
+#define MBSTATE_DEC_CLEAR(x) wctomb(NULL, 0)
 #endif
 
 #endif
