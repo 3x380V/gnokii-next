@@ -4,7 +4,7 @@ dnl
 dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janík ml.
 dnl                2000 Karel Zak, Pawe³ Kot
 dnl
-dnl  $Id: configure.in,v 1.45 2001-05-07 16:20:22 pkot Exp $
+dnl  $Id: configure.in,v 1.46 2001-05-15 13:43:19 pkot Exp $
 dnl
 
 AC_INIT(gnokii/gnokii.c)
@@ -339,7 +339,7 @@ else
          GTK_LIBS=`$GTK_CONFIG --libs`
          x_support="yes"   
 
-         XGNOKIIDIR="${prefix}/share"
+         XGNOKIIDIR='${prefix}/share'
          AC_ARG_WITH(xgnokiidir,
             [  --with-xgnokiidir=DIR   specifies the base for xgnokii],
             [ if test x$withval = xyes; then 
