@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.113 2002-04-14 16:57:37 pkot Exp $
+# $Id: Makefile,v 1.114 2002-04-29 15:30:40 machek Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -53,7 +53,7 @@ $(DIRS): dummy
 	$(MAKE) -C $@
 
 clean:
-	$(RM) *~ *.orig *.rej include/*~ include/*.orig include/*.rej
+	$(RM) *~ *.orig *.rej include/*~ include/*.orig include/*.rej testsuite/myout*
 	@for dir in $(DIRS); do \
 	    if [ -e $$dir/Makefile ]; then \
 		$(MAKE) -C $$dir clean; \
@@ -107,6 +107,9 @@ dep:
 		done \
 	fi
 	@echo "done"
+
+test:
+	( cd testsuite; ./testit )
 
 install: all
 	@for dir in $(DIRS); do \
