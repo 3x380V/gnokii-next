@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_sms.c,v 1.43 2002-07-26 13:59:53 plail Exp $
+  $Id: xgnokii_sms.c,v 1.44 2002-08-18 18:03:11 pkot Exp $
 
   X G N O K I I
 
@@ -988,7 +988,7 @@ static void DoSendSMS(void)
 		} else
 			number = addresses[i];
 
-		DefaultSubmitSMS(&sms);
+		gn_sms_default_submit(&sms);
 		strcpy(sms.SMSC.Number, xgnokiiConfig.smsSetting[sendSMS.center].SMSC.Number);
 		sms.SMSC.Type = xgnokiiConfig.smsSetting[sendSMS.center].SMSC.Type;
 
