@@ -1,5 +1,5 @@
 /*
-  $Id: nk6100.h,v 1.7 2002-02-25 23:06:55 pkot Exp $
+  $Id: nk6100.h,v 1.8 2002-03-02 21:03:18 pkot Exp $
 
   G N O K I I
 
@@ -36,5 +36,10 @@
 #define P6100_MEMORY_XX 0xff
 
 #define	P6100_MAX_SMS_MESSAGES	12 /* maximum number of sms messages */
+
+typedef struct {
+	GSM_KeyCode Key;
+	int Repeat;
+} NK6100_Keytable;
 
 #endif  /* #ifndef __phones_nk6100_h */
