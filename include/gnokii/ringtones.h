@@ -1,6 +1,6 @@
 /*
 
-  $Id: ringtones.h,v 1.13 2003-03-06 22:32:29 pkot Exp $
+  $Id: ringtones.h,v 1.14 2003-03-18 23:12:33 pkot Exp $
 
   G N O K I I
 
@@ -153,7 +153,7 @@ typedef struct {
 API gn_error gn_file_ringtone_read(char *filename, gn_ringtone *ringtone);
 API gn_error gn_file_ringtone_save(char *filename, gn_ringtone *ringtone);
 
-API u8 gn_ringtone_pack(gn_ringtone *ringtone, unsigned char *package, int *maxlength);
+API unsigned char gn_ringtone_pack(gn_ringtone *ringtone, unsigned char *package, int *maxlength);
 API gn_error gn_ringtone_unpack(gn_ringtone *ringtone, unsigned char *package, int maxlength);
 API int gn_note_get(int number);
 
