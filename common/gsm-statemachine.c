@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-statemachine.c,v 1.50 2003-06-14 12:39:31 osma Exp $
+  $Id: gsm-statemachine.c,v 1.51 2003-06-14 13:00:30 osma Exp $
 
   G N O K I I
 
@@ -224,9 +224,6 @@ static gn_error __sm_block_timeout(int waitfor, int t, gn_data *data, struct gn_
 	for (retry = 0; retry < 2; retry++) {
 		err = sm_wait_for(waitfor, data, state);
 		if (err != GN_ERR_NONE) return err;
-
-		/* if no packet has been sent, don't wait for ack */
-		if (s == GN_SM_Initialised) break;
 
 		timeradd(&now, &timeout, &next);
 		do {
