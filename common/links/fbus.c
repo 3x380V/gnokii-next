@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus.c,v 1.25 2002-03-28 21:37:46 pkot Exp $
+  $Id: fbus.c,v 1.26 2002-04-13 00:58:38 bozo Exp $
 
   G N O K I I
 
@@ -265,6 +265,8 @@ static void FBUS_RX_StateMachine(unsigned char rx_byte)
 					dprintf("[Received Ack of type %02x, seq: %2x]\n",
 						i->MessageBuffer[0],(unsigned char) i->MessageBuffer[1]);
 
+				} else if (i->MessageType == 0xf1) {
+					SM_IncomingFunction(statemachine, i->MessageType, i->MessageBuffer, i->FrameLength - 2);
 				} else {	/* Normal message type */
 
 					/* Add data to the relevant Message buffer */
