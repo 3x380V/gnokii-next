@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile.global.in,v 1.50 2004-06-30 22:11:54 pkot Exp $
+# $Id: Makefile.global.in,v 1.51 2004-07-01 18:31:47 pkot Exp $
 #
 # Global Makefiles configuration for the GNOKII.
 #
@@ -29,7 +29,7 @@ mandir         = @mandir@
 man1dir        = ${mandir}/man1/
 man8dir        = ${mandir}/man8/
 xmandir        = @XGNOKIIDIR@/man/man1/
-docdir         = ${prefix}/doc/${PACKAGE}
+docdir         = ${prefix}/share/doc/${PACKAGE}
 locdir         = @datadir@/locale
 
 BIN_MODE       = 0755
