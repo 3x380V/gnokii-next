@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk7110.c,v 1.160 2004-01-18 20:36:40 uid66843 Exp $
+  $Id: nk7110.c,v 1.161 2004-01-25 22:25:19 uid66843 Exp $
 
   G N O K I I
 
@@ -79,6 +79,7 @@ static gn_error NK7110_SetBitmap(gn_data *data, struct gn_statemachine *state);
 static gn_error NK7110_GetBitmap(gn_data *data, struct gn_statemachine *state);
 static gn_error NK7110_WritePhonebookLocation(gn_data *data, struct gn_statemachine *state);
 static gn_error NK7110_ReadPhonebook(gn_data *data, struct gn_statemachine *state);
+static gn_error NK7110_DeletePhonebookLocation(gn_data *data, struct gn_statemachine *state);
 static gn_error NK7110_GetNetworkInfo(gn_data *data, struct gn_statemachine *state);
 static gn_error NK7110_GetSpeedDial(gn_data *data, struct gn_statemachine *state);
 static gn_error NK7110_GetSMSCenter(gn_data *data, struct gn_statemachine *state);
@@ -207,6 +208,8 @@ static gn_error NK7110_Functions(gn_operation op, gn_data *data, struct gn_state
 		return NK7110_ReadPhonebook(data, state);
 	case GN_OP_WritePhonebook:
 		return NK7110_WritePhonebookLocation(data, state);
+	case GN_OP_DeletePhonebook:
+		return NK7110_DeletePhonebookLocation(data, state);
 	case GN_OP_GetNetworkInfo:
 		return NK7110_GetNetworkInfo(data, state);
 	case GN_OP_GetSpeedDial:
@@ -845,7 +848,7 @@ static gn_error NK7110_WritePhonebookLocation(gn_data *data, struct gn_statemach
 	req[12] = (entry->location >> 8);
 	req[13] = entry->location & 0xff;
 	block = 1;
-	if ((*(entry->name)) && (*(entry->number))) {
+	if (!entry->empty && (*(entry->name)) && (*(entry->number))) {
 		/* Name */
 		i = strlen(entry->name);
 		char_unicode_encode((string + 1), entry->name, i);

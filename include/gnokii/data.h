@@ -1,6 +1,6 @@
 /*
 
-  $Id: data.h,v 1.70 2003-11-30 18:55:14 bozo Exp $
+  $Id: data.h,v 1.71 2004-01-25 22:25:19 uid66843 Exp $
 
   G N O K I I
 
@@ -154,6 +154,7 @@ typedef enum {
 	GN_OP_GetMemoryStatus,
 	GN_OP_ReadPhonebook,
 	GN_OP_WritePhonebook,
+	GN_OP_DeletePhonebook,
 	GN_OP_GetPowersource,
 	GN_OP_GetAlarm,
 	GN_OP_GetSMSStatus,
