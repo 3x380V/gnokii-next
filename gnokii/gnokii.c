@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.276 2002-07-24 10:25:26 plail Exp $
+  $Id: gnokii.c,v 1.277 2002-07-25 22:42:47 pkot Exp $
 
   G N O K I I
 
@@ -3012,7 +3012,7 @@ static int netmonitor(char *Mode)
 
 static int identify(void)
 {
-	/* Hopefully is 64 larger as FB38_MAX* / FB61_MAX* */
+	/* Hopefully 64 is enough */
 	char imei[64], model[64], rev[64], manufacturer[64];
 
 	manufacturer[0] = model[0] = rev[0] = imei[0] = 0;
