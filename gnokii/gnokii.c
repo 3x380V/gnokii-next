@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.239 2002-05-20 22:07:53 pkot Exp $
+  $Id: gnokii.c,v 1.240 2002-05-21 09:05:54 machek Exp $
 
   G N O K I I
 
@@ -1414,6 +1414,7 @@ static int sendlogo(int argc, char *argv[])
 	}
 
 	sms.UserData[0].Type = SMS_BitmapData;
+	GSM_NullBitmap(&sms.UserData[0].u.Bitmap, info);
 
 	/* The second argument is the destination, ie the phone number of recipient. */
 	memset(&sms.Remote.Number, 0, sizeof(sms.Remote.Number));
