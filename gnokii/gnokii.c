@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.283 2002-08-05 14:45:20 plail Exp $
+  $Id: gnokii.c,v 1.284 2002-08-07 00:18:03 bozo Exp $
 
   G N O K I I
 
@@ -1479,7 +1479,7 @@ static int changesecuritycode(char *type)
 
 #endif
 
-static void callnotifier(GSM_CallStatus CallStatus, GSM_CallInfo *CallInfo)
+static void callnotifier(GSM_CallStatus CallStatus, GSM_CallInfo *CallInfo, GSM_Statemachine *state)
 {
 	switch (CallStatus) {
 	case GSM_CS_IncomingCall:

@@ -1,6 +1,6 @@
 /*
 
-  $Id: datapump.h,v 1.7 2002-03-28 21:37:48 pkot Exp $
+  $Id: datapump.h,v 1.8 2002-08-07 00:18:03 bozo Exp $
 
   G N O K I I
 
@@ -33,6 +33,6 @@
 
 /* Prototypes */
 bool	DP_Initialise(int read_fd, int write_fd);
-void    DP_CallPassup(GSM_CallStatus CallStatus, GSM_CallInfo *CallInfo);
+void    DP_CallPassup(GSM_CallStatus CallStatus, GSM_CallInfo *CallInfo, GSM_Statemachine *state);
 
 #endif	/* __data_datapump_h */

@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.h,v 1.14 2002-07-28 20:19:40 bozo Exp $
+  $Id: nk6100.h,v 1.15 2002-08-07 00:18:03 bozo Exp $
 
   G N O K I I
 
@@ -62,7 +62,7 @@ typedef struct {
 
 typedef struct {
 	void (*OnCellBroadcast)(GSM_CBMessage *Message);
-	void (*CallNotification)(GSM_CallStatus CallStatus, GSM_CallInfo *CallInfo);
+	void (*CallNotification)(GSM_CallStatus CallStatus, GSM_CallInfo *CallInfo, GSM_Statemachine *state);
 	void (*RLP_RXCallback)(RLP_F96Frame *Frame);
 	GSM_Error (*OnSMS)(GSM_API_SMS *Message);
 

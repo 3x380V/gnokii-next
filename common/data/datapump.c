@@ -1,6 +1,6 @@
 /*
 
-  $Id: datapump.c,v 1.16 2002-07-29 21:49:03 pkot Exp $
+  $Id: datapump.c,v 1.17 2002-08-07 00:18:02 bozo Exp $
 
   G N O K I I
 
@@ -187,7 +187,7 @@ static int DP_CallBack(RLP_UserInds ind, u8 *buffer, int length)
 	return 0;
 }
 
-void DP_CallPassup(GSM_CallStatus CallStatus, GSM_CallInfo *CallInfo)
+void DP_CallPassup(GSM_CallStatus CallStatus, GSM_CallInfo *CallInfo, GSM_Statemachine *state)
 {
 	dprintf("DP_CallPassup called with %d\n", CallStatus);
 

@@ -1,6 +1,6 @@
 /*
 
-  $Id: at-emulator.h,v 1.7 2002-07-29 21:49:04 pkot Exp $
+  $Id: at-emulator.h,v 1.8 2002-08-07 00:18:03 bozo Exp $
 
   G N O K I I
 
@@ -43,7 +43,7 @@ bool	ATEM_CommandPlusC(char **buf);
 bool	ATEM_CommandPlusG(char **buf);
 int	ATEM_GetNum(char **p);
 void	ATEM_ModemResult(int code);
-void    ATEM_CallPassup(GSM_CallStatus CallStatus, GSM_CallInfo *CallInfo);
+void    ATEM_CallPassup(GSM_CallStatus CallStatus, GSM_CallInfo *CallInfo, GSM_Statemachine *state);
 
 	/* Global variables */
 extern bool ATEM_Initialised;
