@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus-common.h,v 1.2 2002-03-28 21:37:49 pkot Exp $
+  $Id: fbus-common.h,v 1.3 2002-12-10 11:05:56 ladis Exp $
 
   G N O K I I
 
@@ -29,8 +29,8 @@
 
 */
 
-#ifndef __links_fbus_common_h
-#define __links_fbus_common_h
+#ifndef _gnokii_links_fbus_common_h
+#define _gnokii_links_fbus_common_h
 
 #include "gsm-statemachine.h"
 
@@ -41,8 +41,7 @@
 #define FBUS_DEVICE_PC 0x0c
 
 /* States for receive code. */
-
-enum FBUS_RX_States {
+enum fbus_rx_state {
 	FBUS_RX_Sync,
 	FBUS_RX_Discarding,
 	FBUS_RX_GetDestination,
@@ -53,4 +52,4 @@ enum FBUS_RX_States {
 	FBUS_RX_GetMessage
 };
 
-#endif /* __links_fbus_common_h */
+#endif /* _gnokii_links_fbus_common_h */
