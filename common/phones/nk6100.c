@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.158 2003-11-30 19:38:06 bozo Exp $
+  $Id: nk6100.c,v 1.159 2004-01-04 11:06:35 uid66843 Exp $
 
   G N O K I I
 
@@ -2894,7 +2894,6 @@ static gn_error get_security_code(gn_data *data, struct gn_statemachine *state)
 static gn_error IncomingSecurity(int messagetype, unsigned char *message, int length, gn_data *data, struct gn_statemachine *state)
 {
 	char *aux, *aux2;
-	int i;
 
 	switch (message[2]) {
 	/* IMEI */

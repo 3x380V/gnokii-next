@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-encoding.c,v 1.51 2003-11-13 00:18:07 bozo Exp $
+  $Id: gsm-encoding.c,v 1.52 2004-01-04 11:06:36 uid66843 Exp $
 
   G N O K I I
 
@@ -724,7 +724,7 @@ int base64_encode(char *outstring, int outlen, const char *instring, int inlen)
 int base64_decode(char *dest, int destlen, const char *source, int inlen)
 {
 	int dtable[256];
-	int i, c, retval;
+	int i, c;
 	int dpos = 0;
 	int spos = 0;
 

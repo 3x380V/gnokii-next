@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_lowlevel.c,v 1.82 2003-10-25 13:17:18 bozo Exp $
+  $Id: xgnokii_lowlevel.c,v 1.83 2004-01-04 11:06:36 uid66843 Exp $
   
   X G N O K I I
 
@@ -294,15 +294,6 @@ void GUI_InitPhoneMonitor(void)
 	pthread_cond_init(&getNetworkInfoCond, NULL);
 	pthread_mutex_init(&ringtoneMutex, NULL);
 	pthread_cond_init(&ringtoneCond, NULL);
-}
-
-static gint compare_number(const gn_sms * a, const gn_sms * b)
-{
-	dprintf("a: %i b:%i\n", a->number, b->number);
-	if (a->number == b->number)
-		return 0;
-	else
-		return 1;
 }
 
 static gint compare_folder_and_number(const gn_sms *a, const gn_sms *b)

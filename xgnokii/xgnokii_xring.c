@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_xring.c,v 1.2 2003-10-25 13:17:18 bozo Exp $
+  $Id: xgnokii_xring.c,v 1.3 2004-01-04 11:06:36 uid66843 Exp $
 
   X G N O K I I
 
@@ -671,7 +671,6 @@ static void save_ringtone_as(GtkWidget *w)
 
 static void save_ringtone(GtkWidget *w)
 {
-	gchar *file_name;
 	gn_error err;
 
 	get_ringtone_info(&gi.ringtone);
