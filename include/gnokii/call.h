@@ -1,6 +1,6 @@
 /*
 
-  $Id: call.h,v 1.9 2003-03-06 22:32:29 pkot Exp $
+  $Id: call.h,v 1.10 2003-04-28 12:48:46 pkot Exp $
 
   G N O K I I
 
@@ -31,7 +31,6 @@
 #ifndef _gnokii_call_h
 #define _gnokii_call_h
 
-#include <sys/time.h>
 #include <gnokii/error.h>
 
 typedef enum {

@@ -1,6 +1,6 @@
 /*
 
-  $Id: common.h,v 1.124 2003-03-06 22:32:29 pkot Exp $
+  $Id: common.h,v 1.125 2003-04-28 12:48:46 pkot Exp $
 
   G N O K I I
 
@@ -31,9 +31,6 @@
 
 #ifndef _gnokii_common_h
 #define _gnokii_common_h
-
-#include <stdlib.h>
-#include <sys/time.h>
 
 #include <gnokii/rlp-common.h>
 

@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.h,v 1.51 2003-04-08 08:39:37 bozo Exp $
+  $Id: gnokii.h,v 1.52 2003-04-28 12:48:46 pkot Exp $
 
   G N O K I I
 
@@ -33,6 +33,16 @@
 
 #ifdef __cplusplus
 extern "C" {
+#endif
+
+/* Some portability definitions first */
+#if defined(__linux__)
+#  include <stdint.h>
+#  include <sys/time.h>
+#elif defined(_MSC_VER) && defined(WIN32)
+#  include <Winsock2.h>
+#else
+typedef unsigned char uint8_t;
 #endif
 	
 #ifndef API
