@@ -1,6 +1,6 @@
 /*
 
-  $Id: common.h,v 1.101 2002-04-04 11:18:50 plail Exp $
+  $Id: common.h,v 1.102 2002-04-04 22:35:37 pkot Exp $
 
   G N O K I I
 
@@ -433,11 +433,11 @@ typedef enum {
 	SMS_Abbreviated   = 0xe1  /* Abbreviated number */
 } SMS_NumberType;
 
-#define SMS_MAX_ADDRESS_LENGTH          40
+#define MAX_BCD_STRING_LENGTH		40
 
 typedef struct {
 	SMS_NumberType type;
-	char number[SMS_MAX_ADDRESS_LENGTH];
+	char number[MAX_BCD_STRING_LENGTH];
 } SMS_Number;
 
 typedef struct {

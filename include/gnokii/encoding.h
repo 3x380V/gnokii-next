@@ -1,6 +1,6 @@
 /*
 
-  $Id: encoding.h,v 1.8 2002-04-04 11:35:39 plail Exp $
+  $Id: encoding.h,v 1.9 2002-04-04 22:35:37 pkot Exp $
 
   G N O K I I
 
@@ -52,7 +52,7 @@ void EncodeHex (unsigned char* dest, const unsigned char* src, int len);
 void DecodeUCS2 (unsigned char* dest, const unsigned char* src, int len);
 void EncodeUCS2 (unsigned char* dest, const unsigned char* src, int len);
 
-extern char *GetBCDNumber(u8 *Number, int maxlen);
+extern char *GetBCDNumber(u8 *Number);
 extern int SemiOctetPack(char *Number, unsigned char *Output, SMS_NumberType type);
 
 #endif
