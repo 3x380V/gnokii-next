@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.311 2002-11-01 23:23:20 pkot Exp $
+  $Id: gnokii.c,v 1.312 2002-11-04 22:18:13 pkot Exp $
 
   G N O K I I
 
@@ -1903,9 +1903,9 @@ static int setlogo(int argc, char *argv[])
 		if ((argc > 1) && (ReadBitmapFileDialog(argv[1], &bitmap, info) != GN_ERR_NONE)) return -1;
 		gn_bmp_resize(&bitmap, GN_BMP_CallerLogo, info);
 		if (argc > 2) {
-			bitmap.number = argv[2][0] - '0';
+			bitmap.number = (argv[2][0] < '0') ? 0 : argv[2][0] - '0';
+			if (bitmap.number > 9) bitmap.number = 0;
 			dprintf("%i \n", bitmap.number);
-			if ((bitmap.number < 0) || (bitmap.number > 9)) bitmap.number = 0;
 			oldbit.type = GN_BMP_CallerLogo;
 			oldbit.number = bitmap.number;
 			data.Bitmap = &oldbit;
