@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.h,v 1.65 2004-01-17 23:41:06 uid66849 Exp $
+  $Id: gnokii.h,v 1.66 2004-02-17 21:31:09 uid66843 Exp $
 
   G N O K I I
 
@@ -77,6 +77,8 @@ extern API struct gn_cfg_header *gn_cfg_info;
 
 /* Files */
 API int gn_file_text_save(char *filename, char *text, int mode);
+/* reads internal gnokii raw phonebook format */
+API gn_error gn_file_phonebook_raw(gn_phonebook_entry *entry, char *buffer);
 
 /* Misc */
 API gn_memory_type gn_str2memory_type(const char *s);
