@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.402 2004-08-10 19:36:22 pkot Exp $
+  $Id: gnokii.c,v 1.403 2004-08-10 19:46:28 pkot Exp $
 
   G N O K I I
 
@@ -3492,7 +3492,10 @@ static int writephonebook(int argc, char *args[])
 						gn_line_get(stdin, ans, 7);
 						if (!strcmp(ans, _("yes"))) confirm = 1;
 						else if (!strcmp(ans, _("no"))) confirm = 0;
-						else fprintf(stdout, "\nIncorrect answer [%s]\n", ans);
+						else {
+							fprintf(stdout, "\nIncorrect answer [%s]. Assuming 'no'.\n", ans);
+							confirm = 0;
+						}
 					}
 					/* User chose not to overwrite */
 					if (!confirm) continue;
