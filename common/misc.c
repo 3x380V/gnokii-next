@@ -1,6 +1,6 @@
 /*
 
-  $Id: misc.c,v 1.60 2003-02-26 00:15:47 pkot Exp $
+  $Id: misc.c,v 1.61 2003-02-28 01:00:55 bozo Exp $
 
   G N O K I I
 
@@ -70,8 +70,8 @@ static gn_phone_model models[] = {
 	{"2110i", "NHE-4", PM_SMS },
 	{"2148i", "NHK-4", 0 },
 	{"3110",  "0310" , PM_SMS | PM_DTMF | PM_DATA }, /* NHE-8 */
-	{"3210",  "NSE-8", PM_SMS | PM_DTMF },
-	{"3210",  "NSE-9", PM_SMS | PM_DTMF },
+	{"3210",  "NSE-8", PM_SMS | PM_DTMF | PM_KEYBOARD },
+	{"3210",  "NSE-9", PM_SMS | PM_DTMF | PM_KEYBOARD },
 	{"3310",  "NHM-5", PM_SMS | PM_DTMF },
 	{"3330",  "NHM-6", PM_SMS | PM_DTMF },
 	{"3360",  "NPW-6", PM_SMS | PM_DTMF },
