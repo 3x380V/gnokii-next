@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus.c,v 1.51 2003-03-06 21:10:35 pkot Exp $
+  $Id: fbus.c,v 1.52 2003-03-11 23:22:24 pkot Exp $
 
   G N O K I I
 
@@ -579,7 +579,7 @@ gn_error fbus_initialise(int attempt, struct gn_statemachine *state)
 		}
 		break;
 	case GN_CT_Bluetooth:
-#ifdef BLUETOOTH
+#ifdef HAVE_BLUETOOTH
 		/* If there's no valid configuration in the .gnokiirc, try
 		 * to connect over tty interface */
 		if (!bacmp(BDADDR_ANY, &state->config.bt_address))
