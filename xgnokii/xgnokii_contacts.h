@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_contacts.h,v 1.16 2002-03-28 21:37:50 pkot Exp $
+  $Id: xgnokii_contacts.h,v 1.17 2002-05-24 14:37:07 plail Exp $
   
   X G N O K I I
 
@@ -77,6 +77,7 @@ typedef struct {
 	GtkWidget *groupLabel;
 	GtkWidget *groupMenu;
 	gint newGroup;
+	gint newType;
 	gint row;
 } EditEntryData;
 
@@ -85,6 +86,7 @@ typedef struct {
 	PhonebookEntry *pbEntry;
 	GtkWidget *dialog;
 	GtkWidget *clist;
+	gint row;
 } EditNumbersData;
 
 
