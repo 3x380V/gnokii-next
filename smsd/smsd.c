@@ -1,6 +1,6 @@
 /*
 
-  $Id: smsd.c,v 1.21 2002-08-02 13:14:38 plail Exp $
+  $Id: smsd.c,v 1.22 2002-08-07 23:03:15 pkot Exp $
 
   S M S D
 
@@ -267,8 +267,8 @@ static void ReadConfig (gint argc, gchar *argv[])
     exit (-2);
   }
   
-  if (readconfig (&smsdConfig.model, &smsdConfig.port, &smsdConfig.initlength,
-      &smsdConfig.connection, &smsdConfig.bindir) < 0)
+  if (gn_readconfig (&smsdConfig.model, &smsdConfig.port, &smsdConfig.initlength,
+		     &smsdConfig.connection, &smsdConfig.bindir) < 0)
     exit (-1);
 }
 

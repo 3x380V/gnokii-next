@@ -1,6 +1,6 @@
 /*
 
-  $Id: lowlevel.c,v 1.19 2002-08-05 08:10:54 ja Exp $
+  $Id: lowlevel.c,v 1.20 2002-08-07 23:03:15 pkot Exp $
 
   S M S D
 
@@ -154,7 +154,7 @@ static GSM_Error fbusinit (bool enable_monitoring)
 	}
 	/* signal(SIGINT, bussignal); */
 
-	aux = CFG_Get(CFG_Info, "global", "use_locking");
+	aux = gn_cfg_get(gn_cfg_info, "global", "use_locking");
 	/* Defaults to 'no' */
 	if (aux && !strcmp(aux, "yes")) {
 		lockfile = lock_device(smsdConfig.port);

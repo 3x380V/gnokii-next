@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii.c,v 1.53 2002-07-29 21:18:35 pkot Exp $
+  $Id: xgnokii.c,v 1.54 2002-08-07 23:03:15 pkot Exp $
   
   X G N O K I I
 
@@ -2297,9 +2297,9 @@ static void ReadConfig(void)
 			if ((xgnokiiConfig.locale = getenv("LANG")) == NULL)
 				xgnokiiConfig.locale = "POSIX";
 #endif
-	if (readconfig(&xgnokiiConfig.model, &xgnokiiConfig.port,
-		       &xgnokiiConfig.initlength, &xgnokiiConfig.connection,
-		       &xgnokiiConfig.bindir) < 0) {
+	if (gn_readconfig(&xgnokiiConfig.model, &xgnokiiConfig.port,
+			  &xgnokiiConfig.initlength, &xgnokiiConfig.connection,
+			  &xgnokiiConfig.bindir) < 0) {
 		exit(-1);
 	}
 

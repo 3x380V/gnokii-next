@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-api.c,v 1.47 2002-07-13 17:28:50 pkot Exp $
+  $Id: gsm-api.c,v 1.48 2002-08-07 23:03:15 pkot Exp $
 
   G N O K I I
 
@@ -126,7 +126,7 @@ API GSM_Error GSM_Initialise(char *model, char *device, char *initlength, GSM_Co
 
 	sm->Link.ConnectionType = connection;
 	sm->Link.InitLength = atoi(initlength);
-	sms_timeout = CFG_Get(CFG_Info, "sms", "timeout");
+	sms_timeout = gn_cfg_get(gn_cfg_info, "sms", "timeout");
 	if (!sms_timeout) sm->Link.SMSTimeout = 100;
 	else sm->Link.SMSTimeout = atoi(sms_timeout) * 10;
 	memset(&sm->Link.PortDevice, 0, sizeof(sm->Link.PortDevice));
