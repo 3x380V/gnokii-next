@@ -1,6 +1,6 @@
 /*
 
-  $Id: atbus.c,v 1.31 2003-02-18 22:22:50 pkot Exp $
+  $Id: atbus.c,v 1.32 2003-02-20 23:26:44 pkot Exp $
 
   G N O K I I
 
@@ -223,6 +223,7 @@ gn_error atbus_initialise(int mode, struct gn_statemachine *state)
 			goto err;
 		}
 		break;
+#ifdef HAVE_BLUETOOTH
 	case GN_CT_Bluetooth:
 		/* If there's no valid configuration in the .gnokiirc, try
 		 * to connect over tty interface */
@@ -233,6 +234,7 @@ gn_error atbus_initialise(int mode, struct gn_statemachine *state)
 			goto err;
 		}
 		break;
+#endif
 	default:
 		dprintf("Device not supported by AT bus\n");
 		error = GN_ERR_FAILED;
