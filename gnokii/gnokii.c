@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.346 2003-05-13 09:25:34 bozo Exp $
+  $Id: gnokii.c,v 1.347 2003-05-29 17:26:11 pkot Exp $
 
   G N O K I I
 
@@ -4671,7 +4671,7 @@ int main(int argc, char *argv[])
 	case '?':
 	case ':':
 		fprintf(stderr, _("Use '%s --help' for usage information.\n"), argv[0]);
-		exit(0);
+		exit(1);
 	/* Then, options with no arguments */
 	case OPT_HELP:
 		usage(stdout, -1);
