@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_lowlevel.c,v 1.86 2004-07-21 00:13:25 bozo Exp $
+  $Id: xgnokii_lowlevel.c,v 1.87 2004-10-17 14:11:27 pkot Exp $
   
   X G N O K I I
 
@@ -215,12 +215,6 @@ static gn_error fbusinit(bool enable_monitoring)
 	static bool atexit_registered = false;
 	char *aux;
 
-	/* register cleanup function */
-	if (!atexit_registered) {
-		atexit_registered = true;
-		atexit(busterminate);
-	}
-
 	aux = gn_cfg_get(gn_cfg_info, "global", "use_locking");
 	/* Defaults to 'no' */
 	if (aux && !strcmp(aux, "yes")) {
@@ -229,6 +223,12 @@ static gn_error fbusinit(bool enable_monitoring)
 			fprintf(stderr, _("Lock file error. Exiting\n"));
 			MainExit();
 		}
+	}
+
+	/* register cleanup function */
+	if (!atexit_registered) {
+		atexit_registered = true;
+		atexit(busterminate);
 	}
 
 	/* Initialise the code for the GSM interface. */
