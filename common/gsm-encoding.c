@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-encoding.c,v 1.55 2004-01-26 00:09:14 uid66843 Exp $
+  $Id: gsm-encoding.c,v 1.56 2004-01-26 22:50:54 uid66843 Exp $
 
   G N O K I I
 
@@ -397,7 +397,7 @@ void char_ucs2_encode(unsigned char* dest, const unsigned char* src, int len)
 			i_len += length;
 			break;
 		}
-		sprintf(dest + (o_len << 2), "%lx", wc);
+		sprintf(dest + (o_len << 2), "%04lx", wc);
 	}
 	return;
 }
