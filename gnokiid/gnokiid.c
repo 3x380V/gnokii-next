@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokiid.c,v 1.26 2002-08-09 22:01:05 pkot Exp $
+  $Id: gnokiid.c,v 1.27 2002-08-18 17:51:29 pkot Exp $
 
   G N O K I I
 
@@ -107,7 +107,7 @@ int main(int argc, char *argv[])
 
 	short_version();
 
-	if (gn_readconfig(&Model, &Port, &Initlength, &Connection, &BinDir) < 0) {
+	if (gn_cfg_readconfig(&Model, &Port, &Initlength, &Connection, &BinDir) < 0) {
 		exit(-1);
 	}
 
