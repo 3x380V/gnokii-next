@@ -1,6 +1,6 @@
 /*
 
-  $Id: db.h,v 1.5 2002-03-28 21:37:50 pkot Exp $
+  $Id: db.h,v 1.6 2002-06-25 09:59:26 ja Exp $
 
   S M S D
 
@@ -37,7 +37,7 @@
 extern void (*DB_Bye) (void);
 extern gint (*DB_ConnectInbox) (const DBConfig);
 extern gint (*DB_ConnectOutbox) (const DBConfig);
-extern gint (*DB_InsertSMS) (const GSM_SMSMessage * const);
+extern gint (*DB_InsertSMS) (const GSM_API_SMS * const);
 extern void (*DB_Look) (void);
 
 #endif
