@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.382 2004-01-31 22:47:13 uid66843 Exp $
+  $Id: gnokii.c,v 1.383 2004-02-15 22:43:29 uid66843 Exp $
 
   G N O K I I
 
@@ -3339,8 +3339,8 @@ static int writephonebook(int argc, char *args[])
 {
 	gn_phonebook_entry entry;
 	gn_error error = GN_ERR_NONE;
-	gn_memory_type default_mt = GN_MT_XX; /* Default memory_type. Changed if given in the command line */
-	int default_location = 0; /* default location. Changed if given in the command line */
+	gn_memory_type default_mt = GN_MT_ME; /* Default memory_type. Changed if given in the command line */
+	int default_location = 1; /* default location. Changed if given in the command line */
 	int find_free = 0; /* By default don't try to find a free location */
 	int confirm = 0; /* By default don't overwrite existing entries */
 	int type = 0; /* type of the output:
