@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.67 2002-12-27 00:11:40 bozo Exp $
+  $Id: atgen.c,v 1.68 2002-12-29 13:00:29 pkot Exp $
 
   G N O K I I
 
@@ -1060,7 +1060,7 @@ static gn_error ReplyGetSMS(int messagetype, unsigned char *buffer, int length, 
 	data->raw_sms->reference           = 0;
 	data->raw_sms->pid                 = tmp[offset + 1];
 	data->raw_sms->dcs                 = tmp[offset + 2];
-	memcpy(data->raw_sms->time, tmp + offset + 3, 7);
+	memcpy(data->raw_sms->smsc_time, tmp + offset + 3, 7);
 	data->raw_sms->length              = tmp[offset + 10] & 0x00ff;
 	if (sms_len - offset - 11 > 1000) {
 		dprintf("Phone gave as poisonous (too short?) reply %s, either phone went crazy or communication went out of sync\n", buf.line3);
