@@ -1,6 +1,6 @@
 /*
 
-  $Id: device.c,v 1.31 2003-04-28 12:57:48 pkot Exp $
+  $Id: device.c,v 1.32 2003-04-28 14:13:52 pkot Exp $
 
   G N O K I I
 
@@ -51,6 +51,10 @@ int device_open(const char *file, int with_odd_parity, int with_async,
 		int with_hw_handshake, gn_connection_type device_type,
 		struct gn_statemachine *state)
 {
+#ifdef HAVE_BLUETOOTH
+	bdaddr_t bdaddr;
+#endif
+
 	state->device.type = device_type;
 
 	dprintf("Serial device: opening device %s\n", file);
@@ -65,7 +69,8 @@ int device_open(const char *file, int with_odd_parity, int with_async,
 		break;
 #ifdef HAVE_BLUETOOTH
 	case GN_CT_Bluetooth:
-		state->device.fd = bluetooth_open((bdaddr_t *)&state->config.port_device, state->config.rfcomm_cn, state);
+		str2ba(state->config.port_device, &bdaddr);
+		state->device.fd = bluetooth_open(&bdaddr, state->config.rfcomm_cn, state);
 		break;
 #endif
 	case GN_CT_Tekram:
