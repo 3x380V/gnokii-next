@@ -1,6 +1,6 @@
 /*
 
-  $Id: statemachine.h,v 1.3 2001-12-28 16:00:31 pkot Exp $
+  $Id: statemachine.h,v 1.4 2001-12-31 09:35:47 pkot Exp $
 
   G N O K I I
 
@@ -17,7 +17,7 @@
 #ifndef __gsm_statemachine_h
 #define __gsm_statemachine_h
 
-#include "gsm-common.h"
+#include "gsm-data.h"
 
 GSM_Error SM_Initialise(GSM_Statemachine *state);
 GSM_State SM_Loop(GSM_Statemachine *state, int timeout);

@@ -1,7 +1,7 @@
 
 /*
 
-  $Id: nk3110.h,v 1.1 2001-11-08 16:39:09 pkot Exp $
+  $Id: nk3110.h,v 1.2 2001-12-31 09:35:47 pkot Exp $
 
   G N O K I I
 
@@ -16,7 +16,10 @@
   See README for more details on supported mobile phones.
 
   $Log: nk3110.h,v $
-  Revision 1.1  2001-11-08 16:39:09  pkot
+  Revision 1.2  2001-12-31 09:35:47  pkot
+  libsms update. Will break sms reading/sending on all models not using libsms. libsms is getting now a middle layer. More updates soon. Cleanups.
+
+  Revision 1.1  2001/11/08 16:39:09  pkot
   3810/3110 support for the new structure (Tamas Bondar)
 
 
@@ -25,8 +28,7 @@
 #ifndef __phones_nk3110_h
 #define __phones_nk3110_h
 
-#include <gsm-common.h>
-#include "gsm-statemachine.h"
+#include "gsm-data.h"
 
 /* Phone Memory Sizes */
 #define P3110_MEMORY_SIZE_SM 20

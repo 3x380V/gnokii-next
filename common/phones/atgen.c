@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.10 2001-12-29 23:41:54 pkot Exp $
+  $Id: atgen.c,v 1.11 2001-12-31 09:35:46 pkot Exp $
 
   G N O K I I
 
@@ -78,7 +78,7 @@ static AT_FunctionInitType AT_FunctionInit[] = {
 	{ GOP_GetMemoryStatus, AT_GetMemoryStatus, ReplyMemoryStatus },
 	{ GOP_ReadPhonebook, AT_ReadPhonebook, ReplyReadPhonebook },
 	{ GOP_CallDivert, AT_CallDivert, ReplyCallDivert },
-	{ GOP_SendSMS, AT_SendSMS, ReplyReadPhonebook }
+	{ GOP_SendSMS, AT_SendSMS, ReplySendSMS }
 };
 
 

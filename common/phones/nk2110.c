@@ -1,6 +1,6 @@
 /* -*- linux-c -*-
 
-  $Id: nk2110.c,v 1.18 2001-12-24 10:41:13 pkot Exp $
+  $Id: nk2110.c,v 1.19 2001-12-31 09:35:46 pkot Exp $
 
   G N O K I I
 
@@ -356,10 +356,10 @@ DecodeIncomingSMS(GSM_SMSMessage *m)
 
 	if (len>160)
 		eprintf("Magic not allowed\n");
-	memset(m->MessageText, 0, 161);
-	strncpy(m->MessageText, (void *) &SMSData[15], len);
+	memset(m->UserData[0].u.Text, 0, 161);
+	strncpy(m->UserData[0].u.Text, (void *) &SMSData[15], len);
 
-	ddprintf("Text is %s\n", m->MessageText);
+	ddprintf("Text is %s\n", m->UserData[0].u.Text);
 
 	/* 
 	Originator address is at 15+i,

@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-common.c,v 1.9 2001-12-28 16:00:30 pkot Exp $
+  $Id: gsm-common.c,v 1.10 2001-12-31 09:35:46 pkot Exp $
 
   G N O K I I
 
@@ -13,7 +13,7 @@
 */
 
 #include <string.h>
-#include "gsm-common.h"
+#include "gsm-data.h"
 
 GSM_Error Unimplemented(void)
 {

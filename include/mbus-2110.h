@@ -1,6 +1,6 @@
 /*
 
-  $Id: mbus-2110.h,v 1.21 2001-06-28 00:28:46 pkot Exp $
+  $Id: mbus-2110.h,v 1.22 2001-12-31 09:35:47 pkot Exp $
 
   G N O K I I
 
@@ -12,22 +12,15 @@
 
   Header file for 2110 code.	
 
-  $Log: mbus-2110.h,v $
-  Revision 1.21  2001-06-28 00:28:46  pkot
-  Small docs updates (Pawel Kot)
-
-
 */
 
 #ifndef		__mbus_2110_h
 #define		__mbus_2110_h
 
-#ifndef		__gsm_common_h
-#include	"gsm-common.h"	/* Needed for GSM_Error etc. */
-#endif
+#include	"gsm-data.h"
 
-	/* Global variables */
-extern bool					MB21_LinkOK;
+/* Global variables */
+extern bool			MB21_LinkOK;
 extern GSM_Functions		MB21_Functions;
 extern GSM_Information		MB21_Information;
 

@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_contacts.h,v 1.13 2001-12-03 16:44:44 pkot Exp $
+  $Id: xgnokii_contacts.h,v 1.14 2001-12-31 09:35:47 pkot Exp $
   
   X G N O K I I
 
@@ -18,7 +18,6 @@
 #include <gtk/gtk.h>
 #include "misc.h"
 #include "gsm-common.h"
-#include "gsm-api.h"
 
 #define IO_BUF_LEN	160
 

@@ -1,5 +1,11 @@
 /* -*- linux-c -*-
 
+  $Id: cbus.c,v 1.9 2001-12-31 09:35:46 pkot Exp $
+
+  G N O K I I
+
+  A Linux/Unix toolset and driver for Nokia mobile phones.
+
   Copyright (C) 2001 Pavel Machek <pavel@ucw.cz>
   Copyright (C) 2001 Michl Ladislav <xmichl03@stud.fee.vutbr.cz>
 
@@ -20,7 +26,7 @@
 #define DEBUG
 #endif
 #include "misc.h"
-#include "gsm-common.h"
+#include "gsm-data.h"
 #include "gsm-ringtones.h"
 #include "gsm-networks.h"
 #include "device.h"

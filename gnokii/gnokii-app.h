@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-app.h,v 1.31 2001-12-24 13:45:41 machek Exp $
+  $Id: gnokii-app.h,v 1.32 2001-12-31 09:35:47 pkot Exp $
   
   G N O K I I
 
@@ -13,8 +13,6 @@
   Header file for test utility.
 
 */
-
-/* Prototypes */
 
 struct gnokii_arg_len {
 	int gal_opt;
