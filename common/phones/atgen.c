@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.89 2004-01-02 15:25:25 uid66843 Exp $
+  $Id: atgen.c,v 1.90 2004-01-21 19:17:19 uid66849 Exp $
 
   G N O K I I
 
@@ -1290,6 +1290,7 @@ static gn_error ReplyGetNetworkInfo(int messagetype, unsigned char *buffer, int 
 				data->network_info->network_code[3] = ' ';
 				data->network_info->network_code[4] = strings[2][4];
 				data->network_info->network_code[5] = strings[2][5];
+				data->network_info->network_code[6] = 0;
 			} else { /* probably incorrect */
 				snprintf(data->network_info->network_code, sizeof(data->network_info->network_code), strings[2]);
 			}
