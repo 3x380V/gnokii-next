@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_lowlevel.h,v 1.16 2002-03-25 01:44:51 pkot Exp $
+  $Id: xgnokii_lowlevel.h,v 1.17 2002-03-27 23:46:29 pkot Exp $
   
   X G N O K I I
 
@@ -107,8 +107,8 @@ typedef struct {
 	gint max;
 	GSM_MemoryType type;
 	gint status;
-	 gint(*InsertEntry) (GSM_PhonebookEntry *);
-	 gint(*ReadFailed) (gint);
+	gint(*InsertEntry) (GSM_PhonebookEntry *);
+	gint(*ReadFailed) (gint);
 } D_MemoryLocationAll;
 
 typedef struct {

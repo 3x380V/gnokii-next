@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_contacts.c,v 1.35 2002-03-26 02:27:13 pkot Exp $
+  $Id: xgnokii_contacts.c,v 1.36 2002-03-27 23:46:28 pkot Exp $
   
   X G N O K I I
 
@@ -1965,7 +1965,6 @@ void GUI_RefreshContacts(void)
 		pbEntry = g_ptr_array_index(contactsMemory, i);
 		if (pbEntry->status != E_Empty && pbEntry->status != E_Deleted) {
 			row[0] = pbEntry->entry.Name;
-
 			row[1] = pbEntry->entry.Number;
 
 			if (pbEntry->entry.MemoryType == GMT_ME)
