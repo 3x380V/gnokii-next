@@ -1,6 +1,6 @@
 /*
 
-  $Id: at-emulator.c,v 1.19 2002-05-24 18:35:15 bozo Exp $
+  $Id: at-emulator.c,v 1.20 2002-05-25 13:18:55 pkot Exp $
 
   G N O K I I
 
@@ -470,7 +470,7 @@ void	ATEM_ParseSMSText(char *buff)
 			sms.UserData[0].Length = index;
 			index = 0;
 			Parser = ATEM_ParseAT;
-			dprintf("Sending SMS to %s (text: %s)\n", data.SMSMessage->RemoteNumber.number, data.SMSMessage->UserData[0].u.Text);
+			dprintf("Sending SMS to %s (text: %s)\n", data.SMS->Remote.Number, data.SMS->UserData[0].u.Text);
 
 			/* FIXME: set more SMS fields before sending */
 			error = SendSMS(&data, sm);
