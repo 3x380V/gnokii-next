@@ -1,6 +1,6 @@
 /*
 
-  $Id: data.h,v 1.67 2003-06-18 20:41:38 bozo Exp $
+  $Id: data.h,v 1.68 2003-10-19 21:17:54 bozo Exp $
 
   G N O K I I
 
@@ -98,6 +98,7 @@ typedef struct {
 	gn_phone_model *phone;
 	gn_locks_info *locks_info;
 	gn_tone *tone;
+	gn_ringtone_list *ringtone_list;
 } gn_data;
 
 /* 
@@ -222,6 +223,7 @@ typedef enum {
 	GN_OP_GetActiveProfile,
 	GN_OP_SetActiveProfile,
 	GN_OP_PlayTone,
+	GN_OP_GetRingtoneList,
 	GN_OP_Max,	/* don't append anything after this entry */
 } gn_operation;
 

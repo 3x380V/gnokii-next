@@ -1,6 +1,6 @@
 /*
 
-  $Id: common.h,v 1.127 2003-09-07 22:01:58 bozo Exp $
+  $Id: common.h,v 1.128 2003-10-19 21:17:54 bozo Exp $
 
   G N O K I I
 
@@ -640,5 +640,23 @@ typedef struct {
 	int frequency;
 	int volume;
 } gn_tone;
+
+#define GN_RINGTONE_MAX_NAME 20
+#define GN_RINGTONE_MAX_COUNT 256
+
+typedef struct {
+	int location;
+	char name[20];
+	int user_defined;
+	int readable;
+	int writable;
+} gn_ringtone_info;
+
+typedef struct {
+	int count;
+	int userdef_location;
+	int userdef_count;
+	gn_ringtone_info ringtone[GN_RINGTONE_MAX_COUNT];
+} gn_ringtone_list;
 
 #endif	/* _gnokii_common_h */
