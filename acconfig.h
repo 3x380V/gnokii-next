@@ -1,6 +1,6 @@
 /*
 
-  $Id: acconfig.h,v 1.9 2003-12-02 21:48:04 bozo Exp $
+  $Id: acconfig.h,v 1.10 2004-06-17 18:37:43 pkot Exp $
 
   G N O K I I
 
@@ -51,6 +51,9 @@
 
 /* Use UNIX98 style pty support instead of the traditional */
 #undef USE_UNIX98PTYS
+
+/* Define if you have libical. */
+#undef HAVE_LIBICAL
 
 /* Define if you want IrDA support. Linux only */
 #undef HAVE_IRDA
