@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_contacts.h,v 1.17 2002-05-24 14:37:07 plail Exp $
+  $Id: xgnokii_contacts.h,v 1.18 2002-12-23 01:04:14 bozo Exp $
   
   X G N O K I I
 
@@ -59,7 +59,7 @@ typedef enum {
 
 /* Memory entry data */
 typedef struct {
-	GSM_PhonebookEntry entry;	/* Phonebook entry self. */
+	gn_phonebook_entry entry;	/* Phonebook entry self. */
 	EntryStatus status;	/* Entry status. */
 } PhonebookEntry;
 
@@ -145,7 +145,7 @@ typedef enum {
 
 
 typedef struct {
-	gchar pattern[GSM_MAX_PHONEBOOK_NAME_LENGTH + 1];
+	gchar pattern[GN_PHONEBOOK_NAME_MAX_LENGTH + 1];
 	gint lastRow;
 	FindType type;
 } FindEntryStruct;
@@ -192,7 +192,7 @@ extern SelectContactData *GUI_SelectContactDialog(void);
 
 extern void GUI_RefreshGroupMenu(void);
 
-extern PhonebookEntry *GUI_GetEntry(GSM_MemoryType, gint);
+extern PhonebookEntry *GUI_GetEntry(gn_memory_type, gint);
 
 void ExtPbkChanged(GtkWidget * widget, gpointer data);
 

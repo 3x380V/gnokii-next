@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_data.c,v 1.7 2002-03-29 20:51:25 pkot Exp $
+  $Id: xgnokii_data.c,v 1.8 2002-12-23 01:04:14 bozo Exp $
 
   X G N O K I I
 
@@ -70,7 +70,7 @@ inline void GUI_ShowData(void)
 		return;
 
 	if (GTerminateThread) {
-		VM_Terminate();
+		vm_terminate();
 		enabled = false;
 		GTerminateThread = false;
 	}
@@ -87,7 +87,7 @@ inline void GUI_HideData(void)
 
 static inline void DisableData(GtkWidget * widget, gpointer data)
 {
-	VM_Terminate();
+	vm_terminate();
 	enabled = false;
 	UpdateStatus();
 }
@@ -97,7 +97,7 @@ static inline void EnableData(GtkWidget * widget, gpointer data)
 {
 
 	GTerminateThread = false;
-	VM_Initialise(xgnokiiConfig.model, xgnokiiConfig.port,
+	vm_initialise(xgnokiiConfig.model, xgnokiiConfig.port,
 		      0, 0, xgnokiiConfig.bindir, false, false);
 	enabled = true;
 	UpdateStatus();
