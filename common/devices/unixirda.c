@@ -1,6 +1,6 @@
 /*
  *
- * $Id: unixirda.c,v 1.24 2003-04-06 19:54:06 pkot Exp $
+ * $Id: unixirda.c,v 1.25 2003-08-25 14:21:28 pkot Exp $
  *
  * G N O K I I
  *
@@ -33,7 +33,7 @@
 #include "devices/unixirda.h"
 
 #ifndef AF_IRDA
-#define AF_IRDA 23
+#  define AF_IRDA 23
 #endif
 
 #define INFO_LEN		22
