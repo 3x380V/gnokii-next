@@ -1,6 +1,6 @@
 /*
 
-  $Id: virtmodem.h,v 1.3 2002-02-09 17:09:51 pkot Exp $
+  $Id: virtmodem.h,v 1.4 2002-02-13 22:13:16 pkot Exp $
 
   G N O K I I
 
@@ -26,14 +26,6 @@ bool VM_Initialise(char *model,
 		   char *bindir,
 		   bool debug_mode,
 		   bool GSM_Init);
-/*int  VM_PtySetup(char *bindir);
-void VM_ThreadLoop(void);
-void VM_CharHandler(void);
-int  VM_GetMasterPty(char **name);*/
 void VM_Terminate(void);
-/*GSM_Error VM_GSMInitialise(char *model,
-			   char *port,
-			   char *initlength,
-			   GSM_ConnectionType connection);*/
 
 #endif	/* __virtmodem_h */
