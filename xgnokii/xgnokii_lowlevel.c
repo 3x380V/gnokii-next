@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_lowlevel.c,v 1.35 2002-03-28 21:37:50 pkot Exp $
+  $Id: xgnokii_lowlevel.c,v 1.36 2002-04-02 14:03:42 plail Exp $
   
   X G N O K I I
 
@@ -200,9 +200,6 @@ static GSM_Error InitModelInf(void)
 	}
 
 #ifdef XDEBUG
-	dprintf("stats: %i, %i, %i, %i\n", gdat.FolderStats[2]->Number,
-		gdat.FolderStats[2]->Unread, gdat.FolderStats[2]->Changed,
-		gdat.MessagesList[2][2]->Location);
 	g_print("Version: %s\n", phoneMonitor.phone.version);
 	g_print("Model: %s\n", phoneMonitor.phone.model);
 	g_print("IMEI: %s\n", phoneMonitor.phone.imei);
