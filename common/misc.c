@@ -1,6 +1,6 @@
 /*
 
-  $Id: misc.c,v 1.42 2002-05-14 23:18:08 pkot Exp $
+  $Id: misc.c,v 1.43 2002-05-14 23:19:25 pkot Exp $
 
   G N O K I I
 
@@ -102,6 +102,7 @@ static PhoneModel models[] = {
 	{"540",   "THF-11", 0 },
 	{"650",   "THF-12", 0 },
 	{"640",   "THF-13", 0 },
+	{"RPM-1", "Nokia Card Phone RPM-1 GSM900/1800", PM_SMS | PM_DTMF | PM_DATA | PM_AUTHENTICATION },
 	{NULL,    NULL, 0 }
 };
 
