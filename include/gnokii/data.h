@@ -1,6 +1,6 @@
 /*
 
-  $Id: data.h,v 1.52 2002-12-27 18:47:41 bozo Exp $
+  $Id: data.h,v 1.53 2002-12-31 00:07:10 bozo Exp $
 
   G N O K I I
 
@@ -119,6 +119,12 @@ typedef struct {
 	char connect_script[256];			/* Script to run when device connection established */
 	char disconnect_script[256];			/* Script to run when device connection closed */
 } gn_config;
+
+typedef struct {
+	int fd;
+	gn_connection_type type;
+	void *device_instance;
+} gn_device;
 
 typedef enum {
 	GN_OP_Init,
