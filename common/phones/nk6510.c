@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.c,v 1.73 2002-08-03 07:59:00 plail Exp $
+  $Id: nk6510.c,v 1.74 2002-08-06 12:27:05 plail Exp $
 
   G N O K I I
 
@@ -913,9 +913,9 @@ static GSM_Error ValidateSMS(GSM_Data *data, GSM_Statemachine *state)
 
 	/* see if the message we want is from the last read folder, i.e. */
 	/* we don't have to get folder status again */
-	if ((!data->SMSFolder) ||
-	    ((data->SMSFolder) &&
-	     (data->RawSMS->MemoryType != data->SMSFolder->FolderID))) {
+	if ((!data->SMSFolder) || (!data->SMSFolderList))
+		return GE_INTERNALERROR;
+	if (data->RawSMS->MemoryType != data->SMSFolder->FolderID) {
 		if ((error = P6510_GetSMSFolders(data, state)) != GE_NONE) return error;
 
 		if ((GetMemoryType(data->RawSMS->MemoryType) > 
