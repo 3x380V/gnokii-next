@@ -1,6 +1,6 @@
 /*
 
-  $Id: pq.c,v 1.15 2002-09-05 08:46:08 ja Exp $
+  $Id: pq.c,v 1.16 2002-09-10 20:34:03 pkot Exp $
 
   S M S D
 
@@ -157,7 +157,7 @@ void DB_Look (void)
   {
     GSM_API_SMS sms;
     
-    gn_sms_defaultsubmit (&sms);
+    gn_sms_default_submit (&sms);
     memset (&sms.Remote.Number, 0, sizeof (sms.Remote.Number));
     sms.DeliveryReport = (smsdConfig.smsSets & SMSD_READ_REPORTS);
 
