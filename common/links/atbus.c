@@ -1,6 +1,6 @@
 /*
 
-  $Id: atbus.c,v 1.40 2004-06-08 17:29:45 bozo Exp $
+  $Id: atbus.c,v 1.41 2004-06-08 23:22:30 bozo Exp $
 
   G N O K I I
 
@@ -182,10 +182,11 @@ static void atbus_rx_statemachine(unsigned char rx_char, struct gn_statemachine 
 		else if (*start == '+') {
 			/* check for possible unsolicited responses */
 			unsolicited = 0;
-			if (!strncasecmp(start + 1, "CREG:", 5)) {
+			if (!strncmp(start + 1, "CREG:", 5)) {
 				count = numchar(start, ',');
 				if (count == 0 || count == 2) unsolicited = 1;
-			}
+			} else if (!strncmp(start + 1, "CPIN:", 5))
+				bi->rbuf[0] = GN_AT_OK;
 			if (unsolicited) {
 				*start = '\0';
 				bi->rbuf_pos = start - bi->rbuf;
