@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-statemachine.c,v 1.30 2002-07-26 21:00:58 bozo Exp $
+  $Id: gsm-statemachine.c,v 1.31 2002-09-10 20:53:30 pkot Exp $
 
   G N O K I I
 
@@ -95,8 +95,7 @@ void SM_IncomingFunction(GSM_Statemachine *state, u8 messagetype, void *message,
 {
 	int c;
 	int temp = 1;
-	GSM_Data emptydata;
-	GSM_Data *data = &emptydata;
+	GSM_Data *data;
 	GSM_Error res = GE_INTERNALERROR;
 	int waitingfor = -1;
 
@@ -104,7 +103,7 @@ void SM_IncomingFunction(GSM_Statemachine *state, u8 messagetype, void *message,
 	dump("Message received: ");
 	SM_DumpMessage(messagetype, message, messagesize);
 #endif
-	GSM_DataClear(&emptydata);
+	data = calloc(1, sizeof(GSM_Data));
 
 	/* See if we need to pass the function the data struct */
 	if (state->CurrentState == WaitingForResponse)
@@ -127,13 +126,14 @@ void SM_IncomingFunction(GSM_Statemachine *state, u8 messagetype, void *message,
 	}
 	if (res == GE_UNSOLICITED) {
 		dprintf("Unsolicited frame, skipping...\n");
+		free(data);
 		return;
 	} else if (res == GE_UNHANDLEDFRAME)
 		SM_DumpUnhandledFrame(state, messagetype, message, messagesize);
 	if (temp != 0) {
 		dprintf("Unknown Frame Type %02x\n", messagetype);
 		state->Phone.DefaultFunction(messagetype, message, messagesize, state);
-
+		free(data);
 		return;
 	}
 
@@ -149,6 +149,7 @@ void SM_IncomingFunction(GSM_Statemachine *state, u8 messagetype, void *message,
 			state->CurrentState = ResponseReceived;
 		}
 	}
+	free(data);
 }
 
 /* This returns the error recorded from the phone function and indicates collection */
