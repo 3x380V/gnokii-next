@@ -1,6 +1,6 @@
 /*
 
-  $Id: compat.h,v 1.22 2003-04-08 08:46:48 bozo Exp $
+  $Id: compat.h,v 1.23 2003-04-10 21:23:59 pkot Exp $
 
   G N O K I I
 
@@ -53,6 +53,10 @@
 
 #ifdef HAVE_STDINT_H
 #  include <stdint.h>
+#endif
+
+#ifdef HAVE_SYS_TYPES_H
+#  include <sys/types.h>
 #endif
 
 /*
