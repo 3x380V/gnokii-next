@@ -4,7 +4,7 @@ dnl
 dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janík ml.
 dnl                2000 Karel Zak, Pawe³ Kot
 dnl
-dnl  $Id: configure.in,v 1.56 2001-11-26 18:06:08 pkot Exp $
+dnl  $Id: configure.in,v 1.57 2002-02-02 14:59:19 pkot Exp $
 dnl
 
 AC_INIT(gnokii/gnokii.c)
@@ -524,5 +524,6 @@ echo "
 
   Type '${MAKE}' for compilation and then '${MAKE} install',
   '${MAKE} install-suid', '${MAKE} install-strip' or '${MAKE} install-ss' to
-  install gnokii.
+  install gnokii. If you wish to install gnokii sgid gnokii (install-suid or
+  install-ss) be sure to have 'gnokii' group in your system.
 "
