@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.c,v 1.136 2004-01-19 00:17:19 uid66843 Exp $
+  $Id: nk6510.c,v 1.137 2004-01-19 01:38:35 uid66849 Exp $
 
   G N O K I I
 
@@ -1331,7 +1331,7 @@ static gn_error NK6510_IncomingSMS(int messagetype, unsigned char *message, int 
 			case 0x81: /* SMSC name */
 				char_unicode_decode(data->message_center->name,
 					      message + offset + 4,
-					      message[offset + 2] << 1);
+					      message[offset + 2]);
 				break;
 			default:
 				dprintf("Unknown subtype %02x. Ignoring\n", message[offset]);
