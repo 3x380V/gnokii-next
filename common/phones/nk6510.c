@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.c,v 1.117 2003-09-05 08:22:13 pkot Exp $
+  $Id: nk6510.c,v 1.118 2003-09-09 22:14:04 pkot Exp $
 
   G N O K I I
 
@@ -1093,7 +1093,7 @@ static gn_error NK6510_DeleteSMS(gn_data *data, struct gn_statemachine *state)
 	}
 
 	req[5] = get_memory_type(data->raw_sms->memory_type);
-	req[7] = data->sms_folder->locations[data->raw_sms->number - 1];
+	req[7] = data->raw_sms->number;
 	SEND_MESSAGE_BLOCK(NK6510_MSG_FOLDER, 10);
 }
 
