@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-statemachine.c,v 1.24 2002-03-26 01:10:28 pkot Exp $
+  $Id: gsm-statemachine.c,v 1.25 2002-03-27 23:15:44 pkot Exp $
 
   G N O K I I
 
@@ -48,14 +48,18 @@ GSM_State SM_Loop(GSM_Statemachine *state, int timeout)
 	struct timeval loop_timeout;
 	int i;
 
-	loop_timeout.tv_sec = 0;
-	loop_timeout.tv_usec = 100000;
-
 	if (!state->Link.Loop) {
 		dprintf("No Loop function. Aborting.\n");
 		abort();
 	}
 	for (i = 0; i < timeout; i++) {
+		/*
+		 * Some select() implementation (e.g. Linux) will modify the
+		 * timeval structure - bozo
+		 */
+		loop_timeout.tv_sec = 0;
+		loop_timeout.tv_usec = 100000;
+
 		state->Link.Loop(&loop_timeout);
 	}
 

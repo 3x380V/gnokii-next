@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus.h,v 1.9 2002-03-26 01:10:30 pkot Exp $
+  $Id: fbus.h,v 1.10 2002-03-27 23:15:44 pkot Exp $
 
   G N O K I I
 
@@ -32,7 +32,7 @@
 #include "fbus-common.h"
 
 #define FBUS_MAX_FRAME_LENGTH 256
-#define FBUS_MAX_MESSAGE_TYPES 128
+#define FBUS_MAX_MESSAGE_TYPES 256
 #define FBUS_MAX_TRANSMIT_LENGTH 256
 #define FBUS_MAX_CONTENT_LENGTH 120
 
@@ -59,7 +59,7 @@ typedef struct{
 	int MessageDestination;
 	int MessageType;
 	int FrameLength;
-	char MessageBuffer[FBUS_MAX_FRAME_LENGTH];
+	u8 MessageBuffer[FBUS_MAX_FRAME_LENGTH];
 } FBUS_IncomingFrame;
 
 typedef struct{
