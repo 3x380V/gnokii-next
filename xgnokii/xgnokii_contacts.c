@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_contacts.c,v 1.52 2003-08-25 13:35:50 pkot Exp $
+  $Id: xgnokii_contacts.c,v 1.53 2004-02-16 23:06:25 uid66843 Exp $
   
   X G N O K I I
 
@@ -2041,8 +2041,8 @@ static void DialVoice(void)
 
 static gint CListCompareFunc(GtkCList * clist, gconstpointer ptr1, gconstpointer ptr2)
 {
-	static gchar phoneText[] = "B";
-	static gchar simText[] = "A";
+	static gchar phoneText[] = "ME";
+	static gchar simText[] = "SM";
 	char *text1 = NULL;
 	char *text2 = NULL;
 	gint ret;
