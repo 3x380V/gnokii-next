@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_contacts.c,v 1.46 2002-12-23 01:04:14 bozo Exp $
+  $Id: xgnokii_contacts.c,v 1.47 2002-12-26 23:43:18 pkot Exp $
   
   X G N O K I I
 
@@ -43,7 +43,6 @@
 #include <string.h>
 #include <gtk/gtk.h>
 
-#include "gsm-common.h"
 #include "gsm-api.h"
 #include "xgnokii_contacts.h"
 #include "xgnokii.h"

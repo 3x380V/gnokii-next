@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_logos.c,v 1.21 2002-12-23 01:04:14 bozo Exp $
+  $Id: xgnokii_logos.c,v 1.22 2002-12-26 23:43:18 pkot Exp $
    
   X G N O K I I
 
@@ -36,14 +36,7 @@
 #include <gtk/gtk.h>
 
 #include "misc.h"
-#include "gsm-common.h"
 #include "gsm-api.h"
-#include "cfgreader.h"
-#include "gsm-networks.h"
-#include "gsm-filetypes.h"
-#include "gsm-bitmaps.h"
-#include "gnokii-internal.h"
-/* FIXME: shouldn't the bmp read/save move elsewhere? */
 
 #include "xgnokii_logos.h"
 #include "xgnokii_common.h"

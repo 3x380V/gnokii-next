@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_lowlevel.c,v 1.69 2002-12-23 01:04:15 bozo Exp $
+  $Id: xgnokii_lowlevel.c,v 1.70 2002-12-26 23:43:18 pkot Exp $
   
   X G N O K I I
 
@@ -32,11 +32,7 @@
 #include <string.h>
 #include <glib.h>
 #include "misc.h"
-#include "gsm-common.h"
 #include "gsm-api.h"
-#include "gsm-sms.h"
-#include "gsm-call.h"
-#include "cfgreader.h"
 #include "xgnokii_lowlevel.h"
 #include "xgnokii.h"
 

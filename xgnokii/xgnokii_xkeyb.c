@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_xkeyb.c,v 1.12 2002-12-23 01:04:15 bozo Exp $
+  $Id: xgnokii_xkeyb.c,v 1.13 2002-12-26 23:43:19 pkot Exp $
 
   X G N O K I I
 
@@ -30,7 +30,7 @@
 #include <string.h>
 #include <gtk/gtk.h>
 #include "misc.h"
-#include "links/fbus.h"
+#include "gsm-api.h"
 #include "xgnokii_common.h"
 #include "xgnokii.h"
 #include "xgnokii_lowlevel.h"

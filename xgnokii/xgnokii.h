@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii.h,v 1.17 2002-12-23 01:04:14 bozo Exp $
+  $Id: xgnokii.h,v 1.18 2002-12-26 23:43:19 pkot Exp $
 
   X G N O K I I
 
@@ -33,7 +33,7 @@
 #include <gtk/gtk.h>
 #include "config.h"
 #include "misc.h"
-#include "gsm-sms.h"
+#include "gsm-api.h"
 
 #define MAX_CALLER_GROUP_LENGTH	10
 #define MAX_SMS_CENTER		10
