@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.120 2001-02-06 08:13:32 pkot Exp $
+  $Id: gnokii.c,v 1.121 2001-02-06 21:15:35 chris Exp $
   
   G N O K I I
 
@@ -17,7 +17,10 @@
   really powerful and useful :-)
 
   $Log: gnokii.c,v $
-  Revision 1.120  2001-02-06 08:13:32  pkot
+  Revision 1.121  2001-02-06 21:15:35  chris
+  Preliminary irda support for 7110 etc.  Not well tested!
+
+  Revision 1.120  2001/02/06 08:13:32  pkot
   One more include in gnokii.c needed
 
   Revision 1.119  2001/02/05 12:29:37  pkot
@@ -299,6 +302,9 @@ void fbusinit(void (*rlp_handler)(RLP_F96Frame *frame))
 
   if (!strcmp(Connection, "infrared")) {
     connection=GCT_Infrared;
+  }
+  if (!strcmp(Connection, "irda")) {
+    connection=GCT_Irda;
   }
 
   /* Initialise the code for the GSM interface. */     
