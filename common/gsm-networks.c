@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-networks.c,v 1.22 2002-12-10 12:59:34 ladis Exp $
+  $Id: gsm-networks.c,v 1.23 2002-12-23 01:03:21 bozo Exp $
 
   G N O K I I
 
@@ -156,7 +156,7 @@ gn_country countries[] = {
 
 gn_network networks[] = {
 	{ "202 01", "Cosmote" },
-	{ "202 05", "PANAFON" },
+	{ "202 05", "Vodafone (PANAFON)" },
 	{ "202 10", "TELESTET" },
 	{ "204 04", "Vodafone" },
 	{ "204 08", "KPN Mobile" },
