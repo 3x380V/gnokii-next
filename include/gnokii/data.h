@@ -1,6 +1,6 @@
 /*
 
-  $Id: data.h,v 1.57 2003-02-16 23:40:28 pkot Exp $
+  $Id: data.h,v 1.58 2003-02-18 22:02:46 pkot Exp $
 
   G N O K I I
 
@@ -131,7 +131,7 @@ typedef struct {
 	char connect_script[256];			/* Script to run when device connection established */
 	char disconnect_script[256];			/* Script to run when device connection closed */
 #ifdef HAVE_BLUETOOTH
-	int rfcomm_cn;					/* RFCOMM channel number to connect */
+	uint8_t rfcomm_cn;				/* RFCOMM channel number to connect */
 	bdaddr_t bt_address;				/* Bluetooth device address */
 #endif
 } gn_config;

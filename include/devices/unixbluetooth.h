@@ -1,6 +1,6 @@
 /*
 
-  $Id: unixbluetooth.h,v 1.2 2002-12-27 00:11:40 bozo Exp $
+  $Id: unixbluetooth.h,v 1.3 2003-02-18 22:02:46 pkot Exp $
  
   G N O K I I
 
@@ -44,7 +44,7 @@
 
 #include "misc.h"
 
-int bluetooth_open(bdaddr_t *bdaddr, int channel, struct gn_statemachine *state);
+int bluetooth_open(bdaddr_t *bdaddr, uint8_t channel, struct gn_statemachine *state);
 int bluetooth_close(int fd, struct gn_statemachine *state);
 int bluetooth_write(int fd, const __ptr_t bytes, int size, struct gn_statemachine *state);
 int bluetooth_read(int fd, __ptr_t bytes, int size, struct gn_statemachine *state);
