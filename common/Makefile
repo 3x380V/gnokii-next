@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.63 2004-01-16 01:02:26 uid66849 Exp $
+# $Id: Makefile,v 1.64 2004-01-18 00:49:54 uid66849 Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -50,6 +50,10 @@ OBJS =	gsm-api.lo \
 	compat.lo \
 	misc.lo \
 	snprintf.lo
+
+ifdef NEED_LCHARSET
+OBJS += ../intl/localcharset.lo
+endif
 
 all: libgnokii.la
 
