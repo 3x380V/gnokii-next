@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-statemachine.c,v 1.15 2002-01-21 11:53:56 pkot Exp $
+  $Id: gsm-statemachine.c,v 1.16 2002-01-21 15:15:38 pkot Exp $
 
   G N O K I I
 
@@ -237,22 +237,22 @@ void SM_DumpUnhandledFrame(GSM_Statemachine *state, int messagetype, unsigned ch
 {
 	int i;
 
-	eprintf(_("UNHANDLED FRAME RECEIVED\n"
+	dump(_("UNHANDLED FRAME RECEIVED\n"
 		  "request: 0x%02x / 0x%04x"), state->LastMsgType, state->LastMsgSize);
 	for (i = 0; i < state->LastMsgSize; i++) {
 		if (i % 16 == 0)
-			eprintf("\n    ");
-		eprintf("%02x ", ((unsigned char *)state->LastMsg)[i]);
+			dump("\n    ");
+		dump("%02x ", ((unsigned char *)state->LastMsg)[i]);
 	}
-	eprintf("\n");
+	dump("\n");
 
-	eprintf(_("reply: 0x%02x / 0x%04x"), messagetype, messagesize);
+	dump(_("reply: 0x%02x / 0x%04x"), messagetype, messagesize);
 	for (i = 0; i < messagesize; i++) {
 		if (i % 16 == 0)
-			eprintf("\n    ");
-		eprintf("%02x ", message[i]);
+			dump("\n    ");
+		dump("%02x ", message[i]);
 	}
-	eprintf("\n");
+	dump("\n");
 
-	eprintf(_("Please read Docs/Reporting-HOWTO and send a bug report!\n"));
+	dump(_("Please read Docs/Reporting-HOWTO and send a bug report!\n"));
 }
