@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_contacts.c,v 1.57 2004-02-22 17:13:11 uid66843 Exp $
+  $Id: xgnokii_contacts.c,v 1.58 2004-02-27 19:23:20 bozo Exp $
   
   X G N O K I I
 
@@ -2676,9 +2676,9 @@ static void ExportNative(FILE * f)
 			}
 
 			if (pbEntry->entry.memory_type == GN_MT_ME)
-				sprintf(buf2, "ME;%d;%d;", i + 1, pbEntry->entry.caller_group);
+				sprintf(buf2, "ME;%d;%d", i + 1, pbEntry->entry.caller_group);
 			else
-				sprintf(buf2, "SM;%d;%d;", i - memoryStatus.MaxME + 1,
+				sprintf(buf2, "SM;%d;%d", i - memoryStatus.MaxME + 1,
 					pbEntry->entry.caller_group);
 			strcat(buf, buf2);
 
@@ -2686,7 +2686,7 @@ static void ExportNative(FILE * f)
 			if (phoneMonitor.supported & PM_EXTPBK) {
 				for (j = 0; j < pbEntry->entry.subentries_count; j++)
 					if (pbEntry->entry.subentries[j].entry_type == GN_PHONEBOOK_ENTRY_Number) {
-						sprintf(buf2, "%d;",
+						sprintf(buf2, ";%d;",
 							pbEntry->entry.subentries[j].number_type);
 						strcat(buf, buf2);
 
@@ -2697,12 +2697,11 @@ static void ExportNative(FILE * f)
 							strcat(buf,
 							       pbEntry->entry.subentries[j].data.
 							       number);
-							strcat(buf, "\";");
+							strcat(buf, "\"");
 						} else {
 							strcat(buf,
 							       pbEntry->entry.subentries[j].data.
 							       number);
-							strcat(buf, ";");
 						}
 					}
 			}
