@@ -1,6 +1,6 @@
 /* -*- linux-c -*-
 
-  $Id: cbus.c,v 1.26 2003-02-26 22:02:17 pkot Exp $
+  $Id: cbus.c,v 1.27 2003-03-25 10:07:45 bozo Exp $
 
   G N O K I I
 
@@ -372,7 +372,7 @@ static gn_error get_cmd_reply(struct gn_statemachine *state)
 	return send_packet_ack("\x3e\x68", 2, 0x3f, false, state);
 }
 
-static gn_error at_send_message(u16 message_length, u8 message_type,
+static gn_error at_send_message(unsigned int message_length, unsigned char message_type,
 				unsigned char *buffer, struct gn_statemachine *state)
 {
 	gn_error error;
