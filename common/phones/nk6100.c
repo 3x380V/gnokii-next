@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.123 2002-12-22 23:55:01 bozo Exp $
+  $Id: nk6100.c,v 1.124 2002-12-26 17:04:40 bozo Exp $
 
   G N O K I I
 
@@ -3134,7 +3134,7 @@ static gn_error SendRLPFrame(gn_data *data, struct gn_statemachine *state)
 	 * return SM_SendFrame(state, 32, 0xf0, req);
 	 */
 
-	return fbus_tx_send_frame(32, 0xf0, req);
+	return fbus_tx_send_frame(32, 0xf0, req, state);
 }
 
 static gn_error SetRLPRXCallback(gn_data *data, struct gn_statemachine *state)
