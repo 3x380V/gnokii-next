@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.167 2005-02-06 20:30:42 pkot Exp $
+  $Id: nk6100.c,v 1.168 2005-03-20 18:42:01 pkot Exp $
 
   G N O K I I
 
@@ -1429,8 +1429,10 @@ static gn_error IncomingSMS1(int messagetype, unsigned char *message, int length
 		 */
 		error = isdn_cause2gn_error(NULL, NULL, message[5], message[6]);
 		switch (error) {
-		case GN_ERR_UNKNOWN: return GN_ERR_FAILED;
-		default:         return error;
+		case GN_ERR_UNKNOWN:
+			return GN_ERR_FAILED;
+		default:
+			return error;
 		}
 
 	/* SMS message received */
