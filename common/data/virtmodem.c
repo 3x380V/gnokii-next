@@ -1,6 +1,6 @@
 /*
 
-  $Id: virtmodem.c,v 1.27 2002-11-19 00:07:26 bozo Exp $
+  $Id: virtmodem.c,v 1.28 2002-11-21 00:50:45 bozo Exp $
 
   G N O K I I
 
@@ -334,6 +334,11 @@ static int VM_PtySetup(char *bindir)
 		strcat(mgnokiidev, "/");
 	}
 	strncat(mgnokiidev, "mgnokiidev", 200 - strlen(bindir));
+
+	if (access(mgnokiidev, X_OK) != 0) {
+		fprintf(stderr, _("Cannot access %s, check the bindir in your gnokiirc!\n"), mgnokiidev);
+		exit(1);
+	}
 
 	PtyRDFD = gopen(mgnokiidev);
 
