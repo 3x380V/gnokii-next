@@ -1,6 +1,6 @@
 /*
  *
- * $Id: winirda.c,v 1.1 2004-06-10 20:17:23 pkot Exp $
+ * $Id: winirda.c,v 1.2 2004-06-19 21:52:47 pkot Exp $
  *
  * G N O K I I
  *
@@ -157,13 +157,5 @@ int irda_select(int fd, struct timeval *timeout, struct gn_statemachine *state) 
 
 	return select(0 /* ignored on Win32 */, &readfds, NULL, NULL, timeout);
 }
-
-#else /* HAVE_IRDA */
-
-int irda_open(struct gn_statemachine *state) { return -1; }
-int irda_close(int fd, struct gn_statemachine *state) { return -1; }
-int irda_write(int fd, const __ptr_t bytes, int size, struct gn_statemachine *state) { return -1; }
-int irda_read(int fd, __ptr_t bytes, int size, struct gn_statemachine *state) { return -1; }
-int irda_select(int fd, struct timeval *timeout, struct gn_statemachine *state) { return -1; }
 
 #endif /* HAVE_IRDA */

@@ -1,6 +1,6 @@
 /*
  *
- * $Id: unixirda.c,v 1.26 2003-10-17 08:54:54 pkot Exp $
+ * $Id: unixirda.c,v 1.27 2004-06-19 21:52:47 pkot Exp $
  *
  * G N O K I I
  *
@@ -189,13 +189,5 @@ int irda_select(int fd, struct timeval *timeout, struct gn_statemachine *state)
 
 	return select(fd + 1, &readfds, NULL, NULL, timeout);
 }
-
-#else /* HAVE_IRDA */
-
-int irda_open(struct gn_statemachine *state) { return -1; }
-int irda_close(int fd, struct gn_statemachine *state) { return -1; }
-int irda_write(int fd, const __ptr_t bytes, int size, struct gn_statemachine *state) { return -1; }
-int irda_read(int fd, __ptr_t bytes, int size, struct gn_statemachine *state) { return -1; }
-int irda_select(int fd, struct timeval *timeout, struct gn_statemachine *state) { return -1; }
 
 #endif /* HAVE_IRDA */
