@@ -1,6 +1,6 @@
 /*
 
-  $Id: lowlevel.c,v 1.15 2002-06-25 09:59:26 ja Exp $
+  $Id: lowlevel.c,v 1.16 2002-06-28 07:17:12 ja Exp $
 
   S M S D
 
@@ -246,6 +246,7 @@ static void RefreshSMS (const gint number)
   {
 //    GSM_DataClear (&data);
     msg = g_malloc (sizeof (GSM_API_SMS));
+    memset (msg, 0, sizeof (GSM_API_SMS));
     msg->MemoryType = GMT_SM;
     msg->Number = ++i;
     data.SMS = msg;

@@ -3,7 +3,7 @@
 #
 # Copyright (C) 1999 Hugh Blemings & Pavel Janík ml. & Jan Derfinak
 #               2000 Karel Zak
-# $Id: Makefile,v 1.13 2002-04-14 16:57:39 pkot Exp $
+# $Id: Makefile,v 1.14 2002-06-28 07:17:12 ja Exp $
 #
 
 TOPDIR=..
@@ -37,7 +37,7 @@ smsd: $(OBJS) $(TOPDIR)/common/gsm-filetypes.o $(TOPDIR)/common/libgnokii.so
 
 # PostgreSQL support
 libpq.so: smsd.h pq.c
-	gcc -shared -o libpq.so `glib-config --cflags` -I../include \
+	gcc -g -DXDEBUG -shared -o libpq.so `glib-config --cflags` -I../include \
         -I/usr/include/pgsql pq.c `glib-config --libs` -lpq
 
 # MySQL support

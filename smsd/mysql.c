@@ -1,6 +1,6 @@
 /*
 
-  $Id: mysql.c,v 1.7 2002-06-25 09:59:26 ja Exp $
+  $Id: mysql.c,v 1.8 2002-06-28 07:17:12 ja Exp $
 
   S M S D
 
@@ -100,9 +100,9 @@ gint DB_InsertSMS (const GSM_API_SMS * const data)
   g_string_sprintf (buf, "INSERT INTO inbox (number, smsdate, \
                     text, processed) VALUES ('%s', \
                     '%04d-%02d-%02d %02d:%02d:%02d', '%s', '0')",
-                    data->Remote.Number, data->Time.Year, data->Time.Month,
-                    data->Time.Day, data->Time.Hour, data->Time.Minute,
-                    data->Time.Second, text);
+                    data->Remote.Number, data->SMSCTime.Year, data->SMSCTime.Month,
+                    data->SMSCTime.Day, data->SMSCTime.Hour, data->SMSCTime.Minute,
+                    data->SMSCTime.Second, text);
   g_free (text);
 
   if (mysql_real_query (&mysqlIn, buf->str, buf->len))
@@ -149,8 +149,9 @@ void DB_Look (void)
   
   while ((row = mysql_fetch_row (res1)))
   {
-    GSM_SMSMessage sms;
+    GSM_API_SMS sms;
 
+    memset (&sms, 0, sizeof (GSM_API_SMS));
     DefaultSubmitSMS (&sms);    
     sms.DeliveryReport = (smsdConfig.smsSets & SMSD_READ_REPORTS);
 
