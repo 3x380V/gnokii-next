@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.16 2001-01-14 22:46:56 chris Exp $
+# $Id: Makefile,v 1.17 2001-02-01 15:17:27 pkot Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -38,6 +38,7 @@ OBJS =	cfgreader.o \
 	gsm-common.o \
 	fbus-generic.o \
 	phone-generic.o \
+	phone-nokia.o \
 	phone-7110.o
 
 DATA_OBJS = virtmodem.o \
