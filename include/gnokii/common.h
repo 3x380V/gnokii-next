@@ -1,6 +1,6 @@
 /*
 
-  $Id: common.h,v 1.112 2002-08-07 18:01:09 plail Exp $
+  $Id: common.h,v 1.113 2002-08-08 13:14:59 plail Exp $
 
   G N O K I I
 
@@ -373,6 +373,7 @@ typedef enum {
 } GSM_WAPGPRSConnection;
 
 typedef struct {
+	bool ReadBeforeWrite;
 	int Location;
 	int Successors[4];
 	char Number[MAX_WAP_SETTING_NAME_LENGTH];
@@ -385,8 +386,8 @@ typedef struct {
 	char GPRSUsername[MAX_WAP_SETTING_USERNAME_LENGTH];
 	char GPRSPassword[MAX_WAP_SETTING_NAME_LENGTH];
 	char AccessPoint[MAX_WAP_SETTING_ACCESS_LENGTH];
-	char SMSServiceNumber[50];
-	char SMSServerNumber[50];
+	char SMSServiceNumber[MAX_WAP_SETTING_NAME_LENGTH];
+	char SMSServerNumber[MAX_WAP_SETTING_NAME_LENGTH];
 	GSM_WAPSession Session;
 	bool Security;
 	GSM_WAPBearer Bearer;
