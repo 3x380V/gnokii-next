@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_lowlevel.c,v 1.72 2003-01-01 21:29:06 pkot Exp $
+  $Id: xgnokii_lowlevel.c,v 1.73 2003-01-02 11:01:06 pkot Exp $
   
   X G N O K I I
 
@@ -1136,6 +1136,7 @@ void *GUI_Connect(void *a)
 	gdat.battery_unit = &batt_units;
 	gdat.battery_level = &phoneMonitor.batteryLevel;
 	gdat.datetime = &Alarm.timestamp;
+	gdat.alarm = &Alarm;
 	oldtime = time(&oldtime);
 	oldtime += 2;
 
