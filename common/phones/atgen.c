@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.18 2002-01-27 23:38:31 pkot Exp $
+  $Id: atgen.c,v 1.19 2002-01-30 10:12:06 pkot Exp $
 
   G N O K I I
 
@@ -876,7 +876,7 @@ static GSM_Error ReplyGetSMS(int messagetype, unsigned char *buffer, int length,
 	if (buf.line1 == NULL)
 		return GE_INTERNALERROR;
 
-	if (!data->RawData) data->RawData = calloc(sizeof(GSM_RawData), 1);
+	if (!data->RawData) return GE_INTERNALERROR;
 	data->RawData->Length = strlen(buf.line3) / 2 + 1;
 	data->RawData->Data = calloc(data->RawData->Length, 1);
 	dprintf("%s\n", buf.line3);

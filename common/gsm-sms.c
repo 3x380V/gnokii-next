@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-sms.c,v 1.29 2002-01-29 16:43:56 pkot Exp $
+  $Id: gsm-sms.c,v 1.30 2002-01-30 10:12:00 pkot Exp $
 
   G N O K I I
 
@@ -1118,8 +1118,14 @@ GSM_Error RequestSMS(GSM_Data *data, GSM_Statemachine *state)
 GSM_Error GetSMS(GSM_Data *data, GSM_Statemachine *state)
 {
 	GSM_Error error;
+	GSM_RawData rawdata;
 
+	memset(&rawdata, sizeof(GSM_RawData), 0);
+	data->RawData = &rawdata;
 	error = RequestSMS(data, state);
-	if (error != GE_NONE) return error;
-	return ParseSMS(data, layout.ReadHeader);
+	if (error != GE_NONE) goto cleanup;
+	error = ParseSMS(data, layout.ReadHeader);
+cleanup:
+	if (data->RawData->Data) free(data->RawData->Data);
+	return error;
 }
