@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_cfg.c,v 1.10 2002-03-28 21:37:50 pkot Exp $
+  $Id: xgnokii_cfg.c,v 1.11 2004-01-31 21:02:27 uid66843 Exp $
 
   X G N O K I I
 
@@ -73,7 +73,7 @@ static void GetDefaultValues()
 	xgnokiiConfig.user.fax = g_strdup("");
 	xgnokiiConfig.user.email = g_strdup("");
 	xgnokiiConfig.user.address = g_strdup("");
-	xgnokiiConfig.helpviewer = g_strdup("netscape");
+	xgnokiiConfig.helpviewer = g_strdup("mozilla");
 	if ((homedir = g_get_home_dir()) == NULL)
 		homedir = "";
 	xgnokiiConfig.mailbox = g_strdup_printf("%s/Mail/smsbox", homedir);
