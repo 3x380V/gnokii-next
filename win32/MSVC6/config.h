@@ -1,6 +1,6 @@
 /*
 
-  $Id: config.h,v 1.5 2003-02-16 21:44:07 godehardt Exp $
+  $Id: config.h,v 1.6 2003-04-10 11:52:56 ladis Exp $
 
   G N O K I I
 
@@ -40,7 +40,7 @@
 
 	
 #undef VERSION
-#define VERSION "0.5.0pre6"
+#define VERSION "0.5.0rc3"
 
 /* Define if you have the following headers */
 #undef HAVE_UNISTD_H
