@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile.global.in,v 1.12 2000-12-19 16:18:14 pkot Exp $
+# $Id: Makefile.global.in,v 1.13 2000-12-27 09:08:43 pkot Exp $
 #
 # Global Makefiles configuration for the GNOKII.
 #
@@ -67,6 +67,6 @@ ifdef WIN32
 endif
 
 
-CFLAGS += -I $(GNOKII_INCLUDE)
+CFLAGS += -I$(GNOKII_INCLUDE)
 LDFLAGS = -s $(LIBS)
 

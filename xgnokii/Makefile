@@ -1,7 +1,7 @@
 
 
 #
-# $Id: Makefile,v 1.29 2000-12-19 16:18:21 pkot Exp $
+# $Id: Makefile,v 1.30 2000-12-27 09:08:44 pkot Exp $
 #
 # Makefile for the xGNOKII tool suite.
 #
@@ -19,7 +19,8 @@ LDFLAGS += $(PTHREAD_LIBS) \
 	   $(GTK_LIBS) 
 
 ifdef XPM_LIBS
-    LDFLAGS +=$(XPM_LIBS)
+    LDFLAGS += $(XPM_LIBS)
+    CFLAGS  += $(XPM_CFLAGS)
 endif
 
 OBJS = 	xgnokii.o \

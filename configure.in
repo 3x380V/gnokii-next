@@ -4,7 +4,7 @@ dnl
 dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janík ml.
 dnl                2000 Karel Zak, Pawe³ Kot
 dnl
-dnl  $Id: configure.in,v 1.30 2000-12-19 16:18:14 pkot Exp $
+dnl  $Id: configure.in,v 1.31 2000-12-27 09:08:43 pkot Exp $
 dnl
 
 AC_INIT(gnokii/gnokii.c)
@@ -64,7 +64,7 @@ AC_ARG_WITH(libintl,
        AC_MSG_WARN(Usage is --with-libintl=DIR)
      else
        NLS_LIBS="-L$withval/lib"
-       NLS_CFLAGS="-I$withval/lib"
+       NLS_CFLAGS="-I$withval/include"
      fi
    ]
 )
