@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.332 2003-02-02 22:38:21 pkot Exp $
+  $Id: gnokii.c,v 1.333 2003-02-09 21:42:07 pkot Exp $
 
   G N O K I I
 
@@ -2462,8 +2462,7 @@ static void displaycall(int call_id)
 	struct timeval now, delta;
 	char *s;
 
-	if ((call = gn_call_get_active(call_id)) == NULL)
-	{
+	if ((call = gn_call_get_active(call_id)) == NULL) {
 		fprintf(stdout, _("CALL%d: IDLE\n"), call_id);
 		return;
 	}
