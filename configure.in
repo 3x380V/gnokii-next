@@ -4,7 +4,7 @@ dnl
 dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janík ml.
 dnl                2000 Karel Zak, Pawe³ Kot
 dnl
-dnl  $Id: configure.in,v 1.54 2001-11-08 16:51:45 pkot Exp $
+dnl  $Id: configure.in,v 1.55 2001-11-26 16:10:58 pkot Exp $
 dnl
 
 AC_INIT(gnokii/gnokii.c)
@@ -32,7 +32,9 @@ test x"$prefix" = xNONE && prefix="$ac_default_prefix"
 
 AC_ARG_ENABLE(debug, 
 	[  --enable-debug          compile with debug code],
-	[ CFLAGS="-g -Wall"
+	[ if test "x$GCC" = "xyes"; then
+		CFLAGS="-ggdb3 -Wall"
+	  fi
 	  AC_DEFINE(DEBUG)
 	  debug="yes" ],
 	[ debug="no"  ]
