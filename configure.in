@@ -5,7 +5,7 @@ dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janík ml.
 dnl                2000 Karel Zak, Pawe³ Kot
 dnl                2002 BORBELY Zoltan
 dnl
-dnl  $Id: configure.in,v 1.93 2002-12-15 10:52:13 bozo Exp $
+dnl  $Id: configure.in,v 1.94 2002-12-30 21:22:44 pkot Exp $
 dnl
 
 AC_INIT(gnokii/gnokii.c)
@@ -501,6 +501,7 @@ AC_SUBST(WIN32)
 AC_OUTPUT(
    Makefile.global
    po/Makefile.in
+   po/Makefile
    packaging/RedHat/gnokii.spec
    packaging/Slackware/SlackBuild
    )
