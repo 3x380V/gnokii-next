@@ -3,7 +3,7 @@
 #
 # Copyright (C) 1999 Hugh Blemings & Pavel Janík ml. & Jan Derfinak
 #               2000 Karel Zak
-# $Id: Makefile,v 1.18 2003-01-01 23:47:29 pkot Exp $
+# $Id: Makefile,v 1.19 2003-01-18 22:16:14 pkot Exp $
 #
 
 TOPDIR=..
@@ -16,6 +16,8 @@ LDLIBS += $(PTHREAD_LIBS) \
 	   `glib-config --libs`
 
 LDLIBS += -s -rdynamic -L$(TOPDIR)/common -lgnokii -ldl
+# Some systems, eg. FreeBSD don't have libdl. Use this:
+# LDLIBS += -s -rdynamic -L$(TOPDIR)/common -lgnokii
 
 ifdef XPM_LIBS
 	LDLIBS +=$(XPM_LIBS)
