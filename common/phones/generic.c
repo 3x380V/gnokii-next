@@ -1,6 +1,6 @@
 /*
 
-  $Id: generic.c,v 1.15 2002-12-09 14:45:54 ladis Exp $
+  $Id: generic.c,v 1.16 2002-12-09 15:27:20 ladis Exp $
 
   G N O K I I
 
@@ -33,6 +33,7 @@
 */
 
 #include "gnokii-internal.h"
+#include "links/utils.h"
 
 /* If we do not support a message type, print out some debugging info */
 gn_error pgen_incoming_default(int messagetype, unsigned char *buffer, int length, struct gn_statemachine *state)

@@ -1,6 +1,6 @@
 /*
 
-  $Id: atbosch.c,v 1.5 2002-12-09 14:45:54 ladis Exp $
+  $Id: atbosch.c,v 1.6 2002-12-09 15:27:20 ladis Exp $
 
   G N O K I I
 
@@ -69,7 +69,7 @@ static gn_error ReplyGetSMS(int type, unsigned char *buffer, int length,
 	char *pos, *lenpos;
 	char tmp[8];
 
-	if (buffer[0] != GEAT_OK)
+	if (buffer[0] != GN_AT_OK)
 		return GN_ERR_INVALIDLOCATION;
 
 	pos = buffer + 1;

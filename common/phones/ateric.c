@@ -1,6 +1,6 @@
 /*
 
-  $Id: ateric.c,v 1.9 2002-12-09 14:45:54 ladis Exp $
+  $Id: ateric.c,v 1.10 2002-12-09 15:27:20 ladis Exp $
 
   G N O K I I
 
@@ -46,12 +46,12 @@ static gn_error GetMemoryStatus(gn_data *data, struct gn_statemachine *state)
 {
 	gn_error ret;
 	
-	ret = at_set_memory_type(data->memory_status->memory_type, state);
+	ret = at_memory_type_set(data->memory_status->memory_type, state);
 	if (ret)
 		return ret;
-	if (sm_send_message(state, 11, GN_OP_GetMemoryStatus, "AT+CPBR=?\r\n"))
+	if (sm_message_send(state, 11, GN_OP_GetMemoryStatus, "AT+CPBR=?\r\n"))
 		return GN_ERR_NOTREADY;
-	return SM_Block(state, data, GN_OP_GetMemoryStatus);
+	return sm_block_no_retry(state, data, GN_OP_GetMemoryStatus);
 }
 
 static gn_error ReplyMemoryStatus(int messagetype, unsigned char *buffer, int length, gn_data *data, struct gn_statemachine *state)

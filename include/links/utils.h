@@ -1,6 +1,6 @@
 /*
 
-  $Id: utils.h,v 1.5 2002-09-28 23:51:38 pkot Exp $
+  $Id: utils.h,v 1.6 2002-12-09 15:27:19 ladis Exp $
 
   G N O K I I
 
@@ -31,9 +31,12 @@
 
 */
 
-#ifndef LINKS_UTILS
-#define LINKS_UTILS
+#ifndef _gnokii_links_utils_h
+#define _gnokii_links_utils_h
 
-gn_error LINK_Terminate(GSM_Statemachine *state);
+#include "gsm-error.h"
+#include "gsm-statemachine.h"
+
+gn_error link_terminate(struct gn_statemachine *state);
 
 #endif

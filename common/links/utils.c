@@ -1,6 +1,6 @@
 /*
 
-  $Id: utils.c,v 1.10 2002-09-28 23:51:37 pkot Exp $
+  $Id: utils.c,v 1.11 2002-12-09 15:27:20 ladis Exp $
 
   G N O K I I
 
@@ -39,7 +39,7 @@
 #include "device.h"
 
 
-gn_error LINK_Terminate(GSM_Statemachine *state)
+gn_error link_terminate(struct gn_statemachine *state)
 {
 	/* device_close(&(state->Device)); */
 	device_close();
