@@ -1,6 +1,6 @@
 /*
 
-  $Id: at-emulator.c,v 1.33 2003-02-26 00:15:48 pkot Exp $
+  $Id: at-emulator.c,v 1.34 2003-03-04 22:35:35 pkot Exp $
 
   G N O K I I
 
@@ -796,7 +796,7 @@ bool	gn_atem_command_plusg(char **buf)
 	if (strncasecmp(*buf, "MI", 3) == 0) {
 		buf[0] += 2;
 
-		gn_atem_string_out(_("\n\rHugh Blemings, Pavel Janík ml. and others..."));
+		gn_atem_string_out(_("\n\rHugh Blemings, Pavel Janik ml. and others..."));
 		return (false);
 	}
 

@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokiid.c,v 1.37 2003-02-26 00:15:48 pkot Exp $
+  $Id: gnokiid.c,v 1.38 2003-03-04 22:35:35 pkot Exp $
 
   G N O K I I
 
@@ -57,7 +57,7 @@ static void short_version()
 static void version()
 {
 	fprintf(stderr, _("Copyright (C) Hugh Blemings <hugh@blemings.org>, 1999\n"
-			  "Copyright (C) Pavel Janík ml. <Pavel.Janik@suse.cz>, 1999\n"
+			  "Copyright (C) Pavel Janik ml. <Pavel.Janik@suse.cz>, 1999\n"
 			  "Built %s %s\n"),
 			  __TIME__, __DATE__);
 }
