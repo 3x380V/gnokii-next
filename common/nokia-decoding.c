@@ -1,6 +1,6 @@
 /*
 
-  $Id: nokia-decoding.c,v 1.18 2004-02-17 00:08:19 uid66843 Exp $
+  $Id: nokia-decoding.c,v 1.19 2004-02-17 20:29:51 uid66843 Exp $
 
   G N O K I I
 
@@ -50,7 +50,12 @@ gn_error phonebook_decode(unsigned char *blockstart, int length, gn_data *data,
 		    blockstart[0] != GN_PHONEBOOK_ENTRY_Ringtone &&
 		    blockstart[0] != GN_PHONEBOOK_ENTRY_LogoSwitch &&
 		    blockstart[0] != GN_PHONEBOOK_ENTRY_Group &&
-		    blockstart[0] != GN_PHONEBOOK_ENTRY_Pointer) {
+		    blockstart[0] != GN_PHONEBOOK_ENTRY_Pointer &&
+		    /* the last one can be the case of the bitmap name -- we
+		     * don't have phonebook entry allocated then, but a bitmap;
+		     * we handle this later on
+		     */
+		    blockstart[0] != GN_PHONEBOOK_ENTRY_Name) {
 			if (data->phonebook_entry)
 				subentry = &data->phonebook_entry->subentries[subblock_count];
 			else
