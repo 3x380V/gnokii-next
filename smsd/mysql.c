@@ -1,6 +1,6 @@
 /*
 
-  $Id: mysql.c,v 1.18 2003-02-10 09:10:58 ja Exp $
+  $Id: mysql.c,v 1.19 2003-02-10 20:07:55 bozo Exp $
 
   S M S D
 
@@ -129,7 +129,7 @@ void DB_Look (void)
 
   buf = g_string_sized_new (128);
 
-  g_string_sprintf (buf, "SELECT id, number, text dreport FROM outbox \
+  g_string_sprintf (buf, "SELECT id, number, text, dreport FROM outbox \
                           WHERE processed='0'");
 
   if (mysql_real_query (&mysqlOut, buf->str, buf->len))
