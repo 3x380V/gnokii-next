@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.29 2001-11-08 16:45:58 pkot Exp $
+# $Id: Makefile,v 1.30 2001-11-09 13:52:56 pkot Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -51,7 +51,7 @@ vcal.c: vcal.lx
 	$(LEX) -ovcal.c vcal.lx
 
 clean:
-	$(RM) $(OBJS) *~ depend COMMON.o gsm-filetypes.o vcal.c phones/PHONES.o links/LINKS.o devices/DEVICES.o
+	$(RM) $(OBJS) *~ depend libgnokii.so gsm-filetypes.o vcal.c phones/PHONES.o links/LINKS.o devices/DEVICES.o
 
 install:
 	$(INSTALL) -d $(libdir)
