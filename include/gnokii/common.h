@@ -1,6 +1,6 @@
 /*
 
-  $Id: common.h,v 1.130 2004-01-15 23:13:57 uid66843 Exp $
+  $Id: common.h,v 1.131 2004-01-18 16:58:54 uid66849 Exp $
 
   G N O K I I
 
@@ -190,7 +190,7 @@ typedef struct {
 	gn_phonebook_entry_type entry_type;
 	gn_phonebook_number_type number_type;
 	union {
-		char number[GN_PHONEBOOK_NUMBER_MAX_LENGTH + 1]; /* Number */
+		char number[GN_PHONEBOOK_NAME_MAX_LENGTH + 1];   /* Number, Name, Address, eMail... */
 		gn_timestamp date;                               /* or the last calls list */
 	} data;
 	int id;
