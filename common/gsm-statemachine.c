@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-statemachine.c,v 1.19 2002-02-02 14:56:48 pkot Exp $
+  $Id: gsm-statemachine.c,v 1.20 2002-02-03 00:09:52 pkot Exp $
 
   G N O K I I
 
@@ -209,7 +209,7 @@ GSM_Error SM_BlockNoRetry(GSM_Statemachine *state, GSM_Data *data, int waitfor)
 	GSM_Error err;
 
 	for (retry = 0; retry < 3; retry++) {
-		timeout = 30;
+		timeout = 50;
 		err = SM_WaitFor(state, data, waitfor);
 		if (err != GE_NONE) return err;
 
