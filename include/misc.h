@@ -1,6 +1,6 @@
 /*
 
-  $Id: misc.h,v 1.46 2002-08-28 15:53:12 pkot Exp $
+  $Id: misc.h,v 1.47 2002-09-12 21:54:41 pkot Exp $
 
   G N O K I I
 
@@ -102,7 +102,7 @@ extern void GSM_WriteErrorLog(const char *fmt, ...);
 #define gvasprintf		vasprintf
 
 /* Get rid of long defines. Use #if __unices__ */
-#define __unices__ defined(__svr4__) || defined(__FreeBSD__) || defined(__bsdi__)
+#define __unices__ defined(__svr4__) || defined(__FreeBSD__) || defined(__bsdi__) || defined(__MACH__)
 #if __unices__
 #  include <strings.h>
 #  include <sys/file.h>
