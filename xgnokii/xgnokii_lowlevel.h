@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_lowlevel.h,v 1.20 2002-04-05 09:59:04 plail Exp $
+  $Id: xgnokii_lowlevel.h,v 1.21 2002-05-25 10:56:56 plail Exp $
   
   X G N O K I I
 
@@ -87,7 +87,7 @@ typedef struct {
 } D_SpeedDial;
 
 typedef struct {
-	GSM_SMSMessage *sms;
+	GSM_API_SMS *sms;
 	GSM_Error status;
 } D_SMSMessage;
 
