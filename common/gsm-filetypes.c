@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-filetypes.c,v 1.24 2002-04-24 22:32:14 pkot Exp $
+  $Id: gsm-filetypes.c,v 1.25 2002-04-25 00:30:39 bozo Exp $
 
   G N O K I I
 
@@ -1311,7 +1311,7 @@ GSM_Error GSM_ShowBitmapFile(char *FileName)
 	unsigned char buffer[300];
 	int error;
 	GSM_Filetypes filetype = None;
-	int i, k = 0;
+	int i, j;
 	GSM_Bitmap bitmap;
 
 	file = fopen(FileName, "rb");
@@ -1374,18 +1374,10 @@ GSM_Error GSM_ShowBitmapFile(char *FileName)
 	if (error != GE_NONE)
 		return (error);
 
-	for (i = 0; i < bitmap.size; i++) {
-		int j;
-
-		for (j = 7; j >= 0; j--) {
-			if ((bitmap.bitmap[i] & (1 << j))) {
-				fprintf(stdout, "#");
-			} else {
-				fprintf(stdout, " ");
-			}
-			if (!(++k % bitmap.width))
-				fprintf(stdout, "\n");
-		}
+	for (i = 0; i < bitmap.height; i++) {
+		for (j = 0; j < bitmap.width; j++)
+			printf("%c", GSM_IsPointBitmap(&bitmap, j, i) ? '#' : ' ');
+		printf("\n");
 	}
 
 	return (GE_NONE);
