@@ -1,6 +1,6 @@
 /* -*- linux-c -*-
 
-  $Id: nk2110.c,v 1.32 2002-04-17 00:19:16 pkot Exp $
+  $Id: nk2110.c,v 1.33 2002-05-15 22:45:43 manfred Exp $
 
   G N O K I I
 
@@ -1228,6 +1228,10 @@ GSM_Error P2110_Functions(GSM_Operation op, GSM_Data *data, GSM_Statemachine *st
 		state->Link.Loop = link_Loop;
 		err = Initialise(state);
 		break;
+	case GOP_Terminate:
+		/* Request termination of thread */
+		RequestTerminate = true;
+		return PGEN_Terminate(data, state);
 	case GOP_Identify:
 	case GOP_GetModel:
 	case GOP_GetRevision:

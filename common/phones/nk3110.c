@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk3110.c,v 1.21 2002-04-22 16:28:27 machek Exp $
+  $Id: nk3110.c,v 1.22 2002-05-15 22:45:43 manfred Exp $
 
   G N O K I I
 
@@ -172,6 +172,8 @@ static GSM_Error Functions(GSM_Operation op, GSM_Data *data, GSM_Statemachine *s
 	switch (op) {
 	case GOP_Init:
 		return P3110_Initialise(state);
+	case GOP_Terminate:
+		return PGEN_Terminate(data, state);
 	case GOP_GetModel:
 	case GOP_GetRevision:
 	case GOP_GetImei:

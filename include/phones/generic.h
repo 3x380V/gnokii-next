@@ -1,6 +1,6 @@
 /*
 
-  $Id: generic.h,v 1.7 2002-03-28 21:37:49 pkot Exp $
+  $Id: generic.h,v 1.8 2002-05-15 22:45:44 manfred Exp $
 
   G N O K I I
 
@@ -36,10 +36,12 @@
 #define __phones_generic_h
 
 #include "gsm-error.h"
+#include "gsm-statemachine.h"
 
 /* Generic Functions */
 
 GSM_Error PGEN_IncomingDefault(int messagetype, unsigned char *buffer, int length);
+GSM_Error PGEN_Terminate(GSM_Data *data, GSM_Statemachine *state);
 
 
 #endif

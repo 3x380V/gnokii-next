@@ -1,6 +1,6 @@
 /*
 
-  $Id: fake.c,v 1.5 2002-05-06 21:27:34 machek Exp $
+  $Id: fake.c,v 1.6 2002-05-15 22:45:43 manfred Exp $
 
   G N O K I I
 
@@ -133,6 +133,8 @@ static GSM_Error Pfake_Functions(GSM_Operation op, GSM_Data *data, GSM_Statemach
 	switch (op) {
 	case GOP_Init:
 		return Pfake_Initialise(state);
+	case GOP_Terminate:
+		return GE_NONE;
 	case GOP_SendSMS:
 		return AT_WriteSMS(data, state, "???");
 	case GOP_GetSMSCenter:

@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.8 2002-03-26 01:22:10 pkot Exp $
+# $Id: Makefile,v 1.9 2002-05-15 22:45:43 manfred Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -21,7 +21,8 @@ OBJS =	fbus.o \
 	fbus-phonet.o \
 	cbus.o \
 	atbus.o \
-	fbus-3110.o
+	fbus-3110.o \
+	utils.o
 
 all: LINKS.o
 

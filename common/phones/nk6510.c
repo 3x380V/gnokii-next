@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.c,v 1.12 2002-05-09 19:57:40 pkot Exp $
+  $Id: nk6510.c,v 1.13 2002-05-15 22:45:43 manfred Exp $
 
   G N O K I I
 
@@ -272,6 +272,8 @@ static GSM_Error P6510_Functions(GSM_Operation op, GSM_Data *data, GSM_Statemach
 	switch (op) {
 	case GOP_Init:
 		return P6510_Initialise(state);
+	case GOP_Terminate:
+		return PGEN_Terminate(data, state);
 	case GOP_GetModel:
 		return P6510_GetModel(data, state);
       	case GOP_GetRevision:

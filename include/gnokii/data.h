@@ -1,6 +1,6 @@
 /*
 
-  $Id: data.h,v 1.27 2002-04-30 18:56:12 pkot Exp $
+  $Id: data.h,v 1.28 2002-05-15 22:45:44 manfred Exp $
 
   G N O K I I
 
@@ -111,6 +111,7 @@ typedef struct {
 
 typedef enum {
 	GOP_Init,
+	GOP_Terminate,
 	GOP_GetModel,
 	GOP_GetRevision,
 	GOP_GetImei,

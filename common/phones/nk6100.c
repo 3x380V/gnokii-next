@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.70 2002-04-25 23:40:56 pkot Exp $
+  $Id: nk6100.c,v 1.71 2002-05-15 22:45:43 manfred Exp $
 
   G N O K I I
 
@@ -245,6 +245,8 @@ static GSM_Error Functions(GSM_Operation op, GSM_Data *data, GSM_Statemachine *s
 	switch (op) {
 	case GOP_Init:
 		return Initialise(state);
+	case GOP_Terminate:
+		return PGEN_Terminate(data, state);
 	case GOP_GetSpeedDial:
 		return GetSpeedDial(data, state);
 	case GOP_SetSpeedDial:
