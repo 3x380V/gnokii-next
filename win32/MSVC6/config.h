@@ -1,6 +1,6 @@
 /*
 
-  $Id: config.h,v 1.18 2004-06-17 21:47:49 pkot Exp $
+  $Id: config.h,v 1.19 2004-06-27 20:40:48 pkot Exp $
 
   G N O K I I
 
@@ -59,6 +59,7 @@
 #define HAVE_CTYPE_H 1
 #define HAVE_STDLIB_H 1
 #define HAVE_DIRECT_H 1
+#define HAVE_LIMITS_H 1
 
 /* Define if your compiler supports long long */
 #undef HAVE_LONG_LONG
