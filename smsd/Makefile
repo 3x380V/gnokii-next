@@ -3,7 +3,7 @@
 #
 # Copyright (C) 1999 Hugh Blemings & Pavel Janík ml. & Jan Derfinak
 #               2000 Karel Zak
-# $Id: Makefile,v 1.11 2002-02-14 12:03:10 ja Exp $
+# $Id: Makefile,v 1.12 2002-02-19 00:11:00 pkot Exp $
 #
 
 TOPDIR=..
@@ -12,13 +12,13 @@ include $(TOPDIR)/Makefile.global
 CFLAGS += -DMODULES_DIR=\"${prefix}/share/smsd\" $(PTHREAD_CFLAGS) \
 	  `glib-config --cflags`
 
-LDFLAGS += $(PTHREAD_LIBS) \
+LDLIBS += $(PTHREAD_LIBS) \
 	   `glib-config --libs`
 
-LDFLAGS += -s -rdynamic -L$(TOPDIR)/common -lgnokii -ldl
+LDLIBS += -s -rdynamic -L$(TOPDIR)/common -lgnokii -ldl
 
 ifdef XPM_LIBS
-	LDFLAGS +=$(XPM_LIBS)
+	LDLIBS +=$(XPM_LIBS)
 endif
 
 OBJS = 	smsd.o \
@@ -28,7 +28,7 @@ all: smsd
 
 
 smsd: $(OBJS) $(TOPDIR)/common/gsm-filetypes.o $(TOPDIR)/common/libgnokii.so
-	gcc $(LDFLAGS) $(OBJS) $(TOPDIR)/common/gsm-filetypes.o -o $@
+	gcc $(LDFLAGS) $(OBJS) $(TOPDIR)/common/gsm-filetypes.o $(LDLIBS) -o $@
 
 
 ### DB Modules
