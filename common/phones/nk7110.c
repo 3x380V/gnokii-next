@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk7110.c,v 1.61 2002-03-21 00:26:48 pkot Exp $
+  $Id: nk7110.c,v 1.62 2002-03-21 22:55:25 pkot Exp $
 
   G N O K I I
 
@@ -1005,7 +1005,7 @@ static GSM_Error P7110_SendSMS(GSM_Data *data, GSM_Statemachine *state)
 	memcpy(req + 6, data->RawData->Data + 5, data->RawData->Length);
 	dprintf("Sending SMS...(%d)\n", length);
 	if (SM_SendMessage(state, length, 0x02, req) != GE_NONE) return GE_NOTREADY;
-	return SM_BlockNoRetry(state, data, 0x02);
+	return SM_BlockNoRetryTimeout(state, data, 0x02, 100);
 }
 
 /* handle messages of type 0x02 (SMS Handling) */
