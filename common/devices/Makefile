@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.1 2001-02-16 14:29:51 chris Exp $
+# $Id: Makefile,v 1.2 2001-03-06 22:27:46 pkot Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -19,7 +19,7 @@ include $(TOPDIR)/Makefile.global
 
 CFLAGS += $(PTHREAD_CFLAGS)
 
-OBJS =	tekram.o 
+OBJS =	tekram.o
 
 ifdef WIN32
 	OBJS += $(TOPDIR)/win32/winserial.o

@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.102 2001-02-20 00:17:15 pkot Exp $
+# $Id: Makefile,v 1.103 2001-03-06 22:27:45 pkot Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -80,6 +80,9 @@ endif
 		    fi; \
 		done \
 	fi
+
+	$(MAKE) -C Docs clean
+
 	@echo "done"
 
 distclean:	clean
@@ -95,7 +98,7 @@ distclean:	clean
 		po/Makefile.in \
 		debian
 
-dep: 
+dep:
 	@for dir in $(DIRS); do \
 	    if [ -e $$dir/Makefile ]; then \
 		$(MAKE) -C $$dir dep; \
