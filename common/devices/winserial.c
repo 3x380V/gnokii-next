@@ -1,6 +1,6 @@
 /*
 
-  $Id: winserial.c,v 1.4 2002-03-29 20:51:22 pkot Exp $
+  $Id: winserial.c,v 1.5 2002-09-23 22:17:31 pkot Exp $
 
   G N O K I I
 
@@ -298,4 +298,14 @@ size_t serial_write(int fd, __ptr_t buf, size_t n)
 	}
     }
     return n;
+}
+
+GSM_Error serial_nreceived(int fd, int *n)
+{
+	return GE_NONE;
+}
+
+GSM_Error serial_flush(int fd)
+{
+	return GE_NONE;
 }

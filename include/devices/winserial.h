@@ -1,6 +1,6 @@
 /*
 
-  $Id: winserial.h,v 1.3 2002-03-29 20:51:25 pkot Exp $
+  $Id: winserial.h,v 1.4 2002-09-23 22:17:31 pkot Exp $
 
   G N O K I I
 
@@ -44,5 +44,8 @@ size_t serial_read(int fd, __ptr_t buf, size_t nbytes);
 size_t serial_write(int fd, __ptr_t buf, size_t n);
 
 int serial_select(int fd, struct timeval *timeout);
+
+GSM_Error serial_nreceived(int fd, int *n);
+GSM_Error serial_flush(int fd);
 
 #endif  /* __devices_winserial_h_ */
