@@ -1,6 +1,6 @@
 /*
 
-  $Id: sms-nokia.c,v 1.1 2002-06-12 22:04:29 pkot Exp $
+  $Id: sms-nokia.c,v 1.2 2002-06-26 23:31:18 bozo Exp $
 
   G N O K I I
 
@@ -28,6 +28,7 @@
 
 */
 
+#include <string.h>
 #include "sms-nokia.h"
 #include "gsm-encoding.h"
 
