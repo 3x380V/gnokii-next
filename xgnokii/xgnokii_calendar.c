@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_calendar.c,v 1.21 2002-12-23 01:04:14 bozo Exp $
+  $Id: xgnokii_calendar.c,v 1.22 2003-02-05 23:10:19 pkot Exp $
 
   X G N O K I I
 
@@ -525,8 +525,11 @@ static gint AddCalendarNote(gn_calnote * cnote)
 		gtk_label_set_text(GTK_LABEL(errorDialog.text), buf);
 		gtk_widget_show(errorDialog.dialog);
 		g_free(buf);
-	} else
+#ifdef XDEBUG
+	} else {
 		g_print("Note saved\n");
+#endif
+	}
 
 	return (error);
 }
