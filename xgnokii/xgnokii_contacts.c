@@ -8,10 +8,13 @@
 
   Released under the terms of the GNU GPL, see file COPYING for more details.
 
-  $Id: xgnokii_contacts.c,v 1.30 2001-09-14 13:14:04 pkot Exp $
+  $Id: xgnokii_contacts.c,v 1.31 2001-11-14 10:46:12 pkot Exp $
   
   $Log: xgnokii_contacts.c,v $
-  Revision 1.30  2001-09-14 13:14:04  pkot
+  Revision 1.31  2001-11-14 10:46:12  pkot
+  Small cleanup with __unices__
+
+  Revision 1.30  2001/09/14 13:14:04  pkot
   Xgnokii WM fixes (Martin Lucina)
 
   Revision 1.29  2001/03/23 08:24:56  ja
@@ -52,9 +55,6 @@
 
 #include <stdlib.h>
 #include <string.h>
-#if __unices__
-# include <strings.h>
-#endif
 #include <gtk/gtk.h>
 
 #include "gsm-common.h"
