@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile.global.in,v 1.13 2000-12-27 09:08:43 pkot Exp $
+# $Id: Makefile.global.in,v 1.14 2001-01-02 09:09:06 pkot Exp $
 #
 # Global Makefiles configuration for the GNOKII.
 #
@@ -52,6 +52,8 @@ PTHREAD_LIBS   = @PTHREAD_LIBS@
 XPM_LIBS       = @XPM_LIBS@
 XPM_CFLAGS     = @XPM_CFLAGS@
 OWN_GETOPT     = @OWN_GETOPT@
+
+USE_NLS        = @USE_NLS@
 
 #
 # Global include directory 
