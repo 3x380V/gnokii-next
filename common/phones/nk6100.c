@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.113 2002-10-15 10:18:19 bozo Exp $
+  $Id: nk6100.c,v 1.114 2002-11-21 00:24:55 bozo Exp $
 
   G N O K I I
 
@@ -1330,6 +1330,10 @@ static gn_error IncomingSMS1(int messagetype, unsigned char *message, int length
 
 	/* Set CellBroadcast OK */
 	case 0x21:
+		break;
+
+	/* Set CellBroadcast error */
+	case 0x22:
 		break;
 
 	/* Read CellBroadcast */
