@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-statemachine.c,v 1.13 2002-01-16 12:39:21 pkot Exp $
+  $Id: gsm-statemachine.c,v 1.14 2002-01-16 13:46:53 pkot Exp $
 
   G N O K I I
 
@@ -250,7 +250,6 @@ void SM_DumpUnhandledFrame(GSM_Statemachine *state, int messagetype, unsigned ch
 	for (i = 0; i < messagesize; i++) {
 		if (i % 16 == 0)
 			dprintf("\n    ");
-		}
 		dprintf("%02x ", message[i]);
 	}
 	dprintf("\n");
