@@ -1,6 +1,6 @@
 /*
 
-  $Id: unixserial.c,v 1.34 2003-03-04 21:53:02 bozo Exp $
+  $Id: unixserial.c,v 1.35 2003-04-28 14:55:26 pkot Exp $
 
   G N O K I I
 
@@ -450,7 +450,7 @@ size_t serial_write(int fd, const __ptr_t buf, size_t n, struct gn_statemachine 
 
 	while (n > 0) {
 		bs = (state->config.serial_write_usleep < 0) ? n : 1;
-		got = write(fd, buf, bs);
+		got = write(fd, buf + r, bs);
 		if (got == 0) {
 			dprintf("Serial write: oops, zero byte has written!\n");
 		}
@@ -466,7 +466,6 @@ size_t serial_write(int fd, const __ptr_t buf, size_t n, struct gn_statemachine 
 			continue;
 		}
 
-		buf += got;
 		n -= got;
 		r += got;
 		if (state->config.serial_write_usleep > 0)
