@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus-phonet.c,v 1.33 2003-05-06 19:46:19 pkot Exp $
+  $Id: fbus-phonet.c,v 1.34 2003-08-25 13:30:46 pkot Exp $
 
   G N O K I I
 
@@ -257,7 +257,7 @@ static gn_error phonet_send_message(unsigned int messagesize, unsigned char mess
 
 	do {
 		sent = device_write(out_buffer + current, total - current, state);
-		if (sent < 0) return (false);
+		if (sent < 0) return GN_ERR_FAILED;
 		else current += sent;
 	} while (current < total);
 
