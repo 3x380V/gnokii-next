@@ -1,6 +1,6 @@
 /*
 
-  $Id: at-emulator.c,v 1.30 2002-12-13 02:01:29 bozo Exp $
+  $Id: at-emulator.c,v 1.31 2002-12-13 07:09:47 ladis Exp $
 
   G N O K I I
 
@@ -512,7 +512,7 @@ void	gn_atem_sms_parseText(char *buff)
 			sms.user_data[0].length = index;
 			index = 0;
 			Parser = gn_atem_at_parse;
-			dprintf("Sending SMS to %s (text: %s)\n", data.sms->Remote.Number, data.sms->user_data[0].u.text);
+			dprintf("Sending SMS to %s (text: %s)\n", data.sms->remote.number, data.sms->user_data[0].u.text);
 
 			/* FIXME: set more SMS fields before sending */
 			error = gn_sms_send(&data, sm);
