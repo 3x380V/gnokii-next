@@ -1,6 +1,6 @@
 /*
 
-  $Id: sms.h,v 1.41 2002-06-02 21:36:45 machek Exp $
+  $Id: sms.h,v 1.42 2002-06-03 20:30:43 machek Exp $
 
   G N O K I I
 
@@ -306,7 +306,8 @@ typedef enum {
 	SMS_iMelodyText  = 0x04,
 	SMS_MultiData	 = 0x05,
 	SMS_NokiaText 	 = 0x06,
-	SMS_OtherData    = 0x07
+	SMS_AnimationData= 0x07,
+	SMS_OtherData    = 0x08
 } SMS_DataType;
 
 /*** FOLDER INFO ***/
@@ -347,6 +348,7 @@ typedef struct {
 		GSM_Multi Multi;
 		GSM_Bitmap Bitmap;
 		GSM_Ringtone Ringtone;
+		GSM_Bitmap Animation[4];
 	} u;
 } SMS_UserData;
 
