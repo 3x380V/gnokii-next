@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-sms.c,v 1.141 2003-12-16 00:56:27 bozo Exp $
+  $Id: gsm-sms.c,v 1.142 2004-02-22 20:58:23 uid66849 Exp $
 
   G N O K I I
 
@@ -1138,8 +1138,7 @@ static gn_error sms_data_encode(gn_sms *sms, gn_sms_raw *rawsms)
 				break;
 			case GN_SMS_DCS_UCS2:
 				rawsms->dcs |= 0x08;
-				char_unicode_encode(rawsms->user_data + offset, sms->user_data[i].u.text, length);
-				length *= 2;
+				length = char_unicode_encode(rawsms->user_data + offset, sms->user_data[i].u.text, length);
 				rawsms->user_data_length = rawsms->length = length + offset;
 				break;
 			default:
