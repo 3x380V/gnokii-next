@@ -1,6 +1,6 @@
 /*
 
-  $Id: common.h,v 1.85 2001-12-31 09:35:47 pkot Exp $
+  $Id: common.h,v 1.86 2002-01-09 13:42:12 pkot Exp $
 
   G N O K I I
 
@@ -402,6 +402,7 @@ typedef struct {
 } GSM_CallDivert;
 
 typedef struct {
+	bool Full; /* indicates if we have full data read */
 	unsigned int Length;
 	unsigned char *Data;
 } GSM_RawData;
