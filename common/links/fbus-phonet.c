@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus-phonet.c,v 1.16 2002-07-29 21:49:04 pkot Exp $
+  $Id: fbus-phonet.c,v 1.17 2002-09-13 22:40:00 pkot Exp $
 
   G N O K I I
 
@@ -47,7 +47,6 @@
 #include "gsm-networks.h"
 #include "device.h"
 
-// #include "links/fbus.h"
 #include "links/fbus-phonet.h"
 
 static void PHONET_RX_StateMachine(unsigned char rx_byte);

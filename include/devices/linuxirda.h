@@ -28,7 +28,7 @@
  ********************************************************************/
 
 /*
- * $Id: linuxirda.h,v 1.5 2002-04-17 22:06:08 bozo Exp $
+ * $Id: linuxirda.h,v 1.6 2002-09-13 22:40:00 pkot Exp $
  *
  * GNOKII modifications:
  * Fixes for Solaris compile (Artur Kubiak and Michael Wiedmann)
@@ -121,16 +121,16 @@ enum {
 #define DEV_ADDR_ANY  0xffffffff
 
 struct sockaddr_irda {
-	sa_family_t   sir_family;   /* AF_IRDA */
+	sa_family_t  sir_family;   /* AF_IRDA */
 	uint8_t      sir_lsap_sel; /* LSAP selector */
 	uint32_t     sir_addr;     /* Device address */
-	char          sir_name[25]; /* Usually <service>:IrDA:TinyTP */
+	char         sir_name[25]; /* Usually <service>:IrDA:TinyTP */
 };
 
 struct irda_device_info {
 	uint32_t     saddr;    /* Address of local interface */
 	uint32_t     daddr;    /* Address of remote device */
-	char          info[22]; /* Description */
+	char         info[22]; /* Description */
 	uint8_t      charset;  /* Charset used for description */
 	uint8_t      hints[2]; /* Hint bits */
 };

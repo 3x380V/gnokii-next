@@ -1,6 +1,6 @@
 /*
 
-  $Id: common.h,v 1.113 2002-08-08 13:14:59 plail Exp $
+  $Id: common.h,v 1.114 2002-09-13 22:40:00 pkot Exp $
 
   G N O K I I
 
@@ -34,6 +34,7 @@
 
 #include <stdlib.h>
 
+#include "config.h"
 #include "misc.h"
 #include "data/rlp-common.h"
 
@@ -44,9 +45,13 @@ typedef enum {
 	GCT_DAU9P,    /* Serial connection using DAU9P cable; use only with 6210/7110 if you want faster initialization */
 	GCT_DLR3P,    /* Serial connection using DLR3P cable */
 	GCT_Infrared, /* Infrared connection. */
+#ifdef HAVE_IRDA
+	GCT_Irda,     /* Linux IrDA support */
+#endif
+#ifndef WIN32
 	GCT_Tekram,   /* Tekram Ir-Dongle */
-	GCT_Irda,
 	GCT_TCP,      /* TCP network connection */
+#endif
 } GSM_ConnectionType;
 
 /* Maximum length of device name for serial port */

@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.52 2002-08-27 23:23:00 pkot Exp $
+  $Id: atgen.c,v 1.53 2002-09-13 22:40:00 pkot Exp $
 
   G N O K I I
 
@@ -1169,7 +1169,9 @@ static GSM_Error Initialise(GSM_Data *setupdata, GSM_Statemachine *state)
 
 	switch (state->Link.ConnectionType) {
 	case GCT_Serial:
+#ifdef HAVE_IRDA
 	case GCT_Irda:
+#endif
 		if (!strcmp(setupdata->Model, "dancall"))
 			ret = CBUS_Initialise(state);
 		else if (!strcmp(setupdata->Model, "AT-HW"))

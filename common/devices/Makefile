@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.8 2002-08-27 23:44:02 pkot Exp $
+# $Id: Makefile,v 1.9 2002-09-13 22:40:00 pkot Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -23,8 +23,11 @@ ifdef WIN32
 	OBJS += winserial.o
 else
 	OBJS += unixserial.o \
-	        unixirda.o \
 		tcp.o
+endif
+
+ifdef USE_IRDA
+	OBJS += unixirda.o
 endif
 
 ifdef USE_BLUETOOTH

@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.107 2002-09-03 22:29:46 pkot Exp $
+  $Id: nk6100.c,v 1.108 2002-09-13 22:40:00 pkot Exp $
 
   G N O K I I
 
@@ -500,9 +500,11 @@ static GSM_Error Initialise(GSM_Statemachine *state)
 	case GCT_DAU9P:
 		err = FBUS_Initialise(&(state->Link), state, 0);
 		break;
+#ifdef HAVE_IRDA
 	case GCT_Irda:
 		err = PHONET_Initialise(&(state->Link), state);
 		break;
+#endif
 	default:
 		FREE(DRVINSTANCE(state));
 		return GE_NOTSUPPORTED;

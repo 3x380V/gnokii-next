@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.c,v 1.81 2002-08-27 23:23:00 pkot Exp $
+  $Id: nk6510.c,v 1.82 2002-09-13 22:40:00 pkot Exp $
 
   G N O K I I
 
@@ -380,9 +380,11 @@ static GSM_Error P6510_Initialise(GSM_Statemachine *state)
 			err = FBUS_Initialise(&(state->Link), state, try++);
 			break;
 		case GCT_Infrared:
+#ifdef HAVE_IRDA
 		case GCT_Irda:
 			err = PHONET_Initialise(&(state->Link), state);
 			break;
+#endif
 		default:
 			return GE_NOTSUPPORTED;
 		}

@@ -1,6 +1,6 @@
 /*
 
-  $Id: atbus.c,v 1.18 2002-07-12 18:10:01 pkot Exp $
+  $Id: atbus.c,v 1.19 2002-09-13 22:40:00 pkot Exp $
 
   G N O K I I
 
@@ -212,8 +212,12 @@ GSM_Error ATBUS_Initialise(GSM_Statemachine *state, int mode)
 	state->Link.Loop = &ATBUS_Loop;
 	state->Link.SendMessage = &AT_SendMessage;
 
+#ifdef HAVE_IRDA
 	if ((state->Link.ConnectionType == GCT_Serial) ||
 	    (state->Link.ConnectionType == GCT_Irda)) {
+#else
+	if (state->Link.ConnectionType == GCT_Serial) {
+#endif
 		if (!ATBUS_OpenSerial(mode, state->Link.PortDevice))
 			return GE_FAILED;
 	} else {

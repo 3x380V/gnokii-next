@@ -1,6 +1,6 @@
 /*
  *
- * $Id: unixirda.h,v 1.6 2002-03-28 21:37:49 pkot Exp $
+ * $Id: unixirda.h,v 1.7 2002-09-13 22:40:00 pkot Exp $
  *
  * G N O K I I
  *
@@ -36,8 +36,9 @@
 #include <string.h>
 #include <sys/time.h>
 #include <sys/socket.h>
+#include <linux/types.h>
+#include <linux/irda.h>
 
-#include "devices/linuxirda.h"
 #include "misc.h"
 
 int irda_open(void);
