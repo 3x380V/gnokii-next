@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.164 2002-01-07 15:35:13 pkot Exp $
+  $Id: gnokii.c,v 1.165 2002-01-10 10:14:09 pkot Exp $
   
   G N O K I I
 
@@ -2446,8 +2446,9 @@ static int identify(void)
 {
 	/* Hopefully is 64 larger as FB38_MAX* / FB61_MAX* */
 	char imei[64], model[64], rev[64], manufacturer[64];
-	GSM_Statemachine *sm = &State;
 
+	manufacturer[0] = model[0] = rev[0] = imei[0] = 0;
+	
 	data.Manufacturer = manufacturer;
 	data.Model = model;
 	data.Revision = rev;
@@ -2462,7 +2463,7 @@ static int identify(void)
 	strcpy(model, "(unknown)");
 	strcpy(rev, "(unknown)");
 
-	SM_Functions(GOP_Identify, &data, sm);
+	SM_Functions(GOP_Identify, &data, &State);
 
 	fprintf(stdout, _("IMEI:     %s\n"), imei);
 	fprintf(stdout, _("Manufacturer: %s\n"), manufacturer);
