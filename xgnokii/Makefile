@@ -1,7 +1,7 @@
 
 
 #
-# $Id: Makefile,v 1.42 2002-02-19 00:11:00 pkot Exp $
+# $Id: Makefile,v 1.43 2002-03-13 00:22:24 pkot Exp $
 #
 # Makefile for the xGNOKII tool suite.
 #
@@ -41,11 +41,16 @@ OBJS = 	xgnokii.o \
 
 HELP_DIR = docs/help
 
+ifdef NO_SHARED
+        GNOKII_LIB=libgnokii.a
+else
+        GNOKII_LIB=libgnokii.so
+endif
 
 all: xgnokii
 
 
-xgnokii: $(OBJS) $(TOPDIR)/common/data/DATA.o $(TOPDIR)/common/gsm-filetypes.o $(TOPDIR)/common/libgnokii.so
+xgnokii: $(OBJS) $(TOPDIR)/common/data/DATA.o $(TOPDIR)/common/gsm-filetypes.o $(TOPDIR)/common/$(GNOKII_LIB)
 	$(CC) $(LDFLAGS) $(OBJS) $(TOPDIR)/common/data/DATA.o $(TOPDIR)/common/gsm-filetypes.o $(LDLIBS) -o $@
 
 clean:
