@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.121 2003-02-26 22:32:22 pkot Exp $
+# $Id: Makefile,v 1.122 2003-04-09 09:00:15 pkot Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -127,6 +127,14 @@ install: all
 	fi
 	$(MAKE) -C $(INCLUDE_DIR) install
 	@echo "done"
+	@echo "#####################################################"
+	@echo "###"
+	@echo "### Please make sure to have $(libdir) in"
+	@echo "### the system defaults or in /etc/ld.so.conf and run"
+	@echo "### /sbin/ldconfig at some time. Otherwise gnokii may"
+	@echo "### not work."
+	@echo "###"
+	@echo "#####################################################"
 
 install-docs:
 	$(MAKE) -C $(DOCS_DIR) install
