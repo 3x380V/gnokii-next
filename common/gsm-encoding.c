@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-encoding.c,v 1.33 2002-11-25 21:06:44 pkot Exp $
+  $Id: gsm-encoding.c,v 1.34 2002-11-29 23:21:45 pkot Exp $
 
   G N O K I I
 
@@ -395,6 +395,7 @@ unsigned int char_decode_unicode(unsigned char* dest, const unsigned char* src, 
 		dest += length;
 		pos += length;
 	}
+	*dest = 0;
 	return pos;
 }
 
