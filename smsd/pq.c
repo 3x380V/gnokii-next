@@ -1,6 +1,6 @@
 /*
 
-  $Id: pq.c,v 1.6 2002-03-28 21:37:50 pkot Exp $
+  $Id: pq.c,v 1.7 2002-04-13 14:37:38 pkot Exp $
 
   S M S D
 
@@ -159,8 +159,8 @@ void DB_Look (void)
     DefaultSubmitSMS(&sms);
     sms.Report = (smsdConfig.smsSets & SMSD_READ_REPORTS);
 
-    strncpy (sms.RemoteNumber.number, PQgetvalue (res1, i, 1), GSM_MAX_DESTINATION_LENGTH + 1);
-    sms.RemoteNumber.number[GSM_MAX_DESTINATION_LENGTH] = '\0';
+    strncpy (sms.RemoteNumber.number, PQgetvalue (res1, i, 1), MAX_BCD_STRING_LENGTH + 1);
+    sms.RemoteNumber.number[MAX_BCD_STRING_LENGTH] = '\0';
     if (sms.RemoteNumber.number[0] == '+')
       sms.RemoteNumber.type = SMS_International;
     else
