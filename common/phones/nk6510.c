@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.c,v 1.97 2003-01-03 23:16:46 pkot Exp $
+  $Id: nk6510.c,v 1.98 2003-01-03 23:19:44 pkot Exp $
 
   G N O K I I
 
@@ -729,7 +729,7 @@ static gn_error NK6510_IncomingFolder(int messagetype, unsigned char *message, i
 	/* sms status */
 	case 0x09:
 		dprintf("SMS Status received\n");
-
+		if (!data->sms_status) return GN_ERR_INTERNALERROR;
 		data->sms_status->number = ((message[12] << 8) | message[13]) + 
 			((message[24] << 8) | message[25]) + data->sms_folder->number;
 		data->sms_status->unread = ((message[14] << 8) | message[15]) +
