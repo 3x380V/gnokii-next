@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.392 2004-04-25 16:03:27 pkot Exp $
+  $Id: gnokii.c,v 1.393 2004-05-09 20:05:58 pkot Exp $
 
   G N O K I I
 
@@ -5205,7 +5205,7 @@ int main(int argc, char *argv[])
 	}
 
 	/* Read config file */
-	if (gn_cfg_read(&bindir) < 0) {
+	if (gn_cfg_read_default(&bindir) < 0) {
 		exit(1);
 	}
 	if (!gn_cfg_phone_load("", &state)) exit(1);
