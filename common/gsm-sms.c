@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-sms.c,v 1.135 2003-05-06 19:41:00 pkot Exp $
+  $Id: gsm-sms.c,v 1.136 2003-05-07 10:21:01 pkot Exp $
 
   G N O K I I
 
@@ -526,6 +526,9 @@ static gn_error sms_udh_decode(unsigned char *message, gn_sms_udh *udh)
 		nr++;
 	}
 	udh->number = nr;
+
+	/* We need to add the length field itself */
+	udh->length++;
 
 	return GN_ERR_NONE;
 }
