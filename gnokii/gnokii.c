@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.269 2002-07-21 15:38:31 pkot Exp $
+  $Id: gnokii.c,v 1.270 2002-07-21 15:40:18 pkot Exp $
 
   G N O K I I
 
@@ -3862,7 +3862,7 @@ int main(int argc, char *argv[])
 #endif
 
 		/* Initialise the code for the GSM interface. */
-		if (c != OPT_VIEWLOGO) businit(NULL);
+		if (c != OPT_VIEWLOGO && c != OPT_FOOGLE) businit(NULL);
 
 		switch(c) {
 		case OPT_MONITOR:
