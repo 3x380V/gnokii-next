@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.c,v 1.133 2003-12-28 20:29:37 uid66843 Exp $
+  $Id: nk6510.c,v 1.134 2004-01-10 21:28:19 uid66843 Exp $
 
   G N O K I I
 
@@ -2298,6 +2298,7 @@ static gn_error NK6510_IncomingNetwork(int messagetype, unsigned char *message, 
 				operatorname = malloc(blockstart[5] + 1);
 				char_unicode_decode(operatorname, blockstart + 6, blockstart[5] << 1);
 				dprintf("Operator Name: %s\n", operatorname);
+				free(operatorname);
 				break;
 			case 0x09:  /* Operator details */
 				/* Network code is stored as 0xBA 0xXC 0xED ("ABC DE"). */

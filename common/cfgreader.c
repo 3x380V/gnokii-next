@@ -1,6 +1,6 @@
 /*
 
-  $Id: cfgreader.c,v 1.44 2004-01-04 11:06:35 uid66843 Exp $
+  $Id: cfgreader.c,v 1.45 2004-01-10 21:24:10 uid66843 Exp $
 
   G N O K I I
 
@@ -94,6 +94,7 @@ struct gn_cfg_header *cfg_file_read(const char *filename)
 
 			/* Allocate new heading entry */
 			if ((heading = (struct gn_cfg_header *)malloc(sizeof(*heading))) == NULL) {
+				free(buf);
 				return NULL;
 			}
 
@@ -132,6 +133,7 @@ struct gn_cfg_header *cfg_file_read(const char *filename)
 
 			/* Allocate new entry */
 			if ((entry = (struct gn_cfg_entry *)malloc(sizeof(*entry))) == NULL) {
+				free(buf);
 				return NULL;
 			}
 
@@ -175,6 +177,7 @@ struct gn_cfg_header *cfg_file_read(const char *filename)
 		fprintf(stderr, "Orphaned line: %s\n", line);
 	}
 
+	free(buf);
 	/* Return pointer to configuration information */
 	return cfg_head;
 }
