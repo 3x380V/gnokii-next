@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk3110.h,v 1.6 2003-02-14 23:44:47 pkot Exp $
+  $Id: nk3110.h,v 1.7 2003-02-14 23:54:12 pkot Exp $
 
   G N O K I I
 
@@ -30,8 +30,8 @@
 
 */
 
-#ifndef __phones_nk3110_h
-#define __phones_nk3110_h
+#ifndef _gnokii_phones_nk3110_h
+#define _gnokii_phones_nk3110_h
 
 #include "gsm-data.h"
 
@@ -42,4 +42,9 @@
 /* Number of times to try resending SMS (empirical) */
 #define P3110_SMS_SEND_RETRY_COUNT 4
 
-#endif  /* #ifndef __phones_nk3110_h */
+typedef struct {
+	bool sim_available;
+	int user_data_count;
+} nk3110_driver_instance;
+
+#endif  /* #ifndef _gnokii_phones_nk3110_h */
