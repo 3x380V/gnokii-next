@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii.c,v 1.68 2003-10-05 22:44:30 bozo Exp $
+  $Id: xgnokii.c,v 1.69 2004-01-06 15:46:41 uid66843 Exp $
   
   X G N O K I I
 
@@ -807,7 +807,7 @@ inline void GUI_HideAbout(void)
 }
 
 
-static void MainExit(void)
+void MainExit(void)
 {
 	PhoneEvent *e = (PhoneEvent *) g_malloc(sizeof(PhoneEvent));
 

@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii.h,v 1.20 2003-02-26 00:15:53 pkot Exp $
+  $Id: xgnokii.h,v 1.21 2004-01-06 15:46:41 uid66843 Exp $
 
   X G N O K I I
 
@@ -80,5 +80,6 @@ extern gint max_phonebook_sim_number_length;
 extern void GUI_InitCallerGroupsInf(void);
 extern void GUI_InitSMSSettings(void);
 extern void GUI_ShowAbout(void);
+extern void MainExit();
 
 #endif				/* XGNOKII_H */
