@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.155 2001-12-14 14:37:44 pkot Exp $
+  $Id: gnokii.c,v 1.156 2001-12-14 15:15:55 pkot Exp $
   
   G N O K I I
 
@@ -1449,9 +1449,9 @@ GSM_Error SaveBitmapFileOnConsole(char *FileName, GSM_Bitmap *bitmap)
 		while (!confirm) {
 			fprintf(stderr, _("Saving logo. File \"%s\" exists. (O)verwrite, create (n)ew or (s)kip ? "), FileName);
 			GetLine(stdin, ans, 4);
-			if (!strcmp(ans, "O") || !strcmp(ans, "o")) confirm = 1;
-			if (!strcmp(ans, "N") || !strcmp(ans, "n")) confirm = 2;
-			if (!strcmp(ans, "S") || !strcmp(ans, "s")) return GE_USERCANCELED;
+			if (!strcmp(ans, _("O")) || !strcmp(ans, _("o"))) confirm = 1;
+			if (!strcmp(ans, _("N")) || !strcmp(ans, _("n"))) confirm = 2;
+			if (!strcmp(ans, _("S")) || !strcmp(ans, _("s"))) return GE_USERCANCELED;
 		}  
 		if (confirm == 1) break;
 		if (confirm == 2) {
