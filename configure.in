@@ -5,7 +5,7 @@ dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janík ml.
 dnl                2000 Karel Zak, Pawe³ Kot
 dnl                2002 BORBELY Zoltan
 dnl
-dnl  $Id: configure.in,v 1.84 2002-08-28 15:53:11 pkot Exp $
+dnl  $Id: configure.in,v 1.85 2002-08-28 22:13:39 pkot Exp $
 dnl
 
 AC_INIT(gnokii/gnokii.c)
@@ -429,6 +429,8 @@ if test $ac_cv_func_vsnprintf = yes; then
 	AC_DEFINE(HAVE_VSNPRINTF)
 	AC_DEFINE(HAVE_C99_VSNPRINTF)
 fi
+
+AM_PROG_LEX
 
 CFLAGS="$CFLAGS $NLS_CFLAGS"
 LIBS="$LIBS $NLS_LIBS"
