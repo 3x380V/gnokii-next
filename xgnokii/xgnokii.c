@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii.c,v 1.70 2004-02-22 17:34:00 uid66843 Exp $
+  $Id: xgnokii.c,v 1.71 2004-05-07 23:07:38 pkot Exp $
   
   X G N O K I I
 
@@ -2328,7 +2328,7 @@ static void ReadConfig(void)
 	xgnokiiConfig.xgnokiidir = DefaultXGnokiiDir;
 #endif
 	max_phonebook_number_length = max_phonebook_sim_number_length =
-	    GN_PHONEBOOK_NAME_MAX_LENGTH;
+	    GN_PHONEBOOK_NUMBER_MAX_LENGTH;
 
 	xgnokiiConfig.callerGroups[0] = xgnokiiConfig.callerGroups[1] =
 	    xgnokiiConfig.callerGroups[2] = xgnokiiConfig.callerGroups[3] =
