@@ -1,6 +1,6 @@
 /*
 
-  $Id: ldif.c,v 1.6 2003-09-21 14:57:49 pkot Exp $
+  $Id: ldif.c,v 1.7 2003-09-22 19:37:36 pkot Exp $
   
   G N O K I I
 
@@ -43,7 +43,7 @@ static int ldif_entry_write(FILE *f, const char *parameter, const char *value, i
 	char *buf = NULL;
 
 	if (string_base64(value)) {
-		base64_encode(value, convertToUTF8, buf);
+		base64_encode(buf, value, convertToUTF8);
 		fprintf(f, "%s:: %s\n", parameter, buf);
 	} else {
 		fprintf(f, "%s: %s\n", parameter, value);
