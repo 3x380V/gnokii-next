@@ -1,6 +1,6 @@
 /*
 
-  $Id: nokia-decoding.c,v 1.20 2004-12-20 14:26:16 chriskemp Exp $
+  $Id: nokia-decoding.c,v 1.21 2005-03-21 23:05:49 pkot Exp $
 
   G N O K I I
 
@@ -38,7 +38,7 @@
 gn_error phonebook_decode(unsigned char *blockstart, int length, gn_data *data,
 			  int blocks, int memtype, int speeddial_pos)
 {
-	int subblock_count = 0, i, j;
+	int subblock_count = 0, i;
 	gn_phonebook_subentry* subentry = NULL;
 
 

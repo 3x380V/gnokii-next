@@ -1,6 +1,6 @@
 /*
 
-  $Id: at-emulator.c,v 1.40 2005-02-05 19:11:33 pkot Exp $
+  $Id: at-emulator.c,v 1.41 2005-03-21 23:03:57 pkot Exp $
 
   G N O K I I
 
@@ -243,7 +243,6 @@ void gn_atem_cid_out(gn_call_info *CallInfo)
 	struct tm *now;
 	time_t nowh;
 	char buf[14]; /* 7 for "DATE = " + 4 digits + \n + \r + \0 */
-	int i;
 
 	nowh = time(NULL);
 	now = localtime(&nowh);
