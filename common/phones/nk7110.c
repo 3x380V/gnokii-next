@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk7110.c,v 1.50 2002-01-30 10:12:07 pkot Exp $
+  $Id: nk7110.c,v 1.51 2002-01-31 18:28:19 pkot Exp $
 
   G N O K I I
 
@@ -1184,7 +1184,10 @@ static GSM_Error P7110_IncomingSMS(int messagetype, unsigned char *message, int 
 		dprintf("SMS received\n");
 		/* We got here the whole SMS */
 		NewSMS = true;
+		data->RawData->Length = length - nk7110_layout.ReadHeader;
+		data->RawData->Data = calloc(data->RawData->Length, 1);
 		ParseSMS(data, nk7110_layout.ReadHeader);
+		free(data->RawData->Data);
 		break;
 
 	case P7110_SUBSMS_SMS_RCVD: /* 0x10 */
