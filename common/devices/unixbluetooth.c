@@ -1,6 +1,6 @@
 /*
 
-  $Id: unixbluetooth.c,v 1.1 2002-08-27 21:39:10 pkot Exp $
+  $Id: unixbluetooth.c,v 1.2 2002-12-10 11:27:51 ladis Exp $
  
   G N O K I I
 
@@ -26,6 +26,10 @@
   Copyright (C) 2002       Marcel Holtmann <marcel@holtmann.org>
 
 */
+
+#include "config.h"
+
+#ifdef HAVE_BLUETOOTH
 
 #include "devices/unixbluetooth.h"
 
@@ -72,17 +76,17 @@ int bluetooth_open(bdaddr_t *bdaddr, int channel)
 
 int bluetooth_close(int fd)
 {
-	return (close(fd));
+	return close(fd);
 }
 
 int bluetooth_write(int fd, const __ptr_t bytes, int size)
 {
-	return (write(fd, bytes, size));
+	return write(fd, bytes, size);
 }
 
 int bluetooth_read(int fd, __ptr_t bytes, int size)
 {
-	return (read(fd, bytes, size));
+	return read(fd, bytes, size);
 }
 
 int bluetooth_select(int fd, struct timeval *timeout)
@@ -92,5 +96,15 @@ int bluetooth_select(int fd, struct timeval *timeout)
 	FD_ZERO(&readfds);
 	FD_SET(fd, &readfds);
 
-	return (select(fd + 1, &readfds, NULL, NULL, timeout));
+	return select(fd + 1, &readfds, NULL, NULL, timeout);
 }
+
+#else /* HAVE_BLUETOOTH */
+
+int bluetooth_open(bdaddr_t *bdaddr, int channel) { return -1; }
+int bluetooth_close(int fd) { return -1; }
+int bluetooth_write(int fd, const __ptr_t bytes, int size) { return -1; }
+int bluetooth_read(int fd, __ptr_t bytes, int size) { return -1; }
+int bluetooth_select(int fd, struct timeval *timeout) { return -1; }
+
+#endif /* HAVE_BLUETOOTH */

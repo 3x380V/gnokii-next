@@ -1,6 +1,6 @@
 /*
  *
- * $Id: unixirda.h,v 1.7 2002-09-13 22:40:00 pkot Exp $
+ * $Id: unixirda.h,v 1.8 2002-12-10 11:27:51 ladis Exp $
  *
  * G N O K I I
  *
@@ -28,6 +28,8 @@
 #ifndef __unix_irda_h_
 #define __unix_irda_h_
 
+#ifdef HAVE_IRDA
+
 #include <stdlib.h>
 #include <unistd.h>
 #include <stdio.h>
@@ -38,6 +40,8 @@
 #include <sys/socket.h>
 #include <linux/types.h>
 #include <linux/irda.h>
+
+#endif
 
 #include "misc.h"
 

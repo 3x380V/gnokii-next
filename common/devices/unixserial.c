@@ -1,6 +1,6 @@
 /*
 
-  $Id: unixserial.c,v 1.26 2002-10-30 00:52:07 bozo Exp $
+  $Id: unixserial.c,v 1.27 2002-12-10 11:27:51 ladis Exp $
 
   G N O K I I
 
@@ -31,6 +31,7 @@
 
 #include "misc.h"
 #include "cfgreader.h"
+#include "gsm-api.h"
 
 /* Do not compile this file under Win32 systems. */
 
@@ -59,10 +60,6 @@
 
 #ifdef HAVE_SYS_MODEM_H
 #  include <sys/modem.h>
-#endif
-
-#ifdef HAVE_SYS_FILIO_H
-#  include <sys/filio.h>
 #endif
 
 /* If the target operating system does not have cfsetspeed, we can emulate
