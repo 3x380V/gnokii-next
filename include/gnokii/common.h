@@ -1,6 +1,6 @@
 /*
 
-  $Id: common.h,v 1.88 2002-01-24 12:54:09 machek Exp $
+  $Id: common.h,v 1.89 2002-01-25 23:39:29 machek Exp $
 
   G N O K I I
 
@@ -414,7 +414,7 @@ typedef enum {
 } GSM_DrawCommand;
 
 #define	DRAW_MAX_SCREEN_WIDTH 27
-#define	DRAW_MAX_SCREEN_HEIGHT 5
+#define	DRAW_MAX_SCREEN_HEIGHT 6
 
 typedef struct {
 	int x;
