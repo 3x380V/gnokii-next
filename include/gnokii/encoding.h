@@ -1,6 +1,6 @@
 /*
 
-  $Id: encoding.h,v 1.6 2002-03-28 21:37:48 pkot Exp $
+  $Id: encoding.h,v 1.7 2002-04-03 01:02:06 bozo Exp $
 
   G N O K I I
 
@@ -31,6 +31,8 @@
 #ifndef __gsm_encoding_h_
 #define __gsm_encoding_h_
 
+#include "gsm-common.h"
+
 extern void hex2bin(unsigned char *dest, const unsigned char *src, unsigned int len);
 extern void bin2hex(unsigned char *dest, const unsigned char *src, unsigned int len);
 
@@ -49,5 +51,8 @@ void EncodeHex (unsigned char* dest, const unsigned char* src, int len);
 
 void DecodeUCS2 (unsigned char* dest, const unsigned char* src, int len);
 void EncodeUCS2 (unsigned char* dest, const unsigned char* src, int len);
+
+extern char *GetBCDNumber(u8 *Number);
+extern int SemiOctetPack(char *Number, unsigned char *Output, SMS_NumberType type);
 
 #endif
