@@ -1,6 +1,6 @@
 /*
   
-  $Id: tcp.c,v 1.12 2004-01-04 11:06:35 uid66843 Exp $
+  $Id: tcp.c,v 1.13 2004-02-03 21:59:25 uid66843 Exp $
 
   G N O K I I
 
@@ -154,7 +154,7 @@ int tcp_opendevice(const char *file, int with_async, struct gn_statemachine *sta
 
 	/* Allow process/thread to receive SIGIO */
 
-#if !(unices)
+#if !(__unices__)
 	retcode = fcntl(fd, F_SETOWN, getpid());
 	if (retcode == -1){
 		perror("Gnokii tcp_opendevice: fnctl(F_SETOWN)");
