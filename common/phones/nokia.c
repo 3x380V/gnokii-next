@@ -1,6 +1,6 @@
 /*
 
-  $Id: nokia.c,v 1.10 2002-05-17 00:22:10 pkot Exp $
+  $Id: nokia.c,v 1.11 2002-05-26 23:05:38 bozo Exp $
 
   G N O K I I
 
@@ -183,6 +183,10 @@ GSM_Error PNOK_IncomingCallDivert(int messagetype, unsigned char *message, int l
 	case 0x03:
 		return GE_UNHANDLEDFRAME;
 	
+	/* FIXME: call divert is active */
+	case 0x06:
+		return GE_UNSOLICITED;
+
 	default:
 		return GE_UNHANDLEDFRAME;
 	}
