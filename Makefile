@@ -1,5 +1,7 @@
 
 #
+# $Id: Makefile,v 1.96 2000-12-19 16:18:14 pkot Exp $
+#
 # Makefile for the GNOKII tool suite.
 #
 # Copyright (C) 1999 Hugh Blemings & Pavel Janík ml.
@@ -14,8 +16,8 @@ TOPDIR=.
 include ${TOPDIR}/Makefile.global
 
 
-DIRS =		common \
-		gnokii
+DIRS =  common \
+        gnokii
 
 #
 # For now gnokiid and utils only make sense on Unix like systems.
@@ -23,12 +25,12 @@ DIRS =		common \
 #
 
 ifndef WIN32
-DIRS +=		gnokiid \
-		utils
+DIRS +=	gnokiid \
+         utils
 endif
 
-GTK_DIRS =	xgnokii \
-		xlogos
+GTK_DIRS =  xgnokii \
+            xlogos
 
 PO_DIR   = 	po
 DOCS_DIR = 	Docs
