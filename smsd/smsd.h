@@ -1,6 +1,6 @@
 /*
 
-  $Id: smsd.h,v 1.11 2003-10-05 19:42:41 ja Exp $
+  $Id: smsd.h,v 1.12 2004-10-11 00:44:03 ja Exp $
 
   S M S D
 
@@ -43,6 +43,8 @@ typedef struct {
   gchar *libDir;
   gchar *logFile;
   gchar *phone;
+  gint   refreshInt;
+  gint   maxSMS;
   gint   smsSets:4;
 } SmsdConfig;
 
