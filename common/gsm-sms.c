@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-sms.c,v 1.107 2002-07-18 13:07:25 plail Exp $
+  $Id: gsm-sms.c,v 1.108 2002-07-24 23:01:02 pkot Exp $
 
   G N O K I I
 
@@ -1068,8 +1068,11 @@ GSM_Error EncodeData(GSM_API_SMS *sms, GSM_SMSMessage *rawsms)
 			switch (al) {
 			case SMS_DefaultAlphabet:
 #define UDH_Length 0
-				size = Pack7BitCharacters((7 - (UDH_Length % 7)) % 7, sms->UserData[i].u.Text, rawsms->UserData + offset);
-				rawsms->Length = strlen(sms->UserData[i].u.Text);
+				size = Pack7BitCharacters((7 - (UDH_Length % 7)) % 7,
+							  sms->UserData[i].u.Text,
+							  rawsms->UserData + offset,
+							  &length);
+				rawsms->Length = length;
 				rawsms->UserDataLength = size + offset;
 				break;
 			case SMS_8bit:
