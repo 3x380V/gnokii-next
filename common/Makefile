@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.34 2002-01-27 23:38:30 pkot Exp $
+# $Id: Makefile,v 1.35 2002-03-07 22:53:55 pkot Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -60,6 +60,15 @@ clean:
 install:
 	$(INSTALL) -d $(libdir)
 	$(INSTALL) libgnokii.so $(libdir)
+	@echo
+
+install-strip: install
+	@echo
+
+install-suid: install
+	@echo
+
+install-ss: install
 	@echo
 
 depend dep:
