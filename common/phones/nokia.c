@@ -1,6 +1,6 @@
 /*
 
-  $Id: nokia.c,v 1.11 2002-05-26 23:05:38 bozo Exp $
+  $Id: nokia.c,v 1.12 2002-06-11 00:20:38 pkot Exp $
 
   G N O K I I
 
@@ -193,4 +193,3 @@ GSM_Error PNOK_IncomingCallDivert(int messagetype, unsigned char *message, int l
 
 	return GE_NONE;
 }
-

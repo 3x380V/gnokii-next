@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.40 2002-05-19 20:28:56 machek Exp $
+# $Id: Makefile,v 1.41 2002-06-11 00:20:38 pkot Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -25,6 +25,7 @@ OBJS =	cfgreader.o \
 	vcal.o \
 	misc.o \
 	gsm-sms.o \
+	sms-nokia.o \
 	sms-layout.o \
 	gsm-bitmaps.o \
 	gsm-common.o \

@@ -1,6 +1,6 @@
 /*
 
-  $Id: bitmaps.h,v 1.18 2002-06-10 21:29:50 pkot Exp $
+  $Id: bitmaps.h,v 1.19 2002-06-11 00:20:38 pkot Exp $
 
   G N O K I I
 
@@ -31,7 +31,9 @@
 #ifndef __gsm_bitmaps_h__
 #define __gsm_bitmaps_h__
 
+#include "misc.h"
 #include "gsm-error.h"
+#include "gsm-common.h"
 
 /* Bitmap types. These do *not* corespond to headers[] in gsm-sms.c. */
 
