@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-sms.c,v 1.51 2002-04-08 08:21:09 pkot Exp $
+  $Id: gsm-sms.c,v 1.52 2002-04-14 01:12:39 bozo Exp $
 
   G N O K I I
 
@@ -1520,7 +1520,7 @@ GSM_Error GetFolderChanges(GSM_Data *data, GSM_Statemachine *state, int has_fold
  */
 void DefaultSMS(GSM_SMSMessage *SMS)
 {
-	memset(&SMS, 0, sizeof(GSM_SMSMessage));
+	memset(SMS, 0, sizeof(GSM_SMSMessage));
 
 	SMS->Type = SMS_Deliver;
 	SMS->DCS.Type = SMS_GeneralDataCoding;
