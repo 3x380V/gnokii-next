@@ -1,6 +1,6 @@
 /*
 
-  $Id: fake.c,v 1.7 2002-05-19 19:52:23 machek Exp $
+  $Id: fake.c,v 1.8 2002-05-19 20:30:21 machek Exp $
 
   G N O K I I
 
@@ -101,6 +101,7 @@ static GSM_Error AT_WriteSMS(GSM_Data *data, GSM_Statemachine *state, char* cmd)
 	unsigned char req[10240];
 	int length, i;
 
+	EncodeByLayout(data, &at_submit, 0);
 	if (!data->RawData) return GE_INTERNALERROR;
 
 	length = data->RawData->Length;
