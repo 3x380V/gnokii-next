@@ -1,6 +1,6 @@
 /*
 
-  $Id: compat.h,v 1.37 2004-06-17 21:47:49 pkot Exp $
+  $Id: compat.h,v 1.38 2004-06-20 16:12:10 pkot Exp $
 
   G N O K I I
 
@@ -40,6 +40,9 @@
 #  include <windows.h>
 #  ifdef HAVE_DIRECT_H
 #    include <direct.h>
+#  endif
+#  ifdef HAVE_SYS_STAT_H
+#    include <sys/stat.h>
 #  endif
 #endif
 
