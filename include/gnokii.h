@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.h,v 1.56 2003-04-29 10:12:32 ladis Exp $
+  $Id: gnokii.h,v 1.57 2003-04-29 15:20:17 ladis Exp $
 
   G N O K I I
 
@@ -43,7 +43,7 @@ extern "C" {
 #  include <inttypes.h>
 #  include <sys/time.h>
 #elif defined(_MSC_VER) && defined(WIN32)
-#  include <Winsock2.h>
+#  include <Winsock.h>	/* for struct timeval */
 typedef unsigned char uint8_t;
 #endif
 	
