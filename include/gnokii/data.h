@@ -1,6 +1,6 @@
 /*
 
-  $Id: data.h,v 1.30 2002-05-19 11:22:11 machek Exp $
+  $Id: data.h,v 1.31 2002-07-09 10:31:26 plail Exp $
 
   G N O K I I
 
@@ -131,6 +131,7 @@ typedef enum {
 	GOP_GetSMSStatus,
 	GOP_GetIncomingCallNr,
 	GOP_GetNetworkInfo,
+	GOP_GetSecurityCode,
 	GOP_GetSMS,
 	GOP_GetSMSnoValidate,
 	GOP_GetSMSFolders,
