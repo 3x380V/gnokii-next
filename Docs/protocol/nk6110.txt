@@ -1,4 +1,4 @@
-$Id: nk6110.txt,v 1.16 2003-02-06 00:05:16 pkot Exp $
+$Id: nk6110.txt,v 1.17 2003-05-13 08:20:48 bozo Exp $
 
 Assembled by
 	Balazs Nagy (js@lsc.hu)
@@ -588,6 +588,7 @@ Correct format is FBUS version 2/Direct IRDA/MBUS version 2
     r Del. cal.note report  { 0x0069, err }
                             where err: 0x01: OK
                                        0x93: empty location
+                                       0x81: calendar functions busy. Exit Calendar menu and try again
 0x14: SMS funcs
     s Write SMS to SIM      { 0x0004, .... }
     s Mark SMS as read      { 0x0007, 0x02, location, 0x00, 0x64 }
