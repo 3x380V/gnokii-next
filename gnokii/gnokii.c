@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.215 2002-04-04 11:27:36 plail Exp $
+  $Id: gnokii.c,v 1.216 2002-04-05 11:41:13 plail Exp $
 
   G N O K I I
 
@@ -2689,13 +2689,13 @@ static int writephonebook(int argc, char *args[])
 		strcpy(BackLine, Line);
 		line_count++;
 
-		ptr = strtok(Line, ";");
+		ptr = strsep(&Line, ";");
 		if (ptr) strncpy(entry.Name, ptr, sizeof(entry.Name) - 1);
 
-		ptr = strtok(NULL, ";");
+		ptr = strsep(&Line, ";");
 		if (ptr) strncpy(entry.Number, ptr, sizeof(entry.Number) - 1);
 
-		ptr = strtok(NULL, ";");
+		ptr = strsep(&Line, ";");
 
 		if (!ptr) {
 			fprintf(stderr, _("Format problem on line %d [%s]\n"), line_count, BackLine);
@@ -2716,11 +2716,11 @@ static int writephonebook(int argc, char *args[])
 			}
 		}
 
-		ptr = strtok(NULL, ";");
+		ptr = strsep(&Line, ";");
 		if (ptr) entry.Location = atoi(ptr);
 		else entry.Location = 0;
 
-		ptr = strtok(NULL, ";");
+		ptr = strsep(&Line, ";");
 		if (ptr) entry.Group = atoi(ptr);
 		else entry.Group = 0;
 
@@ -2730,14 +2730,14 @@ static int writephonebook(int argc, char *args[])
 		}
 
 		for (subentry = 0; ; subentry++) {
-			ptr = strtok(NULL, ";");
+			ptr = strsep(&Line, ";");
 
 			if (ptr && *ptr != 0)
 				entry.SubEntries[subentry].EntryType = atoi(ptr);
 			else
 				break;
 
-			ptr = strtok(NULL, ";");
+			ptr = strsep(&Line, ";");
 			if (ptr) entry.SubEntries[subentry].NumberType = atoi(ptr);
 
 			/* Phone Numbers need to have a number type. */
@@ -2748,10 +2748,10 @@ static int writephonebook(int argc, char *args[])
 				break;
 			}
 
-			ptr = strtok(NULL, ";");
+			ptr = strsep(&Line, ";");
 			if (ptr) entry.SubEntries[subentry].BlockNumber = atoi(ptr);
 
-			ptr = strtok(NULL, ";");
+			ptr = strsep(&Line, ";");
 
 			/* 0x13 Date Type; it is only for Dailed Numbers, etc.
 			   we don't store to this memories so it's an error to use it. */
