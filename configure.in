@@ -4,7 +4,7 @@ dnl
 dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janík ml.
 dnl                2000 Karel Zak, Pawe³ Kot
 dnl
-dnl  $Id: configure.in,v 1.57 2002-02-02 14:59:19 pkot Exp $
+dnl  $Id: configure.in,v 1.58 2002-02-13 00:36:29 pkot Exp $
 dnl
 
 AC_INIT(gnokii/gnokii.c)
@@ -419,6 +419,11 @@ int main()
                 AC_MSG_WARN("No unix98ptys"),
 		AC_MSG_WARN("Ensure to disable unix98ptys when crosscompiling"))
    ]
+)
+
+AC_TRY_COMPILE( [#include <sys/socket.h>],
+		[struct msghdr msg; msg.msg_control;],
+		AC_DEFINE(HAVE_MSGHDR_MSG_CONTROL)
 )
 
 dnl ======================== Checks for header files.
