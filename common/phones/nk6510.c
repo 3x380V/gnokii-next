@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.c,v 1.135 2004-01-15 23:13:56 uid66843 Exp $
+  $Id: nk6510.c,v 1.136 2004-01-19 00:17:19 uid66843 Exp $
 
   G N O K I I
 
@@ -458,6 +458,12 @@ static gn_error NK6510_Initialise(struct gn_statemachine *state)
 		data.model = model;
 		if (state->driver.functions(GN_OP_GetModel, &data, state) == GN_ERR_NONE)
 			connected = true;
+		if (!strncmp(data.model, "NPL-2", 5)) {
+			fprintf(stderr, _("Sorry, this function is known to break your phone (Nokia 6100). Refusing to\n"
+					  "do it. You may try to use AT driver. If you are brave enough to test the\n"
+					  "driver anyway, please contact developers at gnokii-users@nongnu.org\n"));
+			return GN_ERR_NOTIMPLEMENTED;
+		}
 	}
 	if (!connected) return err;
 	return GN_ERR_NONE;
