@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.66 2002-04-18 22:54:50 pkot Exp $
+  $Id: nk6100.c,v 1.67 2002-04-22 16:28:27 machek Exp $
 
   G N O K I I
 
@@ -1180,7 +1180,7 @@ static GSM_Error IncomingSMS1(int messagetype, unsigned char *message, int lengt
 	switch (message[3]) {
 	/* Message sent */
 	case 0x02:
-		return GE_SMSSENDOK;
+		return GE_NONE;
 
 	/* Send failed */
 	case 0x03:

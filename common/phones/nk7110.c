@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk7110.c,v 1.74 2002-04-18 22:54:50 pkot Exp $
+  $Id: nk7110.c,v 1.75 2002-04-22 16:28:27 machek Exp $
 
   G N O K I I
 
@@ -1080,7 +1080,7 @@ static GSM_Error P7110_IncomingSMS(int messagetype, unsigned char *message, int 
 
 	case P7110_SUBSMS_SMS_SENT: /* 0x02 */
 		dprintf("SMS sent\n");
-		e = GE_SMSSENDOK;
+		e = GE_NONE;
 		break;
 
 	case P7110_SUBSMS_SEND_FAIL: /* 0x03 */

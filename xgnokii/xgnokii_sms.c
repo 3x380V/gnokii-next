@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_sms.c,v 1.33 2002-04-04 22:35:38 pkot Exp $
+  $Id: xgnokii_sms.c,v 1.34 2002-04-22 16:28:28 machek Exp $
 
   X G N O K I I
 
@@ -905,7 +905,7 @@ static gint SendSMSCore(GSM_SMSMessage * sms)
 	error = m->status;
 	g_free(m);
 
-	if (error != GE_SMSSENDOK) {
+	if (error != GE_NONE) {
 		gchar *buf = g_strdup_printf(_("SMS send to %s failed\n(error=%d)"),
 					     sms->RemoteNumber.number, error);
 		gtk_label_set_text(GTK_LABEL(errorDialog.text), buf);
@@ -996,7 +996,7 @@ static void DoSendSMS(void)
 					g_free(buf);
 					GUI_Refresh();
 
-					if (SendSMSCore(&sms) != GE_SMSSENDOK) {
+					if (SendSMSCore(&sms) != GE_NONE) {
 						gtk_widget_hide(infoDialog.dialog);
 						GUI_Refresh();
 						break;
@@ -1027,7 +1027,7 @@ static void DoSendSMS(void)
 					g_free(buf);
 					GUI_Refresh();
 
-					if (SendSMSCore(&sms) != GE_SMSSENDOK) {
+					if (SendSMSCore(&sms) != GE_NONE) {
 						gtk_widget_hide(infoDialog.dialog);
 						GUI_Refresh();
 						break;

@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_lowlevel.c,v 1.41 2002-04-20 22:24:02 machek Exp $
+  $Id: xgnokii_lowlevel.c,v 1.42 2002-04-22 16:28:28 machek Exp $
   
   X G N O K I I
 
@@ -763,10 +763,7 @@ static gint A_SendSMSMessage(gpointer data)
 		pthread_cond_signal(&sendSMSCond);
 		pthread_mutex_unlock(&sendSMSMutex);
 	}
-	if (d->status == GE_SMSSENDOK)
-		return (GE_NONE);
-	else
-		return (error);
+	return (error);
 }
 
 
