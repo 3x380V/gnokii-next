@@ -1,6 +1,6 @@
 /*
 
-  $Id: sms.h,v 1.59 2003-02-26 21:59:49 pkot Exp $
+  $Id: sms.h,v 1.60 2003-03-06 22:32:29 pkot Exp $
 
   G N O K I I
 
@@ -450,5 +450,8 @@ typedef struct {
 	char message[GN_CM_MESSAGE_MAX_LENGTH + 1];
 	int is_new;
 } gn_cb_message;
+
+API void gn_sms_default_submit(gn_sms *sms);
+API void gn_sms_default_deliver(gn_sms *sms);
 
 #endif /* _gnokii_sms_h */

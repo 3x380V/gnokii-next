@@ -1,6 +1,6 @@
 /*
 
-  $Id: virtmodem.h,v 1.14 2003-03-06 09:53:07 ja Exp $
+  $Id: virtmodem.h,v 1.15 2003-03-06 22:32:29 pkot Exp $
 
   G N O K I I
 
@@ -28,8 +28,8 @@
 
 */
 
-#ifndef _gnokii_data_virtmodem_h
-#define _gnokii_data_virtmodem_h
+#ifndef _gnokii_virtmodem_h
+#define _gnokii_virtmodem_h
 
 struct vm_queue {
 	int n;
@@ -48,4 +48,4 @@ API int gn_vm_initialise(const char *iname,
 API void gn_vm_loop(void);
 API void gn_vm_terminate(void);
 
-#endif	/* _gnokii_data_virtmodem_h */
+#endif	/* _gnokii_virtmodem_h */

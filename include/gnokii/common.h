@@ -1,6 +1,6 @@
 /*
 
-  $Id: common.h,v 1.123 2003-03-03 22:28:43 pkot Exp $
+  $Id: common.h,v 1.124 2003-03-06 22:32:29 pkot Exp $
 
   G N O K I I
 
@@ -29,11 +29,12 @@
 
 */
 
-#ifndef _gnokii_gsm_common_h
-#define _gnokii_gsm_common_h
+#ifndef _gnokii_common_h
+#define _gnokii_common_h
 
 #include <stdlib.h>
 #include <sys/time.h>
+
 #include <gnokii/rlp-common.h>
 
 /* Type of connection. Now we support serial connection with FBUS cable and
@@ -596,4 +597,4 @@ typedef struct {
 	int   counter;
 } gn_locks_info;
 
-#endif	/* _gnokii_gsm_common_h */
+#endif	/* _gnokii_common_h */

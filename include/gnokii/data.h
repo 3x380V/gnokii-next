@@ -1,6 +1,6 @@
 /*
 
-  $Id: data.h,v 1.60 2003-02-26 21:59:49 pkot Exp $
+  $Id: data.h,v 1.61 2003-03-06 22:32:29 pkot Exp $
 
   G N O K I I
 
@@ -26,8 +26,8 @@
 
 */
 
-#ifndef _gnokii_gsm_data_h
-#define _gnokii_gsm_data_h
+#ifndef _gnokii_data_h
+#define _gnokii_data_h
 
 #include <gnokii/common.h>
 #include <gnokii/sms.h>
@@ -232,4 +232,4 @@ typedef enum {
 extern gn_error gn_unimplemented(void);
 #define GN_UNIMPLEMENTED (void *) gn_unimplemented
 
-#endif	/* _gnokii_gsm_data_h */
+#endif	/* _gnokii_data_h */

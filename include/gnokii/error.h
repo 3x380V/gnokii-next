@@ -1,6 +1,6 @@
 /*
 
-  $Id: error.h,v 1.15 2003-02-26 10:47:57 ladis Exp $
+  $Id: error.h,v 1.16 2003-03-06 22:32:29 pkot Exp $
 
   G N O K I I
 
@@ -77,5 +77,7 @@ typedef enum {
 	/* Other */
 	GN_ERR_NONEWCBRECEIVED		/* Attempt to read CB when no new CB received */
 } gn_error;
+
+API char *gn_error_print(gn_error e);
 
 #endif /* _gnokii_error_h */

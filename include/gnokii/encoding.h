@@ -1,6 +1,6 @@
 /*
 
-  $Id: encoding.h,v 1.16 2002-12-09 00:29:50 pkot Exp $
+  $Id: encoding.h,v 1.17 2003-03-06 22:32:29 pkot Exp $
 
   G N O K I I
 
@@ -28,7 +28,9 @@
 
 */
 
-#ifndef _gnokii_gsm_encoding_h
-#define _gnokii_gsm_encoding_h
+#ifndef _gnokii_encoding_h
+#define _gnokii_encoding_h
 
-#endif /* _gnokii_gsm_encoding_h */
+API int gn_char_def_alphabet(unsigned char *string);
+
+#endif /* _gnokii_encoding_h */
