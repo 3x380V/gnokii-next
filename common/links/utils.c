@@ -1,6 +1,6 @@
 /*
 
-  $Id: utils.c,v 1.18 2004-04-29 22:13:12 pkot Exp $
+  $Id: utils.c,v 1.19 2004-06-08 13:37:22 bozo Exp $
 
   G N O K I I
 
@@ -82,6 +82,6 @@ void at_dprintf(char *prefix, char *buf, int len)
 	debug_buf[out++] =']';
 	debug_buf[out++] ='\n';
 	debug_buf[out] ='\0';
-	fprintf(stderr, debug_buf);
+	dprintf("%s", debug_buf);
 #endif
 }
