@@ -1,6 +1,6 @@
 /*
 
-  $Id: atnok.c,v 1.9 2002-12-16 12:24:40 ladis Exp $
+  $Id: atnok.c,v 1.10 2003-02-04 22:28:00 pkot Exp $
 
   G N O K I I
 
@@ -48,7 +48,7 @@ static gn_error WritePhonebook(gn_data *data, struct gn_statemachine *state)
 {
 	if (writephonebook == NULL)
 		return GN_ERR_UNKNOWN;
-	if (data->memory_status->memory_type == GN_MT_ME)
+	if (data->memory_status && data->memory_status->memory_type == GN_MT_ME)
 		return GN_ERR_NOTSUPPORTED;
 	return (*writephonebook)(data, state);
 }
