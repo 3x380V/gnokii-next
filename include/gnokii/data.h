@@ -1,6 +1,6 @@
 /*
 
-  $Id: data.h,v 1.6 2002-01-21 12:31:24 machek Exp $
+  $Id: data.h,v 1.7 2002-01-22 14:14:09 pkot Exp $
 
   G N O K I I
 
@@ -49,6 +49,7 @@ typedef struct {
 	GSM_RawData *RawData;
 	GSM_CallDivert *CallDivert;
 	GSM_Error (*OnSMS)(GSM_SMSMessage *Message);
+	int *DisplayStatus;
 } GSM_Data;
 
 /* Global structures intended to be independant of phone etc */
@@ -115,6 +116,8 @@ typedef enum {
 	GOP_SetProfile,
 	GOP_WriteCalendarNote,
 	GOP_DeleteCalendarNote,
+	GOP_SetSpeedDial,
+	GOP_GetDisplayStatus,
 	GOP_Max,	/* don't append anything after this entry */
 } GSM_Operation;
 
