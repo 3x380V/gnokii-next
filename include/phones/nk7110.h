@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk7110.h,v 1.23 2003-03-06 22:52:19 pkot Exp $
+  $Id: nk7110.h,v 1.24 2003-04-08 10:18:30 ladis Exp $
 
   G N O K I I
 
@@ -185,5 +185,11 @@ typedef enum {
 /* Entry types for the security commands */
 #define NK7110_SUBSEC_ENABLE_EXTENDED_CMDS 0x64	/* Enable extended commands */
 #define NK7110_SUBSEC_NETMONITOR	0x7e	/* Netmonitor */
+
+typedef struct {
+	bool new_sms;	/* Do we have a new SMS? */
+	int ll_memtype;
+	int ll_location;
+} nk7110_driver_instance;
 
 #endif  /* _gnokii_phones_nk7110_h */
