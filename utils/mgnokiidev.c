@@ -1,19 +1,33 @@
 /*
 
-  $Id: mgnokiidev.c,v 1.13 2002-02-13 21:16:35 pkot Exp $
+  $Id: mgnokiidev.c,v 1.14 2002-03-28 21:37:50 pkot Exp $
 
   G N O K I I
 
   A Linux/Unix toolset and driver for Nokia mobile phones.
 
-  Copyright (C) 2002 Pawe³ Kot
+  This file is part of gnokii.
 
-  Released under the terms of the GNU GPL, see file COPYING for more details.
+  Gnokii is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  Gnokii is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with gnokii; if not, write to the Free Software
+  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+  Copyright (C) 2002 Pawe³ Kot
 
   The code is based on the skeleton from W. Richard Stevens' "UNIX Network Programming",
   Volume 1, Second Edition.
 
-  Call mgnokiidev wit one and only one argument -- a socket descriptor to send a caller
+  Call mgnokiidev with one and only one argument -- a socket descriptor to send a caller
   pty device descriptor.
 
 */

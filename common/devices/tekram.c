@@ -1,5 +1,6 @@
 /*
- * $Id: tekram.c,v 1.4 2002-03-25 01:35:31 pkot Exp $
+ *
+ * $Id: tekram.c,v 1.5 2002-03-28 21:37:46 pkot Exp $
  *
  * G N O K I I
  *

@@ -1,3 +1,18 @@
+ * This file is part of gnokii.
+ *
+ * Gnokii is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * Gnokii is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with gnokii; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 /* FIXME: Use it *ONLY* under Linux */
 /*********************************************************************
  *
@@ -17,6 +32,11 @@
  *     published by the Free Software Foundation; either version 2 of
  *     the License, or (at your option) any later version.
  *
+ *     This program is distributed in the hope that it will be useful,
+ *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *     GNU General Public License for more details.
+ *
  *     Neither Dag Brattli nor University of Tromsø admit liability nor
  *     provide warranty for any of this software. This material is
  *     provided "AS-IS" and at no charge.
@@ -24,10 +44,11 @@
  ********************************************************************/
 
 /*
- * $Id: linuxirda.h,v 1.1 2002-03-26 01:59:59 pkot Exp $
+ * $Id: linuxirda.h,v 1.2 2002-03-28 21:37:49 pkot Exp $
  *
  * GNOKII modifications:
  * Fixes for Solaris compile (Artur Kubiak and Michael Wiedmann)
+ * FIXME: does it have *ANY* chance to work under other OS then Linux?
  */
 
 #ifndef IRDA_H

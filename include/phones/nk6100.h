@@ -1,14 +1,29 @@
 /*
-  $Id: nk6100.h,v 1.9 2002-03-26 01:10:30 pkot Exp $
+
+  $Id: nk6100.h,v 1.10 2002-03-28 21:37:49 pkot Exp $
 
   G N O K I I
 
   A Linux/Unix toolset and driver for Nokia mobile phones.
 
+  This file is part of gnokii.
+
+  Gnokii is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  Gnokii is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with gnokii; if not, write to the Free Software
+  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
   Copyright (C) 2000 Hugh Blemings & Pavel Janík ml.
   Copyright (C) 2001 Pawe³ Kot <pkot@linuxnews.pl>
-
-  Released under the terms of the GNU GPL, see file COPYING for more details.
 
   This file provides functions specific to the 6100/5100 series.
   See README for more details on supported mobile phones.
