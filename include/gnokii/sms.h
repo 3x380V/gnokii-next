@@ -1,6 +1,6 @@
 /*
 
-  $Id: sms.h,v 1.34 2002-05-19 20:28:56 machek Exp $
+  $Id: sms.h,v 1.35 2002-05-23 09:59:21 machek Exp $
 
   G N O K I I
 
@@ -302,7 +302,8 @@ typedef enum {
 	SMS_PlainText    = 0x01,
 	SMS_BitmapData   = 0x02,
 	SMS_RingtoneData = 0x03,
-	SMS_OtherData    = 0x04
+	SMS_iMelodyText  = 0x04,
+	SMS_OtherData    = 0x05
 } SMS_DataType;
 
 /*** FOLDER INFO ***/
