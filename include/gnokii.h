@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.h,v 1.63 2003-11-18 01:26:08 bozo Exp $
+  $Id: gnokii.h,v 1.64 2003-11-30 18:55:13 bozo Exp $
 
   G N O K I I
 
@@ -123,6 +123,7 @@ API gn_error gn_sms_delete_no_validate(gn_data *data, struct gn_statemachine *st
 
 /* Call service */
 API gn_error gn_call_dial(int *call_id, gn_data *data, struct gn_statemachine *state);
+API gn_error gn_call_check_active(struct gn_statemachine *state);
 
 #ifdef __cplusplus
 }

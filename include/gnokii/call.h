@@ -1,6 +1,6 @@
 /*
 
-  $Id: call.h,v 1.10 2003-04-28 12:48:46 pkot Exp $
+  $Id: call.h,v 1.11 2003-11-30 18:55:14 bozo Exp $
 
   G N O K I I
 
@@ -64,6 +64,15 @@ typedef struct {
 	gn_call_send_number send_number;
 	int call_id;
 } gn_call_info;
+
+typedef struct {
+	int call_id;
+	int channel;
+	char number[GN_PHONEBOOK_NUMBER_MAX_LENGTH + 1];
+	char name[GN_PHONEBOOK_NAME_MAX_LENGTH + 1];
+	gn_call_status state;
+	gn_call_status prev_state;
+} gn_call_active;
 
 /* Call functions and structs */
 typedef struct {
