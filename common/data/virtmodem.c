@@ -1,6 +1,6 @@
 /*
 
-  $Id: virtmodem.c,v 1.18 2002-04-08 08:15:54 pkot Exp $
+  $Id: virtmodem.c,v 1.19 2002-04-13 01:06:28 bozo Exp $
 
   G N O K I I
 
@@ -309,7 +309,10 @@ static int gopen(const char *command)
 	 * I don't know why but it's required to operate correctly.
 	 * bozo -- tested on: Linux 2.4.17
 	 */
-	if (unlockpt(fd)) return -1;
+	if (fd >= 0 && unlockpt(fd)) {
+		close(fd);
+		fd = -1;
+	}
 #endif
 
 	return(fd);
