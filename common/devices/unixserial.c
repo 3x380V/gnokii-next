@@ -1,6 +1,6 @@
 /*
 
-  $Id: unixserial.c,v 1.15 2002-01-27 23:38:31 pkot Exp $
+  $Id: unixserial.c,v 1.16 2002-01-28 10:55:58 pkot Exp $
 
   G N O K I I
 
@@ -73,9 +73,11 @@ struct termios serial_termios;
 
 /* Script handling: */
 
-static void device_script_cfgfunc(const char *section,const char *key,const char *value)
+static void device_script_cfgfunc(const char *section, const char *key, const char *value)
 {
+#if !defined(__svr4__)
 	setenv(key, value, 1 /* overwrite */); /* errors ignored */
+#endif
 }
 
 static int device_script(int fd, const char *section)
