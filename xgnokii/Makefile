@@ -1,7 +1,7 @@
 
 
 #
-# $Id: Makefile,v 1.48 2003-02-05 23:36:28 pkot Exp $
+# $Id: Makefile,v 1.49 2003-04-28 15:00:31 pkot Exp $
 #
 # Makefile for the xGNOKII tool suite.
 #
@@ -51,7 +51,7 @@ all: xgnokii
 
 
 xgnokii: $(OBJS) $(TOPDIR)/common/data/DATA.o $(TOPDIR)/common/$(GNOKII_LIB)
-	$(CC) $(LDFLAGS) $(GLDLIBS) $(OBJS) $(TOPDIR)/common/data/DATA.o $(LDLIBS) -o $@
+	$(CC) $(LDFLAGS) $(OBJS) $(GLDLIBS) $(TOPDIR)/common/data/DATA.o $(LDLIBS) -o $@
 
 clean:
 	$(RM) $(OBJS) *~ xpm/*~ depend xgnokii
