@@ -2,7 +2,7 @@ GNOKII FAQ
 Pawe³ Kot, pkot@linuxnews.pl
 Hugh Blemings, hugh@blemings.org
 
-$Id: FAQ,v 1.26 2004-10-01 14:39:47 bozo Exp $
+$Id: FAQ,v 1.27 2005-01-01 17:50:17 pkot Exp $
 
 -------------------------------------------------------------------------------
 Q. What is gnokii?
@@ -193,6 +193,13 @@ A. Something's wrong with the irda device setup. Try to run:
 echo 115200 > /proc/sys/net/irda/max_baud_rate
 
    and see whether it helps.
+
+-------------------------------------------------------------------------------
+Q. I'm using the Win32 gnokii distribution and got the error "Couldn't open
+   FBUS device". What's wrong?
+
+A. Make sure that you put in the config file "port = com1:", not
+   "port = :com1".
 
 -------------------------------------------------------------------------------
 Q. My phone is not mentioned as supported by gnokii, but it seems that it is
