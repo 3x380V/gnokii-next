@@ -1,6 +1,6 @@
 /*
 
-  $Id: sms.h,v 1.15 2002-01-10 10:14:09 pkot Exp $
+  $Id: sms.h,v 1.16 2002-01-15 12:01:02 pkot Exp $
 
   G N O K I I
 
@@ -430,7 +430,6 @@ typedef struct {
 } GSM_CBMessage;
 
 /* Utils */
-extern void hex2bin(unsigned char *dest, const unsigned char *src, unsigned int len);
 extern char *GetBCDNumber(u8 *Number);
 extern int SemiOctetPack(char *Number, unsigned char *Output, SMS_NumberType type);
 extern SMS_DateTime *UnpackDateTime(u8 *Number, SMS_DateTime *dt);
