@@ -1,6 +1,6 @@
 /*
  *
- * $Id: winirda.c,v 1.3 2004-06-19 23:20:45 pkot Exp $
+ * $Id: winirda.c,v 1.4 2004-06-20 15:10:11 pkot Exp $
  *
  * G N O K I I
  *
@@ -37,7 +37,7 @@
 #include "devices/irda.h"
 /* 'cause af_irda needs it.. */
 #define _WIN32_WINDOWS
-#include "devices/af_irda.h"
+#include <af_irda.h>
 
 #define INFO_LEN		22
 #define DISCOVERY_TIMEOUT	60000
