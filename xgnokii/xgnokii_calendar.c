@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_calendar.c,v 1.22 2003-02-05 23:10:19 pkot Exp $
+  $Id: xgnokii_calendar.c,v 1.23 2003-04-06 20:07:46 pkot Exp $
 
   X G N O K I I
 
@@ -39,7 +39,7 @@
 #include "xpm/Send.xpm"
 #include "xpm/Open.xpm"
 #include "xpm/Save.xpm"
-#include "xpm/Edit.xpm"
+/* #include "xpm/Edit.xpm" */
 #include "xpm/Delete.xpm"
 #include "xpm/SendSMS.xpm"
 #include "xpm/NewBD.xpm"
