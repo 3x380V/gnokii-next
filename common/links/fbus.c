@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus.c,v 1.41 2003-02-11 00:13:47 bozo Exp $
+  $Id: fbus.c,v 1.42 2003-02-16 23:40:28 pkot Exp $
 
   G N O K I I
 
@@ -42,10 +42,7 @@
 
 #include "config.h"
 #include "misc.h"
-#include "gsm-common.h"
-#include "gsm-ringtones.h"
-#include "gsm-networks.h"
-#include "gsm-statemachine.h"
+#include "gsm-api.h"
 #include "device.h"
 #include "links/fbus.h"
 
@@ -86,7 +83,8 @@ static bool at2fbus_serial_open(struct gn_statemachine *state)
 	unsigned char end_init_char = 0xc1;
 	int count, res;
 	unsigned char buffer[255];
- 
+
+	dprintf("qq\n"); 
 	/* Open device. */
 	if (!device_open(state->config.port_device, false, false, false, GN_CT_Serial, state)) {
 		perror(_("Couldn't open FBUS device"));
@@ -578,6 +576,10 @@ gn_error fbus_initialise(int try, struct gn_statemachine *state)
 		default:
 			break;
 		}
+		break;
+	case GN_CT_Bluetooth:
+		dprintf("aa\n");
+		connection = at2fbus_serial_open(state);
 		break;
 	default:
 		break;

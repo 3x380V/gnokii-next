@@ -1,6 +1,6 @@
 /*
 
-  $Id: common.h,v 1.119 2003-01-15 00:06:09 pkot Exp $
+  $Id: common.h,v 1.120 2003-02-16 23:40:28 pkot Exp $
 
   G N O K I I
 
@@ -46,6 +46,7 @@ typedef enum {
 	GN_CT_DLR3P,    /* Serial connection using DLR3P cable */
 	GN_CT_Infrared, /* Infrared connection. */
 	GN_CT_Irda,     /* Linux IrDA support */
+	GN_CT_Bluetooth,/* Linux Bluetooth support */
 	GN_CT_Tekram,   /* Tekram Ir-Dongle */
 	GN_CT_TCP,      /* TCP network connection */
 	GN_CT_M2BUS	/* Serial connection with M2BUS protocol */
