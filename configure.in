@@ -4,7 +4,7 @@ dnl
 dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janík ml.
 dnl                2000 Karel Zak, Pawe³ Kot
 dnl
-dnl  $Id: configure.in,v 1.51 2001-07-05 10:54:53 pkot Exp $
+dnl  $Id: configure.in,v 1.52 2001-08-30 23:56:12 pkot Exp $
 dnl
 
 AC_INIT(gnokii/gnokii.c)
@@ -16,7 +16,7 @@ AC_PREFIX_DEFAULT("/usr/local")
 
 dnl ======================== Default setting
 CFLAGS="-O2 -Wall"
-ALL_LINGUAS="cs de et fi nl sk pl it"
+ALL_LINGUAS="cs de et fi nl sk pl it sl"
 
 dnl ======================== Checks for programs.
 AC_PROG_CC
