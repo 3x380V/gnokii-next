@@ -1,6 +1,6 @@
 /*
 
-  $Id: sms.h,v 1.61 2003-08-18 18:07:38 pkot Exp $
+  $Id: sms.h,v 1.62 2005-01-24 23:28:21 pkot Exp $
 
   G N O K I I
 
@@ -75,6 +75,9 @@ typedef struct {
 	unsigned int changed;
 	/* Number of Folders we get from GetFolders */
 	unsigned int folders_count;
+	/* Message store used for new received messages (this is used
+	 * internally by AT_SetSMSMemoryType() in common/phones/atgen.c). */
+	gn_memory_type new_message_store;
 } gn_sms_status;
 
 
