@@ -3,7 +3,7 @@
 #
 # Copyright (C) 1999 Hugh Blemings & Pavel Janík ml. & Jan Derfinak
 #               2000 Karel Zak
-# $Id: Makefile,v 1.16 2002-08-12 07:54:25 ja Exp $
+# $Id: Makefile,v 1.17 2002-09-18 12:53:39 pkot Exp $
 #
 
 TOPDIR=..
@@ -62,10 +62,10 @@ clean:
 	$(RM) $(OBJS) *~ depend smsd *.so core*
 
 install: all
-	$(INSTALL) -d $(DESTDIR)/$(bindir)
-	$(INSTALL) -m 755 -s smsd $(DESTDIR)/$(bindir)
-	$(INSTALL) -d $(DESTDIR)/${prefix}/share/smsd
-	$(INSTALL) lib*.so $(DESTDIR)/${prefix}/share/smsd
+	$(INSTALL) -d $(DESTDIR)$(bindir)
+	$(INSTALL) -m 755 -s smsd $(DESTDIR)$(bindir)
+	$(INSTALL) -d $(DESTDIR)${prefix}/share/smsd
+	$(INSTALL) lib*.so $(DESTDIR)${prefix}/share/smsd
 
 depend dep:
 	$(CC) $(CFLAGS) -MM *.c >depend

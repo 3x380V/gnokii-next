@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.45 2002-08-07 21:19:11 bozo Exp $
+# $Id: Makefile,v 1.46 2002-09-18 12:53:38 pkot Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -77,8 +77,8 @@ distclean:
 	$(RM) vcal.c
 
 install:
-	$(INSTALL) -d $(DESTDIR)/$(libdir)
-	$(INSTALL) libgnokii.so $(DESTDIR)/$(libdir)
+	$(INSTALL) -d $(DESTDIR)$(libdir)
+	$(INSTALL) libgnokii.so $(DESTDIR)$(libdir)
 	@echo
 
 install-strip: install
