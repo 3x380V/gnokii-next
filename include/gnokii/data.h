@@ -1,6 +1,6 @@
 /*
 
-  $Id: data.h,v 1.65 2003-04-28 12:48:46 pkot Exp $
+  $Id: data.h,v 1.66 2003-06-12 00:33:39 bozo Exp $
 
   G N O K I I
 
@@ -218,6 +218,8 @@ typedef enum {
 	GN_OP_ActivateWAPSetting,
 	GN_OP_WriteWAPSetting,
 	GN_OP_GetLocksInfo,
+	GN_OP_GetActiveProfile,
+	GN_OP_SetActiveProfile,
 	GN_OP_Max,	/* don't append anything after this entry */
 } gn_operation;
 
