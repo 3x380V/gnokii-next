@@ -1,6 +1,6 @@
 /*
 
-  $Id: data.h,v 1.50 2002-12-27 00:11:40 bozo Exp $
+  $Id: data.h,v 1.51 2002-12-27 15:28:05 bozo Exp $
 
   G N O K I I
 
@@ -107,6 +107,7 @@ typedef struct {
 } gn_link;
 
 typedef struct {
+	char model[GN_MODEL_MAX_LENGTH];		/* Phone model */
 	char port_device[GN_DEVICE_NAME_MAX_LENGTH];	/* Port device to use (e.g. /dev/ttyS0) */
 	gn_connection_type connection_type;		/* Connection type (e.g. serial, ir) */
 	int init_length;				/* Number of chars sent to sync the serial port */
