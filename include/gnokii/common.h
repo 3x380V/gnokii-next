@@ -1,6 +1,6 @@
 /*
 
-  $Id: common.h,v 1.131 2004-01-18 16:58:54 uid66849 Exp $
+  $Id: common.h,v 1.132 2004-02-17 21:19:10 uid66843 Exp $
 
   G N O K I I
 
@@ -265,6 +265,7 @@ typedef enum {
 	GN_CALNOTE_DAILY   = 24,
 	GN_CALNOTE_WEEKLY  = 168,
 	GN_CALNOTE_2WEEKLY = 336,
+	GN_CALNOTE_MONTHLY = 65534,
 	GN_CALNOTE_YEARLY  = 65535
 } gn_calnote_recurrence;
 
