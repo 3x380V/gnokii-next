@@ -1,6 +1,6 @@
 /*
 
-  $Id: data.h,v 1.61 2003-03-06 22:32:29 pkot Exp $
+  $Id: data.h,v 1.62 2003-04-08 21:53:32 pkot Exp $
 
   G N O K I I
 
@@ -35,7 +35,7 @@
 #include <gnokii/error.h>
 #include <gnokii/rlp-common.h>
 
-#ifdef HAVE_BLUETOOTH
+#ifdef @HAVE_BLUETOOTH_EXP@
 #  include <bluetooth/bluetooth.h>
 #endif
 
@@ -130,7 +130,7 @@ typedef struct {
 	int smsc_timeout;				/* How many seconds should we wait for the SMSC response, defaults to 10 seconds */
 	char connect_script[256];			/* Script to run when device connection established */
 	char disconnect_script[256];			/* Script to run when device connection closed */
-#ifdef HAVE_BLUETOOTH
+#ifdef @HAVE_BLUETOOTH_EXT@
 	uint8_t rfcomm_cn;				/* RFCOMM channel number to connect */
 	bdaddr_t bt_address;				/* Bluetooth device address */
 #endif
