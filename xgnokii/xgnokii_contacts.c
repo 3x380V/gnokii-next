@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_contacts.c,v 1.32 2001-12-03 16:44:44 pkot Exp $
+  $Id: xgnokii_contacts.c,v 1.33 2002-01-27 23:38:32 pkot Exp $
   
   X G N O K I I
 
@@ -2688,7 +2688,7 @@ static bool ParseLine (GSM_PhonebookEntry *entry, gint *num, gchar *buf)
       buf += (i + 1);
       i = 0;
       len = strlen (buf);
-      while (i < len && i < GSM_MAX_PHONEBOOK_TEXT_LENGTH && buf[i] != ';')
+      while (i < len && i < GSM_MAX_PHONEBOOK_NUMBER_LENGTH && buf[i] != ';')
       {
         entry->SubEntries[entry->SubEntriesCount].data.Number[i] = buf[i];
         i++;

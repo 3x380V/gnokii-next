@@ -3,7 +3,7 @@
 #
 # Copyright (C) 1999 Hugh Blemings & Pavel Janík ml. & Jan Derfinak
 #               2000 Karel Zak
-# $Id: Makefile,v 1.8 2002-01-27 14:54:43 ja Exp $
+# $Id: Makefile,v 1.9 2002-01-27 23:38:32 pkot Exp $
 #
 
 TOPDIR=..
@@ -18,11 +18,11 @@ LDFLAGS += $(PTHREAD_LIBS) \
 LDFLAGS += -g -rdynamic -L$(TOPDIR)/common -lgnokii -ldl
 
 ifdef XPM_LIBS
-    LDFLAGS +=$(XPM_LIBS)
+	LDFLAGS +=$(XPM_LIBS)
 endif
 
 OBJS = 	smsd.o \
-        lowlevel.o
+	lowlevel.o
 
 all: smsd
 

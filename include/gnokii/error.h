@@ -1,6 +1,6 @@
 /*
 
-  $Id: error.h,v 1.4 2002-01-16 12:39:21 pkot Exp $
+  $Id: error.h,v 1.5 2002-01-27 23:38:31 pkot Exp $
 
   G N O K I I
 
@@ -11,20 +11,6 @@
   Released under the terms of the GNU GPL, see file COPYING for more details.
 
   Error codes.
-
-  $Log: error.h,v $
-  Revision 1.4  2002-01-16 12:39:21  pkot
-  Dump unhandled frames
-
-  Revision 1.3  2002/01/10 14:23:38  pkot
-  Allow to read all phonebook entries easily (Simon Huggins)
-
-  Revision 1.2  2001/11/08 16:34:20  pkot
-  Updates to work with new libsms
-
-  Revision 1.1  2001/10/24 22:33:00  pkot
-  Moved error codes to a separate files
-
 
 */
 

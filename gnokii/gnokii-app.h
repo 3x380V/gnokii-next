@@ -1,7 +1,7 @@
 /*
 
-  $Id: gnokii-app.h,v 1.32 2001-12-31 09:35:47 pkot Exp $
-  
+  $Id: gnokii-app.h,v 1.33 2002-01-27 23:38:31 pkot Exp $
+
   G N O K I I
 
   A Linux/Unix toolset and driver for Nokia mobile phones.

@@ -1,6 +1,6 @@
 /*
 
-  $Id: rlp-common.h,v 1.4 2001-12-31 09:35:47 pkot Exp $
+  $Id: rlp-common.h,v 1.5 2002-01-27 23:38:32 pkot Exp $
 
   G N O K I I
 
@@ -87,9 +87,9 @@ typedef enum {
 /* Frame definition for TCH/F9.6 frame. */
 typedef struct {
 	u8 Header[2];
-	u8 Data[25];    
+	u8 Data[25];
 	u8 FCS[3];
-} RLP_F96Frame;   
+} RLP_F96Frame;
 
 /* Header data "split up" for TCH/F9.6 frame. */
 typedef struct {
@@ -155,7 +155,7 @@ typedef enum {
 } RLP_StateVariable;
 
 /* RLP Data */
-typedef struct { 
+typedef struct {
 	u8 Data[25];
 	RLP_StateVariable State;
 } RLP_Data;

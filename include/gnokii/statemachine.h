@@ -1,6 +1,6 @@
 /*
 
-  $Id: statemachine.h,v 1.5 2002-01-16 12:39:21 pkot Exp $
+  $Id: statemachine.h,v 1.6 2002-01-27 23:38:32 pkot Exp $
 
   G N O K I I
 
@@ -9,7 +9,7 @@
   Copyright (C) 1999, 2000 Hugh Blemings & Pavel Janík ml.
 
   Released under the terms of the GNU GPL, see file COPYING for more details.
-	
+
   Header file for the statemachine.
 
 */

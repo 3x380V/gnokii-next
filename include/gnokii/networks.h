@@ -1,6 +1,6 @@
 /*
 
-  $Id: networks.h,v 1.5 2001-06-28 00:28:46 pkot Exp $
+  $Id: networks.h,v 1.6 2002-01-27 23:38:32 pkot Exp $
 
   G N O K I I
 
@@ -9,13 +9,8 @@
   Copyright (C) 1999, 2000 Hugh Blemings & Pavel Janík ml.
 
   Released under the terms of the GNU GPL, see file COPYING for more details.
-	
+
   Header file for GSM networks.
-
-  $Log: networks.h,v $
-  Revision 1.5  2001-06-28 00:28:46  pkot
-  Small docs updates (Pawel Kot)
-
 
 */
 
@@ -25,15 +20,15 @@
 /* This type is used to hold information about various GSM networks. */
 
 typedef struct {
-  char *Code; /* GSM network code */
-  char *Name; /* GSM network name */
+	char *Code; /* GSM network code */
+	char *Name; /* GSM network name */
 } GSM_Network;
 
 /* This type is used to hold information about various GSM countries. */
 
 typedef struct {
-  char *Code; /* GSM country code */
-  char *Name; /* GSM country name */
+	char *Code; /* GSM country code */
+	char *Name; /* GSM country name */
 } GSM_Country;
 
 /* These functions are used to search the structure defined above.*/

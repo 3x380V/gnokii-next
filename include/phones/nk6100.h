@@ -1,5 +1,5 @@
 /*
-  $Id: nk6100.h,v 1.5 2002-01-10 10:53:16 pkot Exp $
+  $Id: nk6100.h,v 1.6 2002-01-27 23:38:32 pkot Exp $
 
   G N O K I I
 
@@ -10,7 +10,7 @@
 
   Released under the terms of the GNU GPL, see file COPYING for more details.
 
-  This file provides functions specific to the 6100/5100 series. 
+  This file provides functions specific to the 6100/5100 series.
   See README for more details on supported mobile phones.
 
 */

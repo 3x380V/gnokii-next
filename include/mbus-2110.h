@@ -1,6 +1,6 @@
 /*
 
-  $Id: mbus-2110.h,v 1.23 2002-01-21 12:31:24 machek Exp $
+  $Id: mbus-2110.h,v 1.24 2002-01-27 23:38:32 pkot Exp $
 
   G N O K I I
 
@@ -10,7 +10,7 @@
 
   Released under the terms of the GNU GPL, see file COPYING for more details.
 
-  Header file for 2110 code.	
+  Header file for 2110 code.
 
 */
 

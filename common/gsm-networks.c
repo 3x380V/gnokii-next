@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-networks.c,v 1.15 2002-01-22 14:02:43 pkot Exp $
+  $Id: gsm-networks.c,v 1.16 2002-01-27 23:38:30 pkot Exp $
 
   G N O K I I
 
@@ -9,7 +9,7 @@
   Copyright (C) 1999, 2000 Hugh Blemings & Pavel Janík ml.
 
   Released under the terms of the GNU GPL, see file COPYING for more details.
-	
+
   This file implements GSM networks searching.
 
 */

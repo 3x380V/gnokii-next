@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.h,v 1.17 2002-01-21 12:31:24 machek Exp $
+  $Id: gnokii.h,v 1.18 2002-01-27 23:38:31 pkot Exp $
 
   G N O K I I
 
@@ -9,7 +9,7 @@
   Copyright (C) 1999, 2000 Hugh Blemings & Pavel Janík ml.
 
   Released under the terms of the GNU GPL, see file COPYING for more details.
-	
+
   Header file for the various functions, definitions etc. used to implement
   the handset interface.  See gsm-api.c for more details.
 

@@ -1,6 +1,6 @@
 /*
 
-  $Id: nokia.c,v 1.4 2002-01-14 09:26:16 pkot Exp $
+  $Id: nokia.c,v 1.5 2002-01-27 23:38:31 pkot Exp $
 
   G N O K I I
 
@@ -12,7 +12,7 @@
 
   Released under the terms of the GNU GPL, see file COPYING for more details.
 
-  This file provides useful functions for all phones  
+  This file provides useful functions for all phones
   See README for more details on supported mobile phones.
 
   The various routines are called PNOK_(whatever).

@@ -1,6 +1,6 @@
 /*
 
-  $Id: ateric.h,v 1.1 2001-11-19 13:03:18 pkot Exp $
+  $Id: ateric.h,v 1.2 2002-01-27 23:38:32 pkot Exp $
 
   G N O K I I
 
@@ -13,10 +13,11 @@
   This file provides functions specific to at commands on ericsson
   phones. See README for more details on supported mobile phones.
 
-  $Log: ateric.h,v $
-  Revision 1.1  2001-11-19 13:03:18  pkot
-  nk3110.c cleanup
-
 */
 
+#ifndef __ateric_h_
+#define __ateric_h_
+
 void AT_InitEricsson(GSM_Statemachine *state, char* foundmodel, char* setupmodel);
+
+#endif

@@ -1,6 +1,6 @@
 /*
 
-  $Id: device.h,v 1.10 2001-08-20 23:27:37 pkot Exp $
+  $Id: device.h,v 1.11 2002-01-27 23:38:31 pkot Exp $
 
   G N O K I I
 
@@ -11,14 +11,6 @@
   Released under the terms of the GNU GPL, see file COPYING for more details.
 
   Header file device access code.
-
-  $Log: device.h,v $
-  Revision 1.10  2001-08-20 23:27:37  pkot
-  Add hardware shakehand to the link layer (Manfred Jonsson)
-
-  Revision 1.9  2001/06/28 00:28:45  pkot
-  Small docs updates (Pawel Kot)
-
 
 */
 

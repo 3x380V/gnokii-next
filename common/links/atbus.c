@@ -1,6 +1,6 @@
 /*
 
-  $Id: atbus.c,v 1.6 2001-12-28 16:00:31 pkot Exp $
+  $Id: atbus.c,v 1.7 2002-01-27 23:38:31 pkot Exp $
 
   G N O K I I
 
@@ -131,14 +131,14 @@ GSM_Error ATBUS_Loop(struct timeval *timeout)
 {
 	unsigned char buffer[255];
 	int count, res;
-			        
+
 	res = device_select(timeout);
 	if (res > 0) {
 		res = device_read(buffer, 255);
 		for (count = 0; count < res; count++)
 			ATBUS_RX_StateMachine(buffer[count]);
 	} else
-		return GE_TIMEOUT;  
+		return GE_TIMEOUT;
 	/* This traps errors from device_read */
 	if (res > 0)
 		return GE_NONE;

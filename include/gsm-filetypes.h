@@ -1,15 +1,15 @@
 /*
 
-  $Id: gsm-filetypes.h,v 1.11 2001-12-31 09:35:47 pkot Exp $
+  $Id: gsm-filetypes.h,v 1.12 2002-01-27 23:38:31 pkot Exp $
 
   G N O K I I
 
   A Linux/Unix toolset and driver for Nokia mobile phones.
 
-  Copyright (C) 1999, 2000 Hugh Blemings & Pavel Janík ml. 
+  Copyright (C) 1999, 2000 Hugh Blemings & Pavel Janík ml.
 
   Released under the terms of the GNU GPL, see file COPYING for more details.
-  
+
   Functions to read and write common file types.
 
 */

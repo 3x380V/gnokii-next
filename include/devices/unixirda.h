@@ -1,5 +1,5 @@
 /*
- * $Id: unixirda.h,v 1.2 2001-11-08 16:49:20 pkot Exp $
+ * $Id: unixirda.h,v 1.3 2002-01-27 23:38:32 pkot Exp $
  *
  * G N O K I I
  *
@@ -21,26 +21,6 @@
  * You should have received a copy of the GNU Library General Public
  * License along with this library; if not, write to the Free
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
- *
- * $Log: unixirda.h,v $
- * Revision 1.2  2001-11-08 16:49:20  pkot
- * Cleanups
- *
- * Revision 1.1  2001/02/21 19:57:11  chris
- * More fiddling with the directory layout
- *
- * Revision 1.4  2001/02/20 21:55:12  pkot
- * Small #include updates
- *
- * Revision 1.3  2001/02/06 21:15:37  chris
- * Preliminary irda support for 7110 etc.  Not well tested!
- *
- * Revision 1.2  2001/02/06 15:15:25  pkot
- * FreeBSD unixirda.h fix (Panagiotis Astithas)
- *
- * Revision 1.1  2001/02/03 23:56:18  chris
- * Start of work on irda support (now we just need fbus-irda.c!)
- * Proper unicode support in 7110 code (from pkot)
  *
  */
 

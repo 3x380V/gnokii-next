@@ -1,6 +1,6 @@
 /*
 
-  $Id: ringtones.h,v 1.3 2001-12-31 09:35:47 pkot Exp $
+  $Id: ringtones.h,v 1.4 2002-01-27 23:38:32 pkot Exp $
 
   G N O K I I
 
@@ -47,7 +47,6 @@ typedef struct {
 	u8 NrNotes;
 	GSM_RingtoneNote notes[MAX_RINGTONE_NOTES];
 } GSM_Ringtone;
-  
 
 #define GetBit(Stream,BitNr) Stream[(BitNr)/8] & 1<<(7-((BitNr)%8))
 #define SetBit(Stream,BitNr) Stream[(BitNr)/8] |= 1<<(7-((BitNr)%8))

@@ -1,5 +1,5 @@
 /*
- * $Id: tekram.h,v 1.2 2001-11-27 12:19:01 pkot Exp $
+ * $Id: tekram.h,v 1.3 2002-01-27 23:38:32 pkot Exp $
  *
  *
  * G N O K I I
@@ -22,16 +22,6 @@
  * You should have received a copy of the GNU Library General Public
  * License along with this library; if not, write to the Free
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
- *
- * $Log: tekram.h,v $
- * Revision 1.2  2001-11-27 12:19:01  pkot
- * Cleanup, indentation, ANSI complaint preprocesor symbols (Jan Kratochvil, me)
- *
- * Revision 1.1  2001/02/21 19:57:11  chris
- * More fiddling with the directory layout
- *
- * Revision 1.1  2001/02/09 18:12:54  chris
- * Marcel's tekram support
  *
  */
 

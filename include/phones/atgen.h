@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.h,v 1.4 2002-01-15 12:01:02 pkot Exp $
+  $Id: atgen.h,v 1.5 2002-01-27 23:38:32 pkot Exp $
 
   G N O K I I
 
@@ -36,11 +36,11 @@ typedef GSM_Error (*GSM_RecvFunctionType)(int type, unsigned char *buffer, int l
 typedef GSM_Error (*AT_SendFunctionType)(GSM_Data *data, GSM_Statemachine *s);
 
 typedef struct {
-        char *line1;
-        char *line2;
-        char *line3;
-        char *line4; /* When reading SMS there are 4 ouput lines. Maybe create a table here? */
-        int length;
+	char *line1;
+	char *line2;
+	char *line3;
+	char *line4; /* When reading SMS there are 4 ouput lines. Maybe create a table here? */
+	int length;
 } AT_LineBuffer;
 
 GSM_RecvFunctionType AT_InsertRecvFunction(int type, GSM_RecvFunctionType func);

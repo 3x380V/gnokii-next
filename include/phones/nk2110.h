@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk2110.h,v 1.1 2001-10-19 22:39:08 machek Exp $
+  $Id: nk2110.h,v 1.2 2002-01-27 23:38:32 pkot Exp $
 
   G N O K I I
 
@@ -10,7 +10,7 @@
 
   Released under the terms of the GNU GPL, see file COPYING for more details.
 
-  This file provides functions specific to the 2110 series. 
+  This file provides functions specific to the 2110 series.
   See README for more details on supported mobile phones.
 
   The various routines are called P2110_(whatever).
