@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk7110.c,v 1.133 2003-01-15 22:24:45 pkot Exp $
+  $Id: nk7110.c,v 1.134 2003-01-15 22:28:25 pkot Exp $
 
   G N O K I I
 
@@ -985,7 +985,6 @@ static gn_error NK7110_IncomingFolder(int messagetype, unsigned char *message, i
 
 		data->raw_sms->validity_indicator = 0;
 		memcpy(data->raw_sms->validity,      message, 0);
-		dprintf("Passed\n");
 		break;
 	case NK7110_SUBSMS_READ_FAIL: /* GetSMS FAIL, 0x09 */
 		dprintf("SMS reading failed:\n");
