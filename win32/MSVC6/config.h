@@ -1,6 +1,6 @@
 /*
 
-  $Id: config.h,v 1.20 2004-06-27 20:41:58 pkot Exp $
+  $Id: config.h,v 1.21 2004-06-27 20:43:08 pkot Exp $
 
   G N O K I I
 
@@ -103,11 +103,6 @@
 #define DEBUG 1
 #define XDEBUG 1
 #define RLP_DEBUG 1
-
-/* Define debug level */
-#ifdef _DEBUG
-#   define	DEBUG
-#endif
 
 /* Decide if you want security options enabled */
 #define SECURITY
