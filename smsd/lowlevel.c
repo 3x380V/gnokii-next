@@ -1,6 +1,6 @@
 /*
 
-  $Id: lowlevel.c,v 1.20 2002-08-07 23:03:15 pkot Exp $
+  $Id: lowlevel.c,v 1.21 2002-08-12 07:54:25 ja Exp $
 
   S M S D
 
@@ -227,8 +227,8 @@ static void RefreshSMS (const gint number)
   static GSM_Data data;
   GSM_Error error;
   GSM_API_SMS *msg;
-  SMS_Folder folder;
-  SMS_FolderList folderlist;
+  static SMS_Folder folder;
+  static SMS_FolderList folderlist;
   register gint i;
   
 
@@ -336,6 +336,7 @@ static gint A_DeleteSMSMessage (gpointer data)
 
   GSM_DataClear(&dt);
   dt.SMS = (GSM_API_SMS *) data;
+  SMSFolder.FolderID = 0;
   dt.SMSFolder = &SMSFolder;
   dt.SMSFolderList = &SMSFolderList;
   if (dt.SMS)
@@ -397,7 +398,6 @@ void *Connect (void *a)
         if (phoneMonitor.sms.number != SMSFolder.Number)
         {
           phoneMonitor.working = TRUE;
-          g_print ("%d\n", SMSFolder.Number);
           RefreshSMS (SMSFolder.Number);
           phoneMonitor.working = FALSE;
         }
