@@ -1,6 +1,6 @@
 /*
 
-  $Id: pkt.c,v 1.1 2004-03-26 10:12:43 bozo Exp $
+  $Id: pkt.c,v 1.2 2004-03-29 17:52:56 bozo Exp $
 
   G N O K I I
 
@@ -34,6 +34,8 @@
 #include <stdint.h>
 #include <assert.h>
 
+#include "config.h"
+#include "compat.h"
 #include "gnokii.h"
 #include "pkt.h"
 
