@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.300 2002-08-28 15:53:11 pkot Exp $
+  $Id: gnokii.c,v 1.301 2002-08-29 13:01:23 pkot Exp $
 
   G N O K I I
 
@@ -499,10 +499,10 @@ static int sendsms(int argc, char *argv[])
 	int input_len, i, curpos = 0;
 
 	struct option options[] = {
-		{ "smsc",    required_argument, NULL, '0'},
-		{ "smscno",  required_argument, NULL, '1'},
-		{ "long",    required_argument, NULL, '2'},
-		{ "picture", required_argument, NULL, '3'},
+		{ "smsc",    required_argument, NULL, '1'},
+		{ "smscno",  required_argument, NULL, '2'},
+		{ "long",    required_argument, NULL, '3'},
+		{ "picture", required_argument, NULL, '4'},
 		{ "8bit",    0,                 NULL, '8'},
 		{ "imelody", 0,                 NULL, 'i'},
 		{ "animation",required_argument,NULL, 'a'},
