@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-sms.c,v 1.110 2002-08-02 16:34:58 plail Exp $
+  $Id: gsm-sms.c,v 1.111 2002-08-05 14:45:20 plail Exp $
 
   G N O K I I
 
@@ -1266,9 +1266,17 @@ API GSM_Error SaveSMS(GSM_Data *data, GSM_Statemachine *state)
 
 	data->RawSMS = &rawsms;
 	memset(&rawsms, 0, sizeof(rawsms));
+
 	data->RawSMS->Number = data->SMS->Number;
 	data->RawSMS->Status = data->SMS->Status;
+	data->RawSMS->MemoryType = data->SMS->MemoryType;
 
+	if (data->SMS->SMSC.Number[0] != '\0') {
+		data->RawSMS->MessageCenter[0] = 
+			SemiOctetPack(data->SMS->SMSC.Number, data->RawSMS->MessageCenter + 1, data->SMS->SMSC.Type);
+		if (data->RawSMS->MessageCenter[0] % 2) data->RawSMS->MessageCenter[0]++;
+		data->RawSMS->MessageCenter[0] = data->RawSMS->MessageCenter[0] / 2 + 1;
+	}
 	error = PrepareSMS(data->SMS, data->RawSMS);
 	ERROR();
 
