@@ -1,6 +1,6 @@
 /*
 
-  $Id: common.h,v 1.86 2002-01-09 13:42:12 pkot Exp $
+  $Id: common.h,v 1.87 2002-01-10 10:53:16 pkot Exp $
 
   G N O K I I
 
@@ -87,8 +87,8 @@ typedef struct {
 
 typedef struct {
 	char NetworkCode[10]; /* GSM network code */
-	char CellID[10];      /* CellID */
-	char LAC[10];         /* LAC */
+	unsigned char CellID[10];      /* CellID */
+	unsigned char LAC[10];         /* LAC */
 } GSM_NetworkInfo;
 
 /* Limits for sizing of array in GSM_PhonebookEntry. Individual handsets may
