@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus-3110.c,v 1.31 2003-06-15 20:43:47 osma Exp $
+  $Id: fbus-3110.c,v 1.32 2004-01-24 15:35:28 uid68500 Exp $
 
   G N O K I I
 
@@ -103,7 +103,7 @@ static void fb3110_rx_frame_handle(fb3110_incoming_frame *i, struct gn_statemach
 
 		sm_incoming_function(i->buffer[0], i->buffer, i->frame_len, state);
 
-	} else if (i->buffer[1] >= 0x30) { /* msg frame */
+	} else if (i->buffer[1] < 0x08 || i->buffer[1] > 0x0f) { /* msg frame */
 
 		/* Send an ack */
 		fb3110_tx_ack_send(i->buffer[0], i->buffer[1], state);
@@ -343,7 +343,12 @@ gn_error fb3110_initialise(struct gn_statemachine *state)
 		return GN_ERR_MEMORYFULL;
 
 	FBUSINST(state)->request_sequence_number = 0x10;
-	FBUSINST(state)->last_incoming_sequence_number = 0x00;
+
+	/* Since 0x08 is within the range of seqnos used for computer->ME,
+	 * it should be pretty safe to assume that the phone doesn't
+	 * initiate communication with that seqno. If we use e.g. 0x00 or
+	 * 0x30, some nasty errors may happen. */
+	FBUSINST(state)->last_incoming_sequence_number = 0x08;
 
 	if (!fb3110_serial_open(state)) {
 		free(FBUSINST(state));
