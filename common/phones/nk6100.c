@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.69 2002-04-24 00:40:02 bozo Exp $
+  $Id: nk6100.c,v 1.70 2002-04-25 23:40:56 pkot Exp $
 
   G N O K I I
 
@@ -1214,6 +1214,9 @@ static GSM_Error IncomingSMS1(int messagetype, unsigned char *message, int lengt
 		/* I belive this is GE_SMSSENDFAILED in all cases -- pkot */
 		switch (message[6]) {
 		case 0x02:
+		case 0x32: /* I get this error when operator does not allow to send me the SMS.
+			    * 01 08 00 03 64 01 32 00
+			    */
 		case 0x6f: /* maybe bad sms center number */
 			return GE_SMSSENDFAILED;
 		default:
