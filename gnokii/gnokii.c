@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.193 2002-02-04 22:09:22 pkot Exp $
+  $Id: gnokii.c,v 1.194 2002-02-08 23:57:37 pkot Exp $
 
   G N O K I I
 
@@ -1649,6 +1649,7 @@ static int viewlogo(char *filename)
 /* Calendar notes receiving. */
 static int getcalendarnote(int argc, char *argv[])
 {
+	GSM_CalendarNotesList	CalendarNotesList;
 	GSM_CalendarNote	CalendarNote;
 	GSM_Data		data;
 	GSM_Error		error = GE_NONE;
@@ -1684,6 +1685,7 @@ static int getcalendarnote(int argc, char *argv[])
 
 		GSM_DataClear(&data);
 		data.CalendarNote = &CalendarNote;
+		data.CalendarNotesList = &CalendarNotesList;
 
 		error = SM_Functions(GOP_GetCalendarNote, &data, &State);
 		switch (error) {
