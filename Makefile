@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.110 2002-03-07 23:06:18 pkot Exp $
+# $Id: Makefile,v 1.111 2002-04-13 19:37:36 bozo Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -85,7 +85,6 @@ distclean:	clean
 	fi
 	$(RM) Makefile.global config.cache config.log config.status \
 		include/config.h \
-		include/config.h.in \
 		packaging/RedHat/gnokii.spec \
 		packaging/Slackware/SlackBuild \
 		po/Makefile.in \
