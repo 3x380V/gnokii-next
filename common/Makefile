@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.71 2004-06-26 21:51:03 pkot Exp $
+# $Id: Makefile,v 1.72 2004-06-26 21:56:02 pkot Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -9,8 +9,8 @@
 #
 
 #
-# For this common directory is used "subsystem.o" .o files concept.
-#   (the list of object files to be linked together (to COMMON.o),
+# For this common directory is used "subsystem.la" .la files concept.
+#   (the list of object files to be linked together (to COMMON.la),
 #   and other dirs is used this _one_ file (instead of all OBJS)
 #
 
