@@ -1,6 +1,6 @@
 /*
 
-  $Id: datapump.c,v 1.13 2002-04-13 00:58:38 bozo Exp $
+  $Id: datapump.c,v 1.14 2002-05-27 01:38:37 bozo Exp $
 
   G N O K I I
 
@@ -186,7 +186,6 @@ void DP_CallPassup(GSM_CallStatus CallStatus, GSM_CallInfo *CallInfo)
 	switch (CallStatus) {
 	case GSM_CS_Established:
 		if (CommandMode == false) ATEM_ModemResult(MR_CARRIER);
-		RLP_SetUserRequest(Conn_Req, true);
 		connected = true;
 		break;
 	case GSM_CS_LocalHangup:

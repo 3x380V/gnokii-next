@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.73 2002-05-24 22:14:58 bozo Exp $
+  $Id: nk6100.c,v 1.74 2002-05-27 01:38:37 bozo Exp $
 
   G N O K I I
 
@@ -2763,10 +2763,6 @@ static GSM_Error IncomingCallInfo(int messagetype, unsigned char *message, int l
 	
 	/* answered call */
 	case 0x07:
-		memset(&cinfo, 0, sizeof(cinfo));
-		cinfo.CallID = message[4];
-		if (CallNotification)
-			CallNotification(GSM_CS_Established, &cinfo);
 		return GE_UNSOLICITED;
 
 	/* terminated call */

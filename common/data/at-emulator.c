@@ -1,6 +1,6 @@
 /*
 
-  $Id: at-emulator.c,v 1.20 2002-05-25 13:18:55 pkot Exp $
+  $Id: at-emulator.c,v 1.21 2002-05-27 01:38:37 bozo Exp $
 
   G N O K I I
 
@@ -264,8 +264,11 @@ void	ATEM_ParseAT(char *cmd_buffer)
 			data.CallInfo->SendNumber = GSM_CSN_Default;
 			if (SM_Functions(GOP_MakeCall, &data, sm) != GE_NONE)
 				DP_CallPassup(GSM_CS_RemoteHangup, NULL);
-			else
+			else {
+				RLP_SetUserRequest(Conn_Req, true);
+				IncomingCallNo = data.CallInfo->CallID;
 				CommandMode = false;
+			}
 			return;
 			break;
 		case 'H':
