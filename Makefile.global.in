@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile.global.in,v 1.19 2001-06-07 10:33:26 pkot Exp $
+# $Id: Makefile.global.in,v 1.20 2001-06-20 12:13:56 machek Exp $
 #
 # Global Makefiles configuration for the GNOKII.
 #
@@ -12,9 +12,7 @@
 
 SHELL          = @SHELL@
 
-LD             = @LD@
-LDREL          = -r
-LDOUT          = -o
+LD             = @CC@ -Xlinker -r -nostdlib -nodefaultlibs -o
 
 PACKAGE        = gnokii
 
