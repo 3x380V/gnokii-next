@@ -1,6 +1,6 @@
 /*
 
-  $Id: encoding.h,v 1.14 2002-09-27 14:19:57 plail Exp $
+  $Id: encoding.h,v 1.15 2002-11-12 13:53:09 bozo Exp $
 
   G N O K I I
 
@@ -57,5 +57,10 @@ API bool gn_char_def_alphabet(unsigned char *string);
 
 extern char *char_get_bcd_number(u8 *Number);
 extern int char_semi_octet_pack(char *Number, unsigned char *Output, SMS_NumberType type);
+
+unsigned char char_encode_def_alphabet(unsigned char value);
+unsigned char char_decode_def_alphabet(unsigned char value);
+int char_encode_uni_alphabet(unsigned char const *value, wchar_t *dest);
+int char_decode_uni_alphabet(wchar_t value, unsigned char *dest);
 
 #endif /* _gnokii_gsm_encoding_h */
