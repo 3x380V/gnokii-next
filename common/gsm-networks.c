@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-networks.c,v 1.16 2002-01-27 23:38:30 pkot Exp $
+  $Id: gsm-networks.c,v 1.17 2002-02-16 16:09:28 pkot Exp $
 
   G N O K I I
 
@@ -164,6 +164,7 @@ GSM_Network GSM_Networks[] = {
 	{ "219 10", "VIP" },
 	{ "220 01", "MOBTEL" },
 	{ "220 02", "ProMonte GSM" },
+	{ "220 03", "Telekom Srbije" },
 	{ "222 01", "Telecom Italia Mobile" },
 	{ "222 10", "OMNITEL" },
 	{ "222 88", "Wind Telecomunicazioni SpA" },
