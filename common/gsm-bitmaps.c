@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-bitmaps.c,v 1.22 2002-05-23 09:33:12 machek Exp $
+  $Id: gsm-bitmaps.c,v 1.23 2002-05-25 23:42:13 pkot Exp $
 
   G N O K I I
 
@@ -201,7 +201,6 @@ API GSM_Error GSM_ReadSMSBitmap(int type, char *message, char *code, GSM_Bitmap 
 	}
 	bitmap->width = message[0];
 	bitmap->height = message[1];
-	dprintf("offset: %i\n", offset);
 
 	bitmap->size = ceiling_to_octet(bitmap->width * bitmap->height);
 	memcpy(bitmap->bitmap, message + offset + 2, bitmap->size);
