@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.c,v 1.123 2003-10-19 21:17:53 bozo Exp $
+  $Id: nk6510.c,v 1.124 2003-10-19 21:23:20 bozo Exp $
 
   G N O K I I
 
@@ -204,7 +204,7 @@ gn_driver driver_nokia_6510 = {
 	pgen_incoming_default,
 	/* Mobile phone information */
 	{
-		"6510|6310|8310|6310i|6360|6610|6100", /* Supported models */
+		"6510|6310|8310|6310i|6360|6610|6100|5100", /* Supported models */
 		7,                     /* Max RF Level */
 		0,                     /* Min RF Level */
 		GN_RF_Percentage,      /* RF level units */
