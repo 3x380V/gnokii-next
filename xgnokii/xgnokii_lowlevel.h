@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_lowlevel.h,v 1.25 2002-12-26 23:43:19 pkot Exp $
+  $Id: xgnokii_lowlevel.h,v 1.26 2003-01-03 23:16:46 pkot Exp $
   
   X G N O K I I
 
@@ -102,8 +102,7 @@ typedef struct {
 } D_CallerGroup;
 
 typedef struct {
-	gn_timestamp time;
-	bool enabled;
+	gn_calnote_alarm alarm;
 	gint status;
 } D_Alarm;
 
