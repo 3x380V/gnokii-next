@@ -5,7 +5,7 @@ dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janík ml.
 dnl                2000 Karel Zak, Pawe³ Kot
 dnl                2002 BORBELY Zoltan
 dnl
-dnl  $Id: configure.in,v 1.117 2003-08-18 17:59:14 pkot Exp $
+dnl  $Id: configure.in,v 1.118 2003-09-03 22:34:05 bozo Exp $
 dnl
 
 AC_INIT(gnokii/gnokii.c)
@@ -208,7 +208,8 @@ AC_CHECK_HEADER(linux/irda.h,
 	[AC_DEFINE(HAVE_IRDA)
 	 USE_IRDA="yes"],,
 	[#include <sys/socket.h>
-	 #include <sys/ioctl.h>])
+	 #include <sys/ioctl.h>
+	 #include <linux/types.h>])
 
 dnl ======================== Checks for Linux Bluetooth support
 bluetooth="no"
