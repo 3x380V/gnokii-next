@@ -1,6 +1,6 @@
 /*
 
-  $Id: vcard.c,v 1.6 2003-02-26 00:15:47 pkot Exp $
+  $Id: vcard.c,v 1.7 2003-03-06 21:23:59 pkot Exp $
   
   G N O K I I
 
@@ -30,8 +30,9 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "config.h"
 #include "compat.h"
-#include "gnokii/common.h"
+#include "gnokii.h"
 
 API int gn_phonebook2vcard(FILE * f, gn_phonebook_entry *entry, char *addon)
 {

@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-error.c,v 1.17 2003-02-26 00:15:47 pkot Exp $
+  $Id: gsm-error.c,v 1.18 2003-03-06 21:23:57 pkot Exp $
 
   G N O K I I
 
@@ -29,8 +29,9 @@
 */
 
 #include "config.h"
-#include "gnokii/error.h"
+#include "compat.h"
 #include "misc.h"
+#include "gnokii.h"
 
 API char *gn_error_print(gn_error e)
 {

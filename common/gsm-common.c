@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-common.c,v 1.18 2003-02-26 00:15:47 pkot Exp $
+  $Id: gsm-common.c,v 1.19 2003-03-06 21:23:57 pkot Exp $
 
   G N O K I I
 
@@ -27,8 +27,9 @@
 */
 
 #include <string.h>
+#include "config.h"
 #include "compat.h"
-#include "gnokii/data.h"
+#include "gnokii.h"
 
 gn_error unimplemented(void)
 {

@@ -1,6 +1,6 @@
 /*
 
-  $Id: device.c,v 1.29 2003-02-26 00:15:47 pkot Exp $
+  $Id: device.c,v 1.30 2003-03-06 21:23:56 pkot Exp $
 
   G N O K I I
 
@@ -26,6 +26,8 @@
 
 */
 
+#include "config.h"
+#include "compat.h"
 #include "misc.h"
 #include "gnokii.h"
 #include "device.h"

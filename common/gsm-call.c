@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-call.c,v 1.8 2003-02-26 00:15:47 pkot Exp $
+  $Id: gsm-call.c,v 1.9 2003-03-06 21:23:57 pkot Exp $
 
   G N O K I I
 
@@ -29,10 +29,6 @@
 */
 
 #include <stdio.h>
-
-#include "gnokii/common.h"
-#include "gnokii/statemachine.h"
-#include "gnokii/call.h"
 
 #include "gnokii-internal.h"
 #include "gnokii.h"

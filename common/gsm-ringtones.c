@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-ringtones.c,v 1.18 2003-02-26 00:15:47 pkot Exp $
+  $Id: gsm-ringtones.c,v 1.19 2003-03-06 21:23:58 pkot Exp $
 
   G N O K I I
 
@@ -30,9 +30,9 @@
 
 */
 
-#include "gnokii/sms.h"
-#include "gnokii/common.h"
-#include "gnokii/ringtones.h"
+#include "config.h"
+#include "compat.h"
+#include "gnokii.h"
 #include "misc.h"
 
 /* Beats-per-Minute Encoding */

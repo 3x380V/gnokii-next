@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-bitmaps.c,v 1.38 2003-02-26 00:15:47 pkot Exp $
+  $Id: gsm-bitmaps.c,v 1.39 2003-03-06 21:23:56 pkot Exp $
 
   G N O K I I
 
@@ -37,9 +37,9 @@
 #include <ctype.h>
 #include <sys/stat.h>
 
+#include "config.h"
+#include "compat.h"
 #include "misc.h"
-#include "gnokii/common.h"
-#include "gnokii/bitmaps.h"
 #include "gnokii.h"
 
 /* A few useful functions for bitmaps */

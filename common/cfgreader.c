@@ -1,6 +1,6 @@
 /*
 
-  $Id: cfgreader.c,v 1.38 2003-02-19 00:07:54 pkot Exp $
+  $Id: cfgreader.c,v 1.39 2003-03-06 21:23:56 pkot Exp $
 
   G N O K I I
 
@@ -30,6 +30,8 @@
 
 */
 
+#include "config.h"
+#include "compat.h"
 #include "misc.h"
 
 #include <stdio.h>

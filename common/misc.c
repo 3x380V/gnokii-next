@@ -1,6 +1,6 @@
 /*
 
-  $Id: misc.c,v 1.63 2003-03-03 22:39:06 pkot Exp $
+  $Id: misc.c,v 1.64 2003-03-06 21:23:59 pkot Exp $
 
   G N O K I I
 
@@ -42,7 +42,7 @@
 #endif
 
 #include "misc.h"
-#include "gnokii/data.h"
+#include "gnokii.h"
 
 API void (*gn_elog_handler)(const char *fmt, va_list ap) = NULL;
 
