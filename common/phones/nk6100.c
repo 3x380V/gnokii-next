@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.99 2002-08-05 22:31:54 pkot Exp $
+  $Id: nk6100.c,v 1.100 2002-08-06 11:18:10 pkot Exp $
 
   G N O K I I
 
@@ -1393,6 +1393,8 @@ static GSM_Error IncomingSMS1(int messagetype, unsigned char *message, int lengt
 				smsc->Validity = SMS_V24H;
 				break;
 			}
+			if (pos[0] % 2) pos[0]++;
+			pos[0] = pos[0] / 2 + 1;
 			snprintf(smsc->Recipient.Number, sizeof(smsc->Recipient.Number), "%s", GetBCDNumber(pos));
 			smsc->Recipient.Type = pos[1];
 			pos += 12;
