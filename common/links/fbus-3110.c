@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus-3110.c,v 1.7 2002-03-26 01:22:10 pkot Exp $
+  $Id: fbus-3110.c,v 1.8 2002-03-26 02:27:12 pkot Exp $
 
   G N O K I I
 
@@ -33,10 +33,6 @@
 #include "gsm-statemachine.h"
 
 #include "device.h"
-#ifdef WIN32
-#  define sleep(x) Sleep((x) * 1000)
-#  define usleep(x) Sleep(((x) < 1000) ? 1 : ((x) / 1000))
-#endif
 
 #include "links/fbus-3110.h"
 

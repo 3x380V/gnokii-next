@@ -1,6 +1,6 @@
 /*
 
-  $Id: compat.h,v 1.2 2002-03-26 01:10:30 pkot Exp $
+  $Id: compat.h,v 1.3 2002-03-26 02:27:12 pkot Exp $
 
   G N O K I I
 
@@ -59,7 +59,7 @@
 #endif	/* HAVE_TIMEOPS */
 
 #ifndef	HAVE_GETTIMEOFDAY
-int gettimeofday(struct timeval *tv, struct timezone *tz);
+int gettimeofday(struct timeval *tv, void *tz);
 #endif
 
 #ifdef WIN32
@@ -69,7 +69,7 @@ int gettimeofday(struct timeval *tv, struct timezone *tz);
  */
 #  define inline /* Not supported */
 #  define snprintf _snprintf
-#  define strcasecmp strcmp
+#  define strcasecmp stricmp
 #  define strncasecmp _strnicmp
 #  define sleep(x) Sleep((x) * 1000)
 #  define usleep(x) Sleep(((x) < 1000) ? 1 : ((x) / 1000))

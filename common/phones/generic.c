@@ -1,6 +1,6 @@
 /*
 
-  $Id: generic.c,v 1.8 2002-03-26 01:10:29 pkot Exp $
+  $Id: generic.c,v 1.9 2002-03-26 02:27:12 pkot Exp $
 
   G N O K I I
 
@@ -25,6 +25,7 @@
 #include "gsm-common.h"
 #include "phones/generic.h"
 #include "misc.h"
+#include "gsm-statemachine.h"
 
 /* If we do not support a message type, print out some debugging info */
 GSM_Error PGEN_IncomingDefault(int messagetype, unsigned char *buffer, int length)

@@ -1,6 +1,6 @@
 /*
 
-  $Id: misc.c,v 1.32 2002-03-26 01:10:28 pkot Exp $
+  $Id: misc.c,v 1.33 2002-03-26 02:27:11 pkot Exp $
 
   G N O K I I
 
@@ -182,7 +182,7 @@ char *lock_device(const char* port)
 #ifndef WIN32
 	char *lock_file = NULL;
 	char buffer[max_buf_len];
-	const char *aux = rindex(port, '/');
+	const char *aux = strrchr(port, '/');
 	int fd, len = strlen(aux) + strlen(lock_path);
 
 	/* Remove leading '/' */

@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii.c,v 1.45 2002-03-21 22:55:26 pkot Exp $
+  $Id: xgnokii.c,v 1.46 2002-03-26 02:27:13 pkot Exp $
   
   X G N O K I I
 
@@ -27,8 +27,6 @@
 #  define WRITEPHONE(a, b, c) WriteCommBlock(b, c)
 #  undef IN
 #  undef OUT
-#  define sleep(x) Sleep((x) * 1000)
-#  define usleep(x) Sleep(((x) < 1000) ? 1 : ((x) / 1000))
 #endif
 
 #include <gdk/gdkkeysyms.h>

@@ -8,7 +8,7 @@
 
   Released under the terms of the GNU GPL, see file COPYING for more details.
 
-  $Id: smsd.c,v 1.14 2002-03-21 00:26:49 pkot Exp $
+  $Id: smsd.c,v 1.15 2002-03-26 02:27:13 pkot Exp $
 */
 
 #include <string.h>
@@ -25,8 +25,6 @@
 # define WRITEPHONE(a, b, c) WriteCommBlock(b, c)
 # undef IN
 # undef OUT
-# define sleep(x) Sleep((x) * 1000)
-# define usleep(x) Sleep(((x) < 1000) ? 1 : ((x) / 1000))
 #endif
 
 #include <glib.h>
