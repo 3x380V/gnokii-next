@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-sms.c,v 1.127 2003-01-19 22:26:47 pkot Exp $
+  $Id: gsm-sms.c,v 1.128 2003-02-09 22:04:53 pkot Exp $
 
   G N O K I I
 
@@ -44,6 +44,7 @@
 #include "gnokii-internal.h"
 #include "gsm-api.h"
 
+#undef ERROR
 #define ERROR() do { if (error != GN_ERR_NONE) return error; } while (0)
 
 struct sms_udh_data {

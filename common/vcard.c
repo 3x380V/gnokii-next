@@ -1,6 +1,6 @@
 /*
 
-  $Id: vcard.c,v 1.4 2002-12-12 15:07:19 ladis Exp $
+  $Id: vcard.c,v 1.5 2003-02-09 22:04:54 pkot Exp $
   
   G N O K I I
 
@@ -100,7 +100,7 @@ API int gn_phonebook2vcard(FILE * f, gn_phonebook_entry *entry, char *addon)
 #define STORESUB(a, c) STORE2(a, entry->subentries[entry->subentries_count++].data.number, entry->subentries[entry->subentries_count].entry_type = c);
 #define STORENUM(a, c) STORE2(a, entry->subentries[entry->subentries_count++].data.number, entry->subentries[entry->subentries_count].entry_type = 0x0b; entry->subentries[entry->subentries_count].number_type = c);
 
-
+#undef ERROR
 #define ERROR(a) fprintf(stderr, "%s\n", a)
 
 API int gn_vcard2phonebook(FILE *f, gn_phonebook_entry *entry)
