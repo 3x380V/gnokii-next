@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.412 2004-12-20 14:26:16 chriskemp Exp $
+  $Id: gnokii.c,v 1.413 2005-01-01 18:05:35 pkot Exp $
 
   G N O K I I
 
@@ -909,6 +909,10 @@ static int savesms(int argc, char *argv[])
 			sms.smsc_time.minute	= atoi(tmp);
 			strncpy(tmp, optarg+10, 2);
 			sms.smsc_time.second	= atoi(tmp);
+			if (!gn_timestamp_isvalid(sms.smsc_time)) {
+				fprintf(stderr, _("Invalid datetime: %s.\n"), optarg);
+				return -1;
+			}
 			break;
 		default:
 			usage(stderr, -1);

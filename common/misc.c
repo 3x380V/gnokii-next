@@ -1,6 +1,6 @@
 /*
 
-  $Id: misc.c,v 1.88 2004-12-20 14:26:16 chriskemp Exp $
+  $Id: misc.c,v 1.89 2005-01-01 18:05:35 pkot Exp $
 
   G N O K I I
 
@@ -546,4 +546,40 @@ void gnokii_strfreev(char **str_array)
 		tmp++;
 	}
 	free(str_array);
+}
+
+/*
+ * check if the timestamp in dt has valid date and time
+ */
+API int gn_timestamp_isvalid(gn_timestamp dt)
+{
+#define BETWEEN(a, x, y)	((a >= x) && (a <= y))
+	int daynum;
+
+	/* assume that year is OK */
+	switch (dt.month) {
+	case 2:
+		if (((dt.year % 4) == 0) &&
+		    (((dt.year % 100) != 0) ||
+		     ((dt.year % 1000) == 0)))
+			daynum = 29;
+		else
+			daynum = 28;
+		break;
+	case 1:
+	case 3:
+	case 5:
+	case 7:
+	case 8:
+	case 10:
+	case 12:
+		daynum = 31;
+		break;
+	default:
+		daynum = 30;
+		break;
+	}
+	return (BETWEEN(dt.month, 1, 12) && BETWEEN(dt.day, 1, daynum) &&
+		BETWEEN(dt.hour, 0, 24) && BETWEEN(dt.minute, 0, 59) &&
+		BETWEEN(dt.second, 0, 59));
 }
