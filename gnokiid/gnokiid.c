@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokiid.c,v 1.35 2003-01-01 21:29:06 pkot Exp $
+  $Id: gnokiid.c,v 1.36 2003-02-04 22:00:16 pkot Exp $
 
   G N O K I I
 
@@ -125,6 +125,8 @@ int main(int argc, char *argv[])
 		atexit_registered = true;
 		atexit(busterminate);
 	}
+
+	gn_elog_handler = NULL;
 
 	aux = gn_cfg_get(gn_cfg_info, "global", "use_locking");
 	/* Defaults to 'no' */

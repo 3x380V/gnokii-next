@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii.c,v 1.64 2003-01-03 23:16:46 pkot Exp $
+  $Id: xgnokii.c,v 1.65 2003-02-04 22:00:15 pkot Exp $
   
   X G N O K I I
 
@@ -2335,6 +2335,8 @@ int main(int argc, char *argv[])
 	(void) gtk_set_locale();
 
 	gtk_init(&argc, &argv);
+
+	gn_elog_handler = NULL;
 
 /* Show the splash screen. */
 

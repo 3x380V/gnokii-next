@@ -1,6 +1,6 @@
 /*
 
-  $Id: smsd.c,v 1.32 2003-01-21 00:41:14 bozo Exp $
+  $Id: smsd.c,v 1.33 2003-02-04 22:00:16 pkot Exp $
 
   S M S D
 
@@ -421,6 +421,7 @@ int main (int argc, char *argv[])
   textdomain("gnokii");
 #endif
 
+  gn_elog_handler = NULL;
   ReadConfig (argc, argv);
   GTerminateThread = false;
   Run ();
