@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-networks.c,v 1.33 2003-11-03 21:36:46 bozo Exp $
+  $Id: gsm-networks.c,v 1.34 2003-11-20 11:22:25 bozo Exp $
 
   G N O K I I
 
@@ -218,6 +218,8 @@ static gn_network networks[] = {
 	{ "244 03", "Telia City (Finland)" },
 	{ "244 05", "Radiolinja" },
 	{ "244 09", "Finnet" },
+	{ "244 12", "DNA (FI2G)" },
+	{ "244 14", "Alands Mobiltelefon" },
 	{ "244 91", "Sonera" },
 	{ "246 01", "OMNITEL" },
 	{ "246 02", "Bite GSM" },
