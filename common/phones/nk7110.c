@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk7110.c,v 1.145 2003-03-06 21:17:16 pkot Exp $
+  $Id: nk7110.c,v 1.146 2003-03-09 13:37:31 pkot Exp $
 
   G N O K I I
 
@@ -301,6 +301,8 @@ static gn_error NK7110_Initialise(struct gn_statemachine *state)
 				break;
 			}
 		case GN_CT_Serial:
+			err = fbus_initialise(attempt++, state);
+			break;
 		case GN_CT_Bluetooth:
 			attempt = 2;
 			err = fbus_initialise(attempt++, state);

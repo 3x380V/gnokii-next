@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.c,v 1.110 2003-03-06 21:17:15 pkot Exp $
+  $Id: nk6510.c,v 1.111 2003-03-09 13:37:31 pkot Exp $
 
   G N O K I I
 
@@ -360,9 +360,9 @@ static gn_error NK6510_Initialise(struct gn_statemachine *state)
 {
 	gn_data data;
 	char model[10];
-	gn_error err;
+	gn_error err = GN_ERR_NONE;
 	bool connected = false;
-	int attempt = 0;
+	unsigned int attempt = 0;
 
 	/* Copy in the phone info */
 	memcpy(&(state->driver), &driver_nokia_6510, sizeof(gn_driver));
@@ -379,7 +379,10 @@ static gn_error NK6510_Initialise(struct gn_statemachine *state)
 				break;
 			}
 		case GN_CT_Serial:
+			err = fbus_initialise(attempt++, state);
+			break;
 		case GN_CT_Bluetooth:
+			attempt = 2;
 			err = fbus_initialise(attempt++, state);
 			break;
 		case GN_CT_Infrared:
