@@ -1,6 +1,6 @@
 /*
 
-  $Id: cfgreader.c,v 1.33 2003-01-15 21:12:57 pkot Exp $
+  $Id: cfgreader.c,v 1.34 2003-01-15 21:30:03 pkot Exp $
 
   G N O K I I
 
@@ -434,7 +434,7 @@ API int gn_cfg_read(char **bindir)
 	gn_config_default.serial_write_usleep = -1;
 	gn_config_default.hardware_handshake = false;
 	gn_config_default.require_dcd = false;
-	gn_config_default.smsc_timeout = 10;
+	gn_config_default.smsc_timeout = -1;
 	strcpy(gn_config_default.connect_script, "");
 	strcpy(gn_config_default.disconnect_script, "");
 
