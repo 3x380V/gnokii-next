@@ -1,6 +1,6 @@
 /*
 
-  $Id: utils.h,v 1.8 2003-02-26 00:15:49 pkot Exp $
+  $Id: utils.h,v 1.9 2003-03-06 21:38:46 pkot Exp $
 
   G N O K I I
 
@@ -34,8 +34,7 @@
 #ifndef _gnokii_links_utils_h
 #define _gnokii_links_utils_h
 
-#include "gnokii/error.h"
-#include "gnokii/statemachine.h"
+#include "gnokii.h"
 
 gn_error link_terminate(struct gn_statemachine *state);
 void at_dprintf(char *prefix, char *buf, int len);

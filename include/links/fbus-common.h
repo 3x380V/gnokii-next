@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus-common.h,v 1.4 2003-02-26 00:15:49 pkot Exp $
+  $Id: fbus-common.h,v 1.5 2003-03-06 21:38:45 pkot Exp $
 
   G N O K I I
 
@@ -32,7 +32,7 @@
 #ifndef _gnokii_links_fbus_common_h
 #define _gnokii_links_fbus_common_h
 
-#include "gnokii/statemachine.h"
+#include "gnokii.h"
 
 /* Nokia mobile phone. */
 #define FBUS_DEVICE_PHONE 0x00

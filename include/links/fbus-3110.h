@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus-3110.h,v 1.9 2003-02-26 00:15:49 pkot Exp $
+  $Id: fbus-3110.h,v 1.10 2003-03-06 21:38:43 pkot Exp $
 
   G N O K I I
 
@@ -36,7 +36,7 @@
 
 #include "config.h"
 #include "compat.h"
-#include "gnokii/statemachine.h"
+#include "gnokii.h"
 
 #ifdef WIN32
 #  include <sys/types.h>
