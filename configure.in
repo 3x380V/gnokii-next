@@ -5,7 +5,7 @@ dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janík ml.
 dnl                2000 Karel Zak, Pawe³ Kot
 dnl                2002 BORBELY Zoltan
 dnl
-dnl  $Id: configure.in,v 1.67 2002-04-03 22:21:55 bozo Exp $
+dnl  $Id: configure.in,v 1.68 2002-04-08 15:14:12 pkot Exp $
 dnl
 
 AC_INIT(gnokii/gnokii.c)
@@ -450,6 +450,7 @@ AC_HEADER_STDC
 AC_HEADER_SYS_WAIT
 AC_CHECK_HEADERS(fcntl.h sys/ioctl.h sys/time.h unistd.h)
 AC_CHECK_HEADERS(string.h strings.h ctype.h stdlib.h stdarg.h)
+AC_CHECK_HEADERS(stddef.h)
 
 dnl ======================== Checks for typedefs, structures, and compiler characteristics.
 AC_C_CONST
