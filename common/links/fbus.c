@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus.c,v 1.50 2003-02-26 22:02:17 pkot Exp $
+  $Id: fbus.c,v 1.51 2003-03-06 21:10:35 pkot Exp $
 
   G N O K I I
 
@@ -43,11 +43,10 @@
 #include "config.h"
 #include "compat.h"
 #include "misc.h"
-#include "gnokii/statemachine.h"
+#include "gnokii.h"
 #include "device.h"
 #include "links/fbus.h"
 #include "gnokii-internal.h"
-#include "gnokii.h"
 
 static void fbus_rx_statemachine(unsigned char rx_byte, struct gn_statemachine *state);
 static gn_error fbus_send_message(u16 messagesize, u8 messagetype, unsigned char *message, struct gn_statemachine *state);

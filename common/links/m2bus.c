@@ -1,6 +1,6 @@
 /*
 
-  $Id: m2bus.c,v 1.15 2003-02-26 22:02:17 pkot Exp $
+  $Id: m2bus.c,v 1.16 2003-03-06 21:10:38 pkot Exp $
 
   G N O K I I
 
@@ -44,10 +44,7 @@
 #include "config.h"
 #include "compat.h"
 #include "misc.h"
-#include "gnokii/common.h"
-#include "gnokii/ringtones.h"
-#include "gnokii/networks.h"
-#include "gnokii/statemachine.h"
+#include "gnokii.h"
 #include "device.h"
 #include "links/m2bus.h"
 

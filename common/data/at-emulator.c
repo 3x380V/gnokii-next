@@ -1,6 +1,6 @@
 /*
 
-  $Id: at-emulator.c,v 1.34 2003-03-04 22:35:35 pkot Exp $
+  $Id: at-emulator.c,v 1.35 2003-03-06 21:07:03 pkot Exp $
 
   G N O K I I
 
@@ -48,12 +48,8 @@
 
 #include "config.h"
 #include "misc.h"
-#include "gnokii/data.h"
 #include "gnokii.h"
-#include "gnokii/sms.h"
-#include "gnokii/call.h"
 #include "data/at-emulator.h"
-#include "gnokii/virtmodem.h"
 #include "data/datapump.h"
 
 #define MAX_LINE_LENGTH 256

@@ -1,6 +1,6 @@
 /*
 
-  $Id: winserial.c,v 1.9 2003-02-26 00:15:48 pkot Exp $
+  $Id: winserial.c,v 1.10 2003-03-06 21:08:17 pkot Exp $
 
   G N O K I I
 
@@ -34,7 +34,6 @@
 
 #include "misc.h"
 #include "gnokii.h"
-#include "gnokii/error.h"
 
 #define USECOMM      /* yes, we need the COMM API */
 

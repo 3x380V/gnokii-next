@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus-phonet.c,v 1.28 2003-02-26 22:02:17 pkot Exp $
+  $Id: fbus-phonet.c,v 1.29 2003-03-06 21:10:36 pkot Exp $
 
   G N O K I I
 
@@ -42,15 +42,10 @@
 #include "config.h"
 #include "compat.h"
 #include "misc.h"
-#include "gnokii/statemachine.h"
-#include "gnokii/common.h"
-#include "gnokii/ringtones.h"
-#include "gnokii/networks.h"
+#include "gnokii.h"
 #include "device.h"
 #include "links/fbus-phonet.h"
-
 #include "gnokii-internal.h"
-#include "gnokii.h"
 
 #ifdef HAVE_IRDA
 

@@ -1,6 +1,6 @@
 /*
 
-  $Id: utils.c,v 1.16 2003-02-26 22:02:17 pkot Exp $
+  $Id: utils.c,v 1.17 2003-03-06 21:10:39 pkot Exp $
 
   G N O K I I
 
@@ -35,7 +35,7 @@
 #include "config.h"
 #include "compat.h"
 #include "misc.h"
-#include "gnokii/statemachine.h"
+#include "gnokii.h"
 #include "links/utils.h"
 #include "device.h"
 
