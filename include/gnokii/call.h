@@ -1,6 +1,6 @@
 /*
 
-  $Id: call.h,v 1.4 2002-12-09 00:28:11 pkot Exp $
+  $Id: call.h,v 1.5 2002-12-11 00:11:41 pkot Exp $
 
   G N O K I I
 
@@ -34,9 +34,9 @@
 #include "gsm-error.h"
 
 typedef enum {
-	GN_CALL_VoiceCall,		/* Voice call */
-	GN_CALL_NonDigitalDataCall,	/* Data call on non digital line */
-	GN_CALL_DigitalDataCall		/* Data call on digital line */
+	GN_CALL_Voice,		/* Voice call */
+	GN_CALL_NonDigitalData,	/* Data call on non digital line */
+	GN_CALL_DigitalData	/* Data call on digital line */
 } gn_call_type;
 
 typedef enum {
