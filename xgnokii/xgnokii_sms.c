@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_sms.c,v 1.41 2002-07-19 14:47:12 plail Exp $
+  $Id: xgnokii_sms.c,v 1.42 2002-07-21 16:13:42 pkot Exp $
 
   X G N O K I I
 
@@ -886,7 +886,16 @@ static gint SendSMSCore(GSM_API_SMS * sms)
 	GSM_Error error;
 	PhoneEvent *e = (PhoneEvent *) g_malloc(sizeof(PhoneEvent));
 	D_SMSMessage *m = (D_SMSMessage *) g_malloc(sizeof(D_SMSMessage));
+	unsigned int i = 0;
 
+	while (sms->UserData[i].Type != SMS_NoData) {
+		if ((sms->UserData[i].Type == SMS_PlainText ||
+		     sms->UserData[i].Type == SMS_NokiaText ||
+		     sms->UserData[i].Type == SMS_iMelodyText) &&
+		     !IsDefaultAlphabetString(sms->UserData[i].u.Text))
+			sms->DCS.u.General.Alphabet = SMS_UCS2;
+		i++;
+	}
 	m->sms = sms;
 	e->event = Event_SendSMSMessage;
 	e->data = m;
