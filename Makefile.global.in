@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile.global.in,v 1.34 2003-01-02 10:55:26 pkot Exp $
+# $Id: Makefile.global.in,v 1.35 2003-02-26 22:32:22 pkot Exp $
 #
 # Global Makefiles configuration for the GNOKII.
 #
@@ -25,6 +25,7 @@ sbindir        = @sbindir@
 xbindir        = @XGNOKIIDIR@/bin/
 libdir         = @libdir@
 xgnokii_libdir = @XGNOKIIDIR@/share/@XPACKAGE@
+includedir     = @includedir@
 man1dir        = @mandir@/man1/
 man8dir        = @mandir@/man8/
 xmandir        = @XGNOKIIDIR@/man/man1/
