@@ -1,6 +1,6 @@
 /*
 
-  $Id: acconfig.h,v 1.5 2002-08-28 15:53:11 pkot Exp $
+  $Id: acconfig.h,v 1.6 2002-09-10 11:04:06 pkot Exp $
 
   G N O K I I
 
@@ -105,6 +105,12 @@
 /* Define if you have XPM components */
 #undef XPM
 
+/* NLS support */
+#undef HAVE_STPCPY
+#undef ENABLE_NLS
+#undef HAVE_CATGETS
+#undef HAVE_GETTEXT
+#undef HAVE_LC_MESSAGES
 
 @BOTTOM@
 
