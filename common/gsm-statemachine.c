@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-statemachine.c,v 1.26 2002-03-28 21:37:44 pkot Exp $
+  $Id: gsm-statemachine.c,v 1.27 2002-04-06 01:55:34 bozo Exp $
 
   G N O K I I
 
@@ -251,6 +251,8 @@ GSM_Error SM_BlockNoRetryTimeout(GSM_Statemachine *state, GSM_Data *data, int wa
 		} while ((timeout > 0) && (s == WaitingForResponse));
 
 		if (s == ResponseReceived) return SM_GetError(state, waitfor);
+
+		SM_Reset(state);
 	}
 
 	return GE_TIMEOUT;

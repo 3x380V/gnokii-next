@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.216 2002-04-05 11:41:13 plail Exp $
+  $Id: gnokii.c,v 1.217 2002-04-06 01:55:34 bozo Exp $
 
   G N O K I I
 
@@ -1324,8 +1324,10 @@ static int dialvoice(char *Number)
 	GSM_DataClear(&data);
 	data.CallInfo = &CallInfo;
 
-	if ((error = SM_Functions(GOP_MakeCall, &data, &State)) != GE_NONE)
+	if ((error = SM_Functions(GOP_MakeCall, &data, &State)) != GE_NONE) {
+		fprintf(stdout, _("Dialing failed: %s\n"), print_error(error));
 	    	return error;
+	}
 
 	fprintf(stdout, _("Dialled call, id: %d\n"), CallInfo.CallID);
 
