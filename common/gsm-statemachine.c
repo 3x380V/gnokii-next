@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-statemachine.c,v 1.52 2003-11-17 23:02:08 bozo Exp $
+  $Id: gsm-statemachine.c,v 1.53 2004-06-09 13:58:14 bozo Exp $
 
   G N O K I I
 
@@ -349,7 +349,7 @@ void sm_message_dump(int messagetype, unsigned char *message, int messagesize)
 		if (isprint(message[i])) buf[i % 16] = message[i];
 	}
 
-	if (i % 16) dump("%*s| %s", 3 * (16 - i % 16), "", buf);
+	if (i != 0) dump("%*s| %s", i % 16 ? 3 * (16 - i % 16) : 0, "", buf);
 	dump("\n");
 }
 

@@ -1,6 +1,6 @@
 /*
 
-  $Id: error.h,v 1.16 2003-03-06 22:32:29 pkot Exp $
+  $Id: error.h,v 1.17 2004-06-09 13:58:32 bozo Exp $
 
   G N O K I I
 
@@ -75,7 +75,9 @@ typedef enum {
 	GN_ERR_UNSOLICITED,		/* Unsolicited message received. */
 
 	/* Other */
-	GN_ERR_NONEWCBRECEIVED		/* Attempt to read CB when no new CB received */
+	GN_ERR_NONEWCBRECEIVED,		/* Attempt to read CB when no new CB received */
+	GN_ERR_SIMPROBLEM,		/* SIM card missing or damaged */
+	GN_ERR_CODEREQUIRED		/* PIN or PUK code required */
 } gn_error;
 
 API char *gn_error_print(gn_error e);

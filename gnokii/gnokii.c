@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.394 2004-06-01 21:45:47 pkot Exp $
+  $Id: gnokii.c,v 1.395 2004-06-09 13:58:25 bozo Exp $
 
   G N O K I I
 
@@ -1601,7 +1601,8 @@ static int getsecuritycodestatus(void)
 			fprintf(stdout, _("Unknown!\n"));
 			break;
 		}
-	}
+	} else
+		fprintf(stderr, _("Error: %s\n"), gn_error_print(err));
 
 	return err;
 }

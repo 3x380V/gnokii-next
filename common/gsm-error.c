@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-error.c,v 1.19 2003-06-12 22:23:12 pkot Exp $
+  $Id: gsm-error.c,v 1.20 2004-06-09 13:58:12 bozo Exp $
 
   G N O K I I
 
@@ -63,6 +63,8 @@ API char *gn_error_print(gn_error e)
 	case GN_ERR_UNHANDLEDFRAME:        return "The current frame isn't handled by the incoming function.";
 	case GN_ERR_UNSOLICITED:           return "Unsolicited message received.";
 	case GN_ERR_NONEWCBRECEIVED:       return "Attempt to read CB when no new CB received.";
+	case GN_ERR_SIMPROBLEM:            return "SIM card missing or damaged.";
+	case GN_ERR_CODEREQUIRED:          return "PIN or PUK code required.";
 	default:                           return "Unknown error.";
 	}
 }
