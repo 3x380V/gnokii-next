@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.87 2003-12-26 21:48:26 pkot Exp $
+  $Id: atgen.c,v 1.88 2003-12-29 22:55:53 uid66843 Exp $
 
   G N O K I I
 
@@ -778,6 +778,7 @@ static gn_error ReplyReadPhonebook(int messagetype, unsigned char *buffer, int l
 			*(data->phonebook_entry->name) = '\0';
 			data->phonebook_entry->caller_group = 0;
 			data->phonebook_entry->subentries_count = 0;
+			data->phonebook_entry->empty = true;
 		}
 		return GN_ERR_NONE;
 	}
