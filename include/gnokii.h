@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.h,v 1.35 2002-12-09 23:41:15 pkot Exp $
+  $Id: gnokii.h,v 1.36 2002-12-12 23:33:31 bozo Exp $
 
   G N O K I I
 
@@ -71,8 +71,7 @@ API gn_error (*gn_gsm_f)(gn_operation op, gn_data *data,
 
 /* Prototype for the functions actually provided by gsm-api.c. */
 API gn_error gn_gsm_initialise(char *model, char *device, char *initlength,
-			       gn_connection_type connection,
-			       void (*rlp_handler)(gn_rlp_f96_frame *frame),
+			       const char *connection,
 			       struct gn_statemachine *sm);
 
 /* Bitmaps */
