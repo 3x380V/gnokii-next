@@ -1,6 +1,6 @@
 /*
 
-  $Id: common.h,v 1.99 2002-03-29 20:51:25 pkot Exp $
+  $Id: common.h,v 1.100 2002-04-02 14:35:05 plail Exp $
 
   G N O K I I
 
@@ -245,12 +245,12 @@ typedef enum {
 
 typedef struct {
 	int Location;			/* The number of the note in the phone memory */
-	GSM_CalendarNoteType Type;	/* The type of the note */
+	GSM_CalendarNoteType Type;		/* The type of the note */
 	GSM_DateTime Time;		/* The time of the note */
 	GSM_DateTime Alarm;		/* The alarm of the note */
 	char Text[20];		/* The text of the note */
 	char Phone[20];		/* For Call only: the phone number */
-	double Recurance;		/* Recurance of the note */
+	int Recurrence;		/* Recurance of the note */
 } GSM_CalendarNote;
 
 /* List of Calendar Notes in phone */
