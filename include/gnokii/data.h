@@ -1,6 +1,6 @@
 /*
 
-  $Id: data.h,v 1.2 2002-01-03 20:09:35 machek Exp $
+  $Id: data.h,v 1.3 2002-01-14 09:32:32 pkot Exp $
 
   G N O K I I
 
@@ -108,6 +108,10 @@ typedef enum {
 	GOP_CallDivert,
 	GOP_OnSMS,
 	GOP_PollSMS,
+	GOP_SetAlarm,
+	GOP_SetDateTime,
+	GOP_GetProfile,
+	GOP_SetProfile,
 	GOP_Max,	/* don't append anything after this entry */
 } GSM_Operation;
 
