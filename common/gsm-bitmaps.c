@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-bitmaps.c,v 1.26 2002-06-02 19:24:09 machek Exp $
+  $Id: gsm-bitmaps.c,v 1.27 2002-06-02 21:51:30 machek Exp $
 
   G N O K I I
 
@@ -284,6 +284,7 @@ int GSM_EncodeSMSBitmap(GSM_Bitmap *bitmap, char *message)
 	}
 
 	memcpy(message + current, bitmap->bitmap, bitmap->size);
+	current += bitmap->size;
 
-	return (current + bitmap->size);
+	return current;
 }
