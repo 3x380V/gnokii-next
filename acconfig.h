@@ -1,6 +1,6 @@
 /*
 
-  $Id: acconfig.h,v 1.7 2002-09-13 22:40:00 pkot Exp $
+  $Id: acconfig.h,v 1.8 2002-12-08 23:32:42 pkot Exp $
 
   G N O K I I
 
@@ -35,11 +35,9 @@
 
 @TOP@
 
-
 #undef VERSION
 #undef XVERSION
 #undef XGNOKIIDIR
-
 
 /***** Features *****/
 
@@ -67,6 +65,9 @@
 
 
 /**** Platform specific *****/
+
+/* Define if you have __ptr_t type defined. It misses eg on FreeBSD. */
+#undef HAVE_PTR_T
 
 /* Define if you have timerisset, timerclear, timercmp, timeradd and timersub */
 #undef HAVE_TIMEOPS
