@@ -1,6 +1,6 @@
 /*
   
-  $Id: tcp.c,v 1.9 2003-02-26 00:15:48 pkot Exp $
+  $Id: tcp.c,v 1.10 2003-03-06 21:58:00 pkot Exp $
 
   G N O K I I
 
@@ -43,7 +43,7 @@
 #include <sys/socket.h>
 #include <netdb.h>
 
-#if unices
+#ifdef HAVE_SYS_FILE_H
 #  include <sys/file.h>
 #endif
 

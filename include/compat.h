@@ -1,6 +1,6 @@
 /*
 
-  $Id: compat.h,v 1.20 2003-03-06 21:02:26 pkot Exp $
+  $Id: compat.h,v 1.21 2003-03-06 21:58:00 pkot Exp $
 
   G N O K I I
 
@@ -176,8 +176,12 @@ int vasprintf(char **ptr, const char *format, va_list ap);
 
 /* Get rid of long defines. Use #if __unices__ */
 #define __unices__ defined(__svr4__) || defined(__FreeBSD__) || defined(__bsdi__) || defined(__MACH__)
-#if __unices__
+
+#ifdef HAVE_STRINGS_H
 #  include <strings.h>
+#endif
+
+#ifdef HAVE_SYS_FILE_H
 #  include <sys/file.h>
 #endif
 

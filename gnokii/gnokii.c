@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.342 2003-03-04 22:35:35 pkot Exp $
+  $Id: gnokii.c,v 1.343 2003-03-06 21:58:00 pkot Exp $
 
   G N O K I I
 
@@ -42,7 +42,7 @@
 #include <stdlib.h>
 #include <signal.h>
 #include <string.h>
-#if __unices__
+#ifdef HAVE_STRINGS_H
 #  include <strings.h>	/* for memset */
 #endif
 #include <time.h>
