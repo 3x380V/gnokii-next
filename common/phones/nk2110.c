@@ -1,6 +1,6 @@
 /* -*- linux-c -*-
 
-  $Id: nk2110.c,v 1.27 2002-01-28 20:33:09 machek Exp $
+  $Id: nk2110.c,v 1.28 2002-03-23 22:14:01 machek Exp $
 
   G N O K I I
 
@@ -36,7 +36,6 @@
 #undef DEBUG
 #include "misc.h"
 #include "gsm-common.h"
-#include "mbus-2110.h"
 #include "device.h"
 #include "gsm-sms.h"
 #include "gsm-statemachine.h"
