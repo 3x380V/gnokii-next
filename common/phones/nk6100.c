@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.54 2002-03-28 21:37:47 pkot Exp $
+  $Id: nk6100.c,v 1.55 2002-04-02 14:19:58 plail Exp $
 
   G N O K I I
 
@@ -246,7 +246,6 @@ static GSM_Error Functions(GSM_Operation op, GSM_Data *data, GSM_Statemachine *s
 	case GOP_SetSpeedDial:
 		return SetSpeedDial(data, state);
 	case GOP_GetImei:
-		return GetIMEI(data, state);
 	case GOP_GetModel:
 	case GOP_GetRevision:
 	case GOP_GetManufacturer:
