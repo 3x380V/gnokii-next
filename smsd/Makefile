@@ -3,7 +3,7 @@
 #
 # Copyright (C) 1999 Hugh Blemings & Pavel Janík ml. & Jan Derfinak
 #               2000 Karel Zak
-# $Id: Makefile,v 1.23 2003-10-05 19:42:41 ja Exp $
+# $Id: Makefile,v 1.24 2003-11-03 21:16:41 bozo Exp $
 #
 
 GLIBCFLAGS = glib-config --cflags
@@ -32,6 +32,10 @@ LDLIBS += -s -rdynamic -L$(TOPDIR)/common -lgnokii -ldl
 
 ifdef XPM_LIBS
 	LDLIBS +=$(XPM_LIBS)
+endif
+
+ifdef ICONV_LIBS
+	LDLIBS += $(ICONV_LIBS)
 endif
 
 OBJS = 	smsd.o \

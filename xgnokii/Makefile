@@ -1,7 +1,7 @@
 
 
 #
-# $Id: Makefile,v 1.51 2003-10-05 22:44:30 bozo Exp $
+# $Id: Makefile,v 1.52 2003-11-03 21:16:42 bozo Exp $
 #
 # Makefile for the xGNOKII tool suite.
 #
@@ -15,6 +15,10 @@ include $(TOPDIR)/Makefile.global
 ifdef XPM_LIBS
 	LDLIBS += $(XPM_LIBS)
 	CFLAGS += $(XPM_CFLAGS)
+endif
+
+ifdef ICONV_LIBS
+	LDLIBS += $(ICONV_LIBS)
 endif
 
 CFLAGS += $(PTHREAD_CFLAGS) \

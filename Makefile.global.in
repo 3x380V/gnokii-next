@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile.global.in,v 1.40 2003-09-14 12:02:18 bozo Exp $
+# $Id: Makefile.global.in,v 1.41 2003-11-03 21:16:39 bozo Exp $
 #
 # Global Makefiles configuration for the GNOKII.
 #
@@ -58,6 +58,7 @@ PTHREAD_CFLAGS = @PTHREAD_CFLAGS@
 PTHREAD_LIBS   = @PTHREAD_LIBS@
 XPM_LIBS       = @XPM_LIBS@
 XPM_CFLAGS     = @XPM_CFLAGS@
+ICONV_LIBS     = @LIBICONV@
 OWN_GETOPT     = @OWN_GETOPT@
 NO_SHARED      = @NO_SHARED@
 

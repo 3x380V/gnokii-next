@@ -1,6 +1,6 @@
 /*
 
-  $Id: readmidi.c,v 1.3 2003-10-04 02:21:28 bozo Exp $
+  $Id: readmidi.c,v 1.4 2003-11-03 21:16:40 bozo Exp $
 
   G N O K I I
 
@@ -197,6 +197,7 @@ void midifile(struct MF *mf);
  */
 
 #include "config.h"
+#include "misc.h"
 #include "gnokii.h"
 #include <stdio.h>
 #include <stdlib.h>
