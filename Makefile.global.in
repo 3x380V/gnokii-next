@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile.global.in,v 1.49 2004-06-27 21:26:29 pkot Exp $
+# $Id: Makefile.global.in,v 1.50 2004-06-30 22:11:54 pkot Exp $
 #
 # Global Makefiles configuration for the GNOKII.
 #
@@ -47,6 +47,7 @@ CC             = @CC@
 CFLAGS         = @CFLAGS@
 CPPFLAGS       = @CPPFLAGS@
 LIBS           = @LIBS@
+LDFLAGS        = @LDFLAGS@
 LEX            = @LEX@
 AR             = @AR@
 RANLIB         = @RANLIB@
@@ -59,8 +60,8 @@ PTHREAD_LIBS   = @PTHREAD_LIBS@
 XPM_LIBS       = @XPM_LIBS@
 XPM_CFLAGS     = @XPM_CFLAGS@
 OWN_GETOPT     = @OWN_GETOPT@
-INTL_LIBS      = @LTLIBINTL@
-ICONV_LIBS     = @LTLIBICONV@
+INTL_LIBS      = @INTLLIBS@
+ICONV_LIBS     = @LIBICONV@
 NEED_LCHARSET  = @NEED_LOCALE_CHARSET@
 
 HAVE_XGNOKII   = @HAVE_XGNOKII@
