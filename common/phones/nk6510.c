@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.c,v 1.87 2002-12-12 22:39:08 pkot Exp $
+  $Id: nk6510.c,v 1.88 2002-12-13 02:01:29 bozo Exp $
 
   G N O K I I
 
@@ -196,7 +196,7 @@ static gn_incoming_function_type nk6510_incoming_functions[] = {
 	{ 0, NULL }
 };
 
-gn_driver phone_nokia_6510 = {
+gn_driver driver_nokia_6510 = {
 	nk6510_incoming_functions,
 	pgen_incoming_default,
 	/* Mobile phone information */
@@ -366,7 +366,7 @@ static gn_error NK6510_Initialise(struct gn_statemachine *state)
 	int try = 0;
 
 	/* Copy in the phone info */
-	memcpy(&(state->driver), &phone_nokia_6510, sizeof(gn_driver));
+	memcpy(&(state->driver), &driver_nokia_6510, sizeof(gn_driver));
 
 	dprintf("Connecting\n");
 	while (!connected) {

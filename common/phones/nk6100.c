@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.119 2002-12-12 23:41:29 bozo Exp $
+  $Id: nk6100.c,v 1.120 2002-12-13 02:01:29 bozo Exp $
 
   G N O K I I
 
@@ -178,7 +178,7 @@ static gn_incoming_function_type nk6100_incoming_functions[] = {
 	{ 0, NULL}
 };
 
-gn_driver phone_nokia_6100 = {
+gn_driver driver_nokia_6100 = {
 	nk6100_incoming_functions,
 	pgen_incoming_default,
 	/* Mobile phone information */
@@ -494,7 +494,7 @@ static gn_error Initialise(struct gn_statemachine *state)
 	int i;
 
 	/* Copy in the phone info */
-	memcpy(&(state->driver), &phone_nokia_6100, sizeof(gn_driver));
+	memcpy(&(state->driver), &driver_nokia_6100, sizeof(gn_driver));
 
 	if (!(DRVINSTANCE(state) = calloc(1, sizeof(nk6100_driver_instance))))
 		return GN_ERR_MEMORYFULL;
@@ -3528,7 +3528,7 @@ static gn_error NBSUpload(gn_data *data, struct gn_statemachine *state, gn_sms_d
 
 	memset(&rawsms, 0, sizeof(rawsms));
 
-	if ((err = gn_sms_prepare(&sms, &rawsms)) != GN_ERR_NONE) return err;
+	if ((err = sms_prepare(&sms, &rawsms)) != GN_ERR_NONE) return err;
 
 	n = 2 + rawsms.user_data_length;
 	if (n > sizeof(req)) return GN_ERR_INTERNALERROR;
