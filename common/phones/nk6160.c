@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6160.c,v 1.17 2003-02-27 21:15:04 bozo Exp $
+  $Id: nk6160.c,v 1.18 2003-03-04 23:37:52 pkot Exp $
 
   G N O K I I
 
@@ -42,6 +42,8 @@
 #include "phones/generic.h"
 #include "phones/nokia.h"
 #include "links/m2bus.h"
+#include "links/fbus.h"
+#include "links/fbus-phonet.h"
 
 #include "gnokii-internal.h"
 #include "gnokii.h"
