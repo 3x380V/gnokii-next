@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-ringtones.c,v 1.19 2003-03-06 21:23:58 pkot Exp $
+  $Id: gsm-ringtones.c,v 1.20 2003-04-08 09:06:53 bozo Exp $
 
   G N O K I I
 
@@ -251,7 +251,7 @@ int GSM_GetScale(int number)
    Function returns number of packed notes and changes maxlength to
    number of used chars in "package" */
 
-API u8 gn_ringtone_pack(gn_ringtone *ringtone, unsigned char *package, int *maxlength)
+API unsigned char gn_ringtone_pack(gn_ringtone *ringtone, unsigned char *package, int *maxlength)
 {
 	int StartBit=0;
 	int i;
