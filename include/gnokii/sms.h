@@ -1,6 +1,6 @@
 /*
 
-  $Id: sms.h,v 1.44 2002-06-29 17:14:39 pkot Exp $
+  $Id: sms.h,v 1.45 2002-07-07 22:52:30 pkot Exp $
 
   G N O K I I
 
@@ -454,7 +454,7 @@ typedef struct {
 	unsigned char UserData[GSM_MAX_LONG_LENGTH];   /* User Data (9.2.3.24), Command Data (9.2.3.21), extened to Nokia Multipart Messages from Smart Messaging Specification 3.0.0 */
 	int UserDataLength;                            /* Length of just previous field */
 
-	bool ValidityIndicator;
+	SMS_ValidityPeriodFormat ValidityIndicator;
 	unsigned char Validity[MAX_VALIDITY_LENGTH];   /* Validity Period Format & Validity Period (9.2.3.3 & 9.2.3.12) - `Message validity' in the phone */
 
 

@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-sms.c,v 1.100 2002-07-07 20:49:58 pkot Exp $
+  $Id: gsm-sms.c,v 1.101 2002-07-07 22:52:30 pkot Exp $
 
   G N O K I I
 
@@ -1225,7 +1225,7 @@ GSM_Error PrepareSMS(GSM_API_SMS *sms, GSM_SMSMessage *rawsms)
 	/* Encoding the header */
 	rawsms->Report = sms->DeliveryReport;
 	rawsms->RemoteNumber[0] = SemiOctetPack(sms->Remote.Number, rawsms->RemoteNumber + 1, sms->Remote.Type);
-	rawsms->ValidityIndicator = true;
+	rawsms->ValidityIndicator = SMS_RelativeFormat;
 	rawsms->Validity[0] = 0xa9;
 
 	EncodeData(sms, rawsms);
