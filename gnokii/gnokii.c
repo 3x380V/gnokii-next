@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.172 2002-01-16 12:51:49 pkot Exp $
+  $Id: gnokii.c,v 1.173 2002-01-16 17:13:42 pkot Exp $
   
   G N O K I I
 
@@ -452,6 +452,11 @@ static int sendsms(int argc, char *argv[])
 
 	/*  Null terminate. */
 	message_buffer[chars_read] = 0x00;
+	if (chars_read > 0 && message_buffer[chars_read - 1] == '\n') message_buffer[--chars_read] = 0x00;
+	if (chars_read < 1) {
+		fprintf(stderr, _("Empty message. Quitting"));
+		return -1;
+	}
 	SMS.UserData[0].Type = SMS_PlainText;
 	strncpy(SMS.UserData[0].u.Text, message_buffer, chars_read);
 	data.SMSMessage = &SMS;
