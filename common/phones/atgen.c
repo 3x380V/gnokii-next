@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.28 2002-04-04 22:35:37 pkot Exp $
+  $Id: atgen.c,v 1.29 2002-04-22 16:22:46 machek Exp $
 
   G N O K I I
 
@@ -608,7 +608,7 @@ static GSM_Error AT_SaveSMS(GSM_Data *data, GSM_Statemachine *state)
 
 static GSM_Error AT_WriteSMS(GSM_Data *data, GSM_Statemachine *state, char* cmd)
 {
-	unsigned char req[256];
+	unsigned char req[10240];
 	GSM_Error error;
 	int length, i;
 
@@ -937,7 +937,8 @@ static GSM_Error ReplySendSMS(int messagetype, unsigned char *buffer, int length
 		data->SMSMessage->Number = atoi(buf.line2 + 6);
 	else
 		data->SMSMessage->Number = -1;
-	return GE_SMSSENDOK;
+	dprintf("Message sent okay\n");
+	return GE_NONE;
 }
 
 static GSM_Error ReplyGetSMS(int messagetype, unsigned char *buffer, int length, GSM_Data *data)
