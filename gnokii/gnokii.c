@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.324 2003-01-03 22:34:27 pkot Exp $
+  $Id: gnokii.c,v 1.325 2003-01-07 00:21:02 bozo Exp $
 
   G N O K I I
 
@@ -4267,12 +4267,12 @@ static int getnetworkinfo(void)
 	lac = (networkinfo.LAC[0] << 8) + networkinfo.LAC[1];
 	memcpy(country, networkinfo.network_code, 3);
 
-	fprintf(stdout, _("Network      : %s %s\n"),
+	fprintf(stdout, _("Network      : %s (%s)\n"),
 			gn_network_name_get((char *)networkinfo.network_code),
 			gn_country_name_get((char *)country));
 	fprintf(stdout, _("Network code : %s\n"), networkinfo.network_code);
-	fprintf(stdout, _("LAC          : %d\n"), lac);
-	fprintf(stdout, _("Cell id      : %d\n"), cid);
+	fprintf(stdout, _("LAC          : %04x\n"), lac);
+	fprintf(stdout, _("Cell id      : %04x\n"), cid);
 
 	return 0;
 }
