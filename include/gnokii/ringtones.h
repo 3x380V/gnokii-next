@@ -1,6 +1,6 @@
 /*
 
-  $Id: ringtones.h,v 1.10 2002-12-09 00:31:50 pkot Exp $
+  $Id: ringtones.h,v 1.11 2003-02-26 08:57:51 ladis Exp $
 
   G N O K I I
 
@@ -36,8 +36,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
-#include "misc.h"
-#include "gsm-error.h"
+#include <gnokii/error.h>
 
 /* NoteValue is encoded as octave(scale)*14 + note */
 /* where for note: c=0, d=2, e=4 .... */
