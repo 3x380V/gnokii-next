@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.362 2003-10-04 02:21:40 bozo Exp $
+  $Id: gnokii.c,v 1.363 2003-10-17 00:41:27 bozo Exp $
 
   G N O K I I
 
@@ -3192,7 +3192,7 @@ static int decodephonebook(gn_phonebook_entry *entry, char *oline)
 		return 0;
 	}
 
-	for (; ; entry->subentries_count++) {
+	for (entry->subentries_count = 0; ; entry->subentries_count++) {
 		ptr = strsep(&line, ";");
 
 		if (ptr && *ptr != 0)
@@ -3366,7 +3366,7 @@ static int writephonebook(int argc, char *args[])
 			error = gn_sm_functions(GN_OP_ReadPhonebook, &data, &state);
 
 			if (error == GN_ERR_NONE || error == GN_ERR_EMPTYLOCATION) {
-				if (!aux.empty) {
+				if (!aux.empty && error != GN_ERR_EMPTYLOCATION) {
 					char ans[8];
 
 					fprintf(stdout, _("Location busy. "));
