@@ -4,7 +4,7 @@ dnl
 dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janík ml.
 dnl                2000 Karel Zak, Pawe³ Kot
 dnl
-dnl  $Id: configure.in,v 1.49 2001-06-27 09:32:57 machek Exp $
+dnl  $Id: configure.in,v 1.50 2001-06-28 00:49:47 pkot Exp $
 dnl
 
 AC_INIT(gnokii/gnokii.c)
@@ -509,7 +509,7 @@ echo "
     Win32:              $win32 
     Prefix:             $prefix
 
-  Type '${MAKE}' for compilation. Before doing '${MAKE} install', add gnokii
-  group typing 'groupadd gnokii' as root.
- 
+  Type '${MAKE}' for compilation and then '${MAKE} install',
+  '${MAKE} install-suid', '${MAKE} install-strip' or '${MAKE} install-ss' to
+  install gnokii.
 "
