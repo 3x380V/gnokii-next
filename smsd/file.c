@@ -1,6 +1,6 @@
 /*
 
-  $Id: file.c,v 1.2 2002-08-18 18:03:11 pkot Exp $
+  $Id: file.c,v 1.3 2002-09-05 08:46:08 ja Exp $
 
   S M S D
 
@@ -207,8 +207,9 @@ void DB_Look (void)
     sms.UserData[0].Length = strlen (sms.UserData[0].u.Text);
     sms.UserData[0].Type = SMS_PlainText;
     sms.UserData[1].Type = SMS_NoData;
-    if (!IsDefaultAlphabetString(sms.UserData[0].u.Text))
+    if (!gn_char_def_alphabet (sms.UserData[0].u.Text))
        sms.DCS.u.General.Alphabet = SMS_UCS2;
+
 
 #ifdef XDEBUG
     g_print ("Sending SMS: %s, %s\n", sms.Remote.Number, sms.UserData[0].u.Text);

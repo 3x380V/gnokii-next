@@ -1,6 +1,6 @@
 /*
 
-  $Id: pq.c,v 1.14 2002-08-27 23:23:01 pkot Exp $
+  $Id: pq.c,v 1.15 2002-09-05 08:46:08 ja Exp $
 
   S M S D
 
@@ -173,7 +173,7 @@ void DB_Look (void)
     sms.UserData[0].Length = strlen (sms.UserData[0].u.Text);
     sms.UserData[0].Type = SMS_PlainText;
     sms.UserData[1].Type = SMS_NoData;
-    if (!gn_char_def_alphabet(sms.UserData[0].u.Text))
+    if (!gn_char_def_alphabet (sms.UserData[0].u.Text))
        sms.DCS.u.General.Alphabet = SMS_UCS2;
 
 #ifdef XDEBUG
