@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-encoding.c,v 1.17 2002-04-04 22:35:36 pkot Exp $
+  $Id: gsm-encoding.c,v 1.18 2002-04-14 16:22:37 pkot Exp $
 
   G N O K I I
 
@@ -379,7 +379,7 @@ char *GetBCDNumber(u8 *Number)
 		break;
 	case SMS_International:
 		sprintf(Buffer, "+");
-		length--;
+		if (length == MAX_BCD_STRING_LENGTH) length--; /* avoid overflow */
 	case SMS_Unknown:
 	case SMS_National:
 	case SMS_Network:
