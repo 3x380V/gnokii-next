@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.h,v 1.17 2004-06-09 13:58:32 bozo Exp $
+  $Id: atgen.h,v 1.18 2004-07-01 22:17:03 pkot Exp $
 
   G N O K I I
 
@@ -88,9 +88,15 @@ typedef struct {
 gn_error at_memory_type_set(gn_memory_type mt, struct gn_statemachine *state);
 gn_error at_error_get(unsigned char *buffer, struct gn_statemachine *state);
 
+/* There are shared between various AT drivers */
 void splitlines(at_line_buffer *buf);
-
 char *skipcrlf(unsigned char *str);
 char *findcrlf(unsigned char *str, int test, int maxlength);
+char *strip_quotes(char *s);
+
+void at_decode(int charset, char *dst, char *src, int len);
+int at_encode(int charset, char *dst, char *src, int len);
+
+extern char *memorynames[];
 
 #endif
