@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.328 2003-01-15 23:52:16 pkot Exp $
+  $Id: gnokii.c,v 1.329 2003-01-18 22:07:40 pkot Exp $
 
   G N O K I I
 
@@ -2289,12 +2289,15 @@ static int writecalendarnote(char *argv[])
 static int deletecalendarnote(int argc, char *argv[])
 {
 	gn_calnote calnote;
+	gn_calnote_list clist;
 	int i, first_location, last_location;
 	gn_data data;
 	gn_error error = GN_ERR_NONE;
 
 	gn_data_clear(&data);
+	memset(&calnote, 0, sizeof(gn_calnote));
 	data.calnote = &calnote;
+	data.calnote_list = &clist;
 
 	first_location = last_location = atoi(argv[0]);
 	if (argc > 1) last_location = atoi(argv[1]);
