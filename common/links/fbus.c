@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus.c,v 1.16 2002-01-10 10:53:15 pkot Exp $
+  $Id: fbus.c,v 1.17 2002-01-10 11:15:36 pkot Exp $
 
   G N O K I I
 
@@ -306,9 +306,9 @@ void FBUS_RX_StateMachine(unsigned char rx_byte)
 					}
 
 					memcpy(m->MessageBuffer + m->MessageLength, i->MessageBuffer,
-					       i->FrameLength - 2);/* - (i->FrameLength % 2)); */
+					       i->FrameLength - 2);
 
-					m->MessageLength += i->FrameLength - 2;/* - (i->FrameLength % 2); */
+					m->MessageLength += i->FrameLength - 2;
 
 					m->FramesToGo--;
 
