@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-networks.c,v 1.26 2003-02-06 12:20:50 ladis Exp $
+  $Id: gsm-networks.c,v 1.27 2003-02-06 20:50:50 pkot Exp $
 
   G N O K I I
 
@@ -191,7 +191,7 @@ gn_network networks[] = {
 	{ "230 01", "T-Mobile CZ" },
 	{ "230 02", "EuroTel" },
 	{ "230 03", "Oskar" },
-	{ "231 01", "Globtel" },
+	{ "231 01", "Orange SK" },
 	{ "231 02", "EuroTel GSM" },
 	{ "232 01", "A1" },
 	{ "232 03", "max.mobil." },
