@@ -1,6 +1,6 @@
 /*
 
-  $Id: compat.h,v 1.23 2003-04-10 21:23:59 pkot Exp $
+  $Id: compat.h,v 1.24 2003-04-21 16:17:42 bozo Exp $
 
   G N O K I I
 
@@ -57,6 +57,10 @@
 
 #ifdef HAVE_SYS_TYPES_H
 #  include <sys/types.h>
+#endif
+
+#ifndef HAVE_INTTYPES_H
+#  include <inttypes.h>
 #endif
 
 /*
@@ -214,7 +218,7 @@ int vasprintf(char **ptr, const char *format, va_list ap);
 #endif
 
 /* for Linux Bluetooth compability */
-#ifndef HAVE_STDINT_H
+#if !defined(HAVE_STDINT_H) && !defined(HAVE_INTTYPES_H)
 	typedef unsigned char uint8_t;
 #endif
 
