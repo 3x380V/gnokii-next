@@ -1,6 +1,6 @@
 /*
  *
- * $Id: unixirda.c,v 1.13 2002-04-23 16:27:56 pkot Exp $
+ * $Id: unixirda.c,v 1.14 2002-07-21 16:19:51 pkot Exp $
  *
  * G N O K I I
  *
@@ -41,6 +41,7 @@ static char *phone[] = {
 	"Nokia 6310",
 	"Nokia 6510",
 	"Nokia 7110",
+	"Nokia 7190",
 	"Nokia 8210",
 	"Nokia 8310"
 };
