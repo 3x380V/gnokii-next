@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk3110.c,v 1.11 2002-01-14 09:34:59 pkot Exp $
+  $Id: nk3110.c,v 1.12 2002-01-22 16:03:45 pkot Exp $
 
   G N O K I I
 
@@ -40,7 +40,8 @@
 static SMSMessage_Layout nk3110_deliver = {
 	true, /* IsSupported */
 	16, false, false, /* MessageCenter */
-	-1, -1, -1, -1,  3, -1, -1, -1, 15,  7, -1,  5,
+	-1, -1, -1, -1,  3, -1, -1, -1, 15,  7,  5,
+	-1, -1, -1, /* Validity */
 	17, false, false, /* RemoteNumber */
 	 8, /* SMSC Time */
 	-1, /* Time */

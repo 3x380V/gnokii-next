@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-sms.c,v 1.26 2002-01-21 12:31:21 machek Exp $
+  $Id: gsm-sms.c,v 1.27 2002-01-22 16:03:43 pkot Exp $
 
   G N O K I I
 
@@ -993,12 +993,6 @@ static GSM_Error DecodeSMSHeader(unsigned char *message, GSM_SMSMessage *SMS)
 	if (llayout.Time > -1) {
 		UnpackDateTime(message + llayout.Time, &(SMS->SMSCTime));
 		dprintf("\tDelivery date: %s\n", PrintDateTime(message + llayout.Time));
-	}
-
-	/* Short Message location in memory */
-	if (llayout.Number > -1) {
-		SMS->Number = message[llayout.Number];
-		dprintf("\tLocation: %d\n", SMS->Number);
 	}
 
 	/* Short Message Center */
