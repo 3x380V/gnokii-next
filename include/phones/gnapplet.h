@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnapplet.h,v 1.10 2004-05-08 20:52:41 bozo Exp $
+  $Id: gnapplet.h,v 1.11 2004-05-25 00:04:58 bozo Exp $
 
   G N O K I I
 
@@ -36,7 +36,7 @@
 
 
 #define	GNAPPLET_MAJOR_VERSION	0
-#define	GNAPPLET_MINOR_VERSION	8
+#define	GNAPPLET_MINOR_VERSION	9
 
 #define	GNAPPLET_MSG_INFO	1
 #define	GNAPPLET_MSG_PHONEBOOK	2
@@ -77,6 +77,8 @@
 #define	GNAPPLET_MSG_SMS_FOLDER_DELETE_RESP	8
 #define	GNAPPLET_MSG_SMS_MESSAGE_READ_REQ	9
 #define	GNAPPLET_MSG_SMS_MESSAGE_READ_RESP	10
+#define	GNAPPLET_MSG_SMS_STATUS_REQ		11
+#define	GNAPPLET_MSG_SMS_STATUS_RESP		12
 
 
 typedef struct {
