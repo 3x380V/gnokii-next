@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.5 2001-07-27 00:02:21 pkot Exp $
+# $Id: Makefile,v 1.6 2001-11-08 16:45:58 pkot Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -16,8 +16,6 @@
 
 TOPDIR=../..
 include $(TOPDIR)/Makefile.global
-
-CFLAGS += $(PTHREAD_CFLAGS)
 
 OBJS =	fbus.o \
 	fbus-phonet.o \

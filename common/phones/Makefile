@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.7 2001-08-09 11:51:39 pkot Exp $
+# $Id: Makefile,v 1.8 2001-11-08 16:45:58 pkot Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -17,11 +17,11 @@
 TOPDIR=../..
 include $(TOPDIR)/Makefile.global
 
-CFLAGS += $(PTHREAD_CFLAGS)
-
 OBJS =	generic.o \
 	nokia.o \
 	nk7110.o \
+	nk6100.o \
+	nk3110.o \
 	nk2110.o \
 	atgen.o
 #	dc2711.o
