@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-networks.c,v 1.32 2003-03-06 21:23:58 pkot Exp $
+  $Id: gsm-networks.c,v 1.33 2003-11-03 21:36:46 bozo Exp $
 
   G N O K I I
 
@@ -311,6 +311,7 @@ static gn_network networks[] = {
 	{ "422 02", "GTO" },
 	{ "424 02", "UAE-ETISALAT" },
 	{ "425 01", "Partner Communications Company Ltd" },
+	{ "425 02", "Cellcom Israel Ltd" },
 	{ "426 01", "BHR MOBILE PLUS" },
 	{ "427 01", "QATARNET" },
 	{ "432 11", "TCI" },
