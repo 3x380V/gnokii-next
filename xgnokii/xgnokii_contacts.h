@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_contacts.h,v 1.20 2003-02-26 00:15:53 pkot Exp $
+  $Id: xgnokii_contacts.h,v 1.21 2004-04-25 16:03:40 pkot Exp $
   
   X G N O K I I
 
@@ -34,7 +34,7 @@
 #include "misc.h"
 #include "gnokii.h"
 
-#define IO_BUF_LEN	160
+#define IO_BUF_LEN	1024
 
 /* Structure to keep memory status information */
 typedef struct {
