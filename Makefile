@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.105 2001-08-09 12:02:04 pkot Exp $
+# $Id: Makefile,v 1.106 2001-09-14 11:52:55 pkot Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -37,8 +37,7 @@ ifndef WIN32
 DIRS +=	utils
 endif
 
-GTK_DIRS =  xgnokii \
-            xlogos
+GTK_DIRS =  xgnokii
 
 PO_DIR   = 	po
 DOCS_DIR = 	Docs
