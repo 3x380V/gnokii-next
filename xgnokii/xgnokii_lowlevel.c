@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_lowlevel.c,v 1.85 2004-02-20 11:02:26 uid66849 Exp $
+  $Id: xgnokii_lowlevel.c,v 1.86 2004-07-21 00:13:25 bozo Exp $
   
   X G N O K I I
 
@@ -35,6 +35,7 @@
 #include "gnokii.h"
 #include "xgnokii_lowlevel.h"
 #include "xgnokii.h"
+#include "xgnokii_common.h"
 
 pthread_t monitor_th;
 PhoneMonitor phoneMonitor;
@@ -1373,6 +1374,7 @@ void *GUI_Connect(void *a)
 				phoneMonitor.working = _("Refreshing SMSes...");
 				RefreshSMS(gdat.sms_status->number);
 				phoneMonitor.working = NULL;
+				GUIEventSend(GUI_EVENT_SMS_NUMBER_CHANGED);
 			}
 			phoneMonitor.sms.unRead = gdat.sms_status->unread;
 		}
