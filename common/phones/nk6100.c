@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.50 2002-03-25 01:44:50 pkot Exp $
+  $Id: nk6100.c,v 1.51 2002-03-25 01:50:08 pkot Exp $
 
   G N O K I I
 
@@ -209,7 +209,7 @@ GSM_Phone phone_nokia_6100 = {
 	PGEN_IncomingDefault,
 	/* Mobile phone information */
 	{
-		"6110|6130|6150|6190|5110|5130|5190|3210|3310|3330|8210", /* Supported models */
+		"6110|6130|6150|6190|5110|5130|5190|3210|3310|3330|3360|8210", /* Supported models */
 		4,                     /* Max RF Level */
 		0,                     /* Min RF Level */
 		GRF_Arbitrary,         /* RF level units */
@@ -379,6 +379,9 @@ static GSM_Error Initialise(GSM_Statemachine *state)
 	case GCT_Serial:
 	case GCT_Infrared:
 		err = FBUS_Initialise(&(state->Link), state, 0);
+		break;
+	case GCT_Irda:
+		err = PHONET_Initialise(&(state->Link), state);
 		break;
 	default:
 		return GE_NOTSUPPORTED;
