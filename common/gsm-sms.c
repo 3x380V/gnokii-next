@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-sms.c,v 1.88 2002-06-03 21:21:55 machek Exp $
+  $Id: gsm-sms.c,v 1.89 2002-06-03 22:59:48 machek Exp $
 
   G N O K I I
 
@@ -1108,16 +1108,19 @@ GSM_Error EncodeData(GSM_API_SMS *sms, GSM_SMSMessage *rawsms)
 			rawsms->UDHIndicator = 1;
 			break;
 
-		case SMS_AnimationData:
+		case SMS_AnimationData: {
+			int j;
 			error = GE_NONE;
-			for (i=0; i<4; i++) {
-				size = GSM_EncodeSMSBitmap(&(sms->UserData[i].u.Animation[i]), rawsms->UserData + rawsms->UserDataLength);
+			for (j=0; j<4; j++) {
+				printf("UserdataLength = %d\n", rawsms->UserDataLength);
+				size = GSM_EncodeSMSBitmap(&(sms->UserData[i].u.Animation[j]), rawsms->UserData + rawsms->UserDataLength);
 				rawsms->Length += size;
 				rawsms->UserDataLength += size;
 			}
 			rawsms->DCS = 0xf5;
 			rawsms->UDHIndicator = 1;
 			break;
+		}
 
 		case SMS_PlainText: {
 			unsigned int length, offset = rawsms->UserDataLength;
