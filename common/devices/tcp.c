@@ -1,6 +1,6 @@
 /*
   
-  $Id: tcp.c,v 1.3 2002-05-15 22:45:43 manfred Exp $
+  $Id: tcp.c,v 1.4 2002-06-10 21:16:36 pkot Exp $
 
   G N O K I I
 
@@ -49,6 +49,7 @@
 
 #include <termios.h>
 #include "devices/tcp.h"
+#include "devices/unixserial.h"
 
 #ifdef HAVE_SYS_IOCTL_COMPAT_H
 #  include <sys/ioctl_compat.h>
@@ -120,7 +121,7 @@ int tcp_close(int fd)
 {
 	/* handle config file disconnect_script:
 	 */
-	if (device_script(fd,"disconnect_script") == -1)
+	if (device_script(fd, "disconnect_script") == -1)
 		fprintf(stderr, "Gnokii tcp_close: disconnect_script\n");
 
 	return (close(fd));

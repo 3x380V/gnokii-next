@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-filetypes.c,v 1.31 2002-06-02 22:16:38 machek Exp $
+  $Id: gsm-filetypes.c,v 1.32 2002-06-10 21:16:36 pkot Exp $
 
   G N O K I I
 
@@ -969,10 +969,9 @@ GSM_Error GSM_SaveBitmapFile(char *FileName, GSM_Bitmap *bitmap, GSM_Information
 				savenlm(file, bitmap);
 				break;
 			case GSM_WelcomeNoteText:
-				break;
 			case GSM_DealerNoteText:
-				break;
 			case GSM_None:
+			default:
 				break;
 			}
 		}
@@ -1272,10 +1271,9 @@ void savenlm(FILE *file, GSM_Bitmap *bitmap)
 		header[5] = 0x03;
 		break;
 	case GSM_WelcomeNoteText:
-		break;
 	case GSM_DealerNoteText:
-		break;
 	case GSM_None:
+	default:
 		break;
 	}
 

@@ -1,6 +1,6 @@
 /*
 
-  $Id: bitmaps.h,v 1.16 2002-06-03 20:30:43 machek Exp $
+  $Id: bitmaps.h,v 1.17 2002-06-10 21:16:36 pkot Exp $
 
   G N O K I I
 
@@ -76,7 +76,7 @@ API void GSM_ResizeBitmap(GSM_Bitmap *bitmap, GSM_Bitmap_Types target, GSM_Infor
 API void GSM_PrintBitmap(GSM_Bitmap *bitmap);
 
 /* SMS bitmap functions */
-int GSM_EncodeSMSBitmap(GSM_Bitmap *bitmap, char *message);
-API GSM_Error GSM_ReadSMSBitmap(int type, char *message, char *code, GSM_Bitmap *bitmap);
+int GSM_EncodeSMSBitmap(GSM_Bitmap *bitmap, unsigned char *message);
+API GSM_Error GSM_ReadSMSBitmap(int type, unsigned char *message, unsigned char *code, GSM_Bitmap *bitmap);
 
 #endif
