@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.233 2002-04-26 17:32:18 machek Exp $
+  $Id: gnokii.c,v 1.234 2002-05-04 12:11:18 plail Exp $
 
   G N O K I I
 
@@ -889,9 +889,7 @@ static int getsms(int argc, char *argv[])
 			}
 		}
 	}
-	data.SMSFolderList = &folderlist;
 	folder.FolderID = 0;
-	data.SMSFolder = &folder;
 	/* Now retrieve the requested entries. */
 	for (count = start_message; count <= end_message; count ++) {
 		int offset = 0;
@@ -899,6 +897,8 @@ static int getsms(int argc, char *argv[])
 		message.MemoryType = StrToMemoryType(memory_type_string);
 		message.Number = count;
 		data.SMSMessage = &message;
+		data.SMSFolder = &folder;
+		data.SMSFolderList = &folderlist;
 		dprintf("MemoryType (gnokii.c) : %i\n", message.MemoryType);
 		error = GetSMS(&data, &State);
 
