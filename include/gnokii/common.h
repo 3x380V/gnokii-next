@@ -1,6 +1,6 @@
 /*
 
-  $Id: common.h,v 1.91 2002-02-01 23:09:36 pkot Exp $
+  $Id: common.h,v 1.92 2002-02-07 22:53:53 pkot Exp $
 
   G N O K I I
 
@@ -345,8 +345,8 @@ typedef struct {
 
 /* Limits for IMEI, Revision and Model string storage. */
 #define GSM_MAX_IMEI_LENGTH     (20)
-#define GSM_MAX_REVISION_LENGTH (6)
-#define GSM_MAX_MODEL_LENGTH    (6)
+#define GSM_MAX_REVISION_LENGTH (20)
+#define GSM_MAX_MODEL_LENGTH    (20)
 
 /* Data structures for the call divert */
 typedef enum {
