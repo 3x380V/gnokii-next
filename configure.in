@@ -5,7 +5,7 @@ dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janík ml.
 dnl                2000 Karel Zak, Pawe³ Kot
 dnl                2002 BORBELY Zoltan
 dnl
-dnl  $Id: configure.in,v 1.101 2003-02-16 23:40:27 pkot Exp $
+dnl  $Id: configure.in,v 1.102 2003-02-18 23:21:44 pkot Exp $
 dnl
 
 AC_INIT(gnokii/gnokii.c)
@@ -175,7 +175,7 @@ AC_CHECK_HEADER(getopt.h, ,
       [CFLAGS="$CFLAGS -I../getopt"])
 
 AC_ARG_WITH(gnugetopt,
-   [  --with-gnugetopt=DIR       specifies the getopt library location directory],
+   [  --with-gnugetopt=DIR    specifies the getopt library location directory],
    [ if test x$withval=yes; then
         AC_MSG_WARN(Usage is: --with-gnugetopt=DIR) 
      else
@@ -199,7 +199,7 @@ AC_CHECK_HEADER(linux/irda.h,
 dnl ======================== Checks for Linux Bluetooth support
 bluetooth="no"
 AC_ARG_WITH(bluetooth,
-	[  --with-bluetooth=DIR   specifies the base libbluetooth],
+	[  --with-bluetooth=DIR    specifies the base libbluetooth],
 	[ if test x$withval = xyes; then
 		AC_MSG_WARN(Usage is: --with-bluetooth=DIR)
 	  else
