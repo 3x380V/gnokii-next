@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.338 2003-02-17 00:05:37 pkot Exp $
+  $Id: gnokii.c,v 1.339 2003-02-17 23:13:12 pkot Exp $
 
   G N O K I I
 
@@ -3791,6 +3791,10 @@ static int sendringtone(int argc, char *argv[])
 	/* The second argument is the destination, ie the phone number of recipient. */
 	memset(&sms.remote.number, 0, sizeof(sms.remote.number));
 	strncpy(sms.remote.number, argv[1], sizeof(sms.remote.number) - 1);
+	if (sms.remote.number[0] == '+')
+		sms.remote.type = GN_GSM_NUMBER_International;
+	else
+		sms.remote.type = GN_GSM_NUMBER_Unknown;
 
 	/* Send the message. */
 	data.sms = &sms;
