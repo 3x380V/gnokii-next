@@ -1,5 +1,7 @@
 /*
 
+  $Id: xgnokii_contacts.h,v 1.13 2001-12-03 16:44:44 pkot Exp $
+  
   X G N O K I I
 
   A Linux/Unix GUI for Nokia mobile phones.
@@ -8,13 +10,6 @@
 
   Released under the terms of the GNU GPL, see file COPYING for more details.
 
-  $Id: xgnokii_contacts.h,v 1.12 2001-02-02 08:09:57 ja Exp $
-  
-  $Log: xgnokii_contacts.h,v $
-  Revision 1.12  2001-02-02 08:09:57  ja
-  New dialogs for 6210/7110 in xgnokii. Fixed the smsd for new capabilty code.
-
-  
 */
 
 #ifndef XGNOKII_CONTACTS_H

@@ -1,6 +1,6 @@
 /*
 
-   $Id: xgnokii_logos.c,v 1.9 2001-09-14 12:53:00 pkot Exp $
+  $Id: xgnokii_logos.c,v 1.10 2001-12-03 16:44:44 pkot Exp $
    
   X G N O K I I
 
@@ -10,19 +10,6 @@
 
   Released under the terms of the GNU GPL, see file COPYING for more details.
 
-   $Log: xgnokii_logos.c,v $
-   Revision 1.9  2001-09-14 12:53:00  pkot
-   New preview logos.
-   Localization fixes.
-   Set valid operator on logos xgnokii screen.
-
-   Revision 1.8  2001/05/24 20:47:31  chris
-   More updating of 7110 code and some of xgnokii_lowlevel changed over.
-
-   Revision 1.7  2001/03/23 08:24:56  ja
-   New preview for 6210 in xgnokii's logos module.
-
-         
 */
           
 #include <stdio.h>
