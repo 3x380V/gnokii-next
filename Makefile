@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.97 2000-12-19 16:27:16 pkot Exp $
+# $Id: Makefile,v 1.98 2000-12-20 09:11:19 pkot Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -52,7 +52,7 @@ all: $(DIRS)
 dummy:
 
 $(DIRS): dummy
-       $(MAKE) -C $@
+	$(MAKE) -C $@
 
 clean:
 	$(RM) *~
