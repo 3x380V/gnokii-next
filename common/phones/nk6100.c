@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.68 2002-04-23 00:40:29 bozo Exp $
+  $Id: nk6100.c,v 1.69 2002-04-24 00:40:02 bozo Exp $
 
   G N O K I I
 
@@ -1214,6 +1214,7 @@ static GSM_Error IncomingSMS1(int messagetype, unsigned char *message, int lengt
 		/* I belive this is GE_SMSSENDFAILED in all cases -- pkot */
 		switch (message[6]) {
 		case 0x02:
+		case 0x6f: /* maybe bad sms center number */
 			return GE_SMSSENDFAILED;
 		default:
 			return GE_UNHANDLEDFRAME;

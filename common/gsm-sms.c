@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-sms.c,v 1.55 2002-04-23 23:53:58 pkot Exp $
+  $Id: gsm-sms.c,v 1.56 2002-04-24 00:40:02 bozo Exp $
 
   G N O K I I
 
@@ -708,7 +708,8 @@ GSM_Error SendSMS(GSM_Data *data, GSM_Statemachine *state)
 
 	if (data->SMSMessage->MessageCenter.No) {
 		data->MessageCenter = &data->SMSMessage->MessageCenter;
-		SM_Functions(GOP_GetSMSCenter, data, state);
+		error = SM_Functions(GOP_GetSMSCenter, data, state);
+		if (error != GE_NONE) return error;
 	}
 
 	if (count < 1) return GE_SMSWRONGFORMAT;
