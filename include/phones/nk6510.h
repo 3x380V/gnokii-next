@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.h,v 1.5 2002-07-10 12:26:26 plail Exp $
+  $Id: nk6510.h,v 1.6 2002-07-12 10:06:29 plail Exp $
 
   G N O K I I
 
@@ -57,7 +57,7 @@ extern bool P6510_LinkOK;
 #define P6510_MSG_CLOCK		0x19	/* Date & alarm */
 #define P6510_MSG_IDENTITY	0x1b	/* Brief product info */
 #define P6510_MSG_RINGTONE	0x1f	/* Ringtone handling */
-#define P6510_MSG_SECURITY	0x42	/* Security */
+#define P6510_MSG_PROFILE	0x39	/* Profiles */
 #define P6510_MSG_STLOGO	0x7a	/* Startup logo */
 #define P6510_MSG_VERREQ	0xd1	/* HW&SW version request */
 #define P6510_MSG_VERRESP	0xd2	/* HW&SW version response */
