@@ -1,6 +1,6 @@
 /*
 
-  $Id: generic.h,v 1.13 2003-02-26 00:15:49 pkot Exp $
+  $Id: generic.h,v 1.14 2003-03-06 22:52:16 pkot Exp $
 
   G N O K I I
 
@@ -35,8 +35,7 @@
 #ifndef _gnokii_phones_generic_h
 #define _gnokii_phones_generic_h
 
-#include "gnokii/error.h"
-#include "gnokii/statemachine.h"
+#include "gnokii.h"
 
 /* Generic Functions */
 gn_error pgen_incoming_default(int messagetype, unsigned char *buffer, int length, struct gn_statemachine *state);

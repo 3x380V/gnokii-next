@@ -1,6 +1,6 @@
 /*
 
-  $Id: atsie.h,v 1.7 2003-02-26 00:15:49 pkot Exp $
+  $Id: atsie.h,v 1.8 2003-03-06 22:52:16 pkot Exp $
 
   G N O K I I
 
@@ -32,7 +32,7 @@
 #ifndef _gnokii_atsie_h_
 #define _gnokii_atsie_h_
 
-#include "gnokii/data.h"
+#include "gnokii.h"
 
 void at_siemens_init(char* foundmodel, char* setupmodel, struct gn_statemachine *state);
 

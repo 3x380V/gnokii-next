@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk3110.h,v 1.8 2003-02-26 00:15:49 pkot Exp $
+  $Id: nk3110.h,v 1.9 2003-03-06 22:52:16 pkot Exp $
 
   G N O K I I
 
@@ -33,7 +33,8 @@
 #ifndef _gnokii_phones_nk3110_h
 #define _gnokii_phones_nk3110_h
 
-#include "gnokii/data.h"
+#include "misc.h"
+#include "gnokii.h"
 
 /* Phone Memory Sizes */
 #define P3110_MEMORY_SIZE_SM 20
