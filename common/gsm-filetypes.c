@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-filetypes.c,v 1.29 2002-05-23 09:33:12 machek Exp $
+  $Id: gsm-filetypes.c,v 1.30 2002-05-29 10:29:57 machek Exp $
 
   G N O K I I
 
@@ -577,17 +577,17 @@ GSM_Error loadxpm(char *filename, GSM_Bitmap *bitmap)
 	/* All xpms are loaded as startup logos - but can be resized later */
 
 	switch (bitmap->type) {
-	case GSM_EMSPicture:
-		bitmap->height = image.height;
-		bitmap->width = image.width;
-		bitmap->size = ((bitmap->width + 7) / 8) * bitmap->height;
+	case GSM_PictureMessage:
+		bitmap->height = 72;
+		bitmap->width = 48;
 		break;
+	case GSM_EMSPicture:
 	default:
 		bitmap->height = image.height;
 		bitmap->width = image.width;
-		bitmap->size = ((bitmap->height / 8) + (bitmap->height % 8 > 0)) * bitmap->width;
 		break;
 	}
+	bitmap->size = ((bitmap->width + 7) / 8) * bitmap->height;
 
 	if (bitmap->size > GSM_MAX_BITMAP_SIZE) {
 		fprintf(stdout, "Bitmap too large\n");
