@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.81 2002-07-21 22:38:16 pkot Exp $
+  $Id: nk6100.c,v 1.82 2002-07-25 21:40:56 pkot Exp $
 
   G N O K I I
 
@@ -177,7 +177,7 @@ GSM_Phone phone_nokia_6100 = {
 	PGEN_IncomingDefault,
 	/* Mobile phone information */
 	{
-		"6110|6130|6150|6190|5110|5130|5190|3210|3310|3330|3360|8210", /* Supported models */
+		"6110|6130|6150|6190|5110|5130|5190|3210|3310|3330|3360|3410|8210", /* Supported models */
 		4,                     /* Max RF Level */
 		0,                     /* Min RF Level */
 		GRF_Arbitrary,         /* RF level units */
