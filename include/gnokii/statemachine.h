@@ -1,6 +1,6 @@
 /*
 
-  $Id: statemachine.h,v 1.2 2001-06-27 23:52:52 pkot Exp $
+  $Id: statemachine.h,v 1.3 2001-12-28 16:00:31 pkot Exp $
 
   G N O K I I
 
@@ -11,15 +11,6 @@
   Released under the terms of the GNU GPL, see file COPYING for more details.
 	
   Header file for the statemachine.
-
-  $Log: statemachine.h,v $
-  Revision 1.2  2001-06-27 23:52:52  pkot
-  7110/6210 updates (Marian Jancar)
-
-  Revision 1.1  2001/03/21 23:36:07  chris
-  Added the statemachine
-  This will break gnokii --identify and --monitor except for 6210/7110
-
 
 */
 
@@ -36,6 +27,7 @@ void SM_IncomingFunction(GSM_Statemachine *state, u8 messagetype, void *message,
 void SM_Reset(GSM_Statemachine *state);
 GSM_Error SM_GetError(GSM_Statemachine *state, unsigned char messagetype);
 GSM_Error SM_Block(GSM_Statemachine *state, GSM_Data *data, int waitfor);
+GSM_Error SM_BlockNoRetry(GSM_Statemachine *state, GSM_Data *data, int waitfor);
 GSM_Error SM_Functions(GSM_Operation op, GSM_Data *data, GSM_Statemachine *sm);
 
 #endif	/* __gsm_statemachine_h */

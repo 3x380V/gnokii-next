@@ -1,6 +1,6 @@
 /*
 
-  $Id: atbus.c,v 1.5 2001-11-19 13:03:18 pkot Exp $
+  $Id: atbus.c,v 1.6 2001-12-28 16:00:31 pkot Exp $
 
   G N O K I I
 
@@ -9,28 +9,6 @@
   Copyright 2001 Manfred Jonsson <manfred.jonsson@gmx.de>
 
   Released under the terms of the GNU GPL, see file COPYING for more details.
-
-  $Log: atbus.c,v $
-  Revision 1.5  2001-11-19 13:03:18  pkot
-  nk3110.c cleanup
-
-  Revision 1.4  2001/09/09 21:45:49  machek
-  Cleanups from Ladislav Michl <ladis@psi.cz>:
-
-  *) do *not* internationalize debug messages
-
-  *) some whitespace fixes, do not use //
-
-  *) break is unneccessary after return
-
-  Revision 1.3  2001/08/20 23:27:37  pkot
-  Add hardware shakehand to the link layer (Manfred Jonsson)
-
-  Revision 1.2  2001/08/09 11:51:39  pkot
-  Generic AT support updates and cleanup (Manfred Jonsson)
-
-  Revision 1.1  2001/07/27 00:02:21  pkot
-  Generic AT support for the new structure (Manfred Jonsson)
 
 */
 
