@@ -1,6 +1,6 @@
 /*
 
-  $Id: misc.h,v 1.33 2002-03-18 23:19:44 machek Exp $
+  $Id: misc.h,v 1.34 2002-03-18 23:30:22 machek Exp $
 
   G N O K I I
 
@@ -92,7 +92,7 @@ extern void GSM_WriteErrorLog(const char *fmt, ...);
 extern int gasprintf(char **destp, const char *fmt,...);
 #endif
 #ifdef HAVE_VASPRINTF
-#  define gvasprintf            vasprintf(a)
+#  define gvasprintf            vasprintf
 #else
 extern int gvasprintf(char **destp, const char *fmt, va_list ap);
 #endif
