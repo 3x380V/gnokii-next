@@ -1,6 +1,6 @@
 /*
 
-  $Id: misc.c,v 1.41 2002-05-10 22:26:15 pkot Exp $
+  $Id: misc.c,v 1.42 2002-05-14 23:18:08 pkot Exp $
 
   G N O K I I
 
@@ -111,10 +111,10 @@ PhoneModel *GetPhoneModel (const char *num)
 
 	while (models[i].number != NULL) {
 		if (strcmp(num, models[i].number) == 0) {
-			dprintf("Found model\n");
+			dprintf("Found model \"%s\"\n", num);
 			return (&models[i]);
 		} else {
-			dprintf("comparing %s and %s\n", num, models[i].number);
+			dprintf("comparing \"%s\" and \"%s\"\n", num, models[i].number);
 		}
 		i++;
 	}
