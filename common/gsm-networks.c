@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-networks.c,v 1.38 2005-01-23 23:10:10 pkot Exp $
+  $Id: gsm-networks.c,v 1.39 2005-01-25 23:20:07 pkot Exp $
 
   G N O K I I
 
@@ -798,6 +798,20 @@ API char *gn_network_code_get(char *network_name)
 
 	while (networks[index].name &&
 	       strcasecmp(networks[index].name, network_name)) index++;
+
+	return networks[index].code ? networks[index].code : _("undefined");
+}
+
+API char *gn_network_code_find(char *network_name, char *country_name)
+{
+	int index = 0;
+	char country_code[4];
+	
+	snprintf(country_code, 3, " %2s", gn_country_code_get(country_name));
+	country_code[3] = 0;
+	while (networks[index].name &&
+	       (!strstr(networks[index].code, country_code) ||
+	        strcasecmp(networks[index].name, network_name))) index++;
 
 	return networks[index].code ? networks[index].code : _("undefined");
 }

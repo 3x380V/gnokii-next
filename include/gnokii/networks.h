@@ -1,6 +1,6 @@
 /*
 
-  $Id: networks.h,v 1.11 2005-01-23 23:10:10 pkot Exp $
+  $Id: networks.h,v 1.12 2005-01-25 23:20:07 pkot Exp $
 
   G N O K I I
 
@@ -45,6 +45,7 @@ typedef struct {
 
 API char *gn_network_name_get(char *network_code);
 API char *gn_network_code_get(char *network_name);
+API char *gn_network_code_find(char *network_name, char *country_name);
 
 API char *gn_country_name_get(char *country_code);
 API char *gn_country_code_get(char *country_name);
