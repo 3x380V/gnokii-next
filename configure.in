@@ -5,7 +5,7 @@ dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janík ml.
 dnl                2000 Karel Zak, Pawe³ Kot
 dnl                2002 BORBELY Zoltan
 dnl
-dnl  $Id: configure.in,v 1.79 2002-08-04 20:12:16 pkot Exp $
+dnl  $Id: configure.in,v 1.80 2002-08-26 23:15:23 pkot Exp $
 dnl
 
 AC_INIT(gnokii/gnokii.c)
@@ -547,7 +547,7 @@ XVERSION=`cat xgnokii/VERSION`
 AC_DEFINE_UNQUOTED(VERSION, "$VERSION")
 AC_DEFINE_UNQUOTED(XVERSION, "$XVERSION")
 if test "$x_support" = yes; then
-	AC_DEFINE_UNQUOTED(XGNOKIIDIR, "`eval echo $XGNOKIIDIR/$XPACKAGE`")
+	AC_DEFINE_UNQUOTED(XGNOKIIDIR, "`eval echo $XGNOKIIDIR`")
 fi
 HAVE_XGNOKII=$x_support
 
