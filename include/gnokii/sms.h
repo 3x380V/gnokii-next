@@ -1,6 +1,6 @@
 /*
 
-  $Id: sms.h,v 1.19 2002-01-28 12:14:19 pkot Exp $
+  $Id: sms.h,v 1.20 2002-01-31 10:28:45 pkot Exp $
 
   G N O K I I
 
@@ -372,7 +372,7 @@ typedef struct {
 	bool IsRemoteNumberCoded;	/* Indicates if the RemoteNumber address is BCD coded */
 	bool HasRemoteNumberFixedLen;	/* Indicates if the MessageCenter field has always the fixed length */
 
-	short SMSCTime;			/* Location of the SMSC Reposnse time */
+	short SMSCTime;			/* Location of the SMSC Response time */
 	short Time;			/* Location of the Delivery time */
 
 	short MemoryType;		/* Location of the Memory Type field */

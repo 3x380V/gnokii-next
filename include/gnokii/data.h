@@ -1,6 +1,6 @@
 /*
 
-  $Id: data.h,v 1.10 2002-01-28 12:14:19 pkot Exp $
+  $Id: data.h,v 1.11 2002-01-31 10:28:45 pkot Exp $
 
   G N O K I I
 
@@ -120,6 +120,7 @@ typedef enum {
 	GOP_SetSpeedDial,
 	GOP_GetDisplayStatus,
 	GOP_PollDisplay,
+	GOP_SaveSMS,
 	GOP_Max,	/* don't append anything after this entry */
 } GSM_Operation;
 

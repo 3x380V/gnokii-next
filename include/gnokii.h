@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.h,v 1.19 2002-01-27 23:45:16 pkot Exp $
+  $Id: gnokii.h,v 1.20 2002-01-31 10:28:45 pkot Exp $
 
   G N O K I I
 
@@ -35,6 +35,7 @@ GSM_Error GSM_Initialise(char *model, char *device, char *initlength, GSM_Connec
 /* SMS Functions */
 /* Sending */
 GSM_Error SendSMS(GSM_Data *data, GSM_Statemachine *state);
+GSM_Error SaveSMS(GSM_Data *data, GSM_Statemachine *state);
 /* Reading */
 GSM_Error ParseSMS(GSM_Data *data, int offset);
 GSM_Error RequestSMS(GSM_Data *data, GSM_Statemachine *state);
