@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.407 2004-09-28 10:50:10 bozo Exp $
+  $Id: gnokii.c,v 1.408 2004-10-01 12:29:25 bozo Exp $
 
   G N O K I I
 
@@ -3483,7 +3483,7 @@ static int writephonebook(int argc, char *args[])
 				if (error != GN_ERR_NONE && error != GN_ERR_EMPTYLOCATION) {
 					break;
 				}
-				if (aux.empty) {
+				if (aux.empty || error == GN_ERR_EMPTYLOCATION) {
 					entry.location = aux.location;
 					error = GN_ERR_NONE;
 					break;

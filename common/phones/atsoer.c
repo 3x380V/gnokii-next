@@ -1,6 +1,6 @@
 /*
 
-  $Id: atsoer.c,v 1.2 2004-07-09 20:47:41 pkot Exp $
+  $Id: atsoer.c,v 1.3 2004-10-01 12:29:25 bozo Exp $
 
   G N O K I I
 
@@ -103,6 +103,7 @@ static gn_error ReplyReadPhonebook(int messagetype, unsigned char *buffer, int l
 	if (data->phonebook_entry) {
 		data->phonebook_entry->caller_group = 0;
 		data->phonebook_entry->subentries_count = 0;
+		data->phonebook_entry->empty = false;
 
 		/* store number */
 		pos = strchr(buf.line2, '\"');
