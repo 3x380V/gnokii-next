@@ -1,6 +1,6 @@
 /*
 
-  $Id: misc.h,v 1.41 2002-04-08 11:18:47 pkot Exp $
+  $Id: misc.h,v 1.42 2002-04-17 22:06:08 bozo Exp $
 
   G N O K I I
 
@@ -145,10 +145,6 @@ extern void GSM_WriteErrorLog(const char *fmt, ...);
 #  ifndef s64
 	typedef signed long long s64;
 #  endif
-#endif
-
-#if (!defined _BSD_SOURCE) && (!defined _BSDTYPES_DEFINED)
-	typedef unsigned char u_char;
 #endif
 
 /* This one is for FreeBSD and similar systems without __ptr_t_ */

@@ -28,7 +28,7 @@
  ********************************************************************/
 
 /*
- * $Id: linuxirda.h,v 1.4 2002-03-29 10:13:04 pkot Exp $
+ * $Id: linuxirda.h,v 1.5 2002-04-17 22:06:08 bozo Exp $
  *
  * GNOKII modifications:
  * Fixes for Solaris compile (Artur Kubiak and Michael Wiedmann)
@@ -148,7 +148,7 @@ struct irda_ias_set {
 		unsigned int irda_attrib_int;
 		struct {
 			unsigned short len;
-			u_char octet_seq[IAS_MAX_OCTET_STRING];
+			unsigned char octet_seq[IAS_MAX_OCTET_STRING];
 		} irda_attrib_octet_seq;
 		struct {
 			unsigned char len;
