@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.184 2002-01-28 12:14:19 pkot Exp $
+  $Id: gnokii.c,v 1.185 2002-01-29 23:20:21 pkot Exp $
 
   G N O K I I
 
@@ -393,7 +393,7 @@ static int sendsms(int argc, char *argv[])
 	SMS.Report = false;
 
 	memset(&SMS.RemoteNumber.number, 0, sizeof(SMS.RemoteNumber.number));
-	strncpy(SMS.RemoteNumber.number, argv[0], sizeof(SMS.RemoteNumber.number - 1));
+	strncpy(SMS.RemoteNumber.number, argv[0], sizeof(SMS.RemoteNumber.number) - 1);
 	if (SMS.RemoteNumber.number[0] == '+') SMS.RemoteNumber.type = SMS_International;
 	else SMS.RemoteNumber.type = SMS_Unknown;
 
