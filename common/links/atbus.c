@@ -1,6 +1,6 @@
 /*
 
-  $Id: atbus.c,v 1.16 2002-04-25 23:33:29 machek Exp $
+  $Id: atbus.c,v 1.17 2002-04-29 15:35:02 machek Exp $
 
   G N O K I I
 
@@ -149,7 +149,6 @@ static bool ATBUS_OpenSerial(int mode, char *device)
 		perror(_("Couldn't open ATBUS device"));
 		return (false);
 	}
-	device_changespeed(mode == 2 ? 9600 : 19200);
 	if (mode) {
 		/* make 7110 with dlr-3 happy. the nokia dlr-3 cable     */
 		/* provides hardware handshake lines but is, at least at */
