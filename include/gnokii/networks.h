@@ -1,6 +1,6 @@
 /*
 
-  $Id: networks.h,v 1.10 2003-03-06 22:32:29 pkot Exp $
+  $Id: networks.h,v 1.11 2005-01-23 23:10:10 pkot Exp $
 
   G N O K I I
 
@@ -51,5 +51,7 @@ API char *gn_country_code_get(char *country_name);
 
 API int gn_network_get(gn_network *network, int index);
 API int gn_country_get(gn_country *country, int index);
+
+API char *gn_network2country(char *network);
 
 #endif	/* _gnokii_networks_h */
