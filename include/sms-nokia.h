@@ -1,6 +1,6 @@
 /*
 
-  $Id: sms-nokia.h,v 1.1 2002-06-12 22:04:28 pkot Exp $
+  $Id: sms-nokia.h,v 1.2 2002-08-18 22:29:58 pkot Exp $
 
   G N O K I I
 
@@ -28,8 +28,8 @@
 
 */
 
-#ifndef __sms_nokia_h_
-#define __sms_nokia_h_
+#ifndef _gnokii_sms_nokia_h
+#define _gnokii_sms_nokia_h
 
 #include "gsm-bitmaps.h"
 
@@ -46,6 +46,6 @@
 int PackSmartMessagePart(unsigned char *msg, unsigned int size,
 			 unsigned int type, bool first);
 int EncodeNokiaText(unsigned char *text, unsigned char *message, bool first);
-int GSM_EncodeNokiaBitmap(GSM_Bitmap *bitmap, unsigned char *message, bool first);
+int GSM_EncodeNokiaBitmap(gn_bmp *bitmap, unsigned char *message, bool first);
 
-#endif /* __sms_nokia_h_ */
+#endif /* _gnokii_sms_nokia_h */

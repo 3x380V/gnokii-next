@@ -1,6 +1,6 @@
 /*
 
-  $Id: sms-nokia.c,v 1.2 2002-06-26 23:31:18 bozo Exp $
+  $Id: sms-nokia.c,v 1.3 2002-08-18 22:29:57 pkot Exp $
 
   G N O K I I
 
@@ -74,11 +74,11 @@ int EncodeNokiaText(unsigned char *text, unsigned char *message, bool first)
 	return current;
 }
 
-int GSM_EncodeNokiaBitmap(GSM_Bitmap *bitmap, unsigned char *message, bool first)
+int GSM_EncodeNokiaBitmap(gn_bmp *bitmap, unsigned char *message, bool first)
 {
 	unsigned int current;
 
 	/* FIXME: allow for the different sizes */
 	current = PackSmartMessagePart(message, 256, SMS_MULTIPART_BITMAP, first);
-	return GSM_EncodeSMSBitmap(bitmap, message + current) + current;
+	return gn_bmp_encode_sms(bitmap, message + current) + current;
 }

@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_lowlevel.h,v 1.21 2002-05-25 10:56:56 plail Exp $
+  $Id: xgnokii_lowlevel.h,v 1.22 2002-08-18 22:29:58 pkot Exp $
   
   X G N O K I I
 
@@ -140,7 +140,7 @@ typedef struct {
 
 typedef struct {
 	GSM_Error status;
-	GSM_Bitmap *bitmap;
+	gn_bmp *bitmap;
 } D_Bitmap;
 
 typedef struct {

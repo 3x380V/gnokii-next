@@ -1,6 +1,6 @@
 /*
 
-  $Id: data.h,v 1.44 2002-08-07 00:18:03 bozo Exp $
+  $Id: data.h,v 1.45 2002-08-18 22:29:58 pkot Exp $
 
   G N O K I I
 
@@ -60,7 +60,7 @@ typedef struct {
 	GSM_ToDo *ToDo;
 	GSM_CalendarNotesList *CalendarNotesList;
 	GSM_CalendarNote *CalendarNote;
-	GSM_Bitmap *Bitmap;
+	gn_bmp *Bitmap;
 	GSM_Ringtone *Ringtone;
 	GSM_Profile *Profile;
 	GSM_BatteryUnits *BatteryUnits;

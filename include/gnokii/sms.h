@@ -1,6 +1,6 @@
 /*
 
-  $Id: sms.h,v 1.48 2002-08-18 18:03:11 pkot Exp $
+  $Id: sms.h,v 1.49 2002-08-18 22:29:58 pkot Exp $
 
   G N O K I I
 
@@ -350,9 +350,9 @@ typedef struct {
 	union {
 		unsigned char Text[GSM_MAX_SMS_LENGTH];
 		GSM_Multi Multi;
-		GSM_Bitmap Bitmap;
+		gn_bmp Bitmap;
 		GSM_Ringtone Ringtone;
-		GSM_Bitmap Animation[4];
+		gn_bmp Animation[4];
 		GSM_Concat Concat;
 	} u;
 } SMS_UserData;
