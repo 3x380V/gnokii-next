@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.291 2002-08-09 22:08:36 pkot Exp $
+  $Id: gnokii.c,v 1.292 2002-08-15 23:26:24 pkot Exp $
 
   G N O K I I
 
@@ -3166,7 +3166,6 @@ static int writephonebook(int argc, char *args[])
 		else
 			fprintf (stderr, _("Write FAILED (%s): memory type: %s, loc: %d, name: %s, number: %s\n"), 
 				 print_error(error), memory_type_string, entry.Location, entry.Name, entry.Number);
-		return error;
 	}
 	return 0;
 }
