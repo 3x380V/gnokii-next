@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_sms.c,v 1.51 2003-01-19 22:37:00 pkot Exp $
+  $Id: xgnokii_sms.c,v 1.52 2003-02-02 23:07:06 pkot Exp $
 
   X G N O K I I
 
@@ -442,7 +442,8 @@ static void ClickEntry(GtkWidget * clist,
 	if (gtk_clist_get_text(GTK_CLIST(clist), row, 0, &(text1))) {
 		dprintf("*text1: %s *text2: %s \n", text1, text2);
 
-		if (*text1 == *text2) {
+		/* strcpm(text1,text2) = 0 if text1 is the same string as text2 */
+		if (!(strcmp(text1, text2) )) {
 
 			/* Store the read status in phoneMonitor.sms.messages */
 
