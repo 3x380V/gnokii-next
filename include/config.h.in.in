@@ -1,6 +1,6 @@
 /*
 
-  $Id: config.h.in.in,v 1.6 2002-04-03 22:21:55 bozo Exp $
+  $Id: config.h.in.in,v 1.7 2002-04-05 11:39:39 plail Exp $
 
   G N O K I I
 
@@ -63,6 +63,9 @@
 
 /* Define if you have vasprintf */
 #undef HAVE_VASPRINTF
+
+/* Define if you have strsep */
+#undef HAVE_STRSEP
 
 /* Define debug level */
 #undef DEBUG
