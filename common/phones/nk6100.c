@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.56 2002-04-03 00:59:04 bozo Exp $
+  $Id: nk6100.c,v 1.57 2002-04-03 22:21:55 bozo Exp $
 
   G N O K I I
 
@@ -34,9 +34,6 @@
 #include <string.h>
 #include <stdlib.h>
 #include <ctype.h>
-#ifndef WIN32
-#  include <unistd.h>
-#endif
 
 #include "misc.h"
 #include "gsm-common.h"
@@ -47,6 +44,10 @@
 #include "phones/nokia.h"
 #include "gsm-encoding.h"
 #include "gsm-api.h"
+
+#ifdef HAVE_UNISTD_H
+#  include <unistd.h>
+#endif
 
 /* Some globals */
 

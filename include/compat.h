@@ -1,6 +1,6 @@
 /*
 
-  $Id: compat.h,v 1.6 2002-04-03 01:03:58 bozo Exp $
+  $Id: compat.h,v 1.7 2002-04-03 22:21:55 bozo Exp $
 
   G N O K I I
 
@@ -36,6 +36,11 @@
 #  include <windows.h>
 #  include <string.h>
 #endif
+
+#ifdef HAVE_STDARG_H
+#include <stdarg.h>
+#endif
+
 
 #ifndef	HAVE_TIMEOPS
 
@@ -79,6 +84,22 @@
 
 #ifndef	HAVE_GETTIMEOFDAY
 int gettimeofday(struct timeval *tv, void *tz);
+#endif
+
+#if !defined(HAVE_SNPRINTF) && !defined(HAVE_C99_SNPRINTF)
+int snprintf(char *str, size_t size, const char *format, ...);
+#endif
+
+#if !defined(HAVE_VSNPRINTF) && !defined(HAVE_C99_VSNPRINTF)
+int vsnprintf(char *str, size_t size, const char *format, va_list ap);
+#endif
+
+#ifndef HAVE_ASPRINTF
+int asprintf(char **ptr, const char *format, ...);
+#endif
+
+#ifndef HAVE_VASPRINTF
+int vasprintf(char **ptr, const char *format, va_list ap);
 #endif
 
 #ifdef WIN32

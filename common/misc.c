@@ -1,6 +1,6 @@
 /*
 
-  $Id: misc.c,v 1.34 2002-03-28 21:37:44 pkot Exp $
+  $Id: misc.c,v 1.35 2002-04-03 22:21:55 bozo Exp $
 
   G N O K I I
 
@@ -28,9 +28,6 @@
 
 #include <string.h>
 #include <stdlib.h>
-#ifndef WIN32
-#  include <unistd.h>
-#endif
 #include <errno.h>
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -38,6 +35,10 @@
 #include <signal.h>
 
 #include "misc.h"
+
+#ifdef HAVE_UNISTD_H
+#  include <unistd.h>
+#endif
 
 void (*GSM_ELogHandler)(const char *fmt, va_list ap) = NULL;
 

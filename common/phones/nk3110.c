@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk3110.c,v 1.18 2002-03-28 21:37:47 pkot Exp $
+  $Id: nk3110.c,v 1.19 2002-04-03 22:21:55 bozo Exp $
 
   G N O K I I
 
@@ -41,7 +41,7 @@
 #include "links/fbus-3110.h"
 #include "phones/nokia.h"
 
-#ifndef WIN32
+#ifdef HAVE_UNISTD_H
 #  include <unistd.h>
 #endif
 

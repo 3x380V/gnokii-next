@@ -1,6 +1,6 @@
 /*
 
-  $Id: device.h,v 1.14 2002-03-28 21:37:48 pkot Exp $
+  $Id: device.h,v 1.15 2002-04-03 22:21:55 bozo Exp $
 
   G N O K I I
 
@@ -31,12 +31,12 @@
 #ifndef __device_h_
 #define __device_h_
 
-#ifndef WIN32
-#  include <unistd.h>
-#endif
-
 #include "misc.h"
 #include "gsm-common.h"
+
+#ifdef HAVE_UNISTD_H
+#  include <unistd.h>
+#endif
 
 int device_getfd(void);
 
