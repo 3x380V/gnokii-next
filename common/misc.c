@@ -1,6 +1,6 @@
 /*
 
-  $Id: misc.c,v 1.78 2004-04-12 13:16:16 bozo Exp $
+  $Id: misc.c,v 1.79 2004-04-13 21:20:27 bozo Exp $
 
   G N O K I I
 
@@ -220,7 +220,7 @@ static gn_phone_model models[] = {
 	{"6585",  "RH-34", 0 },
 	{"6590",  "NSM-9", 0 },
 	{"6590i", "NSM-9", 0 },
-	{"6600",  "NHL-10", 0 },
+	{"6600",  "NHL-10", PM_CALLERGROUP | PM_CALENDAR | PM_SPEEDDIAL | PM_NETMONITOR | PM_EXTPBK | PM_SMS | PM_FOLDERS },
 	{"6610",  "NHL-4U", PM_CALLERGROUP | PM_CALENDAR | PM_SPEEDDIAL | PM_EXTPBK | PM_SMS | PM_FOLDERS },
 	{"6650",  "NHM-1", 0 },
 	{"6800",  "NHL-6", 0 },
