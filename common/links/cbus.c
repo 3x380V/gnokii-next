@@ -1,6 +1,6 @@
 /* -*- linux-c -*-
 
-  $Id: cbus.c,v 1.24 2003-01-05 20:45:40 ladis Exp $
+  $Id: cbus.c,v 1.25 2003-02-11 00:13:47 bozo Exp $
 
   G N O K I I
 
@@ -406,6 +406,7 @@ static gn_error cbus_loop(struct timeval *timeout, struct gn_statemachine *sm)
 	error = get_cmd_reply(sm);
 	if (error)
 		return error;
+	sm_incoming_acknowledge(sm);
 	sm_incoming_function(sm->last_msg_type, bi->at_reply, strlen(bi->at_reply), sm);
 	return GN_ERR_NONE;
 }

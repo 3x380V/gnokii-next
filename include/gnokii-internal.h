@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-internal.h,v 1.8 2003-01-01 21:29:06 pkot Exp $
+  $Id: gnokii-internal.h,v 1.9 2003-02-11 00:13:47 bozo Exp $
 
   G N O K I I
 
@@ -47,6 +47,7 @@ gn_error sm_initialise(struct gn_statemachine *state);
 gn_error sm_message_send(u16 messagesize, u8 messagetype, void *message, struct gn_statemachine *state);
 gn_error sm_wait_for(unsigned char messagetype, gn_data *data, struct gn_statemachine *state);
 void sm_incoming_function(u8 messagetype, void *message, u16 messagesize, struct gn_statemachine *state);
+void sm_incoming_acknowledge(struct gn_statemachine *state);
 void sm_reset(struct gn_statemachine *state);
 gn_error sm_error_get(unsigned char messagetype, struct gn_statemachine *state);
 gn_error sm_block_timeout(int waitfor, int t, gn_data *data, struct gn_statemachine *state);

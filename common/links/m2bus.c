@@ -1,6 +1,6 @@
 /*
 
-  $Id: m2bus.c,v 1.11 2002-12-27 00:11:40 bozo Exp $
+  $Id: m2bus.c,v 1.12 2003-02-11 00:13:47 bozo Exp $
 
   G N O K I I
 
@@ -230,6 +230,7 @@ static void m2bus_rx_statemachine(unsigned char rx_byte, struct gn_statemachine 
 					/* echo */
 				} else if (i->message_type == 0x7f) {
 					dprintf("[Received Ack, seq: %2x]\n", i->message_buffer[0]);
+					sm_incoming_acknowledge(state);
 
 				} else {	/* Normal message type */
 

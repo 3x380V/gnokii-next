@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus.c,v 1.40 2003-02-05 01:20:39 bozo Exp $
+  $Id: fbus.c,v 1.41 2003-02-11 00:13:47 bozo Exp $
 
   G N O K I I
 
@@ -298,6 +298,7 @@ static void fbus_rx_statemachine(unsigned char rx_byte, struct gn_statemachine *
 				if (i->message_type == 0x7f) {
 					dprintf("[Received Ack of type %02x, seq: %2x]\n",
 						i->message_buffer[0], (unsigned char) i->message_buffer[1]);
+					sm_incoming_acknowledge(state);
 
 				} else if (i->message_type == 0xf1) {
 					sm_incoming_function(i->message_type, i->message_buffer,

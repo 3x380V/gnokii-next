@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus-3110.c,v 1.18 2002-12-27 00:11:40 bozo Exp $
+  $Id: fbus-3110.c,v 1.19 2003-02-11 00:13:47 bozo Exp $
 
   G N O K I I
 
@@ -146,6 +146,7 @@ static void fb3110_rx_state_machine(unsigned char rx_byte, struct gn_statemachin
 					dprintf("%02hhx:", i->buffer[count]);
 				dprintf("\n");
 				/* Transfer message to state machine */
+				sm_incoming_acknowledge(state);
 				sm_incoming_function(i->buffer[0], i->buffer, i->frame_len, state);
 
 				/* Send an ack */
