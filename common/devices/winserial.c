@@ -1,6 +1,6 @@
 /*
 
-  $Id: winserial.c,v 1.11 2004-06-08 13:37:22 bozo Exp $
+  $Id: winserial.c,v 1.12 2004-06-20 16:15:09 pkot Exp $
 
   G N O K I I
 
@@ -257,7 +257,7 @@ size_t serial_write(int fd, __ptr_t buf, size_t n, struct gn_statemachine *state
 	DWORD   dwBytesSent = 0;
 	COMSTAT ComStat;
 
-	fWriteStat = WriteFile(hPhone, buf, n, &n, &osWrite);
+	fWriteStat = WriteFile(hPhone, buf, n, &dwBytesWritten, &osWrite);
 
 	/* Note that normally the code will not execute the following
 	 * because the driver caches write operations. Small I/O requests
