@@ -1,6 +1,6 @@
 /*
 
-  $Id: datapump.c,v 1.21 2003-03-06 21:07:04 pkot Exp $
+  $Id: datapump.c,v 1.22 2003-10-23 01:16:26 bozo Exp $
 
   G N O K I I
 
@@ -159,6 +159,7 @@ void dp_CallPassup(gn_call_status CallStatus, gn_call_info *CallInfo, struct gn_
 	switch (CallStatus) {
 	case GN_CALL_Established:
 		if (CommandMode == false) gn_atem_modem_result(MR_CARRIER);
+		rlp_user_request_set(Conn_Req, true);
 		connected = true;
 		break;
 	case GN_CALL_LocalHangup:
