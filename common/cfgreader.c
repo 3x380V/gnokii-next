@@ -1,6 +1,6 @@
 /*
 
-  $Id: cfgreader.c,v 1.28 2002-12-27 17:03:19 bozo Exp $
+  $Id: cfgreader.c,v 1.29 2002-12-27 18:47:41 bozo Exp $
 
   G N O K I I
 
@@ -370,6 +370,16 @@ static bool gn_cfg_load_psection(gn_config *cfg, const char *section, const gn_c
 		return false;
 	}
 
+	if (!(val = gn_cfg_get(gn_cfg_info, section, "connect_script")))
+		strcpy(cfg->connect_script, def->connect_script);
+	else
+		snprintf(cfg->connect_script, sizeof(cfg->connect_script), "%s", val);
+
+	if (!(val = gn_cfg_get(gn_cfg_info, section, "disconnect_script")))
+		strcpy(cfg->disconnect_script, def->disconnect_script);
+	else
+		snprintf(cfg->disconnect_script, sizeof(cfg->disconnect_script), "%s", val);
+
 	return true;
 }
 
@@ -429,6 +439,8 @@ API int gn_cfg_readconfig(char **bindir)
 	gn_config_default.hardware_handshake = false;
 	gn_config_default.require_dcd = false;
 	gn_config_default.smsc_timeout = -1;
+	strcpy(gn_config_default.connect_script, "");
+	strcpy(gn_config_default.disconnect_script, "");
 
 	if (!gn_cfg_load_psection(&gn_config_global, "global", &gn_config_default))
 		return -2;

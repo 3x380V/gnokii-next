@@ -1,6 +1,6 @@
 /*
 
-  $Id: unixserial.h,v 1.11 2002-12-27 00:11:40 bozo Exp $
+  $Id: unixserial.h,v 1.12 2002-12-27 18:47:41 bozo Exp $
 
   G N O K I I
 
@@ -54,6 +54,6 @@ int serial_select(int fd, struct timeval *timeout, struct gn_statemachine *state
 gn_error serial_nreceived(int fd, int *n, struct gn_statemachine *state);
 gn_error serial_flush(int fd, struct gn_statemachine *state);
 
-extern int device_script(int fd, const char *section);
+extern int device_script(int fd, const char *section, struct gn_statemachine *state);
 
 #endif  /* __devices_unixserial_h */

@@ -1,6 +1,6 @@
 /*
   
-  $Id: tcp.c,v 1.7 2002-12-27 00:11:39 bozo Exp $
+  $Id: tcp.c,v 1.8 2002-12-27 18:47:41 bozo Exp $
 
   G N O K I I
 
@@ -121,7 +121,7 @@ int tcp_close(int fd, struct gn_statemachine *state)
 {
 	/* handle config file disconnect_script:
 	 */
-	if (device_script(fd, "disconnect_script") == -1)
+	if (device_script(fd, "disconnect_script", state) == -1)
 		fprintf(stderr, "Gnokii tcp_close: disconnect_script\n");
 
 	return close(fd);
@@ -144,7 +144,7 @@ int tcp_opendevice(const char *file, int with_async, struct gn_statemachine *sta
 
 	/* handle config file connect_script:
 	 */
-	if (device_script(fd,"connect_script") == -1) {
+	if (device_script(fd, "connect_script", state) == -1) {
 		fprintf(stderr, "Gnokii tcp_opendevice: connect_script\n");
 		tcp_close(fd, state);
 		return -1;

@@ -1,6 +1,6 @@
 /*
 
-  $Id: data.h,v 1.51 2002-12-27 15:28:05 bozo Exp $
+  $Id: data.h,v 1.52 2002-12-27 18:47:41 bozo Exp $
 
   G N O K I I
 
@@ -116,6 +116,8 @@ typedef struct {
 	bool hardware_handshake;			/* Select between hardware and software handshake */
 	bool require_dcd;				/* DCD signal check */
 	unsigned int smsc_timeout;			/* How many seconds should we wait for the SMSC response, defaults to 10 seconds */
+	char connect_script[256];			/* Script to run when device connection established */
+	char disconnect_script[256];			/* Script to run when device connection closed */
 } gn_config;
 
 typedef enum {

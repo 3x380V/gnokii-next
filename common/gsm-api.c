@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-api.c,v 1.59 2002-12-27 17:03:19 bozo Exp $
+  $Id: gsm-api.c,v 1.60 2002-12-27 18:47:41 bozo Exp $
 
   G N O K I I
 
@@ -121,6 +121,19 @@ static gn_error register_driver(gn_driver *driver, const char *model, char *setu
 API gn_error gn_gsm_initialise(struct gn_statemachine *sm)
 {
 	gn_error ret;
+
+	dprintf("phone instance config:\n");
+	dprintf("model: %s\n", sm->config.model);
+	dprintf("port_device: %s\n", sm->config.port_device);
+	dprintf("connection_type: %d\n", sm->config.connection_type);
+	dprintf("init_length: %d\n", sm->config.init_length);
+	dprintf("serial_baudrate: %d\n", sm->config.serial_baudrate);
+	dprintf("serial_write_usleep: %d\n", sm->config.serial_write_usleep);
+	dprintf("hardware_handshake: %d\n", sm->config.hardware_handshake);
+	dprintf("require_dcd: %d\n", sm->config.require_dcd);
+	dprintf("smsc_timeout: %d\n", sm->config.smsc_timeout);
+	dprintf("connect_script: %s\n", sm->config.connect_script);
+	dprintf("disconnect_script: %s\n", sm->config.disconnect_script);
 
 	if (sm->config.model[0] == '\0') return GN_ERR_UNKNOWNMODEL;
 	if (sm->config.port_device[0] == '\0') return GN_ERR_FAILED;
