@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.356 2003-09-07 22:01:58 bozo Exp $
+  $Id: gnokii.c,v 1.357 2003-09-10 22:08:17 pkot Exp $
 
   G N O K I I
 
@@ -3384,6 +3384,7 @@ static int writephonebook(int argc, char *args[])
 		}
 
 		/* Do write and report success/failure. */
+		gn_phonebook_entry_sanitize(&entry);
 		data.phonebook_entry = &entry;
 		error = gn_sm_functions(GN_OP_WritePhonebook, &data, &state);
 
