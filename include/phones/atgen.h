@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.h,v 1.9 2002-09-28 23:51:38 pkot Exp $
+  $Id: atgen.h,v 1.10 2002-11-25 22:11:36 pkot Exp $
 
   G N O K I I
 
@@ -34,6 +34,7 @@
 
 typedef enum {
 	GOPAT_GetCharset = GOP_Max,
+	GOPAT_SetCharset,
 	GOPAT_SetPDUMode,
 	GOPAT_Prompt,
 	GOPAT_Max	/* don't append anything after this entry */
