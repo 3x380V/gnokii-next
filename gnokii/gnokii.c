@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.114 2001-01-17 02:54:55 chris Exp $
+  $Id: gnokii.c,v 1.115 2001-01-22 01:25:10 hugh Exp $
   
   G N O K I I
 
@@ -18,7 +18,11 @@
   useful :-)
 
   $Log: gnokii.c,v $
-  Revision 1.114  2001-01-17 02:54:55  chris
+  Revision 1.115  2001-01-22 01:25:10  hugh
+  Tweaks for 3810 series, datacalls seem to be broken so need to do
+  some more debugging...
+
+  Revision 1.114  2001/01/17 02:54:55  chris
   More 7110 work.  Use with care! (eg it is not possible to delete phonebook entries)
   I can now edit my phonebook in xgnokii but it is 'work in progress'.
 
