@@ -5,7 +5,7 @@ dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janík ml.
 dnl                2000 Karel Zak, Pawe³ Kot
 dnl                2002 BORBELY Zoltan
 dnl
-dnl  $Id: configure.in,v 1.74 2002-04-17 01:37:08 bozo Exp $
+dnl  $Id: configure.in,v 1.75 2002-04-23 09:44:35 pkot Exp $
 dnl
 
 AC_INIT(gnokii/gnokii.c)
@@ -285,9 +285,9 @@ AC_CHECK_HEADER(getopt.h, ,
       [CFLAGS="$CFLAGS -I../getopt"])
 
 AC_ARG_WITH(gnugetopt,
-   [  --with-getopt=DIR       specifies the getopt library location directory],
+   [  --with-gnugetopt=DIR       specifies the getopt library location directory],
    [ if test x$withval=yes; then
-        AC_MSG_WARN(Usage is: --with-getopt=DIR) 
+        AC_MSG_WARN(Usage is: --with-gnugetopt=DIR) 
      else
         GETOPT_LIBS="-L$withval"
      fi
