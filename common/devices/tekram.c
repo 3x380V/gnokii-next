@@ -1,6 +1,6 @@
 /*
  *
- * $Id: tekram.c,v 1.7 2002-12-27 00:11:39 bozo Exp $
+ * $Id: tekram.c,v 1.8 2003-01-19 22:56:05 pkot Exp $
  *
  * G N O K I I
  *
@@ -37,7 +37,7 @@
 #ifndef WIN32
 #  include "devices/unixserial.h"
 #else
-#  include "winserial.h"
+#  include "devices/winserial.h"
 #endif
 
 #include "devices/tekram.h"
