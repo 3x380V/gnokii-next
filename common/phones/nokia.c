@@ -1,6 +1,6 @@
 /*
 
-  $Id: nokia.c,v 1.37 2003-11-10 19:24:10 bozo Exp $
+  $Id: nokia.c,v 1.38 2004-01-20 14:24:23 uid66843 Exp $
 
   G N O K I I
 
@@ -595,7 +595,6 @@ recode:
 				lastp += p;
 				p = lastp;
 			} else {
-				if (ringtone->notes_count >= GN_RINGTONE_MAX_NOTES) return GN_ERR_INVALIDSIZE;
 				note = ringtone->notes + ringtone->notes_count++;
 				lastc = c;
 				lastp = p;
@@ -610,7 +609,6 @@ recode:
 				lastp += p;
 				p = lastp;
 			} else {
-				if (ringtone->notes_count >= GN_RINGTONE_MAX_NOTES) return GN_ERR_INVALIDSIZE;
 				note = ringtone->notes + ringtone->notes_count++;
 				lastc = c;
 				lastp = p;
