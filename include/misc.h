@@ -1,6 +1,6 @@
 /*
 
-  $Id: misc.h,v 1.44 2002-04-30 18:56:12 pkot Exp $
+  $Id: misc.h,v 1.45 2002-07-17 23:06:39 bozo Exp $
 
   G N O K I I
 
@@ -92,7 +92,7 @@
 #  endif /* DEBUG */
 #endif /* __GNUC__ */
 
-API void (*GSM_ELogHandler)(const char *fmt, va_list ap);
+extern API void (*GSM_ELogHandler)(const char *fmt, va_list ap);
 extern void GSM_WriteErrorLog(const char *fmt, ...);
 
 /* Use gsprintf instead of sprintf and sprintf */
