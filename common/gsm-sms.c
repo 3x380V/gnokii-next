@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-sms.c,v 1.59 2002-05-17 00:22:09 pkot Exp $
+  $Id: gsm-sms.c,v 1.60 2002-05-19 11:27:49 machek Exp $
 
   G N O K I I
 
@@ -961,10 +961,10 @@ API GSM_Error GetFolderChanges(GSM_Data *data, GSM_Statemachine *state, int has_
 /* Fake functions. To let gnokii compile */
 API GSM_Error SendSMS(GSM_Data *data, GSM_Statemachine *state)
 {
-	return GE_NONE;
+	return GE_NOTIMPLEMENTED;
 }
 
 API GSM_Error SaveSMS(GSM_Data *data, GSM_Statemachine *state)
 {
-	return GE_NONE;
+	return GE_NOTIMPLEMENTED;
 }
