@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-encoding.c,v 1.45 2003-09-22 20:01:08 pkot Exp $
+  $Id: gsm-encoding.c,v 1.46 2003-09-22 20:02:26 pkot Exp $
 
   G N O K I I
 
@@ -565,7 +565,7 @@ int utf8_decode(char *outstring, const char *instring, int inlen)
 	return outlen;
 }
 
-int utf8_encode(char *outstring, char *instring, int inlen)
+int utf8_encode(char *outstring, const char *instring, int inlen)
 {
 	int aux = inlen;
 	int outlen = inlen * 2;
