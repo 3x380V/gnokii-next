@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.160 2004-01-06 00:32:34 uid66849 Exp $
+  $Id: nk6100.c,v 1.161 2004-01-10 00:32:53 uid66843 Exp $
 
   G N O K I I
 
@@ -2957,7 +2957,6 @@ static gn_error IncomingSecurity(int messagetype, unsigned char *message, int le
 				aux = message + 7;
 				aux2 = strchr(aux, 0x0a);
 				if (data->revision[0]) {
-					dprintf("Niepusty\n");
 					strcat(data->revision, ", SW ");
 					strncat(data->revision, aux,
 						aux2 - aux);
@@ -2981,7 +2980,6 @@ static gn_error IncomingSecurity(int messagetype, unsigned char *message, int le
 		case 0x05:
 			if (data->revision) {
 				if (data->revision[0]) {
-					dprintf("Niepusty\n");
 					strcat(data->revision, ", HW ");
 					strncat(data->revision, message + 5,
 						GN_REVISION_MAX_LENGTH);
