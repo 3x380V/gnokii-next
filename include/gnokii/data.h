@@ -1,6 +1,6 @@
 /*
 
-  $Id: data.h,v 1.35 2002-07-18 15:36:48 plail Exp $
+  $Id: data.h,v 1.36 2002-07-25 22:47:04 pkot Exp $
 
   G N O K I I
 
@@ -82,6 +82,7 @@ typedef struct {
 	unsigned char ResetType;
 	GSM_KeyCode KeyCode;
 	unsigned char Character;
+	PhoneModel *Phone;
 } GSM_Data;
 
 /* Global structures intended to be independant of phone etc */
