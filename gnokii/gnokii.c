@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.245 2002-05-30 09:39:26 machek Exp $
+  $Id: gnokii.c,v 1.246 2002-06-02 21:36:44 machek Exp $
 
   G N O K I I
 
@@ -1457,10 +1457,9 @@ static int sendlogo(int argc, char *argv[])
 		}
 	}
 
-	/* FIXME: read from the stdin */
 	sms.UserData[1].Type = SMS_NoData;
 	if (sms.UserData[0].u.Bitmap.type == GSM_PictureMessage) {
-		sms.UserData[1].Type = SMS_PlainText;
+		sms.UserData[1].Type = SMS_NokiaText;
 		readtext(&sms.UserData[1], 120);
 		sms.UserData[2].Type = SMS_NoData;
 		//		strcpy(sms.UserData[1].u.Text, "Ahoj, tohle je mala zprava na testovani telefonu");
