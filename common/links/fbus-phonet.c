@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus-phonet.c,v 1.32 2003-05-06 08:49:42 pkot Exp $
+  $Id: fbus-phonet.c,v 1.33 2003-05-06 19:46:19 pkot Exp $
 
   G N O K I I
 
@@ -270,7 +270,6 @@ static gn_error phonet_send_message(unsigned int messagesize, unsigned char mess
 gn_error phonet_initialise(struct gn_statemachine *state)
 {
 	gn_error error = GN_ERR_FAILED;
-	bool connected;
 
 	/* Fill in the link functions */
 	state->link.loop = &phonet_loop;
