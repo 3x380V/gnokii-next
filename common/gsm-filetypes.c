@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-filetypes.c,v 1.55 2004-04-25 15:50:53 pkot Exp $
+  $Id: gsm-filetypes.c,v 1.56 2004-05-07 22:52:06 pkot Exp $
 
   G N O K I I
 
@@ -1513,6 +1513,7 @@ API gn_error gn_file_phonebook_raw_parse(gn_phonebook_entry *entry, char *line)
 
 	BUG(offset >= length);
 
+	memset(number, 0, sizeof(number));
 	o = get_token(number, line+offset, ';', 9);
 	switch (o) {
 	case 0:
@@ -1528,6 +1529,7 @@ API gn_error gn_file_phonebook_raw_parse(gn_phonebook_entry *entry, char *line)
 
 	BUG(offset >= length);
 
+	memset(number, 0, sizeof(number));
 	o = get_token(number, line+offset, ';', 9);
 	switch (o) {
 	case 0:
