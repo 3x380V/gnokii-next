@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.273 2002-07-21 16:11:18 pkot Exp $
+  $Id: gnokii.c,v 1.274 2002-07-21 22:38:16 pkot Exp $
 
   G N O K I I
 
@@ -337,6 +337,7 @@ static void businit(void (*rlp_handler)(RLP_F96Frame *frame))
 	GSM_DataClear(&data);
 
 	if (!strcasecmp(Connection, "dau9p"))    connection = GCT_DAU9P; /* Use only with 6210/7110 for faster connection with such cable */
+	if (!strcasecmp(Connection, "dlr3p"))    connection = GCT_DLR3P;
 	if (!strcasecmp(Connection, "infrared")) connection = GCT_Infrared;
 	if (!strcasecmp(Connection, "irda"))     connection = GCT_Irda;
 	if (!strcasecmp(Connection, "tcp"))      connection = GCT_TCP;

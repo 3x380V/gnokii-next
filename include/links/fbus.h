@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus.h,v 1.11 2002-03-28 21:37:49 pkot Exp $
+  $Id: fbus.h,v 1.12 2002-07-21 22:38:16 pkot Exp $
 
   G N O K I I
 
@@ -96,7 +96,7 @@ typedef struct{
 	u8 RequestSequenceNumber;
 } FBUS_Link;
 
-GSM_Error FBUS_Initialise(GSM_Link *newlink, GSM_Statemachine *state, int type);
+GSM_Error FBUS_Initialise(GSM_Link *newlink, GSM_Statemachine *state, int try);
 
 int FBUS_TX_SendFrame(u8 message_length, u8 message_type, u8 *buffer);
 

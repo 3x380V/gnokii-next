@@ -1,6 +1,6 @@
 /*
 
-  $Id: common.h,v 1.108 2002-07-20 17:44:54 plail Exp $
+  $Id: common.h,v 1.109 2002-07-21 22:38:16 pkot Exp $
 
   G N O K I I
 
@@ -41,7 +41,8 @@
    IR (only with 61x0 models) */
 typedef enum {
 	GCT_Serial,   /* Serial connection. */
-	GCT_DAU9P,     /* Serial connection using DAU9P cable; use only with 6210/7110 if you want faster initialization */
+	GCT_DAU9P,    /* Serial connection using DAU9P cable; use only with 6210/7110 if you want faster initialization */
+	GCT_DLR3P,    /* Serial connection using DLR3P cable */
 	GCT_Infrared, /* Infrared connection. */
 	GCT_Tekram,   /* Tekram Ir-Dongle */
 	GCT_Irda,

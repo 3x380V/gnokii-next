@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.80 2002-07-12 18:10:01 pkot Exp $
+  $Id: nk6100.c,v 1.81 2002-07-21 22:38:16 pkot Exp $
 
   G N O K I I
 
@@ -418,7 +418,9 @@ static GSM_Error Initialise(GSM_Statemachine *state)
 
 	switch (state->Link.ConnectionType) {
 	case GCT_Serial:
+		state->Link.ConnectionType = GCT_DAU9P;
 	case GCT_Infrared:
+	case GCT_DAU9P:
 		err = FBUS_Initialise(&(state->Link), state, 0);
 		break;
 	case GCT_Irda:
