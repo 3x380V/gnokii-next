@@ -1,6 +1,6 @@
 /*
 
-  $Id: virtmodem.h,v 1.5 2002-03-28 21:37:48 pkot Exp $
+  $Id: virtmodem.h,v 1.6 2002-10-27 22:44:23 bozo Exp $
 
   G N O K I I
 
@@ -36,7 +36,7 @@
 bool VM_Initialise(char *model,
 		   char *port,
 		   char *initlength,
-		   GSM_ConnectionType connection,
+		   const char *connection,
 		   char *bindir,
 		   bool debug_mode,
 		   bool GSM_Init);

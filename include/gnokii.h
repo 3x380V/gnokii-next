@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.h,v 1.32 2002-09-28 23:51:38 pkot Exp $
+  $Id: gnokii.h,v 1.33 2002-10-27 22:44:23 bozo Exp $
 
   G N O K I I
 
@@ -44,9 +44,7 @@ extern API gn_error (*gn_gsm_f)(GSM_Operation op, GSM_Data *data,
 
 /* Prototype for the functions actually provided by gsm-api.c. */
 API gn_error gn_gsm_initialise(char *model, char *device, char *initlength,
-			       GSM_ConnectionType connection,
-			       void (*rlp_handler)(RLP_F96Frame *frame),
-			       GSM_Statemachine *sm);
+			       const char *connection, GSM_Statemachine *sm);
 
 /* SMS Functions */
 API gn_error gn_sms_send(GSM_Data *data, GSM_Statemachine *state);
