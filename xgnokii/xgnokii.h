@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii.h,v 1.21 2004-01-06 15:46:41 uid66843 Exp $
+  $Id: xgnokii.h,v 1.22 2004-07-20 21:35:35 pkot Exp $
 
   X G N O K I I
 
@@ -60,7 +60,8 @@ typedef struct {
 	gchar *mailbox;		/* Mailbox, where we can save SMS's */
 	gchar *maxSIMLen;	/* Max length of names on SIM card */
 	gchar *maxPhoneLen;	/* Max length of names in phone */
-	gchar *locale;
+	gchar *locale;		/* Locale for the app translations */
+	gchar *help_locale;	/* Locale for HTML help */
 	gn_sms_message_center smsSetting[MAX_SMS_CENTER];
 	UserInf user;
 	gchar *callerGroups[6];

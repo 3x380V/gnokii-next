@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_speed.c,v 1.14 2004-06-30 22:24:02 pkot Exp $
+  $Id: xgnokii_speed.c,v 1.15 2004-07-20 21:35:35 pkot Exp $
 
   X G N O K I I
 
@@ -58,7 +58,7 @@ static bool speedDialInitialized;
 static inline void Help1(GtkWidget * w, gpointer data)
 {
 	gchar *indx =
-	    g_strdup_printf("/help/%s/windows/speeddial/index.html", xgnokiiConfig.locale);
+	    g_strdup_printf("/help/%s/windows/speeddial/index.html", xgnokiiConfig.help_locale);
 	Help(w, indx);
 	g_free(indx);
 }

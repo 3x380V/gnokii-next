@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_xkeyb.c,v 1.14 2003-02-26 00:15:53 pkot Exp $
+  $Id: xgnokii_xkeyb.c,v 1.15 2004-07-20 21:35:35 pkot Exp $
 
   X G N O K I I
 
@@ -122,7 +122,7 @@ static ButtonT button_5110[30] = {
 
 static inline void Help1(GtkWidget * w, gpointer data)
 {
-	gchar *indx = g_strdup_printf("/help/%s/windows/xkeyb/index.html", xgnokiiConfig.locale);
+	gchar *indx = g_strdup_printf("/help/%s/windows/xkeyb/index.html", xgnokiiConfig.help_locale);
 	Help(w, indx);
 	g_free(indx);
 }

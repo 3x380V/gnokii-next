@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_calendar.c,v 1.24 2004-02-20 11:02:26 uid66849 Exp $
+  $Id: xgnokii_calendar.c,v 1.25 2004-07-20 21:35:35 pkot Exp $
 
   X G N O K I I
 
@@ -113,7 +113,7 @@ static CalTimeDialog calTimeDialog = { NULL, NULL };
 
 static inline void Help1(GtkWidget * w, gpointer data)
 {
-	gchar *indx = g_strdup_printf("/help/%s/windows/calendar/index.html", xgnokiiConfig.locale);
+	gchar *indx = g_strdup_printf("/help/%s/windows/calendar/index.html", xgnokiiConfig.help_locale);
 	Help(w, indx);
 	g_free(indx);
 }

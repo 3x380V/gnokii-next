@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_contacts.c,v 1.60 2004-05-07 23:07:41 pkot Exp $
+  $Id: xgnokii_contacts.c,v 1.61 2004-07-20 21:35:35 pkot Exp $
   
   X G N O K I I
 
@@ -124,7 +124,7 @@ inline bool GUI_ContactsIsIntialized(void)
 
 static inline void Help1(GtkWidget * w, gpointer data)
 {
-	gchar *indx = g_strdup_printf("/help/%s/windows/contacts/index.html", xgnokiiConfig.locale);
+	gchar *indx = g_strdup_printf("/help/%s/windows/contacts/index.html", xgnokiiConfig.help_locale);
 	Help(w, indx);
 	g_free(indx);
 }

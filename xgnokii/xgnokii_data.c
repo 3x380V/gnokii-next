@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_data.c,v 1.11 2003-02-26 00:15:53 pkot Exp $
+  $Id: xgnokii_data.c,v 1.12 2004-07-20 21:35:35 pkot Exp $
 
   X G N O K I I
 
@@ -42,7 +42,7 @@ static GtkWidget *label = NULL;
 
 static inline void Help1(GtkWidget * w, gpointer data)
 {
-	gchar *indx = g_strdup_printf("/help/%s/windows/data/index.html", xgnokiiConfig.locale);
+	gchar *indx = g_strdup_printf("/help/%s/windows/data/index.html", xgnokiiConfig.help_locale);
 	Help(w, indx);
 	g_free(indx);
 }

@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_dtmf.c,v 1.9 2002-03-28 21:37:50 pkot Exp $
+  $Id: xgnokii_dtmf.c,v 1.10 2004-07-20 21:35:35 pkot Exp $
 
   X G N O K I I
 
@@ -47,7 +47,7 @@ static gchar *saveFileName;
 
 static inline void Help1(GtkWidget * w, gpointer data)
 {
-	gchar *indx = g_strdup_printf("/help/%s/windows/dtmf/index.html", xgnokiiConfig.locale);
+	gchar *indx = g_strdup_printf("/help/%s/windows/dtmf/index.html", xgnokiiConfig.help_locale);
 	Help(w, indx);
 	g_free(indx);
 }
