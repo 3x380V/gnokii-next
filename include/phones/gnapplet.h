@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnapplet.h,v 1.5 2004-04-04 12:21:10 bozo Exp $
+  $Id: gnapplet.h,v 1.6 2004-04-06 00:06:36 bozo Exp $
 
   G N O K I I
 
@@ -55,11 +55,14 @@
 
 
 typedef struct {
-//	char model[GN_MODEL_MAX_LENGTH];
-//	char imei[GN_IMEI_MAX_LENGTH];
-//	char sw_version[10];
-//	char hw_version[10];
-//	gn_phone_model *pm;
+	int proto_major;
+	int proto_minor;
+	char manufacturer[20];
+	char model[GN_MODEL_MAX_LENGTH];
+	char imei[GN_IMEI_MAX_LENGTH];
+	char sw_version[GN_REVISION_MAX_LENGTH];
+	char hw_version[GN_REVISION_MAX_LENGTH];
+	gn_phone_model *pm;
 } gnapplet_driver_instance;
 
 #endif  /* #ifndef _gnokii_phones_gnapplet_h */
