@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus-phonet.c,v 1.15 2002-07-12 18:10:01 pkot Exp $
+  $Id: fbus-phonet.c,v 1.16 2002-07-29 21:49:04 pkot Exp $
 
   G N O K I I
 
@@ -59,9 +59,9 @@ static GSM_Error PHONET_SendMessage(u16 messagesize, u8 messagetype, unsigned ch
 
 /* Some globals */
 
-GSM_Link *glink;
+static GSM_Link *glink;
 static GSM_Statemachine *statemachine;
-PHONET_IncomingMessage imessage;
+static PHONET_IncomingMessage imessage;
 
 
 /*--------------------------------------------*/

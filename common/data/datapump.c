@@ -1,6 +1,6 @@
 /*
 
-  $Id: datapump.c,v 1.15 2002-07-29 21:29:48 bozo Exp $
+  $Id: datapump.c,v 1.16 2002-07-29 21:49:03 pkot Exp $
 
   G N O K I I
 
@@ -65,8 +65,8 @@ static void	*DP_ThreadLoop(void *v);
 extern bool CommandMode;
 
 /* Local variables */
-int		PtyRDFD;	/* File descriptor for reading and writing to/from */
-int		PtyWRFD;	/* pty interface - only different in debug mode. */
+static int	PtyRDFD;	/* File descriptor for reading and writing to/from */
+static int	PtyWRFD;	/* pty interface - only different in debug mode. */
 static int	rfds_n;
 static fd_set	rfds;
 static pthread_t dp_thread = 0;

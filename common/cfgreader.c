@@ -1,6 +1,6 @@
 /*
 
-  $Id: cfgreader.c,v 1.21 2002-04-30 18:56:12 pkot Exp $
+  $Id: cfgreader.c,v 1.22 2002-07-29 21:49:03 pkot Exp $
 
   G N O K I I
 
@@ -40,7 +40,7 @@
 
 #include "cfgreader.h"
 
-API struct CFG_Header *CFG_Info;
+extern API struct CFG_Header *CFG_Info;
 
 /* Read configuration information from a ".INI" style file */
 struct CFG_Header *CFG_ReadFile(const char *filename)

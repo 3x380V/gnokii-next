@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.h,v 1.28 2002-07-18 08:49:19 plail Exp $
+  $Id: gnokii.h,v 1.29 2002-07-29 21:49:04 pkot Exp $
 
   G N O K I I
 
@@ -38,7 +38,7 @@
 
 /* Define these as externs so that app code can pick them up. */
 
-API GSM_Information *GSM_Info;
+extern API GSM_Information *GSM_Info;
 extern GSM_Error (*GSM_F)(GSM_Operation op, GSM_Data *data, GSM_Statemachine *state);
 
 /* Prototype for the functions actually provided by gsm-api.c. */

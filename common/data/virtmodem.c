@@ -1,6 +1,6 @@
 /*
 
-  $Id: virtmodem.c,v 1.22 2002-07-29 21:29:48 bozo Exp $
+  $Id: virtmodem.c,v 1.23 2002-07-29 21:49:03 pkot Exp $
 
   G N O K I I
 
@@ -91,16 +91,16 @@ static GSM_Error VM_GSMInitialise(char *model,
 
 extern bool GTerminateThread;
 int ConnectCount;
+bool CommandMode;
 
 /* Local variables */
 
-int PtyRDFD;	/* File descriptor for reading and writing to/from */
-int PtyWRFD;	/* pty interface - only different in debug mode. */
+static int PtyRDFD;	/* File descriptor for reading and writing to/from */
+static int PtyWRFD;	/* pty interface - only different in debug mode. */
 
-bool UseSTDIO;	/* Use STDIO for debugging purposes instead of pty */
-bool CommandMode;
+static bool UseSTDIO;	/* Use STDIO for debugging purposes instead of pty */
 
-pthread_t Thread;
+static pthread_t Thread;
 
 /* If initialised in debug mode, stdin/out is used instead
    of ptys for interface. */
