@@ -3,7 +3,7 @@
 #
 # Copyright (C) 1999 Hugh Blemings & Pavel Janík ml. & Jan Derfinak
 #               2000 Karel Zak
-# $Id: Makefile,v 1.28 2004-06-20 14:14:08 pkot Exp $
+# $Id: Makefile,v 1.29 2004-06-27 21:26:30 pkot Exp $
 #
 
 GLIBCFLAGS = glib-config --cflags
@@ -29,14 +29,6 @@ LDLIBS += $(PTHREAD_LIBS) \
 LDLIBS += -rdynamic $(TOPDIR)/common/libgnokii.la -ldl
 # Some systems, eg. FreeBSD don't have libdl. Use this:
 # LDLIBS += -s -rdynamic -L$(TOPDIR)/common -lgnokii
-
-ifdef XPM_LIBS
-	LDLIBS +=$(XPM_LIBS)
-endif
-
-ifdef ICONV_LIBS
-	LDLIBS += $(ICONV_LIBS)
-endif
 
 OBJS = 	smsd.lo \
 	lowlevel.lo

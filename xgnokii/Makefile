@@ -1,7 +1,7 @@
 
 
 #
-# $Id: Makefile,v 1.54 2004-06-20 14:27:06 pkot Exp $
+# $Id: Makefile,v 1.55 2004-06-27 21:26:30 pkot Exp $
 #
 # Makefile for the xGNOKII tool suite.
 #
@@ -11,15 +11,6 @@
 
 TOPDIR=..
 include $(TOPDIR)/Makefile.global
-
-ifdef XPM_LIBS
-	LDLIBS += $(XPM_LIBS)
-	CFLAGS += $(XPM_CFLAGS)
-endif
-
-ifdef ICONV_LIBS
-	LDLIBS += $(ICONV_LIBS)
-endif
 
 CFLAGS += $(PTHREAD_CFLAGS) \
 	  $(GTK_CFLAGS)
