@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus-3110.h,v 1.11 2003-06-14 12:57:17 osma Exp $
+  $Id: fbus-3110.h,v 1.12 2003-06-15 20:43:47 osma Exp $
 
   G N O K I I
 
@@ -81,6 +81,7 @@ typedef struct {
 typedef struct{
 	fb3110_incoming_frame i;
 	u8 request_sequence_number;
+	u8 last_incoming_sequence_number;
 } fb3110_link;
 
 gn_error fb3110_initialise(struct gn_statemachine *state);
