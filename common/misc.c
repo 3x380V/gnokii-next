@@ -1,6 +1,6 @@
 /*
 
-  $Id: misc.c,v 1.26 2002-02-08 23:57:37 pkot Exp $
+  $Id: misc.c,v 1.27 2002-03-12 00:47:52 pkot Exp $
 
   G N O K I I
 
@@ -159,8 +159,10 @@ void GSM_WriteErrorLog(const char *fmt, ...)
 	if (GSM_ELogHandler) {
 		GSM_ELogHandler(fmt, ap);
 	} else {
+#ifndef	DEBUG
 		vfprintf(stderr, fmt, ap);
 		fflush(stderr);
+#endif
 	}
 
 	va_end(ap);
