@@ -8,16 +8,17 @@
 
   Released under the terms of the GNU GPL, see file COPYING for more details.
 
-  $Id: lowlevel.h,v 1.3 2002-01-14 22:14:36 ja Exp $
+  $Id: lowlevel.h,v 1.4 2002-01-27 14:54:43 ja Exp $
   
 */
 
-#ifndef XGNOKII_LOWLEVEL_H
-#define XGNOKII_LOWLEVEL_H
+#ifndef LOWLEVEL_H
+#define LOWLEVEL_H
 
 #include <pthread.h>
 #include <glib.h>
-#include "gsm-common.h"
+#include "gsm-error.h"
+#include "gsm-sms.h"
 
 typedef enum {
   Event_SendSMSMessage,
@@ -39,7 +40,6 @@ typedef struct {
   bool working;
   struct {
     gchar *model;
-    gchar *imei;
     gchar *revision;
     gchar *version;
   } phone;
