@@ -1,6 +1,6 @@
 /*
 
-  $Id: sms-layout.c,v 1.3 2002-05-20 09:27:17 machek Exp $
+  $Id: sms-layout.c,v 1.4 2002-05-25 13:31:03 pkot Exp $
 
   G N O K I I
 
@@ -30,8 +30,6 @@
   THIS IS OBSOLETE, PLEASE TRY TO AVOID USING THIS
 
 */
-
-#define DEBUG
 
 #include <stdlib.h>
 #include <string.h>
