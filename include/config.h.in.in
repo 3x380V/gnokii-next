@@ -1,6 +1,6 @@
 /*
 
-  $Id: config.h.in.in,v 1.7 2002-04-05 11:39:39 plail Exp $
+  $Id: config.h.in.in,v 1.8 2002-04-08 08:15:54 pkot Exp $
 
   G N O K I I
 
@@ -28,6 +28,7 @@
 #undef HAVE_CTYPE_H
 #undef HAVE_STDLIB_H
 #undef HAVE_STDARG_H
+#undef HAVE_SYS_TIME_H
 
 /* Define if your compiler supports long long */
 #undef HAVE_LONG_LONG

@@ -1,6 +1,6 @@
 /*
 
-  $Id: compat.h,v 1.9 2002-04-05 11:39:39 plail Exp $
+  $Id: compat.h,v 1.10 2002-04-08 08:15:54 pkot Exp $
 
   G N O K I I
 
@@ -31,7 +31,10 @@
 #ifndef	__gnokii_compat_h
 #define	__gnokii_compat_h
 
-#include <sys/time.h>
+#ifdef HAVE_SYS_TIME_H
+#  include <sys/time.h>
+#endif
+
 #ifdef WIN32
 #  include <windows.h>
 #  include <string.h>

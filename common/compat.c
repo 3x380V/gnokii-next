@@ -1,6 +1,6 @@
 /*
 
-  $Id: compat.c,v 1.5 2002-04-05 11:39:38 plail Exp $
+  $Id: compat.c,v 1.6 2002-04-08 08:15:54 pkot Exp $
 
   G N O K I I
 
@@ -34,7 +34,9 @@
 #  include <time.h>
 #  define ftime _ftime
 #  define timeb _timeb
-#else
+#endif
+
+#ifdef HAVE_SYS_TIME_H
 #  include <sys/time.h>
 #endif
 

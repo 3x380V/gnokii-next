@@ -1,6 +1,6 @@
 /*
 
-  $Id: virtmodem.c,v 1.17 2002-03-29 20:51:22 pkot Exp $
+  $Id: virtmodem.c,v 1.18 2002-04-08 08:15:54 pkot Exp $
 
   G N O K I I
 
@@ -51,7 +51,9 @@
 #include <string.h>
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <sys/time.h>
+#ifdef HAVE_SYS_TIME_H
+#  include <sys/time.h>
+#endif
 #include <sys/poll.h>
 #include <pthread.h>
 #include <unistd.h>
