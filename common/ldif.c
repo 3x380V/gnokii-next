@@ -1,6 +1,6 @@
 /*
 
-  $Id: ldif.c,v 1.5 2003-09-20 19:49:05 pkot Exp $
+  $Id: ldif.c,v 1.6 2003-09-21 14:57:49 pkot Exp $
   
   G N O K I I
 
@@ -35,7 +35,7 @@
 #include "config.h"
 #include "compat.h"
 #include "gnokii.h"
-
+#include "gnokii-internal.h"
 
 /* a utility function to reuse code */
 static int ldif_entry_write(FILE *f, const char *parameter, const char *value, int convertToUTF8)
