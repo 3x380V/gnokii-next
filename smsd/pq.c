@@ -1,14 +1,16 @@
 /*
 
-  S M S D
+  PQ.C
 
   A Linux/Unix GUI for Nokia mobile phones.
   Copyright (C) 1999 Pavel Janík ml., Hugh Blemings
   & Ján Derfiòák <ja@mail.upjs.sk>.
 
   Released under the terms of the GNU GPL, see file COPYING for more details.
+  
+  This file is a module to smsd for PostgreSQL db server.
 
-  $Id: pq.c,v 1.2 2002-02-01 13:43:31 ja Exp $
+  $Id: pq.c,v 1.3 2002-02-04 16:00:46 ja Exp $
   
 */
 

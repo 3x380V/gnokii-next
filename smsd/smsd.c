@@ -8,7 +8,7 @@
 
   Released under the terms of the GNU GPL, see file COPYING for more details.
 
-  $Id: smsd.c,v 1.11 2002-02-01 13:43:31 ja Exp $
+  $Id: smsd.c,v 1.12 2002-02-04 16:00:46 ja Exp $
 */
 
 #include <string.h>
@@ -147,9 +147,15 @@ gint LoadDB (void)
 
 static void Usage (gchar *p)
 {
-  g_print ("\nUsage:  %s [options]\n"
-           "            -d, --db     DBconnectInfo\n"
-           "            -h, --help\n", p);
+  g_print (_("\nUsage:  %s [options]\n"
+             "            -u, --user db_username\n" 
+             "            -p, --password db_password\n" 
+             "            -d, --db db_name\n" 
+             "            -c, --host db_hostname\n" 
+             "            -r, --reports\n" 
+             "            -m, --module db_module (pq, mysql)\n" 
+             "            -l, --libdir path_to_db_module\n" 
+             "            -h, --help\n"), p);
 }
 
 
