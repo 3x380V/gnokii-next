@@ -1,6 +1,6 @@
 /*
 
-  $Id: encoding.h,v 1.9 2002-04-04 22:35:37 pkot Exp $
+  $Id: encoding.h,v 1.10 2002-07-07 20:49:58 pkot Exp $
 
   G N O K I I
 
@@ -36,9 +36,9 @@
 extern void hex2bin(unsigned char *dest, const unsigned char *src, unsigned int len);
 extern void bin2hex(unsigned char *dest, const unsigned char *src, unsigned int len);
 
-int Unpack7BitCharacters(int offset, int in_length, int out_length,
+int Unpack7BitCharacters(unsigned int offset, unsigned int in_length, unsigned int out_length,
 			unsigned char *input, unsigned char *output);
-int Pack7BitCharacters(int offset, unsigned char *input, unsigned char *output);
+int Pack7BitCharacters(unsigned int offset, unsigned char *input, unsigned char *output);
 
 void DecodeUnicode (unsigned char* dest, const unsigned char* src, int len);
 void EncodeUnicode (unsigned char* dest, const unsigned char* src, int len);

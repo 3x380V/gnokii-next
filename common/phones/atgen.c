@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.39 2002-07-03 22:50:03 pkot Exp $
+  $Id: atgen.c,v 1.40 2002-07-07 20:49:58 pkot Exp $
 
   G N O K I I
 
@@ -22,7 +22,8 @@
   along with gnokii; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-  Copyright 2001 Manfred Jonsson <manfred.jonsson@gmx.de>
+  Copyright (C) 2001 Manfred Jonsson <manfred.jonsson@gmx.de>
+  Copyright (C) 2002 Pawel Kot <pkot@linuxnews.pl>
 
   This file provides functions specific to generic at command compatible
   phones. See README for more details on supported mobile phones.
@@ -1012,11 +1013,10 @@ static GSM_Error ReplyGetSMS(int messagetype, unsigned char *buffer, int length,
 	data->RawSMS->RejectDuplicates = 0;
 	data->RawSMS->Report           = 0;
 	data->RawSMS->Reference        = 0;
-	data->RawSMS->PID              = tmp[offset + 2];
-	data->RawSMS->DCS              = tmp[offset + 3];
-	memcpy(data->RawSMS->SMSCTime, tmp + offset + 4, 7);
-	data->RawSMS->Length           = tmp[offset + 10];
-	dprintf("sms len: %02x\n", data->RawSMS->Length);
+	data->RawSMS->PID              = tmp[offset + 1];
+	data->RawSMS->DCS              = tmp[offset + 2];
+	memcpy(data->RawSMS->SMSCTime, tmp + offset + 3, 7);
+	data->RawSMS->Length           = tmp[offset + 10] & 0x00ff;
 	memcpy(data->RawSMS->UserData, tmp + offset + 11, sms_len - offset - 11);
 	free(tmp);
 	return GE_NONE;
