@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.188 2002-01-31 18:28:20 pkot Exp $
+  $Id: gnokii.c,v 1.189 2002-02-01 13:27:37 pkot Exp $
 
   G N O K I I
 
@@ -296,8 +296,10 @@ static void fbusinit(void (*rlp_handler)(RLP_F96Frame *frame))
 
 	aux = CFG_Get(CFG_Info, "global", "use_locking");
 	/* Defaults to 'yes' */
-	if (!aux || !strcmp(aux, "yes")) lockfile = lock_device(Port);
-	if (lockfile == NULL) exit(-1);
+	if (!aux || !strcmp(aux, "yes")) {
+		lockfile = lock_device(Port);
+		if (lockfile == NULL) exit(-1);
+	}
 
 	/* Initialise the code for the GSM interface. */
 	error = GSM_Initialise(model, Port, Initlength, connection, rlp_handler, &State);
