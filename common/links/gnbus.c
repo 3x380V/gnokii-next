@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnbus.c,v 1.3 2004-04-29 22:13:12 pkot Exp $
+  $Id: gnbus.c,v 1.4 2004-06-27 20:24:55 pkot Exp $
 
   G N O K I I
 
@@ -275,7 +275,6 @@ static gn_error gnbus_send_message(unsigned int messagesize, unsigned char messa
 gn_error gnbus_initialise(struct gn_statemachine *state)
 {
 	int conn_type;
-	gn_error err;
 
 	if (!state)
 		return GN_ERR_FAILED;

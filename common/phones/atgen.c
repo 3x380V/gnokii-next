@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.105 2004-06-10 15:18:50 bozo Exp $
+  $Id: atgen.c,v 1.106 2004-06-27 20:26:07 pkot Exp $
 
   G N O K I I
 
@@ -1040,7 +1040,6 @@ static gn_error ReplyReadPhonebook(int messagetype, unsigned char *buffer, int l
 	at_line_buffer buf;
 	char *pos, *endpos;
 	gn_error error;
-	int l;
 
 	if ((error = at_error_get(buffer, state)) != GN_ERR_NONE)
 		return (error == GN_ERR_UNKNOWN) ? GN_ERR_INVALIDLOCATION : error;
@@ -1559,7 +1558,7 @@ static gn_error ReplyGetNetworkInfo(int messagetype, unsigned char *buffer, int 
 
 	} else if (!strncmp(buf.line1, "AT+COPS?", 8)) {
 		char tmp[128];
-		int format, l;
+		int format;
 
 		memset(tmp, 0, sizeof(tmp));
 		strings = gnokii_strsplit(buf.line2, ",", 3);
