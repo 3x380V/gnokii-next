@@ -3,11 +3,13 @@
 #
 # Copyright (C) 1999 Hugh Blemings & Pavel Janík ml. & Jan Derfinak
 #               2000 Karel Zak
-# $Id: Makefile,v 1.20 2003-06-03 19:38:54 pkot Exp $
+# $Id: Makefile,v 1.21 2003-08-29 15:00:06 pkot Exp $
 #
 
 TOPDIR=..
 include $(TOPDIR)/Makefile.global
+
+SMSD_MAN=man/smsd.8
 
 CFLAGS += -DMODULES_DIR=\"${libdir}/smsd\" $(PTHREAD_CFLAGS) \
 	  `glib-config --cflags`
@@ -65,6 +67,8 @@ install: all
 	$(INSTALL) -m 755 -s smsd $(DESTDIR)$(sbindir)
 	$(INSTALL) -d $(DESTDIR)${libdir}/smsd
 	$(INSTALL) lib*.so $(DESTDIR)${libdir}/smsd
+	$(INSTALL) -d $(DESTDIR)$(man8dir)
+	$(INSTALL_DATA) $(SMSD_MAN) $(DESTDIR)$(man8dir)
 
 depend dep:
 	$(CC) $(CFLAGS) -MM *.c >depend
