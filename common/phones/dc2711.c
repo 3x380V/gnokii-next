@@ -1,6 +1,6 @@
 /*
 
-  $Id: dc2711.c,v 1.10 2002-04-15 09:17:32 machek Exp $
+  $Id: dc2711.c,v 1.11 2002-04-18 21:10:53 pkot Exp $
 
   G N O K I I
 
@@ -69,8 +69,6 @@ GSM_Phone phone_dancall_2711 = {
 	PGEN_IncomingDefault,
 	INFO
 };
-
-char reply_buf[10240];
 
 static void Terminate()
 {
