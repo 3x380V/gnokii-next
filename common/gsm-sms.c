@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-sms.c,v 1.101 2002-07-07 22:52:30 pkot Exp $
+  $Id: gsm-sms.c,v 1.102 2002-07-11 21:39:09 pkot Exp $
 
   G N O K I I
 
@@ -1262,6 +1262,8 @@ GSM_Error SendLongSMS(GSM_Data *data, GSM_Statemachine *state);
 API GSM_Error SendSMS(GSM_Data *data, GSM_Statemachine *state)
 {
 	GSM_Error error = GE_NONE;
+
+	if (!data->SMS) return GE_INTERNALERROR;
 
 	data->RawSMS = malloc(sizeof(*data->RawSMS));
 	memset(data->RawSMS, 0, sizeof(*data->RawSMS));
