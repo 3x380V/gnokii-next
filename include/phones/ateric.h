@@ -1,6 +1,6 @@
 /*
 
-  $Id: ateric.h,v 1.5 2002-12-16 12:24:41 ladis Exp $
+  $Id: ateric.h,v 1.6 2003-01-05 20:49:22 ladis Exp $
 
   G N O K I I
 
@@ -24,8 +24,8 @@
 
   Copyright 2001 Manfred Jonsson <manfred.jonsson@gmx.de>
 
-  This file provides functions specific to at commands on ericsson
-  phones. See README for more details on supported mobile phones.
+  This file provides functions specific to AT commands on Ericsson phones.
+  See README for more details on supported mobile phones.
 
 */
 

@@ -1,6 +1,6 @@
 /*
 
-  $Id: atbosch.h,v 1.4 2002-12-31 00:10:22 pkot Exp $
+  $Id: atbosch.h,v 1.5 2003-01-05 20:49:22 ladis Exp $
 
   G N O K I I
 
@@ -24,8 +24,8 @@
 
   Copyright (C) 2002 Ladislav Michl <ladis@linux-mips.org>
 
-  This file provides functions specific to at commands on ericsson
-  phones. See README for more details on supported mobile phones.
+  This file provides functions specific to AT commands on Bosch phones.
+  See README for more details on supported mobile phones.
 
 */
 
