@@ -1,6 +1,6 @@
 /*
 
-  $Id: atbus.c,v 1.42 2004-06-09 13:58:15 bozo Exp $
+  $Id: atbus.c,v 1.43 2005-03-20 17:06:51 pkot Exp $
 
   G N O K I I
 
@@ -120,7 +120,7 @@ static gn_error at_send_message(unsigned int message_length, unsigned char messa
 
 char *findcrlfbw(unsigned char *str, int len)
 {
-	while ((*str != '\n') && (*str-1 != '\r') && len--)
+	while (len-- && (*str != '\n') && (*str-1 != '\r'))
 		str--;
 	return len > 0 ? str+1 : NULL;
 }
