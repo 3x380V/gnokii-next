@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.h,v 1.15 2002-08-07 00:18:03 bozo Exp $
+  $Id: nk6100.h,v 1.16 2002-09-17 21:21:09 pkot Exp $
 
   G N O K I I
 
@@ -54,6 +54,7 @@
 
 #define	P6100_CAP_OLD_CALL_API	1
 #define	P6100_CAP_NBS_UPLOAD	2
+#define P6100_CAP_PB_UNICODE	4
 
 typedef struct {
 	GSM_KeyCode Key;
