@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.c,v 1.113 2003-04-28 12:53:52 pkot Exp $
+  $Id: nk6510.c,v 1.114 2003-04-28 14:20:10 pkot Exp $
 
   G N O K I I
 
@@ -382,7 +382,6 @@ static gn_error NK6510_Initialise(struct gn_statemachine *state)
 			err = fbus_initialise(attempt++, state);
 			break;
 		case GN_CT_Bluetooth:
-#ifdef HAVE_BLUETOOTH
 			/* Quoting Marcel Holtmann from gnokii-ml:
 			 * "I discovered some secrets of the Nokia Bluetooth support in the 6310
 			 * generation. They use a special SDP entry, which is not in the public
@@ -405,7 +404,6 @@ static gn_error NK6510_Initialise(struct gn_statemachine *state)
 			 * communication protocol."
 			 */
 			state->config.rfcomm_cn = 14;
-#endif
 		case GN_CT_Infrared:
 		case GN_CT_Irda:
 			err = phonet_initialise(state);
