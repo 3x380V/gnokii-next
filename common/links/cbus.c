@@ -1,6 +1,6 @@
 /* -*- linux-c -*-
 
-  $Id: cbus.c,v 1.13 2002-03-28 21:37:46 pkot Exp $
+  $Id: cbus.c,v 1.14 2002-04-08 07:57:58 pkot Exp $
 
   G N O K I I
 
@@ -263,6 +263,7 @@ static void CBUS_RX_StateMachine(unsigned char rx_byte)
 				}
 				break;
 			default:
+				break;
 		}
 		if (i->state != CBUS_RX_Header) {
 			i->FrameHeader1 = i->prev_rx_byte;
@@ -350,6 +351,7 @@ static void CBUS_RX_StateMachine(unsigned char rx_byte)
 		break;
 
 	default:
+		break;
 	}
 	i->prev_rx_byte = rx_byte;
 }
