@@ -1,6 +1,6 @@
 /*
 
-  $Id: pkt.c,v 1.6 2004-05-31 22:11:07 pkot Exp $
+  $Id: pkt.c,v 1.7 2004-06-27 20:27:59 pkot Exp $
 
   G N O K I I
 
@@ -37,6 +37,7 @@
 #include <assert.h>
 
 #include "gnokii.h"
+#include "gnokii-internal.h"
 #include "pkt.h"
 
 
@@ -192,7 +193,6 @@ char *pkt_get_string(char *s, int slen, pkt_buffer *buf)
 {
 	uint16_t l;
 	uint8_t *b;
-	int n;
 
 	l = pkt_get_uint16(buf);
 	b = buffer_expand(buf, 2 * l);
