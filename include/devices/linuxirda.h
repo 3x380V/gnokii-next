@@ -28,15 +28,15 @@
  ********************************************************************/
 
 /*
- * $Id: linuxirda.h,v 1.6 2002-09-13 22:40:00 pkot Exp $
+ * $Id: linuxirda.h,v 1.7 2003-08-25 13:33:48 pkot Exp $
  *
  * GNOKII modifications:
  * Fixes for Solaris compile (Artur Kubiak and Michael Wiedmann)
  * FIXME: does it have *ANY* chance to work under other OS then Linux?
  */
 
-#ifndef IRDA_H
-#define IRDA_H
+#ifndef __gnokii_linuxirda_h
+#define __gnokii_linuxirda_h
 
 #include <sys/types.h>
 #include <inttypes.h>
@@ -215,4 +215,4 @@ struct if_irda_req {
 #define ifr_dtr       ifr_ifru.ifru_line.dtr
 #define ifr_rts       ifr_ifru.ifru_line.rts
 
-#endif /* IRDA_H */
+#endif /* __gnokii_linuxirda_h */
