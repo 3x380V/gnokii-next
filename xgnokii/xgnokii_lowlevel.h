@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_lowlevel.h,v 1.14 2002-03-21 22:55:26 pkot Exp $
+  $Id: xgnokii_lowlevel.h,v 1.15 2002-03-25 01:39:30 pkot Exp $
   
   X G N O K I I
 
@@ -53,7 +53,8 @@ typedef enum {
 	Event_DialVoice,
 	Event_GetAlarm,
 	Event_SetAlarm,
-	Event_SendKeyStroke,
+	Event_PressKey,
+	Event_ReleaseKey,
 	Event_GetBitmap,
 	Event_SetBitmap,
 	Event_GetNetworkInfo,
