@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.161 2004-01-10 00:32:53 uid66843 Exp $
+  $Id: nk6100.c,v 1.162 2004-01-10 16:31:35 uid66849 Exp $
 
   G N O K I I
 
@@ -465,6 +465,7 @@ static gn_error IdentifyPhone(struct gn_statemachine *state)
 	gn_data data;
 	char revision[GN_REVISION_MAX_LENGTH];
 
+	revision[0] = '\0';
 	gn_data_clear(&data);
 	data.model = drvinst->model;
 	data.imei = drvinst->imei;
