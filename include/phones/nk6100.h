@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.h,v 1.22 2003-03-06 22:52:16 pkot Exp $
+  $Id: nk6100.h,v 1.23 2003-11-03 23:01:15 bozo Exp $
 
   G N O K I I
 
@@ -56,6 +56,8 @@
 #define	NK6100_CAP_NBS_UPLOAD	2
 #define NK6100_CAP_PB_UNICODE	4
 #define	NK6100_CAP_OLD_KEY_API	8
+#define	NK6100_CAP_NO_PSTATUS	16
+#define	NK6100_CAP_NO_CB	32
 
 typedef struct {
 	gn_key_code key;
