@@ -1,6 +1,6 @@
 /*
 
-  $Id: common.h,v 1.105 2002-07-09 10:33:01 plail Exp $
+  $Id: common.h,v 1.106 2002-07-11 12:41:41 plail Exp $
 
   G N O K I I
 
@@ -137,10 +137,10 @@ typedef struct {
 
 #define GSM_MAX_PHONEBOOK_NAME_LENGTH   (50)	/* For 7110 */
 #define GSM_MAX_PHONEBOOK_NUMBER_LENGTH (48)	/* For 7110 */
-#define GSM_MAX_PHONEBOOK_SUB_ENTRIES   (8)	/* For 7110 */
+#define GSM_MAX_PHONEBOOK_SUB_ENTRIES   (10)	/* For 6510 */
 						/* 7110 is able to in one
-						 * entry 5 numbers and 2
-						 * texts [email,notice,postal] */
+						 * entry 5 numbers and 4
+						 * texts [email,notice,postal,url] */
 
 /* Here is a macro for models that do not support caller groups. */
 
