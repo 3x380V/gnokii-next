@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-encoding.c,v 1.61 2005-03-20 17:18:23 pkot Exp $
+  $Id: gsm-encoding.c,v 1.62 2005-03-21 21:01:33 pkot Exp $
 
   G N O K I I
 
@@ -861,4 +861,85 @@ int utf8_base64_decode(char *dest, int destlen, const char *in, int inlen)
 
 	free(aux);
 	return retval;
+}
+
+/* We are escaping the following characters (according to rfc 2426):
+ * '\n', '\r', ';', ',', '\'.
+ */
+int add_slashes(char *dest, char *src, int maxlen, int len)
+{
+	int i, j;
+
+	for (i = 0, j = 0; i < len && j < maxlen; i++, j++) {
+		switch (src[i]) {
+		case '\n':
+			dest[j++] = '\\';
+			dest[j] = 'n';
+			break;
+		case '\r':
+			dest[j++] = '\\';
+			dest[j] = 'r';
+			break;
+		case '\\':
+		case ';':
+		case ',':
+			dest[j++] = '\\';
+		default:
+			dest[j] = src[i];
+			break;
+		}
+	}
+	dest[j] = 0;
+	return j;
+}
+
+int strip_slashes(char *dest, char *src, int maxlen, int len)
+{
+	int i, j, slash_state = 0;
+
+	for (i = 0, j = 0; i < len && j < maxlen; i++) {
+		switch (src[i]) {
+		case ';':
+		case ',':
+			if (slash_state) {
+				dest[j++] = src[i];
+				slash_state = 0;
+			}
+			break;
+		case '\\':
+			if (slash_state) {
+				dest[j++] = src[i];
+				slash_state = 0;
+			} else {
+				slash_state = 1;
+			}
+			break;
+		case 'n':
+			if (slash_state) {
+				dest[j++] = '\n';
+				slash_state = 0;
+			} else {
+				dest[j++] = src[i];
+			}
+			break;
+		case 'r':
+			if (slash_state) {
+				dest[j++] = '\r';
+				slash_state = 0;
+			} else {
+				dest[j++] = src[i];
+			}
+			break;
+		default:
+			if (slash_state) {
+				dest[j++] = '\\';
+				slash_state = 0;
+			} else {
+				dest[j++] = src[i];
+			}
+			break;
+		}
+	}
+	dest[j] = 0;
+	return j;
 }
