@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.76 2002-06-27 00:51:31 bozo Exp $
+  $Id: nk6100.c,v 1.77 2002-06-29 17:14:39 pkot Exp $
 
   G N O K I I
 
@@ -1033,9 +1033,9 @@ static GSM_Error SetSMSCenter(GSM_Data *data, GSM_Statemachine *state)
 		default:
 			return GE_NOTSUPPORTED;
 	}
-	*pos = (SemiOctetPack(smsc->Recipient, pos+1, SMS_Unknown) + 1) / 2 + 1;
+	*pos = (SemiOctetPack(smsc->Recipient.Number, pos + 1, smsc->Recipient.Type) + 1) / 2 + 1;
 	pos += 12;
-	*pos = (SemiOctetPack(smsc->Number, pos+1, smsc->Type) + 1) / 2 + 1;
+	*pos = (SemiOctetPack(smsc->SMSC.Number, pos + 1, smsc->SMSC.Type) + 1) / 2 + 1;
 	pos += 12;
 	if (smsc->DefaultName < 1) {
 		snprintf(pos, 13, "%s", smsc->Name);
@@ -1251,10 +1251,11 @@ static GSM_Error IncomingSMS1(int messagetype, unsigned char *message, int lengt
 				smsc->Validity = SMS_V24H;
 				break;
 			}
-			snprintf(smsc->Recipient, sizeof(smsc->Recipient), "%s", GetBCDNumber(pos));
+			snprintf(smsc->Recipient.Number, sizeof(smsc->Recipient.Number), "%s", GetBCDNumber(pos));
+			smsc->Recipient.Type = pos[1];
 			pos += 12;
-			snprintf(smsc->Number, sizeof(smsc->Number), "%s", GetBCDNumber(pos));
-			smsc->Type = pos[1];
+			snprintf(smsc->SMSC.Number, sizeof(smsc->SMSC.Number), "%s", GetBCDNumber(pos));
+			smsc->SMSC.Type = pos[1];
 			pos += 12;
 			/* FIXME: codepage must be investigated - bozo */
 			if (pos[0] == 0x00) {

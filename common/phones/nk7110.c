@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk7110.c,v 1.87 2002-06-26 23:31:18 bozo Exp $
+  $Id: nk7110.c,v 1.88 2002-06-29 17:14:39 pkot Exp $
 
   G N O K I I
 
@@ -1036,15 +1036,20 @@ static GSM_Error P7110_IncomingSMS(int messagetype, unsigned char *message, int 
 		sprintf(data->MessageCenter->Name, "%s", message + 33);
 		data->MessageCenter->DefaultName = -1;	/* FIXME */
 
-		snprintf(data->MessageCenter->Recipient, sizeof(data->MessageCenter->Recipient), "%s", GetBCDNumber(message+9));
-		snprintf(data->MessageCenter->Number, sizeof(data->MessageCenter->Number), "%s", GetBCDNumber(message+21));
-		data->MessageCenter->Type = message[22];
+		snprintf(data->MessageCenter->Recipient.Number,
+			 sizeof(data->MessageCenter->Recipient.Number),
+			 "%s", GetBCDNumber(message + 9));
+		data->MessageCenter->Recipient.Type = message[10];
+		snprintf(data->MessageCenter->SMSC.Number,
+			 sizeof(data->MessageCenter->SMSC.Number),
+			 "%s", GetBCDNumber(message + 21));
+		data->MessageCenter->SMSC.Type = message[22];
 
-		if (strlen(data->MessageCenter->Recipient) == 0) {
-			sprintf(data->MessageCenter->Recipient, "(none)");
+		if (strlen(data->MessageCenter->Recipient.Number) == 0) {
+			sprintf(data->MessageCenter->Recipient.Number, "(none)");
 		}
-		if (strlen(data->MessageCenter->Number) == 0) {
-			sprintf(data->MessageCenter->Number, "(none)");
+		if (strlen(data->MessageCenter->SMSC.Number) == 0) {
+			sprintf(data->MessageCenter->SMSC.Number, "(none)");
 		}
 		if(strlen(data->MessageCenter->Name) == 0) {
 			sprintf(data->MessageCenter->Name, "(none)");

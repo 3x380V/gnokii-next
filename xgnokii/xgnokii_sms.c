@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_sms.c,v 1.35 2002-05-25 10:54:25 plail Exp $
+  $Id: xgnokii_sms.c,v 1.36 2002-06-29 17:14:39 pkot Exp $
 
   X G N O K I I
 
@@ -954,7 +954,7 @@ static void DoSendSMS(void)
 			number = addresses[i];
 
 		DefaultSubmitSMS(&sms);
-		strcpy(sms.SMSC.Number, xgnokiiConfig.smsSetting[sendSMS.center].Number);
+		strcpy(sms.SMSC.Number, xgnokiiConfig.smsSetting[sendSMS.center].SMSC.Number);
 		/*		sms.SMSC.No = 0;*/
 
 		if (GTK_TOGGLE_BUTTON(sendSMS.report)->active)
