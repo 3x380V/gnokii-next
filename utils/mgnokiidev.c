@@ -1,6 +1,6 @@
 /*
 
-  $Id: mgnokiidev.c,v 1.19 2003-03-25 09:58:44 bozo Exp $
+  $Id: mgnokiidev.c,v 1.20 2003-04-08 08:39:37 bozo Exp $
 
   G N O K I I
 
@@ -31,6 +31,12 @@
   pty device descriptor.
 
 */
+
+/* See common/data/virtmodem.c for explanation */
+#ifdef	__OpenBSD__
+#  include <sys/types.h>
+#  define HAVE_MSGHDR_MSG_CONTROL 1
+#endif
 
 /* See common/data/virtmodem.c for explanation */
 #define _XOPEN_SOURCE 500

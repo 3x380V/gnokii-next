@@ -1,6 +1,6 @@
 /*
 
-  $Id: virtmodem.c,v 1.37 2003-03-06 21:07:04 pkot Exp $
+  $Id: virtmodem.c,v 1.38 2003-04-08 08:39:37 bozo Exp $
 
   G N O K I I
 
@@ -33,6 +33,17 @@
 */
 
 #include "config.h"
+
+/*
+ * BEWARE! UGLY HACK!
+ * We will define _XOPEN_SOURCE but it will disable the u_char, u_short,
+ * u_int and u_long types on OpenBSD. It seems only the OpenBSD is affected,
+ * so this is the workaround - bozo
+ */
+#ifdef	__OpenBSD__
+#  include <sys/types.h>
+#  define HAVE_MSGHDR_MSG_CONTROL 1
+#endif
 
 /* This is the correct way to include stdlib with _XOPEN_SOURCE = 500 defined.
  * Needed for clean unlockpt() declaration.
