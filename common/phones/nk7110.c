@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk7110.c,v 1.39 2002-01-17 12:12:58 pkot Exp $
+  $Id: nk7110.c,v 1.40 2002-01-17 15:38:54 pkot Exp $
 
   G N O K I I
 
@@ -160,7 +160,6 @@ GSM_Phone phone_nokia_7110 = {
 
 static GSM_Error P7110_Functions(GSM_Operation op, GSM_Data *data, GSM_Statemachine *state)
 {
-	if (!data || !state) return GE_INTERNALERROR;
 	switch (op) {
 	case GOP_Init:
 		return P7110_Initialise(state);
