@@ -1,6 +1,6 @@
 /*
 
-  $Id: unixbluetooth.c,v 1.11 2003-11-22 15:37:46 bozo Exp $
+  $Id: unixbluetooth.c,v 1.12 2003-12-02 21:48:05 bozo Exp $
  
   G N O K I I
 
@@ -26,6 +26,14 @@
   Copyright (C) 2002       Marcel Holtmann <marcel@holtmann.org>
 
 */
+
+#include "config.h"
+#include "compat.h"
+#include "misc.h"
+#include "gnokii.h"
+#include "devices/unixbluetooth.h"
+
+#if defined(HAVE_BLUETOOTH_BLUEZ) || defined(HAVE_BLUETOOTH_NETGRAPH)
 
 #include <stdlib.h>
 #include <unistd.h>
@@ -72,7 +80,7 @@ static int bt_aton(const char *str, bdaddr_t *ba)
 	return 1;
 }
 
-#endif
+#endif	/* HAVE_BT_ATON */
 
 static int str2ba(const char *str, bdaddr_t *ba)
 {
@@ -149,3 +157,5 @@ int bluetooth_select(int fd, struct timeval *timeout, struct gn_statemachine *st
 
 	return select(fd + 1, &readfds, NULL, NULL, timeout);
 }
+
+#endif	/* HAVE_BLUETOOTH_BLUEZ || HAVE_BLUETOOTH_NETGRAPH */

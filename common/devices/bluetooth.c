@@ -1,6 +1,6 @@
 /*
 
-  $Id: bluetooth.c,v 1.1 2003-11-20 21:10:34 bozo Exp $
+  $Id: bluetooth.c,v 1.2 2003-12-02 21:48:05 bozo Exp $
  
   G N O K I I
 
@@ -31,11 +31,11 @@
 #include "compat.h"
 #include "misc.h"
 #include "gnokii.h"
+#include "devices/unixbluetooth.h"
 
 #ifdef HAVE_BLUETOOTH
 
-#include "devices/unixbluetooth.h"
-
+#if 0
 static char *phone[] = {
 	"Nokia 3650",
 	"Nokia 6210",
@@ -44,11 +44,6 @@ static char *phone[] = {
 	"Nokia 7650",
 	"Nokia 8910"
 };
-
-#ifdef HAVE_BLUETOOTH_MACOSX
-#  include "osxbluetooth.c"
-#else
-#  include "unixbluetooth.c"
 #endif
 
 #else /* HAVE_BLUETOOTH */

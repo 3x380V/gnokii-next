@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.11 2003-11-20 21:10:34 bozo Exp $
+# $Id: Makefile,v 1.12 2003-12-02 21:48:05 bozo Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -19,7 +19,9 @@ include $(TOPDIR)/Makefile.global
 
 OBJS =	tekram.o \
 	unixirda.o \
-	bluetooth.o
+	bluetooth.o \
+	unixbluetooth.o \
+	osxbluetooth.o
 
 ifdef WIN32
 	OBJS += winserial.o

@@ -1,6 +1,6 @@
 /*
 
-  $Id: acconfig.h,v 1.8 2002-12-08 23:32:42 pkot Exp $
+  $Id: acconfig.h,v 1.9 2003-12-02 21:48:04 bozo Exp $
 
   G N O K I I
 
@@ -55,7 +55,7 @@
 /* Define if you want IrDA support. Linux only */
 #undef HAVE_IRDA
 
-/* Define if you want Bluetooth support. Linux only */
+/* Define if you want Bluetooth support. Cross platform */
 #undef HAVE_BLUETOOTH
 
 /***** Compiler specific *****/
