@@ -1,6 +1,6 @@
 /*
 
-  $Id: sms-nokia.c,v 1.4 2002-08-27 21:58:24 pkot Exp $
+  $Id: sms-nokia.c,v 1.5 2002-08-27 23:23:00 pkot Exp $
 
   G N O K I I
 
@@ -67,7 +67,7 @@ int sms_nokia_encode_text(unsigned char *text, unsigned char *message, bool firs
 	current = sms_nokia_pack_smart_message_part(message, len, type, first);
 
 	if (type == GN_SMS_MULTIPART_UNICODE)
-		EncodeUnicode(message + current, text, strlen(text));
+		char_encode_unicode(message + current, text, strlen(text));
 	else
 		memcpy(message + current, text, strlen(text));
 	current += len;

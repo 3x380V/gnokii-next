@@ -1,6 +1,6 @@
 /*
 
-  $Id: mysql.c,v 1.12 2002-08-18 18:03:11 pkot Exp $
+  $Id: mysql.c,v 1.13 2002-08-27 23:23:01 pkot Exp $
 
   S M S D
 
@@ -168,7 +168,7 @@ void DB_Look (void)
     sms.UserData[0].Length = strlen (sms.UserData[0].u.Text);
     sms.UserData[0].Type = SMS_PlainText;
     sms.UserData[1].Type = SMS_NoData;
-    if (!IsDefaultAlphabetString(sms.UserData[0].u.Text))
+    if (!gn_char_def_alphabet(sms.UserData[0].u.Text))
        sms.DCS.u.General.Alphabet = SMS_UCS2;
 
 #ifdef XDEBUG
