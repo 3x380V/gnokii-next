@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_lowlevel.c,v 1.51 2002-07-24 15:40:04 plail Exp $
+  $Id: xgnokii_lowlevel.c,v 1.52 2002-08-02 16:37:12 plail Exp $
   
   X G N O K I I
 
@@ -805,7 +805,10 @@ static gint A_DeleteSMSMessage(gpointer data)
 	if (sms) {
 		GSM_DataClear(&tmp_gdat);
 		tmp_gdat.SMS = sms;
-		error = DeleteSMS(&tmp_gdat, &statemachine);
+		if (phoneMonitor.supported & PM_FOLDERS)
+			error = DeleteSMSnoValidate(&tmp_gdat, &statemachine);
+		else
+			error = DeleteSMS(&tmp_gdat, &statemachine);
 		g_free(sms);
 	}
 	return (error);
