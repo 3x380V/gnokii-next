@@ -8,10 +8,19 @@
 
   Released under the terms of the GNU GPL, see file COPYING for more details.
 
-  $Id: misc.c,v 1.17 2001-08-09 12:34:34 pkot Exp $
+  $Id: misc.c,v 1.18 2001-09-09 21:45:49 machek Exp $
   
   $Log: misc.c,v $
-  Revision 1.17  2001-08-09 12:34:34  pkot
+  Revision 1.18  2001-09-09 21:45:49  machek
+  Cleanups from Ladislav Michl <ladis@psi.cz>:
+
+  *) do *not* internationalize debug messages
+
+  *) some whitespace fixes, do not use //
+
+  *) break is unneccessary after return
+
+  Revision 1.17  2001/08/09 12:34:34  pkot
   3330 and 6250 support - I have no idea if it does work (mygnokii)
 
   Revision 1.16  2001/03/21 23:36:04  chris
@@ -94,11 +103,11 @@ PhoneModel *GetPhoneModel (const char *num)
 
 	while (models[i].number != NULL) {
 		if (strcmp (num, models[i].number) == 0) {
-			dprintf(_("Found model\n"));
+			dprintf("Found model\n");
 			return (&models[i]);
 		}
 		else {
-			dprintf(_("comparing %s and %s\n"), num, models[i].number);
+			dprintf("comparing %s and %s\n", num, models[i].number);
 		}
 		i++;
 	}
