@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-internal.h,v 1.22 2004-02-22 20:00:55 uid66849 Exp $
+  $Id: gnokii-internal.h,v 1.23 2004-05-08 20:52:41 bozo Exp $
 
   G N O K I I
 
@@ -40,7 +40,8 @@
 gn_error sms_parse(int offset, gn_data *data);
 gn_error sms_request(gn_data *data, struct gn_statemachine *state);
 gn_error sms_prepare(gn_sms *sms, gn_sms_raw *rawsms);
-gn_timestamp *timestamp_unpack(u8 *Number, gn_timestamp *dt);
+gn_timestamp *sms_timestamp_unpack(unsigned char *number, gn_timestamp *dt);
+unsigned char *sms_timestamp_pack(gn_timestamp *dt, unsigned char *number);
 
 /* Statemachine */
 gn_error sm_initialise(struct gn_statemachine *state);
