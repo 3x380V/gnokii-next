@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-common.c,v 1.19 2003-03-06 21:23:57 pkot Exp $
+  $Id: gsm-common.c,v 1.20 2003-09-05 12:24:13 pkot Exp $
 
   G N O K I I
 
@@ -75,6 +75,49 @@ API gn_memory_type gn_str2memory_type(const char *s)
 	X(F20);
 	return GN_MT_XX;
 #undef X
+}
+
+API char *gn_memory_type2str(gn_memory_type mt)
+{
+	switch (mt) {
+	case GN_MT_ME: return _("Internal memory");
+	case GN_MT_SM: return _("SIM card");
+	case GN_MT_FD: return _("Fixed dial numbers");
+	case GN_MT_ON: return _("Own numbers");
+	case GN_MT_EN: return _("Emergency numbers");
+	case GN_MT_DC: return _("Dialed numbers");
+	case GN_MT_RC: return _("Received numbers");
+	case GN_MT_MC: return _("Missed numbers");
+	case GN_MT_LD: return _("Last dialed");
+	case GN_MT_MT: return _("Combined ME and SIM phonebook");
+	case GN_MT_TA: return _("Computer memory");
+	case GN_MT_CB: return _("Currently selected memory");
+	case GN_MT_IN: return _("SMS Inbox");
+	case GN_MT_OU: return _("SMS Outbox");
+	case GN_MT_AR: return _("SMS Archive");
+	case GN_MT_TE: return _("SMS Templates");
+	case GN_MT_F1: return _("SMS Folder 1");
+	case GN_MT_F2: return _("SMS Folder 2");
+	case GN_MT_F3: return _("SMS Folder 3");
+	case GN_MT_F4: return _("SMS Folder 4");
+	case GN_MT_F5: return _("SMS Folder 5");
+	case GN_MT_F6: return _("SMS Folder 6");
+	case GN_MT_F7: return _("SMS Folder 7");
+	case GN_MT_F8: return _("SMS Folder 8");
+	case GN_MT_F9: return _("SMS Folder 9");
+	case GN_MT_F10: return _("SMS Folder 10");
+	case GN_MT_F11: return _("SMS Folder 11");
+	case GN_MT_F12: return _("SMS Folder 12");
+	case GN_MT_F13: return _("SMS Folder 13");
+	case GN_MT_F14: return _("SMS Folder 14");
+	case GN_MT_F15: return _("SMS Folder 15");
+	case GN_MT_F16: return _("SMS Folder 16");
+	case GN_MT_F17: return _("SMS Folder 17");
+	case GN_MT_F18: return _("SMS Folder 18");
+	case GN_MT_F19: return _("SMS Folder 19");
+	case GN_MT_F20: return _("SMS Folder 20");
+	default: return _("Unknown");
+	}
 }
 
 /* 
