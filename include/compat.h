@@ -1,6 +1,6 @@
 /*
 
-  $Id: compat.h,v 1.13 2002-04-30 18:56:12 pkot Exp $
+  $Id: compat.h,v 1.14 2002-06-20 10:22:49 pkot Exp $
 
   G N O K I I
 
@@ -30,6 +30,8 @@
 
 #ifndef	__gnokii_compat_h
 #define	__gnokii_compat_h
+
+#include "config.h"
 
 #ifdef HAVE_SYS_TIME_H
 #  include <sys/time.h>
