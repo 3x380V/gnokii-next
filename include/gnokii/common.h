@@ -1,6 +1,6 @@
 /*
 
-  $Id: common.h,v 1.78 2001-06-28 00:28:45 pkot Exp $
+  $Id: common.h,v 1.79 2001-07-27 00:02:22 pkot Exp $
 
   G N O K I I
 
@@ -14,7 +14,10 @@
   handset.
 
   $Log: common.h,v $
-  Revision 1.78  2001-06-28 00:28:45  pkot
+  Revision 1.79  2001-07-27 00:02:22  pkot
+  Generic AT support for the new structure (Manfred Jonsson)
+
+  Revision 1.78  2001/06/28 00:28:45  pkot
   Small docs updates (Pawel Kot)
 
 
@@ -620,6 +623,7 @@ typedef struct {
 	char *Imei;
 	char *Revision;
 	char *Model;
+	char *Manufacturer;
 	GSM_NetworkInfo *NetworkInfo;
 	GSM_CalendarNote *CalendarNote;
 	GSM_Bitmap *Bitmap;

@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.4 2001-06-27 09:30:40 machek Exp $
+# $Id: Makefile,v 1.5 2001-07-27 00:02:21 pkot Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -22,6 +22,7 @@ CFLAGS += $(PTHREAD_CFLAGS)
 OBJS =	fbus.o \
 	fbus-phonet.o \
 	cbus.o \
+	atbus.o \
 	utils.o
 
 all: LINKS.o

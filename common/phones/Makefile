@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.5 2001-06-27 09:30:40 machek Exp $
+# $Id: Makefile,v 1.6 2001-07-27 00:02:21 pkot Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -23,6 +23,7 @@ OBJS =	generic.o \
 	nokia.o \
 	nk7110.o \
 	nk2110.o \
+	atgen.o \
 	dc2711.o
 
 all: PHONES.o
