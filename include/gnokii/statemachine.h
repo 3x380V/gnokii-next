@@ -1,6 +1,6 @@
 /*
 
-  $Id: statemachine.h,v 1.17 2003-03-06 22:32:29 pkot Exp $
+  $Id: statemachine.h,v 1.18 2003-04-28 12:43:39 pkot Exp $
 
   G N O K I I
 
@@ -82,7 +82,7 @@ struct gn_statemachine {
 	unsigned char waiting_for_number;
 	unsigned char received_number;
 	unsigned char waiting_for[GN_SM_WAITINGFOR_MAX_NUMBER];
-	gn_error ResponseError[GN_SM_WAITINGFOR_MAX_NUMBER];
+	gn_error response_error[GN_SM_WAITINGFOR_MAX_NUMBER];
 	/* Data structure to be filled in with the response */
 	gn_data *data[GN_SM_WAITINGFOR_MAX_NUMBER];
 };
