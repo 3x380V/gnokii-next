@@ -5,7 +5,7 @@ dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janík ml.
 dnl                2000 Karel Zak, Pawe³ Kot
 dnl                2002 BORBELY Zoltan
 dnl
-dnl  $Id: configure.in,v 1.95 2003-01-02 00:22:09 pkot Exp $
+dnl  $Id: configure.in,v 1.96 2003-01-02 10:55:26 pkot Exp $
 dnl
 
 AC_INIT(gnokii/gnokii.c)
@@ -477,9 +477,6 @@ AC_SUBST(exec_prefix)
 
 AC_SUBST(NO_SHARED)
 AC_SUBST(GLDFLAGS)
-
-AC_SUBST(USE_IRDA)
-AC_SUBST(USE_BLUETOOTH)
 
 AC_SUBST(PTHREAD_CFLAGS)
 AC_SUBST(PTHREAD_LIBS)

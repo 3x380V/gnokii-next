@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.11 2002-09-13 22:40:00 pkot Exp $
+# $Id: Makefile,v 1.12 2003-01-02 10:55:26 pkot Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -18,15 +18,12 @@ TOPDIR=../..
 include $(TOPDIR)/Makefile.global
 
 OBJS =	fbus.o \
+	fbus-phonet.o \
 	cbus.o \
 	atbus.o \
 	fbus-3110.o \
 	m2bus.o \
 	utils.o
-
-ifdef USE_IRDA
-	OBJS += fbus-phonet.o
-endif
 
 all: LINKS.o
 
