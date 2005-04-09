@@ -1,6 +1,6 @@
 /*
 
-  $Id: smsd.c,v 1.42 2005-01-24 23:29:19 pkot Exp $
+  $Id: smsd.c,v 1.43 2005-04-09 17:19:14 ja Exp $
 
   S M S D
 
@@ -157,7 +157,7 @@ gint LoadDB (void)
 
 static void Version (void)
 {
-  g_print ("\nsmsd - version 1.3-cvs		(20041011)\nCopyright  Jan Derfinak  <ja@mail.upjs.sk>\n");
+  g_print ("\nsmsd - version 1.4-cvs		(20041011)\nCopyright  Jan Derfinak  <ja@mail.upjs.sk>\n");
 }
 
 
