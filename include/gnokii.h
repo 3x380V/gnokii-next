@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.h,v 1.76 2005-03-21 21:01:33 pkot Exp $
+  $Id: gnokii.h,v 1.77 2005-04-10 15:38:45 pkot Exp $
 
   G N O K I I
 
@@ -101,6 +101,7 @@ API int gn_timestamp_isvalid(gn_timestamp dt);
 API char *gn_cfg_get(struct gn_cfg_header *cfg, const char *section, const char *key);
 API int gn_cfg_read(char **bindir); /* DEPRECATED */
 API int gn_cfg_file_read(const char *filename);
+API int gn_cfg_memory_read(const char **lines);
 API int gn_cfg_read_default();
 API int gn_cfg_phone_load(const char *iname, struct gn_statemachine *state);
 
