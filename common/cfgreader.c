@@ -1,6 +1,6 @@
 /*
 
-  $Id: cfgreader.c,v 1.56 2005-04-10 15:38:45 pkot Exp $
+  $Id: cfgreader.c,v 1.57 2005-04-17 18:31:27 pkot Exp $
 
   G N O K I I
 
@@ -259,7 +259,6 @@ struct gn_cfg_header *cfg_file_read(const char *filename)
 
 	/* Free the split_lines */
 	for (i = 0; split_lines[i] != NULL; i++) {
-		printf("%s\n", split_lines[i]);
 		free(split_lines[i]);
 	}
 	free(split_lines);
