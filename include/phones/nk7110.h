@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk7110.h,v 1.27 2004-02-18 21:49:43 uid66843 Exp $
+  $Id: nk7110.h,v 1.28 2005-04-19 09:05:26 bozo Exp $
 
   G N O K I I
 
@@ -90,10 +90,14 @@ typedef enum {
 #define NK7110_SUBSMS_PICTURE_LIST_OK	0x97	/* Picture messages list received */
 
 /* Clock handling message subtypes (send) */
+#define NK7110_SUBCLO_SET_DATE		0x60	/* Set date & time */
 #define NK7110_SUBCLO_GET_DATE		0x62	/* Get date & time */
+#define NK7110_SUBCLO_SET_ALARM		0x6B	/* Set alarm */
 #define NK7110_SUBCLO_GET_ALARM		0x6D	/* Get alarm */
 /* Clock handling message subtypes (recv) */
+#define NK7110_SUBCLO_DATE_SET		0x61	/* Date & time set */
 #define NK7110_SUBCLO_DATE_RCVD		0x63	/* Received date & time */
+#define NK7110_SUBCLO_ALARM_SET		0x6C	/* Alarm set */
 #define NK7110_SUBCLO_ALARM_RCVD	0x6E	/* Received alarm */
 /* Alarm on/off */
 #define NK7110_ALARM_ENABLED		0x02	/* Alarm enabled */
