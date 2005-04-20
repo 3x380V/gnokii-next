@@ -1,10 +1,10 @@
 /*
 
-  $Id: gsm-call.c,v 1.12 2003-12-16 00:56:27 bozo Exp $
+  $Id: gsm-call.c,v 1.13 2005-04-20 22:33:36 pkot Exp $
 
   G N O K I I
 
-  A Linux/Unix toolset and driver for Nokia mobile phones.
+  A Linux/Unix toolset and driver for the mobile phones.
 
   This file is part of gnokii.
 
@@ -22,7 +22,8 @@
   along with gnokii; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-  Copyright (C) 2002, BORBELY Zoltan <bozo@andrews.hu>
+  Copyright (C) 2002-2003 BORBELY Zoltan <bozo@andrews.hu>
+  Copyright (C) 2002      Pawel Kot
 
   Library for call management.
 

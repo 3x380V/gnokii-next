@@ -1,10 +1,10 @@
 /*
 
-  $Id: gsm-bitmaps.c,v 1.41 2003-04-28 12:59:55 pkot Exp $
+  $Id: gsm-bitmaps.c,v 1.42 2005-04-20 22:33:36 pkot Exp $
 
   G N O K I I
 
-  A Linux/Unix toolset and driver for Nokia mobile phones.
+  A Linux/Unix toolset and driver for the mobile phones.
 
   This file is part of gnokii.
 
@@ -23,7 +23,11 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
   Copyright (C) 1999, 2000 Hugh Blemings & Pavel Janík ml.
-  Copyright (C) 2002 	   Pavel Machek <pavel@ucw.cz>
+  Copyright (C) 2000       Marcin Wiacek
+  Copyright (C) 2000-2001  Chris Kemp
+  Copyright (C) 2001-2002  Markus Plail
+  Copyright (C) 2001-2003  Pawel Kot
+  Copyright (C) 2002       Pavel Machek <pavel@ucw.cz>
 
   Based on work from mygnokii, thanks go to Marcin Wiacek.
 

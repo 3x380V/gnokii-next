@@ -1,10 +1,10 @@
 /*
 
-  $Id: device.c,v 1.35 2004-12-14 01:02:56 chriskemp Exp $
+  $Id: device.c,v 1.36 2005-04-20 22:33:36 pkot Exp $
 
   G N O K I I
 
-  A Linux/Unix toolset and driver for Nokia mobile phones.
+  A Linux/Unix toolset and driver for the mobile phones.
 
   This file is part of gnokii.
 
@@ -22,7 +22,11 @@
   along with gnokii; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-  Copyright (C) 1999, 2000 Hugh Blemings & Pavel Janík ml.
+  Copyright (C) 1999-2000 Hugh Blemings & Pavel Janík ml.
+  Copyright (C) 2001      Chris Kemp
+  Copyrught (C) 2001-2004 Pawel Kot
+  Copyright (C) 2002-2003 BORBELY Zoltan
+  Copyright (C) 2002      Pavel Machek, Marcin Wiacek
 
 */
 

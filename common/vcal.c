@@ -1,10 +1,10 @@
 /*
 
-  $Id: vcal.c,v 1.3 2004-07-26 19:25:02 bozo Exp $
+  $Id: vcal.c,v 1.4 2005-04-20 22:33:36 pkot Exp $
 
   G N O K I I
 
-  A Linux/Unix toolset and driver for Nokia mobile phones.
+  A Linux/Unix toolset and driver for the mobile phones.
 
   This file is part of gnokii.
 
@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
   Copyright (C) 2004 Martin Goldhahn
-  Copyright (C) 2004 Pawel Kot
+  Copyright (C) 2004 Pawel Kot, BORBELY Zoltan
 
 */
 

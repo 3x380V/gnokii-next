@@ -1,10 +1,10 @@
 /*
 
-  $Id: gsm-filetypes.c,v 1.59 2005-03-21 22:53:25 pkot Exp $
+  $Id: gsm-filetypes.c,v 1.60 2005-04-20 22:33:36 pkot Exp $
 
   G N O K I I
 
-  A Linux/Unix toolset and driver for Nokia mobile phones.
+  A Linux/Unix toolset and driver for the mobile phones.
 
   This file is part of gnokii.
 
@@ -22,7 +22,13 @@
   along with gnokii; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-  Copyright (C) 1999, 2000 Hugh Blemings & Pavel Janík ml.
+  Copyright (C) 1999-2000 Hugh Blemings & Pavel Janík ml.
+  Copyright (C) 2000-2001 Chris Kemp, Marcin Wiacek
+  Copyright (C) 2000-2004 Pawel Kot
+  Copyright (C) 2001      Bartek Klepacz
+  Copyright (C) 2002      Markus Plail, Pavel Machek
+  Copyright (C) 2002-2004 BORBELY Zoltan
+  Copyright (C) 2003      Tomi Ollila
 
   Functions to read and write common file types.
 

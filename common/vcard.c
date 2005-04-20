@@ -1,10 +1,10 @@
 /*
 
-  $Id: vcard.c,v 1.14 2005-03-21 22:54:41 pkot Exp $
+  $Id: vcard.c,v 1.15 2005-04-20 22:33:36 pkot Exp $
   
   G N O K I I
 
-  A Linux/Unix GUI for Nokia mobile phones.
+  A Linux/Unix toolkid and driver for the mobile phones.
 
   This file is part of gnokii.
 
@@ -23,6 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
   Copyright (C) 2002 Pavel Machek <pavel@ucw.cz>
+  Copyright (C) 2003-2004 Pawel Kot
 
  */
 

@@ -1,10 +1,10 @@
 /*
 
-  $Id: readmidi.c,v 1.5 2004-01-20 14:24:23 uid66843 Exp $
+  $Id: readmidi.c,v 1.6 2005-04-20 22:33:36 pkot Exp $
 
   G N O K I I
 
-  A Linux/Unix toolset and driver for Nokia mobile phones.
+  A Linux/Unix toolset and driver for the mobile phones.
 
   This file is part of gnokii.
 
@@ -22,7 +22,8 @@
   along with gnokii; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-  Copyright (C) 1999, 2000 Hugh Blemings & Pavel Janík ml.
+  Copyright (C) 1999-2000 Hugh Blemings & Pavel Janík ml.
+  Copyright (C) 2003      Tomi Ollila, BORBELY Zoltan
 
   Functions to read and write common file types.
 

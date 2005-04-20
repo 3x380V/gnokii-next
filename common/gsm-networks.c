@@ -1,10 +1,10 @@
 /*
 
-  $Id: gsm-networks.c,v 1.40 2005-01-29 17:08:50 pkot Exp $
+  $Id: gsm-networks.c,v 1.41 2005-04-20 22:33:36 pkot Exp $
 
   G N O K I I
 
-  A Linux/Unix toolset and driver for Nokia mobile phones.
+  A Linux/Unix toolset and driver for the mobile phones.
 
   This file is part of gnokii.
 
@@ -22,7 +22,9 @@
   along with gnokii; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-  Copyright (C) 1999, 2000 Hugh Blemings & Pavel Janík ml.
+  Copyright (C) 1999-2000 Hugh Blemings & Pavel Janík ml.
+  Copyright (C) 2002-2003 Pawel Kot, Ladis Michl
+  Copyright (C) 2002      Feico de Boer
 
   This file implements GSM networks searching.
 
