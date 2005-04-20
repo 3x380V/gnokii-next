@@ -1,10 +1,10 @@
 /*
 
-  $Id: ateric.c,v 1.13 2003-03-06 21:17:12 pkot Exp $
+  $Id: ateric.c,v 1.14 2005-04-20 20:52:45 pkot Exp $
 
   G N O K I I
 
-  A Linux/Unix toolset and driver for mobile phones.
+  A Linux/Unix toolset and driver for the mobile phones.
 
   This file is part of gnokii.
 
@@ -22,7 +22,8 @@
   along with gnokii; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-  Copyright 2001 Manfred Jonsson <manfred.jonsson@gmx.de>
+  Copyright (C) 2001 Manfred Jonsson <manfred.jonsson@gmx.de>
+  Copyright (C) 2002 Ladis Michl
 
   This file provides functions specific to at commands on ericsson
   phones. See README for more details on supported mobile phones.

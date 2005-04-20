@@ -1,6 +1,6 @@
 /*
 
-  $Id: fake.c,v 1.19 2003-03-06 21:17:12 pkot Exp $
+  $Id: fake.c,v 1.20 2005-04-20 20:52:45 pkot Exp $
 
   G N O K I I
 
@@ -22,7 +22,7 @@
   along with gnokii; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-  Copyright (C) 2002 Pavel Machek
+  Copyright (C) 2002 Pavel Machek, Pawel Kot
 
   This file provides functions for some functionality testing (eg. SMS)
 

@@ -1,10 +1,10 @@
 /*
 
-  $Id: atbosch.c,v 1.10 2003-01-21 11:07:58 ladis Exp $
+  $Id: atbosch.c,v 1.11 2005-04-20 20:52:45 pkot Exp $
 
   G N O K I I
 
-  A Linux/Unix toolset and driver for mobile phones.
+  A Linux/Unix toolset and driver for the mobile phones.
 
   This file is part of gnokii.
 
@@ -22,7 +22,7 @@
   along with gnokii; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-  Copyright 2002 Ladislav Michl <ladis@linux-mips.org>
+  Copyright 2002-2003 Ladislav Michl <ladis@linux-mips.org>
 
   This file provides functions specific to AT commands on Bosch phones.
   See README for more details on supported mobile phones.

@@ -1,10 +1,10 @@
 /*
 
-  $Id: nk6160.c,v 1.21 2005-03-29 08:55:06 bozo Exp $
+  $Id: nk6160.c,v 1.22 2005-04-20 20:52:45 pkot Exp $
 
   G N O K I I
 
-  A Linux/Unix toolset and driver for Nokia mobile phones.
+  A Linux/Unix toolset and driver for the mobile phones.
 
   This file is part of gnokii.
 
@@ -22,7 +22,7 @@
   along with gnokii; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-  Copyright (C) 2002 BORBELY Zoltan
+  Copyright (C) 2002-2003 BORBELY Zoltan
 
   This file provides functions specific to the 6160 series.
   See README for more details on supported mobile phones.

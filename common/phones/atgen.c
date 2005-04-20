@@ -1,10 +1,10 @@
 /*
 
-  $Id: atgen.c,v 1.111 2005-03-20 17:18:23 pkot Exp $
+  $Id: atgen.c,v 1.112 2005-04-20 20:52:45 pkot Exp $
 
   G N O K I I
 
-  A Linux/Unix toolset and driver for mobile phones.
+  A Linux/Unix toolset and driver for the mobile phones.
 
   This file is part of gnokii.
 
@@ -22,9 +22,13 @@
   along with gnokii; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-  Copyright (C) 2001 Manfred Jonsson
-  Copyright (C) 2002 Pawel Kot
-  Copyright (C) 2005 David Vrabel
+  Copyright (C) 2001      Manfred Jonsson <manfred.jonsson@gmx.de>
+  Copyright (C) 2002      Pavel Machek, Petr Cech
+  Copyright (C) 2002-2004 Pawel Kot
+  Copyright (C) 2002-2003 Ladis Michl
+  Copyright (C) 2002-2004 BORBELY Zoltan
+  Copyright (C) 2003-2004 Igor Popik
+  Copyright (C) 2004      Hugo Hass, Ron Yorston
 
   This file provides functions specific to generic AT command compatible
   phones. See README for more details on supported mobile phones.

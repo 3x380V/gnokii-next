@@ -1,10 +1,10 @@
 /* -*- linux-c -*-
 
-  $Id: nk2110.c,v 1.37 2003-03-06 21:17:12 pkot Exp $
+  $Id: nk2110.c,v 1.38 2005-04-20 20:52:45 pkot Exp $
 
   G N O K I I
 
-  A Linux/Unix toolset and driver for Nokia mobile phones.
+  A Linux/Unix toolset and driver for the mobile phones.
 
   This file is part of gnokii.
 
@@ -23,6 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
   Copyright (C) 2000-2002 Pavel Machek <pavel@ucw.cz>
+  Copyright (C) 2001-2003 Pawel Kot
 
   Notice that this code was (partly) converted to "new" structure, but it
   does not have code for bus separated. I think that separating it would
