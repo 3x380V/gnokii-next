@@ -1,10 +1,10 @@
 /*
 
-  $Id: rlp-crc24.c,v 1.6 2002-12-13 02:01:29 bozo Exp $
+  $Id: rlp-crc24.c,v 1.7 2005-04-20 20:30:18 pkot Exp $
 
   G N O K I I
 
-  A Linux/Unix toolset and driver for Nokia mobile phones.
+  A Linux/Unix toolset and driver for the mobile phones.
 
   This file is part of gnokii.
 
@@ -22,7 +22,9 @@
   along with gnokii; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-  Copyright (C) 1999, 2000 Hugh Blemings & Pavel Janík ml.
+  Copyright (C) 1999-2000  Hugh Blemings & Pavel Janík ml.
+  Copyright (C) 2001-2004  Pawel Kot
+  Copyright (C) 2002-2004  BORBELY Zoltan
 
   CRC24 (aka FCS) implementation in RLP.
 

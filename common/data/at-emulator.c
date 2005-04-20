@@ -1,10 +1,10 @@
 /*
 
-  $Id: at-emulator.c,v 1.41 2005-03-21 23:03:57 pkot Exp $
+  $Id: at-emulator.c,v 1.42 2005-04-20 20:30:15 pkot Exp $
 
   G N O K I I
 
-  A Linux/Unix toolset and driver for Nokia mobile phones.
+  A Linux/Unix toolset and driver for the mobile phones.
 
   This file is part of gnokii.
 
@@ -22,7 +22,9 @@
   along with gnokii; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-  Copyright (C) 1999, 2000 Hugh Blemings & Pavel Janík ml.
+  Copyright (C) 1999-2000  Hugh Blemings & Pavel Janík ml.
+  Copyright (C) 2001-2004  Pawel Kot
+  Copyright (C) 2002-2004  BORBELY Zoltan
 
   This file provides a virtual modem or "AT" interface to the GSM phone by
   calling code in gsm-api.c. Inspired by and in places copied from the Linux
