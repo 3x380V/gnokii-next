@@ -1,10 +1,10 @@
 /*
  *
- * $Id: winirda.c,v 1.11 2005-01-10 00:26:40 bozo Exp $
+ * $Id: winirda.c,v 1.12 2005-04-20 20:37:41 pkot Exp $
  *
  * G N O K I I
  *
- * A Linux/Unix toolset and driver for Nokia mobile phones.
+ * A Linux/Unix toolset and driver for the mobile phones.
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public

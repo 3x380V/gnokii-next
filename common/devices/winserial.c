@@ -1,10 +1,10 @@
 /*
 
-  $Id: winserial.c,v 1.12 2004-06-20 16:15:09 pkot Exp $
+  $Id: winserial.c,v 1.13 2005-04-20 20:37:41 pkot Exp $
 
   G N O K I I
 
-  A Linux/Unix toolset and driver for Nokia mobile phones.
+  A Linux/Unix toolset and driver for the mobile phones.
 
   This file is part of gnokii.
 
@@ -22,7 +22,9 @@
   along with gnokii; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-  Copyright (C) 1999, 2000 Hugh Blemings & Pavel Janík ml.
+  Copyright (C) 1999-2000  Hugh Blemings & Pavel Janík ml.
+  Copyright (C) 2002       Ladis Michl
+  Copyright (C) 2002-2004  BORBELY Zoltan, Pawel Kot
 
 */
 

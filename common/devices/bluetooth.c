@@ -1,10 +1,10 @@
 /*
 
-  $Id: bluetooth.c,v 1.3 2004-06-19 23:20:45 pkot Exp $
+  $Id: bluetooth.c,v 1.4 2005-04-20 20:37:40 pkot Exp $
  
   G N O K I I
 
-  A Linux/Unix toolset and driver for Nokia mobile phones.
+  A Linux/Unix toolset and driver for the mobile phones.
 
   This file is part of gnokii.
 
@@ -23,6 +23,8 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
   Copyright (C) 2002       Marcel Holtmann <marcel@holtmann.org>
+  Copyright (C) 2003       BORBELY Zoltan
+  Copyright (C) 2004       Pawel Kot, Phil Ashby
 
   Fake definitions for the bluetooth handling functions.
 

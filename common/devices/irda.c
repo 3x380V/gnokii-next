@@ -1,13 +1,10 @@
 /*
  *
- * $Id: irda.c,v 1.1 2004-06-19 21:52:47 pkot Exp $
+ * $Id: irda.c,v 1.2 2005-04-20 20:37:41 pkot Exp $
  *
  * G N O K I I
  *
- * A Linux/Unix toolset and driver for Nokia mobile phones.
- *
- * Copyright (C) 1999, 2000 Hugh Blemings & Pavel Janík ml.
- * Copyright (C) 2000-2001  Marcel Holtmann <marcel@holtmann.org>
+ * A Linux/Unix toolset and driver for the mobile phones.
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -22,6 +19,10 @@
  * You should have received a copy of the GNU Library General Public
  * License along with this library; if not, write to the Free
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ *
+ * Copyright (C) 1999-2000  Hugh Blemings & Pavel Janík ml.
+ * Copyright (C) 2000-2001  Marcel Holtmann <marcel@holtmann.org>
+ * Copyright (C) 2004       Phil Ashby
  *
  * Fake definitions for irda handling functions.
  */
