@@ -1,10 +1,10 @@
 /*
 
-  $Id: atbus.h,v 1.15 2005-03-29 08:55:07 bozo Exp $
+  $Id: atbus.h,v 1.16 2005-04-24 19:01:20 pkot Exp $
 
   G N O K I I
 
-  A Linux/Unix toolset and driver for mobile phones.
+  A Linux/Unix toolset and driver for the mobile phones.
 
   This file is part of gnokii.
 
@@ -22,8 +22,10 @@
   along with gnokii; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-  Copyright 2001 Manfred Jonsson <manfred.jonsson@gmx.de>
-
+  Copyright (C) 1999-2000 Hugh Blemings, Pavel Janik
+  Copyright (C) 2001      Manfred Jonsson <manfred.jonsson@gmx.de>
+  Copyright (C) 2002      Ladis Michl
+  
 */
 
 #ifndef _gnokii_atbus_h

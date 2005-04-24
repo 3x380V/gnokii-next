@@ -1,10 +1,10 @@
 /*
 
-  $Id: gnbus.h,v 1.2 2005-03-29 08:55:07 bozo Exp $
+  $Id: gnbus.h,v 1.3 2005-04-24 19:01:20 pkot Exp $
 
   G N O K I I
 
-  A Linux/Unix toolset and driver for Nokia mobile phones.
+  A Linux/Unix toolset and driver for the mobile phones.
 
   This file is part of gnokii.
 

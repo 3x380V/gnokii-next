@@ -1,10 +1,10 @@
 /*
 
-  $Id: fbus-common.h,v 1.6 2004-07-20 19:10:36 bozo Exp $
+  $Id: fbus-common.h,v 1.7 2005-04-24 19:01:20 pkot Exp $
 
   G N O K I I
 
-  A Linux/Unix toolset and driver for Nokia mobile phones.
+  A Linux/Unix toolset and driver for the mobile phones.
 
   This file is part of gnokii.
 
@@ -22,7 +22,10 @@
   along with gnokii; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-  Copyright (C) 2002 Pawe³ Kot
+  Copyright (C) 1999-2000 Hugh Blemings, Pavel Janik
+  Copyright (C) 2002-2003 Pawe³ Kot
+  Copyright (C) 2002      Ladis Michl
+  Copyright (C) 2004      BORBELY Zoltan
 
   This file provides an API for accessing functions via fbus over irda.
   See README for more details on supported mobile phones.

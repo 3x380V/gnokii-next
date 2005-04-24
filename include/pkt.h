@@ -1,10 +1,10 @@
 /*
 
-  $Id: pkt.h,v 1.4 2004-06-27 20:38:34 pkot Exp $
+  $Id: pkt.h,v 1.5 2005-04-24 19:02:15 pkot Exp $
 
   G N O K I I
 
-  A Linux/Unix toolset and driver for Nokia mobile phones.
+  A Linux/Unix toolset and driver for the mobile phones.
 
   This file is part of gnokii.
 
