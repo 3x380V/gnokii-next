@@ -1,10 +1,10 @@
 /*
 
-  $Id: call.h,v 1.11 2003-11-30 18:55:14 bozo Exp $
+  $Id: call.h,v 1.12 2005-04-24 19:41:23 pkot Exp $
 
   G N O K I I
 
-  A Linux/Unix toolset and driver for Nokia mobile phones.
+  A Linux/Unix toolset and driver for the mobile phones.
 
   This file is part of gnokii.
 
@@ -22,7 +22,8 @@
   along with gnokii; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-  Copyright (C) 2002, BORBELY Zoltan <bozo@andrews.hu>
+  Copyright (C) 1999-2000 Hugh Blemings, Pavel Janik
+  Copyright (C) 2002-2003 Pawel Kot, BORBELY Zoltan <bozo@andrews.hu>
 
   Include file for the call management library.
 

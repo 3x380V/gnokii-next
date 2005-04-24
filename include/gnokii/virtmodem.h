@@ -1,10 +1,10 @@
 /*
 
-  $Id: virtmodem.h,v 1.15 2003-03-06 22:32:29 pkot Exp $
+  $Id: virtmodem.h,v 1.16 2005-04-24 19:41:23 pkot Exp $
 
   G N O K I I
 
-  A Linux/Unix toolset and driver for Nokia mobile phones.
+  A Linux/Unix toolset and driver for the mobile phones.
 
   This file is part of gnokii.
 
@@ -22,7 +22,9 @@
   along with gnokii; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-  Copyright (C) 1999, 2000 Hugh Blemings & Pavel Janík ml.
+  Copyright (C) 1999-2000 Hugh Blemings & Pavel Janík ml.
+  Copyright (C) 2001      Chris Kemp
+  Copyright (C) 2002-2003 Pawel Kot, BORBELY Zoltan
 
   Header file for virtmodem code in virtmodem.c
 

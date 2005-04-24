@@ -1,10 +1,10 @@
 /*
 
-  $Id: sms.h,v 1.62 2005-01-24 23:28:21 pkot Exp $
+  $Id: sms.h,v 1.63 2005-04-24 19:41:23 pkot Exp $
 
   G N O K I I
 
-  A Linux/Unix toolset and driver for Nokia mobile phones.
+  A Linux/Unix toolset and driver for the mobile phones.
 
   This file is part of gnokii.
 
@@ -22,7 +22,10 @@
   along with gnokii; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-  Copyright (C) 2001-2002 Pawe³ Kot <pkot@linuxnews.pl>
+  Copyright (C) 1999-2000 Hugh Blemings, Pavel Janik
+  Copyright (C) 2001-2003 Pawel Kot
+  Copyright (C) 2002      Pavel Machek, Markus Plail, BORBELY Zoltan
+  Copyright (C) 2003      Ladis Michl
 
   Include file for the SMS library.
 
