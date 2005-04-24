@@ -1,10 +1,10 @@
 /*
 
-  $Id: gnapplet.h,v 1.18 2005-03-08 10:34:06 bozo Exp $
+  $Id: gnapplet.h,v 1.19 2005-04-24 20:05:19 pkot Exp $
 
   G N O K I I
 
-  A Linux/Unix toolset and driver for Nokia mobile phones.
+  A Linux/Unix toolset and driver for the mobile phones.
 
   This file is part of gnokii.
 

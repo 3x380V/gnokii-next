@@ -1,10 +1,10 @@
 /*
 
-  $Id: generic.h,v 1.14 2003-03-06 22:52:16 pkot Exp $
+  $Id: generic.h,v 1.15 2005-04-24 20:05:19 pkot Exp $
 
   G N O K I I
 
-  A Linux/Unix toolset and driver for Nokia mobile phones.
+  A Linux/Unix toolset and driver for the mobile phones.
 
   This file is part of gnokii.
 
@@ -22,8 +22,10 @@
   along with gnokii; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-  Copyright (C) 2000 Hugh Blemings & Pavel Janík ml.
-  Copyright (C) 2000 Chris Kemp
+  Copyright (C) 2000      Hugh Blemings & Pavel Janík ml.
+  Copyright (C) 2000-2001 Chris Kemp
+  Copyright (C) 2001-2003 Pawel Kot
+  Copyright (C) 2002      Ladis Michl
 
   This file provides useful functions for all phones
   See README for more details on supported mobile phones.

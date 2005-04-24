@@ -1,10 +1,10 @@
 /*
 
-  $Id: atbosch.h,v 1.5 2003-01-05 20:49:22 ladis Exp $
+  $Id: atbosch.h,v 1.6 2005-04-24 20:05:19 pkot Exp $
 
   G N O K I I
 
-  A Linux/Unix toolset and driver for mobile phones.
+  A Linux/Unix toolset and driver for the mobile phones.
 
   This file is part of gnokii.
 

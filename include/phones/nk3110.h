@@ -1,10 +1,10 @@
 /*
 
-  $Id: nk3110.h,v 1.11 2003-06-14 14:18:37 osma Exp $
+  $Id: nk3110.h,v 1.12 2005-04-24 20:05:19 pkot Exp $
 
   G N O K I I
 
-  A Linux/Unix toolset and driver for Nokia mobile phones.
+  A Linux/Unix toolset and driver for the mobile phones.
 
   This file is part of gnokii.
 
@@ -22,8 +22,10 @@
   along with gnokii; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-  Copyright (C) 2000 Hugh Blemings & Pavel Janík ml.
-  Copyright (C) 2001 Pawe³ Kot <pkot@linuxnews.pl>
+  Copyright (C) 2000      Hugh Blemings & Pavel Janík ml.
+  Copyright (C) 2001      Tamas Bondar
+  Copyright (C) 2001-2003 Pawel Kot
+  Copyright (C) 2003      Osma Suominen
 
   This file provides functions specific to the 3110 series.
   See README for more details on supported mobile phones.

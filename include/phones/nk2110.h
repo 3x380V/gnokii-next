@@ -1,10 +1,10 @@
 /*
 
-  $Id: nk2110.h,v 1.4 2002-03-28 21:37:49 pkot Exp $
+  $Id: nk2110.h,v 1.5 2005-04-24 20:05:19 pkot Exp $
 
   G N O K I I
 
-  A Linux/Unix toolset and driver for Nokia mobile phones.
+  A Linux/Unix toolset and driver for the mobile phones.
 
   This file is part of gnokii.
 

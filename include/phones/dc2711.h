@@ -1,10 +1,10 @@
 /*
 
-  $Id: dc2711.h,v 1.2 2003-01-05 21:02:41 ladis Exp $
+  $Id: dc2711.h,v 1.3 2005-04-24 20:05:19 pkot Exp $
 
   G N O K I I
 
-  A Linux/Unix toolset and driver for mobile phones.
+  A Linux/Unix toolset and driver for the mobile phones.
 
   This file is part of gnokii.
 
