@@ -1,10 +1,10 @@
 /*
 
-  $Id: xgnokii_netmon.c,v 1.12 2004-07-20 21:35:35 pkot Exp $
+  $Id: xgnokii_netmon.c,v 1.13 2005-04-24 20:57:37 pkot Exp $
 
   X G N O K I I
 
-  A Linux/Unix GUI for Nokia mobile phones.
+  A Linux/Unix GUI for the mobile phones.
 
   This file is part of gnokii.
 
@@ -24,6 +24,7 @@
 
   Copyright (C) 1999 Pavel Janík ml., Hugh Blemings
   & Ján Derfiòák <ja@mail.upjs.sk>.
+  Copyright (C) 2002-2004 Pawel Kot
 
 */
 

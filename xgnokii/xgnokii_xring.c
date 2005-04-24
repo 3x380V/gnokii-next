@@ -1,10 +1,10 @@
 /*
 
-  $Id: xgnokii_xring.c,v 1.4 2004-01-20 14:24:23 uid66843 Exp $
+  $Id: xgnokii_xring.c,v 1.5 2005-04-24 20:57:37 pkot Exp $
 
   X G N O K I I
 
-  A Linux/Unix GUI for Nokia mobile phones.
+  A Linux/Unix GUI for the mobile phones.
 
   This file is part of gnokii.
 
@@ -24,6 +24,7 @@
 
   Copyright (C) 1999 Tomi Ollila
   Copyright (C) 2003 BORBELY Zoltan
+  Copyright (C) 2004 Pawel Kot
 
 */
 

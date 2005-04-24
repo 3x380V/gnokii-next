@@ -1,10 +1,10 @@
 /*
 
-  $Id: xgnokii_contacts.c,v 1.62 2004-07-30 18:01:32 pkot Exp $
+  $Id: xgnokii_contacts.c,v 1.63 2005-04-24 20:57:37 pkot Exp $
   
   X G N O K I I
 
-  A Linux/Unix GUI for Nokia mobile phones.
+  A Linux/Unix GUI for the mobile phones.
 
   This file is part of gnokii.
 
@@ -22,8 +22,12 @@
   along with gnokii; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-  Copyright (C) 1999 Pavel Janík ml., Hugh Blemings
-  & Ján Derfiòák <ja@mail.upjs.sk>.
+  Copyright (C) 1999      Pavel Janík ml., Hugh Blemings
+  Copyright (C) 1999-2002 Ján Derfiòák <ja@mail.upjs.sk>.
+  Copyright (C) 2002      Markus Plail, Pavel Machek
+  Copyright (C) 2002-2004 Pawel Kot, BORBELY Zoltan
+  Copyright (C) 2002-2003 Uli Hopp
+  Copyright (C) 2003      Ladis Michl
 
 */
 

@@ -1,10 +1,10 @@
 /*
 
-  $Id: xgnokii_xring.h,v 1.1 2003-10-05 22:44:30 bozo Exp $
+  $Id: xgnokii_xring.h,v 1.2 2005-04-24 20:57:37 pkot Exp $
 
   X G N O K I I
 
-  A Linux/Unix GUI for Nokia mobile phones.
+  A Linux/Unix GUI for the mobile phones.
 
   This file is part of gnokii.
 

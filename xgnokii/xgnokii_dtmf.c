@@ -1,10 +1,10 @@
 /*
 
-  $Id: xgnokii_dtmf.c,v 1.11 2004-07-30 18:01:32 pkot Exp $
+  $Id: xgnokii_dtmf.c,v 1.12 2005-04-24 20:57:37 pkot Exp $
 
   X G N O K I I
 
-  A Linux/Unix GUI for Nokia mobile phones.
+  A Linux/Unix GUI for the mobile phones.
 
   This file is part of gnokii.
 
