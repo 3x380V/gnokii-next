@@ -1,10 +1,10 @@
 /*
 
-  $Id: pq.c,v 1.25 2005-04-09 17:19:14 ja Exp $
+  $Id: pq.c,v 1.26 2005-04-24 21:09:01 pkot Exp $
 
   S M S D
 
-  A Linux/Unix GUI for Nokia mobile phones.
+  A Linux/Unix tool for the mobile phones.
 
   This file is part of gnokii.
 

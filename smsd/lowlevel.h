@@ -1,10 +1,10 @@
 /*
 
-  $Id: lowlevel.h,v 1.11 2003-10-05 19:42:41 ja Exp $
+  $Id: lowlevel.h,v 1.12 2005-04-24 21:09:01 pkot Exp $
 
   S M S D
 
-  A Linux/Unix GUI for Nokia mobile phones.
+  A Linux/Unix tool for the mobile phones.
 
   This file is part of gnokii.
 

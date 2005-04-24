@@ -1,10 +1,10 @@
 /*
 
-  $Id: smsd.c,v 1.43 2005-04-09 17:19:14 ja Exp $
+  $Id: smsd.c,v 1.44 2005-04-24 21:09:01 pkot Exp $
 
   S M S D
 
-  A Linux/Unix GUI for Nokia mobile phones.
+  A Linux/Unix tool for the mobile phones.
 
   This file is part of gnokii.
 
@@ -23,7 +23,8 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
   Copyright (C) 1999 Pavel Janík ml., Hugh Blemings
-  & Jan Derfinak <ja@mail.upjs.sk>.
+  Copyright (C) 1999-2005 Jan Derfinak <ja@mail.upjs.sk>.
+  Copyright (C) 2001-2005 Pawel Kot
 
 */
 
