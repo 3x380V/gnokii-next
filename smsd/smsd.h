@@ -1,6 +1,6 @@
 /*
 
-  $Id: smsd.h,v 1.14 2005-04-24 21:09:01 pkot Exp $
+  $Id: smsd.h,v 1.15 2005-04-26 06:34:39 ja Exp $
 
   S M S D
 
@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
   Copyright (C) 1999 Pavel Janík ml., Hugh Blemings
-  & Ján Derfiòák <ja@mail.upjs.sk>.
+  Copyright (C) 1999-2005 Jan Derfinak
 
 */
 

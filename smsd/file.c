@@ -1,6 +1,6 @@
 /*
 
-  $Id: file.c,v 1.12 2005-04-24 21:09:01 pkot Exp $
+  $Id: file.c,v 1.13 2005-04-26 06:34:39 ja Exp $
 
   S M S D
 
@@ -22,8 +22,7 @@
   along with gnokii; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-  Copyright (C) 2002-2005 Ján Derfiòák <ja@mail.upjs.sk>.
-  Copyright (C) 2002      BORBELY Zoltan
+  Copyright (C) 2002-2005 Jan Derfinak
   
   This file is a module to smsd for file access.
 
