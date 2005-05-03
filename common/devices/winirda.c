@@ -1,6 +1,6 @@
 /*
  *
- * $Id: winirda.c,v 1.12 2005-04-20 20:37:41 pkot Exp $
+ * $Id: winirda.c,v 1.13 2005-05-03 22:13:21 pkot Exp $
  *
  * G N O K I I
  *
@@ -48,6 +48,7 @@ static char *phone[] = {
 	"Nokia 3650",
 	"Nokia 5100",
 	"Nokia 6100",
+	"Nokia 6170",
 	"Nokia 6210",
 	"Nokia 6230",
 	"Nokia 6250",
