@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.c,v 1.172 2005-05-08 21:20:50 pkot Exp $
+  $Id: nk6510.c,v 1.173 2005-05-08 21:28:32 pkot Exp $
 
   G N O K I I
 
@@ -1871,6 +1871,7 @@ static gn_error NK6510_IncomingPhonebook(int messagetype, unsigned char *message
 		dprintf("Received phonebook info\n");
 		blocks     = message[21];
 		return phonebook_decode(message + 22, length - 21, data, blocks, message[11], 12);
+
 	case 0x0c: /* Write memory location */
 		if (message[6] == 0x0f) {
 			switch (message[10]) {
