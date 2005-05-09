@@ -1,6 +1,6 @@
 /*
 
-  $Id: cfgreader.c,v 1.58 2005-04-20 22:33:36 pkot Exp $
+  $Id: cfgreader.c,v 1.59 2005-05-09 20:55:00 pkot Exp $
 
   G N O K I I
 
@@ -554,7 +554,7 @@ API int gn_cfg_read(char **bindir)
 
 	retval = gn_cfg_read_default();
 
-	(char *)*bindir = gn_cfg_get(gn_cfg_info, "global", "bindir");
+	*bindir = gn_cfg_get(gn_cfg_info, "global", "bindir");
 	if (!*bindir)
 		*bindir = gn_cfg_get(gn_cfg_info, "gnokiid", "bindir");
 	if (!*bindir)
