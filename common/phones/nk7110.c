@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk7110.c,v 1.175 2005-04-20 20:52:45 pkot Exp $
+  $Id: nk7110.c,v 1.176 2005-05-10 11:54:47 pkot Exp $
 
   G N O K I I
 
@@ -3306,6 +3306,7 @@ static gn_error NK7110_IncomingCommstatus(int messagetype, unsigned char *messag
 	default:
 		return GN_ERR_UNHANDLEDFRAME;
 	}
+	return GN_ERR_NONE;
 }
 
 static gn_error NK7110_GetActiveCalls(gn_data *data, struct gn_statemachine *state)
