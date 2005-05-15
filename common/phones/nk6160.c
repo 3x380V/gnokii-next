@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6160.c,v 1.22 2005-04-20 20:52:45 pkot Exp $
+  $Id: nk6160.c,v 1.23 2005-05-15 20:15:34 pkot Exp $
 
   G N O K I I
 
@@ -84,7 +84,7 @@ gn_driver driver_nokia_6160 = {
 	pgen_incoming_default,
 	/* Mobile phone information */
 	{
-		"6160|5120",		/* Supported models */
+		"6160|5120|6185",	/* Supported models */
 		4,			/* Max RF Level */
 		0,			/* Min RF Level */
 		GN_RF_Arbitrary,	/* RF level units */
