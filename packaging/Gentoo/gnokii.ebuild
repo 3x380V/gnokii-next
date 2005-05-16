@@ -1,12 +1,12 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /home/daniele/.cvs-repos/backup-20090529-incomplete/gnokii/gnokii/packaging/Gentoo/Attic/gnokii.ebuild,v 1.1 2005-04-30 19:01:27 pkot Exp $
+# $Header: /home/daniele/.cvs-repos/backup-20090529-incomplete/gnokii/gnokii/packaging/Gentoo/Attic/gnokii.ebuild,v 1.2 2005-05-16 11:12:49 pkot Exp $
 
 inherit eutils flag-o-matic
 
 DESCRIPTION="a client that plugs into your handphone"
 HOMEPAGE="http://www.gnokii.org/"
-SRC_URI="http://www.gnokii.org/download/gnokii/${P}.tar.bz2"
+SRC_URI="http://www.gnokii.org/download/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -15,8 +15,8 @@ IUSE="nls X bluetooth irda sms postgres mysql"
 
 RDEPEND="X? ( =x11-libs/gtk+-1.2* )
 	bluetooth? ( net-wireless/bluez-libs )
-	sms? ( postgres? ( dev-db/postgresql )
-	mysql? ( dev-db/mysql ) )"
+	sms? (  postgres? ( dev-db/postgresql )
+		mysql? ( dev-db/mysql ) )"
 DEPEND="${RDEPEND}
 	irda? ( virtual/os-headers )
 	nls? ( sys-devel/gettext )"
@@ -35,6 +35,7 @@ src_compile() {
 		$(use_enable nls) \
 		$(use_with X x) \
 		--enable-security \
+		--disable-unix98test \
 		|| die "configure failed"
 
 	emake -j1 || die "make failed"
