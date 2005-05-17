@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.172 2005-05-16 19:57:11 pkot Exp $
+  $Id: nk6100.c,v 1.173 2005-05-17 07:49:06 pkot Exp $
 
   G N O K I I
 
@@ -870,7 +870,7 @@ static gn_error IncomingPhonebook(int messagetype, unsigned char *message, int l
 			/* It seems that older phones (at least Nokia 5110 and 6130)
 			   set message[4] to 0. Newer ones set is to the location
 			   number. It can be the distinction when to read the name */
-			if (message[4] != 0)
+			if ((message[4] != 0) || (DRVINSTANCE(state)->capabilities & NK6100_CAP_PB_UNICODE))
 				char_unicode_decode(pe->name, pos, n);
 			else
 				pnok_string_decode(pe->name, sizeof(pe->name), pos, n);
