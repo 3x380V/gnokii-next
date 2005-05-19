@@ -1,6 +1,6 @@
 /*
 
-  $Id: vcal.c,v 1.4 2005-04-20 22:33:36 pkot Exp $
+  $Id: vcal.c,v 1.5 2005-05-19 21:48:40 pkot Exp $
 
   G N O K I I
 
@@ -350,9 +350,12 @@ API int gn_ical2calnote(FILE *f, gn_calnote *calnote, int id)
 		fprintf(stderr, _("Component found\n%s\n"), icalcomponent_as_ical_string(compresult));
 
 	}
-	icalcomponent_free(compresult);
-	icalcomponent_free(comp);
-	icalparser_free(parser);
+	if (compresult)
+		icalcomponent_free(compresult);
+	if (comp)
+		icalcomponent_free(comp);
+	if (parser)
+		icalparser_free(parser);
 #else
 	retval = GN_ERR_NOTIMPLEMENTED;
 #endif /* HAVE_LIBICAL */
