@@ -1,6 +1,6 @@
 /*
 
-  $Id: cfgreader.c,v 1.60 2005-05-16 08:50:17 pkot Exp $
+  $Id: cfgreader.c,v 1.61 2005-06-02 21:55:53 pkot Exp $
 
   G N O K I I
 
@@ -637,7 +637,7 @@ API int gn_cfg_memory_read(const char **lines)
 	return cfg_file_or_memory_read(NULL, lines);
 }
 
-API bool gn_cfg_phone_load(const char *iname, struct gn_statemachine *state)
+API int gn_cfg_phone_load(const char *iname, struct gn_statemachine *state)
 {
 	char section[256];
 
