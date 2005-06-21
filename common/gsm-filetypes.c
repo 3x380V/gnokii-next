@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-filetypes.c,v 1.62 2005-06-21 20:20:51 pkot Exp $
+  $Id: gsm-filetypes.c,v 1.63 2005-06-21 20:21:51 pkot Exp $
 
   G N O K I I
 
@@ -1384,9 +1384,9 @@ gn_error gn_file_bitmap_show(char *filename)
 
 	for (i = 0; i < bitmap.height; i++) {
 		for (j = 0; j < bitmap.width; j++) {
-			printf("%c", gn_bmp_point(&bitmap, j, i) ? '#' : ' ');
+			fprintf(stdout, "%c", gn_bmp_point(&bitmap, j, i) ? '#' : ' ');
 		}
-		printf("\n");
+		fprintf(stdout, "\n");
 	}
 
 	return GN_ERR_NONE;
