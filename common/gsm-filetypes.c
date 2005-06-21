@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-filetypes.c,v 1.61 2005-06-21 20:19:32 pkot Exp $
+  $Id: gsm-filetypes.c,v 1.62 2005-06-21 20:20:51 pkot Exp $
 
   G N O K I I
 
@@ -1402,15 +1402,12 @@ static int get_next_token(char *src, int delim)
 		switch (src[i]) {
 		case '\\':
 			if (slash_state) {
-				printf("enter\n");
 				slash_state = 0;
 			} else {
-				printf("exit\n");
 				slash_state = 1;
 			}
 			break;
 		case ';':
-			printf("semicolon\n");
 			if (slash_state)
 				slash_state = 0;
 			else
