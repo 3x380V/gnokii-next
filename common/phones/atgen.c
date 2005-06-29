@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.112 2005-04-20 20:52:45 pkot Exp $
+  $Id: atgen.c,v 1.113 2005-06-29 20:55:18 pkot Exp $
 
   G N O K I I
 
@@ -256,12 +256,12 @@ int at_encode(int charset, char *dst, char *src, int len)
 		len = char_ascii_encode(dst, src, len);
 		break;
 	case AT_CHAR_HEXGSM:
-		char_hex_encode(dst, src, len);
 		len *= 2;
+		char_hex_encode(dst, src, len);
 		break;
 	case AT_CHAR_UCS2:
-		char_ucs2_encode(dst, src, len);
 		len *= 4;
+		char_ucs2_encode(dst, src, len);
 		break; 
 	default:
 		memcpy(dst, src, len);
