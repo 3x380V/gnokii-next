@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-filetypes.c,v 1.63 2005-06-21 20:21:51 pkot Exp $
+  $Id: gsm-filetypes.c,v 1.64 2005-06-29 21:19:30 pkot Exp $
 
   G N O K I I
 
@@ -1419,7 +1419,7 @@ static int get_next_token(char *src, int delim)
 			break;
 		}
 	}
-	return i;
+	return i + 1;
 }
 
 #define BUG(x) \
