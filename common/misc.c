@@ -1,6 +1,6 @@
 /*
 
-  $Id: misc.c,v 1.95 2005-06-09 21:33:28 bozo Exp $
+  $Id: misc.c,v 1.96 2005-07-07 21:10:08 pkot Exp $
 
   G N O K I I
 
@@ -193,6 +193,7 @@ static gn_phone_model models[] = {
 	{"6010",  "NPM-10X", 0 },
 	{"6011",  "RTE-2RH", 0 },
 	{"6020",  "RM-30", PM_CALLERGROUP | PM_CALENDAR | PM_SPEEDDIAL | PM_NETMONITOR | PM_EXTPBK | PM_SMS | PM_FOLDERS },
+	{"6021",  "RM-94", PM_CALLERGROUP | PM_CALENDAR | PM_SPEEDDIAL | PM_NETMONITOR | PM_EXTPBK | PM_SMS | PM_FOLDERS },
 	{"6050",  "NME-1", 0 },
 	{"6080",  "NME-2", 0 },
 	{"6081",  "NME-2A", 0 },
