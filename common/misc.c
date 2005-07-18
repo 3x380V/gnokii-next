@@ -1,6 +1,6 @@
 /*
 
-  $Id: misc.c,v 1.96 2005-07-07 21:10:08 pkot Exp $
+  $Id: misc.c,v 1.97 2005-07-18 20:55:36 bozo Exp $
 
   G N O K I I
 
@@ -182,6 +182,7 @@ static gn_phone_model models[] = {
 	{"5120",  "NSC-1", PM_KEYBOARD  },
 	{"5125",  "NSC-1", PM_KEYBOARD },
 	{"5130",  "NSK-1", PM_NETMONITOR | PM_KEYBOARD | PM_SMS | PM_DTMF | PM_DATA | PM_SPEEDDIAL | PM_AUTHENTICATION },
+	{"5140",  "NPL-5", PM_CALLERGROUP | PM_CALENDAR | PM_SPEEDDIAL | PM_EXTPBK | PM_SMS | PM_FOLDERS },
 	{"5160",  "NSW-1", PM_NETMONITOR | PM_KEYBOARD | PM_SMS | PM_DTMF | PM_DATA | PM_SPEEDDIAL | PM_AUTHENTICATION },
 	{"5170",  "NSD-1F", 0 },
 	{"5180",  "NSD-1G", 0 },
