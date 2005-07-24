@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.c,v 1.179 2005-07-18 20:55:36 bozo Exp $
+  $Id: nk6510.c,v 1.180 2005-07-24 18:58:53 pkot Exp $
 
   G N O K I I
 
@@ -542,7 +542,7 @@ static gn_error NK6510_Initialise(struct gn_statemachine *state)
 					fprintf(stderr, _("Sorry, this function is known to break your phone (Nokia phones series 40 v1).\n"
 							  "Refusing to do it. You may try to use AT driver. If you are brave enough to\n"
 							  "test the driver anyway, please contact developers at gnokii-users@nongnu.org.\n"
-							  "See also http://thread.gmane.org/gmane.linux.drivers.gnokii/3195"));
+							  "See also http://thread.gmane.org/gmane.linux.drivers.gnokii/3195\n"));
 					return GN_ERR_NOTIMPLEMENTED;
 				}
 			}
