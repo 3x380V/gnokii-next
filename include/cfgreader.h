@@ -1,6 +1,6 @@
 /*
 
-  $Id: cfgreader.h,v 1.12 2002-12-08 23:57:27 pkot Exp $
+  $Id: cfgreader.h,v 1.13 2005-07-24 18:54:57 pkot Exp $
 
   G N O K I I
 
@@ -33,13 +33,14 @@
 
 /* Structure definitions */
 
-/* A linked list of key/value pairs */
+/* A linked list of key/value pairs of the configuration file */
 struct gn_cfg_entry {
 	struct gn_cfg_entry *next, *prev;
 	char *key;
 	char *value;
 };
 
+/* A linked list of the config file sections together with key included */
 struct gn_cfg_header {
 	struct gn_cfg_header *next, *prev;
 	struct gn_cfg_entry *entries;

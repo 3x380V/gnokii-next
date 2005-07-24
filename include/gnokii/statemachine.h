@@ -1,6 +1,6 @@
 /*
 
-  $Id: statemachine.h,v 1.19 2005-04-24 19:41:23 pkot Exp $
+  $Id: statemachine.h,v 1.20 2005-07-24 18:54:57 pkot Exp $
 
   G N O K I I
 
@@ -89,6 +89,8 @@ struct gn_statemachine {
 };
 
 API gn_state gn_sm_loop(int timeout, struct gn_statemachine *state);
+
+/* General way to call any driver function */
 API gn_error gn_sm_functions(gn_operation op, gn_data *data, struct gn_statemachine *sm);
 
 #endif	/* _gnokii_statemachine_h */
