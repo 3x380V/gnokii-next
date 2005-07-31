@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.423 2005-07-18 22:05:11 bozo Exp $
+  $Id: gnokii.c,v 1.424 2005-07-31 21:31:14 pkot Exp $
 
   G N O K I I
 
@@ -3328,6 +3328,8 @@ static int getphonebook(int argc, char *argv[])
 			int i;
 		case GN_ERR_NONE:
 			num_entries--;
+			if (entry.empty != false)
+				break;
 			switch (type) {
 			case 1:
 				gn_file_phonebook_raw_write(stdout, &entry, memory_type_string);
