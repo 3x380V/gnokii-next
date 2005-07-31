@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.113 2005-06-29 20:55:18 pkot Exp $
+  $Id: atgen.c,v 1.114 2005-07-31 21:27:44 pkot Exp $
 
   G N O K I I
 
@@ -220,6 +220,8 @@ char *memorynames[] = {
 	"TA", /* for compatibility only: TA=computer memory */
 	"CB", /* Currently selected memory */
 };
+
+#define NR_MEMORIES (sizeof (memorynames) / sizeof ((memorynames)[0]))
 
 typedef struct {
 	char *str;
@@ -508,6 +510,8 @@ gn_error at_memory_type_set(gn_memory_type mt, struct gn_statemachine *state)
 	gn_error ret = GN_ERR_NONE;
 
 	if (mt != drvinst->memorytype) {
+		if (mt >= NR_MEMORIES)
+			return GN_ERR_INVALIDMEMORYTYPE;
 		sprintf(req, "AT+CPBS=\"%s\"\r", memorynames[mt]);
 		ret = sm_message_send(13, GN_OP_Init, req, state);
 		if (ret)
@@ -1362,7 +1366,7 @@ static gn_error ReplyGetSMSStatus(int messagetype, unsigned char *buffer, int le
 	data->sms_status->folders_count = 0;
 
 	data->sms_status->new_message_store = GN_MT_ME;
-	for (i = 0; i < sizeof(memorynames)/sizeof(char *); i++) {
+	for (i = 0; i < NR_MEMORIES; i++) {
 		if (strcmp(store, memorynames[i]) == 0) {
 			data->sms_status->new_message_store = i;
 			break;
