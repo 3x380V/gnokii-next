@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-encoding.c,v 1.63 2005-04-20 22:33:36 pkot Exp $
+  $Id: gsm-encoding.c,v 1.64 2005-07-31 21:42:31 pkot Exp $
 
   G N O K I I
 
@@ -418,6 +418,9 @@ void char_ucs2_encode(unsigned char* dest, const unsigned char* src, int len)
 		case -1:
 			i_len++;
 			break;
+		case 0:
+			/* return at the end of the string */
+			return;
 		default:
 			i_len += length;
 			break;
