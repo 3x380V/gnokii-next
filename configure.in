@@ -4,7 +4,7 @@ dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janík ml.
 dnl                2000 Karel Zak, Pawe³ Kot
 dnl                2002 BORBELY Zoltan
 dnl
-dnl  $Id: configure.in,v 1.148 2005-05-19 21:58:57 pkot Exp $
+dnl  $Id: configure.in,v 1.149 2005-07-31 21:22:43 pkot Exp $
 dnl
 
 AC_INIT(gnokii/gnokii.c)
@@ -277,7 +277,7 @@ AC_ARG_WITH(bluetooth,
 		AC_MSG_WARN(Usage is: --with-bluetooth=DIR)
 	  else
 		LIBS="$LIBS -L$withval/lib"
-		CFLAGS="$CFLAGS -I$withval/include"
+		CFLAGS="$CFLAGS -I$withval/net -I$withval/"
 	  fi
 	]
 )
