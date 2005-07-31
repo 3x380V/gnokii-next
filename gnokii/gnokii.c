@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.424 2005-07-31 21:31:14 pkot Exp $
+  $Id: gnokii.c,v 1.425 2005-07-31 21:36:26 pkot Exp $
 
   G N O K I I
 
@@ -3402,10 +3402,12 @@ static int getphonebook(int argc, char *argv[])
 			fprintf(stderr, _("Empty memory location. Skipping.\n"));
 			break;
 		case GN_ERR_INVALIDLOCATION:
-			fprintf(stderr, _("Error reading from the location %d in memory %s\n"), count, memory_type_string);
 			if (end_entry == INT_MAX) {
 				/* Ensure that we quit the loop */
 				num_entries = 0;
+			} else {
+				/* Only print an error if we got a valid end index */
+				fprintf(stderr, _("Error reading from the location %d in memory %s\n"), count, memory_type_string);
 			}
 			break;
 		default:
