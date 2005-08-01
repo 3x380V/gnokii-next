@@ -1,6 +1,6 @@
 /*
 
-  $Id: device.c,v 1.36 2005-04-20 22:33:36 pkot Exp $
+  $Id: device.c,v 1.37 2005-08-01 21:34:57 pkot Exp $
 
   G N O K I I
 
@@ -56,6 +56,7 @@ int device_open(const char *file, int with_odd_parity, int with_async,
 		struct gn_statemachine *state)
 {
 	state->device.type = device_type;
+	state->device.device_instance = NULL;
 
 	dprintf("Serial device: opening device %s\n", file);
 
