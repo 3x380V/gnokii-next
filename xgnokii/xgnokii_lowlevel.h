@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_lowlevel.h,v 1.30 2005-04-24 20:57:37 pkot Exp $
+  $Id: xgnokii_lowlevel.h,v 1.31 2005-08-10 07:33:43 ja Exp $
   
   X G N O K I I
 
@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
   Copyright (C) 1999 Pavel Janík ml., Hugh Blemings
-  & Ján Derfiòák <ja@mail.upjs.sk>.
+  & 1999-2005 Jan Derfinak.
   Copyright (C) 2002      Markus Plail
   Copyright (C) 2002-2003 Pawel Kot, BORBELY Zoltan
   Copyright (C) 2003      Tomi Ollila

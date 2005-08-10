@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_contacts.h,v 1.22 2005-04-24 20:57:37 pkot Exp $
+  $Id: xgnokii_contacts.h,v 1.23 2005-08-10 07:33:43 ja Exp $
   
   X G N O K I I
 
@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
   Copyright (C) 1999 Pavel Janík ml., Hugh Blemings
-  Copyright (C) 1999-2002 Ján Derfiòák <ja@mail.upjs.sk>.
+  Copyright (C) 1999-2005 Jan Derfinak.
   Copyright (C) 2001-2003 Pawel Kot
   Copyright (C) 2002      BORBELY Zoltan, Markus Plail
 

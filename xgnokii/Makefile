@@ -1,7 +1,7 @@
 
 
 #
-# $Id: Makefile,v 1.56 2005-08-09 20:44:56 pkot Exp $
+# $Id: Makefile,v 1.57 2005-08-10 07:33:43 ja Exp $
 #
 # Makefile for the xGNOKII tool suite.
 #
@@ -13,7 +13,7 @@ TOPDIR=..
 include $(TOPDIR)/Makefile.global
 
 CFLAGS += $(PTHREAD_CFLAGS) \
-	  $(GTK_CFLAGS)
+	  $(GTK_CFLAGS) -DGTK_ENABLE_BROKEN
 
 LDLIBS += $(PTHREAD_LIBS) \
 	  $(GTK_LIBS)
