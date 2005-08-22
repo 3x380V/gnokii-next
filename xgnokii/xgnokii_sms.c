@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_sms.c,v 1.61 2005-08-10 07:33:43 ja Exp $
+  $Id: xgnokii_sms.c,v 1.62 2005-08-22 23:39:12 bozo Exp $
 
   X G N O K I I
 
@@ -1645,7 +1645,7 @@ static GtkItemFactoryEntry menu_items[] = {
 	{NULL, NULL, NULL, 0, "<Separator>"},
 	{NULL, "<control>W", CloseSMS, 0, NULL},
 	{NULL, NULL, NULL, 0, "<Branch>"},
-	{NULL, "<control>A", ActivateSMS, 0, NULL},
+	{NULL, "<control>A", ActivateSMS, 0, "<CheckItem>"},
 	{NULL, "<control>N", NewSMS, 0, NULL},
 	{NULL, "<control>F", ForwardSMS, 0, NULL},
 	{NULL, "<control>R", ReplySMS, 0, NULL},
