@@ -1,6 +1,6 @@
 /*
 
-  $Id: data.h,v 1.74 2005-04-24 19:41:23 pkot Exp $
+  $Id: data.h,v 1.75 2005-08-23 22:11:04 pkot Exp $
 
   G N O K I I
 
@@ -239,6 +239,9 @@ typedef enum {
 	GN_OP_GetFile,
 	GN_OP_PutFile,
 	GN_OP_DeleteFile,
+	GN_OP_GetFileDetailsById,
+	GN_OP_GetFileById,
+	GN_OP_DeleteFileById,
 	GN_OP_Max,	/* don't append anything after this entry */
 } gn_operation;
 

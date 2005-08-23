@@ -1,6 +1,6 @@
 /*
 
-  $Id: common.h,v 1.136 2005-04-24 19:41:23 pkot Exp $
+  $Id: common.h,v 1.137 2005-08-23 22:11:04 pkot Exp $
 
   G N O K I I
 
@@ -673,21 +673,21 @@ typedef enum {
 } gn_log_target;
 
 typedef struct {
-	unsigned char id[6];
-	char name[512];
-	int year;
+	unsigned char *id;	/* file id */
+	char name[512];		/* file name */
+	int year;		/* datetime of creation/modification */
 	int month;
 	int day;
 	int hour;
 	int minute;
 	int second;
-	int file_length;
-	int togo;
-	int just_sent;
-	unsigned char *file;
+	int file_length;	/* size of the file */
+	int togo;		/* amount of bytes to be sent yet */
+	int just_sent;		/* ??? */
+	unsigned char *file;	/* file contents */
 } gn_file;
 
-#define GN_FILES_MAX_COUNT 100
+#define GN_FILES_MAX_COUNT 1024
 
 typedef struct {
 	char path[512];
