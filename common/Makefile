@@ -1,5 +1,5 @@
 #
-# $Id: Makefile,v 1.79 2005-10-20 21:59:36 pkot Exp $
+# $Id: Makefile,v 1.80 2005-11-08 21:29:37 bozo Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -23,6 +23,7 @@ ifdef WIN32_CROSS
 LIBTOOL_UNDEF = -no-undefined
 LIBTOOL_VER = -version-info $(MAJOR_NUMBER):$(MINOR_NUMBER):0 -avoid-version
 LIBTOOL_RPATH=-rpath $(libdir)
+LDLIBS += -lws2_32 -lwinmm
 else
 LIBTOOL_VER = -version-info $(MAJOR_NUMBER):$(MINOR_NUMBER):0
 LIBTOOL_RPATH=-rpath $(libdir)
