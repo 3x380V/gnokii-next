@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.429 2005-08-23 22:53:01 pkot Exp $
+  $Id: gnokii.c,v 1.430 2005-11-08 18:14:03 pkot Exp $
 
   G N O K I I
 
@@ -4987,7 +4987,6 @@ static int getfiledetailsbyid(int nargc, char *nargv[])
 		set_fileid(&fi, nargv[0]);
 	}
 
-	return 0;
 	if ((error = gn_sm_functions(GN_OP_GetFileDetailsById, &data, &state)) != GN_ERR_NONE)
 		fprintf(stderr, _("Failed to get filename: %s\n"), gn_error_print(error));
 	else {
