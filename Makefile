@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.133 2005-05-12 20:37:46 pkot Exp $
+# $Id: Makefile,v 1.134 2005-11-23 23:11:54 bozo Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -67,7 +67,7 @@ dummy:
 intl: dummy
 	-ln -sf include/config.h config.h
 	$(MAKE) -C intl
-	$(MAKE) -C intl localcharset.lo
+	$(MAKE) -C intl localcharset.o
 	-$(RM) config.h
 
 $(DIRS): dummy
