@@ -1,6 +1,6 @@
 /*
 
-  $Id: atbus.c,v 1.44 2005-04-20 20:43:32 pkot Exp $
+  $Id: atbus.c,v 1.45 2005-11-23 18:55:11 bozo Exp $
 
   G N O K I I
 
@@ -265,8 +265,16 @@ gn_error atbus_initialise(int mode, struct gn_statemachine *state)
 	AT_BUSINST(state) = businst;
 
 	switch (state->config.connection_type) {
-	case GN_CT_Serial:
 	case GN_CT_Irda:
+		if (!strcasecmp(state->config.port_device, "IrDA:IrCOMM")) {
+			if (!device_open(state->config.port_device, false, false, false, state->config.connection_type, state)) {
+				error = GN_ERR_FAILED;
+				goto err;
+			}
+			break;
+		}
+		/* FALLTHROUGH */
+	case GN_CT_Serial:
 	case GN_CT_TCP:
 		if (!atbus_serial_open(mode, state->config.port_device, state)) {
 			error = GN_ERR_FAILED;

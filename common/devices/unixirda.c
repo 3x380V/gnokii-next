@@ -1,6 +1,6 @@
 /*
  *
- * $Id: unixirda.c,v 1.44 2005-10-22 18:15:49 pkot Exp $
+ * $Id: unixirda.c,v 1.45 2005-11-23 18:55:11 bozo Exp $
  *
  * G N O K I I
  *
@@ -181,6 +181,11 @@ int irda_open(struct gn_statemachine *state)
 	daddr = irda_discover_device();			/* discover the devices */
 
 	if (daddr != -1)  {
+		if (!strcasecmp(state->config.port_device, "IrDA:IrCOMM")) {
+			fprintf(stderr, _("Virtual IrCOMM device unsupported under Linux\n"));
+			return GN_ERR_NOTSUPPORTED;
+		}
+
 		fd = socket(AF_IRDA, SOCK_STREAM, 0);	/* Create socket */
 		peer.sir_family = AF_IRDA;
 		peer.sir_lsap_sel = LSAP_ANY;
