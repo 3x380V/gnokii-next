@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnapplet.c,v 1.28 2005-05-10 12:03:09 pkot Exp $
+  $Id: gnapplet.c,v 1.29 2005-11-24 00:27:16 bozo Exp $
 
   G N O K I I
 
@@ -147,7 +147,7 @@ gn_driver driver_gnapplet = {
 	pgen_incoming_default,
 	/* Mobile phone information */
 	{
-		"gnapplet|series60|3650|6600|sx1",	/* Supported models */
+		"gnapplet|series60|3650|6600|sx1|6680",	/* Supported models */
 		0,			/* Max RF Level */
 		100,			/* Min RF Level */
 		GN_RF_Percentage,	/* RF level units */
