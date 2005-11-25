@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.134 2005-11-23 23:11:54 bozo Exp $
+# $Id: Makefile,v 1.135 2005-11-25 22:19:15 bozo Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -20,10 +20,6 @@ BIN_DIRS = gnokii
 ifndef WIN32
 BIN_DIRS += gnokiid utils
 DATA_DIR = common/data
-endif
-
-ifdef NEED_LCHARSET
-DIRS = intl
 endif
 
 DIRS += common/phones \
@@ -63,12 +59,6 @@ all: $(DIRS)
 	@echo "##########################################"
 
 dummy:
-
-intl: dummy
-	-ln -sf include/config.h config.h
-	$(MAKE) -C intl
-	$(MAKE) -C intl localcharset.o
-	-$(RM) config.h
 
 $(DIRS): dummy
 	$(MAKE) -C $@
