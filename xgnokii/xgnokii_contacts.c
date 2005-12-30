@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_contacts.c,v 1.64 2005-08-10 07:33:43 ja Exp $
+  $Id: xgnokii_contacts.c,v 1.65 2005-12-30 00:02:05 pkot Exp $
   
   X G N O K I I
 
@@ -147,7 +147,7 @@ void RefreshStatusInfo(void)
 		s = '*';
 	else
 		s = ' ';
-	g_snprintf(statusInfo.text, STATUS_INFO_LENGTH, "SIM: %d/%d%c  Phone: %d/%d%c",
+	g_snprintf(statusInfo.text, STATUS_INFO_LENGTH, _("SIM: %d/%d%c  Phone: %d/%d%c"),
 		   memoryStatus.UsedSM, memoryStatus.MaxSM, s,
 		   memoryStatus.UsedME, memoryStatus.MaxME, p);
 	gtk_label_set_text(GTK_LABEL(statusInfo.label), statusInfo.text);
@@ -1082,7 +1082,7 @@ static void CreateSubEntriesDialog(EditEntryData * editSubEntriesData, gchar * t
 	GtkWidget *button, *label, *hbox;
 
 	editSubEntriesData->dialog = gtk_dialog_new();
-	gtk_window_set_title(GTK_WINDOW(editSubEntriesData->dialog), "Edit subentries");
+	gtk_window_set_title(GTK_WINDOW(editSubEntriesData->dialog), _("Edit subentries"));
 	gtk_window_set_modal(GTK_WINDOW(editSubEntriesData->dialog), TRUE);
 	gtk_container_set_border_width(GTK_CONTAINER(editSubEntriesData->dialog), 10);
 	gtk_signal_connect(GTK_OBJECT(editSubEntriesData->dialog), "delete_event",
