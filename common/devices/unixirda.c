@@ -1,6 +1,6 @@
 /*
  *
- * $Id: unixirda.c,v 1.46 2005-11-23 20:03:38 bozo Exp $
+ * $Id: unixirda.c,v 1.47 2005-12-31 14:56:58 pkot Exp $
  *
  * G N O K I I
  *
@@ -70,6 +70,7 @@ static char *phone[] = {
 	"Nokia 6220",
 	"Nokia 6230",
 	"Nokia 6230i",
+	"Nokia 6235",
 	"Nokia 6250",
 	"Nokia 6310",
 	"Nokia 6310i",
