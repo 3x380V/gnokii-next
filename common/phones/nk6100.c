@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.174 2005-05-17 10:15:14 pkot Exp $
+  $Id: nk6100.c,v 1.175 2006-01-05 00:25:30 bozo Exp $
 
   G N O K I I
 
@@ -2574,6 +2574,9 @@ static gn_error IncomingCalendar(int messagetype, unsigned char *message, int le
 			} else {
 				note->phone_number[0] = 0;
 			}
+
+			memset(&note->end_time, 0, sizeof(note->end_time));
+			note->mlocation[0] = 0;
 		}
 		break;
 
