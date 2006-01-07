@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus-3110.c,v 1.35 2005-04-20 20:43:32 pkot Exp $
+  $Id: fbus-3110.c,v 1.36 2006-01-07 18:41:59 dforsi Exp $
 
   G N O K I I
 
@@ -401,7 +401,7 @@ static void fb3110_sequence_number_update(struct gn_statemachine *state)
 }
 
 /* The 3110 protocol has a tendency to use different message types to
- * indicate succesful and failed actions. These are not handled very well by
+ * indicate successful and failed actions. These are not handled very well by
  * the gnokii internals, so they are "folded" together and dealt with in the
  * 3110 code instead. The logic is that each success/failure message type
  * pair is reported as the type of the message to indicate success.

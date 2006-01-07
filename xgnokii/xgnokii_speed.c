@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_speed.c,v 1.18 2005-08-10 07:33:43 ja Exp $
+  $Id: xgnokii_speed.c,v 1.19 2006-01-07 18:41:59 dforsi Exp $
 
   X G N O K I I
 
@@ -195,13 +195,13 @@ static void ReadSpeedDial(void)
 
 	for (i = 2; i < 10; i++) {
 		if ((d = (D_SpeedDial *) g_malloc(sizeof(D_SpeedDial))) == NULL) {
-			g_print(_("Cannot allocate memory!"));
+			g_print(_("Cannot allocate memory!\n"));
 			return;
 		}
 		memset(d, 0, sizeof(D_SpeedDial));
 		d->entry.number = i;
 		if ((e = (PhoneEvent *) g_malloc(sizeof(PhoneEvent))) == NULL) {
-			g_print(_("Cannot allocate memory!"));
+			g_print(_("Cannot allocate memory!\n"));
 			g_free(d);
 			return;
 		}
@@ -212,7 +212,7 @@ static void ReadSpeedDial(void)
 		pthread_cond_wait(&speedDialCond, &speedDialMutex);
 		pthread_mutex_unlock(&speedDialMutex);
 		if (d->status != GN_ERR_NONE) {
-			g_print("Cannot read speed dial key %d!\n", i);
+			g_print(_("Cannot read speed dial key %d!\n"), i);
 			*buf = i + '0';
 			row[0] = buf;
 			row[1] = '\0';
@@ -261,7 +261,7 @@ static void SaveSpeedDial(void)
 				if (d->entry.location == 0)
 					continue;
 				if ((e = (PhoneEvent *) g_malloc(sizeof(PhoneEvent))) == NULL) {
-					g_print(_("Cannot allocate memory!"));
+					g_print(_("Cannot allocate memory!\n"));
 					return;
 				}
 

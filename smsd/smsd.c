@@ -1,6 +1,6 @@
 /*
 
-  $Id: smsd.c,v 1.45 2005-04-26 06:34:39 ja Exp $
+  $Id: smsd.c,v 1.46 2006-01-07 18:41:59 dforsi Exp $
 
   S M S D
 
@@ -194,7 +194,7 @@ static void LogFile (gchar *str, ...)
     f = stdout;
   else if ((f = fopen (smsdConfig.logFile, "a")) == NULL)
   {
-    g_print (_("Warning: Cannot open file %s for appendig.\n"), smsdConfig.logFile);
+    g_print (_("Warning: Cannot open file %s for appending.\n"), smsdConfig.logFile);
     return;
   }
 
@@ -331,7 +331,7 @@ static void ReadConfig (gint argc, gchar *argv[])
   
   if ((argc - optind) != 0)
   {
-    g_print ("Wrong argument number!\n");
+    g_print (_("Wrong argument number!\n"));
     Usage (argv[0]);
     exit (1);
   }

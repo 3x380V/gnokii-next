@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk3110.c,v 1.45 2005-04-20 20:52:45 pkot Exp $
+  $Id: nk3110.c,v 1.46 2006-01-07 18:41:59 dforsi Exp $
 
   G N O K I I
 
@@ -789,7 +789,7 @@ static gn_error P3110_IncomingSMSUserData(int messagetype, unsigned char *messag
 }
 
 
-/* 0x28 messages are sent by the phone to acknowledge succesfull
+/* 0x28 messages are sent by the phone to acknowledge successful
    sending of an SMS message.  The byte returned is a receipt
    number of some form, not sure if it's from the network, sending
    sending of an SMS message.  The byte returned is the TP-MR
@@ -818,7 +818,7 @@ static gn_error P3110_IncomingSMSSend(int messagetype, unsigned char *message, i
 	}
 }
 
-/* 0x2a messages are sent by the phone to acknowledge succesful
+/* 0x2a messages are sent by the phone to acknowledge successful
    saving of an SMS message. */
 
 /* 0x2b messages are sent by the phone to indicate an error in

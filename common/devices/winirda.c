@@ -1,6 +1,6 @@
 /*
  *
- * $Id: winirda.c,v 1.22 2005-12-31 14:56:59 pkot Exp $
+ * $Id: winirda.c,v 1.23 2006-01-07 18:41:59 dforsi Exp $
  *
  * G N O K I I
  *
@@ -166,7 +166,7 @@ int irda_open(struct gn_statemachine *state)
 			}
 		}
 	} else {
-		fprintf(stderr, "Not WINSOCK2 :( - Get an upgrade dude!");
+		fprintf(stderr, _("Not WINSOCK2 :( - Get an upgrade dude!"));
 	}
 	return (int)fd;
 }

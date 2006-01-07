@@ -1,6 +1,6 @@
 /*
 
-  $Id: atbus.c,v 1.45 2005-11-23 18:55:11 bozo Exp $
+  $Id: atbus.c,v 1.46 2006-01-07 18:41:59 dforsi Exp $
 
   G N O K I I
 
@@ -68,7 +68,7 @@ static int xwrite(unsigned char *d, int len, struct gn_statemachine *sm)
 		res = device_write(d, len, sm);
 		if (res == -1) {
 			if (errno != EAGAIN) {
-				perror("gnokii I/O error ");
+				perror(_("gnokii I/O error"));
 				return -1;
 			}
 		} else {
