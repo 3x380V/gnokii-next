@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.h,v 1.79 2005-07-24 18:54:57 pkot Exp $
+  $Id: gnokii.h,v 1.80 2006-01-13 22:12:49 pkot Exp $
 
   G N O K I I
 
@@ -40,7 +40,7 @@ extern "C" {
 #endif
 
 /* Some portability definitions first */
-#if defined(__linux__)
+#if defined(__linux__) || defined(__GLIBC__)
 #  include <stdint.h>
 #  include <sys/time.h>
 #elif defined(__svr4__) || defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__bsdi__) || defined(__MACH__)
