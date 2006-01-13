@@ -1,6 +1,6 @@
 /*
 
-  $Id: ldif.c,v 1.11 2006-01-13 22:20:28 pkot Exp $
+  $Id: ldif.c,v 1.12 2006-01-13 22:25:18 pkot Exp $
   
   G N O K I I
 
@@ -197,6 +197,8 @@ API int gn_ldif2phonebook(FILE *f, gn_phonebook_entry *entry)
 		STORENUM_BASE64("homePhone:: ", GN_PHONEBOOK_NUMBER_Home);
 		STORENUM("mobile: ", GN_PHONEBOOK_NUMBER_Mobile);
 		STORENUM_BASE64("mobile:: ", GN_PHONEBOOK_NUMBER_Mobile);
+		STORENUM("cellphone: ", GN_PHONEBOOK_NUMBER_Mobile);
+		STORENUM_BASE64("cellphone:: ", GN_PHONEBOOK_NUMBER_Mobile);
 		STORENUM("fax: ", GN_PHONEBOOK_NUMBER_Fax);
 		STORENUM_BASE64("fax:: ", GN_PHONEBOOK_NUMBER_Fax);
 		STORENUM("workPhone: ", GN_PHONEBOOK_NUMBER_Work);
