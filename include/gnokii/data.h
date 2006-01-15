@@ -1,6 +1,6 @@
 /*
 
-  $Id: data.h,v 1.75 2005-08-23 22:11:04 pkot Exp $
+  $Id: data.h,v 1.76 2006-01-15 23:50:04 pkot Exp $
 
   G N O K I I
 
@@ -124,6 +124,7 @@ typedef struct {
 
 typedef struct {
 	char model[GN_MODEL_MAX_LENGTH];		/* Phone model */
+	char irda_string[GN_MODEL_MAX_LENGTH];		/* If IrDA connection used, string shown in the discovery log */
 	char port_device[GN_DEVICE_NAME_MAX_LENGTH];	/* Port device to use (e.g. /dev/ttyS0) */
 	gn_connection_type connection_type;		/* Connection type (e.g. serial, ir) */
 	int init_length;				/* Number of chars sent to sync the serial port */
