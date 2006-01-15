@@ -1,6 +1,6 @@
 /*
 
-  $Id: unixserial.c,v 1.38 2005-05-08 23:29:26 pkot Exp $
+  $Id: unixserial.c,v 1.39 2006-01-15 15:13:26 dforsi Exp $
 
   G N O K I I
 
@@ -139,7 +139,7 @@ int device_script(int fd, const char *section, struct gn_statemachine *state)
 		/* FIXME: close all open descriptors - how to track them?
 		 */
 		execl("/bin/sh", "sh", "-c", scriptname, NULL);
-		fprintf(stderr, _("device_script(\"%s\"): script exection failure: %s\n"), scriptname, strerror(errno));
+		fprintf(stderr, _("device_script(\"%s\"): script execution failure: %s\n"), scriptname, strerror(errno));
 		_exit(-1);
 		/* NOTREACHED */
 

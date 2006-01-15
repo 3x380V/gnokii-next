@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_speed.c,v 1.19 2006-01-07 18:41:59 dforsi Exp $
+  $Id: xgnokii_speed.c,v 1.20 2006-01-15 15:13:27 dforsi Exp $
 
   X G N O K I I
 
@@ -329,7 +329,7 @@ static void OkImportDialog(GtkWidget * w, GtkFileSelection * fs)
 	gtk_widget_hide(GTK_WIDGET(fs));
 
 	if ((f = fopen(fileName, "r")) == NULL) {
-		g_snprintf(buf, IO_BUF_LEN, _("Can't open file %s for reading!"), fileName);
+		g_snprintf(buf, IO_BUF_LEN, _("Can't open file %s for reading!\n"), fileName);
 		gtk_label_set_text(GTK_LABEL(errorDialog.text), buf);
 		gtk_widget_show(errorDialog.dialog);
 		return;
@@ -400,7 +400,7 @@ static void ImportSpeedDial(void)
 	static GtkWidget *fileDialog = NULL;
 
 	if (fileDialog == NULL) {
-		fileDialog = gtk_file_selection_new(_("Import"));
+		fileDialog = gtk_file_selection_new(_("Import from file"));
 		gtk_signal_connect(GTK_OBJECT(fileDialog), "delete_event",
 				   GTK_SIGNAL_FUNC(DeleteEvent), NULL);
 		gtk_signal_connect(GTK_OBJECT(GTK_FILE_SELECTION(fileDialog)->ok_button),
@@ -422,7 +422,7 @@ static void ExportSpeedDialMain(gchar * name)
 	register gint i;
 
 	if ((f = fopen(name, "w")) == NULL) {
-		g_snprintf(buf, IO_BUF_LEN, _("Can't open file %s for writing!"), name);
+		g_snprintf(buf, IO_BUF_LEN, _("Can't open file %s for writing!\n"), name);
 		gtk_label_set_text(GTK_LABEL(errorDialog.text), buf);
 		gtk_widget_show(errorDialog.dialog);
 		return;
@@ -463,7 +463,7 @@ static void OkExportDialog(GtkWidget * w, GtkFileSelection * fs)
 			CreateYesNoDialog(&dialog, (GtkSignalFunc) YesExportDialog, (GtkSignalFunc) CancelDialog,
 					  GUI_SpeedDialWindow);
 			gtk_window_set_title(GTK_WINDOW(dialog.dialog), _("Overwrite file?"));
-			g_snprintf(err, 255, _("File %s already exist.\nOverwrite?"),
+			g_snprintf(err, 255, _("File %s already exists.\nOverwrite?"),
 				   exportDialogData.fileName);
 			gtk_label_set_text(GTK_LABEL(dialog.text), err);
 		}
@@ -479,7 +479,7 @@ static void ExportSpeedDial(void)
 
 	if (speedDialInitialized) {
 		if (fileDialog == NULL) {
-			fileDialog = gtk_file_selection_new(_("Export"));
+			fileDialog = gtk_file_selection_new(_("Export to file"));
 			gtk_signal_connect(GTK_OBJECT(fileDialog), "delete_event",
 					   GTK_SIGNAL_FUNC(DeleteEvent), NULL);
 			gtk_signal_connect(GTK_OBJECT(GTK_FILE_SELECTION(fileDialog)->ok_button),

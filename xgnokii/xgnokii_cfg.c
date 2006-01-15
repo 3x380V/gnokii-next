@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_cfg.c,v 1.14 2005-09-09 21:45:28 pkot Exp $
+  $Id: xgnokii_cfg.c,v 1.15 2006-01-15 15:13:27 dforsi Exp $
 
   X G N O K I I
 
@@ -101,7 +101,7 @@ void GUI_ReadXConfig()
 	rcfile = g_strconcat(homedir, "\\_xgnokiirc", NULL);
 #else
 	if ((homedir = g_get_home_dir()) == NULL) {
-		g_print(_("WARNING: Can't find HOME enviroment variable!\n"));
+		g_print(_("WARNING: Can't find HOME environment variable!\n"));
 		return;
 	}
 
@@ -205,12 +205,12 @@ gint GUI_SaveXConfig()
 	rcfile = g_strconcat(homedir, "\\_xgnokiirc", NULL);
 #else
 	if ((homedir = g_get_home_dir()) == NULL) {
-		g_print(_("ERROR: Can't find HOME enviroment variable!\n"));
+		g_print(_("ERROR: Can't find HOME environment variable!\n"));
 		return(1);
 	}
 
 	if ((rcfile = g_strconcat(homedir, "/.xgnokiirc", NULL)) == NULL) {
-		g_print(_("ERROR: Can't allocate memory for config reading!\n"));
+		g_print(_("ERROR: Can't allocate memory for config writing!\n"));
 		return(2);
 	}
 #endif

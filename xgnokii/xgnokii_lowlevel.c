@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_lowlevel.c,v 1.90 2005-08-10 07:33:43 ja Exp $
+  $Id: xgnokii_lowlevel.c,v 1.91 2006-01-15 15:13:27 dforsi Exp $
   
   X G N O K I I
 
@@ -223,7 +223,7 @@ static gn_error fbusinit(bool enable_monitoring)
 	if (aux && !strcmp(aux, "yes")) {
 		lockfile = gn_device_lock(xgnokiiConfig.port);
 		if (lockfile == NULL) {
-			fprintf(stderr, _("Lock file error. Exiting\n"));
+			fprintf(stderr, _("Lock file error. Exiting.\n"));
 			MainExit();
 		}
 	}
@@ -240,7 +240,7 @@ static gn_error fbusinit(bool enable_monitoring)
 	gn_log_xdebug("fbusinit: error %d\n", error);
 
 	if (error != GN_ERR_NONE) {
-		g_print(_("GSM/FBUS init failed!\n"));
+		g_print(_("GSM/FBUS init failed! (Unknown model?). Quitting.\n"));
 		/* FIXME: should popup some message... */
 		return (error);
 	}

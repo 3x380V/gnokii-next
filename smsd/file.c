@@ -1,6 +1,6 @@
 /*
 
-  $Id: file.c,v 1.13 2005-04-26 06:34:39 ja Exp $
+  $Id: file.c,v 1.14 2006-01-15 15:13:27 dforsi Exp $
 
   S M S D
 
@@ -180,7 +180,7 @@ void DB_Look (const gchar * const phone)
     
     if ((smsFile = fopen (buf->str, "r")) == NULL)
     {
-      g_print (_("Cannot open %s.\n"), buf->str);
+      g_print (_("Can't open file %s for reading!\n"), buf->str);
       continue;
     }
     

@@ -1,6 +1,6 @@
 /*
 
-  $Id: virtmodem.c,v 1.43 2005-04-20 20:30:18 pkot Exp $
+  $Id: virtmodem.c,v 1.44 2006-01-15 15:13:26 dforsi Exp $
 
   G N O K I I
 
@@ -383,7 +383,7 @@ static gn_error VM_GSMInitialise(struct gn_statemachine *sm)
 	error = gn_gsm_initialise(sm);
 
 	if (error != GN_ERR_NONE)
-		fprintf(stderr, _("GSM/FBUS init failed!\n"));
+		fprintf(stderr, _("GSM/FBUS init failed! (Unknown model?). Quitting.\n"));
 
 	return (error);
 }

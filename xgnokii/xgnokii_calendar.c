@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_calendar.c,v 1.28 2006-01-07 18:41:59 dforsi Exp $
+  $Id: xgnokii_calendar.c,v 1.29 2006-01-15 15:13:27 dforsi Exp $
 
   X G N O K I I
 
@@ -521,7 +521,7 @@ static gint AddCalendarNote(gn_calnote * cnote)
 	g_free(dnote);
 
 	if (error != GN_ERR_NONE) {
-		gchar *buf = g_strdup_printf(_("Saving failed\n(error=%d)"), error);
+		gchar *buf = g_strdup_printf(_("Error saving calendar note\n%s"), gn_error_print(error));
 		gtk_label_set_text(GTK_LABEL(errorDialog.text), buf);
 		gtk_widget_show(errorDialog.dialog);
 		g_free(buf);

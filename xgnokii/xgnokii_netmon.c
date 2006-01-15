@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_netmon.c,v 1.14 2005-08-10 07:33:43 ja Exp $
+  $Id: xgnokii_netmon.c,v 1.15 2006-01-15 15:13:27 dforsi Exp $
 
   X G N O K I I
 
@@ -399,7 +399,7 @@ void GUI_CreateNetmonWindow()
 	gtk_toolbar_append_item(GTK_TOOLBAR(toolbar), "5", _("NCELL list III"),
 				NULL, NULL, (GtkSignalFunc) SetDisplay, (gpointer) 5);
 
-	gtk_toolbar_append_item(GTK_TOOLBAR(toolbar), "6", _("Prefered/Denied networks"),
+	gtk_toolbar_append_item(GTK_TOOLBAR(toolbar), "6", _("Preferred/Denied networks"),
 				NULL, NULL, (GtkSignalFunc) SetDisplay, (gpointer) 6);
 
 	gtk_toolbar_append_item(GTK_TOOLBAR(toolbar), "7", _("System information bits"),

@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-filetypes.c,v 1.65 2006-01-07 18:41:58 dforsi Exp $
+  $Id: gsm-filetypes.c,v 1.66 2006-01-15 15:13:26 dforsi Exp $
 
   G N O K I I
 
@@ -1081,7 +1081,7 @@ int gn_file_text_save(char *filename, char *text, int mode)
 	else file = fopen(filename, "w");
 
 	if (!file) {
-		fprintf(stderr, _("Failed to write file %s\n"),  filename);
+		fprintf(stderr, _("Can't open file %s for writing!\n"),  filename);
 		return -1;
 	}
 	fprintf(file, "%s\n", text);

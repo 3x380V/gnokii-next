@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokiid.c,v 1.42 2005-04-20 20:19:59 pkot Exp $
+  $Id: gnokiid.c,v 1.43 2006-01-15 15:13:26 dforsi Exp $
 
   G N O K I I
 
@@ -133,7 +133,7 @@ int main(int argc, char *argv[])
 	if (aux && !strcmp(aux, "yes")) {
 		lockfile = gn_device_lock(temp_state.config.port_device);
 		if (lockfile == NULL) {
-			fprintf(stderr, _("Lock file error. Exiting\n"));
+			fprintf(stderr, _("Lock file error. Exiting.\n"));
 			exit(1);
 		}
 	}
