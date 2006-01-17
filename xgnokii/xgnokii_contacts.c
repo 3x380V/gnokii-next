@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_contacts.c,v 1.67 2006-01-15 15:13:27 dforsi Exp $
+  $Id: xgnokii_contacts.c,v 1.68 2006-01-17 22:53:38 dforsi Exp $
   
   X G N O K I I
 
@@ -2115,11 +2115,7 @@ static void CreateProgressDialog(gint maxME, gint maxSM)
 	gtk_signal_connect(GTK_OBJECT(progressDialog.dialog), "delete_event",
 			   GTK_SIGNAL_FUNC(ProgressDialogDeleteEvent), NULL);
 
-	vbox = gtk_vbox_new(FALSE, 10);
-	gtk_container_set_border_width(GTK_CONTAINER(vbox), 5);
-	gtk_container_add(GTK_CONTAINER(progressDialog.dialog), vbox);
-
-	gtk_widget_show(vbox);
+	vbox = GTK_DIALOG(progressDialog.dialog)->vbox;
 
 	label = gtk_label_new(_("Phone memory..."));
 	gtk_box_pack_start(GTK_BOX(vbox), label, FALSE, FALSE, 0);
