@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.436 2006-01-15 15:13:26 dforsi Exp $
+  $Id: gnokii.c,v 1.437 2006-01-21 18:19:49 dforsi Exp $
 
   G N O K I I
 
@@ -2642,6 +2642,14 @@ static int setdatetime(int argc, char *argv[])
 	data.datetime = &date;
 	error = gn_sm_functions(GN_OP_SetDateTime, &data, &state);
 
+	switch (error) {
+	case GN_ERR_NONE:
+		break;
+	default:
+		fprintf(stderr, _("Error: %s\n"), gn_error_print(error));
+		break;
+	}
+
 	return error;
 }
 
@@ -2692,6 +2700,14 @@ static int setalarm(int argc, char *argv[])
 	data.alarm = &alarm;
 
 	error = gn_sm_functions(GN_OP_SetAlarm, &data, &state);
+
+	switch (error) {
+	case GN_ERR_NONE:
+		break;
+	default:
+		fprintf(stderr, _("Error: %s\n"), gn_error_print(error));
+		break;
+	}
 
 	return error;
 }
@@ -4899,6 +4915,7 @@ static int getnetworkinfo(void)
 	data.network_info = &networkinfo;
 
 	if ((error = gn_sm_functions(GN_OP_GetNetworkInfo, &data, &state)) != GN_ERR_NONE) {
+		fprintf(stderr, _("Error: %s\n"), gn_error_print(error));
 		return error;
 	}
 
