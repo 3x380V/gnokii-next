@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.h,v 1.26 2006-01-22 13:53:27 pkot Exp $
+  $Id: nk6510.h,v 1.27 2006-01-22 22:28:08 pkot Exp $
 
   G N O K I I
 
@@ -122,6 +122,7 @@ typedef enum {
 #define NK6510_SUBCAL_INFO_RCVD		0x3b	/* Received calendar summary*/
 #define NK6510_SUBCAL_NOTE2_RCVD	0x7e	/* Received note (with more detailes) */
 /* Calendar note types */
+#define NK6510_NOTE_REMINDER		0x00	/* Reminder */
 #define NK6510_NOTE_MEETING		0x01	/* Metting */
 #define NK6510_NOTE_CALL		0x02	/* Call */
 #define NK6510_NOTE_BIRTHDAY		0x04	/* Birthday */
