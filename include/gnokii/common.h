@@ -1,6 +1,6 @@
 /*
 
-  $Id: common.h,v 1.139 2006-01-05 00:25:31 bozo Exp $
+  $Id: common.h,v 1.140 2006-01-22 13:12:06 pkot Exp $
 
   G N O K I I
 
@@ -280,7 +280,8 @@ typedef enum {
 #define GN_CALNOTE_NUMBER_MAX_LENGTH  49
 
 typedef struct {
-	int enabled; /* Is alarm set ? */
+	int enabled; /* Is alarm set? */
+	int tone; /* Is alarm tone enabled? */
 	gn_timestamp timestamp;
 } gn_calnote_alarm;
 

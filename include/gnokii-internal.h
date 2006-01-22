@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-internal.h,v 1.27 2005-05-10 09:58:59 pkot Exp $
+  $Id: gnokii-internal.h,v 1.28 2006-01-22 13:12:06 pkot Exp $
 
   G N O K I I
 
@@ -138,6 +138,7 @@ int imelody_sms_encode(unsigned char *imelody, unsigned char *message);
 gn_error phonebook_decode(unsigned char *blockstart, int length,
 			  gn_data *data, int blocks, int memtype, int speeddial_pos);
 gn_error calnote_decode(unsigned char *message, int length, gn_data *data);
+gn_error calnote2_decode(unsigned char *message, int length, gn_data *data);
 
 int sms_nokia_smart_message_part_pack(unsigned char *msg, unsigned int size,
 				      unsigned int type, bool first);
