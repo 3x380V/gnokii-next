@@ -1,6 +1,6 @@
 /*
 
-  $Id: nokia-decoding.c,v 1.26 2006-01-22 13:34:50 pkot Exp $
+  $Id: nokia-decoding.c,v 1.27 2006-01-22 13:38:06 pkot Exp $
 
   G N O K I I
 
@@ -232,7 +232,7 @@ gn_error phonebook_decode(unsigned char *blockstart, int length, gn_data *data,
 	return GN_ERR_NONE;
 }
 
-static gn_error calnote_get_alarm(int alarmdiff, gn_timestamp *time, gn_timestamp *alarm)
+gn_error calnote_get_alarm(int alarmdiff, gn_timestamp *time, gn_timestamp *alarm)
 {
 	struct tm tm_time;
 
