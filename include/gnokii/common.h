@@ -1,6 +1,6 @@
 /*
 
-  $Id: common.h,v 1.140 2006-01-22 13:12:06 pkot Exp $
+  $Id: common.h,v 1.141 2006-01-22 13:56:09 pkot Exp $
 
   G N O K I I
 
@@ -264,6 +264,7 @@ typedef enum {
 	GN_CALNOTE_CALL     = 0x02, /* Call */
 	GN_CALNOTE_BIRTHDAY = 0x04, /* Birthday */
 	GN_CALNOTE_REMINDER = 0x08, /* Reminder */
+	GN_CALNOTE_MEMO     = 0x16, /* Memo */
 } gn_calnote_type;
 
 typedef enum {

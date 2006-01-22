@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.438 2006-01-22 13:12:06 pkot Exp $
+  $Id: gnokii.c,v 1.439 2006-01-22 13:52:23 pkot Exp $
 
   G N O K I I
 
@@ -2427,6 +2427,9 @@ static int getcalendarnote(int argc, char *argv[])
 					break;
 				case GN_CALNOTE_BIRTHDAY:
 					fprintf(stdout, _("Birthday\n"));
+					break;
+				case GN_CALNOTE_MEMO:
+					fprintf(stdout, _("Memo\n"));
 					break;
 				default:
 					fprintf(stdout, _("Unknown\n"));
