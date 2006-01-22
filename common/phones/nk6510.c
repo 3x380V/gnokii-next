@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.c,v 1.196 2006-01-22 13:53:27 pkot Exp $
+  $Id: nk6510.c,v 1.197 2006-01-22 15:13:28 pkot Exp $
 
   G N O K I I
 
@@ -2619,17 +2619,6 @@ static gn_error calnote2_decode(unsigned char *message, int length, gn_data *dat
 	data->calnote->end_time.hour = message[38];
 	data->calnote->end_time.minute = message[39];
 	data->calnote->end_time.second = 0;
-	/* For Birthday and Call types end date does not have sense.
-	 * And you cannot set it in the phone. */
-	switch (data->calnote->type) {
-	case GN_CALNOTE_BIRTHDAY:
-		data->calnote->time.year = message[42] * 256 + message[43];
-	case GN_CALNOTE_CALL:
-		data->calnote->end_time.year = 0;
-		break;
-	default:
-		break;
-	}
 	/* Recurrence */
 	data->calnote->recurrence = 256 * message[40] + message[41];
 	/* Alarm */
@@ -2644,6 +2633,17 @@ static gn_error calnote2_decode(unsigned char *message, int length, gn_data *dat
 					&(data->calnote->alarm.timestamp));
 		if (e != GN_ERR_NONE)
 			goto out;
+	}
+	/* For Birthday and Call types end date does not have sense.
+	 * And you cannot set it in the phone. */
+	switch (data->calnote->type) {
+	case GN_CALNOTE_BIRTHDAY:
+		data->calnote->time.year = message[42] * 256 + message[43];
+	case GN_CALNOTE_CALL:
+		data->calnote->end_time.year = 0;
+		break;
+	default:
+		break;
 	}
 	/* Alarm tone */
 	tone1 = 256 * message[22] + message[23];
