@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.h,v 1.25 2006-01-22 13:12:07 pkot Exp $
+  $Id: nk6510.h,v 1.26 2006-01-22 13:53:27 pkot Exp $
 
   G N O K I I
 
@@ -125,7 +125,7 @@ typedef enum {
 #define NK6510_NOTE_MEETING		0x01	/* Metting */
 #define NK6510_NOTE_CALL		0x02	/* Call */
 #define NK6510_NOTE_BIRTHDAY		0x04	/* Birthday */
-#define NK6510_NOTE_REMINDER		0x08	/* Reminder */
+#define NK6510_NOTE_MEMO		0x08	/* Memo */
 
 /* Phone Memory types */
 #define NK6510_MEMORY_DIALLED		0x01	/* Dialled numbers */
