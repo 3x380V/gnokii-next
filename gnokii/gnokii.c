@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.439 2006-01-22 13:52:23 pkot Exp $
+  $Id: gnokii.c,v 1.440 2006-01-22 15:07:37 pkot Exp $
 
   G N O K I I
 
@@ -2457,11 +2457,16 @@ static int getcalendarnote(int argc, char *argv[])
 				}
 
 				if (calnote.alarm.enabled) {
-					fprintf(stdout, _("   Alarm date: %d-%02d-%02d\n"),
-						calnote.alarm.timestamp.year,
-						calnote.alarm.timestamp.month,
-						calnote.alarm.timestamp.day);
-
+					if (calnote.type == GN_CALNOTE_BIRTHDAY) {
+						fprintf(stdout, _("   Alarm date: %02d-%02d\n"),
+							calnote.alarm.timestamp.month,
+							calnote.alarm.timestamp.day);
+					} else {
+						fprintf(stdout, _("   Alarm date: %d-%02d-%02d\n"),
+							calnote.alarm.timestamp.year,
+							calnote.alarm.timestamp.month,
+							calnote.alarm.timestamp.day);
+					}
 					fprintf(stdout, _("   Alarm time: %02d:%02d:%02d\n"),
 						calnote.alarm.timestamp.hour,
 						calnote.alarm.timestamp.minute,
