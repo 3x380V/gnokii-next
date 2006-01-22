@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.441 2006-01-22 16:29:24 pkot Exp $
+  $Id: gnokii.c,v 1.442 2006-01-22 23:28:38 dforsi Exp $
 
   G N O K I I
 
@@ -4089,8 +4089,16 @@ static int setspeeddial(char *argv[])
 	entry.number = atoi(argv[0]);
 	entry.location = atoi(argv[2]);
 
-	if ((error = gn_sm_functions(GN_OP_SetSpeedDial, &data, &state)) == GN_ERR_NONE )
+	error = gn_sm_functions(GN_OP_SetSpeedDial, &data, &state);
+
+	switch (error) {
+	case GN_ERR_NONE:
 		fprintf(stderr, _("Successfully written!\n"));
+		break;
+	default:
+		fprintf(stderr, _("Error: %s\n"), gn_error_print(error));
+		break;
+	}
 
 	return error;
 }
