@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.c,v 1.197 2006-01-22 15:13:28 pkot Exp $
+  $Id: nk6510.c,v 1.198 2006-01-22 16:30:17 pkot Exp $
 
   G N O K I I
 
@@ -2604,7 +2604,7 @@ static gn_error calnote2_decode(unsigned char *message, int length, gn_data *dat
 	/* Type */
 	data->calnote->type = calnote_type_map(message[27]);
 	/* Location */
-	data->calnote->location = message[11] * 256 + message[12];
+	data->calnote->location = message[12] * 256 + message[13];
 	/* Start time */
 	data->calnote->time.year = message[28] * 256 + message[29];
 	data->calnote->time.month = message[30];
