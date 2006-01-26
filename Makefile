@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.135 2005-11-25 22:19:15 bozo Exp $
+# $Id: Makefile,v 1.136 2006-01-26 20:42:17 pkot Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -26,9 +26,9 @@ DIRS += common/phones \
 	common/links \
 	common/devices \
 	$(DATA_DIR) \
-	po \
 	common \
-	$(BIN_DIRS)
+	$(BIN_DIRS) \
+	po
 
 GTK_DIRS =	xgnokii
 
