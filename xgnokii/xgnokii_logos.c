@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_logos.c,v 1.35 2006-01-28 15:42:54 pkot Exp $
+  $Id: xgnokii_logos.c,v 1.36 2006-01-28 15:47:09 pkot Exp $
    
   X G N O K I I
 
@@ -91,7 +91,7 @@ GdkPixmap *greenPixelPixmap;
 int previewPixmapWidth, previewPixmapHeight;
 int previewAvailable = 1, showPreviewErrorDialog = 1;
 int previewPixmapNumber = 0, pixmapFiles = 0;
-int pixmapsInitialized = 0, pixmapDefaultId = -1;
+int pixmapsInitialized = FALSE, pixmapDefaultId = -1;
 gchar *pixmapNames[MAX_PIXMAPS];
 
 gn_bmp bitmap, oldBitmap;
@@ -169,7 +169,7 @@ static void GetPixmaps(gchar *path)
 			pixmapFiles++;
 		}
 	}
-	pixmapsInitialized = 1;
+	pixmapsInitialized = TRUE;
 }
 
 /* Get the pixmap that filename contains model string. If there's none, get
