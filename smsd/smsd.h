@@ -1,6 +1,6 @@
 /*
 
-  $Id: smsd.h,v 1.15 2005-04-26 06:34:39 ja Exp $
+  $Id: smsd.h,v 1.16 2006-02-08 22:15:46 ja Exp $
 
   S M S D
 
@@ -54,6 +54,7 @@ typedef struct {
   gchar *password;
   gchar *db;
   gchar *host;
+  gchar *schema;
 } DBConfig;
 
 extern gchar *strEscape (const gchar *const);
