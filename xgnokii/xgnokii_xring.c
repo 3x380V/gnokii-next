@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_xring.c,v 1.8 2006-01-15 15:13:27 dforsi Exp $
+  $Id: xgnokii_xring.c,v 1.9 2006-02-17 18:24:43 dforsi Exp $
 
   X G N O K I I
 
@@ -929,6 +929,7 @@ void GUI_CreateXringWindow(void)
 	/* create fixed */
 
 	gi.f = gtk_fixed_new();
+	gtk_fixed_set_has_window(GTK_FIXED(gi.f), TRUE); 
 	gtk_widget_set_usize(gi.f, 672, 160);
 	gtk_box_pack_start(GTK_BOX(gi.vbox), gi.f, FALSE, FALSE, 0);
 

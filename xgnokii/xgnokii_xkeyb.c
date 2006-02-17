@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_xkeyb.c,v 1.18 2006-02-06 22:34:48 pkot Exp $
+  $Id: xgnokii_xkeyb.c,v 1.19 2006-02-17 18:24:43 dforsi Exp $
 
   X G N O K I I
 
@@ -283,6 +283,7 @@ void GUI_CreateXkeybWindow(void)
 	gtk_widget_show(menubar);
 
 	pixArea = gtk_fixed_new();
+	gtk_fixed_set_has_window(GTK_FIXED(pixArea), TRUE);
 	gtk_signal_connect(GTK_OBJECT(pixArea), "button_press_event",
 			   (GtkSignalFunc) ButtonEvent, NULL);
 	gtk_signal_connect(GTK_OBJECT(pixArea), "button_release_event",
