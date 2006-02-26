@@ -1,6 +1,6 @@
 /*
 
-  $Id: ringtones.h,v 1.18 2005-04-24 19:41:23 pkot Exp $
+  $Id: ringtones.h,v 1.19 2006-02-26 16:20:09 pkot Exp $
 
   G N O K I I
 
@@ -42,7 +42,7 @@
 /* ie. c#=1 and 5 and 13 are invalid */
 /* note=255 means a pause */
 
-#define GN_RINGTONE_MAX_NOTES 256
+#define GN_RINGTONE_MAX_NOTES 1024
 
 /* Structure to hold note of ringtone. */
 
