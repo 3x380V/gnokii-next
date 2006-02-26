@@ -1,6 +1,6 @@
 /*
 
-  $Id: cfgreader.c,v 1.64 2006-01-15 23:50:04 pkot Exp $
+  $Id: cfgreader.c,v 1.65 2006-02-26 16:14:59 pkot Exp $
 
   G N O K I I
 
@@ -498,7 +498,7 @@ static bool cfg_psection_load(gn_config *cfg, const char *section, const gn_conf
 		strcpy(cfg->irda_string, "");
 	else {
 		snprintf(cfg->irda_string, sizeof(cfg->irda_string), "%s", val);
-		printf("Setting irda_string in section %s to %s\n", section, cfg->irda_string);
+		dprintf("Setting irda_string in section %s to %s\n", section, cfg->irda_string);
 	}
 
 	return true;
