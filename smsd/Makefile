@@ -4,7 +4,7 @@
 # Copyright (C) 1999 Hugh Blemings & Pavel Janík ml.
 #               1999-2005 Jan Derfinak
 #               2000 Karel Zak
-# $Id: Makefile,v 1.33 2005-08-10 07:33:43 ja Exp $
+# $Id: Makefile,v 1.34 2006-02-27 20:55:59 pkot Exp $
 #
 
 #GLIBCFLAGS = glib-config --cflags
@@ -86,7 +86,7 @@ $(TOPDIR)/common/libgnokii.la:
 
 clean:
 	$(LIBTOOL) --mode=clean $(RM) smsd $(DB_LIBS) $(OBJS) $(DB_OBJS)
-	$(RM) *~ depend *.so core*
+	$(RM) *~ depend core*
 
 install: all
 	$(INSTALL) -d $(DESTDIR)$(sbindir)
