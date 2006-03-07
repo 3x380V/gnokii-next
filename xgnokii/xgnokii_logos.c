@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_logos.c,v 1.36 2006-01-28 15:47:09 pkot Exp $
+  $Id: xgnokii_logos.c,v 1.37 2006-03-07 20:37:48 pkot Exp $
    
   X G N O K I I
 
@@ -159,7 +159,7 @@ static void GetPixmaps(gchar *path)
 	struct dirent *de;
 
 	dir = opendir(path);
-	while (de = readdir(dir)) {
+	while (dir && (de = readdir(dir))) {
 		if (pixmapFiles == MAX_PIXMAPS)
 			break;
 		if (!strncmp(de->d_name, "Preview_", 8)) {
