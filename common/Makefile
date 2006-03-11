@@ -1,5 +1,5 @@
 #
-# $Id: Makefile,v 1.84 2006-02-01 23:15:14 pkot Exp $
+# $Id: Makefile,v 1.85 2006-03-11 21:28:41 pkot Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -18,7 +18,7 @@ TOPDIR=..
 include $(TOPDIR)/Makefile.global
 
 MAJOR_NUMBER = 2
-MINOR_NUMBER = 6
+MINOR_NUMBER = 7
 ifdef WIN32_CROSS
 LIBTOOL_UNDEF = -no-undefined
 LIBTOOL_VER = -version-info $(MAJOR_NUMBER):$(MINOR_NUMBER):0 -avoid-version
