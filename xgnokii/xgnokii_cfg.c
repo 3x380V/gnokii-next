@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_cfg.c,v 1.15 2006-01-15 15:13:27 dforsi Exp $
+  $Id: xgnokii_cfg.c,v 1.16 2006-03-17 19:32:47 dforsi Exp $
 
   X G N O K I I
 
@@ -50,6 +50,8 @@ ConfigEntry config[] = {
 	,
 	{"address", &(xgnokiiConfig.user.address)}
 	,
+	{"bindir", &(xgnokiiConfig.bindir)}
+	,
 	{"viewer", &(xgnokiiConfig.helpviewer)}
 	,
 	{"mailbox", &(xgnokiiConfig.mailbox)}
@@ -73,6 +75,7 @@ static void GetDefaultValues()
 	xgnokiiConfig.user.fax = g_strdup("");
 	xgnokiiConfig.user.email = g_strdup("");
 	xgnokiiConfig.user.address = g_strdup("");
+	xgnokiiConfig.bindir = g_strdup("/usr/sbin");
 	xgnokiiConfig.helpviewer = g_strdup("mozilla");
 	if ((homedir = g_get_home_dir()) == NULL)
 		homedir = "";
