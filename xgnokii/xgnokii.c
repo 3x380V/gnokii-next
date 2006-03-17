@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii.c,v 1.82 2006-01-15 15:13:27 dforsi Exp $
+  $Id: xgnokii.c,v 1.83 2006-03-17 22:03:34 dforsi Exp $
   
   X G N O K I I
 
@@ -2341,6 +2341,11 @@ static void ReadConfig(void)
 	xgnokiiConfig.port = statemachine.config.port_device;
 	asprintf(&xgnokiiConfig.initlength, "%d", statemachine.config.init_length);
 	xgnokiiConfig.connection = statemachine.config.connection_type;
+	xgnokiiConfig.bindir = gn_cfg_get(gn_cfg_info, "global", "bindir");
+	if (!xgnokiiConfig.bindir)
+		xgnokiiConfig.bindir = gn_cfg_get(gn_cfg_info, "gnokiid", "bindir");
+	if (!xgnokiiConfig.bindir)
+		xgnokiiConfig.bindir = g_strdup("/usr/local/sbin");
 
 	max_phonebook_number_length = max_phonebook_sim_number_length =
 	    GN_PHONEBOOK_NUMBER_MAX_LENGTH;

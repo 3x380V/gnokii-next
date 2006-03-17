@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_cfg.c,v 1.17 2006-03-17 19:56:05 dforsi Exp $
+  $Id: xgnokii_cfg.c,v 1.18 2006-03-17 22:03:34 dforsi Exp $
 
   X G N O K I I
 
@@ -58,8 +58,6 @@ ConfigEntry config[] = {
 	,
 	{"phonelen", &(xgnokiiConfig.maxPhoneLen)}
 	,
-	{"bindir", &(xgnokiiConfig.bindir)}
-	,
 	{"", NULL}
 };
 
@@ -75,7 +73,6 @@ static void GetDefaultValues()
 	xgnokiiConfig.user.fax = g_strdup("");
 	xgnokiiConfig.user.email = g_strdup("");
 	xgnokiiConfig.user.address = g_strdup("");
-	xgnokiiConfig.bindir = g_strdup("/usr/sbin");
 	xgnokiiConfig.helpviewer = g_strdup("mozilla");
 	if ((homedir = g_get_home_dir()) == NULL)
 		homedir = "";
@@ -177,11 +174,6 @@ void GUI_ReadXConfig()
 						v = atoi(current);
 						if (v > 0 && v < 100)
 							*config[i].value = g_strndup(current, 3);
-						break;
-
-					case 11:
-						*config[i].value =
-						    g_strndup(current, 220);
 						break;
 
 					default:
