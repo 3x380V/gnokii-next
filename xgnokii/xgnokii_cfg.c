@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_cfg.c,v 1.16 2006-03-17 19:32:47 dforsi Exp $
+  $Id: xgnokii_cfg.c,v 1.17 2006-03-17 19:56:05 dforsi Exp $
 
   X G N O K I I
 
@@ -50,8 +50,6 @@ ConfigEntry config[] = {
 	,
 	{"address", &(xgnokiiConfig.user.address)}
 	,
-	{"bindir", &(xgnokiiConfig.bindir)}
-	,
 	{"viewer", &(xgnokiiConfig.helpviewer)}
 	,
 	{"mailbox", &(xgnokiiConfig.mailbox)}
@@ -59,6 +57,8 @@ ConfigEntry config[] = {
 	{"simlen", &(xgnokiiConfig.maxSIMLen)}
 	,
 	{"phonelen", &(xgnokiiConfig.maxPhoneLen)}
+	,
+	{"bindir", &(xgnokiiConfig.bindir)}
 	,
 	{"", NULL}
 };
@@ -177,6 +177,11 @@ void GUI_ReadXConfig()
 						v = atoi(current);
 						if (v > 0 && v < 100)
 							*config[i].value = g_strndup(current, 3);
+						break;
+
+					case 11:
+						*config[i].value =
+						    g_strndup(current, 220);
 						break;
 
 					default:
