@@ -1,6 +1,6 @@
 /*
 
-  $Id: ringtones.h,v 1.19 2006-02-26 16:20:09 pkot Exp $
+  $Id: ringtones.h,v 1.20 2006-03-18 17:19:28 pkot Exp $
 
   G N O K I I
 
@@ -56,7 +56,7 @@ typedef struct {
 	int location;
 	char name[20];
 	unsigned char tempo;
-	unsigned char notes_count;
+	unsigned int notes_count;
 	gn_ringtone_note notes[GN_RINGTONE_MAX_NOTES];
 } gn_ringtone;
 
