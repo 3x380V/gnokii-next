@@ -1,6 +1,6 @@
 /*
 
-  $Id: sms.h,v 1.63 2005-04-24 19:41:23 pkot Exp $
+  $Id: sms.h,v 1.64 2006-03-24 22:35:18 pkot Exp $
 
   G N O K I I
 
@@ -58,8 +58,8 @@
 #define GN_SMS_MESSAGE_MAX_NUMBER     190
 
 #define GN_SMS_DATETIME_MAX_LENGTH      7
-#define GN_SMS_SMSC_NUMBER_MAX_LENGTH  16
-#define GN_SMS_NUMBER_MAX_LENGTH       14
+#define GN_SMS_SMSC_NUMBER_MAX_LENGTH  20
+#define GN_SMS_NUMBER_MAX_LENGTH       20
 #define GN_SMS_USER_DATA_MAX_LENGTH   512
 #define GN_SMS_VP_MAX_LENGTH            8
 
