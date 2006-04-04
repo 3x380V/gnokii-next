@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.179 2006-03-18 21:11:05 dforsi Exp $
+  $Id: nk6100.c,v 1.180 2006-04-04 21:04:07 dforsi Exp $
 
   G N O K I I
 
@@ -220,7 +220,7 @@ struct {
 	 * Set NULL in the second field for all software versions.
 	 */
 	{ "NSE-3",	"-4.06",	NK6100_CAP_NBS_UPLOAD }, /* 6110 */
-	{ "NHM-5",      NULL,           NK6100_CAP_PB_UNICODE }, /* 3310 */
+	{ "NHM-5",      NULL,           NK6100_CAP_PB_UNICODE | NK6100_CAP_NO_PSTATUS }, /* 3310 */
 	{ "NHM-6",      NULL,           NK6100_CAP_PB_UNICODE }, /* 3330 */
 	{ "NHM-2",      NULL,           NK6100_CAP_PB_UNICODE }, /* 3410 */
 	{ "NSM-3D",     NULL,           NK6100_CAP_PB_UNICODE | NK6100_CAP_CAL_UNICODE }, /* 8250 */
