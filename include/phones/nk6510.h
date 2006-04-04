@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.h,v 1.28 2006-01-23 23:21:57 bozo Exp $
+  $Id: nk6510.h,v 1.29 2006-04-04 21:22:34 chriskemp Exp $
 
   G N O K I I
 
@@ -193,5 +193,7 @@ typedef enum {
 #define NK6510_SUBSEC_NETMONITOR         	0x7e	/* Netmonitor */
 
 #define	NK6510_RINGTONE_USERDEF_LOCATION	231
+
+#define NK6510_FILE_ID_LENGTH 6
 
 #endif  /* _gnokii_phones_nk6510_h */
