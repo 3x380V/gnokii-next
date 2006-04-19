@@ -1,5 +1,5 @@
 #
-# $Id: Makefile,v 1.85 2006-03-11 21:28:41 pkot Exp $
+# $Id: Makefile,v 1.86 2006-04-19 20:12:41 deller Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -29,7 +29,8 @@ LIBTOOL_VER = -version-info $(MAJOR_NUMBER):$(MINOR_NUMBER):0
 LIBTOOL_RPATH=-rpath $(libdir)
 endif
 
-OBJS =	gsm-api.lo \
+OBJS =	libfunctions.lo \
+	gsm-api.lo \
 	gsm-error.lo \
 	gsm-statemachine.lo \
 	cfgreader.lo \

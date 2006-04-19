@@ -1,6 +1,6 @@
 /*
 
-  $Id: statemachine.h,v 1.20 2005-07-24 18:54:57 pkot Exp $
+  $Id: statemachine.h,v 1.21 2006-04-19 20:12:42 deller Exp $
 
   G N O K I I
 
@@ -73,6 +73,7 @@ struct gn_statemachine {
 	gn_device device;
 	gn_link link;
 	gn_driver driver;
+	char *lockfile;
 	
 	/* Store last message for resend purposes */
 	unsigned char last_msg_type;
