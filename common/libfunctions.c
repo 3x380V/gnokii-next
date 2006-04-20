@@ -1,5 +1,5 @@
 /*
-  $Id: libfunctions.c,v 1.3 2006-04-19 21:53:20 deller Exp $
+  $Id: libfunctions.c,v 1.4 2006-04-20 07:03:14 deller Exp $
 
   G N O K I I
 
@@ -27,6 +27,12 @@
   Copyright (C) 2002-2003 BORBELY Zoltan
   Copyright (C) 2002      Pavel Machek, Marcin Wiacek
   Copyright (C) 2006      Helge Deller
+
+  Goal of this code is to provide a binary compatible layer to access
+  libgnokii.so functions from external programs which are not part
+  of this gnokii CVS package.
+  One of those external programs is e.g. the Mobile Phone import/export
+  filter of the KDE Adressbook (kaddressbook).
 
 */
 
