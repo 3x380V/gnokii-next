@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_logos.c,v 1.38 2006-04-23 10:44:05 dforsi Exp $
+  $Id: xgnokii_logos.c,v 1.39 2006-04-23 12:47:21 dforsi Exp $
    
   X G N O K I I
 
@@ -22,7 +22,7 @@
   along with gnokii; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-  Copyright (C) 1999      Pavel Janï¿½ ml., Hugh Blemings
+  Copyright (C) 1999      Pavel Janík ml., Hugh Blemings
   Copyright (C) 1999-2005 Jan Derfinak
   Copyright (C) 2000-2001 Marcin Wiacek, Chris Kemp
   Copyright (C) 2002-2006 Pawel Kot
