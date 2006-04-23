@@ -1,6 +1,6 @@
 /*
 
-  $Id: misc.c,v 1.105 2005-11-24 00:27:16 bozo Exp $
+  $Id: misc.c,v 1.106 2006-04-23 16:50:49 deller Exp $
 
   G N O K I I
 
@@ -77,6 +77,7 @@ API int gn_line_get(FILE *file, char *line, int count)
 }
 
 static gn_phone_model models[] = {
+	/* model, product_name, ... */
 	{NULL,    "", 0 },
 	{"2711",  "?????", PM_SMS },		/* Dancall */
 	{"2731",  "?????", PM_SMS },
@@ -304,16 +305,14 @@ static gn_phone_model models[] = {
 	{NULL,    NULL, 0 }
 };
 
-API gn_phone_model *gn_phone_model_get(const char *num)
+API gn_phone_model *gn_phone_model_get(const char *product_name)
 {
-	register int i = 0;
+	int i = 0;
 
-	while (models[i].number != NULL) {
-		if (strcmp(num, models[i].number) == 0) {
-			dprintf("Found model \"%s\"\n", num);
+	while (models[i].product_name != NULL) {
+		if (strcmp(product_name, models[i].product_name) == 0) {
+			dprintf("Found model \"%s\"\n", product_name);
 			return (&models[i]);
-		} else {
-			dprintf("comparing \"%s\" and \"%s\"\n", num, models[i].number);
 		}
 		i++;
 	}
@@ -321,9 +320,9 @@ API gn_phone_model *gn_phone_model_get(const char *num)
 	return (&models[0]);
 }
 
-API char *gn_model_get(const char *num)
+API char *gn_model_get(const char *product_name)
 {
-	return (gn_phone_model_get(num)->model);
+	return (gn_phone_model_get(product_name)->model);
 }
 
 static void log_printf(gn_log_target mask, const char *fmt, va_list ap)

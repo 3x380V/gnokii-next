@@ -1,6 +1,6 @@
 /*
 
-  $Id: data.h,v 1.77 2006-04-23 10:47:32 deller Exp $
+  $Id: data.h,v 1.78 2006-04-23 16:50:49 deller Exp $
 
   G N O K I I
 
@@ -39,8 +39,8 @@
 
 /* For models table */
 typedef struct {
-	char *model;
-	char *number;
+	const char *model;	  /* e.g. 6310 */
+	const char *product_name; /* e.g. NPE-4 */
 	int flags;
 } gn_phone_model;
 

@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_lowlevel.h,v 1.31 2005-08-10 07:33:43 ja Exp $
+  $Id: xgnokii_lowlevel.h,v 1.32 2006-04-23 16:50:49 deller Exp $
   
   X G N O K I I
 
@@ -176,7 +176,7 @@ typedef struct {
 		gchar *model;
 		gchar *imei;
 		gchar *revision;
-		gchar *version;
+		gchar *product_name;
 	} phone;
 	struct {
 		gint unRead;
@@ -225,7 +225,6 @@ extern pthread_mutex_t getNetworkInfoMutex;
 extern pthread_cond_t getNetworkInfoCond;
 extern pthread_mutex_t ringtoneMutex;
 extern pthread_cond_t ringtoneCond;
-extern struct gn_statemachine statemachine;
 extern void GUI_InitPhoneMonitor(void);
 extern void *GUI_Connect(void *a);
 extern void GUI_InsertEvent(PhoneEvent * event);
