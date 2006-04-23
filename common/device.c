@@ -1,6 +1,6 @@
 /*
 
-  $Id: device.c,v 1.37 2005-08-01 21:34:57 pkot Exp $
+  $Id: device.c,v 1.38 2006-04-23 21:26:21 deller Exp $
 
   G N O K I I
 
@@ -46,7 +46,7 @@
 #include "devices/tekram.h"
 
 
-int device_getfd(struct gn_statemachine *state)
+API int device_getfd(struct gn_statemachine *state)
 {
 	return state->device.fd;
 }
