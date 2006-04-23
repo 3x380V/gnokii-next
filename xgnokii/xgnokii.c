@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii.c,v 1.85 2006-04-23 17:15:38 deller Exp $
+  $Id: xgnokii.c,v 1.86 2006-04-23 19:44:31 deller Exp $
   
   X G N O K I I
 
@@ -2339,9 +2339,9 @@ static void ReadConfig(void)
 	xgnokiiConfig.port = statemachine->config.port_device;
 	asprintf(&xgnokiiConfig.initlength, "%d", statemachine->config.init_length);
 	xgnokiiConfig.connection = statemachine->config.connection_type;
-	xgnokiiConfig.bindir = gn_cfg_get(gn_cfg_info, "global", "bindir");
+	xgnokiiConfig.bindir = gn_lib_cfg_get("global", "bindir");
 	if (!xgnokiiConfig.bindir)
-		xgnokiiConfig.bindir = gn_cfg_get(gn_cfg_info, "gnokiid", "bindir");
+		xgnokiiConfig.bindir = gn_lib_cfg_get("gnokiid", "bindir");
 	if (!xgnokiiConfig.bindir)
 		xgnokiiConfig.bindir = g_strdup("/usr/local/sbin");
 

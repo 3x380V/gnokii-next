@@ -1,6 +1,6 @@
 /*
 
-  $Id: cfgreader.c,v 1.66 2006-04-19 21:53:20 deller Exp $
+  $Id: cfgreader.c,v 1.67 2006-04-23 19:44:30 deller Exp $
 
   G N O K I I
 
@@ -318,10 +318,11 @@ API char *gn_cfg_get(struct gn_cfg_header *cfg, const char *section, const char 
 /*
  * Return all the entries of the given section.
  */
-void cfg_foreach(struct gn_cfg_header *cfg, const char *section, cfg_foreach_func func)
+void cfg_foreach(const char *section, cfg_foreach_func func)
 {
 	struct gn_cfg_header *h;
 	struct gn_cfg_entry *e;
+	struct gn_cfg_header *cfg = gn_cfg_info;
 
 	if ((cfg == NULL) || (section == NULL) || (func == NULL)) {
 		return;

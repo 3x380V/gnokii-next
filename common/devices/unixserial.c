@@ -1,6 +1,6 @@
 /*
 
-  $Id: unixserial.c,v 1.39 2006-01-15 15:13:26 dforsi Exp $
+  $Id: unixserial.c,v 1.40 2006-04-23 19:44:31 deller Exp $
 
   G N O K I I
 
@@ -130,7 +130,7 @@ int device_script(int fd, const char *section, struct gn_statemachine *state)
 		return -1;
 
 	case 0: /* child */
-		cfg_foreach(gn_cfg_info, section, device_script_cfgfunc);
+		cfg_foreach(section, device_script_cfgfunc);
 		errno = 0;
 		if (dup2(fd, 0) != 0 || dup2(fd, 1) != 1 || close(fd)) {
 			fprintf(stderr, _("device_script(\"%s\"): file descriptor preparation failure: %s\n"), scriptname, strerror(errno));

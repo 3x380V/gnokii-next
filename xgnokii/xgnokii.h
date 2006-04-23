@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii.h,v 1.24 2005-08-10 07:33:43 ja Exp $
+  $Id: xgnokii.h,v 1.25 2006-04-23 19:44:31 deller Exp $
 
   X G N O K I I
 
@@ -57,7 +57,7 @@ typedef struct {
 	gchar *model;		/* Model from .gnokiirc file. */
 	gchar *port;		/* Serial port from .gnokiirc file */
 	gn_connection_type connection;	/* Connection type from .gnokiirc file */
-	gchar *bindir;
+	const gchar *bindir;
 	gchar *xgnokiidir;
 	gchar *helpviewer;	/* Program to showing help files */
 	gchar *mailbox;		/* Mailbox, where we can save SMS's */

@@ -1,6 +1,6 @@
 /*
 
-  $Id: smsd.c,v 1.48 2006-02-08 22:15:46 ja Exp $
+  $Id: smsd.c,v 1.49 2006-04-23 19:44:31 deller Exp $
 
   S M S D
 
@@ -351,9 +351,6 @@ static void ReadConfig (gint argc, gchar *argv[])
               smsdConfig.dbMod, smsdConfig.libDir);
     exit (-2);
   }
-  
-  if (gn_cfg_read_default() < 0)
-    exit (-1);
 }
 
 

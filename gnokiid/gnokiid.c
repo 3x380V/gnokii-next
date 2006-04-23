@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokiid.c,v 1.43 2006-01-15 15:13:26 dforsi Exp $
+  $Id: gnokiid.c,v 1.44 2006-04-23 19:44:31 deller Exp $
 
   G N O K I I
 
@@ -99,11 +99,8 @@ int main(int argc, char *argv[])
 
 	short_version();
 
-	if (gn_cfg_read_default() < 0) {
-		exit(-1);
-	}
-	BinDir = gn_cfg_get(gn_cfg_info, "global", "bindir");
-	if (!BinDir) BinDir = gn_cfg_get(gn_cfg_info, "gnokiid", "bindir");
+	BinDir = gn_lib_cfg_get("global", "bindir");
+	if (!BinDir) BinDir = gn_lib_cfg_get("gnokiid", "bindir");
 	if (!BinDir) BinDir = "/usr/local/sbin";
 
 	if (!gn_cfg_phone_load("", &temp_state)) exit(-1);
@@ -128,7 +125,7 @@ int main(int argc, char *argv[])
 
 	gn_elog_handler = NULL;
 
-	aux = gn_cfg_get(gn_cfg_info, "global", "use_locking");
+	aux = gn_lib_cfg_get("global", "use_locking");
 	/* Defaults to 'no' */
 	if (aux && !strcmp(aux, "yes")) {
 		lockfile = gn_device_lock(temp_state.config.port_device);
