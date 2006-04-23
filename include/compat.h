@@ -1,6 +1,6 @@
 /*
 
-  $Id: compat.h,v 1.41 2005-04-24 19:13:13 pkot Exp $
+  $Id: compat.h,v 1.42 2006-04-23 21:08:18 deller Exp $
 
   G N O K I I
 
@@ -111,8 +111,10 @@
 #  else
 #    define API
 #  endif
-#else /* !WIN32 */
-#  define API
+#elif (__GNUC__ - 0 > 3)
+#    define API __attribute__ ((visibility("default")))
+#else
+#    define API
 #endif /* WIN32 */
 
 #ifndef	HAVE_TIMEOPS
