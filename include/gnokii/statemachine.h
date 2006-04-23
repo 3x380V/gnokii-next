@@ -1,6 +1,6 @@
 /*
 
-  $Id: statemachine.h,v 1.21 2006-04-19 20:12:42 deller Exp $
+  $Id: statemachine.h,v 1.22 2006-04-23 10:47:32 deller Exp $
 
   G N O K I I
 
@@ -87,6 +87,8 @@ struct gn_statemachine {
 	gn_error response_error[GN_SM_WAITINGFOR_MAX_NUMBER];
 	/* Data structure to be filled in with the response */
 	gn_data *data[GN_SM_WAITINGFOR_MAX_NUMBER];
+	/* libfunctions internal data structure */
+	gn_data sm_data;
 };
 
 API gn_state gn_sm_loop(int timeout, struct gn_statemachine *state);

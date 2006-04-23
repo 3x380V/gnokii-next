@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.118 2006-02-13 20:39:11 bozo Exp $
+  $Id: atgen.c,v 1.119 2006-04-23 10:47:32 deller Exp $
 
   G N O K I I
 
@@ -1793,8 +1793,8 @@ static gn_error Initialise(gn_data *setupdata, struct gn_statemachine *state)
 	at_driver_instance *drvinst;
 	gn_data data;
 	gn_error ret = GN_ERR_NONE;
-	char model[64];
-	char manufacturer[64];
+	char model[GN_MODEL_MAX_LENGTH];
+	char manufacturer[GN_MANUFACTURER_MAX_LENGTH];
 	int i;
 
 	dprintf("Initializing AT capable mobile phone ...\n");

@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.443 2006-04-19 21:54:29 deller Exp $
+  $Id: gnokii.c,v 1.444 2006-04-23 10:47:32 deller Exp $
 
   G N O K I I
 
@@ -420,7 +420,7 @@ static int ringtone_list_initialised = 0;
 
 static void busterminate(void)
 {
-	gn_lib_phone_close(state,&data);
+	gn_lib_phone_close(state);
 	gn_lib_phoneprofile_free(&state);
 	if (logfile)
 		fclose(logfile);
@@ -435,8 +435,9 @@ static void businit(void)
 	atexit(busterminate);
 	/* signal(SIGINT, bussignal); */
 
-	if (GN_ERR_NONE != gn_lib_phone_open(state,&data))
+	if (GN_ERR_NONE != gn_lib_phone_open(state))
 		exit(2);
+	data = &state->sm_data;
 }
 
 /* This function checks that the argument count for a given options is withing

@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnapplet.h,v 1.20 2006-01-05 00:25:31 bozo Exp $
+  $Id: gnapplet.h,v 1.21 2006-04-23 10:47:32 deller Exp $
 
   G N O K I I
 
@@ -130,7 +130,7 @@
 typedef struct {
 	int proto_major;
 	int proto_minor;
-	char manufacturer[20];
+	char manufacturer[GN_MANUFACTURER_MAX_LENGTH];
 	char model[GN_MODEL_MAX_LENGTH];
 	char imei[GN_IMEI_MAX_LENGTH];
 	char sw_version[GN_REVISION_MAX_LENGTH];
