@@ -1,5 +1,5 @@
 /*
-  $Id: libfunctions.c,v 1.7 2006-04-23 19:44:31 deller Exp $
+  $Id: libfunctions.c,v 1.8 2006-04-24 21:05:48 pkot Exp $
 
   G N O K I I
 
@@ -133,8 +133,8 @@ API gn_error gn_lib_phone_close( struct gn_statemachine *state )
 
 	/* remove lockfile if it was created */
 	if (state->lockfile) {
+		/* gn_device_unlock frees state->lockfile */
 		gn_device_unlock(state->lockfile);
-		free(state->lockfile);
 	}
 	state->lockfile = NULL;
 
