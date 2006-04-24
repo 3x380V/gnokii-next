@@ -1,6 +1,6 @@
 /*
 
-  $Id: misc.c,v 1.106 2006-04-23 16:50:49 deller Exp $
+  $Id: misc.c,v 1.107 2006-04-24 20:08:49 pkot Exp $
 
   G N O K I I
 
@@ -216,6 +216,7 @@ static gn_phone_model models[] = {
 	{"6160",  "NSW-3AX", 0 },
 	{"6161",  "NSW-3ND", 0 },
 	{"6162",  "NSW-3AF", 0 },
+	{"6170",  "RM47_-48", PM_CALLERGROUP | PM_CALENDAR | PM_SPEEDDIAL | PM_EXTPBK | PM_SMS | PM_FOLDERS },
 	{"6185",  "NSD-3", PM_CALLERGROUP | PM_CALENDAR | PM_NETMONITOR | PM_KEYBOARD | PM_SMS | PM_DTMF | PM_DATA | PM_SPEEDDIAL | PM_AUTHENTICATION },
 	{"6185i", "NSD-3AW", 0 },
 	{"6188",  "NSD-3AX", 0 },

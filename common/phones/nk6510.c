@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.c,v 1.208 2006-04-11 21:31:42 pkot Exp $
+  $Id: nk6510.c,v 1.209 2006-04-24 20:08:49 pkot Exp $
 
   G N O K I I
 
@@ -516,6 +516,7 @@ static gn_error NK6510_Initialise(struct gn_statemachine *state)
 			state->config.rfcomm_cn = 14;
 		case GN_CT_Infrared:
 		case GN_CT_DKU2:
+		case GN_CT_DKU2LIBUSB:
 		case GN_CT_Irda:
 			err = phonet_initialise(state);
 			/* Don't loop forever */

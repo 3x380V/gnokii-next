@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus-phonet.c,v 1.40 2005-04-20 20:43:32 pkot Exp $
+  $Id: fbus-phonet.c,v 1.41 2006-04-24 20:08:49 pkot Exp $
 
   G N O K I I
 
@@ -303,6 +303,7 @@ gn_error phonet_initialise(struct gn_statemachine *state)
 	case GN_CT_Infrared:
 	case GN_CT_Irda:
 	case GN_CT_DKU2:
+	case GN_CT_DKU2LIBUSB:
 	case GN_CT_Bluetooth:
 		if (phonet_open(state) == true)
 			error = GN_ERR_NONE;

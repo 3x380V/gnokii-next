@@ -4,7 +4,7 @@ dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janík ml.
 dnl                2000 Karel Zak, Pawe³ Kot
 dnl                2002 BORBELY Zoltan
 dnl
-dnl  $Id: configure.in,v 1.154 2006-02-06 21:28:37 pkot Exp $
+dnl  $Id: configure.in,v 1.155 2006-04-24 20:08:49 pkot Exp $
 dnl
 
 AC_INIT(gnokii/gnokii.c)
@@ -254,7 +254,21 @@ AC_TRY_LINK([
    ]
 )
 
-
+dnl ======================== Check for libusb
+USE_LIBUSB="no"
+AC_MSG_CHECKING(whether libusb is installed)
+AC_TRY_COMPILE([#include <usb.h>],
+	[struct usb_dev_handle *dev;],
+	[
+		AC_MSG_RESULT(yes)
+		AC_DEFINE([HAVE_LIBUSB],[1],[Use libusb])
+		USE_LIBUSB="yes"
+		LIBS="$LIBS -lusb"
+	],
+	[
+		AC_MSG_RESULT(no)
+	]
+)
 
 dnl ======================== Checks for gethostbyname support
 AC_CHECK_FUNC(gethostbyname, ,
@@ -664,6 +678,7 @@ AC_SUBST(WIN32)
 AC_SUBST(WIN32_CROSS)
 
 AC_SUBST(HAVE_LIBICAL)
+AC_SUBST(HAVE_LIBUSB)
 
 AC_OUTPUT(
    Makefile.global
@@ -705,6 +720,7 @@ echo "
     IrDA:               $USE_IRDA
     ical read support:  $USE_LIBICAL
     Bluetooth:          $USE_BLUETOOTH
+    libusb support:     $USE_LIBUSB
     Security:           $security
     Build Shared Lib:   $shared
     Build Static Lib:   $static

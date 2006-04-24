@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.17 2004-06-26 21:57:46 pkot Exp $
+# $Id: Makefile,v 1.18 2006-04-24 20:08:49 pkot Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -19,6 +19,7 @@ include $(TOPDIR)/Makefile.global
 
 OBJS =	tekram.lo \
 	irda.lo \
+	dku2libusb.lo \
 	bluetooth.lo
 
 ifdef WIN32
