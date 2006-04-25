@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.445 2006-04-23 16:50:49 deller Exp $
+  $Id: gnokii.c,v 1.446 2006-04-25 19:02:37 deller Exp $
 
   G N O K I I
 
@@ -4110,7 +4110,7 @@ static int identify(void)
 	fprintf(stdout, _("Product name : %s\n"), gn_lib_get_phone_product_name(state));
 	fprintf(stdout, _("Revision     : %s\n"), gn_lib_get_phone_revision(state));
 
-	return gn_lib_lasterror();
+	return gn_lib_lasterror(state);
 }
 
 static int senddtmf(char *string)
