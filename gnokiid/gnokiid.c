@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokiid.c,v 1.44 2006-04-23 19:44:31 deller Exp $
+  $Id: gnokiid.c,v 1.45 2006-04-25 21:39:12 deller Exp $
 
   G N O K I I
 
@@ -81,6 +81,7 @@ static void busterminate(void)
 {
 	gn_vm_terminate();
 	if (lockfile) gn_device_unlock(lockfile);
+	gn_lib_library_free();
 }
 
 /* Main function - handles command line arguments, passes them to separate

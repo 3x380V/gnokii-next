@@ -1,5 +1,5 @@
 /*
-  $Id: libfunctions.c,v 1.12 2006-04-25 21:21:16 pkot Exp $
+  $Id: libfunctions.c,v 1.13 2006-04-25 21:39:11 deller Exp $
 
   G N O K I I
 
@@ -86,6 +86,13 @@ API gn_error gn_lib_phoneprofile_free( struct gn_statemachine **state )
 	*state = NULL;
 
 	return GN_ERR_NONE;
+}
+
+API void gn_lib_library_free( void )
+{
+	if (gn_cfg_info) {
+		gn_cfg_free_default();
+	}
 }
 
 /* return last error code */

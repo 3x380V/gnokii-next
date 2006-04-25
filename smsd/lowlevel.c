@@ -1,6 +1,6 @@
 /*
 
-  $Id: lowlevel.c,v 1.42 2006-04-23 11:37:26 deller Exp $
+  $Id: lowlevel.c,v 1.43 2006-04-25 21:39:12 deller Exp $
 
   S M S D
 
@@ -114,6 +114,7 @@ static void busterminate (void)
 {
   gn_lib_phone_close(sm);
   gn_lib_phoneprofile_free(&sm);
+  gn_lib_library_free();
 }
 
 static gn_error fbusinit (const char * const iname)

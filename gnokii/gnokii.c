@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.446 2006-04-25 19:02:37 deller Exp $
+  $Id: gnokii.c,v 1.447 2006-04-25 21:39:11 deller Exp $
 
   G N O K I I
 
@@ -424,6 +424,7 @@ static void busterminate(void)
 	gn_lib_phoneprofile_free(&state);
 	if (logfile)
 		fclose(logfile);
+	gn_lib_library_free();
 }
 
 static void businit(void)
@@ -5916,6 +5917,7 @@ int main(int argc, char *argv[])
 			break;
 
 		}
+		free(nargv);
 		exit(rc);
 	}
 

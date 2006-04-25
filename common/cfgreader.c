@@ -1,6 +1,6 @@
 /*
 
-  $Id: cfgreader.c,v 1.68 2006-04-24 20:08:49 pkot Exp $
+  $Id: cfgreader.c,v 1.69 2006-04-25 21:39:11 deller Exp $
 
   G N O K I I
 
@@ -179,6 +179,33 @@ struct gn_cfg_header *cfg_memory_read(const char **lines)
 
 	/* Return pointer to configuration information */
 	return cfg_head;
+}
+
+API void gn_cfg_free_default()
+{
+	while (gn_cfg_info) {
+		struct gn_cfg_header *next;
+		struct gn_cfg_entry *entry;
+
+		/* free section name */
+		free(gn_cfg_info->section);
+
+		/* delete all entries */
+		entry = gn_cfg_info->entries;
+		while (entry) {
+			struct gn_cfg_entry *entry_next;
+			free(entry->key);
+			free(entry->value);
+			entry_next = entry->next;
+			free(entry);
+			entry = entry_next;
+		}
+
+		/* proceed with next section */
+		next = gn_cfg_info->next;
+		free(gn_cfg_info);
+		gn_cfg_info = next;
+	}
 }
 
 #define READ_CHUNK_SIZE 64
@@ -534,7 +561,7 @@ API int gn_cfg_read_default()
 	char *homedir;
 	char rcfile[MAX_PATH_LEN];
 #ifdef WIN32
-	const char *globalrc = "gnokiirc";
+	const char globalrc[] = "gnokiirc";
 
 	homedir = getenv("HOMEDRIVE");
 	strncpy(rcfile, homedir ? homedir : "", MAX_PATH_LEN);
@@ -542,7 +569,7 @@ API int gn_cfg_read_default()
 	strncat(rcfile, homedir ? homedir : "", MAX_PATH_LEN);
 	strncat(rcfile, "\\_gnokiirc", MAX_PATH_LEN);
 #else
-	const char *globalrc = "/etc/gnokiirc";
+	const char globalrc[] = "/etc/gnokiirc";
 
 	homedir = getenv("HOME");
 	if (homedir) strncpy(rcfile, homedir, MAX_PATH_LEN);
