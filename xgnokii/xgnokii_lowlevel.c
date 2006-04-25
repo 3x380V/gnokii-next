@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_lowlevel.c,v 1.93 2006-04-23 16:50:49 deller Exp $
+  $Id: xgnokii_lowlevel.c,v 1.94 2006-04-25 19:04:00 deller Exp $
   
   X G N O K I I
 
@@ -152,8 +152,8 @@ static gn_error InitModelInf(void)
 	gint i, j;
 
 	phoneMonitor.phone.model = g_strdup(gn_lib_get_phone_model(statemachine));
-	if (gn_lib_lasterror() != GN_ERR_NONE)
-		return gn_lib_lasterror();
+	if (gn_lib_lasterror(statemachine) != GN_ERR_NONE)
+		return gn_lib_lasterror(statemachine);
 
 	phoneMonitor.phone.product_name = g_strdup(gn_lib_get_phone_product_name(statemachine));
 	phoneMonitor.phone.revision = g_strdup(gn_lib_get_phone_revision(statemachine));
