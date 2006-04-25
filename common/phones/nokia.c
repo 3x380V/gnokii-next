@@ -1,6 +1,6 @@
 /*
 
-  $Id: nokia.c,v 1.40 2005-04-20 20:52:45 pkot Exp $
+  $Id: nokia.c,v 1.41 2006-04-25 14:03:57 dforsi Exp $
 
   G N O K I I
 
@@ -214,6 +214,13 @@ gn_error pnok_call_divert_incoming(int messagetype, unsigned char *message, int 
 	gn_call_divert *cd;
 	int n;
 	char buf[1024];
+
+	/* the struct is not yet allocated if this is the first unsolicited call divert message */
+	if (!data->call_divert) {
+		data->call_divert = malloc(sizeof(gn_call_divert));
+		if (!data->call_divert) return GN_ERR_MEMORYFULL;
+		memset(data->call_divert, 0, sizeof(*data->call_divert));
+	}
 
 	switch (message[3]) {
 	/* Get call diverts ok */
