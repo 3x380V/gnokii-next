@@ -1,6 +1,6 @@
 /*
 
-  $Id: statemachine.h,v 1.22 2006-04-23 10:47:32 deller Exp $
+  $Id: statemachine.h,v 1.23 2006-04-25 17:41:01 deller Exp $
 
   G N O K I I
 
@@ -88,6 +88,7 @@ struct gn_statemachine {
 	/* Data structure to be filled in with the response */
 	gn_data *data[GN_SM_WAITINGFOR_MAX_NUMBER];
 	/* libfunctions internal data structure */
+	gn_error lasterror;
 	gn_data sm_data;
 };
 
