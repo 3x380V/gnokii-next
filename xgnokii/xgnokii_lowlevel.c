@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_lowlevel.c,v 1.94 2006-04-25 19:04:00 deller Exp $
+  $Id: xgnokii_lowlevel.c,v 1.95 2006-04-25 21:52:49 deller Exp $
   
   X G N O K I I
 
@@ -184,6 +184,7 @@ static void busterminate(void)
 {
 	gn_lib_phone_close(statemachine);
 	gn_lib_phoneprofile_free(&statemachine);
+	gn_lib_library_free();
 }
 
 static gn_error fbusinit()
