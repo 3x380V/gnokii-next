@@ -1,6 +1,6 @@
 /*
 
-  $Id: atbus.c,v 1.48 2006-01-24 22:43:33 bozo Exp $
+  $Id: atbus.c,v 1.49 2006-04-26 20:07:30 pkot Exp $
 
   G N O K I I
 
@@ -171,9 +171,9 @@ static void atbus_rx_statemachine(unsigned char rx_char, struct gn_statemachine 
 		bi->rbuf[1] = '\0';
 	}
 	if (bi->rbuf_pos > 4 && !strncmp(bi->rbuf + bi->rbuf_pos - 2, "\r\n", 2)) {
-		unsolicited = 0;
 		/* try to find previous <cr><lf> */
 		char *start = findcrlfbw(bi->rbuf + bi->rbuf_pos - 2, bi->rbuf_pos - 1);
+		unsolicited = 0;
 		/* if not found, start at buffer beginning */
 		if (!start)
 			start = bi->rbuf+1;
