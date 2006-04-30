@@ -1,6 +1,6 @@
 /*
 
-  $Id: nokia-decoding.c,v 1.27 2006-01-22 13:38:06 pkot Exp $
+  $Id: nokia-decoding.c,v 1.28 2006-04-30 12:31:03 pkot Exp $
 
   G N O K I I
 
@@ -37,10 +37,11 @@
 */
 
 #include <time.h>
-
+#include "config.h"
 #include "gnokii-internal.h" 
 #include "gnokii.h"
 #include "nokia-decoding.h"
+#include "compat.h"
 
 gn_error phonebook_decode(unsigned char *blockstart, int length, gn_data *data,
 			  int blocks, int memtype, int speeddial_pos)

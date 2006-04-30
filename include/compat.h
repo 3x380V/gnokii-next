@@ -1,6 +1,6 @@
 /*
 
-  $Id: compat.h,v 1.42 2006-04-23 21:08:18 deller Exp $
+  $Id: compat.h,v 1.43 2006-04-30 12:31:03 pkot Exp $
 
   G N O K I I
 
@@ -179,6 +179,10 @@ int asprintf(char **ptr, const char *format, ...);
 
 #ifndef HAVE_VASPRINTF
 int vasprintf(char **ptr, const char *format, va_list ap);
+#endif
+
+#ifndef HAVE_TIMEGM
+time_t timegm(struct tm *tm);
 #endif
 
 /*

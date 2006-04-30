@@ -1,6 +1,6 @@
 /*
 
-  $Id: compat.c,v 1.9 2005-04-20 22:33:36 pkot Exp $
+  $Id: compat.c,v 1.10 2006-04-30 12:31:03 pkot Exp $
 
   G N O K I I
 
@@ -140,6 +140,30 @@ char *strsep(char **stringp, const char *delim)
 			}
 		} while (sc != 0);
 	}
+}
+
+#endif
+
+#ifndef HAVE_TIMEGM
+
+#include <time.h>
+#include <stdlib.h>
+
+time_t timegm(struct tm *tm)
+{
+	time_t ret;
+	char *tz;
+
+	tz = getenv("TZ");
+	setenv("TZ", "", 1);
+	tzset();
+	ret = mktime(tm);
+	if (tz)
+		setenv("TZ", tz, 1);
+	else
+		unsetenv("TZ");
+	tzset();
+	return ret;
 }
 
 #endif

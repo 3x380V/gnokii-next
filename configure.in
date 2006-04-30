@@ -4,7 +4,7 @@ dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janík ml.
 dnl                2000 Karel Zak, Pawe³ Kot
 dnl                2002 BORBELY Zoltan
 dnl
-dnl  $Id: configure.in,v 1.155 2006-04-24 20:08:49 pkot Exp $
+dnl  $Id: configure.in,v 1.156 2006-04-30 12:31:03 pkot Exp $
 dnl
 
 AC_INIT(gnokii/gnokii.c)
@@ -576,7 +576,7 @@ AC_PROG_GCC_TRADITIONAL
 AC_FUNC_MEMCMP
 AC_TYPE_SIGNAL
 AC_FUNC_STRFTIME
-AC_CHECK_FUNCS(mktime gettimeofday select poll wcrtomb)
+AC_CHECK_FUNCS(mktime timegm gettimeofday select poll wcrtomb)
 AC_CHECK_FUNCS(strchr strdup strstr strtol strtok strsep asprintf vasprintf)
 AC_CHECK_FUNCS(snprintf vsnprintf)
 AC_CACHE_CHECK(for ISO C99 compliant snprintf,ac_cv_func_snprintf_c99,
