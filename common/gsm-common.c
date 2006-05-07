@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-common.c,v 1.22 2005-04-20 22:33:36 pkot Exp $
+  $Id: gsm-common.c,v 1.23 2006-05-07 20:44:58 deller Exp $
 
   G N O K I I
 
@@ -80,7 +80,7 @@ API gn_memory_type gn_str2memory_type(const char *s)
 #undef X
 }
 
-API char *gn_memory_type2str(gn_memory_type mt)
+API const char *gn_memory_type2str(gn_memory_type mt)
 {
 	switch (mt) {
 	case GN_MT_ME: return _("Internal memory");
