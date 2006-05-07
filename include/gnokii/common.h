@@ -1,6 +1,6 @@
 /*
 
-  $Id: common.h,v 1.145 2006-05-01 16:40:12 pkot Exp $
+  $Id: common.h,v 1.146 2006-05-07 10:41:11 deller Exp $
 
   G N O K I I
 
@@ -236,7 +236,7 @@ typedef struct {
 							     nullterminator. */
 	char number[GN_PHONEBOOK_NUMBER_MAX_LENGTH + 1];  /* Number */
 	gn_memory_type memory_type;                       /* Type of memory */
-	gn_phonebook_group_type caller_group;             /* Caller group */
+	int caller_group;          /* Caller group - gn_phonebook_group_type */
 	int location;                                     /* Location */
 	gn_timestamp date;                                /* The record date and time
 							     of the number. */
