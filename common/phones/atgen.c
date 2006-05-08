@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.124 2006-05-07 13:39:52 dforsi Exp $
+  $Id: atgen.c,v 1.125 2006-05-08 17:54:49 deller Exp $
 
   G N O K I I
 
@@ -881,7 +881,7 @@ static gn_error AT_CallDivert(gn_data *data, struct gn_statemachine *state)
 			data->call_divert->timeout);
 		strcat(req, req2);
 	} else {
-		sprintf(req2, ",%d", req, data->call_divert->operation);
+		sprintf(req2, ",%d", data->call_divert->operation);
 		strcat(req, req2);
 	}
 
