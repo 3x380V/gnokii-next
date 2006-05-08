@@ -1,6 +1,6 @@
 /*
 
-  $Id: nokia.c,v 1.41 2006-04-25 14:03:57 dforsi Exp $
+  $Id: nokia.c,v 1.42 2006-05-08 17:44:07 deller Exp $
 
   G N O K I I
 
@@ -523,7 +523,7 @@ gn_error pnok_ringtone_from_raw(gn_ringtone *ringtone, const unsigned char *raw,
 	int i, c, p, current;
 	int rcount, rstart;
 	int lastc, lastp;
-	gn_ringtone_note *note;
+	gn_ringtone_note *note = NULL;
 	int notes[] = {0, 1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12};
 	int dct4, base;
 
