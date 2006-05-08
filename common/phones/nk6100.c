@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.180 2006-04-04 21:04:07 dforsi Exp $
+  $Id: nk6100.c,v 1.181 2006-05-08 17:51:45 deller Exp $
 
   G N O K I I
 
@@ -65,10 +65,8 @@ static gn_error Identify(gn_data *data, struct gn_statemachine *state);
 static gn_error GetSpeedDial(gn_data *data, struct gn_statemachine *state);
 static gn_error SetSpeedDial(gn_data *data, struct gn_statemachine *state);
 static gn_error PhoneInfo(gn_data *data, struct gn_statemachine *state);
-static gn_error PhoneInfo2(gn_data *data, struct gn_statemachine *state);
 static gn_error GetBatteryLevel(gn_data *data, struct gn_statemachine *state);
 static gn_error GetRFLevel(gn_data *data, struct gn_statemachine *state);
-static gn_error GetPhoneID(gn_data *data, struct gn_statemachine *state);
 static gn_error GetMemoryStatus(gn_data *data, struct gn_statemachine *state);
 static gn_error SendSMSMessage(gn_data *data, struct gn_statemachine *state);
 static gn_error SetOnSMS(gn_data *data, struct gn_statemachine *state);
@@ -638,6 +636,7 @@ static gn_error GetPowersource(gn_data *data, struct gn_statemachine *state)
 	return GetPhoneStatus(data, state);
 }
 
+#if 0 /* unused function */
 static gn_error GetPhoneID(gn_data *data, struct gn_statemachine *state)
 {
 	unsigned char req[] = {FBUS_FRAME_HEADER, 0x03};
@@ -646,6 +645,7 @@ static gn_error GetPhoneID(gn_data *data, struct gn_statemachine *state)
 	if (sm_message_send(4, 0x04, req, state)) return GN_ERR_NOTREADY;
 	return sm_block(0x04, data, state);
 }
+#endif
 
 static gn_error IncomingPhoneStatus(int messagetype, unsigned char *message, int length, gn_data *data, struct gn_statemachine *state)
 {
@@ -1135,6 +1135,7 @@ static gn_error IncomingPhoneInfo(int messagetype, unsigned char *message, int l
 }
 
 
+#if 0 /* unused function */
 static gn_error PhoneInfo2(gn_data *data, struct gn_statemachine *state)
 {
 	unsigned char req[] = { FBUS_FRAME_HEADER, 0x03, 0x00 };
@@ -1145,6 +1146,7 @@ static gn_error PhoneInfo2(gn_data *data, struct gn_statemachine *state)
 	return sm_block(0xd2, data, state);
 
 }
+#endif
 
 static gn_error PressOrReleaseKey2(bool press, gn_data *data, struct gn_statemachine *state)
 {
