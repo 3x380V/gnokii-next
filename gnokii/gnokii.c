@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.450 2006-05-07 16:57:58 dforsi Exp $
+  $Id: gnokii.c,v 1.451 2006-05-08 19:20:07 deller Exp $
 
   G N O K I I
 
@@ -193,7 +193,6 @@ typedef enum {
 } opt_index;
 
 static FILE *logfile = NULL;
-static char *lockfile = NULL;
 
 /* Local variables */
 static char *profile_get_call_alert_string(int code)
@@ -3359,7 +3358,7 @@ static int getphonebook(int argc, char *argv[])
 				gn_phonebook2ldif(stdout, &entry);
 				break;
 			default:
-				fprintf(stdout, _("%d. Name: %s\n"), entry.location, entry.name, entry.number, entry.caller_group);
+				fprintf(stdout, _("%d. Name: %s\n"), entry.location, entry.name);
 				fprintf(stdout, _("Group: "));
 				switch (entry.caller_group) {
 				case GN_PHONEBOOK_GROUP_Family:

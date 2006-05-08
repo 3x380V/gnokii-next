@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokiid.c,v 1.45 2006-04-25 21:39:12 deller Exp $
+  $Id: gnokiid.c,v 1.46 2006-05-08 19:20:07 deller Exp $
 
   G N O K I I
 
@@ -47,7 +47,7 @@
 
 /* Global variables */
 bool DebugMode;		/* When true, run in debug mode */
-char *BinDir;		/* Directory of the mgnokiidev command */
+const char *BinDir;	/* Directory of the mgnokiidev command */
 char *lockfile = NULL;
 bool GTerminateThread;
 
@@ -89,7 +89,7 @@ static void busterminate(void)
 
 int main(int argc, char *argv[])
 {
-	char *aux;
+	const char *aux;
 	static bool atexit_registered = false;
 	struct gn_statemachine temp_state;
 

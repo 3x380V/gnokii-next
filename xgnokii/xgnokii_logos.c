@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_logos.c,v 1.40 2006-04-23 17:09:05 deller Exp $
+  $Id: xgnokii_logos.c,v 1.41 2006-05-08 19:20:07 deller Exp $
    
   X G N O K I I
 
@@ -195,7 +195,6 @@ GdkPixmap *GetPreviewPixmap(GtkWidget *widget)
 	GdkPixmap *pixmap = NULL;
 	GdkBitmap *mask;
 	gchar *file, *dirname;
-	struct stat *buf;
 
 	dirname = g_strdup_printf("%s/xpm/", xgnokiiConfig.xgnokiidir);
 	if (!pixmapsInitialized) {
