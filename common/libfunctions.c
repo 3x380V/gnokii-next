@@ -1,5 +1,5 @@
 /*
-  $Id: libfunctions.c,v 1.18 2006-05-08 17:42:25 deller Exp $
+  $Id: libfunctions.c,v 1.19 2006-05-08 19:32:25 deller Exp $
 
   G N O K I I
 
@@ -36,6 +36,8 @@
   Helge Deller - April 2006
 
 */
+
+#define GNOKII_DEPRECATED /* do not warn about deprecated functions here */
 
 #include "config.h"
 #include "compat.h"
