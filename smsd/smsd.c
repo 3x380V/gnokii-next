@@ -1,6 +1,6 @@
 /*
 
-  $Id: smsd.c,v 1.49 2006-04-23 19:44:31 deller Exp $
+  $Id: smsd.c,v 1.50 2006-05-10 12:33:30 ja Exp $
 
   S M S D
 
@@ -521,7 +521,8 @@ static void Run (void)
 int main (int argc, char *argv[])
 {
 #ifdef ENABLE_NLS
-  textdomain("gnokii");
+  textdomain ("gnokii");
+  setlocale (LC_ALL, "");
 #endif
 
   gn_elog_handler = NULL;
