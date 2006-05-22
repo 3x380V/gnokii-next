@@ -1,6 +1,6 @@
 /*
 
-  $Id: nokia-decoding.c,v 1.28 2006-04-30 12:31:03 pkot Exp $
+  $Id: nokia-decoding.c,v 1.29 2006-05-22 20:03:52 pkot Exp $
 
   G N O K I I
 
@@ -146,6 +146,7 @@ gn_error phonebook_decode(unsigned char *blockstart, int length, gn_data *data,
 			dprintf("   Number: %s\n", subentry->data.number);
 			subblock_count++;
 			data->phonebook_entry->subentries_count++;
+			data->phonebook_entry->empty = false;
 			break;
 		case GN_PHONEBOOK_ENTRY_Ringtone:  /* Ringtone */
 			if (data->bitmap) {
