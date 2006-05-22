@@ -1,6 +1,6 @@
 /*
 
-  $Id: device.c,v 1.39 2006-04-24 20:08:49 pkot Exp $
+  $Id: device.c,v 1.40 2006-05-22 20:00:43 pkot Exp $
 
   G N O K I I
 
@@ -44,6 +44,7 @@
 #  include "devices/winserial.h"
 #endif
 #include "devices/tekram.h"
+#include "devices/dku2libusb.h"
 
 
 API int device_getfd(struct gn_statemachine *state)

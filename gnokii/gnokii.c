@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.451 2006-05-08 19:20:07 deller Exp $
+  $Id: gnokii.c,v 1.452 2006-05-22 20:00:43 pkot Exp $
 
   G N O K I I
 
@@ -73,7 +73,7 @@
 #  include <windows.h>
 #  include <process.h>
 #  include <io.h>
-#  include "win32/getopt.h"
+#  include <getopt.h>
 
 #else
 

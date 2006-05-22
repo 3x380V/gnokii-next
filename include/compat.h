@@ -1,6 +1,6 @@
 /*
 
-  $Id: compat.h,v 1.43 2006-04-30 12:31:03 pkot Exp $
+  $Id: compat.h,v 1.44 2006-05-22 20:00:43 pkot Exp $
 
   G N O K I I
 
@@ -40,6 +40,7 @@
 
 #ifdef WIN32
 #  include <windows.h>
+#  include <locale.h>
 #  ifdef HAVE_DIRECT_H
 #    include <direct.h>
 #  endif
