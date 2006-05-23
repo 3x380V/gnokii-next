@@ -1,6 +1,6 @@
 /*
 
-  $Id: readmidi.c,v 1.6 2005-04-20 22:33:36 pkot Exp $
+  $Id: readmidi.c,v 1.7 2006-05-23 20:00:06 deller Exp $
 
   G N O K I I
 
@@ -253,7 +253,7 @@ static int readmt(struct MF *mf, char *s)
 {
 	int n = 0;
 	char *p = s;
-	int c;
+	int c = 0;
 
 	while (n++ < 4 && (c = mf->Mf_getc(mf)) != EOF) {
 		if (c != *p++) {

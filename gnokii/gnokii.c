@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.452 2006-05-22 20:00:43 pkot Exp $
+  $Id: gnokii.c,v 1.453 2006-05-23 20:00:06 deller Exp $
 
   G N O K I I
 
@@ -2481,6 +2481,11 @@ static int getcalendarnote(int argc, char *argv[])
 					break;
 				case GN_CALNOTE_MEETING:
 					fprintf(stdout, _("   Location: %s\n"), calnote.mlocation);
+					break;
+				case GN_CALNOTE_BIRTHDAY:
+				case GN_CALNOTE_REMINDER:
+				case GN_CALNOTE_MEMO:
+					/* was already printed as calnote.text above */
 					break;
 				}
 			}
