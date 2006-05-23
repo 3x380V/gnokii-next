@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii.h,v 1.26 2006-05-23 20:00:06 deller Exp $
+  $Id: xgnokii.h,v 1.27 2006-05-23 20:07:48 deller Exp $
 
   X G N O K I I
 
@@ -32,9 +32,6 @@
 
 #ifndef XGNOKII_H
 #define XGNOKII_H
-
-#define _GNU_SOURCE  /* for asprintf() in stdio.h */
-#include <stdio.h>
 
 #include <gtk/gtk.h>
 #include "config.h"

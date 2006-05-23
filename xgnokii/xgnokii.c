@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii.c,v 1.86 2006-04-23 19:44:31 deller Exp $
+  $Id: xgnokii.c,v 1.87 2006-05-23 20:07:48 deller Exp $
   
   X G N O K I I
 
@@ -31,17 +31,17 @@
 
 */
 
-#include <gdk/gdkkeysyms.h>
-#include <gtk/gtk.h>
-
 #include "config.h"
-#include "compat.h"
-#include "misc.h"
-
 #ifdef HAVE_ASPRINTF
 #  define _GNU_SOURCE
 #  include <stdio.h>
 #endif
+
+#include <gdk/gdkkeysyms.h>
+#include <gtk/gtk.h>
+
+#include "compat.h"
+#include "misc.h"
 
 #include <stdlib.h>		/* for getenv */
 #include <locale.h>
