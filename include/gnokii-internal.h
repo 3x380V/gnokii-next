@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-internal.h,v 1.31 2006-04-23 19:44:31 deller Exp $
+  $Id: gnokii-internal.h,v 1.32 2006-06-11 20:41:39 deller Exp $
 
   G N O K I I
 
@@ -39,6 +39,9 @@
 #include "compat.h"
 #include "misc.h"
 #include "gnokii.h"
+
+/* utils */
+gn_connection_type gn_get_connectiontype(const char *connection_type_string);
 
 /* SMS */
 gn_error sms_parse(int offset, gn_data *data);
