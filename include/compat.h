@@ -1,6 +1,6 @@
 /*
 
-  $Id: compat.h,v 1.44 2006-05-22 20:00:43 pkot Exp $
+  $Id: compat.h,v 1.45 2006-06-11 16:39:11 deller Exp $
 
   G N O K I I
 
@@ -106,16 +106,16 @@
  */
 #if defined(WIN32)
 #  if defined(GNOKIIDLL_EXPORTS) || defined(_USRDLL) || defined(DLL_EXPORT)
-#    define API __declspec(dllexport)
+#    define GNOKII_API __declspec(dllexport)
 #  elif defined(GNOKIIDLL_IMPORTS)
-#    define API __declspec(dllimport)
+#    define GNOKII_API __declspec(dllimport)
 #  else
-#    define API
+#    define GNOKII_API
 #  endif
 #elif (__GNUC__ - 0 > 3)
-#    define API __attribute__ ((visibility("default")))
+#    define GNOKII_API __attribute__ ((visibility("default")))
 #else
-#    define API
+#    define GNOKII_API
 #endif /* WIN32 */
 
 #ifndef	HAVE_TIMEOPS

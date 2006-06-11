@@ -1,6 +1,6 @@
 /*
 
-  $Id: virtmodem.h,v 1.17 2006-05-08 19:32:25 deller Exp $
+  $Id: virtmodem.h,v 1.18 2006-06-11 16:39:11 deller Exp $
 
   G N O K I I
 
@@ -43,11 +43,11 @@ struct vm_queue {
 extern struct vm_queue queue;
 
 /* Prototypes */
-API int gn_vm_initialise(const char *iname,
+GNOKII_API int gn_vm_initialise(const char *iname,
 			 const char *bindir,
 			 int debug_mode,
 			 int gn_init);
-API void gn_vm_loop(void);
-API void gn_vm_terminate(void);
+GNOKII_API void gn_vm_loop(void);
+GNOKII_API void gn_vm_terminate(void);
 
 #endif	/* _gnokii_virtmodem_h */

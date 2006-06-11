@@ -1,6 +1,6 @@
 /*
 
-  $Id: error.h,v 1.18 2005-04-24 19:41:23 pkot Exp $
+  $Id: error.h,v 1.19 2006-06-11 16:39:11 deller Exp $
 
   G N O K I I
 
@@ -81,6 +81,6 @@ typedef enum {
 	GN_ERR_CODEREQUIRED		/* PIN or PUK code required */
 } gn_error;
 
-API char *gn_error_print(gn_error e);
+GNOKII_API char *gn_error_print(gn_error e);
 
 #endif /* _gnokii_error_h */

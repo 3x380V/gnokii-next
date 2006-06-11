@@ -1,6 +1,6 @@
 /*
 
-  $Id: vcard.c,v 1.17 2006-05-01 16:40:12 pkot Exp $
+  $Id: vcard.c,v 1.18 2006-06-11 16:39:48 deller Exp $
   
   G N O K I I
 
@@ -36,7 +36,7 @@
 #include "gnokii.h"
 #include "gnokii-internal.h"
 
-API int gn_phonebook2vcard(FILE * f, gn_phonebook_entry *entry, char *location)
+GNOKII_API int gn_phonebook2vcard(FILE * f, gn_phonebook_entry *entry, char *location)
 {
 	int i;
 	char name[2 * GN_PHONEBOOK_NAME_MAX_LENGTH];
@@ -138,7 +138,7 @@ API int gn_phonebook2vcard(FILE * f, gn_phonebook_entry *entry, char *location)
 #define ERROR(a) fprintf(stderr, "%s\n", a)
 
 /* We assume gn_phonebook_entry is ready for writing in, ie. no rubbish inside */
-API int gn_vcard2phonebook(FILE *f, gn_phonebook_entry *entry)
+GNOKII_API int gn_vcard2phonebook(FILE *f, gn_phonebook_entry *entry)
 {
 	char buf[1024];
 	char memloc[10];

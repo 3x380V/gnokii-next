@@ -1,6 +1,6 @@
 /*
 
-  $Id: device.h,v 1.25 2006-04-23 21:26:21 deller Exp $
+  $Id: device.h,v 1.26 2006-06-11 16:39:11 deller Exp $
 
   G N O K I I
 
@@ -40,7 +40,7 @@
 #  include <unistd.h>
 #endif
 
-API int device_getfd(struct gn_statemachine *state);
+GNOKII_API int device_getfd(struct gn_statemachine *state);
 
 int device_open(const char *file, int with_odd_parity, int with_async,
 		int with_hw_handshake, gn_connection_type device_type,

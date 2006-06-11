@@ -1,6 +1,6 @@
 /*
 
-  $Id: device.c,v 1.40 2006-05-22 20:00:43 pkot Exp $
+  $Id: device.c,v 1.41 2006-06-11 16:39:48 deller Exp $
 
   G N O K I I
 
@@ -47,7 +47,7 @@
 #include "devices/dku2libusb.h"
 
 
-API int device_getfd(struct gn_statemachine *state)
+GNOKII_API int device_getfd(struct gn_statemachine *state)
 {
 	return state->device.fd;
 }

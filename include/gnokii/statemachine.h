@@ -1,6 +1,6 @@
 /*
 
-  $Id: statemachine.h,v 1.24 2006-04-25 18:38:25 deller Exp $
+  $Id: statemachine.h,v 1.25 2006-06-11 16:39:11 deller Exp $
 
   G N O K I I
 
@@ -96,9 +96,9 @@ struct gn_statemachine {
 	} u;
 };
 
-API gn_state gn_sm_loop(int timeout, struct gn_statemachine *state);
+GNOKII_API gn_state gn_sm_loop(int timeout, struct gn_statemachine *state);
 
 /* General way to call any driver function */
-API gn_error gn_sm_functions(gn_operation op, gn_data *data, struct gn_statemachine *sm);
+GNOKII_API gn_error gn_sm_functions(gn_operation op, gn_data *data, struct gn_statemachine *sm);
 
 #endif	/* _gnokii_statemachine_h */

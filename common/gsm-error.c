@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-error.c,v 1.23 2006-01-15 15:13:26 dforsi Exp $
+  $Id: gsm-error.c,v 1.24 2006-06-11 16:39:48 deller Exp $
 
   G N O K I I
 
@@ -36,7 +36,7 @@
 #include "misc.h"
 #include "gnokii.h"
 
-API char *gn_error_print(gn_error e)
+GNOKII_API char *gn_error_print(gn_error e)
 {
 	switch (e) {
 	case GN_ERR_NONE:                  return _("No error.");

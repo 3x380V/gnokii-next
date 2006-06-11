@@ -1,6 +1,6 @@
 /*
 
-  $Id: ringtones.h,v 1.20 2006-03-18 17:19:28 pkot Exp $
+  $Id: ringtones.h,v 1.21 2006-06-11 16:39:11 deller Exp $
 
   G N O K I I
 
@@ -149,13 +149,13 @@ typedef struct {
 /* From PC Composer help */
 #define GN_RINGTONE_NOTES_MAX_NUMBER 130
 
-API gn_error gn_file_ringtone_read(char *filename, gn_ringtone *ringtone);
-API gn_error gn_file_ringtone_save(char *filename, gn_ringtone *ringtone);
+GNOKII_API gn_error gn_file_ringtone_read(char *filename, gn_ringtone *ringtone);
+GNOKII_API gn_error gn_file_ringtone_save(char *filename, gn_ringtone *ringtone);
 
-API unsigned char gn_ringtone_pack(gn_ringtone *ringtone, unsigned char *package, int *maxlength);
-API gn_error gn_ringtone_unpack(gn_ringtone *ringtone, unsigned char *package, int maxlength);
-API int gn_note_get(int number);
-API void gn_ringtone_get_tone(const gn_ringtone *ringtone, int n, int *freq, int *ulen);
-API void gn_ringtone_set_duration(gn_ringtone *ringtone, int n, int ulen);
+GNOKII_API unsigned char gn_ringtone_pack(gn_ringtone *ringtone, unsigned char *package, int *maxlength);
+GNOKII_API gn_error gn_ringtone_unpack(gn_ringtone *ringtone, unsigned char *package, int maxlength);
+GNOKII_API int gn_note_get(int number);
+GNOKII_API void gn_ringtone_get_tone(const gn_ringtone *ringtone, int n, int *freq, int *ulen);
+GNOKII_API void gn_ringtone_set_duration(gn_ringtone *ringtone, int n, int ulen);
 
 #endif	/* _gnokii_ringtones_h */
