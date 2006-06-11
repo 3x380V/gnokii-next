@@ -4,7 +4,7 @@
 # Copyright (C) 1999 Hugh Blemings & Pavel Janík ml.
 #               1999-2005 Jan Derfinak
 #               2000 Karel Zak
-# $Id: Makefile,v 1.34 2006-02-27 20:55:59 pkot Exp $
+# $Id: Makefile,v 1.35 2006-06-11 14:08:42 deller Exp $
 #
 
 #GLIBCFLAGS = glib-config --cflags
@@ -19,9 +19,11 @@ GLIBLDLIBS = pkg-config --libs glib-2.0
 TOPDIR=..
 include $(TOPDIR)/Makefile.global
 
+pkglibdir = ${libdir}/smsd
+
 SMSD_MAN=man/smsd.8
 
-CFLAGS += -DMODULES_DIR=\"${libdir}/smsd\" $(PTHREAD_CFLAGS) \
+CFLAGS += -DMODULES_DIR=\"${pkglibdir}\" $(PTHREAD_CFLAGS) \
 	  $(shell $(GLIBCFLAGS))
 
 LDLIBS += $(PTHREAD_LIBS) \
@@ -57,7 +59,7 @@ pq.lo: smsd.h pq.c
 libpq.la: pq.lo
 	$(LIBTOOL) --mode=link $(CC) -o libpq.la pq.lo \
 	$(shell $(GLIBLDLIBS)) -L$(shell pg_config --libdir) -lpq \
-	-export-dynamic -avoid-version -rpath ${libdir}/smsd
+	-export-dynamic -avoid-version -rpath ${pkglibdir}
 
 # MySQL support
 mysql.lo: smsd.h mysql.c
@@ -67,7 +69,7 @@ mysql.lo: smsd.h mysql.c
 libmysql.la: mysql.lo
 	$(LIBTOOL) --mode=link $(CC) -o libmysql.la mysql.lo \
 	$(shell $(GLIBLDLIBS)) $(shell mysql_config --libs) \
-	-export-dynamic -avoid-version -rpath ${libdir}/smsd
+	-export-dynamic -avoid-version -rpath ${pkglibdir}
 
 # File support
 file.lo: smsd.h file.c
@@ -77,7 +79,7 @@ file.lo: smsd.h file.c
 libfile.la: file.lo
 	$(LIBTOOL) --mode=link $(CC) -o libfile.la file.lo \
 	$(shell $(GLIBLDLIBS)) \
-	-export-dynamic -avoid-version -rpath ${libdir}/smsd
+	-export-dynamic -avoid-version -rpath ${pkglibdir}
 
 ### End of DB Modules
 
@@ -91,11 +93,11 @@ clean:
 install: all
 	$(INSTALL) -d $(DESTDIR)$(sbindir)
 	$(LIBTOOL) --mode=install $(INSTALL) -m 755 smsd $(DESTDIR)$(sbindir)
-	$(INSTALL) -d $(DESTDIR)${libdir}/smsd
+	$(INSTALL) -d $(DESTDIR)${pkglibdir}
 	for f in $(DB_LIBS) ; do \
-	$(LIBTOOL) --mode=install $(INSTALL) $$f $(DESTDIR)${libdir}/smsd ; \
+	$(LIBTOOL) --mode=install $(INSTALL) $$f $(DESTDIR)${pkglibdir} ; \
 	done
-	$(LIBTOOL) --mode=finish ${libdir}/smsd
+	$(LIBTOOL) --mode=finish ${pkglibdir}
 	$(INSTALL) -d $(DESTDIR)$(man8dir)
 	$(INSTALL_DATA) $(SMSD_MAN) $(DESTDIR)$(man8dir)
 
