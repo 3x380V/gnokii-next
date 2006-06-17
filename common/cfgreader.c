@@ -1,6 +1,6 @@
 /*
 
-  $Id: cfgreader.c,v 1.73 2006-06-11 20:41:39 deller Exp $
+  $Id: cfgreader.c,v 1.74 2006-06-17 20:00:01 pkot Exp $
 
   G N O K I I
 
@@ -540,7 +540,12 @@ GNOKII_API int gn_cfg_read_default()
 	char *homedir;
 	char rcfile[MAX_PATH_LEN];
 #ifdef WIN32
-	const char globalrc[] = "gnokiirc";
+	char globalrc[MAX_PATH_LEN];
+	char *systemroot;
+
+	systemroot = getenv("SYSTEMROOT");
+	strncpy(globalrc, systemroot ? systemroot : "", MAX_PATH_LEN);
+	strncat(globalrc, "\\gnokiirc", MAX_PATH_LEN);
 
 	homedir = getenv("HOMEDRIVE");
 	strncpy(rcfile, homedir ? homedir : "", MAX_PATH_LEN);
