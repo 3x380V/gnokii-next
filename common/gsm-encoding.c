@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-encoding.c,v 1.67 2006-06-11 16:39:48 deller Exp $
+  $Id: gsm-encoding.c,v 1.68 2006-06-17 20:06:17 pkot Exp $
 
   G N O K I I
 
@@ -116,7 +116,14 @@ static const char *get_langinfo_codeset(void)
 #ifdef HAVE_LANGINFO_CODESET
 		codeset = nl_langinfo(CODESET);
 #else
+#  ifdef WIN32
+		/* As suggested by Ben Bryant, http://codesnipers.com/?q=node/46 */
+		char szCP[10];
+		sprintf(szCP, ".%d", GetACP());
+		codeset = setlocale(LC_ALL, szCP);
+#  else
 		codeset = locale_charset();
+#  endif
 #endif
 	}
 	return codeset;
