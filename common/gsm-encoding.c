@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-encoding.c,v 1.68 2006-06-17 20:06:17 pkot Exp $
+  $Id: gsm-encoding.c,v 1.69 2006-06-17 20:33:05 pkot Exp $
 
   G N O K I I
 
@@ -135,6 +135,14 @@ GNOKII_API const char *gn_char_get_encoding()
 		return application_encoding; /* app has overriden encoding setting */
 	else
 		return get_langinfo_codeset(); /* return default codeset */
+}
+
+/* detect the correct len of a string (also for multibyte chars like "umlaute") */
+int char_mblen(const char *src)
+{
+	int len = mbstowcs(NULL, src, 0);
+	dprintf("char_mblen(%s): %i\n", src, len);
+	return len;
 }
 
 static int char_mbtowc(wchar_t *dst, const char *src, int maxlen, MBSTATE *mbs)
