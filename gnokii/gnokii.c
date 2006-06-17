@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.453 2006-05-23 20:00:06 deller Exp $
+  $Id: gnokii.c,v 1.454 2006-06-17 20:41:38 pkot Exp $
 
   G N O K I I
 
@@ -3456,6 +3456,9 @@ static int getphonebook(int argc, char *argv[])
 				fprintf(stderr, _("Error reading from the location %d in memory %s\n"), count, memory_type_string);
 			}
 			break;
+		case GN_ERR_TIMEOUT:
+			/* On timeout just exit the loop */
+			num_entries = 0;
 		default:
 			fprintf(stderr, _("Error: %s\n"), gn_error_print(error));
 			break;
