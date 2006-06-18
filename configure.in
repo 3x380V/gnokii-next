@@ -4,7 +4,7 @@ dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janík ml.
 dnl                2000 Karel Zak, Pawe³ Kot
 dnl                2002 BORBELY Zoltan
 dnl
-dnl  $Id: configure.in,v 1.157 2006-06-11 15:06:40 deller Exp $
+dnl  $Id: configure.in,v 1.158 2006-06-18 14:14:42 deller Exp $
 dnl
 
 AC_INIT(gnokii/gnokii.c)
@@ -133,7 +133,7 @@ if test "x$GCC" = "xyes"; then
 fi
 
 dnl ======================== avoid deprecated warnings here
-CFLAGS="$CFLAGS -DGNOKII_DEPRECATED=''"
+# CFLAGS="$CFLAGS -DGNOKII_DEPRECATED=''"
 
 dnl ======================== Checks for libraries.
 
