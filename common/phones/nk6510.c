@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.c,v 1.214 2006-06-17 20:33:05 pkot Exp $
+  $Id: nk6510.c,v 1.215 2006-06-18 20:59:36 pkot Exp $
 
   G N O K I I
 
@@ -1911,7 +1911,7 @@ static gn_error NK6510_IncomingFile(int messagetype, unsigned char *message, int
 			/* first 4 octets are for the length */
 			/* next 4 octets are for the type (?) */
 			/* then pairs (len, location) */
-			for (i = 250; i < length ;) {
+			for (i = 250; i + 4 < length ;) {
 				int k, len = 2 * (message[i] * 256 + message[i+1]);
 				data->file_list->file_count++;
 				data->file_list->files[j] = calloc(1, sizeof(gn_file));
