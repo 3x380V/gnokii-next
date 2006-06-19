@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.454 2006-06-17 20:41:38 pkot Exp $
+  $Id: gnokii.c,v 1.455 2006-06-19 19:11:39 dforsi Exp $
 
   G N O K I I
 
@@ -5332,7 +5332,7 @@ static int install_log_handler(void)
 	snprintf(logname, sizeof(logname), "%s/%s", home, file);
 
 	if ((logfile = fopen(logname, "a")) == NULL) {
-		perror(_("Cannot open logfile"));
+		fprintf(stderr, _("Cannot open logfile %s\n"), logname);
 		return -1;
 	}
 
@@ -5652,17 +5652,17 @@ int main(int argc, char *argv[])
 		{ 0, 0, 0, 0 },
 	};
 
-	if (install_log_handler()) {
-		fprintf(stderr, _("WARNING: cannot open logfile, logs will be directed to stderr\n"));
-	}
-
-	opterr = 0;
-
 	/* For GNU gettext */
 #ifdef ENABLE_NLS
 	textdomain("gnokii");
 	setlocale(LC_ALL, "");
 #endif
+
+	if (install_log_handler()) {
+		fprintf(stderr, _("WARNING: cannot open logfile, logs will be directed to stderr\n"));
+	}
+
+	opterr = 0;
 
 	/* Introduce yourself */
 	short_version();
