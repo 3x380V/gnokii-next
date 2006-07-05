@@ -1,6 +1,6 @@
 /*
 
-  $Id: sms.h,v 1.65 2006-06-11 16:39:11 deller Exp $
+  $Id: sms.h,v 1.66 2006-07-05 12:56:26 thrull Exp $
 
   G N O K I I
 
@@ -459,5 +459,30 @@ typedef struct {
 
 GNOKII_API void gn_sms_default_submit(gn_sms *sms);
 GNOKII_API void gn_sms_default_deliver(gn_sms *sms);
+
+/* WAPPush */
+
+typedef struct {
+	unsigned char wsp_tid;
+	unsigned char wsp_pdu;
+	unsigned char wsp_hlen;
+	unsigned char wsp_content_type;
+
+    	unsigned char version; /* wbxml version */
+    	unsigned char public_id;
+    	unsigned char charset; /* default 106 = UTF-8 */
+    	unsigned char stl;
+} gn_wap_push_header;
+
+typedef struct {
+	gn_wap_push_header header;
+	char *url;
+    	char *text;
+	char *data;
+	int data_len; 
+} gn_wap_push;
+
+GNOKII_API void gn_wap_push_init(gn_wap_push *wp);
+GNOKII_API gn_error gn_wap_push_encode(gn_wap_push *wp);
 
 #endif /* _gnokii_sms_h */

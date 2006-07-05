@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.h,v 1.99 2006-06-11 20:41:39 deller Exp $
+  $Id: gnokii.h,v 1.100 2006-07-05 12:56:26 thrull Exp $
 
   G N O K I I
 
@@ -87,6 +87,7 @@ struct gn_statemachine;
 #include <gnokii/ringtones.h>
 #include <gnokii/virtmodem.h>
 #include <gnokii/rlp-common.h>
+#include <gnokii/wappush.h>
 
 #include <gnokii/statemachine.h>
 
