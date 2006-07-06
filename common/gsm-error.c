@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-error.c,v 1.24 2006-06-11 16:39:48 deller Exp $
+  $Id: gsm-error.c,v 1.25 2006-07-06 12:14:10 dforsi Exp $
 
   G N O K I I
 
@@ -68,6 +68,7 @@ GNOKII_API char *gn_error_print(gn_error e)
 	case GN_ERR_NONEWCBRECEIVED:       return _("Attempt to read CB when no new CB received.");
 	case GN_ERR_SIMPROBLEM:            return _("SIM card missing or damaged.");
 	case GN_ERR_CODEREQUIRED:          return _("PIN or PUK code required.");
+	case GN_ERR_NOTAVAILABLE:          return _("The requested information is not available.");
 	default:                           return _("Unknown error.");
 	}
 }

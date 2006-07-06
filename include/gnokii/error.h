@@ -1,6 +1,6 @@
 /*
 
-  $Id: error.h,v 1.19 2006-06-11 16:39:11 deller Exp $
+  $Id: error.h,v 1.20 2006-07-06 12:14:09 dforsi Exp $
 
   G N O K I I
 
@@ -78,7 +78,8 @@ typedef enum {
 	/* Other */
 	GN_ERR_NONEWCBRECEIVED,		/* Attempt to read CB when no new CB received */
 	GN_ERR_SIMPROBLEM,		/* SIM card missing or damaged */
-	GN_ERR_CODEREQUIRED		/* PIN or PUK code required */
+	GN_ERR_CODEREQUIRED,		/* PIN or PUK code required */
+	GN_ERR_NOTAVAILABLE		/* The requested information is not available */
 } gn_error;
 
 GNOKII_API char *gn_error_print(gn_error e);
