@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.181 2006-05-08 17:51:45 deller Exp $
+  $Id: nk6100.c,v 1.182 2006-07-06 12:29:46 dforsi Exp $
 
   G N O K I I
 
@@ -2430,6 +2430,10 @@ static gn_error IncomingPhoneClockAndAlarm(int messagetype, unsigned char *messa
 
 	/* Date and time received */
 	case 0x63:
+		dprintf("Message: Date and time\n");
+		if (!message[4]) dprintf("   Date: not set\n");
+		if (!message[5]) dprintf("   Time: not set\n");
+		if (!(message[4] && message[5])) return GN_ERR_NOTAVAILABLE;
 		if (data->datetime) {
 			date = data->datetime;
 			pos = message + 8;
@@ -2441,7 +2445,6 @@ static gn_error IncomingPhoneClockAndAlarm(int messagetype, unsigned char *messa
 			date->minute = *pos++;
 			date->second = *pos++;
 
-			dprintf("Message: Date and time\n");
 			dprintf("   Time: %02d:%02d:%02d\n", date->hour, date->minute, date->second);
 			dprintf("   Date: %4d/%02d/%02d\n", date->year, date->month, date->day);
 		}
