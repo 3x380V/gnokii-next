@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.184 2006-07-08 11:49:30 dforsi Exp $
+  $Id: nk6100.c,v 1.185 2006-07-09 17:11:12 dforsi Exp $
 
   G N O K I I
 
@@ -223,7 +223,7 @@ struct {
 	{ "NHM-2",      NULL,           NK6100_CAP_PB_UNICODE }, /* 3410 */
 	{ "NSM-3D",     NULL,           NK6100_CAP_PB_UNICODE | NK6100_CAP_CAL_UNICODE }, /* 8250 */
 	{ "RPM-1",	"-4.23",	NK6100_CAP_NBS_UPLOAD }, /* Card Phone 2.0 */
-	{ "NSE-8",	NULL,		NK6100_CAP_OLD_KEY_API | NK6100_CAP_NO_PSTATUS | NK6100_CAP_NO_CB }, /* 3210 */
+	{ "NSE-8",	NULL,		NK6100_CAP_OLD_KEY_API | NK6100_CAP_NO_PSTATUS | NK6100_CAP_NO_CB | NK6100_CAP_OLD_CALL_API }, /* 3210 */
 	{ "NSE-9",	NULL,		NK6100_CAP_OLD_KEY_API }, /* 3210 */
 	{ NULL,		NULL,		0 }
 };
