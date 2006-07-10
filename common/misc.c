@@ -1,6 +1,6 @@
 /*
 
-  $Id: misc.c,v 1.111 2006-06-11 16:39:48 deller Exp $
+  $Id: misc.c,v 1.112 2006-07-10 19:54:03 pkot Exp $
 
   G N O K I I
 
@@ -507,7 +507,7 @@ failed:
 	free(lock_file);
 	return NULL;
 #else
-	return NULL;
+	return 1;
 #endif /* WIN32 */
 }
 
