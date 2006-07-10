@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.459 2006-07-08 11:41:37 dforsi Exp $
+  $Id: gnokii.c,v 1.460 2006-07-10 14:09:51 dforsi Exp $
 
   G N O K I I
 
@@ -997,8 +997,6 @@ static int savesms(int argc, char *argv[])
 
 	chars_read = fread(message_buffer, 1, sizeof(message_buffer), stdin);
 
-	fprintf(stderr, _("storing sms"));
-
 	if (chars_read == 0) {
 		fprintf(stderr, _("Couldn't read from stdin!\n"));
 		return -1;
@@ -1021,6 +1019,8 @@ static int savesms(int argc, char *argv[])
 	sms.user_data[1].type = GN_SMS_DATA_None;
 	if (!gn_char_def_alphabet(sms.user_data[0].u.text))
 		sms.dcs.u.general.alphabet = GN_SMS_DCS_UCS2;
+
+	fprintf(stderr, _("Storing SMS... "));
 
 	data->sms = &sms;
 	error = gn_sms_save(data, state);
