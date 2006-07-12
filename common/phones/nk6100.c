@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.186 2006-07-10 21:37:23 dforsi Exp $
+  $Id: nk6100.c,v 1.187 2006-07-12 11:47:46 dforsi Exp $
 
   G N O K I I
 
@@ -3007,7 +3007,14 @@ static gn_error IncomingSecurity(int messagetype, unsigned char *message, int le
 	
 	/* Set bin ringtone result */
 	case 0xa0:
-		if (message[3] != 0x02) return GN_ERR_UNHANDLEDFRAME;
+		switch (message[4]) {
+		case 0x00:
+			break;
+		case 0x0a:
+			return GN_ERR_INVALIDLOCATION;
+		default:
+			return GN_ERR_UNHANDLEDFRAME;
+		}
 		break;
 
 	case 0xc8:
