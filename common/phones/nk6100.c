@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.187 2006-07-12 11:47:46 dforsi Exp $
+  $Id: nk6100.c,v 1.188 2006-07-16 10:43:03 dforsi Exp $
 
   G N O K I I
 
@@ -3367,6 +3367,7 @@ static gn_error IncomingCallInfo(int messagetype, unsigned char *message, int le
 			}
 			switch (pos[5]) {
 			case 0x00: ca[i].prev_state = GN_CALL_Idle; break;
+			case 0x01: ca[i].prev_state = GN_CALL_Idle; break;
 			case 0x02: ca[i].prev_state = GN_CALL_Dialing; break;
 			case 0x03: ca[i].prev_state = GN_CALL_Ringing; break;
 			case 0x04: ca[i].prev_state = GN_CALL_Incoming; break;
