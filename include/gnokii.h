@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.h,v 1.100 2006-07-05 12:56:26 thrull Exp $
+  $Id: gnokii.h,v 1.101 2006-08-06 16:19:03 pkot Exp $
 
   G N O K I I
 
@@ -102,7 +102,9 @@ GNOKII_API void gn_lib_library_free( void );
 GNOKII_API gn_error gn_lib_lasterror( struct gn_statemachine *state );
 
 /* initialize gnokii library and structures for given phone.
-   configname is the name of the profile, if empty or NULL, [global] will be taken  */
+   configname is the name of the profile, if empty or NULL, [global] will be taken.
+   gn_lib_phoneprofile_load assumes default config file. */
+GNOKII_API gn_error gn_lib_phoneprofile_load_from_file( const char *configfile, const char *configname, struct gn_statemachine **state );
 GNOKII_API gn_error gn_lib_phoneprofile_load( const char *configname, struct gn_statemachine **state );
 
 /* Free any structures and ressources which were loaded in this state machine. */

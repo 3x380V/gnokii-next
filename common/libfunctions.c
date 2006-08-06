@@ -1,5 +1,5 @@
 /*
-  $Id: libfunctions.c,v 1.24 2006-06-11 20:41:39 deller Exp $
+  $Id: libfunctions.c,v 1.25 2006-08-06 16:19:03 pkot Exp $
 
   G N O K I I
 
@@ -56,13 +56,16 @@ GNOKII_API unsigned int gn_lib_version()
 	return LIBGNOKII_VERSION;
 }
 
-GNOKII_API gn_error gn_lib_phoneprofile_load( const char *configname, struct gn_statemachine **state )
+GNOKII_API gn_error gn_lib_phoneprofile_load_from_file(const char *configfile, const char *configname, struct gn_statemachine **state)
 {
 	gn_error error;
 	*state = NULL;
 
 	if (!gn_cfg_info) {
-		error = gn_cfg_read_default();
+		if (configfile)
+			error = gn_cfg_file_read(configfile);
+		else
+			error = gn_cfg_read_default();
 		if (GN_ERR_NONE != error)
 			return error;
 	}
@@ -82,6 +85,12 @@ GNOKII_API gn_error gn_lib_phoneprofile_load( const char *configname, struct gn_
 
 	return LASTERROR((*state), GN_ERR_NONE);
 }
+
+GNOKII_API gn_error gn_lib_phoneprofile_load(const char *configname, struct gn_statemachine **state)
+{
+	return gn_lib_phoneprofile_load_from_file(NULL, configname, state);
+}
+
 
 GNOKII_API gn_error gn_lib_phoneprofile_free( struct gn_statemachine **state )
 {
