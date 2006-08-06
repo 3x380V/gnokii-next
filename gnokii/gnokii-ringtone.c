@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-ringtone.c,v 1.1 2006-08-06 15:51:33 pkot Exp $
+  $Id: gnokii-ringtone.c,v 1.2 2006-08-06 20:42:21 pkot Exp $
 
   G N O K I I
 
@@ -47,8 +47,8 @@
 #include <getopt.h>
 #include <signal.h>
 
-#include "gnokii.h"
 #include "gnokii-app.h"
+#include "gnokii.h"
 
 static gn_ringtone_list ringtone_list;
 static int ringtone_list_initialised = 0;

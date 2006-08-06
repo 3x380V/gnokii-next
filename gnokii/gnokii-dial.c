@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-dial.c,v 1.1 2006-08-06 15:51:33 pkot Exp $
+  $Id: gnokii-dial.c,v 1.2 2006-08-06 20:42:21 pkot Exp $
 
   G N O K I I
 
@@ -46,8 +46,8 @@
 #define _GNU_SOURCE
 #include <getopt.h>
 
-#include "gnokii.h"
 #include "gnokii-app.h"
+#include "gnokii.h"
 
 void dial_usage(FILE *f)
 {

@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokiid.c,v 1.46 2006-05-08 19:20:07 deller Exp $
+  $Id: gnokiid.c,v 1.47 2006-08-06 20:42:21 pkot Exp $
 
   G N O K I I
 
@@ -43,7 +43,7 @@
 #include <string.h>
 
 #include "misc.h"
-#include "gnokii.h"
+#include "gnokii-internal.h"
 
 /* Global variables */
 bool DebugMode;		/* When true, run in debug mode */

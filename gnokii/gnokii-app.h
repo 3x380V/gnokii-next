@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-app.h,v 1.39 2006-08-06 15:51:33 pkot Exp $
+  $Id: gnokii-app.h,v 1.40 2006-08-06 20:42:21 pkot Exp $
 
   G N O K I I
 
@@ -34,7 +34,7 @@
 #ifndef __gnokii_app_h_
 #define __gnokii_app_h_
 
-#include "gnokii.h"
+#include "gnokii-internal.h"
 
 #define MAX_INPUT_LINE_LEN 512
 

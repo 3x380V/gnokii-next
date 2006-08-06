@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.c,v 1.215 2006-06-18 20:59:36 pkot Exp $
+  $Id: nk6510.c,v 1.216 2006-08-06 20:42:21 pkot Exp $
 
   G N O K I I
 
@@ -39,14 +39,14 @@
 #include "config.h"
 #include "compat.h"
 #include "misc.h"
-#include "gnokii.h"
+
+#include "gnokii-internal.h"
 #include "nokia-decoding.h"
 #include "phones/generic.h"
 #include "phones/nk6510.h"
 #include "links/fbus.h"
 #include "links/fbus-phonet.h"
 #include "phones/nokia.h"
-#include "gnokii-internal.h"
 
 #define SEND_MESSAGE_BLOCK(type, length) \
 do { \

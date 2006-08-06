@@ -1,6 +1,6 @@
 /*
 
-  $Id: cfgreader.c,v 1.74 2006-06-17 20:00:01 pkot Exp $
+  $Id: cfgreader.c,v 1.75 2006-08-06 20:42:20 pkot Exp $
 
   G N O K I I
 
@@ -35,8 +35,6 @@
   Modified from code by Tim Potter.
 
 */
-
-#define GNOKII_DEPRECATED /* do not warn about deprecated functions here */
 
 #include "config.h"
 #include "compat.h"

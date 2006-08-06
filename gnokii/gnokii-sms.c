@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-sms.c,v 1.1 2006-08-06 15:51:33 pkot Exp $
+  $Id: gnokii-sms.c,v 1.2 2006-08-06 20:42:21 pkot Exp $
 
   G N O K I I
 
@@ -49,8 +49,8 @@
 #include <time.h>
 #include <signal.h>
 
-#include "gnokii.h"
 #include "gnokii-app.h"
+#include "gnokii.h"
 
 /* Outputs summary of all SMS gnokii commands */
 void sms_usage(FILE *f)

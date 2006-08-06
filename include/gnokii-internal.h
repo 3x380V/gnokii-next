@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-internal.h,v 1.33 2006-06-17 20:33:05 pkot Exp $
+  $Id: gnokii-internal.h,v 1.34 2006-08-06 20:42:21 pkot Exp $
 
   G N O K I I
 
@@ -38,6 +38,11 @@
 #include "config.h"
 #include "compat.h"
 #include "misc.h"
+
+#if !defined(GNOKII_DEPRECATED)
+#  define GNOKII_DEPRECATED /* do not warn about deprecated functions here */
+#endif
+
 #include "gnokii.h"
 
 /* utils */

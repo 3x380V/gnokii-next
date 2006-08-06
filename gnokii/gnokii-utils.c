@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-utils.c,v 1.1 2006-08-06 15:51:33 pkot Exp $
+  $Id: gnokii-utils.c,v 1.2 2006-08-06 20:42:21 pkot Exp $
 
   G N O K I I
 
@@ -46,8 +46,8 @@
 #include <unistd.h>
 #include <signal.h>
 
-#include "gnokii.h"
 #include "gnokii-app.h"
+#include "gnokii.h"
 
 gn_error readtext(gn_sms_user_data *udata, int input_len)
 {
