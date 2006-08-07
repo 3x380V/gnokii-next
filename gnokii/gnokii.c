@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.463 2006-08-06 15:51:33 pkot Exp $
+  $Id: gnokii.c,v 1.464 2006-08-07 13:29:11 pkot Exp $
 
   G N O K I I
 
@@ -288,14 +288,8 @@ static int checkargs(int opt, struct gnokii_arg_len gals[], int argc)
 		if (gals[i].gal_opt == opt) {
 
 			/* Argument count checking. */
-			if (gals[i].gal_flags == GAL_XOR) {
-				if (gals[i].gal_min == argc || gals[i].gal_max == argc)
-					return 0;
-			} else {
-				if (gals[i].gal_min <= argc && gals[i].gal_max >= argc)
-					return 0;
-			}
-
+			if (gals[i].gal_min <= argc)
+				return 0;
 			return 1;
 		}
 	}
