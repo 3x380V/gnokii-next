@@ -1,6 +1,6 @@
 /*
 
-  $Id: mysql.c,v 1.28 2006-08-08 21:53:30 pkot Exp $
+  $Id: mysql.c,v 1.29 2006-08-08 21:54:36 pkot Exp $
 
   S M S D
 
@@ -90,7 +90,6 @@ gint DB_InsertSMS (const gn_sms * const data, const gchar * const phone)
 {
   GString *buf, *phnStr;
   gchar *text;
-  gint l;
 
 
   if (phone[0] == '\0')
