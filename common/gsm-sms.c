@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-sms.c,v 1.150 2006-07-05 12:56:26 thrull Exp $
+  $Id: gsm-sms.c,v 1.151 2006-08-08 20:06:29 pkot Exp $
 
   G N O K I I
 
@@ -158,8 +158,14 @@ static char *sms_timestamp_print(u8 *number)
 		sprintf(buffer, "19");
 
 	for (i = 0; i < 6; i++) {
+		int c;
 		char buf2[4];
-		snprintf(buf2, 4, "%d%d-", number[i] & 0x0f, number[i] >> 4);
+		switch (i) {
+		case 0: case 1: c = '-'; break;
+		case 3: case 4: c = ':'; break;
+		default: c = ' '; break;
+		}
+		snprintf(buf2, 4, "%d%d%c", number[i] & 0x0f, number[i] >> 4, c);
 		strcat(buffer, buf2);
 	}
 
