@@ -1,6 +1,6 @@
 /*
 
-  $Id: smsd.c,v 1.51 2006-05-10 12:47:57 ja Exp $
+  $Id: smsd.c,v 1.52 2006-08-08 21:00:14 pkot Exp $
 
   S M S D
 
@@ -125,35 +125,35 @@ gint LoadDB (void)
   DB_Bye = dlsym(handle, "DB_Bye");
   if ((error = dlerror ()) != NULL)
   {
-    g_print (error);
+    g_print ("%s\n", error);
     return (2);
   }
 
   DB_ConnectInbox = dlsym(handle, "DB_ConnectInbox");
   if ((error = dlerror ()) != NULL)
   {
-    g_print (error);
+    g_print ("%s\n", error);
     return (2);
   }
 
   DB_ConnectOutbox = dlsym(handle, "DB_ConnectOutbox");
   if ((error = dlerror ()) != NULL)
   {
-    g_print (error);
+    g_print ("%s\n", error);
     return (2);
   }
   
   DB_InsertSMS = dlsym(handle, "DB_InsertSMS");
   if ((error = dlerror ()) != NULL)
   {
-    g_print (error);
+    g_print ("%s\n", error);
     return (2);
   }
   
   DB_Look = dlsym(handle, "DB_Look");
   if ((error = dlerror ()) != NULL)
   {
-    g_print (error);
+    g_print ("%s\n", error);
     return (2);
   }
   
