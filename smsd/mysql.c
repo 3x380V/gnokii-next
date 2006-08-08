@@ -1,6 +1,6 @@
 /*
 
-  $Id: mysql.c,v 1.27 2006-01-21 00:25:30 ja Exp $
+  $Id: mysql.c,v 1.28 2006-08-08 21:53:30 pkot Exp $
 
   S M S D
 
@@ -29,6 +29,7 @@
   
 */
 
+#include <unistd.h>
 #include <string.h>
 #include <stdlib.h>
 #include <glib.h>

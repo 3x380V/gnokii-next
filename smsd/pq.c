@@ -1,6 +1,6 @@
 /*
 
-  $Id: pq.c,v 1.29 2006-02-08 22:15:46 ja Exp $
+  $Id: pq.c,v 1.30 2006-08-08 21:53:30 pkot Exp $
 
   S M S D
 
@@ -29,6 +29,7 @@
 
 */
 
+#include <unistd.h>
 #include <string.h>
 #include <stdlib.h>
 #include <glib.h>
