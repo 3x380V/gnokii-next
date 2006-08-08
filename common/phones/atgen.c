@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.125 2006-05-08 17:54:49 deller Exp $
+  $Id: atgen.c,v 1.126 2006-08-08 22:06:39 pkot Exp $
 
   G N O K I I
 
@@ -1395,7 +1395,8 @@ static gn_error ReplyIdentify(int messagetype, unsigned char *buffer, int length
 			reply_simpletext(buf.line1+2, buf.line2, "+CGMM: ", data->model, GN_MODEL_MAX_LENGTH);
 		reply_simpletext(buf.line1+2, buf.line2, "+CGMI: ", data->manufacturer, GN_MANUFACTURER_MAX_LENGTH);
 		reply_simpletext(buf.line1+2, buf.line2, "+CGMR: ", data->revision, GN_REVISION_MAX_LENGTH);
-		reply_simpletext(buf.line1+2, buf.line4, "+CGMR: ", data->model, GN_MODEL_MAX_LENGTH);
+		if (!data->model[0])
+			reply_simpletext(buf.line1+2, buf.line4, "+CGMR: ", data->model, GN_MODEL_MAX_LENGTH);
 	} else if (!strncmp(buf.line1, "AT+G", 4)) {
 		reply_simpletext(buf.line1+2, buf.line2, "+GSN: ", data->imei, GN_IMEI_MAX_LENGTH);
 		if (!data->model[0])
