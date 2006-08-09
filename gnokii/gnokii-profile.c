@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-profile.c,v 1.2 2006-08-06 20:42:21 pkot Exp $
+  $Id: gnokii-profile.c,v 1.3 2006-08-09 21:59:59 pkot Exp $
 
   G N O K I I
 
@@ -146,11 +146,6 @@ int getprofile(int argc, char *argv[], gn_data *data, struct gn_statemachine *st
 		{ "raw",    no_argument, NULL, 'r'},
 		{ NULL,     0,           NULL, 0}
 	};
-
-	optarg = NULL;
-	optind = 0;
-	argv++;
-	argc--;
 
 	while ((i = getopt_long(argc, argv, "r", options, NULL)) != -1) {
 		switch (i) {
