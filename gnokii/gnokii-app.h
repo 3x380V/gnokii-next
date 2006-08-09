@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-app.h,v 1.40 2006-08-06 20:42:21 pkot Exp $
+  $Id: gnokii-app.h,v 1.41 2006-08-09 21:47:47 pkot Exp $
 
   G N O K I I
 
@@ -145,7 +145,7 @@ extern int getwapbookmark(char *number, gn_data *data, struct gn_statemachine *s
 extern void writewapbookmark_usage(FILE *f, int exitval);
 extern int writewapbookmark(int argc, char *argv[], gn_data *data, struct gn_statemachine *state);
 extern int deletewapbookmark(char *number, gn_data *data, struct gn_statemachine *state);
-extern void getwapbookmark_usage(FILE *f, int exitval);
+extern void getwapsetting_usage(FILE *f, int exitval);
 extern int getwapsetting(int argc, char *argv[], gn_data *data, struct gn_statemachine *state);
 extern int writewapsetting(gn_data *data, struct gn_statemachine *state);
 extern int activatewapsetting(char *number, gn_data *data, struct gn_statemachine *state);
