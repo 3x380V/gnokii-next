@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.468 2006-08-09 19:36:58 pkot Exp $
+  $Id: gnokii.c,v 1.469 2006-08-09 19:52:19 pkot Exp $
 
   G N O K I I
 
@@ -265,6 +265,10 @@ static void businit(void)
 	gn_error err;
 	if ((err = gn_lib_phoneprofile_load_from_file(configfile, configmodel, &state)) != GN_ERR_NONE) {
 		fprintf(stderr, "%s\n", gn_error_print(err));
+		if (configfile)
+			fprintf(stderr, _("File: %s\n"), configfile);
+		if (configmodel)
+			fprintf(stderr, _("Phone section: [phone_%s]\n"), configmodel);
 		exit(2);
 	}
 
