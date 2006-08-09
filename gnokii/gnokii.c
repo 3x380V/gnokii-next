@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.466 2006-08-08 20:05:10 pkot Exp $
+  $Id: gnokii.c,v 1.467 2006-08-09 18:46:44 pkot Exp $
 
   G N O K I I
 
@@ -721,9 +721,13 @@ static int parse_options(int argc, char *argv[])
 	/* Other options that do not need initialization */
 	switch (c) {
 	case OPT_CONFIGFILE:
+		if (configfile)
+			usage(stderr, -1);
 		configfile = optarg;
 		return parse_options(argc, argv);
 	case OPT_CONFIGMODEL:
+		if (configmodel)
+			usage(stderr, -1);
 		configmodel = optarg;
 		return parse_options(argc, argv);
 	case OPT_VIEWLOGO:
