@@ -1,6 +1,6 @@
 /*
 
-  $Id: utils.c,v 1.1 2006-08-10 19:10:14 pkot Exp $
+  $Id: utils.c,v 1.2 2006-08-10 20:29:56 pkot Exp $
 
   S M S D
 
@@ -28,6 +28,8 @@
   Utils functions for SMSD plugins
   
 */
+
+#include "utils.h"
 
 /* Escapes ' and \ with \. */
 /* Returned value needs to be free with g_free(). */
