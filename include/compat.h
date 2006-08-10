@@ -1,6 +1,6 @@
 /*
 
-  $Id: compat.h,v 1.45 2006-06-11 16:39:11 deller Exp $
+  $Id: compat.h,v 1.46 2006-08-10 22:17:40 pkot Exp $
 
   G N O K I I
 
@@ -112,7 +112,7 @@
 #  else
 #    define GNOKII_API
 #  endif
-#elif (__GNUC__ - 0 > 3)
+#elif (__GNUC__ - 0 > 3 || __GNUC__ == 3 && __GNUC_MINOR__ > 3)
 #    define GNOKII_API __attribute__ ((visibility("default")))
 #else
 #    define GNOKII_API
