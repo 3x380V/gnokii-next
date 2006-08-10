@@ -1,6 +1,6 @@
 /*
 
-  $Id: smsd.h,v 1.17 2006-08-10 19:10:14 pkot Exp $
+  $Id: smsd.h,v 1.18 2006-08-10 21:09:16 pkot Exp $
 
   S M S D
 
@@ -58,6 +58,6 @@ typedef struct {
 } DBConfig;
 
 extern SmsdConfig smsdConfig;
-extern gint WriteSMS (gn_sms *);
+GNOKII_API gint WriteSMS (gn_sms *);
 
 #endif

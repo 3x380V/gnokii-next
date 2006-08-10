@@ -1,6 +1,6 @@
 /*
 
-  $Id: smsd.c,v 1.53 2006-08-10 19:10:14 pkot Exp $
+  $Id: smsd.c,v 1.54 2006-08-10 21:09:16 pkot Exp $
 
   S M S D
 
@@ -365,7 +365,7 @@ static void *SendSMS (void *a)
 }
 
 
-gint WriteSMS (gn_sms *sms)
+GNOKII_API gint WriteSMS (gn_sms *sms)
 {
   gn_error error;
   PhoneEvent *e = (PhoneEvent *) g_malloc (sizeof (PhoneEvent));
