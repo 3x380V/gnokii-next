@@ -1,6 +1,6 @@
 /*
 
-  $Id: file.c,v 1.15 2006-01-21 00:25:30 ja Exp $
+  $Id: file.c,v 1.16 2006-08-10 19:10:14 pkot Exp $
 
   S M S D
 
@@ -38,17 +38,18 @@
 #include "smsd.h"
 #include "gnokii.h"
 #include "compat.h"
+#include "utils.h"
 
 static gchar *action;
 static gchar *spool;
 
-inline void DB_Bye (void)
+GNOKII_API void DB_Bye (void)
 {
   return;
 }
 
 
-gint DB_ConnectInbox (DBConfig connect)
+GNOKII_API gint DB_ConnectInbox (DBConfig connect)
 {
   struct stat status;
   
@@ -77,7 +78,7 @@ gint DB_ConnectInbox (DBConfig connect)
 }
 
 
-gint DB_ConnectOutbox (DBConfig connect)
+GNOKII_API gint DB_ConnectOutbox (DBConfig connect)
 {
   struct stat status;
   
@@ -108,7 +109,7 @@ gint DB_ConnectOutbox (DBConfig connect)
 }
 
 
-gint DB_InsertSMS (const gn_sms * const data, const gchar * const phone)
+GNOKII_API gint DB_InsertSMS (const gn_sms * const data, const gchar * const phone)
 {
   FILE *p;
   GString *buf;
@@ -148,7 +149,7 @@ gint DB_InsertSMS (const gn_sms * const data, const gchar * const phone)
 }
 
 
-void DB_Look (const gchar * const phone)
+GNOKII_API void DB_Look (const gchar * const phone)
 {
   DIR *dir;
   struct dirent *dirent;

@@ -1,6 +1,6 @@
 /*
 
-  $Id: db.h,v 1.12 2005-04-26 06:34:39 ja Exp $
+  $Id: db.h,v 1.13 2006-08-10 19:10:14 pkot Exp $
 
   S M S D
 
@@ -34,10 +34,10 @@
 #include "smsd.h"
 #include "gnokii.h"
 
-extern void (*DB_Bye) (void);
-extern gint (*DB_ConnectInbox) (const DBConfig);
-extern gint (*DB_ConnectOutbox) (const DBConfig);
-extern gint (*DB_InsertSMS) (const gn_sms * const, const gchar * const);
-extern void (*DB_Look) (const gchar * const);
+GNOKII_API void (*DB_Bye) (void);
+GNOKII_API gint (*DB_ConnectInbox) (const DBConfig);
+GNOKII_API gint (*DB_ConnectOutbox) (const DBConfig);
+GNOKII_API gint (*DB_InsertSMS) (const gn_sms * const, const gchar * const);
+GNOKII_API void (*DB_Look) (const gchar * const);
 
 #endif
