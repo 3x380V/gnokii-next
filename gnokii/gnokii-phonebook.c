@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-phonebook.c,v 1.2 2006-08-06 20:42:21 pkot Exp $
+  $Id: gnokii-phonebook.c,v 1.3 2006-08-13 15:09:23 dforsi Exp $
 
   G N O K I I
 
@@ -72,7 +72,7 @@ void getphonebook_usage(FILE *f, int exitval)
 			"       -r\n"
 			"       --raw                             output in raw form (comma separated)\n"
 			"       -v\n"
-			"       --vard                            output in vcard format\n"
+			"       --vcard                           output in vcard format\n"
 			"       -l\n"
 			"       --ldif                            output in ldif format\n"
 			"\n"
