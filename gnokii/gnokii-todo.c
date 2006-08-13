@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-todo.c,v 1.2 2006-08-06 20:42:21 pkot Exp $
+  $Id: gnokii-todo.c,v 1.3 2006-08-13 17:06:38 dforsi Exp $
 
   G N O K I I
 
@@ -61,7 +61,7 @@ void todo_usage(FILE *f)
 
 void gettodo_usage(FILE *f, int exitval)
 {
-	fprintf(f, _("usage: --todo start_number [end_number | end] [-v|--vCal]\n"
+	fprintf(f, _("usage: --gettodo start_number [end_number | end] [-v|--vCal]\n"
 			 "       start_number - entry number in the phone todo (numeric)\n"
 			 "       end_number   - until this entry in the phone todo (numeric, optional)\n"
 			 "       end          - the string \"end\" indicates all entries from start to end\n"
