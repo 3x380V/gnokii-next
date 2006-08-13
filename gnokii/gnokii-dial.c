@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-dial.c,v 1.2 2006-08-06 20:42:21 pkot Exp $
+  $Id: gnokii-dial.c,v 1.3 2006-08-13 22:25:46 dforsi Exp $
 
   G N O K I I
 
@@ -224,7 +224,7 @@ void divert_usage(FILE *f, int exitval)
 			"                             notavail; this it required option\n"
 			"        -c calltype\n"
 			"        --call calltype      type of call for the operation, needs to be\n"
-			"                             one of the followingL all, voice, fax, data;\n"
+			"                             one of the following: all, voice, fax, data;\n"
 			"                             this is required option\n"
 			"        -m sec\n"
 			"        --timeout sec        timeout to be set; the value is in seconds\n"

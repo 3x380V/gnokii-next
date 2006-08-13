@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-wap.c,v 1.4 2006-08-09 22:03:36 pkot Exp $
+  $Id: gnokii-wap.c,v 1.5 2006-08-13 22:25:46 dforsi Exp $
 
   G N O K I I
 
@@ -55,7 +55,7 @@ void wap_usage(FILE *f)
 		     "          --getwapbookmark number\n"
 		     "          --writewapbookmark name URL\n"
 		     "          --deletewapbookmark number\n"
-		     "          --getwapsetting number [-r]\n"
+		     "          --getwapsetting number [-r|raw]\n"
 		     "          --writewapsetting\n"
 		     "          --activatewapsetting number\n"
 		     ));
@@ -152,7 +152,7 @@ int deletewapbookmark(char *number, gn_data *data, struct gn_statemachine *state
 
 void getwapsetting_usage(FILE *f, int exitval)
 {
-	fprintf(f, _(" usage: --getwapsetting number [-r|--raw]"));
+	fprintf(f, _(" usage: --getwapsetting number [-r|--raw]\n"));
 	exit(exitval);
 }
 

@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-file.c,v 1.2 2006-08-06 20:42:21 pkot Exp $
+  $Id: gnokii-file.c,v 1.3 2006-08-13 22:25:46 dforsi Exp $
 
   G N O K I I
 
@@ -392,7 +392,7 @@ int getallfiles(char *path, gn_data *data, struct gn_statemachine *state)
 
 void putfile_usage(FILE *f, int exitval)
 {
-	fprintf(f, _(" usage: --getfilebyid localfilename remotefilename\n"));
+	fprintf(f, _(" usage: --putfile local_filename remote_filename\n"));
 	exit(exitval);
 }
 
