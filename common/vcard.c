@@ -1,6 +1,6 @@
 /*
 
-  $Id: vcard.c,v 1.18 2006-06-11 16:39:48 deller Exp $
+  $Id: vcard.c,v 1.19 2006-08-15 19:07:30 dforsi Exp $
   
   G N O K I I
 
@@ -66,7 +66,7 @@ GNOKII_API int gn_phonebook2vcard(FILE * f, gn_phonebook_entry *entry, char *loc
 		fprintf(f, "Others\n");
 		break;
 	default:
-		fprintf(f, "Unkown\n");
+		fprintf(f, "Unknown\n");
 		break;	
 	}
 
