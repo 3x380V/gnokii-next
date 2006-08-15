@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii.c,v 1.87 2006-05-23 20:07:48 deller Exp $
+  $Id: xgnokii.c,v 1.88 2006-08-15 15:04:59 dforsi Exp $
   
   X G N O K I I
 
@@ -679,8 +679,10 @@ void GUI_ShowOptions(void)
 	D_Alarm *alarm;
 	register gint i;
 
-	if (optionsDialogIsOpened)
+	if (optionsDialogIsOpened) {
+		gtk_window_present(GTK_WINDOW(OptionsDialog));
 		return;
+	}
 
 	gtk_entry_set_text(GTK_ENTRY(configDialogData.connection.port), xgnokiiConfig.port);
 
@@ -804,7 +806,7 @@ void GUI_ShowOptions(void)
 
 inline void GUI_ShowAbout(void)
 {
-	gtk_widget_show(AboutDialog);
+	gtk_window_present(GTK_WINDOW(AboutDialog));
 }
 
 

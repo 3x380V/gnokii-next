@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_sms.c,v 1.65 2006-08-15 10:57:20 dforsi Exp $
+  $Id: xgnokii_sms.c,v 1.66 2006-08-15 15:04:40 dforsi Exp $
 
   X G N O K I I
 
@@ -1460,7 +1460,7 @@ static void NewSMS(void)
 
 	RefreshSMSStatus();
 
-	gtk_widget_show(sendSMS.SMSSendWindow);
+	gtk_window_present(GTK_WINDOW(sendSMS.SMSSendWindow));
 }
 
 
@@ -1494,7 +1494,7 @@ static void ForwardSMS(void)
 
 	RefreshSMSStatus();
 
-	gtk_widget_show(sendSMS.SMSSendWindow);
+	gtk_window_present(GTK_WINDOW(sendSMS.SMSSendWindow));
 }
 
 
@@ -1553,7 +1553,7 @@ static void ReplySMS(void)
 	CheckAddressMain();
 	RefreshSMSStatus();
 
-	gtk_widget_show(sendSMS.SMSSendWindow);
+	gtk_window_present(GTK_WINDOW(sendSMS.SMSSendWindow));
 }
 
 static void ActivateSMS(void)
@@ -1633,7 +1633,7 @@ static void NewBC(void)
 
 	RefreshSMSStatus();
 
-	gtk_widget_show(sendSMS.SMSSendWindow);
+	gtk_window_present(GTK_WINDOW(sendSMS.SMSSendWindow));
 }
 
 
