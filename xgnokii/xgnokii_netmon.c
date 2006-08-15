@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_netmon.c,v 1.16 2006-08-15 09:05:01 dforsi Exp $
+  $Id: xgnokii_netmon.c,v 1.17 2006-08-15 10:57:20 dforsi Exp $
 
   X G N O K I I
 
@@ -245,7 +245,7 @@ inline void GUI_ShowNetmon()
 	e->event = Event_NetMonitor;
 	e->data = (gpointer) displayData.curDisp;;
 	GUI_InsertEvent(e);
-	gtk_widget_show(GUI_NetmonWindow);
+	gtk_window_present(GTK_WINDOW(GUI_NetmonWindow));
 }
 
 static GtkItemFactoryEntry menu_items[] = {

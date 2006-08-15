@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_speed.c,v 1.21 2006-04-27 17:57:56 dforsi Exp $
+  $Id: xgnokii_speed.c,v 1.22 2006-08-15 10:57:20 dforsi Exp $
 
   X G N O K I I
 
@@ -499,7 +499,7 @@ static void ExportSpeedDial(void)
 inline void GUI_ShowSpeedDial(void)
 {
 	ReadSpeedDial();
-	gtk_widget_show(GUI_SpeedDialWindow);
+	gtk_window_present(GTK_WINDOW(GUI_SpeedDialWindow));
 }
 
 

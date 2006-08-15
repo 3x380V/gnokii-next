@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_xring.c,v 1.9 2006-02-17 18:24:43 dforsi Exp $
+  $Id: xgnokii_xring.c,v 1.10 2006-08-15 10:57:20 dforsi Exp $
 
   X G N O K I I
 
@@ -1005,5 +1005,6 @@ void GUI_ShowXring(void)
 	gi.pressed = 0;
 
 	gtk_widget_show_all(gi.w);
+	gtk_window_present(GTK_WINDOW(gi.w));
 	gtk_widget_grab_focus(gi.f);
 }

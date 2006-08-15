@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_calendar.c,v 1.30 2006-01-22 17:48:59 pkot Exp $
+  $Id: xgnokii_calendar.c,v 1.31 2006-08-15 10:57:20 dforsi Exp $
 
   X G N O K I I
 
@@ -140,7 +140,7 @@ static inline void CloseCalendar(GtkWidget * w, gpointer data)
 inline void GUI_ShowCalendar()
 {
 	if (phoneMonitor.supported & PM_CALENDAR)
-		gtk_widget_show(GUI_CalendarWindow);
+		gtk_window_present(GTK_WINDOW(GUI_CalendarWindow));
 }
 
 

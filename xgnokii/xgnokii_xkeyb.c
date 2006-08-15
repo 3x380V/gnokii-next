@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_xkeyb.c,v 1.19 2006-02-17 18:24:43 dforsi Exp $
+  $Id: xgnokii_xkeyb.c,v 1.20 2006-08-15 10:57:20 dforsi Exp $
 
   X G N O K I I
 
@@ -187,7 +187,7 @@ void GUI_ShowXkeyb(void)
 			gtk_widget_show(errorDialog.dialog);
 		}
 	}
-	gtk_widget_show(GUI_XkeybWindow);
+	gtk_window_present(GTK_WINDOW(GUI_XkeybWindow));
 }
 
 

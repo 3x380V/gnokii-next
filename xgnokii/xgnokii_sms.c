@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_sms.c,v 1.64 2006-01-15 15:13:27 dforsi Exp $
+  $Id: xgnokii_sms.c,v 1.65 2006-08-15 10:57:20 dforsi Exp $
 
   X G N O K I I
 
@@ -510,7 +510,7 @@ inline void GUI_ShowSMS(void)
 	for (j = i + 1; j < lastfoldercount; j++)
 		gtk_widget_hide(treeFolderItem[j - 1]);
 	lastfoldercount = foldercount;
-	gtk_widget_show(GUI_SMSWindow);
+	gtk_window_present(GTK_WINDOW(GUI_SMSWindow));
 	GUI_RefreshMessageWindow();
 }
 

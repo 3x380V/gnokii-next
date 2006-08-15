@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_data.c,v 1.14 2005-08-10 07:33:43 ja Exp $
+  $Id: xgnokii_data.c,v 1.15 2006-08-15 10:57:20 dforsi Exp $
 
   X G N O K I I
 
@@ -77,7 +77,7 @@ inline void GUI_ShowData(void)
 	}
 	UpdateStatus();
 
-	gtk_widget_show(GUI_DataWindow);
+	gtk_window_present(GTK_WINDOW(GUI_DataWindow));
 }
 
 

@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_contacts.c,v 1.72 2006-05-01 12:57:56 dforsi Exp $
+  $Id: xgnokii_contacts.c,v 1.73 2006-08-15 10:57:20 dforsi Exp $
   
   X G N O K I I
 
@@ -2776,7 +2776,7 @@ inline void GUI_ShowContacts(void)
 	gtk_clist_set_column_visibility(GTK_CLIST(clist), 3,
 					phoneMonitor.supported & PM_CALLERGROUP);
 	GUI_RefreshContacts();
-	gtk_widget_show(GUI_ContactsWindow);
+	gtk_window_present(GTK_WINDOW(GUI_ContactsWindow));
 	/*
 	if (!contactsMemoryInitialized)
 		ReadContacts ();

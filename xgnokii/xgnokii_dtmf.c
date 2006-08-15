@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_dtmf.c,v 1.15 2006-01-15 15:13:27 dforsi Exp $
+  $Id: xgnokii_dtmf.c,v 1.16 2006-08-15 10:57:20 dforsi Exp $
 
   X G N O K I I
 
@@ -199,7 +199,7 @@ static inline void CloseDTMF(GtkWidget * w, gpointer data)
 
 inline void GUI_ShowDTMF()
 {
-	gtk_widget_show(GUI_DTMFWindow);
+	gtk_window_present(GTK_WINDOW(GUI_DTMFWindow));
 }
 
 
