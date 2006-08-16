@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_logos.c,v 1.42 2006-08-15 10:57:20 dforsi Exp $
+  $Id: xgnokii_logos.c,v 1.43 2006-08-16 12:22:41 dforsi Exp $
    
   X G N O K I I
 
@@ -970,6 +970,8 @@ void GetNetworkInfoEvent(GtkWidget * widget)
 		gtk_label_set_text(GTK_LABEL(errorDialog.text), buf);
 		gtk_widget_show(errorDialog.dialog);
 		g_free(buf);
+		/* after the error network_code is undefined but later code won't know */
+		networkInfo.network_code[0] = '\0';
 	}
 
 	/* set new operator name to combo */
