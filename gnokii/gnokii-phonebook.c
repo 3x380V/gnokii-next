@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-phonebook.c,v 1.5 2006-08-17 09:18:01 dforsi Exp $
+  $Id: gnokii-phonebook.c,v 1.6 2006-08-27 22:09:06 pkot Exp $
 
   G N O K I I
 
@@ -224,8 +224,10 @@ int getphonebook(int argc, char *argv[], gn_data *data, struct gn_statemachine *
 						case GN_PHONEBOOK_NUMBER_Work:
 							fprintf(stdout, _("Business number: "));
 							break;
+						case GN_PHONEBOOK_NUMBER_None:
+						case GN_PHONEBOOK_NUMBER_Common:
 						case GN_PHONEBOOK_NUMBER_General:
-							fprintf(stdout, _("Preferred number: "));
+							fprintf(stdout, _("General number: "));
 							break;
 						default:
 							fprintf(stdout, _("Unknown (%d): "), entry.subentries[i].number_type);

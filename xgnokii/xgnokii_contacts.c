@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_contacts.c,v 1.73 2006-08-15 10:57:20 dforsi Exp $
+  $Id: xgnokii_contacts.c,v 1.74 2006-08-27 22:09:06 pkot Exp $
   
   X G N O K I I
 
@@ -1404,6 +1404,8 @@ static void EditNumbers(GtkWidget * widget, EditEntryData *editEntryData)
 		switch (editNumbersData.pbEntry->entry.subentries[i].entry_type) {
 		case GN_PHONEBOOK_ENTRY_Number:
 			switch (editNumbersData.pbEntry->entry.subentries[i].number_type) {
+			case GN_PHONEBOOK_NUMBER_None:
+			case GN_PHONEBOOK_NUMBER_Common:
 			case GN_PHONEBOOK_NUMBER_General:
 				row[2] = _("General");
 				break;
