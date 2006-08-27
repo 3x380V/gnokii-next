@@ -1,6 +1,6 @@
 /*
 
-  $Id: misc.c,v 1.114 2006-08-27 13:27:59 pkot Exp $
+  $Id: misc.c,v 1.115 2006-08-27 21:18:47 pkot Exp $
 
   G N O K I I
 
@@ -141,6 +141,7 @@ static gn_phone_model models[] = {
 	{"3200b", "RH-31", 0 },
 	{"3210",  "NSE-8", PM_NETMONITOR | PM_SPEEDDIAL | PM_SMS | PM_DTMF | PM_KEYBOARD },
 	{"3210",  "NSE-9", PM_SMS | PM_DTMF | PM_KEYBOARD },
+	{"3220",  "RH-37", PM_CALLERGROUP | PM_CALENDAR | PM_SPEEDDIAL | PM_EXTPBK | PM_SMS | PM_FOLDERS },
 	{"3285",  "NSD-1A", 0 },
 	{"3300",  "NEM-1", 0 },
 	{"3300",  "NEM-2", 0 },
