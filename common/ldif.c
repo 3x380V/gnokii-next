@@ -1,6 +1,6 @@
 /*
 
-  $Id: ldif.c,v 1.16 2006-08-06 20:34:44 pkot Exp $
+  $Id: ldif.c,v 1.17 2006-08-28 11:37:23 pkot Exp $
   
   G N O K I I
 
@@ -128,6 +128,8 @@ GNOKII_API int gn_phonebook2ldif(FILE *f, gn_phonebook_entry *entry)
 			case GN_PHONEBOOK_NUMBER_Work:
 				ldif_entry_write(f, "workPhone", entry->subentries[i].data.number, 1);
 				break;
+			case GN_PHONEBOOK_NUMBER_None:
+			case GN_PHONEBOOK_NUMBER_Common:
 			case GN_PHONEBOOK_NUMBER_General:
 				ldif_entry_write(f, "telephoneNumber", entry->subentries[i].data.number, 1);
 				break;
@@ -221,6 +223,8 @@ GNOKII_API int gn_ldif2phonebook(FILE *f, gn_phonebook_entry *entry)
 	for (i = 0; i < entry->subentries_count && entry->number[0] == 0; i++) {
 		if (entry->subentries[i].entry_type == GN_PHONEBOOK_ENTRY_Number) {
 			switch (entry->subentries[i].number_type) {
+			case GN_PHONEBOOK_NUMBER_None:
+			case GN_PHONEBOOK_NUMBER_Common:
 			case GN_PHONEBOOK_NUMBER_General:
 			case GN_PHONEBOOK_NUMBER_Work: 
 			case GN_PHONEBOOK_NUMBER_Home:
