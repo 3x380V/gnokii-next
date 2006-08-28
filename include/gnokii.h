@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.h,v 1.103 2006-08-10 22:17:40 pkot Exp $
+  $Id: gnokii.h,v 1.104 2006-08-28 21:09:19 deller Exp $
 
   G N O K I I
 
@@ -65,10 +65,10 @@ typedef unsigned char uint8_t;
 #endif
 
 /* if you change those numbers, change them in common/Makefile as well! */
-#define LIBGNOKII_VERSION_STRING "3.0.0"
+#define LIBGNOKII_VERSION_STRING "3.0.1"
 #define LIBGNOKII_VERSION_MAJOR 3
 #define LIBGNOKII_VERSION_MINOR 0
-#define LIBGNOKII_VERSION_RELEASE 0
+#define LIBGNOKII_VERSION_RELEASE 1
 #define LIBGNOKII_MAKE_VERSION( a,b,c ) (((a) << 16) | ((b) << 8) | (c))
 
 #define LIBGNOKII_VERSION \

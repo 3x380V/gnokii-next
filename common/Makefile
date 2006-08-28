@@ -1,5 +1,5 @@
 #
-# $Id: Makefile,v 1.87 2006-04-20 06:49:54 deller Exp $
+# $Id: Makefile,v 1.88 2006-08-28 21:09:18 deller Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -20,7 +20,7 @@ include $(TOPDIR)/Makefile.global
 # REMEMBER: if you change the numbers below, please change them in gnokii.h as well.
 GNOKII_MAJOR = 3
 GNOKII_MINOR = 0
-GNOKII_RELEASE = 0
+GNOKII_RELEASE = 1
 ifdef WIN32_CROSS
 LIBTOOL_UNDEF = -no-undefined
 LIBTOOL_VER = -version-info $(GNOKII_MAJOR):$(GNOKII_RELEASE):$(GNOKII_MINOR) -avoid-version
