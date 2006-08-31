@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-networks.c,v 1.43 2006-06-11 16:39:48 deller Exp $
+  $Id: gsm-networks.c,v 1.44 2006-08-31 19:35:22 dforsi Exp $
 
   G N O K I I
 
@@ -267,6 +267,7 @@ static gn_network networks[] = {
 	{"222 01", "Telecom Italia Mobile"},
 	{"222 10", "vodafone"},
 	{"222 88", "Wind Telecomunicazioni SpA"},
+	{"222 98", "Blu SpA"}, /* defunct year 2002 */
 	{"222 99", "H3G"},
 	{"226 01", "CONNEX GSM"},
 	{"226 03", "Cosmorom S.A."},
