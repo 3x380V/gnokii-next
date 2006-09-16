@@ -1,5 +1,5 @@
 /*
-  $Id: libfunctions.c,v 1.28 2006-09-03 10:02:52 dforsi Exp $
+  $Id: libfunctions.c,v 1.29 2006-09-16 10:29:07 dforsi Exp $
 
   G N O K I I
 
@@ -62,7 +62,7 @@ GNOKII_API gn_error gn_lib_phoneprofile_load_from_file(const char *configfile, c
 	*state = NULL;
 
 	if (!gn_cfg_info) {
-		if (configfile)
+		if (configfile && *configfile)
 			error = gn_cfg_file_read(configfile);
 		else
 			error = gn_cfg_read_default();
