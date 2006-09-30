@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-settings.c,v 1.2 2006-08-06 20:42:21 pkot Exp $
+  $Id: gnokii-settings.c,v 1.3 2006-09-30 17:07:23 pkot Exp $
 
   G N O K I I
 
@@ -80,7 +80,7 @@ int setdatetime(int argc, char *argv[], gn_data *data, struct gn_statemachine *s
 	date.minute = now->tm_min;
 	date.second = now->tm_sec;
 
-	switch (argc - optind) {
+	switch (argc - optind - 1) {
 	case 4:
 		date.minute = atoi(argv[optind+4]);
 	case 3:
