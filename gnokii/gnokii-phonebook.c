@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-phonebook.c,v 1.6 2006-08-27 22:09:06 pkot Exp $
+  $Id: gnokii-phonebook.c,v 1.7 2006-09-30 17:13:41 pkot Exp $
 
   G N O K I I
 
@@ -485,7 +485,7 @@ int deletephonebook(int argc, char *argv[], gn_data *data, struct gn_statemachin
 	char *memory_type_string;
 	int i, first_location, last_location;
 
-	if (argc < optind + 3)
+	if (argc < 3)
 		deletephonebook_usage(stderr, -1);
 
 	/* Handle command line args that set memory type and location. */
