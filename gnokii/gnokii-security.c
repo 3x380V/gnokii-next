@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-security.c,v 1.3 2006-10-03 21:26:38 pkot Exp $
+  $Id: gnokii-security.c,v 1.4 2006-10-03 21:40:18 pkot Exp $
 
   G N O K I I
 
@@ -54,13 +54,15 @@ void security_usage(FILE *f)
 		     "Security options:\n"
 		     "          --identify\n"
 		     "          --getlocksinfo\n"
+		));
 #ifdef SECURITY
+	fprintf(f, _(
 		     "          --entersecuritycode PIN|PIN2|PUK|PUK2\n"
 		     "          --getsecuritycodestatus\n"
 		     "          --getsecuritycode\n"
 		     "          --changesecuritycode PIN|PIN2|PUK|PUK2\n"
-#endif
 		));
+#endif
 }
 
 int identify(struct gn_statemachine *state)
