@@ -1,6 +1,6 @@
 /*
 
-  $Id: compat.h,v 1.48 2006-10-03 21:26:38 pkot Exp $
+  $Id: compat.h,v 1.49 2006-10-03 21:35:53 pkot Exp $
 
   G N O K I I
 
@@ -101,6 +101,10 @@
 
 #ifdef HAVE_UNISTD_H
 #  include <unistd.h>
+#endif
+
+#ifdef HAVE_TERMIOS_H
+#  include <termios.h>
 #endif
 
 /*
