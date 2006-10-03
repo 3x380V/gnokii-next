@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-utils.c,v 1.2 2006-08-06 20:42:21 pkot Exp $
+  $Id: gnokii-utils.c,v 1.3 2006-10-03 21:26:38 pkot Exp $
 
   G N O K I I
 
@@ -43,7 +43,6 @@
 
 #include <stdio.h>
 #include <termios.h>
-#include <unistd.h>
 #include <signal.h>
 
 #include "gnokii-app.h"

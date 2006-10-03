@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-profile.c,v 1.3 2006-08-09 21:59:59 pkot Exp $
+  $Id: gnokii-profile.c,v 1.4 2006-10-03 21:26:38 pkot Exp $
 
   G N O K I I
 
@@ -42,7 +42,6 @@
 #include "compat.h"
 
 #include <stdio.h>
-#include <unistd.h>
 #define _GNU_SOURCE
 #include <getopt.h>
 

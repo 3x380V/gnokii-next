@@ -1,6 +1,6 @@
 /*
  *
- * $Id: unixirda.c,v 1.49 2006-01-15 23:50:04 pkot Exp $
+ * $Id: unixirda.c,v 1.50 2006-10-03 21:26:37 pkot Exp $
  *
  * G N O K I I
  *
@@ -32,11 +32,11 @@
 #include "config.h"
 #include "misc.h"
 #include "gnokii.h"
+#include "compat.h"
 
 #ifdef HAVE_IRDA
 
 #include <stdlib.h>
-#include <unistd.h>
 #include <stdio.h>
 #include <fcntl.h>
 #include <errno.h>

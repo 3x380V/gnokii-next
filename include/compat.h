@@ -1,6 +1,6 @@
 /*
 
-  $Id: compat.h,v 1.47 2006-10-03 20:49:32 pkot Exp $
+  $Id: compat.h,v 1.48 2006-10-03 21:26:38 pkot Exp $
 
   G N O K I I
 
@@ -97,6 +97,10 @@
 
 #ifdef HAVE_LIMITS_H
 #  include <limits.h>
+#endif
+
+#ifdef HAVE_UNISTD_H
+#  include <unistd.h>
 #endif
 
 /*

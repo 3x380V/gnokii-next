@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_sms.c,v 1.66 2006-08-15 15:04:40 dforsi Exp $
+  $Id: xgnokii_sms.c,v 1.67 2006-10-03 21:26:38 pkot Exp $
 
   X G N O K I I
 
@@ -30,7 +30,9 @@
   Copyright (C) 2003      Uli Hopp
 
 */
-#include <unistd.h>
+#ifndef WIN32
+#  include <unistd.h>
+#endif
 #include <locale.h>
 #include <fcntl.h>
 #include <pthread.h>

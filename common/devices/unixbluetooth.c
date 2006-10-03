@@ -1,6 +1,6 @@
 /*
 
-  $Id: unixbluetooth.c,v 1.14 2006-01-07 18:41:59 dforsi Exp $
+  $Id: unixbluetooth.c,v 1.15 2006-10-03 21:26:37 pkot Exp $
  
   G N O K I I
 
@@ -37,7 +37,6 @@
 #if defined(HAVE_BLUETOOTH_BLUEZ) || defined(HAVE_BLUETOOTH_NETGRAPH)
 
 #include <stdlib.h>
-#include <unistd.h>
 #include <stdio.h>
 #include <fcntl.h>
 #include <errno.h>

@@ -1,6 +1,6 @@
 /*
 
-  $Id: device.h,v 1.26 2006-06-11 16:39:11 deller Exp $
+  $Id: device.h,v 1.27 2006-10-03 21:26:38 pkot Exp $
 
   G N O K I I
 
@@ -35,10 +35,6 @@
 #include "compat.h"
 #include "misc.h"
 #include "gnokii.h"
-
-#ifdef HAVE_UNISTD_H
-#  include <unistd.h>
-#endif
 
 GNOKII_API int device_getfd(struct gn_statemachine *state);
 

@@ -1,6 +1,6 @@
 /*
 
-  $Id: lowlevel.c,v 1.45 2006-08-27 22:14:14 pkot Exp $
+  $Id: lowlevel.c,v 1.46 2006-10-03 21:26:38 pkot Exp $
 
   S M S D
 
@@ -27,12 +27,13 @@
 
 */
 
-#include <unistd.h>
+#include "config.h"
 #include <pthread.h>
 #include <string.h>
 #include <glib.h>
 #include "misc.h"
 #include "gnokii.h"
+#include "compat.h"
 #include "smsd.h"
 #include "lowlevel.h"
 

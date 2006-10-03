@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk3110.c,v 1.46 2006-01-07 18:41:59 dforsi Exp $
+  $Id: nk3110.c,v 1.47 2006-10-03 21:26:38 pkot Exp $
 
   G N O K I I
 
@@ -36,10 +36,6 @@
 #include <string.h>
 #include <stdlib.h>
 #include <ctype.h>
-
-#ifdef HAVE_UNISTD_H
-#  include <unistd.h>
-#endif
 
 #include "compat.h"
 #include "misc.h"

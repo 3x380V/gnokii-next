@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnapplet.c,v 1.32 2006-04-29 15:06:36 pkot Exp $
+  $Id: gnapplet.c,v 1.33 2006-10-03 21:26:37 pkot Exp $
 
   G N O K I I
 
@@ -35,10 +35,7 @@
 #include <ctype.h>
 #include <assert.h>
 
-#ifdef HAVE_UNISTD_H
-#  include <unistd.h>
-#endif
-
+#include "compat.h"
 #include "misc.h"
 #include "phones/generic.h"
 #include "phones/gnapplet.h"

@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_lowlevel.c,v 1.95 2006-04-25 21:52:49 deller Exp $
+  $Id: xgnokii_lowlevel.c,v 1.96 2006-10-03 21:26:38 pkot Exp $
   
   X G N O K I I
 
@@ -30,7 +30,9 @@
 
 */
 
-#include <unistd.h>
+#ifndef WIN32
+#  include <unistd.h>
+#endif
 #include <pthread.h>
 #include <string.h>
 #include <glib.h>

@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6160.c,v 1.23 2005-05-15 20:15:34 pkot Exp $
+  $Id: nk6160.c,v 1.24 2006-10-03 21:26:38 pkot Exp $
 
   G N O K I I
 
@@ -34,10 +34,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 
-#ifdef HAVE_UNISTD_H
-#  include <unistd.h>
-#endif
-
+#include "compat.h"
 #include "misc.h"
 #include "phones/generic.h"
 #include "phones/nokia.h"

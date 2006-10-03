@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_xring.c,v 1.10 2006-08-15 10:57:20 dforsi Exp $
+  $Id: xgnokii_xring.c,v 1.11 2006-10-03 21:26:38 pkot Exp $
 
   X G N O K I I
 
@@ -52,7 +52,9 @@
  * HISTORY 
  */
 
-#include <unistd.h>
+#ifndef WIN32
+#  include <unistd.h>
+#endif
 #include <stdio.h>
 #include <assert.h>
 #include <errno.h>

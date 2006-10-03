@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-wap.c,v 1.5 2006-08-13 22:25:46 dforsi Exp $
+  $Id: gnokii-wap.c,v 1.6 2006-10-03 21:26:38 pkot Exp $
 
   G N O K I I
 
@@ -42,7 +42,6 @@
 #include "compat.h"
 
 #include <stdio.h>
-#include <unistd.h>
 #define _GNU_SOURCE
 #include <getopt.h>
 

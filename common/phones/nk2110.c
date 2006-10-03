@@ -1,6 +1,6 @@
 /* -*- linux-c -*-
 
-  $Id: nk2110.c,v 1.39 2006-01-15 15:13:26 dforsi Exp $
+  $Id: nk2110.c,v 1.40 2006-10-03 21:26:38 pkot Exp $
 
   G N O K I I
 
@@ -36,7 +36,6 @@
 #include <termios.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
 #include <fcntl.h>
 #include <ctype.h>
 #include <signal.h>

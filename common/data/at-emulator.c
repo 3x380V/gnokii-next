@@ -1,6 +1,6 @@
 /*
 
-  $Id: at-emulator.c,v 1.44 2005-12-30 00:13:21 pkot Exp $
+  $Id: at-emulator.c,v 1.45 2006-10-03 21:26:37 pkot Exp $
 
   G N O K I I
 
@@ -42,7 +42,6 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <time.h>
-#include <unistd.h>
 #include <ctype.h>
 
 #ifndef WIN32
@@ -52,6 +51,7 @@
 #include "config.h"
 #include "misc.h"
 #include "gnokii.h"
+#include "compat.h"
 #include "data/at-emulator.h"
 #include "data/datapump.h"
 

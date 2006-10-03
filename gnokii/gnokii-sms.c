@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-sms.c,v 1.4 2006-08-11 10:49:46 dforsi Exp $
+  $Id: gnokii-sms.c,v 1.5 2006-10-03 21:26:38 pkot Exp $
 
   G N O K I I
 
@@ -43,7 +43,6 @@
 
 #include <stdio.h>
 #include <sys/stat.h>
-#include <unistd.h>
 #define _GNU_SOURCE
 #include <getopt.h>
 #include <time.h>

@@ -1,6 +1,6 @@
 /*
 
-  $Id: file.c,v 1.16 2006-08-10 19:10:14 pkot Exp $
+  $Id: file.c,v 1.17 2006-10-03 21:26:38 pkot Exp $
 
   S M S D
 
@@ -28,10 +28,11 @@
 
 */
 
+#include "config.h"
+
 #include <stdio.h>
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <unistd.h>
 #include <dirent.h>
 #include <string.h>
 #include <glib.h>

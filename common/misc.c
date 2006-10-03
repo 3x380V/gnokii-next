@@ -1,6 +1,6 @@
 /*
 
-  $Id: misc.c,v 1.116 2006-08-28 21:43:24 pkot Exp $
+  $Id: misc.c,v 1.117 2006-10-03 21:26:37 pkot Exp $
 
   G N O K I I
 
@@ -47,10 +47,6 @@
 #include <signal.h>
 
 #include "compat.h"
-
-#ifdef HAVE_UNISTD_H
-#  include <unistd.h>
-#endif
 
 #include "misc.h"
 #include "gnokii.h"

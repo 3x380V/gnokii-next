@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-phonebook.c,v 1.8 2006-10-03 21:04:26 pkot Exp $
+  $Id: gnokii-phonebook.c,v 1.9 2006-10-03 21:26:38 pkot Exp $
 
   G N O K I I
 
@@ -42,7 +42,6 @@
 #include "compat.h"
 
 #include <stdio.h>
-#include <unistd.h>
 #define _GNU_SOURCE
 #include <getopt.h>
 

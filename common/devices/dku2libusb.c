@@ -1,6 +1,6 @@
 /*
 
-  $Id: dku2libusb.c,v 1.3 2006-05-02 18:16:28 pkot Exp $
+  $Id: dku2libusb.c,v 1.4 2006-10-03 21:26:37 pkot Exp $
  
   G N O K I I
 
@@ -65,7 +65,6 @@ int fbusdku2usb_select(struct timeval *timeout, struct gn_statemachine *state)
 #else
 
 #include <stdlib.h>
-#include <unistd.h>
 #include <stdio.h>
 #include <fcntl.h>
 #include <errno.h>

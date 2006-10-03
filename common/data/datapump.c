@@ -1,6 +1,6 @@
 /*
 
-  $Id: datapump.c,v 1.24 2005-04-20 20:30:18 pkot Exp $
+  $Id: datapump.c,v 1.25 2006-10-03 21:26:37 pkot Exp $
 
   G N O K I I
 
@@ -45,11 +45,11 @@
 #include <string.h>
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <unistd.h>
 
 
 #include "misc.h"
 #include "gnokii.h"
+#include "compat.h"
 #include "device.h"
 #include "data/at-emulator.h"
 #include "data/datapump.h"
