@@ -4,7 +4,7 @@ dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janík ml.
 dnl                2000 Karel Zak, Pawe³ Kot
 dnl                2002 BORBELY Zoltan
 dnl
-dnl  $Id: configure.in,v 1.158 2006-06-18 14:14:42 deller Exp $
+dnl  $Id: configure.in,v 1.159 2006-10-03 21:00:00 pkot Exp $
 dnl
 
 AC_INIT(gnokii/gnokii.c)
@@ -17,6 +17,21 @@ AC_PREFIX_DEFAULT("/usr/local")
 dnl ======================== Checks for programs.
 AC_PROG_CC
 AC_PROG_CPP
+
+dnl -----------------------------
+dnl Checks for FreeBSD Build
+dnl -----------------------------
+AC_MSG_CHECKING(if building on FreeBSD)
+
+if test `uname -s` = "FreeBSD" ; then
+	AC_MSG_RESULT(yes)
+	CPPFLAGS="$CFLAGS -I/usr/local/include"
+	LDFLAGS="$LDFLAGS -L/usr/local/lib"
+else
+	AC_MSG_RESULT(no)
+fi
+
+
 AC_PROG_LEX
 AC_PATH_PROG(RM, rm, no)
 AC_PATH_PROG(FIND, find, no)
