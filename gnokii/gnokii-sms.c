@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-sms.c,v 1.5 2006-10-03 21:26:38 pkot Exp $
+  $Id: gnokii-sms.c,v 1.6 2006-10-03 21:38:47 pkot Exp $
 
   G N O K I I
 
@@ -40,6 +40,11 @@
 #include "config.h"
 #include "misc.h"
 #include "compat.h"
+
+#if defined(WIN32) && !defined(CYGWIN)
+#  include <process.h>
+#  define getpid _getpid
+#endif
 
 #include <stdio.h>
 #include <sys/stat.h>
