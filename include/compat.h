@@ -1,6 +1,6 @@
 /*
 
-  $Id: compat.h,v 1.46 2006-08-10 22:17:40 pkot Exp $
+  $Id: compat.h,v 1.47 2006-10-03 20:49:32 pkot Exp $
 
   G N O K I I
 
@@ -93,6 +93,10 @@
 
 #ifdef HAVE_WCHAR_H
 #  include <wchar.h>
+#endif
+
+#ifdef HAVE_LIMITS_H
+#  include <limits.h>
 #endif
 
 /*
