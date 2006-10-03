@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-phonebook.c,v 1.7 2006-09-30 17:13:41 pkot Exp $
+  $Id: gnokii-phonebook.c,v 1.8 2006-10-03 21:04:26 pkot Exp $
 
   G N O K I I
 
@@ -197,6 +197,11 @@ int getphonebook(int argc, char *argv[], gn_data *data, struct gn_statemachine *
 					break;
 				}
 				fprintf(stdout, "\n");
+
+				/* FIXME: AT driver doesn't set subentries */
+				if (!entry.subentries_count && entry.number) {
+					fprintf(stdout, _("Number: %s\n"), entry.number);
+				}
 
 				dprintf("subentries count: %d\n", entry.subentries_count);
 				for (i = 0; i < entry.subentries_count; i++) {
