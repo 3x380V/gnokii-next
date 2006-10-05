@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-sms.c,v 1.151 2006-08-08 20:06:29 pkot Exp $
+  $Id: gsm-sms.c,v 1.152 2006-10-05 20:44:42 pkot Exp $
 
   G N O K I I
 
@@ -141,7 +141,7 @@ GNOKII_API void gn_sms_default_deliver(gn_sms *sms)
 static char *sms_timestamp_print(u8 *number)
 {
 #ifdef DEBUG
-#define LOCAL_DATETIME_MAX_LENGTH 23
+#define LOCAL_DATETIME_MAX_LENGTH 26
 	static char buffer[LOCAL_DATETIME_MAX_LENGTH];
 	char buf[5];
 	int i;
