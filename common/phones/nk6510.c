@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.c,v 1.219 2006-10-14 19:41:39 pkot Exp $
+  $Id: nk6510.c,v 1.220 2006-10-15 18:41:02 pkot Exp $
 
   G N O K I I
 
@@ -813,7 +813,9 @@ static void ParseLayout(unsigned char *message, gn_data *data)
 		case 0x80: /* User Data */
 			if ((data->raw_sms->type != GN_SMS_MT_Picture) && (data->raw_sms->type != GN_SMS_MT_PictureTemplate)) { 
 				/* Ignore the found user_data block for pictures */
-				data->raw_sms->length = block[2];
+				dprintf("block[2]: %02x\n", block[2]);
+				dprintf("block[3]: %02x\n", block[3]);
+				data->raw_sms->length = block[3];
 				memcpy(data->raw_sms->user_data, block + 4, block[2]);
 			}
 			break;
