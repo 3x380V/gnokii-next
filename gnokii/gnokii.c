@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.469 2006-08-09 19:52:19 pkot Exp $
+  $Id: gnokii.c,v 1.470 2006-10-16 21:10:11 pkot Exp $
 
   G N O K I I
 
@@ -531,7 +531,7 @@ static int parse_options(int argc, char *argv[])
 		{ "reset",              required_argument, NULL, OPT_RESET },
 
 		/* Set logo */
-		{ "setlogo",            optional_argument, NULL, OPT_SETLOGO },
+		{ "setlogo",            required_argument, NULL, OPT_SETLOGO },
 
 		/* Get logo */
 		{ "getlogo",            required_argument, NULL, OPT_GETLOGO },
@@ -740,11 +740,10 @@ static int parse_options(int argc, char *argv[])
 		configmodel = optarg;
 		return parse_options(argc, argv);
 	case OPT_VIEWLOGO:
-		rc = viewlogo(optarg);
-		break;
+		return viewlogo(optarg);
 	case OPT_LISTNETWORKS:
 		list_gsm_networks();
-		break;
+		return GN_ERR_NONE;
 	}
 
 	/* Initialise the code for the GSM interface. */
