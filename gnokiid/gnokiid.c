@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokiid.c,v 1.48 2006-08-14 14:47:33 dforsi Exp $
+  $Id: gnokiid.c,v 1.49 2006-10-19 12:02:44 dforsi Exp $
 
   G N O K I I
 
@@ -95,6 +95,7 @@ int main(int argc, char *argv[])
 
 	/* For GNU gettext */
 #ifdef ENABLE_NLS
+	setlocale(LC_ALL, "");
 	textdomain("gnokii");
 #endif
 
