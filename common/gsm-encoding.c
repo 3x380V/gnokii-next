@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-encoding.c,v 1.72 2006-07-31 20:38:13 pkot Exp $
+  $Id: gsm-encoding.c,v 1.73 2006-10-24 18:41:00 pkot Exp $
 
   G N O K I I
 
@@ -158,7 +158,7 @@ static int char_mbtowc(wchar_t *dst, const char *src, int maxlen, MBSTATE *mbs)
 	pin = (char *)src;
 	pout = (char *)dst;
 	inlen = 4;
-	outlen = 4;
+	outlen = sizeof(wchar_t);
 
 	cd = iconv_open("WCHAR_T", gn_char_get_encoding());
 	nconv = iconv(cd, &pin, &inlen, &pout, &outlen);
@@ -186,7 +186,7 @@ static int char_wctomb(char *dst, wchar_t src, MBSTATE *mbs)
 
 	pin = (char *)&src;
 	pout = (char *)dst;
-	inlen = 4;
+	inlen = sizeof(wchar_t);
 	outlen = 4;
 
 	cd = iconv_open(gn_char_get_encoding(), "WCHAR_T");
