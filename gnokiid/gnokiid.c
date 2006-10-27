@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokiid.c,v 1.50 2006-10-19 16:05:35 dforsi Exp $
+  $Id: gnokiid.c,v 1.51 2006-10-27 07:03:11 pkot Exp $
 
   G N O K I I
 
@@ -41,6 +41,12 @@
 #include <sys/types.h>
 #include <sys/time.h>
 #include <string.h>
+
+#include "config.h"
+
+#ifdef ENABLE_NLS
+#  include <locale.h>
+#endif
 
 #include "misc.h"
 #include "gnokii-internal.h"
