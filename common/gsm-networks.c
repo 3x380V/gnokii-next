@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-networks.c,v 1.44 2006-08-31 19:35:22 dforsi Exp $
+  $Id: gsm-networks.c,v 1.45 2006-10-29 18:09:09 dforsi Exp $
 
   G N O K I I
 
@@ -321,7 +321,6 @@ static gn_network networks[] = {
 	{"250 01", "Mobile Telesystems"},
 	{"250 01", "SANTEL"},
 	{"250 01", "Tambov RUS"},
-	{"250 02", "Megafon"},
 	{"250 02", "MegaFon"},
 	{"250 02", "MegaFon Moscow"},
 	{"250 03", "NCC"},
