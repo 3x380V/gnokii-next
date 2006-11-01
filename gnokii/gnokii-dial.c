@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-dial.c,v 1.4 2006-10-03 21:26:38 pkot Exp $
+  $Id: gnokii-dial.c,v 1.5 2006-11-01 12:43:49 dforsi Exp $
 
   G N O K I I
 
@@ -80,7 +80,7 @@ int getspeeddial(char *number, gn_data *data, struct gn_statemachine *state)
 
 	switch (error) {
 	case GN_ERR_NONE:
-		fprintf(stderr, _("SpeedDial nr. %d: %d:%d\n"), speeddial.number, speeddial.memory_type, speeddial.location);
+		fprintf(stdout, _("SpeedDial nr. %d: %d:%d\n"), speeddial.number, speeddial.memory_type, speeddial.location);
 		break;
 	default:
 		fprintf(stderr, _("Error: %s\n"), gn_error_print(error));
@@ -119,7 +119,7 @@ int setspeeddial(char *argv[], gn_data *data, struct gn_statemachine *state)
 
 	switch (error) {
 	case GN_ERR_NONE:
-		fprintf(stderr, _("Successfully written!\n"));
+		fprintf(stdout, _("Successfully written!\n"));
 		break;
 	default:
 		fprintf(stderr, _("Error: %s\n"), gn_error_print(error));
