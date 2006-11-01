@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-settings.c,v 1.4 2006-10-03 21:26:38 pkot Exp $
+  $Id: gnokii-settings.c,v 1.5 2006-11-01 17:18:01 pkot Exp $
 
   G N O K I I
 
@@ -42,7 +42,9 @@
 #include "compat.h"
 
 #include <stdio.h>
-#define _GNU_SOURCE
+#ifndef _GNU_SOURCE
+#  define _GNU_SOURCE 1
+#endif
 #include <getopt.h>
 #include <time.h>
 

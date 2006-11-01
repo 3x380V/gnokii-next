@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii.c,v 1.88 2006-08-15 15:04:59 dforsi Exp $
+  $Id: xgnokii.c,v 1.89 2006-11-01 17:18:01 pkot Exp $
   
   X G N O K I I
 
@@ -33,7 +33,9 @@
 
 #include "config.h"
 #ifdef HAVE_ASPRINTF
-#  define _GNU_SOURCE
+#  ifndef _GNU_SOURCE 
+#    define _GNU_SOURCE 1
+#  endif
 #  include <stdio.h>
 #endif
 
