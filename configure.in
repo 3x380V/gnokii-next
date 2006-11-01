@@ -4,7 +4,7 @@ dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janík ml.
 dnl                2000 Karel Zak, Pawe³ Kot
 dnl                2002 BORBELY Zoltan
 dnl
-dnl  $Id: configure.in,v 1.160 2006-11-01 20:33:05 pkot Exp $
+dnl  $Id: configure.in,v 1.161 2006-11-01 20:38:57 pkot Exp $
 dnl
 
 AC_INIT(gnokii/gnokii.c)
@@ -31,6 +31,7 @@ else
 	AC_MSG_RESULT(no)
 fi
 
+AC_GNU_SOURCE
 
 AC_PROG_LEX
 AC_PATH_PROG(RM, rm, no)
