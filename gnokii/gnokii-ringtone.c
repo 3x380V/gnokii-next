@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-ringtone.c,v 1.6 2006-11-01 14:15:55 pkot Exp $
+  $Id: gnokii-ringtone.c,v 1.7 2006-11-01 16:28:22 pkot Exp $
 
   G N O K I I
 
@@ -197,6 +197,11 @@ int getringtone(int argc, char *argv[], gn_data *data, struct gn_statemachine *s
 			getringtone_usage(stderr, -1); /* FIXME */
 			return -1;
 		}
+	}
+
+	if (argc > optind + 1) {
+		getringtone_usage(stderr, -1);
+		return -1;
 	}
 
 	if (raw)
