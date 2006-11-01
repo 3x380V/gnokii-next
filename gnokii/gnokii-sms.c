@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-sms.c,v 1.7 2006-11-01 17:18:01 pkot Exp $
+  $Id: gnokii-sms.c,v 1.8 2006-11-01 22:53:40 dforsi Exp $
 
   G N O K I I
 
@@ -63,7 +63,7 @@ void sms_usage(FILE *f)
 {
 	fprintf(f, _("SMS options:\n"
 		     "          --sendsms destination [--smsc message_center_number |\n"
-		     "                 --smscno message_center_index] [-r|--remote] [-8|8bit]\n"
+		     "                 --smscno message_center_index] [-r|--report] [-8|8bit]\n"
 		     "                 [-C|--class n] [-v|--validity n] [-l|--long n]\n"
 		     "                 [-i|--imelody] [-a|--animation file;file;file;file]\n"
 		     "                 [-o|--concat this;total;serial] [-w|--wappush url]\n"
