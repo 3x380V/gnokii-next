@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.196 2006-11-01 23:28:37 dforsi Exp $
+  $Id: nk6100.c,v 1.197 2006-11-04 14:33:32 pkot Exp $
 
   G N O K I I
 
@@ -1250,9 +1250,10 @@ static gn_error SetSMSCenter(gn_data *data, struct gn_statemachine *state)
 	gn_sms_message_center *smsc;
 	unsigned char *pos;
 
-	if ((smsc->id < 1) || (smsc->id > 255)) return GN_ERR_INVALIDLOCATION;
-
 	smsc = data->message_center;
+	if ((smsc->id < 1) || (smsc->id > 255))
+		return GN_ERR_INVALIDLOCATION;
+
 	pos = req+5;
 	*pos++ = smsc->id;
 	pos++;
