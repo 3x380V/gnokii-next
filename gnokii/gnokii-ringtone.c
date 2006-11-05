@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-ringtone.c,v 1.9 2006-11-01 17:18:01 pkot Exp $
+  $Id: gnokii-ringtone.c,v 1.10 2006-11-05 22:05:53 dforsi Exp $
 
   G N O K I I
 
@@ -415,14 +415,10 @@ void ringtoneconvert_usage(FILE *f, int exitval)
 	exit(exitval);
 }
 
-int ringtoneconvert(int argc, char *argv[], gn_data *data, struct gn_statemachine *state)
+int ringtoneconvert(int argc, char *argv[])
 {
 	gn_ringtone ringtone;
 	gn_error error;
-
-	memset(&ringtone, 0, sizeof(ringtone));
-	gn_data_clear(data);
-	data->ringtone = &ringtone;
 
 	if (argc != optind + 1) {
 		ringtoneconvert_usage(stderr, -1);

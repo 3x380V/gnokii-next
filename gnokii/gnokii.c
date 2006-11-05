@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.470 2006-10-16 21:10:11 pkot Exp $
+  $Id: gnokii.c,v 1.471 2006-11-05 22:05:53 dforsi Exp $
 
   G N O K I I
 
@@ -744,6 +744,8 @@ static int parse_options(int argc, char *argv[])
 	case OPT_LISTNETWORKS:
 		list_gsm_networks();
 		return GN_ERR_NONE;
+	case OPT_RINGTONECONVERT:
+		return ringtoneconvert(argc, argv);
 	}
 
 	/* Initialise the code for the GSM interface. */
@@ -927,9 +929,6 @@ static int parse_options(int argc, char *argv[])
 		break;
 	case OPT_PLAYRINGTONE:
 		rc = playringtone(argc, argv, data, state);
-		break;
-	case OPT_RINGTONECONVERT:
-		rc = ringtoneconvert(argc, argv, data, state);
 		break;
 	case OPT_GETRINGTONELIST:
 		rc = getringtonelist(data, state);
