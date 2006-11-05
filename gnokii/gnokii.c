@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.471 2006-11-05 22:05:53 dforsi Exp $
+  $Id: gnokii.c,v 1.472 2006-11-05 22:09:02 dforsi Exp $
 
   G N O K I I
 
@@ -749,7 +749,7 @@ static int parse_options(int argc, char *argv[])
 	}
 
 	/* Initialise the code for the GSM interface. */
-	if (c != OPT_VIEWLOGO && c != OPT_FOOGLE && c != OPT_LISTNETWORKS && c != OPT_RINGTONECONVERT)
+	if (c != OPT_FOOGLE)
 		businit();
 
 	switch (c) {
