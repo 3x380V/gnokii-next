@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-sms.c,v 1.155 2006-11-06 13:48:26 dforsi Exp $
+  $Id: gsm-sms.c,v 1.156 2006-11-06 14:01:43 dforsi Exp $
 
   G N O K I I
 
@@ -1242,14 +1242,7 @@ gn_error sms_prepare(gn_sms *sms, gn_sms_raw *rawsms)
 	}
 	/* Encoding the header */
 	rawsms->report = sms->delivery_report;
-	if (sms->remote.type == GN_GSM_NUMBER_Alphanumeric) {
-		unsigned int dummy;
-		/* convert packed length in semi octets */
-		rawsms->remote_number[0] = 2 * char_7bit_pack(0, sms->remote.number, rawsms->remote_number + 2, &dummy);
-		rawsms->remote_number[1] = sms->remote.type;
-	} else {
 		rawsms->remote_number[0] = char_semi_octet_pack(sms->remote.number, rawsms->remote_number + 1, sms->remote.type);
-	}
 	rawsms->validity_indicator = GN_SMS_VP_RelativeFormat;
 	rawsms->validity[0] = 0xa9;
 
