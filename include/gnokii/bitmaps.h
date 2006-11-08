@@ -1,6 +1,6 @@
 /*
 
-  $Id: bitmaps.h,v 1.30 2006-06-11 16:39:11 deller Exp $
+  $Id: bitmaps.h,v 1.31 2006-11-08 19:45:37 dforsi Exp $
 
   G N O K I I
 
@@ -39,7 +39,7 @@
 #include <gnokii/error.h>
 #include <gnokii/common.h>
 
-/* Bitmap types. These do *not* corespond to headers[] in gsm-sms.c. */
+/* Bitmap types. These do *not* correspond to headers[] in gsm-sms.c. */
 
 typedef enum {
 	GN_BMP_None = 0,

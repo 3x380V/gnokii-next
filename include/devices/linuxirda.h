@@ -28,11 +28,11 @@
  ********************************************************************/
 
 /*
- * $Id: linuxirda.h,v 1.7 2003-08-25 13:33:48 pkot Exp $
+ * $Id: linuxirda.h,v 1.8 2006-11-08 19:45:37 dforsi Exp $
  *
  * GNOKII modifications:
  * Fixes for Solaris compile (Artur Kubiak and Michael Wiedmann)
- * FIXME: does it have *ANY* chance to work under other OS then Linux?
+ * FIXME: does it have *ANY* chance to work under other OS than Linux?
  */
 
 #ifndef __gnokii_linuxirda_h
