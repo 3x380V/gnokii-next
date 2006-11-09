@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-other.c,v 1.4 2006-11-01 17:18:01 pkot Exp $
+  $Id: gnokii-other.c,v 1.5 2006-11-09 21:30:11 pkot Exp $
 
   G N O K I I
 
@@ -128,7 +128,7 @@ int enterchar(gn_data *data, struct gn_statemachine *state)
 	gn_data_clear(data);
 	console_raw();
 
-	while (read(0, &ch, 1) > 0) {
+	while ((error = GN_ERR_NONE) && (read(0, &ch, 1) > 0)) {
 		switch (ch) {
 		case '\r':
 			break;
