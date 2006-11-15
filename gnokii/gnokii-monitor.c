@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-monitor.c,v 1.4 2006-11-01 17:18:01 pkot Exp $
+  $Id: gnokii-monitor.c,v 1.5 2006-11-15 15:19:44 pkot Exp $
 
   G N O K I I
 
@@ -271,7 +271,9 @@ int monitormode(int argc, char *argv[], gn_data *data, struct gn_statemachine *s
 			fprintf(stdout, _("SMS Messages: Unread %d, Number %d\n"), smsstatus.unread, smsstatus.number);
 
 		if (gn_sm_functions(GN_OP_GetNetworkInfo, data, state) == GN_ERR_NONE)
-			fprintf(stdout, _("Network: %s (%s), LAC: %02x%02x, CellID: %02x%02x\n"), gn_network_name_get(networkinfo.network_code), gn_country_name_get(networkinfo.network_code), networkinfo.LAC[0], networkinfo.LAC[1], networkinfo.cell_id[0], networkinfo.cell_id[1]);
+			fprintf(stdout, _("Network: %s, %s (%s), LAC: %02x%02x, CellID: %02x%02x\n"),
+			gn_network_name_get(networkinfo.network_code), gn_country_name_get(networkinfo.network_code), networkinfo.network_code,
+			networkinfo.LAC[0], networkinfo.LAC[1], networkinfo.cell_id[0], networkinfo.cell_id[1]);
 
 		gn_call_check_active(state);
 		for (i = 0; i < GN_CALL_MAX_PARALLEL; i++)
