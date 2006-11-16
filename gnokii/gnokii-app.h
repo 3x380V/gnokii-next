@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-app.h,v 1.42 2006-11-05 22:05:53 dforsi Exp $
+  $Id: gnokii-app.h,v 1.43 2006-11-16 21:55:17 pkot Exp $
 
   G N O K I I
 
@@ -34,6 +34,7 @@
 #ifndef __gnokii_app_h_
 #define __gnokii_app_h_
 
+#include <errno.h>
 #include "gnokii-internal.h"
 
 #define MAX_INPUT_LINE_LEN 512
@@ -213,5 +214,6 @@ extern int presskeysequence(gn_data *data, struct gn_statemachine *state);
 extern int enterchar(gn_data *data, struct gn_statemachine *state);
 extern void list_gsm_networks(void);
 extern int getnetworkinfo(gn_data *data, struct gn_statemachine *state);
+extern int gnokii_atoi(char *string);
 
 #endif /* __gnokii_app_h_ */
