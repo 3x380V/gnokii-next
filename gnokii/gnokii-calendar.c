@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-calendar.c,v 1.6 2006-11-16 21:55:17 pkot Exp $
+  $Id: gnokii-calendar.c,v 1.7 2006-11-17 12:50:55 dforsi Exp $
 
   G N O K I I
 
@@ -236,7 +236,7 @@ void writecalendarnote_usage(FILE *f, int exitval)
 {
 	fprintf(f, _("usage: --writecalendarnote vcalendarfile number\n"
 			"                        vcalendarfile - file containing calendar notes in vCal format\n"
-			"                        number        - calendar note number withing the file\n"
+			"                        number        - calendar note number within the file\n"
 			"  NOTE: it stores the note at the first empty location.\n"
 	));
 	exit(exitval);
@@ -295,7 +295,7 @@ int writecalendarnote(char *argv[], gn_data *data, struct gn_statemachine *state
 
 void deletecalendarnote_usage(FILE *f, int exitval)
 {
-	fprintf(f, _("usage: --deletecalendarnote start_number [end_number | end] [-v|--vCal]\n"
+	fprintf(f, _("usage: --deletecalendarnote start_number [end_number | end]\n"
 			"                        start_number - first number in the phone calendar (numeric)\n"
 			"                        end_number   - until this entry in the phone calendar (numeric, optional)\n"
 			"                        end          - the string \"end\" indicates all entries from start to end\n"

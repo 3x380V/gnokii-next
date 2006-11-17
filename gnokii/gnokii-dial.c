@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-dial.c,v 1.7 2006-11-16 21:55:17 pkot Exp $
+  $Id: gnokii-dial.c,v 1.8 2006-11-17 12:50:55 dforsi Exp $
 
   G N O K I I
 
@@ -71,7 +71,7 @@ void dial_usage(FILE *f)
 void getspeeddial_usage(FILE *f, int exitval)
 {
 	fprintf(f, _("usage: --getspeeddial location\n"
-			"                        location - speeddial location in the phone calendar\n"
+			"                        location - location in the speed dial memory\n"
 	));
 	exit(exitval);
 }
