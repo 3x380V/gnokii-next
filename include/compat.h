@@ -1,6 +1,6 @@
 /*
 
-  $Id: compat.h,v 1.50 2006-11-01 17:07:59 pkot Exp $
+  $Id: compat.h,v 1.51 2006-11-23 20:52:42 pkot Exp $
 
   G N O K I I
 
@@ -281,6 +281,15 @@ time_t timegm(struct tm *tm);
 #  define MBSTATE char
 #  define MBSTATE_ENC_CLEAR(x) mbtowc(NULL, NULL, 0)
 #  define MBSTATE_DEC_CLEAR(x) wctomb(NULL, 0)
+#endif
+
+/* MS Visual C does not have va_copy */
+#ifndef va_copy
+#  ifdef __va_copy
+#    define va_copy(dest, src)    __va_copy((dest), (src))
+#  else
+#    define va_copy(dest, src)    memcpy(&(dest), &(src), sizeof(va_list))
+#  endif
 #endif
 
 #endif
