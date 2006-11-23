@@ -1,6 +1,6 @@
 /*
 
-  $Id: misc.c,v 1.120 2006-11-17 16:32:54 pkot Exp $
+  $Id: misc.c,v 1.121 2006-11-23 20:30:32 pkot Exp $
 
   G N O K I I
 
@@ -589,7 +589,7 @@ void gnokii_strfreev(char **str_array)
 /*
  * check if the timestamp in dt has valid date and time
  */
-GNOKII_API int gn_timestamp_isvalid(gn_timestamp dt)
+GNOKII_API int gn_timestamp_isvalid(const gn_timestamp dt)
 {
 #define BETWEEN(a, x, y)	((a >= x) && (a <= y))
 	int daynum;
