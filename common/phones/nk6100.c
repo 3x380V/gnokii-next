@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.199 2006-11-06 12:47:02 dforsi Exp $
+  $Id: nk6100.c,v 1.200 2006-11-25 13:20:11 dforsi Exp $
 
   G N O K I I
 
@@ -1663,9 +1663,9 @@ static gn_error IncomingSMS(int messagetype, unsigned char *message, int length,
 		}
 		if (data->raw_sms->type != GN_SMS_MT_Submit) {
 			memcpy(data->raw_sms->smsc_time, &getdata(36, 35, 0), 7);
-			memcpy(data->raw_sms->message_center, message + 8, 12);
-			memcpy(data->raw_sms->remote_number, &getdata(24, 23, 0), 12);
 		}
+		memcpy(data->raw_sms->message_center, message + 8, 12);
+		memcpy(data->raw_sms->remote_number, &getdata(24, 23, 25), 12);
 #undef getdata
 		break;
 
