@@ -4,7 +4,7 @@ dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janík ml.
 dnl                2000 Karel Zak, Pawe³ Kot
 dnl                2002 BORBELY Zoltan
 dnl
-dnl  $Id: configure.in,v 1.163 2006-11-25 17:12:51 pkot Exp $
+dnl  $Id: configure.in,v 1.164 2006-11-25 20:07:43 pkot Exp $
 dnl
 
 AC_INIT(gnokii/gnokii.c)
@@ -50,6 +50,7 @@ AM_ICONV
 dnl ======================== Default setting
 ALL_LINGUAS="cs de et fi nl sk pl it sl fr zh_CN sv"
 AC_CHECK_HEADERS(libintl.h)
+AM_GNU_GETTEXT_VERSION(0.14.1)
 AM_GNU_GETTEXT([no-libtool])
 AC_CHECK_FUNCS(locale_charset)
 if test x$am_cv_langinfo_codeset != xyes -a x$ac_cv_func_locale_charset != xyes ; then
