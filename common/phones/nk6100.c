@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.200 2006-11-25 13:20:11 dforsi Exp $
+  $Id: nk6100.c,v 1.201 2006-11-25 13:33:20 dforsi Exp $
 
   G N O K I I
 
@@ -1557,7 +1557,7 @@ static gn_error SaveSMSMessage(gn_data *data, struct gn_statemachine *state)
 
 	if (data->raw_sms->type == GN_SMS_MT_Deliver) {	/* Inbox */
 		dprintf("INBOX!\n");
-		req[4] 		= 0x03;			/* SMS State - GSM_Unread */
+		req[4] 		= 0x03;			/* SMS State - GN_SMS_Unread */
 		req[7] 		= 0x00;			/* SMS Type */
 	}
 
