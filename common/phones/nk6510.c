@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.c,v 1.221 2006-10-29 21:47:41 pkot Exp $
+  $Id: nk6510.c,v 1.222 2006-11-26 16:48:26 dforsi Exp $
 
   G N O K I I
 
@@ -4151,6 +4151,7 @@ static gn_error NK6510_PressOrReleaseKey(gn_data *data, struct gn_statemachine *
 	SEND_MESSAGE_BLOCK(NK6510_MSG_KEYPRESS, 10);
 }
 
+#ifdef  SECURITY
 /*****************/
 /*** SECURITY  ***/
 /*****************/
@@ -4249,6 +4250,7 @@ static gn_error NK6510_EnterSecurityCode(gn_data *data, struct gn_statemachine *
 
 	SEND_MESSAGE_BLOCK(NK6510_MSG_SECURITY, 6 + len);
 }
+#endif
 
 /*****************/
 /*** SUBSCRIBE ***/
