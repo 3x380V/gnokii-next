@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-security.c,v 1.5 2006-11-01 17:18:01 pkot Exp $
+  $Id: gnokii-security.c,v 1.6 2006-11-28 13:16:24 dforsi Exp $
 
   G N O K I I
 
@@ -103,6 +103,8 @@ int getlocksinfo(gn_data *data, struct gn_statemachine *state)
 	return 0;
 }
 
+#ifdef SECURITY
+
 int getsecuritycode(gn_data *data, struct gn_statemachine *state)
 {
 	gn_error error;
@@ -116,8 +118,6 @@ int getsecuritycode(gn_data *data, struct gn_statemachine *state)
 	fprintf(stdout, _("Security code is: %s\n"), sc.code);
 	return error;
 }
-
-#ifdef SECURITY
 
 static int get_password(const char *prompt, char *pass, int length)
 {
