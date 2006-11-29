@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-wap.c,v 1.8 2006-11-16 21:55:17 pkot Exp $
+  $Id: gnokii-wap.c,v 1.9 2006-11-29 11:27:12 dforsi Exp $
 
   G N O K I I
 
@@ -395,7 +395,7 @@ int writewapsetting(gn_data *data, struct gn_statemachine *state)
 		if (n != 23) {
 			fprintf(stderr, _("Input line format isn't valid\n"));
 			dprintf("n: %i\n", n);
-			return GN_ERR_UNKNOWN;
+			return GN_ERR_WRONGDATAFORMAT;
 		}
 
 		error = gn_sm_functions(GN_OP_WriteWAPSetting, data, state);
