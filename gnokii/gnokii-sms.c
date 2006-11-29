@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-sms.c,v 1.14 2006-11-29 11:14:10 dforsi Exp $
+  $Id: gnokii-sms.c,v 1.15 2006-11-29 11:41:13 dforsi Exp $
 
   G N O K I I
 
@@ -1156,7 +1156,7 @@ int setsmsc(gn_data *data, struct gn_statemachine *state)
 			break;
 		default:
 			fprintf(stderr, _("Input line format isn't valid\n"));
-			return -1;
+			return GN_ERR_WRONGDATAFORMAT;
 		}
 
 		error = gn_sm_functions(GN_OP_SetSMSCenter, data, state);
@@ -1166,7 +1166,7 @@ int setsmsc(gn_data *data, struct gn_statemachine *state)
 		}
 	}
 
-	return 0;
+	return GN_ERR_NONE;
 }
 
 /* Displays usage of --createsmsfolder command */

@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-profile.c,v 1.6 2006-11-16 21:55:17 pkot Exp $
+  $Id: gnokii-profile.c,v 1.7 2006-11-29 11:41:13 dforsi Exp $
 
   G N O K I I
 
@@ -283,7 +283,7 @@ int setprofile(gn_data *data, struct gn_statemachine *state)
 			    &p.caller_groups, &p.automatic_answer, &ch);
 		if (n != 13) {
 			fprintf(stderr, _("Input line format isn't valid\n"));
-			return GN_ERR_UNKNOWN;
+			return GN_ERR_WRONGDATAFORMAT;
 		}
 
 		error = gn_sm_functions(GN_OP_SetProfile, data, state);
