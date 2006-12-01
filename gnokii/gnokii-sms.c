@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-sms.c,v 1.17 2006-12-01 13:52:55 dforsi Exp $
+  $Id: gnokii-sms.c,v 1.18 2006-12-01 14:21:03 dforsi Exp $
 
   G N O K I I
 
@@ -649,6 +649,7 @@ int getsms(int argc, char *argv[], gn_data *data, struct gn_statemachine *state)
 			mode = 0;
 		case 'f':
 			if (optarg) {
+				filename[sizeof(filename) - 1] = '\0';
 				strncpy(filename, optarg, sizeof(filename));
 				if (filename[sizeof(filename) - 1]) {
 					filename[sizeof(filename) - 1] = '\0';
