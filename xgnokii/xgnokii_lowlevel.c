@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_lowlevel.c,v 1.97 2006-12-17 17:17:43 pkot Exp $
+  $Id: xgnokii_lowlevel.c,v 1.98 2006-12-17 17:23:37 pkot Exp $
   
   X G N O K I I
 
@@ -1227,7 +1227,8 @@ void *GUI_Connect(void *a)
 			   "Exiting application to avoid breakage. If you want to take a risk and\n"
 			   "run xgnokii anyway, set:\n\n"
 			   "\tallow_breakage = 1\n\n"
-			   "in xgnokii section in your config file.\n"));
+			   "in xgnokii section in your config file.\n"
+			   "See http://thread.gmane.org/gmane.linux.drivers.gnokii/3195 for details.\n"));
 	}
 
 	gn_log_xdebug("Phone connected. Starting monitoring...\n");
