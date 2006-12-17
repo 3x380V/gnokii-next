@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_lowlevel.c,v 1.96 2006-10-03 21:26:38 pkot Exp $
+  $Id: xgnokii_lowlevel.c,v 1.97 2006-12-17 17:17:43 pkot Exp $
   
   X G N O K I I
 
@@ -1216,7 +1216,18 @@ void *GUI_Connect(void *a)
 	phoneMonitor.working = _("Connecting...");
 	if (fbusinit() != GN_ERR_NONE) {
 		gn_log_xdebug("Initialization failed...\n");
-		MainExit();
+		MainExit(NULL);
+	}
+
+	if (!xgnokiiConfig.allowBreakage &&				/* User did not allow to break the phone */
+		(phoneMonitor.supported & PM_XGNOKIIBREAKAGE) &&	/* Phone is known to be on the black list */
+		strncmp(xgnokiiConfig.model, "AT", 2)) {		/* We're not using it in AT mode */
+		gn_log_xdebug("Detected phone known to be broken using xgnokii\n");
+		MainExit(_("It has been reported that your phone is known to be broken by xgnokii.\n"
+			   "Exiting application to avoid breakage. If you want to take a risk and\n"
+			   "run xgnokii anyway, set:\n\n"
+			   "\tallow_breakage = 1\n\n"
+			   "in xgnokii section in your config file.\n"));
 	}
 
 	gn_log_xdebug("Phone connected. Starting monitoring...\n");
