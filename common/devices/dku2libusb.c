@@ -1,6 +1,6 @@
 /*
 
-  $Id: dku2libusb.c,v 1.4 2006-10-03 21:26:37 pkot Exp $
+  $Id: dku2libusb.c,v 1.5 2006-12-17 15:01:43 pkot Exp $
  
   G N O K I I
 
@@ -179,6 +179,7 @@ next_desc:
 		dprintf("No active setting\n");
 		return -ENODEV;
 	}
+	dprintf("Found FBUS interface\n");
 	return 0;
 }
 
@@ -273,6 +274,8 @@ static int usbfbus_find_interfaces(struct gn_statemachine *state)
 			}
 		}
 	}
+	if (current->next)
+		free(current->next);
 	while (current && current->prev) {
 		current = current->prev;
 		if (current->next)
@@ -303,7 +306,6 @@ static int usbfbus_find_interfaces(struct gn_statemachine *state)
 		usb_close(usb_handle);
 		retval = 1;
 	}
-	return retval;
 
 cleanup_list:
 	while (current) {
