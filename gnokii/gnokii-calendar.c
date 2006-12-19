@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-calendar.c,v 1.7 2006-11-17 12:50:55 dforsi Exp $
+  $Id: gnokii-calendar.c,v 1.8 2006-12-19 17:49:32 dforsi Exp $
 
   G N O K I I
 
@@ -222,10 +222,17 @@ int getcalendarnote(int argc, char *argv[], gn_data *data, struct gn_statemachin
 			}
 
 		} else { /* error != GN_ERR_NONE */
-			fprintf(stderr, _("The calendar note can not be read: %s\n"), gn_error_print(error));
 			/* stop processing if the last note was specified as "end" */
-			if (last_location == INT_MAX)
+			if (last_location == INT_MAX) {
+				/* it's not an error if we read at least a note and the rest is empty */
+				if ((i > first_location) && ((error == GN_ERR_EMPTYLOCATION) || (error == GN_ERR_INVALIDLOCATION))) {
+					error = GN_ERR_NONE;
+				}
 				last_location = 0;
+			}
+			if (error != GN_ERR_NONE) {
+				fprintf(stderr, _("The calendar note can not be read: %s\n"), gn_error_print(error));
+			}
 		}
 	}
 
