@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_calendar.c,v 1.31 2006-08-15 10:57:20 dforsi Exp $
+  $Id: xgnokii_calendar.c,v 1.32 2006-12-19 18:29:21 dforsi Exp $
 
   X G N O K I I
 
@@ -506,6 +506,7 @@ static gint AddCalendarNote(gn_calnote * cnote)
 		g_free(buf);
 	} else {
 		gn_log_xdebug("Note saved\n");
+		ReadCalNotes();
 	}
 
 	return (error);
@@ -1403,6 +1404,10 @@ static void OkDeleteNoteDialog(GtkWidget * widget, gpointer data)
 		e->data = note;
 		GUI_InsertEvent(e);
 	}
+
+	gtk_text_set_point(GTK_TEXT(cal.noteText), 0);
+	gtk_text_forward_delete(GTK_TEXT(cal.noteText),
+				gtk_text_get_length(GTK_TEXT(cal.noteText)));
 
 	gtk_widget_hide(GTK_WIDGET(data));
 
