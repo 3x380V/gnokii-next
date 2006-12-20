@@ -1,6 +1,6 @@
 /*
 
-  $Id: vcal.c,v 1.12 2006-06-11 16:39:48 deller Exp $
+  $Id: vcal.c,v 1.13 2006-12-20 23:16:43 dforsi Exp $
 
   G N O K I I
 
@@ -42,6 +42,8 @@ static const char gnokii_version[] = VERSION;
 
 
 #ifdef HAVE_LIBICAL
+/* needs gnokii-internal.h for string_base64() and utf8_encode() */
+#  include "gnokii-internal.h"
 #  include "ical.h"
 /* mother's little helpers */
 static int iterate_cal(icalcomponent *parent, int depth, int *count, icalcomponent **result, icalcomponent_kind kind);
