@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.205 2006-12-22 18:01:11 dforsi Exp $
+  $Id: nk6100.c,v 1.206 2006-12-24 17:43:49 dforsi Exp $
 
   G N O K I I
 
@@ -884,7 +884,7 @@ static gn_error IncomingPhonebook(int messagetype, unsigned char *message, int l
 			pe->date.minute = *pos++;
 			pe->date.second = *pos++;
 			pe->subentries_count = 0;
-			pe->empty = (pe->name[0] == '\0');
+			pe->empty = (pe->name[0] == '\0') && (pe->number[0] == '\0');
 		}
 		break;
 	case 0x03:
