@@ -1,6 +1,6 @@
 /*
 
-  $Id: unixbluetooth.c,v 1.15 2006-10-03 21:26:37 pkot Exp $
+  $Id: unixbluetooth.c,v 1.16 2006-12-26 20:53:36 pkot Exp $
  
   G N O K I I
 
@@ -107,15 +107,6 @@ int bluetooth_open(const char *addr, uint8_t channel, struct gn_statemachine *st
 
 	if ((fd = socket(PF_BLUETOOTH, SOCK_STREAM, BTPROTO_RFCOMM)) < 0) {
 		perror(_("Can't create socket"));
-		return -1;
-	}
-
-	memset(&laddr, 0, sizeof(laddr));
-	laddr.rc_family = AF_BLUETOOTH;
-	bacpy(&laddr.rc_bdaddr, BDADDR_ANY);
-	if (bind(fd, (struct sockaddr *)&laddr, sizeof(laddr)) < 0) {
-		perror(_("Can't bind socket"));
-		close(fd);
 		return -1;
 	}
 
