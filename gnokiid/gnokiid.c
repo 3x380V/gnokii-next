@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokiid.c,v 1.51 2006-10-27 07:03:11 pkot Exp $
+  $Id: gnokiid.c,v 1.52 2006-12-27 20:36:01 pkot Exp $
 
   G N O K I I
 
@@ -106,6 +106,16 @@ int main(int argc, char *argv[])
 #endif
 
 	short_version();
+
+	aux = gn_lib_cfg_get("global", "model");
+	if (strncmp(aux, "5110", 4) &&
+	    strncmp(aux, "5130", 4) &&
+	    strncmp(aux, "6110", 4) &&
+	    strncmp(aux, "6130", 4) &&
+	    strncmp(aux, "6150", 4)) {
+		fprintf(stderr, _("gnokiid purpose is to work only with the phones that do not have AT Hayes\ncommands interpreter.\n"));
+		exit(1);
+	}
 
 	BinDir = gn_lib_cfg_get("global", "bindir");
 	if (!BinDir) BinDir = gn_lib_cfg_get("gnokiid", "bindir");
