@@ -1,8 +1,8 @@
-$Id: nk6510.txt,v 1.14 2005-01-31 22:40:45 bozo Exp $
+$Id: nk6510.txt,v 1.15 2007-01-01 21:13:57 pkot Exp $
 
 Assembled by
         Markus Plail <plail@web.de>
-	... and other members of gnokii mailing list
+	... and other members of gnokii mailing list <gnokii-users@nongnu.org>
             and authors of some WWW pages.
 
 Heavily based on nk7110.txt.
@@ -12,7 +12,7 @@ We do not take any responsibility or liability for damages, etc.
 
 NOTE: this information isn't (and can't be) complete.  If you know anything
 about features not listed here or you noticed a bug in this list, please
-notify us via e-mail.  Thank you.
+notify us via e-mail at our mailing list <gnokii-users@nongnu.org>. Thank you.
 
 Document describing frames used in
 GSM Nokia 6510 and derivatives (?)
