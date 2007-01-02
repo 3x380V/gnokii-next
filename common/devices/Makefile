@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.18 2006-04-24 20:08:49 pkot Exp $
+# $Id: Makefile,v 1.19 2007-01-02 09:49:30 pkot Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -24,7 +24,8 @@ OBJS =	tekram.lo \
 
 ifdef WIN32
 	OBJS += winserial.lo \
-		winirda.lo
+		winirda.lo \
+		winbluetooth.lo
 else
 	OBJS += unixserial.lo \
 		unixbluetooth.lo \
