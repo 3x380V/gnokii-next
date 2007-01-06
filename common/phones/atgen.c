@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.137 2007-01-06 19:07:19 pkot Exp $
+  $Id: atgen.c,v 1.138 2007-01-06 22:48:58 pkot Exp $
 
   G N O K I I
 
@@ -1186,7 +1186,7 @@ static gn_error AT_GetDateTime(gn_data *data, struct gn_statemachine *state)
  */
 static gn_error AT_SendDTMF(gn_data *data, struct gn_statemachine *state)
 {
-	gn_error error;
+	gn_error error = GN_ERR_NONE;
 	unsigned char req[32];
 	int len, i, dtmf_len;
 
@@ -1194,6 +1194,8 @@ static gn_error AT_SendDTMF(gn_data *data, struct gn_statemachine *state)
 		return GN_ERR_INTERNALERROR;
 
 	dtmf_len = strlen(data->dtmf_string);
+	if (dtmf_len < 1)
+		return GN_ERR_WRONGDATAFORMAT;
 
 	/* First let's check out if the command is supported by the phone */
 	len = snprintf(req, sizeof(req), "AT+VTS?\r");
