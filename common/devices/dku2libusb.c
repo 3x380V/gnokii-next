@@ -1,6 +1,6 @@
 /*
 
-  $Id: dku2libusb.c,v 1.5 2006-12-17 15:01:43 pkot Exp $
+  $Id: dku2libusb.c,v 1.6 2007-01-06 19:22:26 pkot Exp $
  
   G N O K I I
 
@@ -274,6 +274,8 @@ static int usbfbus_find_interfaces(struct gn_statemachine *state)
 			}
 		}
 	}
+
+	/* Take first device on the list */
 	if (current->next)
 		free(current->next);
 	while (current && current->prev) {
@@ -281,6 +283,7 @@ static int usbfbus_find_interfaces(struct gn_statemachine *state)
 		if (current->next)
 			free(current->next);
 	}
+
 	if (current) {
 		int s = sizeof(fbus_usb_interface);
 		state->device.device_instance = calloc(1, s);
@@ -305,6 +308,7 @@ static int usbfbus_find_interfaces(struct gn_statemachine *state)
 			current->data_interface_active_description);
 		usb_close(usb_handle);
 		retval = 1;
+		current = current->next;
 	}
 
 cleanup_list:
