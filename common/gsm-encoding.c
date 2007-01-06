@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-encoding.c,v 1.73 2006-10-24 18:41:00 pkot Exp $
+  $Id: gsm-encoding.c,v 1.74 2007-01-06 20:49:37 pkot Exp $
 
   G N O K I I
 
@@ -496,6 +496,9 @@ void char_ucs2_decode(unsigned char* dest, const unsigned char* src, int len)
 	return;
 }
 
+/*
+ * This function should convert "ABC" to "004100420043"
+ */
 void char_ucs2_encode(unsigned char* dest, const unsigned char* src, int len)
 {
 	wchar_t wc;
@@ -515,7 +518,7 @@ void char_ucs2_encode(unsigned char* dest, const unsigned char* src, int len)
 			i_len += length;
 			break;
 		}
-		sprintf(dest + (o_len << 2), "%-4lc", wc);
+		sprintf(dest + (o_len << 2), "%04lx", wc);
 	}
 	return;
 }
