@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-dial.c,v 1.8 2006-11-17 12:50:55 dforsi Exp $
+  $Id: gnokii-dial.c,v 1.9 2007-01-06 19:07:19 pkot Exp $
 
   G N O K I I
 
@@ -182,16 +182,16 @@ int dialvoice(char *number, gn_data *data, struct gn_statemachine *state)
 int senddtmf(char *string, gn_data *data, struct gn_statemachine *state)
 {
 	gn_error error;
-	
+
 	gn_data_clear(data);
 	data->dtmf_string = string;
 
 	error = gn_sm_functions(GN_OP_SendDTMF, data, state);
-	
+
 	if (error != GN_ERR_NONE) {
 		fprintf(stderr, _("Error: %s\n"), gn_error_print(error));
 	}
-	
+
 	return error;
 }
 
