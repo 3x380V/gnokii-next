@@ -1,6 +1,6 @@
 /*
 
-  $Id: data.h,v 1.79 2006-11-08 19:45:37 dforsi Exp $
+  $Id: data.h,v 1.80 2007-01-10 19:31:35 pkot Exp $
 
   G N O K I I
 
@@ -82,7 +82,7 @@ typedef struct {
 	gn_calnote_alarm *alarm;
 	gn_raw_data *raw_data;
 	gn_call_divert *call_divert;
-	gn_error (*on_sms)(gn_sms *message);
+	gn_error (*on_sms)(gn_sms *message, struct gn_statemachine *state);
 	int *display_status;
 	void (*on_cell_broadcast)(gn_cb_message *message);
 	gn_netmonitor *netmonitor;

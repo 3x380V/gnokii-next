@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-sms.c,v 1.22 2006-12-17 18:14:11 dforsi Exp $
+  $Id: gnokii-sms.c,v 1.23 2007-01-10 19:31:35 pkot Exp $
 
   G N O K I I
 
@@ -1292,7 +1292,7 @@ int showsmsfolderstatus(gn_data *data, struct gn_statemachine *state)
 }
 
 /* SMS handler for --smsreader mode */
-static gn_error smsslave(gn_sms *message)
+static gn_error smsslave(gn_sms *message, struct gn_statemachine *state)
 {
 	FILE *output;
 	char *s = message->user_data[0].u.text;
