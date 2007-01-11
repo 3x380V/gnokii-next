@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.206 2006-12-24 17:43:49 dforsi Exp $
+  $Id: nk6100.c,v 1.207 2007-01-11 09:29:39 pkot Exp $
 
   G N O K I I
 
@@ -1350,7 +1350,7 @@ static bool CheckIncomingSMS(struct gn_statemachine *state, int pos)
 		return false;
 	}
 
-	DRVINSTANCE(state)->on_sms(&sms);
+	DRVINSTANCE(state)->on_sms(&sms, state);
 
 	dprintf("deleting sms#%hd\n", sms.number);
 	gn_data_clear(&data);
