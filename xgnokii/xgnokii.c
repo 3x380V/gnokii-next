@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii.c,v 1.90 2006-12-17 17:17:43 pkot Exp $
+  $Id: xgnokii.c,v 1.91 2007-02-07 11:37:19 pkot Exp $
   
   X G N O K I I
 
@@ -1334,7 +1334,7 @@ static void OkEditSMSSetDialog(GtkWidget * w, gpointer data)
 		gtk_entry_get_text(GTK_ENTRY(configDialogData.sms.number)),
 		GN_BCD_STRING_MAX_LENGTH);
 	configDialogData.sms.smsSetting[GPOINTER_TO_INT(GTK_CLIST(SMSClist)->selection->data)].
-	    smsc.number[GN_BCD_STRING_MAX_LENGTH]
+	    smsc.number[GN_BCD_STRING_MAX_LENGTH - 1]
 	    = '\0';
 
 	configDialogData.sms.smsSetting[GPOINTER_TO_INT(GTK_CLIST(SMSClist)->selection->data)].
