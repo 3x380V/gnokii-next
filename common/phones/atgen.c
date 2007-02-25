@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.139 2007-01-09 20:42:04 pkot Exp $
+  $Id: atgen.c,v 1.140 2007-02-25 15:34:53 dforsi Exp $
 
   G N O K I I
 
@@ -1990,8 +1990,8 @@ static gn_error Initialise(gn_data *setupdata, struct gn_statemachine *state)
 out:
 	if (ret) {
 		dprintf("Initialization failed (%d)\n", ret);
-		free(AT_DRVINST(state));
-		AT_DRVINST(state) = NULL;
+		/* ignore return value from GN_OP_Terminate, will use previous error code instead */
+		state->driver.functions(GN_OP_Terminate, &data, state);
 	}
 	return ret;
 }

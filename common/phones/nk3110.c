@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk3110.c,v 1.47 2006-10-03 21:26:38 pkot Exp $
+  $Id: nk3110.c,v 1.48 2007-02-25 15:34:53 dforsi Exp $
 
   G N O K I I
 
@@ -267,6 +267,7 @@ static gn_error P3110_Initialise(struct gn_statemachine *state)
 	goto retval;
 errcond:
 	FREE(DRVINSTANCE(state));
+	pgen_terminate(&data, state);
 retval:
 	return error;
 }

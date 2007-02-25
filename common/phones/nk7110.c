@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk7110.c,v 1.179 2006-10-29 21:40:56 pkot Exp $
+  $Id: nk7110.c,v 1.180 2007-02-25 15:34:53 dforsi Exp $
 
   G N O K I I
 
@@ -385,8 +385,13 @@ static gn_error NK7110_Initialise(struct gn_statemachine *state)
 		/* Now test the link and get the model */
 		gn_data_clear(&data);
 		data.model = model;
-		if (state->driver.functions(GN_OP_GetModel, &data, state) == GN_ERR_NONE)
+		err = state->driver.functions(GN_OP_GetModel, &data, state);
+		if (err == GN_ERR_NONE) {
 			connected = true;
+		} else {
+			/* ignore return value from pgen_terminate(), will use previous error code instead */
+			pgen_terminate(&data, state);
+		}
 	}
 	if (!connected) {
 		FREE(DRVINSTANCE(state));
