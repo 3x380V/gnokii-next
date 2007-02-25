@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk7110.c,v 1.180 2007-02-25 15:34:53 dforsi Exp $
+  $Id: nk7110.c,v 1.181 2007-02-25 19:44:32 dforsi Exp $
 
   G N O K I I
 
@@ -1804,6 +1804,8 @@ static gn_error NK7110_WriteCalendarNote(gn_data *data, struct gn_statemachine *
 		req[6] = 0x08;
 		req[3] = 0x07;
 		break;
+	default:
+		return GN_ERR_NOTIMPLEMENTED;
 	}
 
 	req[8]  = calnote->time.year >> 8;
@@ -1938,6 +1940,9 @@ static gn_error NK7110_WriteCalendarNote(gn_data *data, struct gn_statemachine *
 		len = char_unicode_encode(req + count, calnote->text, strlen(calnote->text)); /* Fields 16->N */
 		count += len;
 		break;
+
+	default:
+		return GN_ERR_NOTIMPLEMENTED;
 	}
 
 	/* padding */
