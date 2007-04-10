@@ -1,6 +1,6 @@
 /*
  *
- * $Id: winirda.c,v 1.26 2007-01-02 10:45:23 pkot Exp $
+ * $Id: winirda.c,v 1.27 2007-04-10 20:51:55 pkot Exp $
  *
  * G N O K I I
  *
@@ -108,7 +108,7 @@ int irda_open(struct gn_statemachine *state)
 	int x = 1;
 
 	/* Initialize */
-	if (WSAStartup(MAKEWORD(2,0), &wsaData) == 0) {
+	if (WSAStartup(MAKEWORD(2,0), &wsaData) != 0) {
 		dprintf("WSAStartup() failed.\n");
 		fprintf(stderr, _("Failed to initialize socket subsystem: need WINSOCK2. Please upgrade.\n"));
 		return -1;
