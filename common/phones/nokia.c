@@ -1,6 +1,6 @@
 /*
 
-  $Id: nokia.c,v 1.42 2006-05-08 17:44:07 deller Exp $
+  $Id: nokia.c,v 1.43 2007-04-14 19:36:35 pkot Exp $
 
   G N O K I I
 
@@ -135,7 +135,7 @@ size_t pnok_string_encode(unsigned char *dest, size_t max, const unsigned char *
 
 	MBSTATE_ENC_CLEAR(mbs);
 	for (i = 0, j = 0; i < max && src[j]; i++, j += n) {
-		n = char_uni_alphabet_encode(src + j, &wch, &mbs);
+		n = char_uni_alphabet_encode(src + j, max - j, &wch, &mbs);
 		dest[i] = pnok_uni_to_nokia(wch);
 	}
 	return i;
