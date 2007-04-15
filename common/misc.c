@@ -1,6 +1,6 @@
 /*
 
-  $Id: misc.c,v 1.124 2006-12-28 10:55:54 pkot Exp $
+  $Id: misc.c,v 1.125 2007-04-15 21:50:14 pkot Exp $
 
   G N O K I I
 
@@ -533,7 +533,7 @@ GNOKII_API bool gn_device_unlock(char *lock_file)
 	int err;
 
 	if (!lock_file) {
-		fprintf(stderr, _("Cannot unlock device\n"));
+		fprintf(stderr, _("Cannot unlock device.\n"));
 		return false;
 	}
 	err = unlink(lock_file);
