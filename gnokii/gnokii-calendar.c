@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-calendar.c,v 1.9 2007-04-14 20:08:02 pkot Exp $
+  $Id: gnokii-calendar.c,v 1.10 2007-04-26 18:49:34 dforsi Exp $
 
   G N O K I I
 
@@ -276,7 +276,7 @@ int writecalendarnote(int argc, char *argv[], gn_data *data, struct gn_statemach
 		writecalendarnote_usage(stderr, -1);
 	}
 	
-	for (i = first_location; i < last_location; i++) {
+	for (i = first_location; i <= last_location; i++) {
 
 		memset(&calnote, 0, sizeof(calnote));
 		gn_data_clear(data);

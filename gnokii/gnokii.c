@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.475 2007-04-14 20:08:02 pkot Exp $
+  $Id: gnokii.c,v 1.476 2007-04-26 18:49:34 dforsi Exp $
 
   G N O K I I
 
@@ -636,7 +636,7 @@ static int parse_options(int argc, char *argv[])
 		{ OPT_GETTODO,           1, 3, 0 },
 		{ OPT_WRITETODO,         2, 2, 0 },
 		{ OPT_GETCALENDARNOTE,   1, 3, 0 },
-		{ OPT_WRITECALENDARNOTE, 3, 3, 0 },
+		{ OPT_WRITECALENDARNOTE, 2, 3, 0 },
 		{ OPT_DELCALENDARNOTE,   1, 2, 0 },
 		{ OPT_GETPHONEBOOK,      2, 4, 0 },
 		{ OPT_WRITEPHONEBOOK,    0, 10, 0 },
