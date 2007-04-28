@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-calendar.c,v 1.10 2007-04-26 18:49:34 dforsi Exp $
+  $Id: gnokii-calendar.c,v 1.11 2007-04-28 12:06:10 dforsi Exp $
 
   G N O K I I
 
@@ -304,6 +304,7 @@ int writecalendarnote(int argc, char *argv[], gn_data *data, struct gn_statemach
 #endif
 		if (error != GN_ERR_NONE) {
 			fprintf(stderr, _("Failed to load vCalendar file: %s\n"), gn_error_print(error));
+			fclose(f);
 			return error;
 		}
 	
