@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-app.h,v 1.44 2007-04-14 20:08:02 pkot Exp $
+  $Id: gnokii-app.h,v 1.45 2007-04-28 17:53:48 dforsi Exp $
 
   G N O K I I
 
@@ -101,12 +101,12 @@ extern int getcalendarnote(int argc, char *argv[], gn_data *data, struct gn_stat
 extern int writecalendarnote(int argc, char *argv[], gn_data *data, struct gn_statemachine *state);
 extern int deletecalendarnote(int argc, char *argv[], gn_data *data, struct gn_statemachine *state);
 
-/* TODO functions */
+/* ToDo functions */
 extern void todo_usage(FILE *f);
 
 extern void gettodo_usage(FILE *f, int exitval);
 extern int gettodo(int argc, char *argv[], gn_data *data, struct gn_statemachine *state);
-extern int writetodo(char *argv[], gn_data *data, struct gn_statemachine *state);
+extern int writetodo(int argc, char *argv[], gn_data *data, struct gn_statemachine *state);
 extern int deletealltodos(gn_data *data, struct gn_statemachine *state);
 
 /* Dialling and call handling functions */
