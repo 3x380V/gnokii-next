@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-sms.c,v 1.23 2007-01-10 19:31:35 pkot Exp $
+  $Id: gnokii-sms.c,v 1.24 2007-04-28 10:20:43 dforsi Exp $
 
   G N O K I I
 
@@ -401,7 +401,7 @@ int savesms(int argc, char *argv[], gn_data *data, struct gn_statemachine *state
 		{ NULL,       0,                 NULL, 0 }
 	};
 
-	char memory_type[20];
+	char memory_type[20] = "";
 	struct tm		*now;
 	time_t			nowh;
 
