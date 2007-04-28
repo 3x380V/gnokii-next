@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-sms.c,v 1.24 2007-04-28 10:20:43 dforsi Exp $
+  $Id: gnokii-sms.c,v 1.25 2007-04-28 10:36:53 dforsi Exp $
 
   G N O K I I
 
@@ -740,7 +740,15 @@ int getsms(int argc, char *argv[], gn_data *data, struct gn_statemachine *state)
 				message_text = message.user_data[0].u.text;
 				break;
 			case GN_SMS_MT_Picture:
-				fprintf(stdout, _("%d. Picture Message "), message.number);
+			case GN_SMS_MT_PictureTemplate:
+				switch (message.type) {
+				case GN_SMS_MT_PictureTemplate:
+					fprintf(stdout, _("%d. Picture Message Template "), message.number);
+					break;
+				default:
+					fprintf(stdout, _("%d. Picture Message "), message.number);
+					break;
+				}
 				switch (message.status) {
 				case GN_SMS_Read:
 					fprintf(stdout, _("(read)\n"));
