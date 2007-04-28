@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.208 2007-02-25 15:34:53 dforsi Exp $
+  $Id: nk6100.c,v 1.209 2007-04-28 10:48:29 dforsi Exp $
 
   G N O K I I
 
@@ -2622,6 +2622,7 @@ static gn_error IncomingCalendar(int messagetype, unsigned char *message, int le
 			case 0x6f: /* Insert SIM card */
 				return GN_ERR_NOTREADY;
 			case 0x73:
+				return GN_ERR_MEMORYFULL;
 			case 0x7d:
 				return GN_ERR_UNKNOWN;
 		        case 0x81:
