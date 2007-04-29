@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-calendar.c,v 1.13 2007-04-29 08:43:41 dforsi Exp $
+  $Id: gnokii-calendar.c,v 1.14 2007-04-29 09:39:38 dforsi Exp $
 
   G N O K I I
 
@@ -301,7 +301,12 @@ int writecalendarnote(int argc, char *argv[], gn_data *data, struct gn_statemach
 		}
 #endif
 		if (error != GN_ERR_NONE) {
-			fprintf(stderr, _("Failed to load vCalendar file: %s\n"), gn_error_print(error));
+			/* when reading until 'end' it's not an error if it tried to read a non existant note */
+			if ((last_location == INT_MAX) && (error == GN_ERR_EMPTYLOCATION)) {
+				error = GN_ERR_NONE;
+			} else {
+				fprintf(stderr, _("Failed to load vCalendar file: %s\n"), gn_error_print(error));
+			}
 			fclose(f);
 			return error;
 		}
