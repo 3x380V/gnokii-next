@@ -1,6 +1,6 @@
 /*
 
-  $Id: vcal.c,v 1.14 2006-12-20 23:24:07 dforsi Exp $
+  $Id: vcal.c,v 1.15 2007-04-29 08:43:41 dforsi Exp $
 
   G N O K I I
 
@@ -415,7 +415,7 @@ GNOKII_API int gn_ical2calnote(FILE *f, gn_calnote *calnote, int id)
 		if (!str) str = "";
 		snprintf(calnote->mlocation, sizeof(calnote->mlocation), "%s", str);
 
-		fprintf(stderr, _("Component found\n%s\n"), icalcomponent_as_ical_string(compresult));
+		dprintf("Component found\n%s\n", icalcomponent_as_ical_string(compresult));
 
 	}
 	if (compresult)
@@ -519,7 +519,7 @@ GNOKII_API int gn_ical2todo(FILE *f, gn_todo *ctodo, int id)
 		/* priority */
 		ctodo->priority = icalproperty_get_priority((const icalproperty *)priority);
 
-		fprintf(stderr, _("Component found\n%s\n"), icalcomponent_as_ical_string(compresult));
+		dprintf("Component found\n%s\n", icalcomponent_as_ical_string(compresult));
 	}
 	icalcomponent_free(compresult);
 	icalcomponent_free(comp);
