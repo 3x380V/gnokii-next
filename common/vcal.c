@@ -1,6 +1,6 @@
 /*
 
-  $Id: vcal.c,v 1.16 2007-04-29 09:39:38 dforsi Exp $
+  $Id: vcal.c,v 1.17 2007-04-29 10:37:27 dforsi Exp $
 
   G N O K I I
 
@@ -197,7 +197,7 @@ GNOKII_API int gn_calnote2ical(FILE *f, gn_calnote *calnote)
 		icalcomponent_free(pIcal);
 		pIcal = NULL;
 	} else {
-		fprintf(stderr, _("ERROR\n"));
+		dprintf("ERROR in icalcomponent_vanew()\n");
 	}
 	return GN_ERR_NONE;
 #else
@@ -319,7 +319,7 @@ GNOKII_API int gn_ical2calnote(FILE *f, gn_calnote *calnote, int id)
 	iterate_cal(comp, 0, &id, &compresult, ICAL_VEVENT_COMPONENT);
 
 	if (!compresult) {
-		fprintf(stderr, _("No component found.\n"));
+		dprintf("No component found.\n");
 		retval = GN_ERR_EMPTYLOCATION;
 	} else {
 		const char *str;
@@ -508,7 +508,7 @@ GNOKII_API int gn_ical2todo(FILE *f, gn_todo *ctodo, int id)
 	iterate_cal(comp, 0, &id, &compresult, ICAL_VTODO_COMPONENT);
 
 	if (!compresult) {
-		fprintf(stderr, _("No component found.\n"));
+		dprintf("No component found.\n");
 		return GN_ERR_EMPTYLOCATION;
 	} else {
 		const char *priostr = NULL;
