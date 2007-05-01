@@ -4,7 +4,7 @@ dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janík ml.
 dnl                2000 Karel Zak, Pawe³ Kot
 dnl                2002 BORBELY Zoltan
 dnl
-dnl  $Id: configure.in,v 1.165 2007-04-25 16:54:17 dforsi Exp $
+dnl  $Id: configure.in,v 1.166 2007-05-01 20:28:11 pkot Exp $
 dnl
 
 AC_INIT(gnokii/gnokii.c)
@@ -34,6 +34,14 @@ fi
 AC_GNU_SOURCE
 
 AC_PROG_LEX
+# If there's no flex/lex utility and there's no generated common/gnvcal.c file, we won't be able to compile
+if test "x$LEX" = "x:" && test ! -f common/gnvcal.c; then
+	echo "You need one of the following:"
+	echo " - installed lex/flex"
+	echo " - generated common/gnvcal.c file (included in release tarballs, not included in CVS)"
+	exit 1
+fi
+
 AC_PATH_PROG(RM, rm, no)
 AC_PATH_PROG(FIND, find, no)
 AC_CHECK_PROGS(MAKE, gmake make)
