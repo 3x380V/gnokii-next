@@ -1,6 +1,6 @@
 /*
 
-  $Id: unixserial.c,v 1.41 2007-05-01 20:02:21 pkot Exp $
+  $Id: unixserial.c,v 1.42 2007-05-01 20:04:12 pkot Exp $
 
   G N O K I I
 
@@ -192,12 +192,7 @@ int serial_close(int fd, struct gn_statemachine *state)
 		dprintf("Gnokii serial_close: disconnect_script\n");
 
 	if (fd >= 0) {
-#if 1 /* HACK */
 		serial_termios.c_cflag |= HUPCL;	/* production == 1 */
-#else
-		serial_termios.c_cflag &= ~HUPCL;	/* debugging  == 0 */
-#endif
-
 		tcsetattr(fd, TCSANOW, &serial_termios);
 	}
 
