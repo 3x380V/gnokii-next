@@ -1,6 +1,6 @@
 /*
 
-  $Id: misc.c,v 1.125 2007-04-15 21:50:14 pkot Exp $
+  $Id: misc.c,v 1.126 2007-05-02 16:30:05 pkot Exp $
 
   G N O K I I
 
@@ -522,7 +522,7 @@ failed:
 	free(lock_file);
 	return NULL;
 #else
-	return 1;
+	return (char *)1;
 #endif /* WIN32 */
 }
 

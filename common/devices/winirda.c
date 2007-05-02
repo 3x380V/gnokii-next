@@ -1,6 +1,6 @@
 /*
  *
- * $Id: winirda.c,v 1.27 2007-04-10 20:51:55 pkot Exp $
+ * $Id: winirda.c,v 1.28 2007-05-02 16:30:05 pkot Exp $
  *
  * G N O K I I
  *
@@ -131,7 +131,7 @@ int irda_open(struct gn_statemachine *state)
 	*(DWORD*)peer.irdaDeviceID = daddr;
 	if (!strcasecmp(state->config.port_device, "IrDA:IrCOMM")) {
 		strcpy(peer.irdaServiceName, "IrDA:IrCOMM");
-		if (setsockopt(fd, SOL_IRLMP, IRLMP_9WIRE_MODE, &x, sizeof(x)) == SOCKET_ERROR) {
+		if (setsockopt(fd, SOL_IRLMP, IRLMP_9WIRE_MODE, (char *)&x, sizeof(x)) == SOCKET_ERROR) {
 			perror("setsockopt");
 			dprintf("Failed to set irda socket options.\n");
 			closesocket(fd);
