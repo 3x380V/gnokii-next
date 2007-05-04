@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-filetypes.h,v 1.22 2005-04-24 20:16:44 pkot Exp $
+  $Id: gsm-filetypes.h,v 1.23 2007-05-04 19:41:34 pkot Exp $
 
   G N O K I I
 
@@ -37,20 +37,5 @@
 
 /* Defines the character that separates fields in rtttl files. */
 #define RTTTL_SEP ":"
-
-typedef enum {
-	GN_FT_None = 0,
-	GN_FT_NOL,
-	GN_FT_NGG,
-	GN_FT_NSL,
-	GN_FT_NLM,
-	GN_FT_BMP,
-	GN_FT_OTA,
-	GN_FT_XPMF,
-	GN_FT_RTTTL,
-	GN_FT_OTT,
-	GN_FT_MIDI,
-	GN_FT_NOKRAW_TONE
-} gn_filetypes;
 
 #endif /* _gnokii_gsm_filetypes_h */
