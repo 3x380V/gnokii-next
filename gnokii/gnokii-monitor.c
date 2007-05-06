@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-monitor.c,v 1.6 2006-11-16 21:55:17 pkot Exp $
+  $Id: gnokii-monitor.c,v 1.7 2007-05-06 16:42:31 pkot Exp $
 
   G N O K I I
 
@@ -220,7 +220,7 @@ int monitormode(int argc, char *argv[], gn_data *data, struct gn_statemachine *s
 	if (argc > optind) {
 		d = !strcasecmp(argv[optind], "once") ? -1 : gnokii_atoi(argv[optind]);
 		if (errno) {
-			fprintf(stderr, _("Argument to --monitor once needs to be positive number\n"));
+			fprintf(stderr, _("Argument to --monitor delay needs to be positive number\n"));
 			return -1;
 		}
 	} else
