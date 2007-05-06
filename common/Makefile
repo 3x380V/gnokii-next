@@ -1,5 +1,5 @@
 #
-# $Id: Makefile,v 1.90 2006-11-26 16:24:24 pkot Exp $
+# $Id: Makefile,v 1.91 2007-05-06 15:24:06 pkot Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -24,6 +24,7 @@ include $(TOPDIR)/Makefile.global
 #    increase GNOKII_MAJOR, GNOKII_MINOR, set GNOKII_RELEASE to 0
 #  - if you change API in backward incompatible manner (removing things,
 #    changing things), increase GNOKII_MAJOR, set GNOKII_RELEASE to 0
+# Change is just once per release!
 GNOKII_MAJOR = 4
 GNOKII_MINOR = 1
 GNOKII_RELEASE = 0
