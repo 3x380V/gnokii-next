@@ -1,6 +1,6 @@
 /*
 
-  $Id: compat.h,v 1.52 2007-04-20 16:56:13 pkot Exp $
+  $Id: compat.h,v 1.53 2007-05-07 22:07:42 pkot Exp $
 
   G N O K I I
 
@@ -60,6 +60,7 @@
 #endif
 
 #ifdef HAVE_STRING_H
+#  define _GNU_SOURCE
 #  include <string.h>
 #endif
 
@@ -133,6 +134,11 @@
 #else
 #    define GNOKII_API
 #endif /* WIN32 */
+
+/* I assume that HAVE_STRNDUP always implies HAVE_STRING_H */
+#ifndef HAVE_STRNDUP
+extern char *strndup(const char *src, size_t n);
+#endif
 
 #ifndef	HAVE_TIMEOPS
 
@@ -293,5 +299,6 @@ time_t timegm(struct tm *tm);
 #    define va_copy(dest, src)    memcpy(&(dest), &(src), sizeof(va_list))
 #  endif
 #endif
+
 
 #endif

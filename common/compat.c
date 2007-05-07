@@ -1,6 +1,6 @@
 /*
 
-  $Id: compat.c,v 1.11 2006-05-22 20:00:43 pkot Exp $
+  $Id: compat.c,v 1.12 2007-05-07 22:07:42 pkot Exp $
 
   G N O K I I
 
@@ -177,4 +177,17 @@ time_t timegm(struct tm *tm)
 	return ret;
 }
 
+#endif
+
+#ifndef HAVE_STRNDUP
+char *strndup(const char *src, size_t n)
+{
+	char *dst = malloc(n + 1);
+
+	if (!dst)
+		return NULL;
+
+	dst[n] = '\0';
+	return (char *)memcpy(dst, src, n);
+}
 #endif
