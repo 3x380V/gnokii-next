@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-monitor.c,v 1.7 2007-05-06 16:42:31 pkot Exp $
+  $Id: gnokii-monitor.c,v 1.8 2007-05-07 21:22:08 pkot Exp $
 
   G N O K I I
 
@@ -47,6 +47,9 @@
 #endif
 #include <getopt.h>
 #include <signal.h>
+#ifndef WIN32
+#  include <fcntl.h>
+#endif
 
 #include "gnokii-app.h"
 #include "gnokii.h"
