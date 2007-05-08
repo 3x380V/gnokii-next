@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-other.c,v 1.5 2006-11-09 21:30:11 pkot Exp $
+  $Id: gnokii-other.c,v 1.6 2007-05-08 14:55:35 pkot Exp $
 
   G N O K I I
 
@@ -46,6 +46,10 @@
 #  define _GNU_SOURCE 1
 #endif
 #include <getopt.h>
+
+#ifdef WIN32
+#  include <io.h>
+#endif
 
 #include "gnokii-app.h"
 #include "gnokii.h"
