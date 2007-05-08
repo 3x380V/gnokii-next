@@ -1,6 +1,6 @@
 /*
 
-  $Id: compat.h,v 1.53 2007-05-07 22:07:42 pkot Exp $
+  $Id: compat.h,v 1.54 2007-05-08 19:41:35 pkot Exp $
 
   G N O K I I
 
@@ -60,7 +60,9 @@
 #endif
 
 #ifdef HAVE_STRING_H
-#  define _GNU_SOURCE
+#  ifndef _GNU_SOURCE
+#    define _GNU_SOURCE 1
+#  endif
 #  include <string.h>
 #endif
 
