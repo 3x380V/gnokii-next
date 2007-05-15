@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.210 2007-05-14 17:48:14 dforsi Exp $
+  $Id: nk6100.c,v 1.211 2007-05-15 09:29:55 dforsi Exp $
 
   G N O K I I
 
@@ -2285,6 +2285,18 @@ static gn_error IncomingProfile(int messagetype, unsigned char *message, int len
 
 	/* Get profile name */
 	case 0x1b:
+		switch (message[4]) {
+		case 0x01:
+			break;
+		case 0x6f:
+			return GN_ERR_NOTREADY;
+		case 0x8d:
+			return GN_ERR_CODEREQUIRED;
+		case 0x93:
+			return GN_ERR_EMPTYLOCATION;
+		default:
+			return GN_ERR_UNHANDLEDFRAME;
+		}
 		if (data->profile) {
 			if (message[9] == 0x00) {
 				data->profile->default_name = message[8];
