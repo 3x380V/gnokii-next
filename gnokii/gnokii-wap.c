@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-wap.c,v 1.9 2006-11-29 11:27:12 dforsi Exp $
+  $Id: gnokii-wap.c,v 1.10 2007-05-17 16:06:06 dforsi Exp $
 
   G N O K I I
 
@@ -184,6 +184,7 @@ int getwapsetting(int argc, char *argv[], gn_data *data, struct gn_statemachine 
 		{ NULL,     0,           NULL, 0}
 	};
 
+	memset(&wapsetting, 0, sizeof(wapsetting));
 	wapsetting.location = gnokii_atoi(optarg);
 	if (errno || wapsetting.location < 0)
 		getwapsetting_usage(stderr, -1);
