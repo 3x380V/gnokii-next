@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-profile.c,v 1.7 2006-11-29 11:41:13 dforsi Exp $
+  $Id: gnokii-profile.c,v 1.8 2007-05-21 09:39:30 dforsi Exp $
 
   G N O K I I
 
@@ -141,7 +141,7 @@ int getprofile(int argc, char *argv[], gn_data *data, struct gn_statemachine *st
 	gn_error error = GN_ERR_NOTSUPPORTED;
 
 	/* Hopefully is 64 larger as FB38_MAX* / FB61_MAX* */
-	char model[64];
+	char model[64] = "";
 	bool raw = false;
 	struct option options[] = {
 		{ "raw",    no_argument, NULL, 'r'},
