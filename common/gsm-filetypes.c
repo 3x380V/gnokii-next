@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-filetypes.c,v 1.72 2007-05-06 14:20:14 pkot Exp $
+  $Id: gsm-filetypes.c,v 1.73 2007-05-22 15:19:38 dforsi Exp $
 
   G N O K I I
 
@@ -34,15 +34,14 @@
 
 */
 
+#include "config.h"
+#include "compat.h"
+
 #include <stdio.h>
 #include <stdlib.h>
-#define _GNU_SOURCE
-#include <string.h>
 #include <ctype.h>
 #include <sys/stat.h>
 
-#include "config.h"
-#include "compat.h"
 #include "gnokii-internal.h"
 #include "gnokii.h"
 #include "gsm-filetypes.h"
