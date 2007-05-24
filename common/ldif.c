@@ -1,6 +1,6 @@
 /*
 
-  $Id: ldif.c,v 1.17 2006-08-28 11:37:23 pkot Exp $
+  $Id: ldif.c,v 1.18 2007-05-24 18:57:47 dforsi Exp $
   
   G N O K I I
 
@@ -100,6 +100,10 @@ GNOKII_API int gn_phonebook2ldif(FILE *f, gn_phonebook_entry *entry)
 		memset(aux2, 0, 10);
 		sprintf(aux2, "%d", entry->caller_group);
 		ldif_entry_write(f, "businessGroup", aux2, 1);
+	}
+
+	if (entry->subentries_count == 0) {
+		ldif_entry_write(f, "telephoneNumber", entry->number, 1);
 	}
 
 	/* Add ext. pbk info if required */
