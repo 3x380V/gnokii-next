@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-phonebook.c,v 1.14 2007-05-06 15:05:10 pkot Exp $
+  $Id: gnokii-phonebook.c,v 1.15 2007-05-24 15:28:24 dforsi Exp $
 
   G N O K I I
 
@@ -105,10 +105,6 @@ int getphonebook(int argc, char *argv[], gn_data *data, struct gn_statemachine *
 		{ NULL,     0,           NULL, 0 }
 	};
 
-
-	if (argc < 3)
-		getphonebook_usage(stderr, -1);
-
 	/* Handle command line args that set type, start and end locations. */
 	memory_type_string = optarg;
 	memstat.memory_type = gn_str2memory_type(memory_type_string);
@@ -139,6 +135,10 @@ int getphonebook(int argc, char *argv[], gn_data *data, struct gn_statemachine *
 		/* default */
 		break;
 	default:
+		getphonebook_usage(stderr, -1);
+	}
+	if (argc - optind > 2) {
+		/* There too many arguments that don't start with '-' */
 		getphonebook_usage(stderr, -1);
 	}
 
@@ -337,6 +337,8 @@ int writephonebook(int argc, char *argv[], gn_data *data, struct gn_statemachine
 			confirm = 1;
 			break;
 		case 'v':
+			if (type)
+				writephonebook_usage(stderr, -1);
 			type = 1;
 			break;
 		case 'l':
@@ -359,6 +361,10 @@ int writephonebook(int argc, char *argv[], gn_data *data, struct gn_statemachine
 			writephonebook_usage(stderr, -1);
 			break;
 		}
+	}
+	if (argc > optind) {
+		/* There too many arguments that don't start with '-' */
+		writephonebook_usage(stderr, -1);
 	}
 
 	line = oline;

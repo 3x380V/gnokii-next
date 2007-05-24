@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-todo.c,v 1.10 2007-04-29 09:39:38 dforsi Exp $
+  $Id: gnokii-todo.c,v 1.11 2007-05-24 15:28:24 dforsi Exp $
 
   G N O K I I
 
@@ -99,8 +99,7 @@ int gettodo(int argc, char *argv[], gn_data *data, struct gn_statemachine *state
 			vcal = true;
 			break;
 		default:
-			gettodo_usage(stderr, -1); /* Would be better to have an calendar_usage() here. */
-			return -1;
+			gettodo_usage(stderr, -1);
 		}
 	}
 
