@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-sms.c,v 1.26 2007-05-24 15:28:24 dforsi Exp $
+  $Id: gnokii-sms.c,v 1.27 2007-05-24 15:45:26 dforsi Exp $
 
   G N O K I I
 
@@ -308,7 +308,7 @@ int sendsms(int argc, char *argv[], gn_data *data, struct gn_statemachine *state
 		}
 	}
 	if (argc > optind) {
-		/* There too many arguments that don't start with '-' */
+		/* There are too many arguments that don't start with '-' */
 		sendsms_usage(stderr, -1);
 	}
 
@@ -520,7 +520,7 @@ int savesms(int argc, char *argv[], gn_data *data, struct gn_statemachine *state
 		}
 	}
 	if (argc > optind) {
-		/* There too many arguments that don't start with '-' */
+		/* There are too many arguments that don't start with '-' */
 		savesms_usage(stderr, -1);
 	}
 #if 0
@@ -686,7 +686,7 @@ int getsms(int argc, char *argv[], gn_data *data, struct gn_statemachine *state)
 		}
 	}
 	if (argc - optind > 3) {
-		/* There too many arguments that don't start with '-' */
+		/* There are too many arguments that don't start with '-' */
 		getsms_usage(stderr, -1);
 	}
 

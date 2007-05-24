@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-phonebook.c,v 1.15 2007-05-24 15:28:24 dforsi Exp $
+  $Id: gnokii-phonebook.c,v 1.16 2007-05-24 15:45:26 dforsi Exp $
 
   G N O K I I
 
@@ -138,7 +138,7 @@ int getphonebook(int argc, char *argv[], gn_data *data, struct gn_statemachine *
 		getphonebook_usage(stderr, -1);
 	}
 	if (argc - optind > 2) {
-		/* There too many arguments that don't start with '-' */
+		/* There are too many arguments that don't start with '-' */
 		getphonebook_usage(stderr, -1);
 	}
 
@@ -363,7 +363,7 @@ int writephonebook(int argc, char *argv[], gn_data *data, struct gn_statemachine
 		}
 	}
 	if (argc > optind) {
-		/* There too many arguments that don't start with '-' */
+		/* There are too many arguments that don't start with '-' */
 		writephonebook_usage(stderr, -1);
 	}
 
