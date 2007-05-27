@@ -1,6 +1,6 @@
 /*
 
-  $Id: unixbluetooth.c,v 1.16 2006-12-26 20:53:36 pkot Exp $
+  $Id: unixbluetooth.c,v 1.17 2007-05-27 21:06:16 dforsi Exp $
  
   G N O K I I
 
@@ -97,7 +97,7 @@ static int str2ba(const char *str, bdaddr_t *ba)
 int bluetooth_open(const char *addr, uint8_t channel, struct gn_statemachine *state)
 {
 	bdaddr_t bdaddr;
-	struct sockaddr_rc laddr, raddr;
+	struct sockaddr_rc raddr;
 	int fd;
 
 	if (str2ba((char *)addr, &bdaddr)) {
