@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokiid.c,v 1.53 2007-05-28 11:41:18 dforsi Exp $
+  $Id: gnokiid.c,v 1.54 2007-05-28 12:01:13 dforsi Exp $
 
   G N O K I I
 
@@ -133,6 +133,11 @@ int main(int argc, char *argv[])
 	}
 
 	aux = gn_lib_cfg_get("global", "model");
+	if (!aux) {
+		fprintf(stderr, "%s\n", gn_error_print(GN_ERR_NOCONFIG));
+		exit(1);
+		}
+
 	if (strncmp(aux, "5110", 4) &&
 	    strncmp(aux, "5130", 4) &&
 	    strncmp(aux, "6110", 4) &&
