@@ -1,6 +1,6 @@
 /*
 
-  $Id: data.h,v 1.80 2007-01-10 19:31:35 pkot Exp $
+  $Id: data.h,v 1.81 2007-05-29 19:26:40 pkot Exp $
 
   G N O K I I
 
@@ -138,12 +138,12 @@ typedef struct {
 	unsigned int sm_retry;				/* Indicates whether statemachine should do retries. Defaults to off. */
 							/* Use with caution -- may break newer DCT4 phones */
 
+	unsigned int use_locking;			/* Should we use locking system or not */
 	/* do not change the following values from userspace */
 	char m_model[GN_MODEL_MAX_LENGTH];
 	char m_manufacturer[GN_MANUFACTURER_MAX_LENGTH];
 	char m_revision[GN_REVISION_MAX_LENGTH];
 	char m_imei[GN_IMEI_MAX_LENGTH];
-	
 } gn_config;
 
 typedef struct {
