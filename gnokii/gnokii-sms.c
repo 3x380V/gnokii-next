@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-sms.c,v 1.27 2007-05-24 15:45:26 dforsi Exp $
+  $Id: gnokii-sms.c,v 1.28 2007-05-29 22:19:01 dforsi Exp $
 
   G N O K I I
 
@@ -1042,6 +1042,11 @@ int getsmsc(int argc, char *argv[], gn_data *data, struct gn_statemachine *state
 		default:
 			getsmsc_usage(stderr, -1);
 		}
+	}
+
+	if (argc > optind + 2) {
+		/* There are too many arguments that don't start with '-' */
+		getsmsc_usage(stderr, -1);
 	}
 
 	if (argc > optind) {
