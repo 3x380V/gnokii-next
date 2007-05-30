@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_xkeyb.c,v 1.20 2006-08-15 10:57:20 dforsi Exp $
+  $Id: xgnokii_xkeyb.c,v 1.21 2007-05-30 21:49:40 dforsi Exp $
 
   X G N O K I I
 
@@ -239,11 +239,11 @@ static GtkItemFactoryEntry menu_items[] = {
 
 static void InitMainMenu(void)
 {
-	menu_items[0].path = g_strdup(_("/_File"));
-	menu_items[1].path = g_strdup(_("/File/_Close"));
-	menu_items[2].path = g_strdup(_("/_Help"));
-	menu_items[3].path = g_strdup(_("/Help/_Help"));
-	menu_items[4].path = g_strdup(_("/Help/_About"));
+	menu_items[0].path = _("/_File");
+	menu_items[1].path = _("/File/_Close");
+	menu_items[2].path = _("/_Help");
+	menu_items[3].path = _("/Help/_Help");
+	menu_items[4].path = _("/Help/_About");
 }
 
 
