@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_logos.c,v 1.45 2007-05-31 12:03:27 dforsi Exp $
+  $Id: xgnokii_logos.c,v 1.46 2007-06-02 10:39:44 dforsi Exp $
    
   X G N O K I I
 
@@ -1621,6 +1621,7 @@ void GUI_CreateLogosWindow(void)
 	gtk_entry_set_editable(GTK_ENTRY(GTK_COMBO(networkCombo)->entry), FALSE);
 	gtk_toolbar_append_widget(GTK_TOOLBAR(toolBar), networkCombo, "", "");
 	gtk_widget_show(networkCombo);
+	g_list_foreach(glistNetwork, (GFunc) g_free, NULL);
 	g_list_free(glistNetwork);
 
 	callerCombo = gtk_combo_new();
