@@ -35,7 +35,7 @@
 # Copyright (c) 2001 Gabriele Zappi - Rimini
 #
 ###############################################################################
-# $Id: sendsms,v 1.10 2007-06-03 14:40:08 pkot Exp $
+# $Id: sendsms,v 1.11 2007-06-03 15:44:11 pkot Exp $
 ###############################################################################
 # PROGNAME=`basename $0`
 
@@ -241,7 +241,7 @@ SMS_choicefrommem() {
 			mv -f $SMSDIR/.MElist.temp $SMSDIR/.MElist.mem
 		fi
 	else
-		MERROR=1
+		MEERROR=1
 	fi
 
 	if [ $SMERROR -eq 1 ] && [ $MEERROR -eq 1 ]; then
