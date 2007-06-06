@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii.c,v 1.91 2007-02-07 11:37:19 pkot Exp $
+  $Id: xgnokii.c,v 1.92 2007-06-06 14:58:29 dforsi Exp $
   
   X G N O K I I
 
@@ -2409,8 +2409,6 @@ int main(int argc, char *argv[])
 #ifdef ENABLE_NLS
 	textdomain("gnokii");
 #endif
-
-	(void) gtk_set_locale();
 
 	gtk_init(&argc, &argv);
 
