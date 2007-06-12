@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-filetypes.c,v 1.73 2007-05-22 15:19:38 dforsi Exp $
+  $Id: gsm-filetypes.c,v 1.74 2007-06-12 16:00:32 dforsi Exp $
 
   G N O K I I
 
@@ -1464,7 +1464,7 @@ GNOKII_API gn_error gn_file_phonebook_raw_parse(gn_phonebook_entry *entry, char 
 		return GN_ERR_WRONGDATAFORMAT;
 	case 1:
 		/* empty name: this is a request to delete the entry */
-		return GN_ERR_NONE;
+		break;
 	default:
 		break;
 	}
