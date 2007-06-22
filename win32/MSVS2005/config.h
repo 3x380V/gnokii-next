@@ -1,6 +1,6 @@
 /*
 
-  $Id: config.h,v 1.8 2007-06-21 21:03:20 pkot Exp $
+  $Id: config.h,v 1.9 2007-06-22 21:06:13 pkot Exp $
 
   G N O K I I
 
@@ -40,7 +40,7 @@
 
 
 #undef VERSION
-#define VERSION "0.6.17"
+#define VERSION "0.6.17cvs"
 
 /* We support Bluetooth and IRDA on MSVS 2005 */
 #define HAVE_BLUETOOTH 1
