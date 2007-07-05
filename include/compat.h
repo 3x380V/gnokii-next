@@ -1,6 +1,6 @@
 /*
 
-  $Id: compat.h,v 1.54 2007-05-08 19:41:35 pkot Exp $
+  $Id: compat.h,v 1.55 2007-07-05 22:04:09 pkot Exp $
 
   G N O K I I
 
@@ -208,6 +208,13 @@ int vasprintf(char **ptr, const char *format, va_list ap);
 
 #ifndef HAVE_TIMEGM
 time_t timegm(struct tm *tm);
+#endif
+
+#ifndef HAVE_GETLINE
+#  ifdef HAVE_SYS_PARAM_H
+#    include <sys/param.h>
+#  endif
+int getline(char **line, size_t *len, FILE *stream);
 #endif
 
 /*

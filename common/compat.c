@@ -1,6 +1,6 @@
 /*
 
-  $Id: compat.c,v 1.12 2007-05-07 22:07:42 pkot Exp $
+  $Id: compat.c,v 1.13 2007-07-05 22:04:09 pkot Exp $
 
   G N O K I I
 
@@ -189,5 +189,21 @@ char *strndup(const char *src, size_t n)
 
 	dst[n] = '\0';
 	return (char *)memcpy(dst, src, n);
+}
+#endif
+
+#ifndef HAVE_GETLINE
+int getline(char **line, size_t *len, FILE *stream)
+{
+	size_t size = 0, last = 0;
+
+	do {
+		size += BUFSIZ;
+		*line = realloc(*line, size);
+		fgets(*line + last, size, stream);
+		*len = strlen(*line);
+		last = *len - 1;
+	} while (!feof(stream) && *line[last] != '\n');
+	return 0;
 }
 #endif
