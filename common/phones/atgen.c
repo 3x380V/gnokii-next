@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.143 2007-05-01 23:50:14 pkot Exp $
+  $Id: atgen.c,v 1.144 2007-07-05 19:55:25 pkot Exp $
 
   G N O K I I
 
@@ -1562,6 +1562,52 @@ static gn_error ReplyGetSMS(int messagetype, unsigned char *buffer, int length, 
 
 	if (!data->raw_sms)
 		return GN_ERR_INTERNALERROR;
+
+	/* Try to figure out the status first */
+	tmp = strchr(buf.line2, ',');
+	if (tmp != NULL && ((char *) tmp - buf.line2 - strlen("+CMGR: ")) >= 1) {
+		char *status;
+		int len;
+
+		len = (char *) tmp - buf.line2 - strlen("+CMGR: ");
+		status = malloc(len + 1);
+		if (!status) {
+			dprintf("Not enough memory for buffer.\n");
+			return GN_ERR_INTERNALERROR;
+		}
+
+		memcpy(status, buf.line2 + strlen("+CMGR: "), len);
+		status[len] = '\0';
+
+		if (strstr(status, "UNREAD")) {
+			data->raw_sms->status = GN_SMS_Unread;
+		} else if (strstr(status, "READ")) {
+			data->raw_sms->status = GN_SMS_Read;
+		} else if (strstr(status, "UNSENT")) {
+			data->raw_sms->status = GN_SMS_Unsent;
+		} else if (strstr(status, "SENT")) {
+			data->raw_sms->status = GN_SMS_Sent;
+		} else {
+			int s;
+
+			s = atoi(status);
+			switch (s) {
+			case 0:
+				data->raw_sms->status = GN_SMS_Unread;
+				break;
+			case 1:
+				data->raw_sms->status = GN_SMS_Read;
+				break;
+			case 2:
+				data->raw_sms->status = GN_SMS_Unsent;
+				break;
+			case 3:
+				data->raw_sms->status = GN_SMS_Sent;
+				break;
+			}
+		}
+		free(status);
+	}
 
 	tmp = strrchr(buf.line2, ',');
 	/* The following sequence is correct for emtpy location:
