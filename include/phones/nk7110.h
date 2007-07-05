@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk7110.h,v 1.30 2006-11-08 19:45:37 dforsi Exp $
+  $Id: nk7110.h,v 1.31 2007-07-05 21:28:39 pkot Exp $
 
   G N O K I I
 
@@ -198,6 +198,16 @@ typedef struct {
 	int ll_memtype;
 	int ll_location;
 	int userdef_location;
+
+	/* callbacks */
+	void (*on_cell_broadcast)(gn_cb_message *msg, void *callback_data);
+	void (*call_notification)(gn_call_status call_status, gn_call_info *call_info, struct gn_statemachine *state, void *callback_data);
+	gn_error (*on_sms)(gn_sms *message, struct gn_statemachine *state, void *callback_data);
+
+	/* callback local data */
+	void *cb_callback_data;	/* to be passed as callback_data to on_cell_broadcast */
+	void *call_callback_data;	/* to be passed as callback_data to call_notification */
+	void *sms_callback_data;	/* to be passed as callback_data to on_sms */
 } nk7110_driver_instance;
 
 #endif  /* _gnokii_phones_nk7110_h */
