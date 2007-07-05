@@ -1,6 +1,6 @@
 /*
 
-  $Id: at-emulator.c,v 1.45 2006-10-03 21:26:37 pkot Exp $
+  $Id: at-emulator.c,v 1.46 2007-07-05 21:43:07 pkot Exp $
 
   G N O K I I
 
@@ -218,7 +218,7 @@ static void  gn_atem_answer_phone(void)
 
 
 /* This gets called to indicate an incoming call */
-void gn_atem_call_passup(gn_call_status CallStatus, gn_call_info *CallInfo, struct gn_statemachine *state)
+void gn_atem_call_passup(gn_call_status CallStatus, gn_call_info *CallInfo, struct gn_statemachine *state, void *callback_data)
 {
 	dprintf("gn_atem_call_passup called with %d\n", CallStatus);
 
