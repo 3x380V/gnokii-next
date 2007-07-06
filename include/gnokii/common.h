@@ -1,6 +1,6 @@
 /*
 
-  $Id: common.h,v 1.152 2007-05-04 19:41:34 pkot Exp $
+  $Id: common.h,v 1.153 2007-07-06 18:49:54 pkot Exp $
 
   G N O K I I
 
@@ -102,6 +102,7 @@ typedef enum {
 	GN_MT_F18,
 	GN_MT_F19,
 	GN_MT_F20, /* 20th CUSTOM FOLDER */
+	GN_MT_LAST = GN_MT_F20,
 	GN_MT_XX = 0xff	/* Error code for unknown memory type (returned by fbus-xxxx functions). */
 } gn_memory_type;
 

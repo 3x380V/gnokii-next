@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-sms.c,v 1.159 2007-01-06 22:53:21 pkot Exp $
+  $Id: gsm-sms.c,v 1.160 2007-07-06 18:49:54 pkot Exp $
 
   G N O K I I
 
@@ -746,7 +746,12 @@ GNOKII_API gn_error gn_sms_get(gn_data *data, struct gn_statemachine *state)
 	gn_error error;
 	gn_sms_raw rawsms;
 
-	if (!data->sms) return GN_ERR_INTERNALERROR;
+	if (!data->sms)
+		return GN_ERR_INTERNALERROR;
+	if (data->sms->number < 1)
+		return GN_ERR_EMPTYLOCATION;
+	if (data->sms->memory_type > GN_MT_LAST)
+		return GN_ERR_INVALIDMEMORYTYPE;
 	memset(&rawsms, 0, sizeof(gn_sms_raw));
 	rawsms.number = data->sms->number;
 	rawsms.memory_type = data->sms->memory_type;
