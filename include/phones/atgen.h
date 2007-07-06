@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.h,v 1.24 2007-07-05 21:28:39 pkot Exp $
+  $Id: atgen.h,v 1.25 2007-07-06 19:31:06 pkot Exp $
 
   G N O K I I
 
@@ -79,6 +79,11 @@ typedef struct {
 	at_charset availcharsets;
 	at_charset defaultcharset;
 	at_charset charset;
+
+	/* For call notifications via AT+CLIP */
+	int clip_supported;
+	gn_call_type last_call_type;
+	gn_call_status last_call_status;
 
 	/* callbacks */
 	void (*on_cell_broadcast)(gn_cb_message *msg, void *callback_data);

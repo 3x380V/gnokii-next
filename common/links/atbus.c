@@ -1,6 +1,6 @@
 /*
 
-  $Id: atbus.c,v 1.49 2006-04-26 20:07:30 pkot Exp $
+  $Id: atbus.c,v 1.50 2007-07-06 19:31:06 pkot Exp $
 
   G N O K I I
 
@@ -213,10 +213,17 @@ static void atbus_rx_statemachine(unsigned char rx_char, struct gn_statemachine 
 			/* check for possible unsolicited responses */
 			if (!strncmp(start + 1, "CREG:", 5)) {
 				count = numchar(start, ',');
-				if (count == 0 || count == 2) unsolicited = 1;
+				if (count == 0 || count == 2)
+					unsolicited = 1;
 			} else if (!strncmp(start + 1, "CPIN:", 5))
 				bi->rbuf[0] = GN_AT_OK;
 			else if (!strncmp(start + 1, "CRING:", 6)) {
+				sm_incoming_function(GN_OP_AT_Ring, start, bi->rbuf_pos - 1 - (start - bi->rbuf), sm);
+				unsolicited = 1;
+			} else if (!strncmp(start + 1, "CLIP:", 5)) {
+				sm_incoming_function(GN_OP_AT_Ring, start, bi->rbuf_pos - 1 - (start - bi->rbuf), sm);
+				unsolicited = 1;
+			} else if (!strncmp(start + 1, "CLCC:", 5)) {
 				sm_incoming_function(GN_OP_AT_Ring, start, bi->rbuf_pos - 1 - (start - bi->rbuf), sm);
 				unsolicited = 1;
 			}
