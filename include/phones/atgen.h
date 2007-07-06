@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.h,v 1.25 2007-07-06 19:31:06 pkot Exp $
+  $Id: atgen.h,v 1.26 2007-07-06 19:39:25 pkot Exp $
 
   G N O K I I
 
@@ -84,6 +84,9 @@ typedef struct {
 	int clip_supported;
 	gn_call_type last_call_type;
 	gn_call_status last_call_status;
+
+	/* For AT+CPAS */
+	gn_call_status prev_state;
 
 	/* callbacks */
 	void (*on_cell_broadcast)(gn_cb_message *msg, void *callback_data);
