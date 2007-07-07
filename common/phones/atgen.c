@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.149 2007-07-06 21:04:27 pkot Exp $
+  $Id: atgen.c,v 1.150 2007-07-07 12:01:19 pkot Exp $
 
   G N O K I I
 
@@ -1430,7 +1430,8 @@ static gn_error ReplyGetBattery(int messagetype, unsigned char *buffer, int leng
 
 	if (!strncmp(buf.line1, "AT+CBC", 6) && !strncmp(buf.line2, "+CBC: ", 6)) {
 		if (data->battery_level) {
-			*(data->battery_unit) = GN_BU_Percentage;
+			if (data->battery_unit)
+				*(data->battery_unit) = GN_BU_Percentage;
 			pos = strchr(buf.line2, ',');
 			if (pos) {
 				pos++;
