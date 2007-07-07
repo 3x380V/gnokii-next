@@ -1,6 +1,6 @@
 /*
 
-  $Id: smsd.h,v 1.18 2006-08-10 21:09:16 pkot Exp $
+  $Id: smsd.h,v 1.19 2007-07-07 14:33:04 pkot Exp $
 
   S M S D
 
@@ -32,6 +32,11 @@
 
 #include <glib.h>
 #include "gnokii.h"
+
+/* error definition */
+#define SMSD_OK		0
+#define SMSD_NOK	1
+#define SMSD_DUPLICATE	2
 
 typedef enum {
   SMSD_READ_REPORTS = 1

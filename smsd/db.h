@@ -1,6 +1,6 @@
 /*
 
-  $Id: db.h,v 1.13 2006-08-10 19:10:14 pkot Exp $
+  $Id: db.h,v 1.14 2007-07-07 14:33:04 pkot Exp $
 
   S M S D
 
@@ -33,6 +33,8 @@
 #include <glib.h>
 #include "smsd.h"
 #include "gnokii.h"
+
+#define MAX_SQL_CMD_LEN	65536
 
 GNOKII_API void (*DB_Bye) (void);
 GNOKII_API gint (*DB_ConnectInbox) (const DBConfig);
