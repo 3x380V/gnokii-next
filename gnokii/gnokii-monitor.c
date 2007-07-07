@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-monitor.c,v 1.9 2007-05-24 15:28:24 dforsi Exp $
+  $Id: gnokii-monitor.c,v 1.10 2007-07-07 12:24:07 pkot Exp $
 
   G N O K I I
 
@@ -68,7 +68,7 @@ void monitor_usage(FILE *f)
 		));
 }
 
-static void callnotifier(gn_call_status call_status, gn_call_info *call_info, struct gn_statemachine *state)
+static void callnotifier(gn_call_status call_status, gn_call_info *call_info, struct gn_statemachine *state, void *callback_data)
 {
 	switch (call_status) {
 	case GN_CALL_Incoming:
@@ -96,7 +96,7 @@ static void callnotifier(gn_call_status call_status, gn_call_info *call_info, st
 	gn_call_notifier(call_status, call_info, state);
 }
 
-static void storecbmessage(gn_cb_message *message)
+static void storecbmessage(gn_cb_message *message, struct gn_statemachine *state, void *callback_data)
 {
 	if (cb_queue[cb_widx].is_new) {
 		/* queue is full */
@@ -221,6 +221,7 @@ int monitormode(int argc, char *argv[], gn_data *data, struct gn_statemachine *s
 	data->network_info = &networkinfo;
 	data->on_cell_broadcast = storecbmessage;
 	data->call_notification = callnotifier;
+	data->callback_data = NULL;
 
 	gn_sm_functions(GN_OP_SetCallNotification, data, state);
 
