@@ -1,6 +1,6 @@
 /*
 
-  $Id: mysql.c,v 1.33 2007-07-07 14:33:04 pkot Exp $
+  $Id: mysql.c,v 1.34 2007-07-07 15:52:14 pkot Exp $
 
   S M S D
 
@@ -344,7 +344,7 @@ GNOKII_API void DB_Look (const gchar * const phone)
       sms.remote.type = GN_GSM_NUMBER_Unknown;
     
     if (row[2] != NULL)
-      strncpy ((gchar *) sms.user_data[0].u.text, row[2], GN_SMS_MAX_LENGTH + 1);
+      strncpy ((gchar *) sms.user_data[0].u.text, row[2], GN_SMS_LONG_MAX_LENGTH + 1);
     else
       *sms.user_data[0].u.text = '\0';
     sms.user_data[0].u.text[GN_SMS_MAX_LENGTH] = '\0';
