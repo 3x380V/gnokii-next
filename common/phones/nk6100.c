@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.213 2007-07-07 09:01:59 dforsi Exp $
+  $Id: nk6100.c,v 1.214 2007-07-07 12:21:21 pkot Exp $
 
   G N O K I I
 
@@ -1461,7 +1461,7 @@ static gn_error IncomingSMS1(int messagetype, unsigned char *message, int length
 			cbmsg.channel = message[7];
 			n = char_7bit_unpack(0, length-10, sizeof(cbmsg.message)-1, message+10, cbmsg.message);
 			char_ascii_decode(cbmsg.message, cbmsg.message, n);
-			DRVINSTANCE(state)->on_cell_broadcast(&cbmsg, DRVINSTANCE(state)->cb_callback_data);
+			DRVINSTANCE(state)->on_cell_broadcast(&cbmsg, state, DRVINSTANCE(state)->cb_callback_data);
 		}
 		return GN_ERR_UNSOLICITED;
 
