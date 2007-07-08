@@ -1,6 +1,6 @@
 /*
 
-  $Id: compat.h,v 1.55 2007-07-05 22:04:09 pkot Exp $
+  $Id: compat.h,v 1.56 2007-07-08 15:30:48 pkot Exp $
 
   G N O K I I
 
@@ -37,6 +37,7 @@
 #include "config.h"
 
 #include <stdlib.h>
+#include <stdio.h>
 
 #ifdef WIN32
 #  include <windows.h>
