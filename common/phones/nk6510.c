@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.c,v 1.230 2007-07-05 21:28:40 pkot Exp $
+  $Id: nk6510.c,v 1.231 2007-07-09 18:28:59 pkot Exp $
 
   G N O K I I
 
@@ -2669,6 +2669,8 @@ static gn_error calnote2_decode(unsigned char *message, int length, gn_data *dat
 	data->calnote->end_time.second = 0;
 	/* Recurrence */
 	data->calnote->recurrence = 256 * message[40] + message[41];
+	/* Occurrence */
+	data->calnote->occurrences = 256 * message[46] + message[47];
 	/* Alarm */
 	alarm_mark = 256 * message[14] + message[15];
 	alarm = 256 * message[16] + message[17];
@@ -3027,6 +3029,12 @@ static gn_error NK6510_WriteCalendarNote2(gn_data *data, struct gn_statemachine 
 		calnote->recurrence = 0xffff; /* setting 1 year repeat */
 	req[40] = calnote->recurrence / 256;
 	req[41] = calnote->recurrence % 256;
+
+	/* Occurrences */
+	if (calnote->recurrence) {
+		req[46] = calnote->occurrences / 256;
+		req[47] = calnote->occurrences % 256;
+	}
 
 	/* Set start time and end time */
 	req[28] = calnote->time.year / 256;

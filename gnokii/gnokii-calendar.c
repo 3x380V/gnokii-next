@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-calendar.c,v 1.14 2007-04-29 09:39:38 dforsi Exp $
+  $Id: gnokii-calendar.c,v 1.15 2007-07-09 18:29:00 pkot Exp $
 
   G N O K I I
 
@@ -202,6 +202,19 @@ int getcalendarnote(int argc, char *argv[], gn_data *data, struct gn_statemachin
 				default:
 					fprintf(stdout, _("   Repeat: %d hours\n"), calnote.recurrence);
 					break;
+				}
+
+				if (calnote.recurrence != GN_CALNOTE_NEVER) {
+					fprintf(stdout, _("   The event will be repeated "));
+					switch (calnote.occurrences) {
+					case 0:
+						fprintf(stdout, _("forever."));
+						break;
+					default:
+						fprintf(stdout, _("%d times."), calnote.occurrences);
+						break;
+					}
+					fprintf(stdout, "\n");
 				}
 
 				fprintf(stdout, _("   Text: %s\n"), calnote.text);

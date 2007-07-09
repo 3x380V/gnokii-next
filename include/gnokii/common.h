@@ -1,6 +1,6 @@
 /*
 
-  $Id: common.h,v 1.153 2007-07-06 18:49:54 pkot Exp $
+  $Id: common.h,v 1.154 2007-07-09 18:29:00 pkot Exp $
 
   G N O K I I
 
@@ -378,6 +378,7 @@ typedef struct {
 	char phone_number[GN_CALNOTE_NUMBER_MAX_LENGTH]; /* For Call only: the phone number */
 	char mlocation[GN_CALNOTE_MAX_LENGTH];           /* For Meeting only: the location field */
 	gn_calnote_recurrence recurrence;                /* Recurrence of the note */
+	int occurrences;                                 /* Number of recurrence events; 0 for infinity */
 } gn_calnote;
 
 /* List of Calendar Notes in phone */
