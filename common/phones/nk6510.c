@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.c,v 1.233 2007-07-09 20:10:29 pkot Exp $
+  $Id: nk6510.c,v 1.234 2007-07-09 20:15:47 pkot Exp $
 
   G N O K I I
 
@@ -2361,6 +2361,7 @@ static gn_error NK6510_WritePhonebookLocation(gn_data *data, struct gn_statemach
 			for (i = 0; i < entry->subentries_count; i++)
 				switch (entry->subentries[i].entry_type) {
 				case GN_PHONEBOOK_ENTRY_ExtendedAddress:
+				case GN_PHONEBOOK_ENTRY_Postal:
 				case GN_PHONEBOOK_ENTRY_Street:
 				case GN_PHONEBOOK_ENTRY_City:
 				case GN_PHONEBOOK_ENTRY_StateProvince:
@@ -2419,6 +2420,7 @@ static gn_error NK6510_WritePhonebookLocation(gn_data *data, struct gn_statemach
 				for (i = 0; i < entry->subentries_count; i++) {
 					switch (entry->subentries[i].entry_type) {
 					case GN_PHONEBOOK_ENTRY_ExtendedAddress:
+					case GN_PHONEBOOK_ENTRY_Postal:
 					case GN_PHONEBOOK_ENTRY_Street:
 					case GN_PHONEBOOK_ENTRY_City:
 					case GN_PHONEBOOK_ENTRY_StateProvince:
