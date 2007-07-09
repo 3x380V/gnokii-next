@@ -4,7 +4,7 @@
 # Copyright (C) 1999 Hugh Blemings & Pavel Janík ml.
 #               1999-2005 Jan Derfinak
 #               2000 Karel Zak
-# $Id: Makefile,v 1.38 2006-08-10 20:29:56 pkot Exp $
+# $Id: Makefile,v 1.39 2007-07-09 16:46:15 pkot Exp $
 #
 
 #GLIBCFLAGS = glib-config --cflags
@@ -35,13 +35,12 @@ LDLIBS += -rdynamic $(TOPDIR)/common/libgnokii.la -ldl
 
 OBJS = 	smsd.lo \
 	lowlevel.lo
-DB_OBJS = file.lo
-#pq.lo mysql.lo file.lo
+DB_OBJS = pq.lo mysql.lo file.lo
 
 # A list of database modules to build.
 # FIXME: detect which ones to build in configure
-#DB_LIBS = libfile.la libpq.la libmysql.la
-DB_LIBS := libfile.la
+DB_LIBS = libfile.la libpq.la libmysql.la
+#DB_LIBS := libfile.la
 
 all: smsd
 
