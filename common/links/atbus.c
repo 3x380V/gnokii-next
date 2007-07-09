@@ -1,6 +1,6 @@
 /*
 
-  $Id: atbus.c,v 1.51 2007-07-09 17:12:00 pkot Exp $
+  $Id: atbus.c,v 1.52 2007-07-09 18:07:47 pkot Exp $
 
   G N O K I I
 
@@ -151,7 +151,7 @@ static void atbus_rx_statemachine(unsigned char rx_char, struct gn_statemachine 
 {
 	int error;
 	atbus_instance *bi = AT_BUSINST(sm);
-	int unsolicited, count, messagetype;
+	int unsolicited, count;
 	char *start;
 
 	if (!bi)
