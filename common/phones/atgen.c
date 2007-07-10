@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.151 2007-07-09 17:09:57 pkot Exp $
+  $Id: atgen.c,v 1.152 2007-07-10 14:32:26 dforsi Exp $
 
   G N O K I I
 
@@ -2268,7 +2268,7 @@ static gn_error ReplyGetActiveCalls(int messagetype, unsigned char *buffer, int 
 
 	memset(data->call_active, 0, GN_CALL_MAX_PARALLEL * sizeof(gn_call_active));
 
-	if (strncmp(buf.line1, "AT+CPAS: ", 8)) {
+	if (strncmp(buf.line1, "AT+CPAS", 7)) {
 		return GN_ERR_UNKNOWN;
 	}
 
