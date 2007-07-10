@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk7110.c,v 1.183 2007-07-05 21:28:40 pkot Exp $
+  $Id: nk7110.c,v 1.184 2007-07-10 14:34:50 dforsi Exp $
 
   G N O K I I
 
@@ -908,7 +908,7 @@ static gn_error NK7110_WritePhonebookLocation(gn_data *data, struct gn_statemach
 		string[0] = entry->caller_group + 1;
 		string[1] = 0;
 		count += PackBlock(0x1e, 2, block++, string, req + count);
-		/* We don't require the application to feel in any subentry.
+		/* We don't require the application to fill in any subentry.
 		 * if it is not filled in, let's take just one number we have.
 		 */
 		if (!entry->subentries_count) {
