@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-sms.c,v 1.161 2007-07-07 16:02:36 pkot Exp $
+  $Id: gsm-sms.c,v 1.162 2007-07-14 15:11:40 dforsi Exp $
 
   G N O K I I
 
@@ -1314,7 +1314,7 @@ GNOKII_API gn_error gn_sms_send(gn_data *data, struct gn_statemachine *state)
 		data->raw_sms->message_center[0] = data->raw_sms->message_center[0] / 2 + 1;
 
 	error = sms_prepare(data->sms, data->raw_sms);
-	ERROR();
+	if (error != GN_ERR_NONE) goto cleanup;
 
 	sms_dump_raw(data->raw_sms);
 	if (data->raw_sms->user_data_length > MAX_SMS_PART) {
