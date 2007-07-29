@@ -1,6 +1,6 @@
 /*
 
-  $Id: compat.h,v 1.56 2007-07-08 15:30:48 pkot Exp $
+  $Id: compat.h,v 1.57 2007-07-29 17:44:11 pkot Exp $
 
   G N O K I I
 
@@ -289,6 +289,10 @@ int getline(char **line, size_t *len, FILE *stream);
 	typedef char int8_t;
 	typedef short int16_t;
 	typedef int int32_t;
+#endif
+
+#ifndef HAVE_U_INT8_T
+	typedef u_int_8_t;
 #endif
 
 #ifdef HAVE_WCRTOMB
