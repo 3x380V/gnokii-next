@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.153 2007-07-11 19:34:29 pkot Exp $
+  $Id: atgen.c,v 1.154 2007-08-05 16:28:04 pkot Exp $
 
   G N O K I I
 
@@ -1596,10 +1596,10 @@ static gn_error ReplySendSMS(int messagetype, unsigned char *buffer, int length,
 	/* SendSMS or SaveSMS */
 	if (!strncmp("+CMGW:", buf.line2, 6) ||
 	    !strncmp("+CMGS:", buf.line2, 6))
-		data->raw_sms->number = atoi(buf.line2 + 6);
+		data->raw_sms->reference = atoi(buf.line2 + 6);
 	else
-		data->raw_sms->number = -1;
-	dprintf("Message sent okay\n");
+		data->raw_sms->reference = -1;
+	dprintf("Message sent (reference: %d)\n", data->raw_sms->reference);
 	return GN_ERR_NONE;
 }
 
