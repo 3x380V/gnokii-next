@@ -1,6 +1,6 @@
 /*
 
-  $Id: ldif.c,v 1.19 2007-08-01 20:13:23 pkot Exp $
+  $Id: ldif.c,v 1.20 2007-08-08 15:07:56 dforsi Exp $
   
   G N O K I I
 
@@ -103,6 +103,10 @@ GNOKII_API int gn_phonebook2ldif(FILE *f, gn_phonebook_entry *entry)
 
 	if (entry->subentries_count == 0) {
 		ldif_entry_write(f, "telephoneNumber", entry->number, 1);
+	}
+
+	if (entry->address.has_address) {
+		ldif_entry_write(f, "homePostalAddress", entry->address.post_office_box, 1);
 	}
 
 	/* Add ext. pbk info if required */
