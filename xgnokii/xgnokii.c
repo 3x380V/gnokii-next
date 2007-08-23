@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii.c,v 1.92 2007-06-06 14:58:29 dforsi Exp $
+  $Id: xgnokii.c,v 1.93 2007-08-23 14:12:46 pkot Exp $
   
   X G N O K I I
 
@@ -831,6 +831,8 @@ static void _MainExit(void)
 void MainExit(gchar *ermsg)
 {
 	if (ermsg) {
+		/* Nasty workaround -- that's some race condition that makes sometimes xgnokii to hang on exit */
+		sleep(1);
 		gtk_label_set_text(GTK_LABEL(infoDialog.text), ermsg);
 		gtk_widget_show_now(infoDialog.dialog);
 		GUI_Refresh();

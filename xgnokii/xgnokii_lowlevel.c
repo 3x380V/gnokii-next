@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_lowlevel.c,v 1.98 2006-12-17 17:23:37 pkot Exp $
+  $Id: xgnokii_lowlevel.c,v 1.99 2007-08-23 14:12:47 pkot Exp $
   
   X G N O K I I
 
@@ -1217,6 +1217,7 @@ void *GUI_Connect(void *a)
 	if (fbusinit() != GN_ERR_NONE) {
 		gn_log_xdebug("Initialization failed...\n");
 		MainExit(NULL);
+		return NULL;
 	}
 
 	if (!xgnokiiConfig.allowBreakage &&				/* User did not allow to break the phone */
@@ -1229,6 +1230,7 @@ void *GUI_Connect(void *a)
 			   "\tallow_breakage = 1\n\n"
 			   "in xgnokii section in your config file.\n"
 			   "See http://thread.gmane.org/gmane.linux.drivers.gnokii/3195 for details.\n"));
+		return NULL;
 	}
 
 	gn_log_xdebug("Phone connected. Starting monitoring...\n");
