@@ -1,6 +1,6 @@
 /*
 
-  $Id: device.c,v 1.41 2006-06-11 16:39:48 deller Exp $
+  $Id: device.c,v 1.42 2007-08-25 11:18:50 pkot Exp $
 
   G N O K I I
 
@@ -59,7 +59,7 @@ int device_open(const char *file, int with_odd_parity, int with_async,
 	state->device.type = device_type;
 	state->device.device_instance = NULL;
 
-	dprintf("Serial device: opening device %s\n", file);
+	dprintf("Serial device: opening device %s\n", (device_type == GN_CT_DKU2LIBUSB) ? "USB" : file);
 
 	switch (state->device.type) {
 	case GN_CT_DKU2:
