@@ -1,6 +1,6 @@
 /*
 
-  $Id: unixserial.c,v 1.44 2007-09-03 17:37:47 dforsi Exp $
+  $Id: unixserial.c,v 1.45 2007-09-04 17:18:39 dforsi Exp $
 
   G N O K I I
 
@@ -309,12 +309,11 @@ int serial_opendevice(const char *file, int with_odd_parity,
 			retcode = ioctl(fd, FIOASYNC, &with_async);
 #  endif
 #endif
-	}
-
-	if (retcode == -1) {
-		perror("Gnokii serial_opendevice: fcntl(F_SETFL)");
-		serial_close(fd, state);
-		return -1;
+		if (retcode == -1) {
+			perror("Gnokii serial_opendevice: fcntl(F_SETFL)");
+			serial_close(fd, state);
+			return -1;
+		}
 	}
 
 	return fd;
