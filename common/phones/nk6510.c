@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.c,v 1.241 2007-08-05 16:28:04 pkot Exp $
+  $Id: nk6510.c,v 1.242 2007-09-04 17:53:37 pkot Exp $
 
   G N O K I I
 
@@ -1458,7 +1458,7 @@ err:
 		switch (message[8]) {
 		case NK6510_SUBSMS_SMS_SEND_OK: /* 0x00 */
 			dprintf("SMS sent (reference: %d)\n", message[10]);
-			data->raw_sms = message[10];
+			data->raw_sms->reference = message[10];
 			e = GN_ERR_NONE;
 			break;
 
