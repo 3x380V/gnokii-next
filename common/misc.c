@@ -1,6 +1,6 @@
 /*
 
-  $Id: misc.c,v 1.126 2007-05-02 16:30:05 pkot Exp $
+  $Id: misc.c,v 1.127 2007-09-23 20:58:51 pkot Exp $
 
   G N O K I I
 
@@ -231,6 +231,7 @@ static gn_phone_model models[] = {
 	{"6233",  "RM123_145_-", PM_DEFAULT | PM_NETMONITOR },
 	{"6250",  "NHM-3",	PM_DEFAULT | PM_NETMONITOR },
 	{"6280",  "RH-78",	PM_DEFAULT | PM_NETMONITOR },
+	{"6300",  "RM-217",     PM_DEFAULT | PM_FULLPBK },
 	{"6310",  "NPE-4",	PM_DEFAULT },
 	{"6310i", "NPL-1",	PM_DEFAULT },
 	{"6340",  "NPM-2",	PM_OLD_DEFAULT },
