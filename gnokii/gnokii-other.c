@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-other.c,v 1.6 2007-05-08 14:55:35 pkot Exp $
+  $Id: gnokii-other.c,v 1.7 2007-10-05 20:34:42 pkot Exp $
 
   G N O K I I
 
@@ -180,6 +180,8 @@ int getnetworkinfo(gn_data *data, struct gn_statemachine *state)
 	char country[4] = {0, 0, 0, 0};
 
 	gn_data_clear(data);
+	memset(&networkinfo, 0, sizeof(networkinfo));
+
 	data->network_info = &networkinfo;
 
 	if ((error = gn_sm_functions(GN_OP_GetNetworkInfo, data, state)) != GN_ERR_NONE) {
