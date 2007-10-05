@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.h,v 1.113 2007-08-07 20:39:28 dforsi Exp $
+  $Id: gnokii.h,v 1.114 2007-10-05 21:01:20 pkot Exp $
 
   G N O K I I
 
@@ -69,10 +69,10 @@ typedef unsigned char uint8_t;
  * LIBGNOKII_VERSION_MINOR = GNOKII_MINOR
  * LIBGNOKII_VERSION_RELEASE = GNOKII_RELEASE
  */
-#define LIBGNOKII_VERSION_STRING "3.2.0"
+#define LIBGNOKII_VERSION_STRING "3.2.1"
 #define LIBGNOKII_VERSION_MAJOR 3
 #define LIBGNOKII_VERSION_MINOR 2
-#define LIBGNOKII_VERSION_RELEASE 0
+#define LIBGNOKII_VERSION_RELEASE 1
 #define LIBGNOKII_MAKE_VERSION( a,b,c ) (((a) << 16) | ((b) << 8) | (c))
 
 #define LIBGNOKII_VERSION \

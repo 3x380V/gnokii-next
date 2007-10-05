@@ -1,5 +1,5 @@
 #
-# $Id: Makefile,v 1.93 2007-07-24 20:29:19 pkot Exp $
+# $Id: Makefile,v 1.94 2007-10-05 21:01:20 pkot Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -27,7 +27,7 @@ include $(TOPDIR)/Makefile.global
 # Change is just once per release!
 GNOKII_MAJOR = 6
 GNOKII_MINOR = 3
-GNOKII_RELEASE = 0
+GNOKII_RELEASE = 1
 ifdef WIN32_CROSS
 LIBTOOL_UNDEF = -no-undefined
 LIBTOOL_VER = -version-info $(GNOKII_MAJOR):$(GNOKII_RELEASE):$(GNOKII_MINOR) -avoid-version
