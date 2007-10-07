@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.23 2007-04-20 19:50:35 pkot Exp $
+# $Id: Makefile,v 1.24 2007-10-07 16:51:33 dforsi Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -32,7 +32,8 @@ OBJS =	generic.lo \
 	atsoer.lo \
 	atsam.lo \
 	gnapplet.lo \
-	fake.lo
+	fake.lo \
+	pcsc.lo \
 
 #	nk2110.lo
 #	dc2711.lo

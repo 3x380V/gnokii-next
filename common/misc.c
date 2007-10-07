@@ -1,6 +1,6 @@
 /*
 
-  $Id: misc.c,v 1.128 2007-10-06 13:16:01 pkot Exp $
+  $Id: misc.c,v 1.129 2007-10-07 16:51:33 dforsi Exp $
 
   G N O K I I
 
@@ -313,6 +313,7 @@ static gn_phone_model models[] = {
 	{"N-Gage", "NEM-4",	PM_OLD_DEFAULT },
 	{"RinGo", "NHX-7",	PM_OLD_DEFAULT },
 	{"sx1",  "SX1",		PM_DEFAULT },
+	{"SIM/USIM", "pcsc",	0 },
 	{NULL,    NULL, 0 } /* keep last one as NULL */
 };
 

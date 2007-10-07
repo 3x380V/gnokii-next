@@ -1,5 +1,5 @@
 /*
-  $Id: libfunctions.c,v 1.33 2007-07-10 15:37:02 pkot Exp $
+  $Id: libfunctions.c,v 1.34 2007-10-07 16:51:33 dforsi Exp $
 
   G N O K I I
 
@@ -465,6 +465,9 @@ static struct { gn_connection_type ct; const char *str; } connectiontypes[] = {
 	{ GN_CT_DKU2,       "dku2" },
 #ifdef HAVE_LIBUSB
 	{ GN_CT_DKU2LIBUSB, "dku2libusb" },
+#endif
+#ifdef HAVE_PCSC
+	{ GN_CT_PCSC,       "pcsc" },
 #endif
 #ifndef WIN32
 	{ GN_CT_TCP,        "tcp" },
