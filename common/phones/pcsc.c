@@ -1,6 +1,6 @@
 /*
 
-  $Id: pcsc.c,v 1.1 2007-10-07 16:51:32 dforsi Exp $
+  $Id: pcsc.c,v 1.2 2007-10-07 21:31:48 dforsi Exp $
 
   G N O K I I
 
@@ -27,6 +27,10 @@
   This file provides functions for accessing PC/SC SIM smart cards.
 
 */
+
+#include "config.h"
+
+#ifdef HAVE_PCSC
 
 #include "phones/pcsc.h"
 
@@ -622,3 +626,5 @@ static LONG pcsc_open_reader_name(LPCSTR reader_name) {
 
 	return ret;
 }
+
+#endif /* HAVE_PCSC */

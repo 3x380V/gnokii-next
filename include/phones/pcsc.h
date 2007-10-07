@@ -1,6 +1,6 @@
 /*
 
-  $Id: pcsc.h,v 1.1 2007-10-07 16:51:33 dforsi Exp $
+  $Id: pcsc.h,v 1.2 2007-10-07 21:31:48 dforsi Exp $
 
   G N O K I I
 
@@ -31,7 +31,6 @@
 #ifndef _gnokii_phones_pcsc_h
 #define _gnokii_phones_pcsc_h
 
-#include "config.h"
 #include "compat.h"
 #include "gnokii.h"
 #include "phones/generic.h"
