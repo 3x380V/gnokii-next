@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.137 2007-10-12 13:28:24 pkot Exp $
+# $Id: Makefile,v 1.138 2007-10-12 17:00:38 dforsi Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -49,6 +49,9 @@ TOPLEVEL_DOCS = ChangeLog \
 		TODO
 
 all: compile
+
+# build the apps after building the library
+$(BIN_DIRS) $(GTK_DIRS): common
 
 compile: $(DIRS)
 	@if [ "$(GTK_LIBS)" ]; then \
