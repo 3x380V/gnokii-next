@@ -1,5 +1,7 @@
 
 #
+# $Id: Makefile,v 1.29 2007-10-12 17:09:50 dforsi Exp $
+#
 # Makefile for the GNOKII tool suite.
 #
 # Copyright (C) 1999 Hugh Blemings & Pavel Janík ml.
@@ -38,6 +40,9 @@ $(TOPDIR)/getopt/libgetopt.a:
 clean:
 	$(LIBTOOL) --mode=clean $(RM) gnokii $(OBJS)
 	$(RM) *~ depend *.exe core *.bak
+ifdef OWN_GETOPT
+	$(MAKE) -C $(TOPDIR)/getopt clean
+endif
 
 install: gnokii
 	echo $(DESTDIR)

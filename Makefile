@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.138 2007-10-12 17:00:38 dforsi Exp $
+# $Id: Makefile,v 1.139 2007-10-12 17:09:49 dforsi Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -73,10 +73,6 @@ clean:
 		$(MAKE) -C $$dir clean; \
 	    fi; \
 	done
-
-ifdef OWN_GETOPT
-	$(MAKE) -C getopt clean
-endif
 
 	@if [ "$(GTK_LIBS)" ]; then \
 		for dir in $(GTK_DIRS); do \
