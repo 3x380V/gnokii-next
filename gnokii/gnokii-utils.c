@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-utils.c,v 1.6 2006-11-29 16:06:35 dforsi Exp $
+  $Id: gnokii-utils.c,v 1.7 2007-10-13 20:19:50 pkot Exp $
 
   G N O K I I
 
@@ -57,7 +57,7 @@ gn_error readtext(gn_sms_user_data *udata, int input_len)
 #ifndef	WIN32
 	if (isatty(0))
 #endif
-		fprintf(stderr, _("Please enter SMS text. End your input with <cr><control-D>:"));
+		fprintf(stderr, _("Please enter SMS text. End your input with <cr><control-D>:\n"));
 
 	/* Get message text from stdin. */
 	chars_read = fread(message_buffer, 1, sizeof(message_buffer), stdin);
