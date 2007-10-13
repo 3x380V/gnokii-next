@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.154 2007-08-05 16:28:04 pkot Exp $
+  $Id: atgen.c,v 1.155 2007-10-13 10:19:02 pkot Exp $
 
   G N O K I I
 
@@ -836,7 +836,7 @@ static gn_error AT_WritePhonebook(gn_data *data, struct gn_statemachine *state)
 			       data->phonebook_entry->number,
 			       data->phonebook_entry->number[0] == '+' ? "145" : "129");
 		tmp = req + ofs;
-		len = at_encode(drvinst->charset, tmp, sizeof(req - ofs),
+		len = at_encode(drvinst->charset, tmp, sizeof(req) - ofs,
 				data->phonebook_entry->name,
 				strlen(data->phonebook_entry->name));
 		tmp[len-1] = '"';
