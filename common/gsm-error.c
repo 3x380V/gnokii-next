@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-error.c,v 1.26 2006-08-09 19:36:58 pkot Exp $
+  $Id: gsm-error.c,v 1.27 2007-10-13 12:33:17 pkot Exp $
 
   G N O K I I
 
@@ -74,6 +74,7 @@ GNOKII_API char *gn_error_print(gn_error e)
 	case GN_ERR_NOLOG:                 return _("Incorrect logging section configuration.");
 	case GN_ERR_NOMODEL:               return _("No phone model specified in the config file.");
 	case GN_ERR_NOPORT:                return _("No port specified in the config file.");
+	case GN_ERR_NOCONNECTION:          return _("No connection type specified in the config file.");
 	default:                           return _("Unknown error.");
 	}
 }

@@ -1,6 +1,6 @@
 /*
 
-  $Id: error.h,v 1.21 2006-08-09 19:36:58 pkot Exp $
+  $Id: error.h,v 1.22 2007-10-13 12:33:16 pkot Exp $
 
   G N O K I I
 
@@ -86,7 +86,8 @@ typedef enum {
 	GN_ERR_NOPHONE,			/* Either global or given phone section cannot be found */
 	GN_ERR_NOLOG,			/* Incorrect logging section configuration */
 	GN_ERR_NOMODEL,			/* No phone model specified */
-	GN_ERR_NOPORT			/* No port specified */
+	GN_ERR_NOPORT,			/* No port specified */
+	GN_ERR_NOCONNECTION		/* No connection type specified */
 } gn_error;
 
 GNOKII_API char *gn_error_print(gn_error e);
