@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-sms.c,v 1.165 2007-10-05 20:59:34 pkot Exp $
+  $Id: gsm-sms.c,v 1.166 2007-10-13 12:39:08 pkot Exp $
 
   G N O K I I
 
@@ -1324,7 +1324,7 @@ GNOKII_API gn_error gn_sms_send(gn_data *data, struct gn_statemachine *state)
 
 	dprintf("Sending\n");
 	error = gn_sm_functions(GN_OP_SendSMS, data, state);
- cleanup:
+cleanup:
 	free(data->raw_sms);
 	data->raw_sms = NULL;
 	return error;
