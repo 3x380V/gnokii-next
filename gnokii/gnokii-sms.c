@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-sms.c,v 1.29 2007-07-05 21:28:40 pkot Exp $
+  $Id: gnokii-sms.c,v 1.30 2007-10-15 10:20:26 pkot Exp $
 
   G N O K I I
 
@@ -671,7 +671,7 @@ int getsms(int argc, char *argv[], gn_data *data, struct gn_statemachine *state)
 			mode = 0;
 		case 'f':
 			if (optarg) {
-				filename[sizeof(filename) - 1] = '\0';
+				memset(&filename, 0, sizeof(filename));
 				strncpy(filename, optarg, sizeof(filename));
 				if (filename[sizeof(filename) - 1]) {
 					filename[sizeof(filename) - 1] = '\0';
@@ -841,7 +841,8 @@ int getsms(int argc, char *argv[], gn_data *data, struct gn_statemachine *state)
 					break;
 				}
 				/* No UDH */
-				if (!message.udh.number) message.udh.udh[0].type = GN_SMS_UDH_None;
+				if (!message.udh.number)
+					message.udh.udh[0].type = GN_SMS_UDH_None;
 				switch (message.udh.udh[0].type) {
 				case GN_SMS_UDH_None:
 					fprintf(stdout, _("Text:\n"));
@@ -912,7 +913,7 @@ int getsms(int argc, char *argv[], gn_data *data, struct gn_statemachine *state)
 				if ((mode != -1) && *filename) {
 					char buf[1024];
 					sprintf(buf, "%s%d", filename, count);
-					mode = gn_file_text_save(buf, message_text, mode);
+					mode = writefile(buf, message_text, mode);
 				}
 			}
 			if (del) {

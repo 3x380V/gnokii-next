@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.h,v 1.114 2007-10-05 21:01:20 pkot Exp $
+  $Id: gnokii.h,v 1.115 2007-10-15 10:20:25 pkot Exp $
 
   G N O K I I
 
@@ -237,9 +237,6 @@ GNOKII_API void gn_timestamp_get(gn_timestamp *dt, int *year, int *month, int *d
 /* The global variable that keeps the current configuration. This should be
  * filled in before the phone initialization */
 extern GNOKII_API struct gn_cfg_header *gn_cfg_info GNOKII_DEPRECATED;
-
-/* Files */
-GNOKII_API int gn_file_text_save(char *filename, char *text, int mode) GNOKII_DEPRECATED;
 
 /* Zero the gn_data structure */
 GNOKII_API void gn_data_clear(gn_data *data);

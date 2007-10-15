@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-app.h,v 1.45 2007-04-28 17:53:48 dforsi Exp $
+  $Id: gnokii-app.h,v 1.46 2007-10-15 10:20:26 pkot Exp $
 
   G N O K I I
 
@@ -43,6 +43,7 @@
 extern volatile bool bshutdown;
 
 /* Utils functions */
+int writefile(char *filename, char *text, int mode);
 extern gn_error readtext(gn_sms_user_data *udata, int input_len); 
 extern gn_error loadbitmap(gn_bmp *bitmap, char *s, int type, struct gn_statemachine *state);
 extern int parse_end_value_option(int argc, char *argv[], int pos, int start_value);
