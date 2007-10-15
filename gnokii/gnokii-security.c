@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-security.c,v 1.8 2007-10-12 11:00:47 pkot Exp $
+  $Id: gnokii-security.c,v 1.9 2007-10-15 12:15:26 dforsi Exp $
 
   G N O K I I
 
@@ -137,7 +137,8 @@ static int get_password(const char *prompt, char *pass, int length)
 #else
 	/* FIXME: manual says: Do not use getpass */
 	char *s = NULL;
-	int err, s_len, fd = fileno(stdin);
+	int err, fd = fileno(stdin);
+	size_t s_len;
 
 	if (isatty(fd)) {
 		strncpy(pass, getpass(prompt), length - 1);

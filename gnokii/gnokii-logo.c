@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-logo.c,v 1.7 2006-11-01 17:18:01 pkot Exp $
+  $Id: gnokii-logo.c,v 1.8 2007-10-15 12:15:26 dforsi Exp $
 
   G N O K I I
 
@@ -433,7 +433,7 @@ int setlogo(int argc, char *argv[], gn_data *data, struct gn_statemachine *state
 						gn_sm_functions(GN_OP_SetBitmap, data, state);
 						data->bitmap = &oldbit;
 						gn_sm_functions(GN_OP_GetBitmap, data, state);
-						fprintf(stderr, _("too long, truncated to \"%s\" (length %i)\n"),oldbit.text,strlen(oldbit.text));
+						fprintf(stderr, _("too long, truncated to \"%s\" (length %zi)\n"), oldbit.text, strlen(oldbit.text));
 						return GN_ERR_ENTRYTOOLONG;
 					}
 				}
