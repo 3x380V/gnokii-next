@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.215 2007-09-09 18:04:45 dforsi Exp $
+  $Id: nk6100.c,v 1.216 2007-10-16 11:54:55 dforsi Exp $
 
   G N O K I I
 
@@ -3695,6 +3695,8 @@ static gn_error IncomingSecurityCode(int messagetype, unsigned char *message, in
 		switch (message[4]) {
 			case 0x6f: /* Insert SIM card */
 				return GN_ERR_NOTREADY;
+			case 0x79:
+				return GN_ERR_SIMPROBLEM;
 			case 0x88:
 			case 0x8d:
 				dprintf("Message: Security code wrong.\n");
