@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-utils.c,v 1.8 2007-10-15 10:20:26 pkot Exp $
+  $Id: gnokii-utils.c,v 1.9 2007-10-16 11:44:00 dforsi Exp $
 
   G N O K I I
 
@@ -206,3 +206,19 @@ void console_raw(void)
 	tcsetattr(fileno(stdin), TCSANOW, &it);
 #endif
 }
+
+#ifndef HAVE_GETLINE
+int getline(char **line, size_t *len, FILE *stream)
+{
+	size_t size = 0, last = 0;
+
+	do {
+		size += BUFSIZ;
+		*line = realloc(*line, size);
+		fgets(*line + last, size, stream);
+		*len = strlen(*line);
+		last = *len - 1;
+	} while (!feof(stream) && *line[last] != '\n');
+	return 0;
+}
+#endif
