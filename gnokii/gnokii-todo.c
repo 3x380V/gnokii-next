@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-todo.c,v 1.11 2007-05-24 15:28:24 dforsi Exp $
+  $Id: gnokii-todo.c,v 1.12 2007-10-17 18:46:33 dforsi Exp $
 
   G N O K I I
 
@@ -226,8 +226,8 @@ int writetodo(int argc, char *argv[], gn_data *data, struct gn_statemachine *sta
 		error = gn_sm_functions(GN_OP_WriteToDo, data, state);
 	
 		if (error == GN_ERR_NONE) {
-			fprintf(stderr, _("Successfully written!\n"));
-			fprintf(stderr, _("Priority %d. %s\n"), data->todo->priority, data->todo->text);
+			fprintf(stdout, _("Successfully written!\n"));
+			fprintf(stdout, _("Priority %d. %s\n"), data->todo->priority, data->todo->text);
 		} else
 			fprintf(stderr, _("Failed to write ToDo note: %s\n"), gn_error_print(error));
 	}
@@ -245,7 +245,7 @@ int deletealltodos(gn_data *data, struct gn_statemachine *state)
 
 	error = gn_sm_functions(GN_OP_DeleteAllToDos, data, state);
 	if (error == GN_ERR_NONE)
-		fprintf(stderr, _("Successfully deleted all ToDo notes!\n"));
+		fprintf(stdout, _("Successfully deleted all ToDo notes!\n"));
 	else
 		fprintf(stderr, _("Failed to delete ToDo note: %s\n"), gn_error_print(error));
 	return error;
