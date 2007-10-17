@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-wap.c,v 1.11 2007-10-17 18:46:33 dforsi Exp $
+  $Id: gnokii-wap.c,v 1.12 2007-10-17 21:31:18 dforsi Exp $
 
   G N O K I I
 
@@ -123,7 +123,7 @@ int writewapbookmark(int argc, char *argv[], gn_data *data, struct gn_statemachi
 
 	switch (error) {
 	case GN_ERR_NONE:
-		fprintf(stdout, _("WAP bookmark nr. %d successfully written!\n"), wapbookmark.location);
+		fprintf(stderr, _("WAP bookmark nr. %d successfully written!\n"), wapbookmark.location);
 		break;
 	default:
 		fprintf(stderr, _("Error: %s\n"), gn_error_print(error));
