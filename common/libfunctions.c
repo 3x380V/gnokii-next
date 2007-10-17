@@ -1,5 +1,5 @@
 /*
-  $Id: libfunctions.c,v 1.34 2007-10-07 16:51:33 dforsi Exp $
+  $Id: libfunctions.c,v 1.35 2007-10-17 15:39:01 dforsi Exp $
 
   G N O K I I
 
@@ -517,6 +517,12 @@ GNOKII_API int gn_lib_is_connectiontype_supported(gn_connection_type ct)
 		return 1;
 	case GN_CT_DKU2LIBUSB:
 #ifdef HAVE_LIBUSB
+		return 1;
+#else
+		return 0;
+#endif
+	case GN_CT_PCSC:
+#ifdef HAVE_PCSC
 		return 1;
 #else
 		return 0;
