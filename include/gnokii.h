@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.h,v 1.115 2007-10-15 10:20:25 pkot Exp $
+  $Id: gnokii.h,v 1.116 2007-10-18 14:44:11 pkot Exp $
 
   G N O K I I
 
@@ -316,6 +316,8 @@ GNOKII_API gn_error gn_sms_get_folder_changes(gn_data *data, struct gn_statemach
 				       int has_folders);
 GNOKII_API gn_error gn_sms_delete(gn_data *data, struct gn_statemachine *state);
 GNOKII_API gn_error gn_sms_delete_no_validate(gn_data *data, struct gn_statemachine *state);
+
+GNOKII_API char *gn_sms2mbox(gn_sms *sms, char *from);
 
 /* Call service */
 GNOKII_API gn_error gn_call_dial(int *call_id, gn_data *data, struct gn_statemachine *state);

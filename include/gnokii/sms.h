@@ -1,6 +1,6 @@
 /*
 
-  $Id: sms.h,v 1.67 2006-11-08 19:45:37 dforsi Exp $
+  $Id: sms.h,v 1.68 2007-10-18 14:44:11 pkot Exp $
 
   G N O K I I
 
@@ -369,7 +369,7 @@ typedef struct {
 	int delivery_report;                /* Do we request the delivery report? Only for setting. */
 	gn_sms_message_status status;       /* Status of the message read/unread/sent/unsent. */
 	unsigned int validity;              /* Message validity in minutes. Only for setting. */
-	gn_memory_type memory_type  ;       /* Memory type where the message is/should be stored. */
+	gn_memory_type memory_type;         /* Memory type where the message is/should be stored. */
 	unsigned int number;                /* Location of the message in the memory/folder. */
 
 	/* Number related fields */
