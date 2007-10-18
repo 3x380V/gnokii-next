@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-sms.c,v 1.33 2007-10-18 14:44:11 pkot Exp $
+  $Id: gnokii-sms.c,v 1.34 2007-10-18 18:47:54 pkot Exp $
 
   G N O K I I
 
@@ -73,7 +73,8 @@ void sms_usage(FILE *f)
 		     "                 [-l|--location number] [-s|--sent|-r|--read] [-d|--deliver]\n"
 		     "                 [-t|--datetime YYMMDDHHMMSS]\n"
 		     "          --getsms memory_type start [end] [-f|--file file]\n"
-		     "                 [-F|--force-file file] [-d|--delete]\n"
+		     "                 [-F|--force-file file] [-a|--append-file file]\n"
+		     "                 [-d|--delete]\n"
 		     "          --deletesms memory_type start [end]\n"
 		     "          --getsmsc [start_number [end_number]] [-r|--raw]\n"
 		     "          --setsmsc\n"
