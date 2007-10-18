@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-monitor.c,v 1.10 2007-07-07 12:24:07 pkot Exp $
+  $Id: gnokii-monitor.c,v 1.11 2007-10-18 20:58:10 dforsi Exp $
 
   G N O K I I
 
@@ -416,7 +416,7 @@ int displayoutput(gn_data *data, struct gn_statemachine *state)
 /*			while (read(0, buf, 100) > 0) {
 				fprintf(stderr, _("handling keys (%d).\n"), strlen(buf));
 				if (GSM && GSM->HandleString && GSM->HandleString(buf) != GN_ERR_NONE)
-					fprintf(stdout, _("Key press simulation failed.\n"));
+					fprintf(stderr, _("Key press simulation failed.\n"));
 				memset(buf, 0, 102);
 			}*/
 			gn_sm_loop(1, state);

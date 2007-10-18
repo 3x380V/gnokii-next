@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-dial.c,v 1.11 2007-05-24 15:45:25 dforsi Exp $
+  $Id: gnokii-dial.c,v 1.12 2007-10-18 20:58:09 dforsi Exp $
 
   G N O K I I
 
@@ -146,7 +146,7 @@ int setspeeddial(char *argv[], gn_data *data, struct gn_statemachine *state)
 
 	switch (error) {
 	case GN_ERR_NONE:
-		fprintf(stdout, _("Successfully written!\n"));
+		fprintf(stderr, _("Successfully written!\n"));
 		break;
 	default:
 		fprintf(stderr, _("Error: %s\n"), gn_error_print(error));

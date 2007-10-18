@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-security.c,v 1.9 2007-10-15 12:15:26 dforsi Exp $
+  $Id: gnokii-security.c,v 1.10 2007-10-18 20:58:10 dforsi Exp $
 
   G N O K I I
 
@@ -275,7 +275,7 @@ int changesecuritycode(char *type, gn_data *data, struct gn_statemachine *state)
 	get_password(_("Enter new code: "), security_code.new_code, sizeof(security_code.new_code));
 	get_password(_("Retype new code: "), newcode2, sizeof(newcode2));
 	if (strcmp(security_code.new_code, newcode2)) {
-		fprintf(stdout, _("Error: new code differ\n"));
+		fprintf(stderr, _("Error: new code differs\n"));
 		return -1;
 	}
 
