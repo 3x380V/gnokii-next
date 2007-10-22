@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.156 2007-10-14 17:16:13 pkot Exp $
+  $Id: atgen.c,v 1.157 2007-10-22 16:34:42 pkot Exp $
 
   G N O K I I
 
@@ -1413,6 +1413,13 @@ static gn_error ReplyMemoryStatus(int messagetype, unsigned char *buffer, int le
 	return GN_ERR_NONE;
 }
 
+/*
+ * Response of of a form:
+ * +CPBR: (list of supported indexes), <nlength>, <tlength>
+ * 	list of supported indexes is usually in 1, 2500 form
+ * 	nlength is the maximal length of the number
+ * 	tlength is the maximal length of the name
+ */
 static gn_error ReplyMemoryRange(int messagetype, unsigned char *buffer, int length, gn_data *data, struct gn_statemachine *state)
 {
 	at_driver_instance *drvinst = AT_DRVINST(state);
