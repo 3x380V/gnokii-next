@@ -1,6 +1,6 @@
 /*
 
-  $Id: atbus.h,v 1.17 2007-10-22 20:27:58 dforsi Exp $
+  $Id: atbus.h,v 1.18 2007-10-22 21:07:52 pkot Exp $
 
   G N O K I I
 
@@ -48,11 +48,14 @@ typedef enum {
 	GN_AT_CME,		/* Extended error code found */
 } at_result;
 
+#define RBUF_SEG	1024
+
 typedef struct {
 	/* The buffer for phone responses not only holds the data from the
 	 * phone but also a byte which holds the compiled status of the 
 	 * response. it is placed at [0]. */
-	char rbuf[1024];
+	char *rbuf;
+	int rbuf_size;
 	int rbuf_pos;
 	int binlen;
 } atbus_instance;
