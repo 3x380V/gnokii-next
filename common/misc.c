@@ -1,6 +1,6 @@
 /*
 
-  $Id: misc.c,v 1.130 2007-10-22 15:11:51 pkot Exp $
+  $Id: misc.c,v 1.131 2007-10-22 19:31:04 pkot Exp $
 
   G N O K I I
 
@@ -518,7 +518,6 @@ GNOKII_API char *gn_device_lock(const char* port)
 		goto failed;
 	}
 	sprintf(buffer, "%10ld gnokii\n", (long)getpid());
-	/* Probably we should add some error checking in here */
 	if (write(fd, buffer, strlen(buffer)) < 0) {
 		fprintf(stderr, _("Failed to write to the lockfile %s.\n"), lock_file);
 		goto failed;
