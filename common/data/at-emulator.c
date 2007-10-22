@@ -1,6 +1,6 @@
 /*
 
-  $Id: at-emulator.c,v 1.47 2007-07-05 21:59:05 pkot Exp $
+  $Id: at-emulator.c,v 1.48 2007-10-22 15:55:19 pkot Exp $
 
   G N O K I I
 
@@ -1175,7 +1175,11 @@ void	gn_atem_string_out(char *buffer)
 				break;
 		}
 
-		write(PtyWRFD, &out_char, 1);
+		if (write(PtyWRFD, &out_char, 1) < 0) {
+			fprintf(stderr, _("Failed to output string.\n"));
+			perror("write");
+			return;
+		}
 		count++;
 	}
 }
