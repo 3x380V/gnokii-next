@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-statemachine.c,v 1.62 2007-04-12 18:58:53 pkot Exp $
+  $Id: gsm-statemachine.c,v 1.63 2007-10-22 20:27:58 dforsi Exp $
 
   G N O K I I
 
@@ -200,7 +200,7 @@ gn_error sm_error_get(unsigned char messagetype, struct gn_statemachine *state)
 
 
 
-/* Indicate that the phone code is waiting for an response */
+/* Indicate that the phone code is waiting for a response */
 /* This does not actually wait! */
 gn_error sm_wait_for(unsigned char messagetype, gn_data *data, struct gn_statemachine *state)
 {
