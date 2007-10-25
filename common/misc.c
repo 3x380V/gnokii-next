@@ -1,6 +1,6 @@
 /*
 
-  $Id: misc.c,v 1.131 2007-10-22 19:31:04 pkot Exp $
+  $Id: misc.c,v 1.132 2007-10-25 13:22:41 pkot Exp $
 
   G N O K I I
 
@@ -257,6 +257,7 @@ static gn_phone_model models[] = {
 	{"6810",  "RM-2",	PM_DEFAULT | PM_XGNOKIIBREAKAGE },
 	{"6820",  "NHL-9",	PM_DEFAULT | PM_XGNOKIIBREAKAGE },
 	{"6820b", "RH-26",	PM_DEFAULT | PM_XGNOKIIBREAKAGE },
+	{"6822",  "RM-69",	PM_DEFAULT },
 	{"7110",  "NSE-5",	PM_DEFAULT | PM_NETMONITOR },
 	{"7160",  "NSW-5",	PM_OLD_DEFAULT },
 	{"7190",  "NSB-5",	PM_DEFAULT | PM_NETMONITOR },
