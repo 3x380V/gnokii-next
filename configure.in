@@ -5,7 +5,7 @@ dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janík ml.
 dnl                2000 Karel Zak, Pawe³ Kot
 dnl                2002 BORBELY Zoltan
 dnl
-dnl  $Id: configure.in,v 1.172 2007-10-07 16:51:32 dforsi Exp $
+dnl  $Id: configure.in,v 1.173 2007-10-26 12:43:01 pkot Exp $
 dnl
 
 AC_INIT(gnokii/gnokii.c)
@@ -852,8 +852,6 @@ echo "
     Win32:              $win32 
     Prefix:             $prefix
 
-  Type '${MAKE}' for compilation and then '${MAKE} install',
-  '${MAKE} install-suid', '${MAKE} install-strip' or '${MAKE} install-ss' to
-  install gnokii. If you wish to install gnokii sgid gnokii (install-suid or
-  install-ss) be sure to have 'gnokii' group in your system.
+  Type '${MAKE}' for compilation and then '${MAKE} install', to
+  install gnokii.
 "
