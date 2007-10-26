@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus.c,v 1.65 2007-10-26 16:54:02 pkot Exp $
+  $Id: fbus.c,v 1.66 2007-10-26 19:19:55 pkot Exp $
 
   G N O K I I
 
@@ -109,11 +109,10 @@ static int send_command(char *cmd, int len, struct gn_statemachine *state)
         
 	res = device_select(&timeout, state);
 	/* Read from the port only when select succeeds */
-	while (res > 0 && t) {
+	if (res > 0) {
 		/* Avoid 'device temporarily unavailable' error */
 		usleep(50);
 		res = device_read(buffer, 255, state);
-		t = gn_lib_cfg_get("global", "brokenread") ? atoi(gn_lib_cfg_get("global", "brokenread")) : 0;
 	}
 	return res;
 }
