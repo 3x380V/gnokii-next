@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-sms.c,v 1.169 2007-10-18 21:11:52 pkot Exp $
+  $Id: gsm-sms.c,v 1.170 2007-10-26 13:15:32 pkot Exp $
 
   G N O K I I
 
@@ -1710,9 +1710,9 @@ do { \
 	free(src); \
 } while (0)
 
-#define CONCAT(dst, src, size, pattern, args...) \
+#define CONCAT(dst, src, size, pattern, ...) \
 do { \
-	src = allocate(pattern, args); \
+	src = allocate(pattern, __VA_ARGS__); \
 	if (!src) \
 		goto error; \
 	APPEND(dst, src, size); \
