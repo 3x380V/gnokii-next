@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-encoding.c,v 1.78 2007-10-14 18:49:18 dforsi Exp $
+  $Id: gsm-encoding.c,v 1.79 2007-10-26 12:21:17 pkot Exp $
 
   G N O K I I
 
@@ -985,9 +985,9 @@ int strip_slashes(char *dest, char *src, int maxlen, int len)
 		case ';':
 		case ',':
 			if (slash_state) {
-				dest[j++] = src[i];
 				slash_state = 0;
 			}
+			dest[j++] = src[i];
 			break;
 		case '\\':
 			if (slash_state) {
@@ -1017,9 +1017,8 @@ int strip_slashes(char *dest, char *src, int maxlen, int len)
 			if (slash_state) {
 				dest[j++] = '\\';
 				slash_state = 0;
-			} else {
-				dest[j++] = src[i];
 			}
+			dest[j++] = src[i];
 			break;
 		}
 	}
