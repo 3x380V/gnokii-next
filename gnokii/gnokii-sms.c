@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-sms.c,v 1.34 2007-10-18 18:47:54 pkot Exp $
+  $Id: gnokii-sms.c,v 1.35 2007-10-26 14:20:04 dforsi Exp $
 
   G N O K I I
 
@@ -609,6 +609,7 @@ void getsms_usage(FILE *f, int exitval)
 			"        -F filename                 save sms to the file overwriting it if\n"
 			"                                    the file already exists;\n"
 			"                                    file is in mbox format\n"
+			"        --file filename\n"
 			"        -f filename                 as above but user is prompted before\n"
 			"                                    overwriting the file\n"
 			"        --append-file filename\n"
