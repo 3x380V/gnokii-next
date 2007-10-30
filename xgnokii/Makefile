@@ -1,7 +1,7 @@
 
 
 #
-# $Id: Makefile,v 1.60 2007-10-12 13:28:24 pkot Exp $
+# $Id: Makefile,v 1.61 2007-10-30 17:24:39 dforsi Exp $
 #
 # Makefile for the xGNOKII tool suite.
 #
@@ -63,8 +63,8 @@ install: xgnokii
 	$(INSTALL) -d $(DESTDIR)$(xgnokii_libdir)/help/en_US/sample
 	$(INSTALL_DATA) ../Docs/sample/gnokiirc $(DESTDIR)$(xgnokii_libdir)/help/en_US/sample
 	(cd $(DESTDIR)$(xgnokii_libdir)/help; \
-	 rm -f C ; ln -sf en_US C; \
-	 rm -f POSIX ; ln -sf en_US POSIX)
+	$(RM) C ; ln -sf en_US C; \
+	$(RM) POSIX ; ln -sf en_US POSIX)
 	$(INSTALL) -d $(DESTDIR)$(datadir)/applications
 	$(INSTALL_DATA) xgnokii.desktop $(DESTDIR)$(datadir)/applications
 
