@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-error.c,v 1.28 2007-10-26 12:51:17 pkot Exp $
+  $Id: gsm-error.c,v 1.29 2007-10-30 09:12:23 pkot Exp $
 
   G N O K I I
 
@@ -75,6 +75,7 @@ GNOKII_API char *gn_error_print(gn_error e)
 	case GN_ERR_NOMODEL:               return _("No phone model specified in the config file.");
 	case GN_ERR_NOPORT:                return _("No port specified in the config file.");
 	case GN_ERR_NOCONNECTION:          return _("No connection type specified in the config file.");
+	case GN_ERR_ASYNC:                 return _("The actual response will be sent asynchronously.");
 	default:                           return _("Unknown error.");
 	}
 }

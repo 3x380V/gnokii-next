@@ -1,6 +1,6 @@
 /*
 
-  $Id: error.h,v 1.22 2007-10-13 12:33:16 pkot Exp $
+  $Id: error.h,v 1.23 2007-10-30 09:12:23 pkot Exp $
 
   G N O K I I
 
@@ -87,7 +87,9 @@ typedef enum {
 	GN_ERR_NOLOG,			/* Incorrect logging section configuration */
 	GN_ERR_NOMODEL,			/* No phone model specified */
 	GN_ERR_NOPORT,			/* No port specified */
-	GN_ERR_NOCONNECTION		/* No connection type specified */
+	GN_ERR_NOCONNECTION,		/* No connection type specified */
+
+	GN_ERR_ASYNC			/* The actual response will be sent asynchronously */
 } gn_error;
 
 GNOKII_API char *gn_error_print(gn_error e);
