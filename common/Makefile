@@ -1,5 +1,5 @@
 #
-# $Id: Makefile,v 1.96 2007-10-27 14:20:48 pkot Exp $
+# $Id: Makefile,v 1.97 2007-10-30 17:07:00 dforsi Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -37,6 +37,8 @@ else
 LIBTOOL_VER = -version-info $(GNOKII_MAJOR):$(GNOKII_RELEASE):$(GNOKII_MINOR)
 LIBTOOL_RPATH=-rpath $(libdir)
 endif
+
+LIBS   += $(LIBPCSCLITE_LIBS)
 
 OBJS =	libfunctions.lo \
 	gsm-api.lo \

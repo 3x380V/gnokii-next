@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.25 2007-10-18 18:31:42 pkot Exp $
+# $Id: Makefile,v 1.26 2007-10-30 17:07:00 dforsi Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -16,6 +16,8 @@
 
 TOPDIR=../..
 include $(TOPDIR)/Makefile.global
+
+CFLAGS += $(LIBPCSCLITE_CFLAGS)
 
 OBJS =	generic.lo \
 	nokia.lo \
