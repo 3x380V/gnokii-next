@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-networks.c,v 1.45 2006-10-29 18:09:09 dforsi Exp $
+  $Id: gsm-networks.c,v 1.46 2007-10-31 11:43:47 pkot Exp $
 
   G N O K I I
 
@@ -378,7 +378,7 @@ static gn_network networks[] = {
 	{"266 01", "Gibtel GSM"},
 	{"268 01", "vodafone"},
 	{"268 03", "OPTIMUS"},
-	{"268 06", "TMN"},
+	{"268 06", "P TMN"},
 	{"270 01", "LUXGSM"},
 	{"270 77", "TANGO"},
 	{"272 01", "Vodafone"},
