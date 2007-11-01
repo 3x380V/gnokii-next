@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.29 2007-10-12 17:09:50 dforsi Exp $
+# $Id: Makefile,v 1.30 2007-11-01 17:37:08 dforsi Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -45,7 +45,6 @@ ifdef OWN_GETOPT
 endif
 
 install: gnokii
-	echo $(DESTDIR)
 	$(INSTALL) -d $(DESTDIR)$(bindir)
 	$(LIBTOOL) --mode=install $(INSTALL) $(PRGNAME) $(DESTDIR)$(bindir)
 
