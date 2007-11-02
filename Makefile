@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.140 2007-11-02 15:13:38 dforsi Exp $
+# $Id: Makefile,v 1.141 2007-11-02 17:04:12 dforsi Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -21,7 +21,8 @@ ifndef WIN32
 BIN_DIRS += gnokiid utils
 endif
 
-DIRS += $(BIN_DIRS) \
+DIRS += common \
+	$(BIN_DIRS) \
 	po
 
 GTK_DIRS =	xgnokii
@@ -53,6 +54,9 @@ compile: $(DIRS)
 		done \
 	fi
 	@echo "done"
+
+# build the apps after building the library   
+$(BIN_DIRS) $(GTK_DIRS): common
 
 $(DIRS):
 	$(MAKE) -C $@
