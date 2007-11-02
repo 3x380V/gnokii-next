@@ -1,5 +1,5 @@
 #
-# $Id: Makefile,v 1.97 2007-10-30 17:07:00 dforsi Exp $
+# $Id: Makefile,v 1.98 2007-11-02 13:40:43 dforsi Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -71,15 +71,6 @@ OBJS += ../intl/localcharset.lo
 endif
 
 all: libgnokii.la
-
-phones/libPHONES.la:
-	$(MAKE) -C phones libPHONES.la
-
-links/libLINKS.la:
-	$(MAKE) -C links libLINKS.la
-
-devices/libDEVICES.la:
-	$(MAKE) -C devices libDEVICES.la
 
 libgnokii.la: $(OBJS) phones/libPHONES.la links/libLINKS.la devices/libDEVICES.la
 	$(LIBTOOL) --mode=link $(CC) $(LDFLAGS) $(LIBTOOL_UNDEF) -o libgnokii.la $(OBJS) phones/libPHONES.la links/libLINKS.la devices/libDEVICES.la $(LIBTOOL_VER) $(LIBTOOL_RPATH) $(LDLIBS)

@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.30 2007-11-01 17:37:08 dforsi Exp $
+# $Id: Makefile,v 1.31 2007-11-02 13:40:43 dforsi Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -33,9 +33,6 @@ all: gnokii
 
 gnokii: $(OBJS) $(TOPDIR)/common/libgnokii.la
 	$(LIBTOOL) --mode=link $(CC) $(TARGET) $(LDFLAGS) $(OBJS) $(LDLIBS) -o $(PRGNAME)
-
-$(TOPDIR)/getopt/libgetopt.a:
-	$(MAKE) -C $(TOPDIR)/getopt
 
 clean:
 	$(LIBTOOL) --mode=clean $(RM) gnokii $(OBJS)

@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile.global.in,v 1.58 2007-10-25 08:51:44 pkot Exp $
+# $Id: Makefile.global.in,v 1.59 2007-11-02 13:40:43 dforsi Exp $
 #
 # Global Makefiles configuration for the GNOKII.
 #
@@ -100,3 +100,7 @@ LDLIBS = $(LIBS) $(ICONV_LIBS) $(INTL_LIBS) $(XPM_LIBS)
 
 %.lo: %.c
 	$(LIBTOOL) --mode=compile $(CC) $(CFLAGS) $(CPPFLAGS) -o $@ -c $<
+
+%.a %.la:
+	$(MAKE) -C $(@D) $(@F)
+
