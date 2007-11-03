@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-encoding.c,v 1.79 2007-10-26 12:21:17 pkot Exp $
+  $Id: gsm-encoding.c,v 1.80 2007-11-03 13:38:29 dforsi Exp $
 
   G N O K I I
 
@@ -149,7 +149,7 @@ static int char_mbtowc(wchar_t *dst, const char *src, int maxlen, MBSTATE *mbs)
 {
 #ifdef HAVE_ICONV
 	size_t nconv;
-	char *pin;
+	ICONV_CONST char *pin;
 	char *pout;
 	size_t inlen;
 	size_t outlen;
@@ -178,7 +178,7 @@ static int char_wctomb(char *dst, wchar_t src, MBSTATE *mbs)
 {
 #ifdef HAVE_ICONV
 	size_t nconv;
-	char *pin;
+	ICONV_CONST char *pin;
 	char *pout;
 	size_t inlen;
 	size_t outlen;
