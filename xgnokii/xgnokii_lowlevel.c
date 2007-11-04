@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_lowlevel.c,v 1.99 2007-08-23 14:12:47 pkot Exp $
+  $Id: xgnokii_lowlevel.c,v 1.100 2007-11-04 13:57:31 dforsi Exp $
   
   X G N O K I I
 
@@ -504,7 +504,7 @@ static gint A_GetMemoryLocationAll(gpointer data)
 				return GN_ERR_NONE;
 			}
 		}
-		if (error == GN_ERR_NONE) read++;
+		if ((error == GN_ERR_NONE) && (entry.empty == false)) read++;
 		dprintf("Name: %s\n", entry.name);
 		error = mla->InsertEntry(&entry); 
 		/* FIXME: It only works this way at the moment */
