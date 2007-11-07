@@ -1,6 +1,6 @@
 /*
 
-  $Id: misc.h,v 1.54 2006-12-17 16:02:07 pkot Exp $
+  $Id: misc.h,v 1.55 2007-11-07 22:17:16 dforsi Exp $
 
   G N O K I I
 
@@ -55,15 +55,6 @@
 #endif
 
 #define ARRAY_LEN(x) (sizeof((x)) / sizeof((x)[0]))
-
-#define SAFE_STRNCPY(dest, src, n) do { \
-	strncpy((dest), (src), (n)); \
-	if ((n) > 0) \
-		(dest)[(n)-1] = '\0'; \
-	} while (0)
-
-#define SAFE_STRNCPY_SIZEOF(dest,src) \
-	SAFE_STRNCPY((dest), (src), sizeof((dest)))
 
 /* If glib.h is included, G_GNUC_PRINTF is already defined. */
 #ifndef G_GNUC_PRINTF
