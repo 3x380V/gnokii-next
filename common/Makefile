@@ -1,5 +1,5 @@
 #
-# $Id: Makefile,v 1.98 2007-11-02 13:40:43 dforsi Exp $
+# $Id: Makefile,v 1.99 2007-11-07 11:19:19 dforsi Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -38,6 +38,15 @@ LIBTOOL_VER = -version-info $(GNOKII_MAJOR):$(GNOKII_RELEASE):$(GNOKII_MINOR)
 LIBTOOL_RPATH=-rpath $(libdir)
 endif
 
+ifndef WIN32
+DATA_DIR = data
+endif
+
+DIRS += phones \
+	links \
+	devices \
+	$(DATA_DIR)
+
 LIBS   += $(LIBPCSCLITE_LIBS)
 
 OBJS =	libfunctions.lo \
@@ -70,13 +79,16 @@ ifdef NEED_LCHARSET
 OBJS += ../intl/localcharset.lo
 endif
 
-all: libgnokii.la
+all: $(DIRS) libgnokii.la
 
 libgnokii.la: $(OBJS) phones/libPHONES.la links/libLINKS.la devices/libDEVICES.la
 	$(LIBTOOL) --mode=link $(CC) $(LDFLAGS) $(LIBTOOL_UNDEF) -o libgnokii.la $(OBJS) phones/libPHONES.la links/libLINKS.la devices/libDEVICES.la $(LIBTOOL_VER) $(LIBTOOL_RPATH) $(LDLIBS)
 
 gnvcal.c: vcal.lx
 	$(LEX) -ognvcal.c vcal.lx
+
+$(DIRS):
+	$(MAKE) -C $@
 
 clean:
 	$(MAKE) -C data clean
@@ -104,4 +116,4 @@ include depend
 endif
 
 
-.PHONY: all install clean dep depend
+.PHONY: all install clean dep depend $(DIRS)
