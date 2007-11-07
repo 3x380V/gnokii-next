@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_xring.c,v 1.12 2007-05-30 21:49:40 dforsi Exp $
+  $Id: xgnokii_xring.c,v 1.13 2007-11-07 18:28:20 pkot Exp $
 
   X G N O K I I
 
@@ -108,7 +108,8 @@ static char *whiteend[] = {
 
 
 static void writecolors(char *buf0, char *col0,
-			char *buf1, char *col1, char *buf2, char *col2)
+			char *buf1, char *col1,
+			char *buf2, char *col2)
 {
 	sprintf(buf0, ".	c #%s", col0);
 	sprintf(buf1, "+	c #%s", col1);

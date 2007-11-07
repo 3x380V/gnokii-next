@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_speed.c,v 1.24 2007-05-31 12:09:47 dforsi Exp $
+  $Id: xgnokii_speed.c,v 1.25 2007-11-07 18:28:20 pkot Exp $
 
   X G N O K I I
 
@@ -430,7 +430,7 @@ static void ExportSpeedDialMain(gchar * name)
 
 	for (i = 1; i < 10; i++) {
 		if ((d = (D_SpeedDial *) gtk_clist_get_row_data(GTK_CLIST(clist), i - 1))) {
-			sprintf(buf, "%d;%d;%d;", d->entry.number, d->entry.memory_type,
+			snprintf(buf, sizeof(buf), "%d;%d;%d;", d->entry.number, d->entry.memory_type,
 				d->entry.location);
 			fprintf(f, "%s\n", buf);
 		}

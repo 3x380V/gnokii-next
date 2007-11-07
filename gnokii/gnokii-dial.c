@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-dial.c,v 1.12 2007-10-18 20:58:09 dforsi Exp $
+  $Id: gnokii-dial.c,v 1.13 2007-11-07 18:28:19 pkot Exp $
 
   G N O K I I
 
@@ -355,7 +355,7 @@ int divert(int argc, char *argv[], gn_data *data, struct gn_statemachine *state)
 				divert_usage(stderr, -1);
 			break;
 		case 'n':
-			strncpy(cd.number.number, optarg, sizeof(cd.number.number) - 1);
+			snprintf(cd.number.number, sizeof(cd.number.number), "%s", optarg);
 			if (cd.number.number[0] == '+')
 				cd.number.type = GN_GSM_NUMBER_International;
 			else

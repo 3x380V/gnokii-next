@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-phonebook.c,v 1.19 2007-11-04 11:22:57 dforsi Exp $
+  $Id: gnokii-phonebook.c,v 1.20 2007-11-07 18:28:20 pkot Exp $
 
   G N O K I I
 
@@ -171,7 +171,7 @@ int getphonebook(int argc, char *argv[], gn_data *data, struct gn_statemachine *
 				gn_file_phonebook_raw_write(stdout, &entry, memory_type_string);
 				break;
 			case 2:
-				sprintf(location, "%s%d", memory_type_string, entry.location);
+				snprintf(location, sizeof(location), "%s%d", memory_type_string, entry.location);
 				gn_phonebook2vcard(stdout, &entry, location);
 				break;
 			case 3:

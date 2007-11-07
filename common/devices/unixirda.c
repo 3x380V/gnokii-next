@@ -1,6 +1,6 @@
 /*
  *
- * $Id: unixirda.c,v 1.50 2006-10-03 21:26:37 pkot Exp $
+ * $Id: unixirda.c,v 1.51 2007-11-07 18:28:19 pkot Exp $
  *
  * G N O K I I
  *
@@ -155,7 +155,7 @@ int irda_open(struct gn_statemachine *state)
 		peer.sir_family = AF_IRDA;
 		peer.sir_lsap_sel = LSAP_ANY;
 		peer.sir_addr = daddr;
-		strcpy(peer.sir_name, "Nokia:PhoNet");
+		snprintf(peer.sir_name, sizeof(peer.sir_name), "Nokia:PhoNet");
 
 		if (connect(fd, (struct sockaddr *)&peer, sizeof(peer))) {	/* Connect to service "Nokia:PhoNet" */
 			perror("connect");

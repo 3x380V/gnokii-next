@@ -1,6 +1,6 @@
 /*
 
-  $Id: virtmodem.c,v 1.49 2006-10-19 16:05:35 dforsi Exp $
+  $Id: virtmodem.c,v 1.50 2007-11-07 18:28:19 pkot Exp $
 
   G N O K I I
 
@@ -353,10 +353,13 @@ static int VM_PtySetup(const char *bindir)
 	}
 
 	if (bindir) {
-		strncpy(mgnokiidev, bindir, 200);
-		strcat(mgnokiidev, "/");
+		strncpy(mgnokiidev, bindir, sizeof(mgnokiidev));
+		strncat(mgnokiidev, "/", sizeof(mgnokiidev) - strlen(mgnokiidev));
+	} else {
+		mgnokiidev[0] = 0;
 	}
-	strncat(mgnokiidev, "mgnokiidev", 200 - strlen(bindir));
+
+	strncat(mgnokiidev, "mgnokiidev", sizeof(mgnokiidev) - strlen(mgnokiidev));
 
 	if (access(mgnokiidev, X_OK) != 0) {
 		fprintf(stderr, _("Cannot access %s, check the bindir in your gnokiirc!\n"), mgnokiidev);

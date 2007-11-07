@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-networks.c,v 1.46 2007-10-31 11:43:47 pkot Exp $
+  $Id: gsm-networks.c,v 1.47 2007-11-07 18:28:18 pkot Exp $
 
   G N O K I I
 
@@ -859,8 +859,7 @@ GNOKII_API char *gn_network2country(char *network_code)
 {
 	char ccode[4];
 	
-	strncpy((char *)ccode, network_code, 3);
-	ccode[3] = 0;
+	snprintf(ccode, sizeof(ccode), "%s", network_code);
 
 	return gn_country_name_get(ccode);
 }

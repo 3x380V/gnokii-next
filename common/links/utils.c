@@ -1,6 +1,6 @@
 /*
 
-  $Id: utils.c,v 1.20 2005-04-20 20:43:32 pkot Exp $
+  $Id: utils.c,v 1.21 2007-11-07 18:28:19 pkot Exp $
 
   G N O K I I
 
@@ -68,11 +68,11 @@ void at_dprintf(char *prefix, char *buf, int len)
 	debug_buf[out++] ='[';
 	while ((in < len) && (out < 1016)) {
 		if (buf[in] == '\n') {
-			sprintf(debug_buf + out,"<lf>");
+			snprintf(debug_buf + out, sizeof(debug_buf) - out, "<lf>");
 			in++;
 			out += 4;
 		} else if (buf[in] == '\r') {
-			sprintf(debug_buf + out,"<cr>");
+			snprintf(debug_buf + out, sizeof(debug_buf) - out, "<cr>");
 			in++;
 			out += 4;
 		} else if (buf[in] < 32) {

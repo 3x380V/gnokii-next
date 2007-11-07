@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-utils.c,v 1.9 2007-10-16 11:44:00 dforsi Exp $
+  $Id: gnokii-utils.c,v 1.10 2007-11-07 18:28:20 pkot Exp $
 
   G N O K I I
 
@@ -117,10 +117,7 @@ gn_error readtext(gn_sms_user_data *udata, int input_len)
 		return GN_ERR_INTERNALERROR;
 	}
 
-	/* No need to null terminate the source string because we use strncpy(). */
-	strncpy(udata->u.text, message_buffer, chars_read);
-	udata->u.text[chars_read] = 0;
-	udata->length = chars_read;
+	udata->length = snprintf(udata->u.text, sizeof(udata->u.text), "%s", message_buffer);
 
 	return GN_ERR_NONE;
 }

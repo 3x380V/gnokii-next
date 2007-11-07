@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-bitmaps.c,v 1.43 2006-06-11 16:39:48 deller Exp $
+  $Id: gsm-bitmaps.c,v 1.44 2007-11-07 18:28:18 pkot Exp $
 
   G N O K I I
 
@@ -50,8 +50,9 @@
 
 GNOKII_API gn_error gn_bmp_null(gn_bmp *bmp, gn_phone *info)
 {
-	if (!bmp || !info) return GN_ERR_INTERNALERROR;
-	strcpy(bmp->netcode, "000 00");
+	if (!bmp || !info)
+		return GN_ERR_INTERNALERROR;
+	snprintf(bmp->netcode, sizeof(bmp->netcode), "000 00");
 	bmp->width = info->operator_logo_width;
 	bmp->height = info->operator_logo_height;
 	bmp->size = ceiling_to_octet(bmp->width * bmp->height);
