@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.142 2007-11-02 18:55:49 dforsi Exp $
+# $Id: Makefile,v 1.143 2007-11-07 11:15:37 dforsi Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -21,9 +21,9 @@ ifndef WIN32
 BIN_DIRS += gnokiid utils
 endif
 
-DIRS += common \
+DIRS += $(INTL_DIR) \
+	common \
 	$(BIN_DIRS) \
-	$(INTL_DIR) \
 	$(POSUB)
 
 GTK_DIRS =	xgnokii
