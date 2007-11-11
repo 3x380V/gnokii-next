@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus-phonet.c,v 1.42 2006-04-29 11:51:08 pkot Exp $
+  $Id: fbus-phonet.c,v 1.43 2007-11-11 15:19:44 pkot Exp $
 
   G N O K I I
 
@@ -95,7 +95,8 @@ static bool phonet_open(struct gn_statemachine *state)
 		device_write(&init_sequence, 7, state);
 		while (total < 7) {
 			n = device_read(&init_resp + total, 7 - total, state);
-			total += n;
+			if (n > 0)
+				total += n;
 		}
 		for (i = 0; i < n; i++) {
 			if (init_resp[i] != init_pattern[i]) {
