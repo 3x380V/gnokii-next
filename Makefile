@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.143 2007-11-07 11:15:37 dforsi Exp $
+# $Id: Makefile,v 1.144 2007-11-11 15:14:39 pkot Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -34,7 +34,8 @@ INSTALL_DIRS =	$(BIN_DIRS) \
 INSTALL_SIMPLE = $(INTL_DIR) \
 		 $(POSUB)
 
-INSTALL_INCLUDES = include
+INSTALL_INCLUDES = include \
+		   common
 
 DOCS_DIR = 	Docs
 

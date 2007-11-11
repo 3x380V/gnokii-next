@@ -1,5 +1,5 @@
 #
-# $Id: Makefile,v 1.99 2007-11-07 11:19:19 dforsi Exp $
+# $Id: Makefile,v 1.100 2007-11-11 15:14:39 pkot Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -104,6 +104,9 @@ distclean:
 install:
 	$(INSTALL) -d $(DESTDIR)$(libdir)
 	$(LIBTOOL) --mode=install $(INSTALL) libgnokii.la $(DESTDIR)$(libdir)
+	@echo
+
+install-includes:
 	$(INSTALL) -d $(DESTDIR)$(libdir)/pkgconfig
 	$(INSTALL_DATA) gnokii.pc $(DESTDIR)$(libdir)/pkgconfig
 	@echo
