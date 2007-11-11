@@ -1,6 +1,6 @@
 /*
 
-  $Id: vcard.c,v 1.23 2007-05-04 19:45:21 pkot Exp $
+  $Id: vcard.c,v 1.24 2007-11-11 11:18:16 dforsi Exp $
   
   G N O K I I
 
@@ -173,9 +173,11 @@ GNOKII_API int gn_phonebook2vcard(FILE *f, gn_phonebook_entry *entry, char *loca
 #define STORE(a, b) STORE2(a, b, (void) 0)
 #define STOREINT(a, b) if (BEGINS(a)) { b = atoi(buf+strlen(a)); continue; }
 
-#define STORESUB(a, c) STORE2(a, entry->subentries[entry->subentries_count++].data.number, \
+#define STORESUB(a, c) if (entry->subentries_count == GN_PHONEBOOK_SUBENTRIES_MAX_NUMBER) return -1; \
+				STORE2(a, entry->subentries[entry->subentries_count++].data.number, \
 				entry->subentries[entry->subentries_count].entry_type = c);
-#define STORENUM(a, c) STORE2(a, entry->subentries[entry->subentries_count++].data.number, \
+#define STORENUM(a, c) if (entry->subentries_count == GN_PHONEBOOK_SUBENTRIES_MAX_NUMBER) return -1; \
+				STORE2(a, entry->subentries[entry->subentries_count++].data.number, \
 				entry->subentries[entry->subentries_count].entry_type = GN_PHONEBOOK_ENTRY_Number; \
 				entry->subentries[entry->subentries_count].number_type = c);
 

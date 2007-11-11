@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-filetypes.c,v 1.77 2007-11-07 18:28:18 pkot Exp $
+  $Id: gsm-filetypes.c,v 1.78 2007-11-11 11:18:16 dforsi Exp $
 
   G N O K I I
 
@@ -1504,6 +1504,11 @@ GNOKII_API gn_error gn_file_phonebook_raw_parse(gn_phonebook_entry *entry, char 
 	entry->empty = false;
 
 	for (entry->subentries_count = 0; offset < length; entry->subentries_count++) {
+		if (entry->subentries_count == GN_PHONEBOOK_SUBENTRIES_MAX_NUMBER) {
+			fprintf(stderr, _("Formatting error: too many subentries\n"));
+			error = GN_ERR_WRONGDATAFORMAT;
+			goto endloop;
+		}
 		memset(number, 0, sizeof(number));
 		GET_NEXT_TOKEN();
 		STORE_TOKEN(number);
