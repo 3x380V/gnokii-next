@@ -1,5 +1,5 @@
 #
-# $Id: Makefile,v 1.100 2007-11-11 15:14:39 pkot Exp $
+# $Id: Makefile,v 1.101 2007-11-11 15:50:54 pkot Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -25,8 +25,8 @@ include $(TOPDIR)/Makefile.global
 #  - if you change API in backward incompatible manner (removing things,
 #    changing things), increase GNOKII_MAJOR, set GNOKII_RELEASE to 0
 # Change is just once per release!
-GNOKII_MAJOR = 7
-GNOKII_MINOR = 4
+GNOKII_MAJOR = 8
+GNOKII_MINOR = 5
 GNOKII_RELEASE = 0
 ifdef WIN32_CROSS
 LIBTOOL_UNDEF = -no-undefined
