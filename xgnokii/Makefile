@@ -1,7 +1,7 @@
 
 
 #
-# $Id: Makefile,v 1.61 2007-10-30 17:24:39 dforsi Exp $
+# $Id: Makefile,v 1.62 2007-11-13 20:25:22 pkot Exp $
 #
 # Makefile for the xGNOKII tool suite.
 #
@@ -48,9 +48,7 @@ clean:
 	$(RM) *~ xpm/*~ depend
 
 install: xgnokii
-	$(INSTALL) -d $(DESTDIR)$(xbindir)
 	$(LIBTOOL) --mode=install $(INSTALL) xgnokii $(DESTDIR)$(xbindir)
-	$(INSTALL_DATA) xgnokii.pc $(DESTDIR)$(libdir)/pkgconfig
 	$(INSTALL) -d $(DESTDIR)$(xgnokii_libdir)/help
 	( cd $(HELP_DIR); \
 	  $(FIND) . -type d \! -path "*CVS*" \
@@ -67,6 +65,10 @@ install: xgnokii
 	$(RM) POSIX ; ln -sf en_US POSIX)
 	$(INSTALL) -d $(DESTDIR)$(datadir)/applications
 	$(INSTALL_DATA) xgnokii.desktop $(DESTDIR)$(datadir)/applications
+
+install-devel:
+	$(INSTALL) -d $(DESTDIR)$(libdir)/pkgconfig
+	$(INSTALL_DATA) xgnokii.pc $(DESTDIR)$(libdir)/pkgconfig
 
 depend dep:
 	$(CC) $(CFLAGS) -MM *.c >depend
