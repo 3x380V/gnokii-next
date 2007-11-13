@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.145 2007-11-11 19:47:23 pkot Exp $
+# $Id: Makefile,v 1.146 2007-11-13 20:59:33 pkot Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -142,6 +142,15 @@ install-includes:
 			$(MAKE) -C $$dir install-devel; \
 		fi; \
 	done
+	@if [ "$(GTK_LIBS)" ]; then \
+		for dir in $(GTK_DIRS); do \
+		    if [ -e $$dir/Makefile ]; then \
+			$(MAKE) -C $$dir install-devel; \
+		    fi; \
+		done \
+	fi
+	@echo "done"
+
 
 install-docs:
 	$(INSTALL) -d $(DESTDIR)$(docdir)
