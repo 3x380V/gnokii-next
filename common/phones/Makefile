@@ -1,6 +1,6 @@
 
 #
-# $Id: Makefile,v 1.26 2007-10-30 17:07:00 dforsi Exp $
+# $Id: Makefile,v 1.27 2007-11-19 14:51:50 pkot Exp $
 #
 # Makefile for the GNOKII tool suite.
 #
@@ -29,6 +29,7 @@ OBJS =	generic.lo \
 	atgen.lo \
 	atbosch.lo \
 	ateric.lo \
+	atmot.lo \
 	atnok.lo \
 	atsie.lo \
 	atsoer.lo \
