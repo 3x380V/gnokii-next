@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.164 2007-11-19 10:58:03 pkot Exp $
+  $Id: atgen.c,v 1.165 2007-11-19 13:26:10 pkot Exp $
 
   G N O K I I
 
@@ -2433,6 +2433,7 @@ static gn_error Initialise(gn_data *setupdata, struct gn_statemachine *state)
 	drvinst->mememorysize = -1;
 	drvinst->smmemorysize = -1;
 	drvinst->timezone = NULL;
+	/* FIXME: detect if from AT+CNMI=? */
 	drvinst->cnmi_mode = 3;
 
 	drvinst->if_pos = 0;

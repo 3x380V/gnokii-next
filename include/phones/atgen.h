@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.h,v 1.30 2007-11-19 10:58:03 pkot Exp $
+  $Id: atgen.h,v 1.31 2007-11-19 13:26:10 pkot Exp $
 
   G N O K I I
 
@@ -89,7 +89,8 @@ typedef struct {
 	int mememorysize;
 
 	/* CNMI -- sms notifications */
-	/* 1: discard indication and reject new SMs when TE-TA link is
+	/* 0: buffer in TA;
+	 * 1: discard indication and reject new SMs when TE-TA link is
 	 *    reserved; otherwise forward directly;
 	 * 2: buffer new Sms when TE-TA link is reserved and flush them to TE
 	 *    after reservation; otherwise forward directly to the TE;
