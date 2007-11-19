@@ -1,6 +1,6 @@
 /*
 
-  $Id: atnok.c,v 1.15 2007-07-11 19:34:29 pkot Exp $
+  $Id: atnok.c,v 1.16 2007-11-19 10:58:03 pkot Exp $
 
   G N O K I I
 
@@ -152,6 +152,9 @@ void at_nokia_init(char* foundmodel, char* setupmodel, struct gn_statemachine *s
 	/* receive) */
 	if (!strncasecmp("0301", foundmodel, 4))
 		AT_DRVINST(state)->no_smsc = 1;
+
+	/* Nokias support just mode 1 */
+	AT_DRVINST(state)->cnmi_mode = 1;
 
 	at_insert_recv_function(GN_OP_AT_IncomingSMS, ReplyIncomingSMS, state);
 }

@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.h,v 1.29 2007-10-25 13:18:10 pkot Exp $
+  $Id: atgen.h,v 1.30 2007-11-19 10:58:03 pkot Exp $
 
   G N O K I I
 
@@ -87,6 +87,16 @@ typedef struct {
 	/* CPMS (sms related) */
 	int smmemorysize;
 	int mememorysize;
+
+	/* CNMI -- sms notifications */
+	/* 1: discard indication and reject new SMs when TE-TA link is
+	 *    reserved; otherwise forward directly;
+	 * 2: buffer new Sms when TE-TA link is reserved and flush them to TE
+	 *    after reservation; otherwise forward directly to the TE;
+	 * 3: forward directly to TE;
+	 */
+	/* Default should be 3. Specific drivers can overwrite. */
+	int cnmi_mode;
 
 	/* For call notifications via AT+CLIP */
 	int clip_supported;
