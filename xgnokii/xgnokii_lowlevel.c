@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_lowlevel.c,v 1.100 2007-11-04 13:57:31 dforsi Exp $
+  $Id: xgnokii_lowlevel.c,v 1.101 2007-11-19 14:07:23 dforsi Exp $
   
   X G N O K I I
 
@@ -564,6 +564,31 @@ static gint A_WriteMemoryLocationAll(gpointer data)
 	error = mla->status = GN_ERR_UNKNOWN;
 
 	return error;
+}
+
+
+static gint A_DeleteMemoryLocation(gpointer data)
+{
+	gn_error error;
+	D_MemoryLocation *ml = (D_MemoryLocation *) data;
+	gn_data gdat;
+
+	if (!data) return GN_ERR_INTERNALERROR;
+
+	gn_data_clear(&gdat);
+
+	error = ml->status = GN_ERR_UNKNOWN;
+
+	if (ml->entry) {
+		gn_phonebook_entry_sanitize(ml->entry);
+		gdat.phonebook_entry = (ml->entry);
+		pthread_mutex_lock(&memoryMutex);
+		error = ml->status = gn_sm_functions(GN_OP_DeletePhonebook, &gdat, statemachine);
+		pthread_cond_signal(&memoryCond);
+		pthread_mutex_unlock(&memoryMutex);
+	}
+
+	return (error);
 }
 
 static gint A_GetCalendarNote(gpointer data)
@@ -1165,6 +1190,7 @@ gint(*DoAction[])(gpointer) = {
 	    A_GetMemoryLocationAll,
 	    A_WriteMemoryLocation,
 	    A_WriteMemoryLocationAll,
+	    A_DeleteMemoryLocation,
 	    A_GetCalendarNote,
 	    A_GetCalendarNoteAll,
 	    A_WriteCalendarNote,

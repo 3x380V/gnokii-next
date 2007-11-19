@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_lowlevel.h,v 1.33 2006-04-23 17:09:05 deller Exp $
+  $Id: xgnokii_lowlevel.h,v 1.34 2007-11-19 14:07:23 dforsi Exp $
   
   X G N O K I I
 
@@ -52,6 +52,7 @@ typedef enum {
 	Event_GetMemoryLocationAll,
 	Event_WriteMemoryLocation,
 	Event_WriteMemoryLocationAll,
+	Event_DeleteMemoryLocation,
 	Event_GetCalendarNote,
 	Event_GetCalendarNoteAll,
 	Event_WriteCalendarNote,
