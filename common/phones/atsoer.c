@@ -1,6 +1,6 @@
 /*
 
-  $Id: atsoer.c,v 1.9 2007-11-19 10:58:03 pkot Exp $
+  $Id: atsoer.c,v 1.10 2007-11-19 13:43:57 pkot Exp $
 
   G N O K I I
 
@@ -62,8 +62,10 @@ static gn_error se_at_memory_type_set(gn_memory_type mt, struct gn_statemachine 
 			return GN_ERR_NOTREADY;
 		gn_data_clear(&data);
 		ret = sm_block_no_retry(GN_OP_Init, &data, state);
-		if (ret == GN_ERR_NONE)
-			drvinst->memorytype = mt;
+		if (ret)
+			return ret;
+
+		drvinst->memorytype = mt;
 
 		gn_data_clear(&data);
 		ret = state->driver.functions(GN_OP_AT_GetMemoryRange, &data, state);
