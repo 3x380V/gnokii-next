@@ -1,6 +1,6 @@
 /*
 
-  $Id: common.h,v 1.155 2007-10-07 16:51:33 dforsi Exp $
+  $Id: common.h,v 1.156 2007-11-20 18:46:37 dforsi Exp $
 
   G N O K I I
 
@@ -279,7 +279,7 @@ typedef struct {
 		/* GN_PHONEBOOK_ENTRY_Image
 		 * GN_PHONEBOOK_ENTRY_RingtoneAdv
 		 */
-		char fileid[6];                                  /* Bitmap or rigntone fileid */
+		char fileid[6];                                  /* Bitmap or ringtone fileid */
 	} data;
 	int id;
 } gn_phonebook_subentry;
