@@ -1,6 +1,6 @@
 /*
 
-  $Id: data.h,v 1.83 2007-07-07 12:21:20 pkot Exp $
+  $Id: data.h,v 1.84 2007-11-20 23:45:38 pkot Exp $
 
   G N O K I I
 
@@ -120,6 +120,7 @@ typedef struct {
 	gn_error (*send_message)(unsigned int messagesize, unsigned char messagetype, unsigned char *message,
 				 struct gn_statemachine *state);
 	void *link_instance;
+	void (*reset)(struct gn_statemachine *state);
 } gn_link;
 
 typedef struct {

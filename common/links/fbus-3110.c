@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus-3110.c,v 1.36 2006-01-07 18:41:59 dforsi Exp $
+  $Id: fbus-3110.c,v 1.37 2007-11-20 23:45:38 pkot Exp $
 
   G N O K I I
 
@@ -328,6 +328,12 @@ static void fb3110_tx_ack_send(u8 messagetype, u8 seqno, struct gn_statemachine 
 }
 
 
+static void fb3110_reset(struct gn_statemachine *state)
+{
+	/* Init variables */
+	FBUSINST(state)->i.state = FB3110_RX_Sync;
+}
+
 /* 
  * Initialise variables and start the link
  * newlink is actually part of state - but the link code should not
@@ -349,6 +355,7 @@ gn_error fb3110_initialise(struct gn_statemachine *state)
 	/* Fill in the link functions */
 	state->link.loop = &fb3110_loop;
 	state->link.send_message = &fb3110_message_send;
+	state->link.reset = &fb3110_reset;
 
 	/* Check for a valid init length */
 	if (state->config.init_length == 0)
@@ -380,8 +387,7 @@ gn_error fb3110_initialise(struct gn_statemachine *state)
 		device_write(&init_char, 1, state);
 	}
 
-	/* Init variables */
-	FBUSINST(state)->i.state = FB3110_RX_Sync;
+	fb3110_reset(state);
 
 	return GN_ERR_NONE;
 }
