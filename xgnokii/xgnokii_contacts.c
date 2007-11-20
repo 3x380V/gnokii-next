@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_contacts.c,v 1.82 2007-11-20 17:40:09 dforsi Exp $
+  $Id: xgnokii_contacts.c,v 1.83 2007-11-20 18:05:45 dforsi Exp $
   
   X G N O K I I
 
@@ -2108,6 +2108,19 @@ static gint SaveContactsInsertEvent(PhonebookEntry *pbEntry)
 	pthread_mutex_unlock(&memoryMutex);
 
 	error = ml->status;
+	if (error == GN_ERR_NONE) {
+		switch (pbEntry->status) {
+			case E_Changed:
+				pbEntry->status = E_Unchanged;
+				break;
+			case E_Deleted:
+				pbEntry->status = E_Empty;
+				break;
+			default:
+				break;
+		}
+	}
+
 	g_free(ml);
 
 	return error;
