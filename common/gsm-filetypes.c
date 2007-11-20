@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-filetypes.c,v 1.78 2007-11-11 11:18:16 dforsi Exp $
+  $Id: gsm-filetypes.c,v 1.79 2007-11-20 18:36:17 dforsi Exp $
 
   G N O K I I
 
@@ -1407,7 +1407,6 @@ inline int local_atoi(char *str, int len)
 
 GNOKII_API gn_error gn_file_phonebook_raw_parse(gn_phonebook_entry *entry, char *line)
 {
-	char backline[MAX_INPUT_LINE_LEN];
 	char memory_type_char[3];
 	char number[GN_PHONEBOOK_NUMBER_MAX_LENGTH];
 	int length, o, offset = 0;
@@ -1416,7 +1415,6 @@ GNOKII_API gn_error gn_file_phonebook_raw_parse(gn_phonebook_entry *entry, char 
 	memset(entry, 0, sizeof(gn_phonebook_entry));
 
 	length = strlen(line);
-	snprintf(backline, sizeof(line), "%s", line);
 	entry->empty = true;
 	memory_type_char[2] = 0;
 
