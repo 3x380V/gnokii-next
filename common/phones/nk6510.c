@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.c,v 1.249 2007-11-10 19:00:59 pkot Exp $
+  $Id: nk6510.c,v 1.250 2007-11-21 22:19:38 pkot Exp $
 
   G N O K I I
 
@@ -502,8 +502,10 @@ static gn_error NK6510_Initialise(struct gn_statemachine *state)
 		data.model = model;
 		err = state->driver.functions(GN_OP_GetModel, &data, state);
 		if (err != GN_ERR_NONE) {
-			/* ignore return value from GN_OP_Terminate, will use previous error code instead */
-			state->driver.functions(GN_OP_Terminate, &data, state);
+			/* We could call GN_OP_Terminate here, but it frees driver instance
+			 * which would be needed in the sequent tries
+			 */
+			pgen_terminate(&data, state);
 		} else {
 			connected = true;
 		}
