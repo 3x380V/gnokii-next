@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus.c,v 1.69 2007-11-20 23:45:38 pkot Exp $
+  $Id: fbus.c,v 1.70 2007-11-21 21:40:15 pkot Exp $
 
   G N O K I I
 
@@ -113,7 +113,7 @@ static int send_command(char *cmd, int len, struct gn_statemachine *state)
 	while (res > 0 && waitformore) {
 		/* Avoid 'device temporarily unavailable' error */
 		usleep(50);
-		res = device_read(buffer + offset, 255, state);
+		res = device_read(buffer + offset, sizeof(buffer) - offset, state);
 		/* The whole answer is read */
 		if (strstr(buffer, "OK"))
 			waitformore = 0;
