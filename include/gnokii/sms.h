@@ -1,6 +1,6 @@
 /*
 
-  $Id: sms.h,v 1.69 2007-11-07 22:17:16 dforsi Exp $
+  $Id: sms.h,v 1.70 2007-11-21 20:32:00 pkot Exp $
 
   G N O K I I
 
@@ -294,6 +294,16 @@ typedef struct {
 	gn_sms_command_type type;
 } gn_sms_message_command;
 
+/* Datatype for SMS Delivery Report Statuses */
+typedef enum {
+	GN_SMS_DR_Status_None = 0,
+	GN_SMS_DR_Status_Invalid,
+	GN_SMS_DR_Status_Delivered,
+	GN_SMS_DR_Status_Pending,
+	GN_SMS_DR_Status_Failed_Temporary,
+	GN_SMS_DR_Status_Failed_Permanent /* FIXME: add more reasons for failure? */
+} gn_sms_delivery_report_status;
+
 /* Datatype for SMS status */
 typedef enum {
 	GN_SMS_Read   = 0x01,
@@ -361,6 +371,11 @@ typedef struct {
 		gn_bmp animation[4];
 		gn_sms_concat concat;
 	} u;
+	/* That should be in the union, but for delivery reports we already
+	 * set text there. Currently we don't want to break API, so I put it here
+	 * Pawel Kot, 2007-11-21
+	 */
+	gn_sms_delivery_report_status dr_status;
 } gn_sms_user_data;
 
 /* Define datatype for SMS messages exported to the user applications. */
