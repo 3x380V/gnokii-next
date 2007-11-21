@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_contacts.c,v 1.83 2007-11-20 18:05:45 dforsi Exp $
+  $Id: xgnokii_contacts.c,v 1.84 2007-11-21 12:28:58 dforsi Exp $
   
   X G N O K I I
 
@@ -1284,7 +1284,7 @@ static void CreateEditDialog(EditEntryData * editEntryData, gchar * title, GtkSi
 	gtk_box_pack_start(GTK_BOX(hbox), label, FALSE, FALSE, 2);
 	gtk_widget_show(label);
 
-	editEntryData->name = gtk_entry_new_with_max_length(100);
+	editEntryData->name = gtk_entry_new_with_max_length(GN_PHONEBOOK_NAME_MAX_LENGTH);
 
 	gtk_box_pack_end(GTK_BOX(hbox), editEntryData->name, FALSE, FALSE, 2);
 	gtk_widget_show(editEntryData->name);
