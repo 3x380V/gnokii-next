@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnbus.c,v 1.7 2007-11-22 16:44:17 pkot Exp $
+  $Id: gnbus.c,v 1.8 2007-11-22 17:30:20 pkot Exp $
 
   G N O K I I
 
@@ -47,6 +47,7 @@
 #include "gnokii.h"
 #include "device.h"
 #include "links/gnbus.h"
+#include "links/utils.h"
 
 #include "gnokii-internal.h"
 

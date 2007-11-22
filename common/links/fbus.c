@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus.c,v 1.72 2007-11-22 16:44:17 pkot Exp $
+  $Id: fbus.c,v 1.73 2007-11-22 17:30:20 pkot Exp $
 
   G N O K I I
 
@@ -51,6 +51,7 @@
 #include "gnokii.h"
 #include "device.h"
 #include "links/fbus.h"
+#include "links/utils.h"
 #include "gnokii-internal.h"
 
 static void fbus_rx_statemachine(unsigned char rx_byte, struct gn_statemachine *state);
