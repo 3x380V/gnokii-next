@@ -1,6 +1,6 @@
 /*
 
-  $Id: m2bus.c,v 1.22 2007-11-20 23:45:38 pkot Exp $
+  $Id: m2bus.c,v 1.23 2007-11-22 16:44:17 pkot Exp $
 
   G N O K I I
 
@@ -268,7 +268,7 @@ static void m2bus_rx_statemachine(unsigned char rx_byte, struct gn_statemachine 
 
 static gn_error m2bus_loop(struct timeval *timeout, struct gn_statemachine *state)
 {
-	unsigned char buffer[255];
+	unsigned char buffer[BUFFER_SIZE];
 	int count, res;
 
 	res = device_select(timeout, state);

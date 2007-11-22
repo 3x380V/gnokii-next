@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus-3110.c,v 1.37 2007-11-20 23:45:38 pkot Exp $
+  $Id: fbus-3110.c,v 1.38 2007-11-22 16:44:17 pkot Exp $
 
   G N O K I I
 
@@ -221,12 +221,12 @@ static void fb3110_rx_state_machine(unsigned char rx_byte, struct gn_statemachin
  */
 static gn_error fb3110_loop(struct timeval *timeout, struct gn_statemachine *state)
 {
-	unsigned char buffer[255];
+	unsigned char buffer[BUFFER_SIZE];
 	int count, res;
 
 	res = device_select(timeout, state);
 	if (res > 0) {
-		res = device_read(buffer, 255, state);
+		res = device_read(buffer, sizeof(buffer), state);
 		for (count = 0; count < res; count++)
 			fb3110_rx_state_machine(buffer[count], state);
 	} else

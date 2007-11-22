@@ -1,6 +1,6 @@
 /*
 
-  $Id: atbus.c,v 1.54 2007-11-20 23:45:38 pkot Exp $
+  $Id: atbus.c,v 1.55 2007-11-22 16:44:17 pkot Exp $
 
   G N O K I I
 
@@ -254,12 +254,12 @@ static void atbus_rx_statemachine(unsigned char rx_char, struct gn_statemachine 
 
 static gn_error atbus_loop(struct timeval *timeout, struct gn_statemachine *sm)
 {
-	unsigned char buffer[255];
+	unsigned char buffer[BUFFER_SIZE];
 	int count, res;
 
 	res = device_select(timeout, sm);
 	if (res > 0) {
-		res = device_read(buffer, 255, sm);
+		res = device_read(buffer, sizeof(buffer), sm);
 		for (count = 0; count < res; count++) {
 			atbus_rx_statemachine(buffer[count], sm);
 		}

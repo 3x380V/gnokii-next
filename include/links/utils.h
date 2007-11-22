@@ -1,6 +1,6 @@
 /*
 
-  $Id: utils.h,v 1.10 2005-04-24 19:01:20 pkot Exp $
+  $Id: utils.h,v 1.11 2007-11-22 16:44:17 pkot Exp $
 
   G N O K I I
 
@@ -36,6 +36,9 @@
 #define _gnokii_links_utils_h
 
 #include "gnokii.h"
+
+/* Needs to be a multiplication of 64 */
+#define BUFFER_SIZE	256
 
 gn_error link_terminate(struct gn_statemachine *state);
 void at_dprintf(char *prefix, char *buf, int len);

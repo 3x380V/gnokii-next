@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus.c,v 1.71 2007-11-21 22:09:26 pkot Exp $
+  $Id: fbus.c,v 1.72 2007-11-22 16:44:17 pkot Exp $
 
   G N O K I I
 
@@ -486,7 +486,7 @@ static void fbus_rx_statemachine(unsigned char rx_byte, struct gn_statemachine *
 
 static gn_error fbus_loop(struct timeval *timeout, struct gn_statemachine *state)
 {
-	unsigned char buffer[255];
+	unsigned char buffer[BUFFER_SIZE];
 	int count, res;
 
 	res = device_select(timeout, state);

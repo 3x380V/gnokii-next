@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus-phonet.c,v 1.44 2007-11-20 23:45:38 pkot Exp $
+  $Id: fbus-phonet.c,v 1.45 2007-11-22 16:44:17 pkot Exp $
 
   G N O K I I
 
@@ -198,7 +198,7 @@ static void phonet_rx_statemachine(unsigned char rx_byte, struct gn_statemachine
 static gn_error phonet_loop(struct timeval *timeout, struct gn_statemachine *state)
 {
 	gn_error	error = GN_ERR_INTERNALERROR;
-	unsigned char	buffer[1024];
+	unsigned char	buffer[BUFFER_SIZE];
 	int		count, res;
 
 	res = device_select(timeout, state);
