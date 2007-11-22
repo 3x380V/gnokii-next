@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.h,v 1.118 2007-11-11 15:50:54 pkot Exp $
+  $Id: gnokii.h,v 1.119 2007-11-22 23:39:49 pkot Exp $
 
   G N O K I I
 
@@ -198,6 +198,10 @@ GNOKII_API const char *gn_lib_get_supported_connection( const int num );
    computer. Currently libgnokii will search only on IRDA and bluetooth.
    The state variable will be initialized if a phone was found. */
 GNOKII_API gn_error gn_lib_search_one_connected_phone( struct gn_statemachine **state );
+
+/* use this function to return connection name to be used eg. in the
+   config file */
+GNOKII_API const char *gn_lib_get_connection_name(gn_connection_type ct);
 
 /* use this function to check whether the connection type is enabled
    0 - not supported

@@ -1,5 +1,5 @@
 /*
-  $Id: libfunctions.c,v 1.37 2007-11-09 16:27:48 pkot Exp $
+  $Id: libfunctions.c,v 1.38 2007-11-22 23:39:49 pkot Exp $
 
   G N O K I I
 
@@ -489,6 +489,15 @@ GNOKII_API const char *gn_lib_get_supported_connection(const int num)
 	if (num < 0 || num >= sizeof(connectiontypes)/sizeof(connectiontypes[0]))
 		return NULL;
 	return connectiontypes[num].str;
+}
+
+GNOKII_API const char *gn_lib_get_connection_name(gn_connection_type ct)
+{
+	int i;
+	for (i = 0; i < sizeof(connectiontypes)/sizeof(connectiontypes[0]); i++)
+		if (ct == connectiontypes[i].ct)
+			return connectiontypes[i].str;
+	return NULL;
 }
 
 GNOKII_API int gn_lib_is_connectiontype_supported(gn_connection_type ct)
