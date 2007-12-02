@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-sms.c,v 1.173 2007-12-02 15:15:09 pkot Exp $
+  $Id: gsm-sms.c,v 1.174 2007-12-02 15:43:49 pkot Exp $
 
   G N O K I I
 
@@ -688,8 +688,9 @@ static gn_error sms_pdu_decode(gn_sms_raw *rawsms, gn_sms *sms)
 			sms->user_data[0].type = GN_SMS_DATA_Bitmap;
 			gn_bmp_sms_read(GN_BMP_PictureMessage, rawsms->user_data,
 					NULL, &sms->user_data[0].u.bitmap);
+#ifdef DEBUG
 			gn_bmp_print(&sms->user_data[0].u.bitmap, stderr);
-
+#endif
 			size = rawsms->user_data_length - 4 - sms->user_data[0].u.bitmap.size;
 			/* Second part is a text */
 			sms->user_data[1].type = GN_SMS_DATA_NokiaText;
