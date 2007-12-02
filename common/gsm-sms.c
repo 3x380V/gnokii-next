@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-sms.c,v 1.172 2007-11-21 20:32:01 pkot Exp $
+  $Id: gsm-sms.c,v 1.173 2007-12-02 15:15:09 pkot Exp $
 
   G N O K I I
 
@@ -712,7 +712,9 @@ static gn_error sms_pdu_decode(gn_sms_raw *rawsms, gn_sms *sms)
 			gn_bmp_sms_read(GN_BMP_PictureMessage,
 					rawsms->user_data + rawsms->user_data[0] + 7,
 					NULL, &sms->user_data[0].u.bitmap);
+#ifdef DEBUG
 			gn_bmp_print(&sms->user_data[0].u.bitmap, stderr);
+#endif
 		}
 		break;
 	/* Plain text message */
