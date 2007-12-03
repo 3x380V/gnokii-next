@@ -5,7 +5,7 @@ dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janik ml.
 dnl                2000 Karel Zak, Pawel Kot
 dnl                2002 BORBELY Zoltan
 dnl
-dnl  $Id: configure.in,v 1.181 2007-12-03 16:39:33 hadess Exp $
+dnl  $Id: configure.in,v 1.182 2007-12-03 17:23:57 hadess Exp $
 dnl
 
 AC_INIT([gnokii],
@@ -775,6 +775,9 @@ case "$build_os" in
   solaris*) SHELL=/bin/ksh
    ;;
 esac
+
+AC_EXPAND_DIR(mgnokiidev_bindir, "${sbindir}")
+AC_DEFINE_UNQUOTED(SBINDIR, "$mgnokiidev_bindir", [Where mgnokiidev gets installed])
 
 AC_CONFIG_HEADERS([include/config.h])
 
