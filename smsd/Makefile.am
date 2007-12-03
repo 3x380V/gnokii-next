@@ -4,7 +4,7 @@
 # Copyright (C) 1999 Hugh Blemings & Pavel Janík ml.
 #               1999-2005 Jan Derfinak
 #               2000 Karel Zak
-# $Id: Makefile,v 1.39 2007-07-09 16:46:15 pkot Exp $
+# $Id: Makefile.am,v 1.1 2007-12-03 15:20:35 hadess Exp $
 #
 
 #GLIBCFLAGS = glib-config --cflags
