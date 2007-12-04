@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-sms.c,v 1.174 2007-12-02 15:43:49 pkot Exp $
+  $Id: gsm-sms.c,v 1.175 2007-12-04 17:33:27 dforsi Exp $
 
   G N O K I I
 
@@ -337,7 +337,7 @@ static gn_error sms_status(unsigned char status, gn_sms *sms)
 				dprintf("Service rejected");
 				break;
 			case 0x64:
-				dprintf("Quality of service not aviable");
+				dprintf("Quality of service not available");
 				break;
 			case 0x65:
 				dprintf("Error in SME");
@@ -363,7 +363,7 @@ static gn_error sms_status(unsigned char status, gn_sms *sms)
 				dprintf("Not obtainable");
 				break;
 			case 0x44:
-				dprintf("Quality of service not aviable");
+				dprintf("Quality of service not available");
 				break;
 			case 0x45:
 				dprintf("No internetworking available");
@@ -404,7 +404,7 @@ static gn_error sms_status(unsigned char status, gn_sms *sms)
 			dprintf("Service rejected");
 			break;
 		case 0x24:
-			dprintf("Quality of service not aviable");
+			dprintf("Quality of service not available");
 			break;
 		case 0x25:
 			dprintf("Error in SME");
