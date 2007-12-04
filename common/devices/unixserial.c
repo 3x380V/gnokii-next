@@ -1,6 +1,6 @@
 /*
 
-  $Id: unixserial.c,v 1.45 2007-09-04 17:18:39 dforsi Exp $
+  $Id: unixserial.c,v 1.46 2007-12-04 17:59:12 hadess Exp $
 
   G N O K I I
 
@@ -22,13 +22,15 @@
   along with gnokii; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-  Copyright (C) 1999-2000  Hugh Blemings & Pavel Janík ml.
+  Copyright (C) 1999-2000  Hugh Blemings & Pavel Janik ml.
   Copyright (C) 2001       Chris Kemp, Manfred Jonsson, Jank Kratochvil
   Copyright (C) 2002       Ladis Michl, Pavel Machek
   Copyright (C) 2001-2004  Pawel Kot
   Copyright (C) 2002-2004  BORBELY Zoltan
   
 */
+
+#include "config.h"
 
 #include "misc.h"
 #include "gnokii.h"
