@@ -5,7 +5,7 @@ dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janik ml.
 dnl                2000 Karel Zak, Pawel Kot
 dnl                2002 BORBELY Zoltan
 dnl
-dnl  $Id: configure.in,v 1.194 2007-12-04 16:33:58 hadess Exp $
+dnl  $Id: configure.in,v 1.195 2007-12-04 18:13:11 hadess Exp $
 dnl
 
 
@@ -831,6 +831,7 @@ AC_OUTPUT(
 	  Makefile
 	  Docs/Makefile
 	  Docs/man/Makefile
+	  Docs/protocol/Makefile
 	  Docs/sample/Makefile
 	  Docs/sample/logo/Makefile
 	  Docs/sample/vCalendar/Makefile
