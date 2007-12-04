@@ -5,7 +5,7 @@ dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janik ml.
 dnl                2000 Karel Zak, Pawel Kot
 dnl                2002 BORBELY Zoltan
 dnl
-dnl  $Id: configure.in,v 1.197 2007-12-04 18:39:05 hadess Exp $
+dnl  $Id: configure.in,v 1.198 2007-12-04 19:51:28 hadess Exp $
 dnl
 
 
@@ -40,6 +40,7 @@ AC_PREFIX_DEFAULT("/usr/local")
 
 dnl ======================== Checks for programs.
 AC_PROG_CC
+AM_PROG_CC_C_O
 AC_PROG_CPP
 AC_PROG_LEX
 # If there's no flex/lex utility and there's no generated common/gnvcal.c file, we won't be able to compile
