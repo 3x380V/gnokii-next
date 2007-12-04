@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus-3110.h,v 1.13 2005-04-24 19:01:20 pkot Exp $
+  $Id: fbus-3110.h,v 1.14 2007-12-04 19:27:36 hadess Exp $
 
   G N O K I I
 
@@ -22,7 +22,7 @@
   along with gnokii; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-  Copyright (C) 1999-2000 Hugh Blemings & Pavel Janík ml.
+  Copyright (C) 1999-2000 Hugh Blemings & Pavel Janik ml.
   Copyright (C) 2001-2004 Pawel Kot
   Copyright (C) 2002      BORBELY Zoltan, Ladis Michl
   Copyright (C) 2003      Osma Suominen
@@ -37,7 +37,6 @@
 #ifndef _gnokii_links_fbus_3110_h
 #define _gnokii_links_fbus_3110_h
 
-#include "config.h"
 #include "compat.h"
 #include "gnokii.h"
 

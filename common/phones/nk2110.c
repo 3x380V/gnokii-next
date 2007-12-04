@@ -1,6 +1,6 @@
 /* -*- linux-c -*-
 
-  $Id: nk2110.c,v 1.41 2007-05-06 14:19:06 pkot Exp $
+  $Id: nk2110.c,v 1.42 2007-12-04 19:27:35 hadess Exp $
 
   G N O K I I
 
@@ -31,6 +31,8 @@
 
 */
 
+#include "config.h"
+
 #ifndef WIN32
 
 #include <termios.h>
@@ -49,7 +51,6 @@
 
 #undef DEBUG
 
-#include "config.h"
 #include "compat.h"
 #include "misc.h"
 #include "gnokii.h"

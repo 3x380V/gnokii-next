@@ -1,6 +1,6 @@
 /*
 
-  $Id: sms-nokia.c,v 1.10 2005-04-20 22:33:36 pkot Exp $
+  $Id: sms-nokia.c,v 1.11 2007-12-04 19:27:32 hadess Exp $
 
   G N O K I I
 
@@ -29,6 +29,8 @@
   Various function used by Nokia in their SMS extension protocols.
 
 */
+
+#include "config.h"
 
 #include <string.h>
 #include "misc.h"

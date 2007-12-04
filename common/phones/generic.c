@@ -1,6 +1,6 @@
 /*
 
-  $Id: generic.c,v 1.18 2005-04-20 20:52:45 pkot Exp $
+  $Id: generic.c,v 1.19 2007-12-04 19:27:35 hadess Exp $
 
   G N O K I I
 
@@ -22,7 +22,7 @@
   along with gnokii; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-  Copyright (C) 2000      Hugh Blemings & Pavel Janík ml.
+  Copyright (C) 2000      Hugh Blemings & Pavel Janik ml.
   Copyright (C) 2000      Chris Kemp
   Copyright (C) 2001-2002 Pawel Kot
   Copyright (C) 2002      Ladis Michl
@@ -33,6 +33,8 @@
   The various routines are called pgen_(whatever).
 
 */
+
+#include "config.h"
 
 #include "gnokii-internal.h"
 #include "links/utils.h"

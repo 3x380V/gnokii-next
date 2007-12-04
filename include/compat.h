@@ -1,6 +1,6 @@
 /*
 
-  $Id: compat.h,v 1.58 2007-10-16 11:43:59 dforsi Exp $
+  $Id: compat.h,v 1.59 2007-12-04 19:27:35 hadess Exp $
 
   G N O K I I
 
@@ -33,8 +33,6 @@
 
 #ifndef	_gnokii_compat_h
 #define	_gnokii_compat_h
-
-#include "config.h"
 
 #include <stdlib.h>
 #include <stdio.h>

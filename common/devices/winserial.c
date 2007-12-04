@@ -1,6 +1,6 @@
 /*
 
-  $Id: winserial.c,v 1.14 2007-05-06 14:20:14 pkot Exp $
+  $Id: winserial.c,v 1.15 2007-12-04 19:27:33 hadess Exp $
 
   G N O K I I
 
@@ -22,11 +22,13 @@
   along with gnokii; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-  Copyright (C) 1999-2000  Hugh Blemings & Pavel Janík ml.
+  Copyright (C) 1999-2000  Hugh Blemings & Pavel Janik ml.
   Copyright (C) 2002       Ladis Michl
   Copyright (C) 2002-2004  BORBELY Zoltan, Pawel Kot
 
 */
+
+#include "config.h"
 
 #include <windows.h>
 #include <string.h>

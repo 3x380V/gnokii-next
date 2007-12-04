@@ -1,6 +1,6 @@
 /*
   
-  $Id: tcp.c,v 1.16 2007-09-03 17:37:48 dforsi Exp $
+  $Id: tcp.c,v 1.17 2007-12-04 19:27:33 hadess Exp $
 
   G N O K I I
 
@@ -26,6 +26,8 @@
   Copyright (C) 2002-2004 BORBELY Zoltan, Pawel Kot
 
 */
+
+#include "config.h"
 
 #include "misc.h"
 #include "gnokii.h"

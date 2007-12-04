@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-call.c,v 1.17 2007-11-07 18:28:18 pkot Exp $
+  $Id: gsm-call.c,v 1.18 2007-12-04 19:27:32 hadess Exp $
 
   G N O K I I
 
@@ -28,6 +28,8 @@
   Library for call management.
 
 */
+
+#include "config.h"
 
 #include <stdio.h>
 

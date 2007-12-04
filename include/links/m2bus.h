@@ -1,6 +1,6 @@
 /*
 
-  $Id: m2bus.h,v 1.9 2005-04-24 19:01:20 pkot Exp $
+  $Id: m2bus.h,v 1.10 2007-12-04 19:27:36 hadess Exp $
 
   G N O K I I
 
@@ -22,7 +22,7 @@
   along with gnokii; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-  Copyright (C) 2000 Hugh Blemings & Pavel Janík ml.
+  Copyright (C) 2000 Hugh Blemings & Pavel Janik ml.
   Copyright (C) 2000 Chris Kemp
   Copyright (C) 2002 BORBELY Zoltan
 
@@ -37,7 +37,6 @@
 #define _gnokii_links_m2bus_h
 
 #include <time.h>
-#include "config.h"
 #include "compat.h"
 
 #include "gnokii.h"

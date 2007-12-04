@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-networks.c,v 1.47 2007-11-07 18:28:18 pkot Exp $
+  $Id: gsm-networks.c,v 1.48 2007-12-04 19:27:32 hadess Exp $
 
   G N O K I I
 
@@ -22,7 +22,7 @@
   along with gnokii; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-  Copyright (C) 1999-2000 Hugh Blemings & Pavel Janík ml.
+  Copyright (C) 1999-2000 Hugh Blemings & Pavel Janik ml.
   Copyright (C) 2002-2003 Pawel Kot, Ladis Michl
   Copyright (C) 2002      Feico de Boer
 
@@ -30,9 +30,10 @@
 
 */
 
+#include "config.h"
+
 #include <string.h>
 
-#include "config.h"
 #include "compat.h"
 #include "misc.h"
 #include "gnokii.h"

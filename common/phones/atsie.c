@@ -1,6 +1,6 @@
 /*
 
-  $Id: atsie.c,v 1.13 2005-04-20 20:52:45 pkot Exp $
+  $Id: atsie.c,v 1.14 2007-12-04 19:27:34 hadess Exp $
 
   G N O K I I
 
@@ -30,11 +30,12 @@
 
 */
 
+#include "config.h"
+
 #include <string.h>
 #include <stdlib.h>
 #include <ctype.h>
 
-#include "config.h"
 #include "compat.h"
 #include "misc.h"
 #include "gnokii.h"

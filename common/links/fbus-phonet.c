@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus-phonet.c,v 1.46 2007-11-22 17:30:20 pkot Exp $
+  $Id: fbus-phonet.c,v 1.47 2007-12-04 19:27:34 hadess Exp $
 
   G N O K I I
 
@@ -22,7 +22,7 @@
   along with gnokii; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-  Copyright (C) 1999-2000 Hugh Blemings & Pavel Janík ml.
+  Copyright (C) 1999-2000 Hugh Blemings & Pavel Janik ml.
   Copyright (C) 2000-2001 Chris Kemp
   Copyright (C) 2001-2004 Pawel Kot
   Copyright (C) 2001      Manfred Jonsson, Martin Jancar
@@ -36,6 +36,7 @@
 
 */
 
+#include "config.h"
 
 /* System header files */
 #include <stdio.h>
@@ -43,7 +44,6 @@
 #include <stdlib.h>
 
 /* Various header file */
-#include "config.h"
 #include "compat.h"
 #include "misc.h"
 #include "gnokii.h"

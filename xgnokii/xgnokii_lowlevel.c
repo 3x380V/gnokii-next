@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_lowlevel.c,v 1.102 2007-11-19 17:26:18 dforsi Exp $
+  $Id: xgnokii_lowlevel.c,v 1.103 2007-12-04 19:27:37 hadess Exp $
   
   X G N O K I I
 
@@ -22,13 +22,15 @@
   along with gnokii; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-  Copyright (C) 1999      Pavel Janík ml., Hugh Blemings
+  Copyright (C) 1999      Pavel Janik ml., Hugh Blemings
   Copyright (C) 1999-2005 Jan Derfinak
   Copyright (C) 2002-2004 Pawel Kot, BORBELY Zoltan
   Copyright (C) 2002      Markus Plail, Manfred Jonsson, Pavel Machek
   Copyright (C) 2003      Tomi Ollila, Uli Hopp
 
 */
+
+#include "config.h"
 
 #ifndef WIN32
 #  include <unistd.h>

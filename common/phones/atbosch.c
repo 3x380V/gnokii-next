@@ -1,6 +1,6 @@
 /*
 
-  $Id: atbosch.c,v 1.11 2005-04-20 20:52:45 pkot Exp $
+  $Id: atbosch.c,v 1.12 2007-12-04 19:27:34 hadess Exp $
 
   G N O K I I
 
@@ -28,6 +28,8 @@
   See README for more details on supported mobile phones.
 
 */
+
+#include "config.h"
 
 #include <string.h>
 #include <stdlib.h>

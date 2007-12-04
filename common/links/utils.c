@@ -1,6 +1,6 @@
 /*
 
-  $Id: utils.c,v 1.21 2007-11-07 18:28:19 pkot Exp $
+  $Id: utils.c,v 1.22 2007-12-04 19:27:34 hadess Exp $
 
   G N O K I I
 
@@ -29,13 +29,14 @@
 
 */
 
+#include "config.h"
+
 /* System header files */
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 
 /* Various header file */
-#include "config.h"
 #include "compat.h"
 #include "misc.h"
 #include "gnokii.h"

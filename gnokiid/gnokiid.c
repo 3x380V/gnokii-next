@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokiid.c,v 1.56 2007-12-03 17:23:58 hadess Exp $
+  $Id: gnokiid.c,v 1.57 2007-12-04 19:27:35 hadess Exp $
 
   G N O K I I
 
@@ -31,6 +31,8 @@
   various daemon functions.
 
 */
+
+#include "config.h"
 
 #include <stdio.h>
 #include <stdlib.h>

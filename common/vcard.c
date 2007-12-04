@@ -1,6 +1,6 @@
 /*
 
-  $Id: vcard.c,v 1.24 2007-11-11 11:18:16 dforsi Exp $
+  $Id: vcard.c,v 1.25 2007-12-04 19:27:33 hadess Exp $
   
   G N O K I I
 
@@ -27,11 +27,12 @@
 
  */
 
+#include "config.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-#include "config.h"
 #include "compat.h"
 #include "gnokii.h"
 #include "gnokii-internal.h"

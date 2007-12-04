@@ -1,6 +1,6 @@
 /*
 
-  $Id: utils.c,v 1.2 2006-08-10 20:29:56 pkot Exp $
+  $Id: utils.c,v 1.3 2007-12-04 19:27:36 hadess Exp $
 
   S M S D
 
@@ -28,6 +28,8 @@
   Utils functions for SMSD plugins
   
 */
+
+#include "config.h"
 
 #include "utils.h"
 

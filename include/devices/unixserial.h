@@ -1,6 +1,6 @@
 /*
 
-  $Id: unixserial.h,v 1.14 2003-03-06 21:32:33 pkot Exp $
+  $Id: unixserial.h,v 1.15 2007-12-04 19:27:36 hadess Exp $
 
   G N O K I I
 
@@ -22,14 +22,13 @@
   along with gnokii; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-  Copyright (C) 1999, 2000 Hugh Blemings & Pavel Janík ml.
+  Copyright (C) 1999, 2000 Hugh Blemings & Pavel Janik ml.
 
 */
 
 #ifndef __devices_unixserial_h
 #define __devices_unixserial_h
 
-#include "config.h"
 #include "compat.h"
 
 #ifdef WIN32

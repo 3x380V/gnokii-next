@@ -1,6 +1,6 @@
 /*
 
-  $Id: at-emulator.c,v 1.50 2007-11-09 16:27:48 pkot Exp $
+  $Id: at-emulator.c,v 1.51 2007-12-04 19:27:33 hadess Exp $
 
   G N O K I I
 
@@ -22,7 +22,7 @@
   along with gnokii; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-  Copyright (C) 1999-2000  Hugh Blemings & Pavel Janík ml.
+  Copyright (C) 1999-2000  Hugh Blemings & Pavel Janik ml.
   Copyright (C) 2001-2004  Pawel Kot
   Copyright (C) 2002-2004  BORBELY Zoltan
 
@@ -31,6 +31,8 @@
   kernel AT Emulator IDSN code by Fritz Elfert and others.
 
 */
+
+#include "config.h"
 
 #include <stdio.h>
 #include <errno.h>
@@ -48,7 +50,6 @@
 #  include <termios.h>
 #endif
 
-#include "config.h"
 #include "misc.h"
 #include "gnokii.h"
 #include "compat.h"

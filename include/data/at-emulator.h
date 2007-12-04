@@ -1,6 +1,6 @@
 /*
 
-  $Id: at-emulator.h,v 1.13 2007-07-05 21:28:40 pkot Exp $
+  $Id: at-emulator.h,v 1.14 2007-12-04 19:27:35 hadess Exp $
 
   G N O K I I
 
@@ -22,7 +22,7 @@
   along with gnokii; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-  Copyright (C) 1999, 2000 Hugh Blemings & Pavel Janík ml.
+  Copyright (C) 1999, 2000 Hugh Blemings & Pavel Janik ml.
 
   Header file for AT emulator code.
 
@@ -31,7 +31,6 @@
 #ifndef _gnokii_data_at_emulator_h
 #define _gnokii_data_at_emulator_h
 
-#include "config.h"
 #include "compat.h"
 #include "gnokii.h"
 

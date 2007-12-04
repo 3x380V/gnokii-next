@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-encoding.c,v 1.81 2007-11-07 18:28:18 pkot Exp $
+  $Id: gsm-encoding.c,v 1.82 2007-12-04 19:27:32 hadess Exp $
 
   G N O K I I
 
@@ -32,11 +32,12 @@
 
 */
 
+#include "config.h"
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 
-#include "config.h"
 #include "compat.h"
 #include "misc.h"
 #include "gnokii.h"

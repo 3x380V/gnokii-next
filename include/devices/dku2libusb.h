@@ -1,6 +1,6 @@
 /*
 
-  $Id: dku2libusb.h,v 1.1 2006-04-24 20:08:50 pkot Exp $
+  $Id: dku2libusb.h,v 1.2 2007-12-04 19:27:36 hadess Exp $
  
   G N O K I I
 
@@ -31,8 +31,6 @@
 
 #ifndef _gnokii_dku2libusb_h
 #define _gnokii_dku2libusb_h
-
-#include "config.h"
 
 #ifdef HAVE_LIBUSB
 #  include <usb.h>

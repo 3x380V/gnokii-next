@@ -1,6 +1,6 @@
 /*
 
-  $Id: ateric.c,v 1.15 2007-10-22 16:34:42 pkot Exp $
+  $Id: ateric.c,v 1.16 2007-12-04 19:27:34 hadess Exp $
 
   G N O K I I
 
@@ -30,11 +30,12 @@
 
 */
 
+#include "config.h"
+
 #include <string.h>
 #include <stdlib.h>
 #include <ctype.h>
 
-#include "config.h"
 #include "compat.h"
 #include "misc.h"
 #include "gnokii.h"

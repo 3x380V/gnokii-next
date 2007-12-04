@@ -1,6 +1,6 @@
 /*
 
-  $Id: nokia-decoding.c,v 1.34 2007-11-07 18:28:18 pkot Exp $
+  $Id: nokia-decoding.c,v 1.35 2007-12-04 19:27:32 hadess Exp $
 
   G N O K I I
 
@@ -36,8 +36,9 @@
 
 */
 
-#include <time.h>
 #include "config.h"
+
+#include <time.h>
 #include "gnokii-internal.h" 
 #include "gnokii.h"
 #include "nokia-decoding.h"

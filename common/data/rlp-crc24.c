@@ -1,6 +1,6 @@
 /*
 
-  $Id: rlp-crc24.c,v 1.7 2005-04-20 20:30:18 pkot Exp $
+  $Id: rlp-crc24.c,v 1.8 2007-12-04 19:27:33 hadess Exp $
 
   G N O K I I
 
@@ -22,13 +22,15 @@
   along with gnokii; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-  Copyright (C) 1999-2000  Hugh Blemings & Pavel Janík ml.
+  Copyright (C) 1999-2000  Hugh Blemings & Pavel Janik ml.
   Copyright (C) 2001-2004  Pawel Kot
   Copyright (C) 2002-2004  BORBELY Zoltan
 
   CRC24 (aka FCS) implementation in RLP.
 
 */
+
+#include "config.h"
 
 #include "data/rlp-crc24.h"
 

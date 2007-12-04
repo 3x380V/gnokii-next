@@ -1,6 +1,6 @@
 /*
 
-  $Id: mgnokiidev.c,v 1.24 2005-04-20 20:25:31 pkot Exp $
+  $Id: mgnokiidev.c,v 1.25 2007-12-04 19:27:36 hadess Exp $
 
   G N O K I I
 
@@ -33,6 +33,8 @@
   pty device descriptor.
 
 */
+
+#include "config.h"
 
 /* See common/data/virtmodem.c for explanation */
 #ifdef	__OpenBSD__

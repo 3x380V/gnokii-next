@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-sms.c,v 1.175 2007-12-04 17:33:27 dforsi Exp $
+  $Id: gsm-sms.c,v 1.176 2007-12-04 19:27:32 hadess Exp $
 
   G N O K I I
 
@@ -31,6 +31,8 @@
   Library for parsing and creating Short Messages (SMS).
 
 */
+
+#include "config.h"
 
 #include <stdlib.h>
 #include <string.h>

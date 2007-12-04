@@ -1,6 +1,6 @@
 /*
 
-  $Id: unixbluetooth.h,v 1.6 2003-11-20 21:10:34 bozo Exp $
+  $Id: unixbluetooth.h,v 1.7 2007-12-04 19:27:36 hadess Exp $
  
   G N O K I I
 
@@ -22,7 +22,7 @@
   along with gnokii; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-  Copyright (C) 1999, 2000 Hugh Blemings & Pavel Janík ml.
+  Copyright (C) 1999, 2000 Hugh Blemings & Pavel Janik ml.
   Copyright (C) 2002       Marcel Holtmann <marcel@holtmann.org>
 
 */
@@ -30,7 +30,6 @@
 #ifndef _gnokii_unix_bluetooth_h
 #define _gnokii_unix_bluetooth_h
 
-#include "config.h"
 #include "compat.h"
 #include "misc.h"
 #include "gnokii.h"

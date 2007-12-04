@@ -1,6 +1,6 @@
 /*
 
-  $Id: rlp-common.c,v 1.16 2005-04-20 20:30:18 pkot Exp $
+  $Id: rlp-common.c,v 1.17 2007-12-04 19:27:33 hadess Exp $
 
   G N O K I I
 
@@ -22,7 +22,7 @@
   along with gnokii; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-  Copyright (C) 1999-2000  Hugh Blemings & Pavel Janík ml.
+  Copyright (C) 1999-2000  Hugh Blemings & Pavel Janik ml.
   Copyright (C) 2001       Chris Kemp
   Copyright (C) 2002-2004  BORBELY Zoltan
 
@@ -34,12 +34,13 @@
 
 */
 
+#include "config.h"
+
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
 #include <stdlib.h>
 
-#include "config.h"
 #include "compat.h"
 #include "gnokii.h"
 #include "data/rlp-crc24.h"

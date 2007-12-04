@@ -1,6 +1,6 @@
 /*
 
-  $Id: device.h,v 1.27 2006-10-03 21:26:38 pkot Exp $
+  $Id: device.h,v 1.28 2007-12-04 19:27:35 hadess Exp $
 
   G N O K I I
 
@@ -22,7 +22,7 @@
   along with gnokii; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-  Copyright (C) 1999-2000 Hugh Blemings & Pavel Janík ml.
+  Copyright (C) 1999-2000 Hugh Blemings & Pavel Janik ml.
   Copyright (C) 2002      BORBELY Zoltan, Ladis Michl, Pawel Kot, Chris Kemp
   Header file device access code.
 
@@ -31,7 +31,6 @@
 #ifndef _gnokii_device_h
 #define _gnokii_device_h
 
-#include "config.h"
 #include "compat.h"
 #include "misc.h"
 #include "gnokii.h"

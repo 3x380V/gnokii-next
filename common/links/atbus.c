@@ -1,6 +1,6 @@
 /*
 
-  $Id: atbus.c,v 1.55 2007-11-22 16:44:17 pkot Exp $
+  $Id: atbus.c,v 1.56 2007-12-04 19:27:33 hadess Exp $
 
   G N O K I I
 
@@ -30,6 +30,8 @@
 
 */
 
+#include "config.h"
+
 /* System header files */
 #include <stdio.h>
 #include <string.h>
@@ -41,7 +43,6 @@
 #endif
 
 /* Various header file */
-#include "config.h"
 #include "compat.h"
 #include "misc.h"
 #include "links/atbus.h"

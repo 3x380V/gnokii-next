@@ -1,6 +1,6 @@
 /*
 
-  $Id: compat.c,v 1.14 2007-10-16 11:43:59 dforsi Exp $
+  $Id: compat.c,v 1.15 2007-12-04 19:27:32 hadess Exp $
 
   G N O K I I
 
@@ -27,6 +27,8 @@
   Various compatibility functions.
 
 */
+
+#include "config.h"
 
 #ifdef WIN32
 #  include <windows.h>

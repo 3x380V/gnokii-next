@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-internal.h,v 1.36 2007-07-09 17:06:58 pkot Exp $
+  $Id: gnokii-internal.h,v 1.37 2007-12-04 19:27:35 hadess Exp $
 
   G N O K I I
 
@@ -35,7 +35,6 @@
 #ifndef _gnokii_internal_h
 #define _gnokii_internal_h
 
-#include "config.h"
 #include "compat.h"
 #include "misc.h"
 

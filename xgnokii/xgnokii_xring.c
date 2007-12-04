@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_xring.c,v 1.13 2007-11-07 18:28:20 pkot Exp $
+  $Id: xgnokii_xring.c,v 1.14 2007-12-04 19:27:37 hadess Exp $
 
   X G N O K I I
 
@@ -51,6 +51,8 @@
  *
  * HISTORY 
  */
+
+#include "config.h"
 
 #ifndef WIN32
 #  include <unistd.h>
@@ -204,7 +206,7 @@ enum {
 	KIE_COUNT
 };
 
-#define WHITE_COUNT 28		/* mitä on pianonkosketin englanniksi */
+#define WHITE_COUNT 28		/* mit? on pianonkosketin englanniksi */
 
 struct GUI {
 	GtkWidget *w;

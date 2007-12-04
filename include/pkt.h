@@ -1,6 +1,6 @@
 /*
 
-  $Id: pkt.h,v 1.5 2005-04-24 19:02:15 pkot Exp $
+  $Id: pkt.h,v 1.6 2007-12-04 19:27:35 hadess Exp $
 
   G N O K I I
 
@@ -31,7 +31,6 @@
 #ifndef _gnokii_pkt_h
 #define _gnokii_pkt_h
 
-#include "config.h"
 #include "compat.h"
 
 typedef struct {

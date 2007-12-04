@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.166 2007-11-19 14:51:50 pkot Exp $
+  $Id: atgen.c,v 1.167 2007-12-04 19:27:34 hadess Exp $
 
   G N O K I I
 
@@ -35,6 +35,8 @@
   phones. See README for more details on supported mobile phones.
 
 */
+
+#include "config.h"
 
 #include <string.h>
 #include <stdlib.h>

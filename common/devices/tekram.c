@@ -1,6 +1,6 @@
 /*
  *
- * $Id: tekram.c,v 1.13 2005-04-20 20:37:41 pkot Exp $
+ * $Id: tekram.c,v 1.14 2007-12-04 19:27:33 hadess Exp $
  *
  * G N O K I I
  *
@@ -20,13 +20,15 @@
  * License along with this library; if not, write to the Free
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
- * Copyright (C) 1999-2000  Hugh Blemings & Pavel Janík ml.
+ * Copyright (C) 1999-2000  Hugh Blemings & Pavel Janik ml.
  * Copyright (C) 2000-2001  Marcel Holtmann <marcel@holtmann.org>
  * Copyright (C) 2001       Chris Kemp
  * Copyright (C) 2002       Ladis Michl
  * Copyright (C) 2002-2003  BORBELY Zoltan, Pawel Kot
  *
  */
+
+#include "config.h"
 
 #include "misc.h"
 #include "gnokii.h"

@@ -1,12 +1,12 @@
 /*
  *
- * $Id: irda.h,v 1.1 2004-06-20 12:29:15 pkot Exp $
+ * $Id: irda.h,v 1.2 2007-12-04 19:27:36 hadess Exp $
  *
  * G N O K I I
  *
  * A Linux/Unix toolset and driver for Nokia mobile phones.
  *
- * Copyright (C) 1999, 2000 Hugh Blemings & Pavel Janík ml.
+ * Copyright (C) 1999, 2000 Hugh Blemings & Pavel Janik ml.
  * Copyright (C) 2000-2001  Marcel Holtmann <marcel@holtmann.org>
  *
  * This library is free software; you can redistribute it and/or
@@ -28,7 +28,6 @@
 #ifndef __gnokii_irda_h_
 #define __gnokii_irda_h_
 
-#include "config.h"
 #include "gnokii.h"
 
 int irda_open(struct gn_statemachine *state);
