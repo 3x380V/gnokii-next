@@ -5,7 +5,7 @@ dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janik ml.
 dnl                2000 Karel Zak, Pawel Kot
 dnl                2002 BORBELY Zoltan
 dnl
-dnl  $Id: configure.in,v 1.192 2007-12-03 22:30:29 pkot Exp $
+dnl  $Id: configure.in,v 1.193 2007-12-04 16:14:01 hadess Exp $
 dnl
 
 
@@ -27,8 +27,6 @@ AC_SUBST(GNOKII_LT_VERSION_CURRENT)
 AC_SUBST(GNOKII_LT_VERSION_REVISION)
 AC_SUBST(GNOKII_LT_VERSION_AGE)
 
-AC_CONFIG_AUX_DIR(config)
-
 AC_CANONICAL_SYSTEM
 
 AC_CONFIG_SRCDIR([gnokii/gnokii.c])
@@ -42,6 +40,7 @@ AC_PREFIX_DEFAULT("/usr/local")
 dnl ======================== Checks for programs.
 AC_PROG_CC
 AC_PROG_CPP
+IT_PROG_INTLTOOL([0.35.0])
 
 dnl -----------------------------
 dnl Checks for FreeBSD Build
@@ -75,10 +74,6 @@ AC_LIBTOOL_WIN32_DLL
 define([AC_PROVIDE_AC_LIBTOOL_WIN32_DLL])
 AC_PROG_LIBTOOL
 AC_PROG_INSTALL
-
-AC_RELOCATABLE
-
-AM_ICONV
 
 dnl ======================== Libtool versioning
 GNOKII_LT_VERSION=$GNOKII_LT_VERSION_CURRENT:$GNOKII_LT_VERSION_REVISION:$GNOKII_LT_VERSION_AGE
