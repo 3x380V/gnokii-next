@@ -1,6 +1,6 @@
 /*
 
-  $Id: device.c,v 1.42 2007-08-25 11:18:50 pkot Exp $
+  $Id: device.c,v 1.43 2007-12-15 19:15:45 pkot Exp $
 
   G N O K I I
 
@@ -185,7 +185,7 @@ size_t device_read(__ptr_t buf, size_t nbytes, struct gn_statemachine *state)
 	case GN_CT_DKU2:
 	case GN_CT_Serial:
 	case GN_CT_Infrared:
-		return (serial_read(state->device.fd, buf, nbytes, state));
+		return serial_read(state->device.fd, buf, nbytes, state);
 	case GN_CT_Irda:
 		return irda_read(state->device.fd, buf, nbytes, state);
 	case GN_CT_Bluetooth:
@@ -210,7 +210,7 @@ size_t device_write(const __ptr_t buf, size_t n, struct gn_statemachine *state)
 	case GN_CT_DKU2:
 	case GN_CT_Serial:
 	case GN_CT_Infrared:
-		return (serial_write(state->device.fd, buf, n, state));
+		return serial_write(state->device.fd, buf, n, state);
 	case GN_CT_Irda:
 		return irda_write(state->device.fd, buf, n, state);
 	case GN_CT_Bluetooth:
