@@ -1,6 +1,6 @@
 /*
   
-  $Id: tcp.c,v 1.17 2007-12-04 19:27:33 hadess Exp $
+  $Id: tcp.c,v 1.18 2007-12-15 19:30:27 pkot Exp $
 
   G N O K I I
 
@@ -209,6 +209,33 @@ size_t tcp_read(int fd, __ptr_t buf, size_t nbytes, struct gn_statemachine *stat
 size_t tcp_write(int fd, const __ptr_t buf, size_t n, struct gn_statemachine *state)
 {
 	return write(fd, buf, n);
+}
+
+#else /* WIN32 */
+
+int tcp_close(int fd, struct gn_statemachine *state)
+{
+	return -1;
+}
+
+int tcp_opendevice(const char *file, int with_async, struct gn_statemachine *state)
+{
+	return -1;
+}
+
+size_t tcp_read(int fd, __ptr_t buf, size_t nbytes, struct gn_statemachine *state)
+{
+	return -1;
+}
+
+size_t tcp_write(int fd, __const __ptr_t buf, size_t n, struct gn_statemachine *state)
+{
+	return -1;
+}
+
+int tcp_select(int fd, struct timeval *timeout, struct gn_statemachine *state)
+{
+	return -1;
 }
 
 #endif /* WIN32 */
