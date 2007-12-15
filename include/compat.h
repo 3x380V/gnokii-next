@@ -1,6 +1,6 @@
 /*
 
-  $Id: compat.h,v 1.59 2007-12-04 19:27:35 hadess Exp $
+  $Id: compat.h,v 1.60 2007-12-15 20:27:38 pkot Exp $
 
   G N O K I I
 
@@ -40,12 +40,14 @@
 #ifdef WIN32
 #  include <windows.h>
 #  include <locale.h>
-#  ifdef HAVE_DIRECT_H
-#    include <direct.h>
-#  endif
-#  ifdef HAVE_SYS_STAT_H
-#    include <sys/stat.h>
-#  endif
+#endif
+
+#ifdef HAVE_DIRECT_H
+#  include <direct.h>
+#endif
+
+#ifdef HAVE_SYS_STAT_H
+#  include <sys/stat.h>
 #endif
 
 #ifdef HAVE_STDARG_H
