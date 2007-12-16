@@ -5,7 +5,7 @@ dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janik ml.
 dnl                2000 Karel Zak, Pawel Kot
 dnl                2002 BORBELY Zoltan
 dnl
-dnl  $Id: configure.in,v 1.199 2007-12-13 15:55:05 hadess Exp $
+dnl  $Id: configure.in,v 1.200 2007-12-16 16:01:28 pkot Exp $
 dnl
 
 
@@ -85,6 +85,13 @@ dnl ======================== Libtool versioning
 AC_LIBTOOL_WIN32_DLL
 define([AC_PROVIDE_AC_LIBTOOL_WIN32_DLL])
 AC_PROG_LIBTOOL
+
+#
+# Make libtool use --silent when --silent is passed to make
+#
+changequote(,)dnl
+LIBTOOL="${LIBTOOL} \$(shell echo \"\$(MFLAGS)\" | awk '/^[^ ]*s/ { print \"--silent\" }')"
+changequote([,])dnl
 
 GNOKII_LT_VERSION=$GNOKII_LT_VERSION_CURRENT:$GNOKII_LT_VERSION_REVISION:$GNOKII_LT_VERSION_AGE
 AC_SUBST(GNOKII_LT_VERSION)
