@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-sms.c,v 1.176 2007-12-04 19:27:32 hadess Exp $
+  $Id: gsm-sms.c,v 1.177 2008-01-01 17:26:49 pkot Exp $
 
   G N O K I I
 
@@ -42,6 +42,10 @@
 #include "gnokii.h"
 
 #include "sms-nokia.h"
+
+#ifdef ENABLE_NLS
+#  include <locale.h>
+#endif
 
 #undef ERROR
 #define ERROR() do { if (error != GN_ERR_NONE) return error; } while (0)
