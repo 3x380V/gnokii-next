@@ -1,5 +1,5 @@
 /*
-  $Id: libfunctions.c,v 1.38 2007-11-22 23:39:49 pkot Exp $
+  $Id: libfunctions.c,v 1.39 2008-01-03 21:19:30 dforsi Exp $
 
   G N O K I I
 
@@ -475,7 +475,7 @@ static struct { gn_connection_type ct; const char *str; } connectiontypes[] = {
 	{ GN_CT_Tekram,     "tekram" }
 };
 
-gn_connection_type gn_get_connectiontype(const char *connection_type_string)
+GNOKII_API gn_connection_type gn_get_connectiontype(const char *connection_type_string)
 { 
 	int i;
 	for (i = 0; i < sizeof(connectiontypes)/sizeof(connectiontypes[0]); i++)
