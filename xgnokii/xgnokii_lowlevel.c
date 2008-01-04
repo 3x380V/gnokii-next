@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_lowlevel.c,v 1.103 2007-12-04 19:27:37 hadess Exp $
+  $Id: xgnokii_lowlevel.c,v 1.104 2008-01-04 18:59:40 pkot Exp $
   
   X G N O K I I
 
@@ -626,6 +626,9 @@ static gint A_GetCalendarNoteAll(gpointer data)
 	gn_data gdat;
 
 	gn_data_clear(&gdat);
+
+	memset(&entry, 0, sizeof(entry));
+	memset(&list, 0, sizeof(list));
 
 	pthread_mutex_lock(&calendarMutex);
 	while (1) {
