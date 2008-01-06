@@ -1,6 +1,6 @@
 /* -*- linux-c -*-
 
-  $Id: cbus.h,v 1.15 2005-04-24 19:01:20 pkot Exp $
+  $Id: cbus.h,v 1.16 2008-01-06 11:11:20 ladis Exp $
 
   G N O K I I
 
@@ -46,17 +46,18 @@ typedef enum {
 	CBUS_RX_Ack
 } cbus_rx_state;
 
-typedef struct{
+typedef struct {
 	cbus_rx_state state;
-	int frame_header1;
-	int frame_header2;
-	int frame_type1;
-	int frame_type2;
 	int msg_len;
 	int msg_pos;
+	unsigned char prev_rx_byte;
+	unsigned char frame_header1;
+	unsigned char frame_header2;
+	unsigned char frame_type1;
+	unsigned char frame_type2;
+	unsigned char unique;
 	unsigned char csum;
 	unsigned char msg[CBUS_MAX_MSG_LENGTH];
-	unsigned char prev_rx_byte;
 } cbus_instance;
 
 #define CBUSINST(s) (*((cbus_instance **)(&(s)->link.link_instance)))
