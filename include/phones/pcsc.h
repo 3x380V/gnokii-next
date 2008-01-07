@@ -1,6 +1,6 @@
 /*
 
-  $Id: pcsc.h,v 1.4 2008-01-07 13:47:54 dforsi Exp $
+  $Id: pcsc.h,v 1.5 2008-01-07 15:14:11 dforsi Exp $
 
   G N O K I I
 
@@ -103,6 +103,8 @@ subclause : command
 #define GN_PCSC_FILE_EF_LND 0x6F44
 /* Service Dialing Numbers */
 #define GN_PCSC_FILE_EF_SDN 0x6F49
+/* Location Information */
+#define GN_PCSC_FILE_EF_LOCI 0x6F7E
 /* Barred Dialing Numbers */
 #define GN_PCSC_FILE_EF_BDN 0x6F4D
 /* Administrative data */
