@@ -1,6 +1,6 @@
 /*
 
-  $Id: tcp.h,v 1.3 2002-12-27 00:11:40 bozo Exp $
+  $Id: tcp.h,v 1.4 2008-01-09 13:04:43 ladis Exp $
 
   G N O K I I
 
@@ -29,21 +29,14 @@
 #ifndef __devices_tcp_h
 #define __devices_tcp_h
 
-#ifdef WIN32
-  #include <stddef.h>
-  typedef void * __ptr_t;
-#else
-  #include <unistd.h>
-#endif	/* WIN32 */
-
+#include "compat.h"
 #include "misc.h"
 
+int tcp_opendevice(const char *file, int with_async, struct gn_statemachine *state);
 int tcp_close(int fd, struct gn_statemachine *state);
 
-int tcp_opendevice(const char *file, int with_async, struct gn_statemachine *state);
-
 size_t tcp_read(int fd, __ptr_t buf, size_t nbytes, struct gn_statemachine *state);
-size_t tcp_write(int fd, __const __ptr_t buf, size_t n, struct gn_statemachine *state);
+size_t tcp_write(int fd, const __ptr_t buf, size_t n, struct gn_statemachine *state);
 
 int tcp_select(int fd, struct timeval *timeout, struct gn_statemachine *state);
 
