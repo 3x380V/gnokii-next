@@ -1,6 +1,6 @@
 /*
 
-  $Id: tcp.h,v 1.4 2008-01-09 13:04:43 ladis Exp $
+  $Id: tcp.h,v 1.5 2008-01-09 13:13:09 ladis Exp $
 
   G N O K I I
 
@@ -31,6 +31,7 @@
 
 #include "compat.h"
 #include "misc.h"
+#include "gnokii.h"
 
 int tcp_opendevice(const char *file, int with_async, struct gn_statemachine *state);
 int tcp_close(int fd, struct gn_statemachine *state);
