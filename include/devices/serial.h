@@ -1,6 +1,6 @@
 /*
 
-  $Id: unixserial.h,v 1.15 2007-12-04 19:27:36 hadess Exp $
+  $Id: serial.h,v 1.1 2008-01-09 13:09:46 ladis Exp $
 
   G N O K I I
 
@@ -26,17 +26,10 @@
 
 */
 
-#ifndef __devices_unixserial_h
-#define __devices_unixserial_h
+#ifndef __devices_serial_h
+#define __devices_serial_h
 
 #include "compat.h"
-
-#ifdef WIN32
-#  include <stddef.h>
-#else
-#  include <unistd.h>
-#endif	/* WIN32 */
-
 #include "misc.h"
 #include "gnokii.h"
 
@@ -58,4 +51,4 @@ gn_error serial_flush(int fd, struct gn_statemachine *state);
 
 extern int device_script(int fd, const char *section, struct gn_statemachine *state);
 
-#endif  /* __devices_unixserial_h */
+#endif  /* __devices_serial_h */

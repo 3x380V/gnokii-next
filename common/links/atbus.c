@@ -1,6 +1,6 @@
 /*
 
-  $Id: atbus.c,v 1.56 2007-12-04 19:27:33 hadess Exp $
+  $Id: atbus.c,v 1.57 2008-01-09 13:09:45 ladis Exp $
 
   G N O K I I
 
@@ -38,10 +38,6 @@
 #include <stdlib.h>
 #include <errno.h>
 
-#ifdef HAVE_BLUETOOTH
-#  include <bluetooth/bluetooth.h>
-#endif
-
 /* Various header file */
 #include "compat.h"
 #include "misc.h"
@@ -62,9 +58,9 @@
  * message from the phone.
  */
 
-static int xwrite(unsigned char *d, int len, struct gn_statemachine *sm)
+static int xwrite(unsigned char *d, size_t len, struct gn_statemachine *sm)
 {
-	int res;
+	size_t res;
 
 	at_dprintf("write: ", d, len);
 
@@ -321,14 +317,12 @@ gn_error atbus_initialise(int mode, struct gn_statemachine *state)
 			goto err;
 		}
 		break;
-#ifdef HAVE_BLUETOOTH
 	case GN_CT_Bluetooth:
 		if (!device_open(state->config.port_device, false, false, false, state->config.connection_type, state)) {
 			error = GN_ERR_FAILED;
 			goto err;
 		}
 		break;
-#endif
 	default:
 		dprintf("Device not supported by AT bus\n");
 		error = GN_ERR_FAILED;

@@ -1,6 +1,6 @@
 /*
 
-  $Id: device.c,v 1.44 2007-12-15 19:30:27 pkot Exp $
+  $Id: device.c,v 1.45 2008-01-09 13:09:46 ladis Exp $
 
   G N O K I I
 
@@ -38,11 +38,7 @@
 #include "devices/irda.h"
 #include "devices/unixbluetooth.h"
 #include "devices/tcp.h"
-#ifndef WIN32
-#  include "devices/unixserial.h"
-#else
-#  include "devices/winserial.h"
-#endif
+#include "devices/serial.h"
 #include "devices/tekram.h"
 #include "devices/dku2libusb.h"
 

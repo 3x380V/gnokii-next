@@ -1,6 +1,6 @@
 /*
  *
- * $Id: tekram.c,v 1.14 2007-12-04 19:27:33 hadess Exp $
+ * $Id: tekram.c,v 1.15 2008-01-09 13:09:47 ladis Exp $
  *
  * G N O K I I
  *
@@ -33,6 +33,9 @@
 #include "misc.h"
 #include "gnokii.h"
 
+#include "devices/serial.h"
+#include "devices/tekram.h"
+
 #include <stdio.h>
 #ifdef HAVE_FCNTL_H
 #  include <fcntl.h>
@@ -44,14 +47,6 @@
 #  include <termios.h>
 #endif
 #include <string.h>
-
-#ifndef WIN32
-#  include "devices/unixserial.h"
-#else
-#  include "devices/winserial.h"
-#endif
-
-#include "devices/tekram.h"
 
 int tekram_open(const char *file, struct gn_statemachine *state)
 {

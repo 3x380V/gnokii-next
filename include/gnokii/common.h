@@ -1,6 +1,6 @@
 /*
 
-  $Id: common.h,v 1.156 2007-11-20 18:46:37 dforsi Exp $
+  $Id: common.h,v 1.157 2008-01-09 13:09:45 ladis Exp $
 
   G N O K I I
 
@@ -41,7 +41,7 @@
 /* Type of connection. Now we support serial connection with FBUS cable and
    IR (only with 61x0 models) */
 typedef enum {
-        GN_CT_NONE = -1,/* no connection type (error) */
+	GN_CT_NONE = -1,/* no connection type (error) */
 	GN_CT_Serial,   /* Serial connection. */
 	GN_CT_DAU9P,    /* Serial connection using DAU9P cable; use only with 6210/7110 if you want faster initialization */
 	GN_CT_DLR3P,    /* Serial connection using DLR3P cable */

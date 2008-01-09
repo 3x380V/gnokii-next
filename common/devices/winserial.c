@@ -1,6 +1,6 @@
 /*
 
-  $Id: winserial.c,v 1.15 2007-12-04 19:27:33 hadess Exp $
+  $Id: winserial.c,v 1.16 2008-01-09 13:09:47 ladis Exp $
 
   G N O K I I
 
@@ -38,7 +38,7 @@
 
 #include "misc.h"
 #include "gnokii.h"
-#include "devices/winserial.h"
+#include "devices/serial.h"
 
 #define USECOMM      /* yes, we need the COMM API */
 
