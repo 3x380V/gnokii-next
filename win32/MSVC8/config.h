@@ -1,6 +1,6 @@
 /*
 
-  $Id: config.h,v 1.1 2008-01-09 13:09:45 ladis Exp $
+  $Id: config.h,v 1.2 2008-01-11 18:30:17 pkot Exp $
 
   G N O K I I
 
@@ -40,11 +40,6 @@
 
 #undef VERSION
 #define VERSION "0.6.23cvs"
-
-/* XXX: Needed only for deprecated function
- * GNOKII_API gn_error gn_cfg_read(char **bindir)
- * remove anoce function is gone */
-#define SBINDIR ".\\"
 
 /* We support Bluetooth and IRDA on MSVS 2005 */
 #define HAVE_BLUETOOTH 1
