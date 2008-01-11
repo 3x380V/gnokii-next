@@ -1,6 +1,6 @@
 /*
 
-  $Id: compat.h,v 1.62 2008-01-09 13:09:46 ladis Exp $
+  $Id: compat.h,v 1.63 2008-01-11 18:45:54 pkot Exp $
 
   G N O K I I
 
@@ -235,6 +235,7 @@ time_t timegm(struct tm *tm);
 #    define strcasecmp _stricmp
 #    define strncasecmp _strnicmp
 #    define snprintf _snprintf
+#    define __const const
 #  endif /* _MSC_VER */
 #  if !defined(HAVE_UNISTD_H) || defined(__MINGW32__)
 #    define sleep(x) Sleep((x) * 1000)
