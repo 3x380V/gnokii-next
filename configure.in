@@ -5,7 +5,7 @@ dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janik ml.
 dnl                2000 Karel Zak, Pawel Kot
 dnl                2002 BORBELY Zoltan
 dnl
-dnl  $Id: configure.in,v 1.204 2008-01-11 19:34:57 pkot Exp $
+dnl  $Id: configure.in,v 1.205 2008-01-11 20:33:50 pkot Exp $
 dnl
 
 
@@ -594,8 +594,10 @@ have_postgres=no
 AC_PATH_PROG(PGCONFIG, pg_config, no)
 if test x$PGCONFIG != xno ; then
 	have_postgres=yes
-	POSTGRES_LIBS=`$PGCONFIG --libs`
-	POSTGRES_CFLAGS=`$PGCONFIG --cflags`
+	pg_libdir=`$PGCONFIG --libdir`
+	POSTGRES_LIBS="-L$pg_libdir"
+	pg_includedir=`$PGCONFIG --includedir`
+	POSTGRES_CFLAGS="-I$pg_includedir"
 	AC_SUBST(POSTGRES_LIBS)
 	AC_SUBST(POSTGRES_CFLAGS)
 fi
