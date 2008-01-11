@@ -5,7 +5,7 @@ dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janik ml.
 dnl                2000 Karel Zak, Pawel Kot
 dnl                2002 BORBELY Zoltan
 dnl
-dnl  $Id: configure.in,v 1.202 2008-01-11 14:21:47 hadess Exp $
+dnl  $Id: configure.in,v 1.203 2008-01-11 15:24:20 hadess Exp $
 dnl
 
 
@@ -895,6 +895,7 @@ AC_OUTPUT(
 	  po/Makefile.in
 	  testsuite/Makefile
 	  testsuite/data/Makefile
+	  win32/Makefile
   )
 
 dnl ======================== Final report
