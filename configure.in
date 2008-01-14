@@ -5,7 +5,7 @@ dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janik ml.
 dnl                2000 Karel Zak, Pawel Kot
 dnl                2002 BORBELY Zoltan
 dnl
-dnl  $Id: configure.in,v 1.205 2008-01-11 20:33:50 pkot Exp $
+dnl  $Id: configure.in,v 1.206 2008-01-14 15:47:45 hadess Exp $
 dnl
 
 
@@ -580,7 +580,7 @@ dnl ======================== Checks for glib support for smsd
 
 found_glib=no
 
-PKG_CHECK_MODULES(GLIB, glib-2.0, found_glib=yes, found_glib=no)
+PKG_CHECK_MODULES(GLIB, glib-2.0 gmodule-2.0, found_glib=yes, found_glib=no)
 if test "$found_glib" = no; then
 	AC_MSG_WARN(Cannot find glib 2.0.)
 	AC_MSG_WARN(Disabling smsd.)
