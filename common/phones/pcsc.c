@@ -1,6 +1,6 @@
 /*
 
-  $Id: pcsc.c,v 1.12 2008-01-15 17:40:44 dforsi Exp $
+  $Id: pcsc.c,v 1.13 2008-01-15 18:26:14 dforsi Exp $
 
   G N O K I I
 
@@ -257,8 +257,6 @@ static gn_error get_mnc_len(int *len)
 {
 	LONG ret;
 	gn_error error;
-
-	*len = 2;
 
 	ret = pcsc_read_file(&IoStruct, GN_PCSC_FILE_DF_GSM, GN_PCSC_FILE_EF_AD);
 	error = get_gn_error(&IoStruct, ret);
