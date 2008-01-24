@@ -1,6 +1,6 @@
 /*
 
-  $Id: smsd.c,v 1.59 2008-01-14 15:47:45 hadess Exp $
+  $Id: smsd.c,v 1.60 2008-01-24 16:05:43 hadess Exp $
 
   S M S D
 
@@ -36,8 +36,6 @@
 #include <pthread.h>
 #include <getopt.h>
 #include <time.h>
-#include <dlfcn.h>
-
 
 #ifndef WIN32
 # include <unistd.h>  /* for usleep */
@@ -88,9 +86,12 @@ gint LoadDB (void)
 {
   GModule *handle;
   gchar *buf;
+  gchar *full_name;
   gchar *error;
 
-  buf = g_module_build_path(smsdConfig.libDir, smsdConfig.dbMod);
+  full_name = g_strdup_printf ("smsd_%s", smsdConfig.dbMod);
+  buf = g_module_build_path(smsdConfig.libDir, full_name);
+  g_free (full_name);
   
   gn_log_xdebug("Trying to load module %s\n", buf);
     
@@ -98,7 +99,7 @@ gint LoadDB (void)
   g_free (buf);
   if (!handle)
   {
-    g_print ("dlopen error: %s!\n", dlerror());
+    g_print ("g_module_open error: %s!\n", g_module_error ());
     return (1);
   }
     
