@@ -5,7 +5,7 @@ dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janik ml.
 dnl                2000 Karel Zak, Pawel Kot
 dnl                2002 BORBELY Zoltan
 dnl
-dnl  $Id: configure.in,v 1.212 2008-01-27 20:27:29 pkot Exp $
+dnl  $Id: configure.in,v 1.213 2008-01-27 20:28:52 pkot Exp $
 dnl
 
 
@@ -37,7 +37,7 @@ AC_CONFIG_SRCDIR([gnokii/gnokii.c])
 dnl gettext doesn't like the config.status being somewhere else :(
 dnl AC_CONFIG_AUX_DIR(config)
 
-AM_INIT_AUTOMAKE([1.9 dist-bzip2 no-dist-gzip])
+AM_INIT_AUTOMAKE([1.8 dist-bzip2 no-dist-gzip])
 
 AC_PREFIX_DEFAULT("/usr/local")
 
