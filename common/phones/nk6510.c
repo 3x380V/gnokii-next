@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.c,v 1.253 2008-02-03 13:40:24 pkot Exp $
+  $Id: nk6510.c,v 1.254 2008-02-03 13:44:23 pkot Exp $
 
   G N O K I I
 
@@ -1947,6 +1947,8 @@ static gn_error NK6510_IncomingFile(int messagetype, unsigned char *message, int
 		break;
 	case 0x6d:
 	case 0x69:
+		if (data->file)
+			dprintf("   Filesize: %x\n", data->file->file_length);
 		if (message[4] == 0x06) {
 			dprintf("Invalid path\n");
 			error =  GN_ERR_INVALIDLOCATION;
@@ -1959,13 +1961,14 @@ static gn_error NK6510_IncomingFile(int messagetype, unsigned char *message, int
 		if (data->file) {
 			file = data->file;
 		} else if (data->file_list) {
-			data->file_list->files[data->file_list->file_count] = malloc(sizeof(gn_file));
+			data->file_list->files[data->file_list->file_count] = calloc(1, sizeof(gn_file));
 			file = data->file_list->files[data->file_list->file_count];
 			data->file_list->file_count++;
 			i = message[31] * 2;
 			char_unicode_decode(file->name, message + 32, i);
 		}
 		if (!file) {
+			dprintf("Internal error\n");
 			error = GN_ERR_INTERNALERROR;
 			goto out;
 		}
