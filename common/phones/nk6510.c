@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.c,v 1.255 2008-02-03 14:12:06 pkot Exp $
+  $Id: nk6510.c,v 1.256 2008-02-03 14:14:26 pkot Exp $
 
   G N O K I I
 
@@ -329,6 +329,10 @@ static gn_error NK6510_Functions(gn_operation op, gn_data *data, struct gn_state
 	case GN_OP_OnSMS:
 		DRVINSTANCE(state)->on_sms = data->on_sms;
 		DRVINSTANCE(state)->sms_callback_data = data->callback_data;
+		return NK6510_Subscribe(data, state);
+	case GN_OP_SetCallNotification:
+		DRVINSTANCE(state)->call_notification = data->call_notification;
+		DRVINSTANCE(state)->call_callback_data = data->callback_data;
 		return NK6510_Subscribe(data, state);
 	/* case GN_OP_PollSMS:
 		break;
