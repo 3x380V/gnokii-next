@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.c,v 1.252 2008-02-03 13:39:10 pkot Exp $
+  $Id: nk6510.c,v 1.253 2008-02-03 13:40:24 pkot Exp $
 
   G N O K I I
 
@@ -3456,6 +3456,7 @@ static gn_error NK6510_IncomingNetwork(int messagetype, unsigned char *message, 
 		}
 		break;
 	case 0x20:
+		dprintf("Incoming call(?)\n");
 		/*
 		  no idea what this is about
 		  01 56 00 20 02 00 55
