@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.c,v 1.256 2008-02-03 14:14:26 pkot Exp $
+  $Id: nk6510.c,v 1.257 2008-02-03 15:08:42 pkot Exp $
 
   G N O K I I
 
@@ -1030,10 +1030,12 @@ static gn_error NK6510_GetSMSStatus(gn_data *data, struct gn_statemachine *state
 	data->sms_folder->folder_id = GN_MT_TE;
 
 	error = NK6510_GetSMSFolderStatus(data, state);
-	if (error) goto out;
+	if (error)
+		goto out;
 
 	error = sm_message_send(7, NK6510_MSG_FOLDER, req, state);
-	if (error) goto out;
+	if (error)
+		goto out;
 
 	error = sm_block(NK6510_MSG_FOLDER, data, state);
  out:
