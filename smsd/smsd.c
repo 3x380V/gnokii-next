@@ -1,6 +1,6 @@
 /*
 
-  $Id: smsd.c,v 1.64 2008-02-04 22:27:06 pkot Exp $
+  $Id: smsd.c,v 1.65 2008-02-04 22:43:42 pkot Exp $
 
   S M S D
 
@@ -420,7 +420,7 @@ static void ReadSMS(gpointer d, gpointer userData)
   gn_sms *data = (gn_sms *)d;
   PhoneEvent *e;
   gint error;
-  
+
   if (data->type == GN_SMS_MT_Deliver || data->type == GN_SMS_MT_DeliveryReport)
   {
     gn_log_xdebug("%d. %s   ", data->number, data->remote.number);
