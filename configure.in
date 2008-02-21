@@ -5,7 +5,7 @@ dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janik ml.
 dnl                2000 Karel Zak, Pawel Kot
 dnl                2002 BORBELY Zoltan
 dnl
-dnl  $Id: configure.in,v 1.216 2008-02-15 09:15:51 pkot Exp $
+dnl  $Id: configure.in,v 1.217 2008-02-21 16:07:06 hadess Exp $
 dnl
 
 
@@ -874,6 +874,7 @@ AC_SUBST(HAVE_LIBUSB)
 
 AC_OUTPUT(
 	  Makefile
+	  getopt/Makefile
 	  Docs/Makefile
 	  Docs/man/Makefile
 	  Docs/protocol/Makefile
