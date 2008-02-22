@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-internal.h,v 1.37 2007-12-04 19:27:35 hadess Exp $
+  $Id: gnokii-internal.h,v 1.38 2008-02-22 16:26:36 dforsi Exp $
 
   G N O K I I
 
@@ -49,6 +49,7 @@ gn_connection_type gn_get_connectiontype(const char *connection_type_string);
 
 /* SMS */
 gn_error gn_sms_parse(gn_data *data);
+gn_error gn_sms_pdu2raw(gn_sms_raw *rawsms, unsigned char *pdu, int pdu_len, int flags);
 gn_error gn_sms_request(gn_data *data, struct gn_statemachine *state);
 gn_error sms_prepare(gn_sms *sms, gn_sms_raw *rawsms);
 gn_timestamp *sms_timestamp_unpack(unsigned char *number, gn_timestamp *dt);
