@@ -1,6 +1,6 @@
 /*
 
-  $Id: sms.h,v 1.70 2007-11-21 20:32:00 pkot Exp $
+  $Id: sms.h,v 1.71 2008-02-22 13:26:16 dforsi Exp $
 
   G N O K I I
 
@@ -62,6 +62,10 @@
 #define GN_SMS_NUMBER_MAX_LENGTH       20
 #define GN_SMS_USER_DATA_MAX_LENGTH   512
 #define GN_SMS_VP_MAX_LENGTH            8
+
+/* flags for encoding/decoding PDU */
+#define GN_SMS_PDU_DEFAULT		0
+#define GN_SMS_PDU_NOSMSC		1
 
 /*** MEMORY INFO ***/
 typedef struct {
