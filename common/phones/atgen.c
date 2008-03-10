@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.168 2008-02-22 13:26:16 dforsi Exp $
+  $Id: atgen.c,v 1.169 2008-03-10 20:55:47 dforsi Exp $
 
   G N O K I I
 
@@ -2140,7 +2140,12 @@ static gn_error ReplyGetNetworkInfo(int messagetype, unsigned char *buffer, int 
 
 		memset(tmp, 0, sizeof(tmp));
 		strings = gnokii_strsplit(buf.line2, ",", 3);
-		format = atoi(strings[1]);
+		/* phone may respond with only the first value as in "+COPS: 0" */
+		if (strings[1]) {
+			format = atoi(strings[1]);
+		} else {
+			format = -1;
+		}
 		switch (format) {
 		case 0: /* network operator name given */
 			pos = strip_quotes(strings[2]);
