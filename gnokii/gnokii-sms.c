@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-sms.c,v 1.37 2008-03-12 18:10:41 dforsi Exp $
+  $Id: gnokii-sms.c,v 1.38 2008-03-12 18:35:10 dforsi Exp $
 
   G N O K I I
 
@@ -1068,7 +1068,7 @@ int getsmsc(int argc, char *argv[], gn_data *data, struct gn_statemachine *state
 		}
 
 		if (start < 1) {
-			fprintf(stderr, _("SMS center number must be greater than 1\n"));
+			fprintf(stderr, _("SMS center number must be greater than 0\n"));
 			return -1;
 		}
 	} else {
