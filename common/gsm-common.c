@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-common.c,v 1.26 2007-12-04 19:27:32 hadess Exp $
+  $Id: gsm-common.c,v 1.27 2008-03-13 18:42:21 dforsi Exp $
 
   G N O K I I
 
@@ -84,6 +84,51 @@ GNOKII_API gn_memory_type gn_str2memory_type(const char *s)
 }
 
 GNOKII_API const char *gn_memory_type2str(gn_memory_type mt)
+{
+#define X(a) case GN_MT_##a: return #a;
+	switch (mt) {
+	X(ME);
+	X(SM);
+	X(FD);
+	X(ON);
+	X(EN);
+	X(DC);
+	X(RC);
+	X(MC);
+	X(LD);
+	X(BD);
+	X(SD);
+	X(MT);
+	X(IN);
+	X(OU);
+	X(AR);
+	X(TE);
+	X(F1);
+	X(F2);
+	X(F3);
+	X(F4);
+	X(F5);
+	X(F6);
+	X(F7);
+	X(F8);
+	X(F9);
+	X(F10);
+	X(F11);
+	X(F12);
+	X(F13);
+	X(F14);
+	X(F15);
+	X(F16);
+	X(F17);
+	X(F18);
+	X(F19);
+	X(F20);
+	default: return NULL;
+	}
+#undef X
+}
+
+GNOKII_API const char *gn_memory_type_print(gn_memory_type mt)
 {
 	switch (mt) {
 	case GN_MT_ME: return _("Internal memory");

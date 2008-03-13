@@ -1,6 +1,6 @@
 /*
 
-  $Id: atsoer.c,v 1.11 2007-12-04 19:27:34 hadess Exp $
+  $Id: atsoer.c,v 1.12 2008-03-13 18:42:22 dforsi Exp $
 
   G N O K I I
 
@@ -54,9 +54,13 @@ static gn_error se_at_memory_type_set(gn_memory_type mt, struct gn_statemachine 
 	if (mt != drvinst->memorytype) {
 		int len;
 		char memtype[10];
+		const char *memory_name;
 
+		memory_name = gn_memory_type2str(mt);
+		if (!memory_name)
+			return GN_ERR_INVALIDMEMORYTYPE;
 		len = at_encode(drvinst->charset, memtype, sizeof(memtype),
-				memorynames[mt], strlen(memorynames[mt]));
+				memory_name, strlen(memory_name));
 		snprintf(req, sizeof(req), "AT+CPBS=\"%s\"\r", memtype);
 		ret = sm_message_send(11 + len - 1, GN_OP_Init, req, state);
 		if (ret)
