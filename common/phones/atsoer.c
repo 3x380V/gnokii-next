@@ -1,6 +1,6 @@
 /*
 
-  $Id: atsoer.c,v 1.15 2008-03-19 01:40:10 hadess Exp $
+  $Id: atsoer.c,v 1.16 2008-03-19 20:14:14 dforsi Exp $
 
   G N O K I I
 
@@ -62,9 +62,8 @@ static gn_error se_at_memory_type_set(gn_memory_type mt, struct gn_statemachine 
 		/* BC is "Own Business Card" as per the Sony Ericsson documentation */
 		if (strcmp(memory_name, "ON") == 0)
 			memory_name = "BC";
-		len = strlen(memory_name);
-		snprintf(req, sizeof(req), "AT+CPBS=\"%s\"\r", memory_name);
-		ret = sm_message_send(11 + len - 1, GN_OP_Init, req, state);
+		len = snprintf(req, sizeof(req), "AT+CPBS=\"%s\"\r", memory_name);
+		ret = sm_message_send(len, GN_OP_Init, req, state);
 		if (ret)
 			return GN_ERR_NOTREADY;
 		gn_data_clear(&data);
