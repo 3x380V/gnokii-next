@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.178 2008-03-21 11:54:02 dforsi Exp $
+  $Id: atgen.c,v 1.179 2008-03-30 13:45:25 dforsi Exp $
 
   G N O K I I
 
@@ -2045,6 +2045,8 @@ static gn_error ReplyRing(int messagetype, unsigned char *buffer, int length, gn
 	} else if (!strncmp(buf.line1, "+CRING: ", 8)) {
 		pos = buf.line1 + 8;
 		if (!strncmp(pos, "VOICE", 5))
+			cinfo.type = GN_CALL_Voice;
+		else if (*pos < ' ') /* some phones reply with "+CRING: <cr><lf>" only */
 			cinfo.type = GN_CALL_Voice;
 		else
 			return GN_ERR_UNHANDLEDFRAME;
