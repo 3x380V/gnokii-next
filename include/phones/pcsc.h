@@ -1,6 +1,6 @@
 /*
 
-  $Id: pcsc.h,v 1.5 2008-01-07 15:14:11 dforsi Exp $
+  $Id: pcsc.h,v 1.6 2008-03-30 17:47:57 dforsi Exp $
 
   G N O K I I
 
@@ -38,6 +38,10 @@
 
 #include <PCSC/wintypes.h>
 #include <PCSC/winscard.h>
+
+#if !HAVE_LPCSTR
+typedef const char *LPCSTR;
+#endif
 
 /*
 some CLAss, INStruction pairs defined by GSM specs
