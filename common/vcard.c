@@ -1,6 +1,6 @@
 /*
 
-  $Id: vcard.c,v 1.26 2008-04-12 15:05:05 dforsi Exp $
+  $Id: vcard.c,v 1.27 2008-04-12 16:10:38 dforsi Exp $
   
   G N O K I I
 
@@ -47,6 +47,17 @@ GNOKII_API int gn_phonebook2vcard(FILE *f, gn_phonebook_entry *entry, char *loca
 	fprintf(f, "VERSION:3.0\n");
 	add_slashes(name, entry->name, sizeof(name), strlen(entry->name));
 	fprintf(f, "FN:%s\n", name);
+
+	if (entry->person.has_person)
+		fprintf(f, "N:%s;%s;%s;%s;%s\n",
+			entry->person.family_name[0]        ? entry->person.family_name        : "",
+			entry->person.given_name[0]         ? entry->person.given_name         : "",
+			entry->person.additional_names[0]   ? entry->person.additional_names   : "",
+			entry->person.honorific_prefixes[0] ? entry->person.honorific_prefixes : "",
+			entry->person.honorific_suffixes[0] ? entry->person.honorific_suffixes : "");
+	else
+		fprintf(f, "N:%s\n", name);
+
 	fprintf(f, "TEL;TYPE=PREF,VOICE:%s\n", entry->number);
 	fprintf(f, "X-GSM-MEMORY:%s\n", gn_memory_type2str(entry->memory_type));
 	fprintf(f, "X-GSM-LOCATION:%d\n", entry->location);
@@ -75,16 +86,6 @@ GNOKII_API int gn_phonebook2vcard(FILE *f, gn_phonebook_entry *entry, char *loca
 		break;
 	}
 	fprintf(f, "CATEGORIES:%s\n", category);
-
-	if (entry->person.has_person)
-		fprintf(f, "N:%s;%s;%s;%s;%s\n",
-			entry->person.family_name[0]        ? entry->person.family_name        : "",
-			entry->person.given_name[0]         ? entry->person.given_name         : "",
-			entry->person.additional_names[0]   ? entry->person.additional_names   : "",
-			entry->person.honorific_prefixes[0] ? entry->person.honorific_prefixes : "",
-			entry->person.honorific_suffixes[0] ? entry->person.honorific_suffixes : "");
-	else
-		fprintf(f, "N:%s\n", name);
 
 	if (entry->address.has_address)
 		fprintf(f, "ADR;TYPE=HOME,PREF:%s;%s;%s;%s;%s;%s;%s\n",
@@ -229,6 +230,17 @@ GNOKII_API int gn_vcard2phonebook(FILE *f, gn_phonebook_entry *entry)
 		if (!line_len)
 			continue; 
 
+		if (BEGINS("N:")) {
+			if (0 < sscanf(buf +2 , "%64[^;];%64[^;];%64[^;];%64[^;];%64[^;]\n",
+				entry->person.family_name,
+				entry->person.given_name,
+				entry->person.additional_names,
+				entry->person.honorific_prefixes,
+				entry->person.honorific_suffixes
+			)) {
+				entry->person.has_person = 1;
+			}
+		}
 		STORE("FN:", entry->name);
 		STORE("TEL;TYPE=PREF,VOICE:", entry->number);
 		STORE("TEL;TYPE=PREF:", entry->number);
