@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-sms.c,v 1.178 2008-02-22 13:26:16 dforsi Exp $
+  $Id: gsm-sms.c,v 1.179 2008-04-12 11:21:08 pkot Exp $
 
   G N O K I I
 
@@ -1909,7 +1909,7 @@ GNOKII_API char *gn_sms2mbox(gn_sms *sms, char *from)
 	t.tm_min = sms->smsc_time.minute;
 	t.tm_hour = sms->smsc_time.hour;
 	t.tm_mday = sms->smsc_time.day;
-	t.tm_mon = sms->smsc_time.month;
+	t.tm_mon = sms->smsc_time.month - 1;
 	t.tm_year = sms->smsc_time.year - 1900;
 #ifdef HAVE_TM_GMTON
 	if (sms->smsc_time.timezone)
