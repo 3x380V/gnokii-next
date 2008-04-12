@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-security.c,v 1.10 2007-10-18 20:58:10 dforsi Exp $
+  $Id: gnokii-security.c,v 1.11 2008-04-12 12:24:32 pkot Exp $
 
   G N O K I I
 
@@ -61,7 +61,7 @@ void security_usage(FILE *f)
 		));
 #ifdef SECURITY
 	fprintf(f, _(
-		     "          --entersecuritycode PIN|PIN2|PUK|PUK2\n"
+		     "          --entersecuritycode PIN|PIN2|PUK|PUK2 (CMD...)\n"
 		     "          --getsecuritycodestatus\n"
 		     "          --getsecuritycode\n"
 		     "          --changesecuritycode PIN|PIN2|PUK|PUK2\n"
@@ -103,7 +103,7 @@ int getlocksinfo(gn_data *data, struct gn_statemachine *state)
 			locks_info[i].closed ? "CLOSED" : "open",
 			locks_info[i].counter);
 	}
-	return 0;
+	return GN_ERR_NONE;
 }
 
 #ifdef SECURITY
