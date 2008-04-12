@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-internal.h,v 1.38 2008-02-22 16:26:36 dforsi Exp $
+  $Id: gnokii-internal.h,v 1.39 2008-04-12 22:44:33 dforsi Exp $
 
   G N O K I I
 
@@ -43,9 +43,6 @@
 #endif
 
 #include "gnokii.h"
-
-/* utils */
-gn_connection_type gn_get_connectiontype(const char *connection_type_string);
 
 /* SMS */
 gn_error gn_sms_parse(gn_data *data);
