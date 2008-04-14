@@ -1,6 +1,6 @@
 /*
 
-  $Id: sms.h,v 1.71 2008-02-22 13:26:16 dforsi Exp $
+  $Id: sms.h,v 1.72 2008-04-14 20:09:19 dforsi Exp $
 
   G N O K I I
 
@@ -109,6 +109,8 @@ typedef enum {
 	GN_SMS_UDH_OtherMessage         = 0x0e,
 	GN_SMS_UDH_Unknown              = 0x0f
 } gn_sms_udh_type;
+
+GNOKII_API const char *gn_sms_udh_type2str(gn_sms_udh_type t);
 
 typedef struct {
 	gn_sms_udh_type type;
@@ -228,6 +230,8 @@ typedef enum {
 	GN_SMS_VP_Max  = 0xff
 } gn_sms_vp_time;
 
+GNOKII_API const char *gn_sms_vp_time2str(gn_sms_vp_time t);
+
 typedef struct {
 	gn_sms_vp_format vpf;
 	union {
@@ -250,6 +254,8 @@ typedef enum {
 	GN_SMS_MF_Email  = 0x32, /* Email message. */
 	GN_SMS_MF_X400   = 0x31  /* X.400 message. */
 } gn_sms_message_format;
+
+GNOKII_API const char *gn_sms_message_format2str(gn_sms_message_format t);
 
 typedef struct {
 	int id;				/* Number of the SMSC in the phone memory. */
@@ -279,6 +285,8 @@ typedef enum {
 	GN_SMS_MT_PictureTemplate = 0x09,
 	GN_SMS_MT_SubmitSent      = 0x0a
 } gn_sms_message_type;
+
+GNOKII_API const char *gn_sms_message_type2str(gn_sms_message_type t);
 
 typedef enum {
 	GN_SMS_CT_Enquiry            = 0x00, /* Enquiry relating to previosly
@@ -315,6 +323,8 @@ typedef enum {
 	GN_SMS_Sent   = 0x05,
 	GN_SMS_Unsent = 0x07
 } gn_sms_message_status;
+
+GNOKII_API const char *gn_sms_message_status2str(gn_sms_message_status t);
 
 typedef enum {
 	GN_SMS_DATA_None      = 0x00,
