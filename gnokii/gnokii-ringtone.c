@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-ringtone.c,v 1.18 2008-04-12 12:53:49 pkot Exp $
+  $Id: gnokii-ringtone.c,v 1.19 2008-04-14 21:17:28 dforsi Exp $
 
   G N O K I I
 
@@ -114,7 +114,7 @@ gn_error sendringtone(int argc, char *argv[], gn_data *data, struct gn_statemach
 	sms.user_data[1].type = GN_SMS_DATA_None;
 
 	if ((error = gn_file_ringtone_read(optarg, &sms.user_data[0].u.ringtone))) {
-		fprintf(stderr, _("Failed to load ringtone.\n"));
+		fprintf(stderr, _("Failed to load ringtone: %s\n"), gn_error_print(error));
 		return error;
 	}
 
