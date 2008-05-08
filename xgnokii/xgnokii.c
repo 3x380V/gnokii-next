@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii.c,v 1.97 2008-01-11 19:34:57 pkot Exp $
+  $Id: xgnokii.c,v 1.98 2008-05-08 13:37:07 dforsi Exp $
   
   X G N O K I I
 
@@ -2408,8 +2408,11 @@ static void ReadConfig(void)
 
 int main(int argc, char *argv[])
 {
+	/* For GNU gettext */
 #ifdef ENABLE_NLS
-	textdomain("gnokii");
+	setlocale(LC_ALL, "");
+	bindtextdomain(GETTEXT_PACKAGE, LOCALEDIR);
+	textdomain(GETTEXT_PACKAGE);
 #endif
 
 	gtk_init(&argc, &argv);
