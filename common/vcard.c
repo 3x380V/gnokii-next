@@ -1,10 +1,10 @@
 /*
 
-  $Id: vcard.c,v 1.29 2008-05-13 12:03:40 dforsi Exp $
+  $Id: vcard.c,v 1.30 2008-05-13 12:09:17 dforsi Exp $
   
   G N O K I I
 
-  A Linux/Unix toolkid and driver for the mobile phones.
+  A Linux/Unix toolset and driver for the mobile phones.
 
   This file is part of gnokii.
 
