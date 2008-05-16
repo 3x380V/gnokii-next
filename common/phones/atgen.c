@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.180 2008-05-16 15:24:44 dforsi Exp $
+  $Id: atgen.c,v 1.181 2008-05-16 15:31:24 dforsi Exp $
 
   G N O K I I
 
@@ -745,18 +745,13 @@ static gn_error AT_Identify(gn_data *data, struct gn_statemachine *state)
 
 static gn_error AT_GetModel(gn_data *data, struct gn_statemachine *state)
 {
-	gn_error err;
-
 	/* prefer AT+GMM over AT+CGMM because it returns a user friendly model name
 	   for some phones (e.g. Sony Ericsson Z310i)
 	 */
 
 	if (sm_message_send(7, GN_OP_Identify, "AT+GMM\r", state))
 		return GN_ERR_NOTREADY;
-	if (sm_block_no_retry(GN_OP_Identify, data, state) == GN_ERR_NONE)
-		return GN_ERR_NONE;
-
-	return err;
+	return sm_block_no_retry(GN_OP_Identify, data, state);
 }
 
 static gn_error AT_GetManufacturer(gn_data *data, struct gn_statemachine *state)
