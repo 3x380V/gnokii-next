@@ -1,6 +1,6 @@
 /*
 
-  $Id: generic.c,v 1.19 2007-12-04 19:27:35 hadess Exp $
+  $Id: generic.c,v 1.20 2008-05-16 12:10:58 dforsi Exp $
 
   G N O K I I
 
@@ -42,7 +42,7 @@
 /* If we do not support a message type, print out some debugging info */
 gn_error pgen_incoming_default(int messagetype, unsigned char *buffer, int length, struct gn_statemachine *state)
 {
-	dprintf("Unknown Message received [type (%02x) length (%d): \n", messagetype, length);
+	dprintf("Unknown Message received [type (%02x) length (%d)]: \n", messagetype, length);
 	sm_message_dump(gn_log_debug, messagetype, buffer, length);
 
 	return GN_ERR_NONE;
