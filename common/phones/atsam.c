@@ -1,6 +1,6 @@
 /*
 
-  $Id: atsam.c,v 1.3 2007-12-04 19:27:34 hadess Exp $
+  $Id: atsam.c,v 1.4 2008-05-20 13:17:12 dforsi Exp $
 
   G N O K I I
 
@@ -26,7 +26,7 @@
   Copyright 2004 Pawel Kot
   Copyright 2007 Ingmar Steen <iksteen@gmail.com>
 
-  This file provides functions specific to at commands on ericsson
+  This file provides functions specific to AT commands on Samsung
   phones. See README for more details on supported mobile phones.
 
 */

@@ -1,6 +1,6 @@
 /*
 
-  $Id: atsoer.c,v 1.17 2008-03-21 12:42:03 dforsi Exp $
+  $Id: atsoer.c,v 1.18 2008-05-20 13:17:12 dforsi Exp $
 
   G N O K I I
 
@@ -25,7 +25,7 @@
   Copyright 2004 Hugo Haas <hugo@larve.net>
   Copyright 2004 Pawel Kot
 
-  This file provides functions specific to at commands on ericsson
+  This file provides functions specific to AT commands on Sony Ericsson
   phones. See README for more details on supported mobile phones.
 
 */
