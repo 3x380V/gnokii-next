@@ -1,6 +1,6 @@
 /*
 
-  $Id: atsoer.c,v 1.19 2008-05-20 22:14:35 pkot Exp $
+  $Id: atsoer.c,v 1.20 2008-05-21 16:53:48 dforsi Exp $
 
   G N O K I I
 
@@ -130,4 +130,7 @@ void at_sonyericsson_init(char* foundmodel, char* setupmodel, struct gn_statemac
 	AT_DRVINST(state)->cnmi_mode = 2;
 	AT_DRVINST(state)->encode_memory_type = 1;
 	AT_DRVINST(state)->encode_number = 1;
+
+	at_insert_send_function(GN_OP_GetMemoryStatus, AT_GetMemoryStatus, state);
+	at_insert_recv_function(GN_OP_GetMemoryStatus, ReplyMemoryStatus, state);
 }
