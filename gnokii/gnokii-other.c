@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-other.c,v 1.9 2008-05-20 22:14:35 pkot Exp $
+  $Id: gnokii-other.c,v 1.10 2008-05-21 16:44:27 dforsi Exp $
 
   G N O K I I
 
@@ -200,7 +200,7 @@ gn_error getnetworkinfo(gn_data *data, struct gn_statemachine *state)
 	fprintf(stdout, _("Network      : %s (%s)\n"),
 			gn_network_name_get((char *)networkinfo.network_code),
 			gn_country_name_get((char *)country));
-	fprintf(stdout, _("Network code : %s\n"), networkinfo.network_code);
+	fprintf(stdout, _("Network code : %s\n"), (*networkinfo.network_code ? networkinfo.network_code : _("undefined")));
 	fprintf(stdout, _("LAC          : %04x\n"), lac);
 	fprintf(stdout, _("Cell id      : %08x\n"), cid);
 
