@@ -1,6 +1,6 @@
 /*
 
-  $Id: vcard.c,v 1.32 2008-05-23 21:44:29 dforsi Exp $
+  $Id: vcard.c,v 1.33 2008-05-25 22:26:30 dforsi Exp $
   
   G N O K I I
 
@@ -179,7 +179,7 @@ GNOKII_API int gn_phonebook2vcard(FILE *f, gn_phonebook_entry *entry, char *loca
 }
 
 #define BEGINS(a) ( !strncmp(buf, a, strlen(a)) )
-#define STRIP(a, b) strip_slashes(b, buf+strlen(a), line_len - strlen(a), line_len - strlen(a))
+#define STRIP(a, b) strip_slashes(b, buf+strlen(a), line_len - strlen(a), GN_PHONEBOOK_NAME_MAX_LENGTH)
 #define STORE3(a, b) if (BEGINS(a)) { STRIP(a, b); }
 #define STORE2(a, b, c) if (BEGINS(a)) { c; STRIP(a, b); continue; }
 #define STORE(a, b) STORE2(a, b, (void) 0)
