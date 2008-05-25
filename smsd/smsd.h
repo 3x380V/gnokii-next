@@ -1,6 +1,6 @@
 /*
 
-  $Id: smsd.h,v 1.20 2008-01-27 20:17:04 ja Exp $
+  $Id: smsd.h,v 1.21 2008-05-25 11:47:44 pkot Exp $
 
   S M S D
 
@@ -37,6 +37,7 @@
 #define SMSD_OK		0
 #define SMSD_NOK	1
 #define SMSD_DUPLICATE	2
+#define SMSD_WAITING	3
 
 typedef enum {
   SMSD_READ_REPORTS = 1
