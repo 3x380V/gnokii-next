@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_lowlevel.c,v 1.104 2008-01-04 18:59:40 pkot Exp $
+  $Id: xgnokii_lowlevel.c,v 1.105 2008-05-25 12:43:34 pkot Exp $
   
   X G N O K I I
 
@@ -1063,6 +1063,8 @@ static gint A_GetNetworkInfo(gpointer data)
 
 	pthread_mutex_lock(&getNetworkInfoMutex);
 	gdat.network_info = d->info;
+	gdat.reg_notification = NULL;
+	gdat.callback_data = NULL;
 	error = d->status = gn_sm_functions(GN_OP_GetNetworkInfo, &gdat, statemachine);
 	pthread_cond_signal(&getNetworkInfoCond);
 	pthread_mutex_unlock(&getNetworkInfoMutex);

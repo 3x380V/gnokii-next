@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-other.c,v 1.10 2008-05-21 16:44:27 dforsi Exp $
+  $Id: gnokii-other.c,v 1.11 2008-05-25 12:43:34 pkot Exp $
 
   G N O K I I
 
@@ -183,6 +183,8 @@ gn_error getnetworkinfo(gn_data *data, struct gn_statemachine *state)
 	memset(&networkinfo, 0, sizeof(networkinfo));
 
 	data->network_info = &networkinfo;
+	data->reg_notification = NULL;
+	data->callback_data = NULL;
 
 	if ((error = gn_sm_functions(GN_OP_GetNetworkInfo, data, state)) != GN_ERR_NONE) {
 		fprintf(stderr, _("Error: %s\n"), gn_error_print(error));
