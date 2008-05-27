@@ -1,6 +1,6 @@
 /*
 
-  $Id: compat.h,v 1.63 2008-01-11 18:45:54 pkot Exp $
+  $Id: compat.h,v 1.64 2008-05-27 05:54:07 cfturkja Exp $
 
   G N O K I I
 
@@ -234,7 +234,6 @@ time_t timegm(struct tm *tm);
 #    define mkdir(dirname, accessrights) _mkdir(dirname)
 #    define strcasecmp _stricmp
 #    define strncasecmp _strnicmp
-#    define snprintf _snprintf
 #    define __const const
 #  endif /* _MSC_VER */
 #  if !defined(HAVE_UNISTD_H) || defined(__MINGW32__)
