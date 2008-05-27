@@ -1,6 +1,6 @@
 /*
 
-  $Id: cfgreader.c,v 1.88 2008-02-17 20:38:20 pkot Exp $
+  $Id: cfgreader.c,v 1.89 2008-05-27 10:20:46 pkot Exp $
 
   G N O K I I
 
@@ -535,8 +535,10 @@ struct gn_cfg_header *cfg_file_read(const char *filename)
 	} while (ret > 0);
 
 	fclose(handle);
-	lines = realloc(lines, read + 1);
-	lines[read] = '\0';
+	/* Make sure there's '\n' after the last line and NULL-terminate. */
+	lines = realloc(lines, read + 2);
+	lines[read] = '\n';
+	lines[read+1] = '\0';
 
 	/* Now split the lines */
 	split_lines = NULL;
