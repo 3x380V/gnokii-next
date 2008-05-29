@@ -1,6 +1,6 @@
 /*
 
-  $Id: pcsc.h,v 1.7 2008-03-30 22:26:53 dforsi Exp $
+  $Id: pcsc.h,v 1.8 2008-05-29 13:22:21 dforsi Exp $
 
   G N O K I I
 
@@ -110,6 +110,8 @@ subclause : command
 #define GN_PCSC_FILE_EF_SMS 0x6F3C
 /* Mobile Subscriber Integrated Services Digital Network Number */
 #define GN_PCSC_FILE_EF_MSISDN 0x6F40
+/* Short Message Service Parameters */
+#define GN_PCSC_FILE_EF_SMSP 0x6f42
 /* Last Numbers Dialed */
 #define GN_PCSC_FILE_EF_LND 0x6F44
 /* Service Dialing Numbers */
