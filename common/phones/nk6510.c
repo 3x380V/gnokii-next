@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.c,v 1.260 2008-05-29 13:22:21 dforsi Exp $
+  $Id: nk6510.c,v 1.261 2008-05-30 19:10:06 pkot Exp $
 
   G N O K I I
 
@@ -25,7 +25,7 @@
   Copyright (C) 2002      Markus Plail
   Copyright (C) 2002-2006 Pawel Kot, BORBELY Zoltan
 
-  This file provides functions specific to the 6510 series.
+  This file provides functions specific to the Nokia 6510 series.
   See README for more details on supported mobile phones.
 
   The various routines are called nk6510_(whatever).

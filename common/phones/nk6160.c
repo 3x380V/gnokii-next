@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6160.c,v 1.25 2007-05-15 12:41:07 dforsi Exp $
+  $Id: nk6160.c,v 1.26 2008-05-30 19:10:06 pkot Exp $
 
   G N O K I I
 
@@ -24,7 +24,7 @@
 
   Copyright (C) 2002-2003 BORBELY Zoltan
 
-  This file provides functions specific to the 6160 series.
+  This file provides functions specific to the Nokia 6160 series.
   See README for more details on supported mobile phones.
 
 */

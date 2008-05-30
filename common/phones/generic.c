@@ -1,6 +1,6 @@
 /*
 
-  $Id: generic.c,v 1.20 2008-05-16 12:10:58 dforsi Exp $
+  $Id: generic.c,v 1.21 2008-05-30 19:10:06 pkot Exp $
 
   G N O K I I
 
@@ -27,7 +27,7 @@
   Copyright (C) 2001-2002 Pawel Kot
   Copyright (C) 2002      Ladis Michl
 
-  This file provides useful functions for all phones
+  This file provides useful functions for all phones.
   See README for more details on supported mobile phones.
 
   The various routines are called pgen_(whatever).

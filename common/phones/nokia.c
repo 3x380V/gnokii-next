@@ -1,6 +1,6 @@
 /*
 
-  $Id: nokia.c,v 1.45 2007-12-04 19:27:35 hadess Exp $
+  $Id: nokia.c,v 1.46 2008-05-30 19:10:07 pkot Exp $
 
   G N O K I I
 
@@ -27,7 +27,7 @@
   Copyright (C) 2002 Ladis Michl, Markus Plail
   Copyright (C) 2002-2004 BORBELY Zoltan, Pawel Kot
 
-  This file provides useful functions for all phones
+  This file provides useful functions for all Nokia phones.
   See README for more details on supported mobile phones.
 
   The various routines are called pnok_(whatever).
