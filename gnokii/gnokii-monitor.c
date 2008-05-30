@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-monitor.c,v 1.15 2008-05-25 12:43:34 pkot Exp $
+  $Id: gnokii-monitor.c,v 1.16 2008-05-30 17:09:14 pkot Exp $
 
   G N O K I I
 
@@ -166,16 +166,17 @@ static void displaycall(int call_id)
 /* Same code is for getnetworkinfo */
 void networkinfo_print(gn_network_info *info, void *callback_data)
 {
-	int cid;
+	int cid, lac;
 
 	/* Ugly, ugly, ... */
 	if (info->cell_id[2] == 0 && info->cell_id[3] == 0)
 		cid = (info->cell_id[0] << 8) + info->cell_id[1];
 	else
 		cid = (info->cell_id[0] << 24) + (info->cell_id[1] << 16) + (info->cell_id[2] << 8) + info->cell_id[3];
+	lac = (info->LAC[0] << 8) + info->LAC[1];
 
-	fprintf(stdout, _("LAC: %02x%02x, CellID: %08x\n"),
-		info->LAC[0], info->LAC[1], cid);
+	fprintf(stdout, _("LAC: %04x (%d), CellID: %08x (%d)\n"),
+		lac, lac, cid, cid);
 }
 
 gn_error monitormode(int argc, char *argv[], gn_data *data, struct gn_statemachine *state)
