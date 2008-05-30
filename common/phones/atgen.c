@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.185 2008-05-29 13:22:21 dforsi Exp $
+  $Id: atgen.c,v 1.186 2008-05-30 12:50:22 hadess Exp $
 
   G N O K I I
 
@@ -2499,6 +2499,7 @@ static gn_error ReplyGetNetworkInfo(int messagetype, unsigned char *buffer, int 
 		 *   5 - registered in roaming
 		 */
 		error = creg_parse(strings, i, &info);
+		*(info.network_code) = '\0';
 
 		gnokii_strfreev(strings);
 
