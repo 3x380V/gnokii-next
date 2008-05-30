@@ -1,6 +1,6 @@
 /*
 
-  $Id: atsoer.c,v 1.21 2008-05-21 18:26:43 pkot Exp $
+  $Id: atsoer.c,v 1.22 2008-05-30 17:17:25 pkot Exp $
 
   G N O K I I
 
@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
   Copyright 2004 Hugo Haas <hugo@larve.net>
-  Copyright 2004 Pawel Kot
+  Copyright 2004-2008 Pawel Kot
 
   This file provides functions specific to AT commands on Sony Ericsson
   phones. See README for more details on supported mobile phones.
@@ -139,6 +139,7 @@ void at_sonyericsson_init(char* foundmodel, char* setupmodel, struct gn_statemac
 	AT_DRVINST(state)->cnmi_mode = 2;
 	AT_DRVINST(state)->encode_memory_type = 1;
 	AT_DRVINST(state)->encode_number = 1;
+	AT_DRVINST(state)->lac_swapped = 1;
 
 	/*
 	 * Calculate phonebook size for SonyEricsson phones: they don't respond
