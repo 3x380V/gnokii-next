@@ -1,6 +1,6 @@
 /*
 
-  $Id: atsag.h,v 1.1 2008-05-30 19:06:03 pkot Exp $
+  $Id: atsag.h,v 1.2 2008-05-30 20:42:36 dforsi Exp $
 
   G N O K I I
 
@@ -34,6 +34,6 @@
 
 #include "gnokii.h"
 
-void at_sag_init(char* foundmodel, char* setupmodel, struct gn_statemachine *state);
+void at_sagem_init(char* foundmodel, char* setupmodel, struct gn_statemachine *state);
 
 #endif
