@@ -1,6 +1,6 @@
 /*
 
-  $Id: nokia.h,v 1.23 2005-04-24 20:05:19 pkot Exp $
+  $Id: nokia.h,v 1.24 2008-05-30 19:06:25 pkot Exp $
 
   G N O K I I
 
@@ -27,7 +27,7 @@
   Copyright (C) 2002-2003 BORBELY Zoltan, Pawel Kot
   Copyright (C) 2002      Ladis Michl
 
-  This file provides useful functions for all phones
+  This file provides useful functions for all Nokia phones.
   See README for more details on supported mobile phones.
 
   The various routines are called PNOK_...

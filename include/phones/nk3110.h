@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk3110.h,v 1.12 2005-04-24 20:05:19 pkot Exp $
+  $Id: nk3110.h,v 1.13 2008-05-30 19:06:25 pkot Exp $
 
   G N O K I I
 
@@ -27,7 +27,7 @@
   Copyright (C) 2001-2003 Pawel Kot
   Copyright (C) 2003      Osma Suominen
 
-  This file provides functions specific to the 3110 series.
+  This file provides functions specific to the Nokia 3110 series.
   See README for more details on supported mobile phones.
 
 */

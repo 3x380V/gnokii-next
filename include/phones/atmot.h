@@ -1,6 +1,6 @@
 /*
 
-  $Id: atmot.h,v 1.1 2007-11-19 14:51:50 pkot Exp $
+  $Id: atmot.h,v 1.2 2008-05-30 19:06:25 pkot Exp $
 
   G N O K I I
 
@@ -24,7 +24,7 @@
 
   Copyright (C) 2006 Bastien Nocera <hadess@hadess.net>
 
-  This file provides functions specific to AT commands on Siemens phones.
+  This file provides functions specific to AT commands on Motorola phones.
   See README for more details on supported mobile phones.
 
 */

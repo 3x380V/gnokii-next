@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk2110.h,v 1.5 2005-04-24 20:05:19 pkot Exp $
+  $Id: nk2110.h,v 1.6 2008-05-30 19:06:25 pkot Exp $
 
   G N O K I I
 
@@ -24,7 +24,7 @@
 
   Copyright (C) 2000 Pavel Machek
 
-  This file provides functions specific to the 2110 series.
+  This file provides functions specific to the Nokia 2110 series.
   See README for more details on supported mobile phones.
 
   The various routines are called P2110_(whatever).

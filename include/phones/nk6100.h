@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.h,v 1.30 2008-04-17 21:31:59 dforsi Exp $
+  $Id: nk6100.h,v 1.31 2008-05-30 19:06:25 pkot Exp $
 
   G N O K I I
 
@@ -25,7 +25,7 @@
   Copyright (C) 2000      Hugh Blemings & Pavel Janík ml.
   Copyright (C) 2001-2003 Pawel Kot, BORBELY Zoltan
 
-  This file provides functions specific to the 6100/5100 series.
+  This file provides functions specific to the Nokia 6100/5100 series.
   See README for more details on supported mobile phones.
 
 */
