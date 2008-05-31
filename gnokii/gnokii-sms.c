@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-sms.c,v 1.42 2008-05-29 14:39:36 pkot Exp $
+  $Id: gnokii-sms.c,v 1.43 2008-05-31 15:07:44 pkot Exp $
 
   G N O K I I
 
@@ -612,7 +612,7 @@ void getsms_usage(FILE *f, int exitval)
 			"        -f filename                 as above but user is prompted before\n"
 			"                                    overwriting the file\n"
 			"        --append-file filename\n"
-			"        -a filename                 as above but append to the exising file\n"
+			"        -a filename                 as above but append to the existing file\n"
 			"        --delete\n"
 			"        -d                          delete message after reading\n"
 			"\n"
