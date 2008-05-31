@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.c,v 1.264 2008-05-31 09:54:19 pkot Exp $
+  $Id: nk6510.c,v 1.263 2008-05-31 09:53:34 pkot Exp $
 
   G N O K I I
 
@@ -1721,7 +1721,7 @@ static gn_error NK6510_GetFile(gn_data *data, struct gn_statemachine *state)
 		if (err != GN_ERR_NONE)
 			return err;
 		progress = 100 * (data->file->file_length - data->file->togo) / data->file->file_length;
-		fprintf(stderr, _("Progress: %3d%% completed\r"), progress);
+		fprintf(stderr, _("\rProgress: %3d%% completed"), progress);
 	}
 	fprintf(stderr, "\n");
 
