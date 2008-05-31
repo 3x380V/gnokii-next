@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.484 2008-05-31 17:07:49 dforsi Exp $
+  $Id: gnokii.c,v 1.485 2008-05-31 19:09:46 dforsi Exp $
 
   G N O K I I
 
@@ -661,7 +661,7 @@ static int parse_options(int argc, char *argv[])
 		{ OPT_SETSPEEDDIAL,      3, 3, 0 },
 		{ OPT_CREATESMSFOLDER,   1, 1, 0 },
 		{ OPT_DELETESMSFOLDER,   1, 1, 0 },
-		{ OPT_GETSMS,            2, 7, 0 },
+		{ OPT_GETSMS,            2, 6, 0 },
 		{ OPT_DELETESMS,         2, 3, 0 },
 		{ OPT_SENDSMS,           1, 10, 0 },
 		{ OPT_SAVESMS,           0, 10, 0 },
