@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-sms.c,v 1.43 2008-05-31 15:07:44 pkot Exp $
+  $Id: gnokii-sms.c,v 1.44 2008-06-01 16:15:26 dforsi Exp $
 
   G N O K I I
 
@@ -841,7 +841,7 @@ parsefile:
 					free(mbox);
 				}
 			}
-			if (del) {
+			if (del && mode != -1) {
 				data->sms = &message;
 				if (GN_ERR_NONE != gn_sms_delete(data, state))
 					fprintf(stderr, _("(delete failed)\n"));
@@ -859,7 +859,8 @@ parsefile:
 				return error;
 			break;
 		}
-	}
+		if (mode == -1)
+			break;	}
 
 	/* FIXME: We return the value of the last read.
 	 * What should we return?
