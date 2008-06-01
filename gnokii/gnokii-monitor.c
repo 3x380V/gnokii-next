@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-monitor.c,v 1.16 2008-05-30 17:09:14 pkot Exp $
+  $Id: gnokii-monitor.c,v 1.17 2008-06-01 21:33:17 pkot Exp $
 
   G N O K I I
 
@@ -245,6 +245,7 @@ gn_error monitormode(int argc, char *argv[], gn_data *data, struct gn_statemachi
 	cb_widx = 0;
 	gn_sm_functions(GN_OP_SetCellBroadcast, data, state);
 
+	memset(&networkinfo, 0, sizeof(gn_network_info));
 	if (gn_sm_functions(GN_OP_GetNetworkInfo, data, state) == GN_ERR_NONE) {
 		fprintf(stdout, _("Network: %s, %s (%s)\n"),
 			gn_network_name_get(networkinfo.network_code), gn_country_name_get(networkinfo.network_code),
