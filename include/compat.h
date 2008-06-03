@@ -1,6 +1,6 @@
 /*
 
-  $Id: compat.h,v 1.64 2008-05-27 05:54:07 cfturkja Exp $
+  $Id: compat.h,v 1.65 2008-06-03 19:51:58 dforsi Exp $
 
   G N O K I I
 
@@ -257,6 +257,7 @@ time_t timegm(struct tm *tm);
 #else
 #  define _(x) (x)
 #  define N_(x) (x)
+#  define dgettext(x) (x)
 #endif /* ENABLE_NLS */
 
 /* Definitions for u8, u16 and u32, borrowed from

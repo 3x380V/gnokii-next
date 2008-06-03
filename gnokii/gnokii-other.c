@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-other.c,v 1.12 2008-05-30 17:09:14 pkot Exp $
+  $Id: gnokii-other.c,v 1.13 2008-06-03 19:51:59 dforsi Exp $
 
   G N O K I I
 
@@ -169,7 +169,7 @@ void list_gsm_networks(void)
 	printf(_("Network  Name\n"));
 	printf(_("-----------------------------------------\n"));
 	while (gn_network_get(&network, i++))
-		printf(_("%-7s  %s\n"), network.code, network.name);
+		printf(_("%-7s  %s (%s)\n"), network.code, network.name, gn_country_name_get(network.code));
 }
 
 gn_error getnetworkinfo(gn_data *data, struct gn_statemachine *state)
