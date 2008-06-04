@@ -1,6 +1,6 @@
 /*
 
-  $Id: atsam.c,v 1.4 2008-05-20 13:17:12 dforsi Exp $
+  $Id: atsam.c,v 1.5 2008-06-04 21:22:56 pkot Exp $
 
   G N O K I I
 
@@ -163,7 +163,7 @@ static gn_error ReplyReadPhonebook(int messagetype, unsigned char *buffer, int l
 		/* compile a name out of first name + last name */
 		first_name = sam_find_subentry(entry, GN_PHONEBOOK_ENTRY_FirstName);
 		last_name = sam_find_subentry(entry, GN_PHONEBOOK_ENTRY_LastName);
-		if(first_name || last_name) {
+		if (first_name || last_name) {
 			if (first_name)
 				len += strlen(first_name);
 			if (last_name)
@@ -178,10 +178,11 @@ static gn_error ReplyReadPhonebook(int messagetype, unsigned char *buffer, int l
 				if (last_name)
 					strncat(entry->name, " ", strlen(" "));
 			}
-			if (strlen(last_name) + strlen(entry->name) + 1 > sizeof(entry->name))
-				return GN_ERR_FAILED;
-			if (last_name)
+			if (last_name) {
+				if (strlen(last_name) + strlen(entry->name) + 1 > sizeof(entry->name))
+					return GN_ERR_FAILED;
 				strncat(entry->name, last_name, strlen (last_name));
+			}
 			free(tmp);
 		}
 	}
