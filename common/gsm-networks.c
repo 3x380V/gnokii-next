@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-networks.c,v 1.53 2008-06-03 20:23:31 dforsi Exp $
+  $Id: gsm-networks.c,v 1.54 2008-06-04 11:53:45 dforsi Exp $
 
   G N O K I I
 
@@ -218,7 +218,7 @@ static gn_country countries[] = {
 	{"436", "Tajikistan"},
 	{"640", "Tanzania"},
 	{"520", "Thailand"},
-	{"615", "Togolese Republic"},
+	{"615", "Togo"},
 	{"539", "Tonga"},
 	{"374", "Trinidad and Tobago"},
 	{"605", "Tunisia"},
