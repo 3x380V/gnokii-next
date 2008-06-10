@@ -1,6 +1,6 @@
 /*
 
-  $Id: config.h,v 1.5 2008-05-30 19:34:54 pkot Exp $
+  $Id: config.h,v 1.6 2008-06-10 20:12:06 pkot Exp $
 
   G N O K I I
 
@@ -82,8 +82,8 @@
 #undef HAVE_TERMIOS_CSPEED
 
 /* Define both if you have ISO C99 compliant snprintf */
-#define HAVE_SNPRINTF
-#define HAVE_C99_SNPRINTF
+#undef HAVE_SNPRINTF
+#undef HAVE_C99_SNPRINTF
 
 /* Define both if you have ISO C99 compliant vsnprintf */
 #define HAVE_VSNPRINTF 1
