@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.191 2008-06-13 20:30:21 dforsi Exp $
+  $Id: atgen.c,v 1.192 2008-06-13 20:48:18 dforsi Exp $
 
   G N O K I I
 
@@ -1605,7 +1605,7 @@ static gn_error ReplyReadPhonebook(int messagetype, unsigned char *buffer, int l
 			if (*pos == '"')
 				pos++;
 			if (drvinst->encode_number) {
-				date_buf = calloc(1, strlen(pos) + 1);
+				date_buf = calloc(strlen(pos) + 1, sizeof(char));
 				at_decode(drvinst->charset, date_buf, pos, strlen(pos));
 				pos = date_buf;
 				dprintf("DATE: %s\n", pos);
