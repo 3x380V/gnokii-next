@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-internal.h,v 1.39 2008-04-12 22:44:33 dforsi Exp $
+  $Id: gnokii-internal.h,v 1.40 2008-06-16 14:48:24 hadess Exp $
 
   G N O K I I
 
@@ -171,6 +171,6 @@ int utf8_base64_decode(char *dest, int destlen, const char *src, int inlen);
 int utf8_base64_encode(char *dest, int destlen, const char *src, int inlen);
 
 int add_slashes(char *dest, char *src, int maxlen, int len);
-int strip_slashes(char *dest, char *src, int maxlen, int len);
+int strip_slashes(char *dest, const char *src, int maxlen, int len);
 
 #endif /* _gnokii_internal_h */
