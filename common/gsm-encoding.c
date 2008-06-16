@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-encoding.c,v 1.83 2008-04-05 15:40:01 dforsi Exp $
+  $Id: gsm-encoding.c,v 1.84 2008-06-16 14:50:36 hadess Exp $
 
   G N O K I I
 
@@ -980,7 +980,7 @@ int add_slashes(char *dest, char *src, int maxlen, int len)
 	return j;
 }
 
-int strip_slashes(char *dest, char *src, int maxlen, int len)
+int strip_slashes(char *dest, const char *src, int maxlen, int len)
 {
 	int i, j, slash_state = 0;
 
