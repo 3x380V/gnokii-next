@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-phonebook.c,v 1.24 2008-06-16 14:51:58 hadess Exp $
+  $Id: gnokii-phonebook.c,v 1.25 2008-06-17 05:25:38 pkot Exp $
 
   G N O K I I
 
@@ -91,7 +91,6 @@ gn_error getphonebook(int argc, char *argv[], gn_data *data, struct gn_statemach
 	int i, count, start_entry, end_entry, num_entries = INT_MAX, explicit_end = true;
 	gn_error error = GN_ERR_NONE;
 	char *memory_type_string;
-	char location[32];
 	int type = 0; /* Output type:
 				0 - not formatted
 				1 - CSV
