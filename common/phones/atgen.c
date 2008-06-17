@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.192 2008-06-13 20:48:18 dforsi Exp $
+  $Id: atgen.c,v 1.193 2008-06-17 14:49:48 hadess Exp $
 
   G N O K I I
 
@@ -334,7 +334,7 @@ static const char *at_charset2str(at_charset charset)
 }
 
 /* Set the requested charset as the current charset */
-static gn_error at_set_charset(gn_data *data, struct gn_statemachine *state, at_charset charset)
+gn_error at_set_charset(gn_data *data, struct gn_statemachine *state, at_charset charset)
 {
 	at_driver_instance *drvinst = AT_DRVINST(state);
 	gn_data tmpdata;
