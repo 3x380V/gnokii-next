@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-calendar.c,v 1.19 2008-04-14 21:17:27 dforsi Exp $
+  $Id: gnokii-calendar.c,v 1.20 2008-06-19 17:59:48 hadess Exp $
 
   G N O K I I
 
@@ -116,7 +116,11 @@ gn_error getcalendarnote(int argc, char *argv[], gn_data *data, struct gn_statem
 
 		if (error == GN_ERR_NONE) {
 			if (vcal) {
-				gn_calnote2ical(stdout, &calnote);
+				char *ical;
+
+				ical = gn_calnote2icalstr(&calnote);
+				fprintf(stdout, "%s\n", ical);
+				free (ical);
 			} else {  /* plaint text output */
 				fprintf(stdout, _("%d (%d). %s: %s\n"), i, calnote.location, _("Type"), gn_calnote_type2str(calnote.type));
 
