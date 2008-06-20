@@ -1,6 +1,6 @@
 /*
 
-  $Id: vcard.c,v 1.40 2008-06-20 15:00:08 hadess Exp $
+  $Id: vcard.c,v 1.41 2008-06-20 15:33:33 hadess Exp $
   
   G N O K I I
 
@@ -282,7 +282,7 @@ GNOKII_API int gn_vcard2phonebook(FILE *f, gn_phonebook_entry *entry)
 	}
 
 	str_append_printf (&str, "BEGIN:VCARD");
-	while (!fgets(buf, 1024, f)) {
+	while (fgets(buf, 1024, f)) {
 		str_append_printf (&str, buf);
 		if (BEGINS("END:VCARD"))
 			break;
@@ -313,7 +313,7 @@ GNOKII_API int gn_vcardstr2phonebook(const char *vcard, gn_phonebook_entry *entr
 	fold = strstr (v, "\r\n");
 	while (fold != NULL) {
 		memmove (fold, fold + 2, strlen (fold) - 2);
-		fold = strstr (v, "\r\n");
+		fold = strstr (fold, "\r\n");
 	}
 
 	/* Count the number of lines */
