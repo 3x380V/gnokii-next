@@ -1,6 +1,6 @@
 /*
 
-  $Id: vcard.c,v 1.39 2008-06-20 12:55:35 hadess Exp $
+  $Id: vcard.c,v 1.40 2008-06-20 15:00:08 hadess Exp $
   
   G N O K I I
 
@@ -311,7 +311,7 @@ GNOKII_API int gn_vcardstr2phonebook(const char *vcard, gn_phonebook_entry *entr
 	/* Remove folding */
 	v = strdup (vcard);
 	fold = strstr (v, "\r\n");
-	while (fold == NULL) {
+	while (fold != NULL) {
 		memmove (fold, fold + 2, strlen (fold) - 2);
 		fold = strstr (v, "\r\n");
 	}
