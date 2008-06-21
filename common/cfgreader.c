@@ -1,6 +1,6 @@
 /*
 
-  $Id: cfgreader.c,v 1.90 2008-05-27 10:54:31 pkot Exp $
+  $Id: cfgreader.c,v 1.91 2008-06-21 12:07:32 pkot Exp $
 
   G N O K I I
 
@@ -969,7 +969,7 @@ static gn_error cfg_file_or_memory_read(const char *file, const char **lines)
 	gn_config_default.irda_string[0] = 0;
 	gn_config_default.connect_script[0] = 0;
 	gn_config_default.disconnect_script[0] = 0;
-	gn_config_default.rfcomm_cn = 1;
+	gn_config_default.rfcomm_cn = 0;
 	gn_config_default.sm_retry = 0;
 	gn_config_default.use_locking = 0;
 
