@@ -1,6 +1,6 @@
 /*
 
-  $Id: vcard.c,v 1.42 2008-06-23 10:59:34 hadess Exp $
+  $Id: vcard.c,v 1.43 2008-06-23 12:16:54 hadess Exp $
   
   G N O K I I
 
@@ -314,6 +314,11 @@ GNOKII_API int gn_vcardstr2phonebook(const char *vcard, gn_phonebook_entry *entr
 	while (fold != NULL) {
 		memmove (fold, fold + 2, strlen (fold) - 2);
 		fold = strstr (fold, "\n ");
+	}
+	fold = strstr (v, "\n\t");
+	while (fold != NULL) {
+		memmove (fold, fold + 2, strlen (fold) - 2);
+		fold = strstr (v, "\n\t");
 	}
 
 	/* Count the number of lines */
