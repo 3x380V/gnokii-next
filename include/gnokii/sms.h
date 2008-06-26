@@ -1,6 +1,6 @@
 /*
 
-  $Id: sms.h,v 1.72 2008-04-14 20:09:19 dforsi Exp $
+  $Id: sms.h,v 1.73 2008-06-26 10:48:58 dforsi Exp $
 
   G N O K I I
 
@@ -414,6 +414,9 @@ typedef struct {
 	/* Date fields */
 	gn_timestamp smsc_time;             /* SMSC Timestamp. Only for reading. */
 	gn_timestamp time;                  /* Delivery timestamp. Only for reading. */
+
+	/* Additional fields */
+	unsigned int reference;             /* Reference number of the message sent. */
 } gn_sms;
 
 /* Define datatype for SMS messages, describes precisely GSM Spec 03.40 */
