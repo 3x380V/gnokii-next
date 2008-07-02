@@ -1,6 +1,6 @@
 /*
 
-  $Id: common.h,v 1.158 2008-04-13 22:02:52 dforsi Exp $
+  $Id: common.h,v 1.159 2008-07-02 22:20:05 pkot Exp $
 
   G N O K I I
 
@@ -667,7 +667,8 @@ typedef struct {
 
 /* Data structures for the call divert */
 typedef enum {
-	GN_CDV_Busy = 0x01,
+	GN_CDV_Unconditional = 0x00,
+	GN_CDV_Busy,
 	GN_CDV_NoAnswer,
 	GN_CDV_OutOfReach,
 	GN_CDV_NotAvailable,
