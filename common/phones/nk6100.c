@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6100.c,v 1.221 2008-05-30 19:10:06 pkot Exp $
+  $Id: nk6100.c,v 1.222 2008-07-08 09:43:37 dforsi Exp $
 
   G N O K I I
 
@@ -1659,7 +1659,10 @@ static gn_error GetSMSFolderStatus(gn_data *data, struct gn_statemachine *state)
 	gn_error error;
 	gn_sms_status smsstatus = {0, 0, 0, 0}, *save_smsstatus;
 
-	if (!data || !data->sms_folder || data->sms_folder->folder_id != NK6100_MEMORY_SM) return GN_ERR_INTERNALERROR;
+	if (!data || !data->sms_folder)
+		return GN_ERR_INTERNALERROR;
+	if (data->sms_folder->folder_id != NK6100_MEMORY_SM)
+		return GN_ERR_INVALIDMEMORYTYPE;
 
 	error = GetSMSFolders(data, state);
 	if (error != GN_ERR_NONE) return error;
