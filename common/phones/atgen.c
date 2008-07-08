@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.195 2008-07-02 22:35:38 pkot Exp $
+  $Id: atgen.c,v 1.196 2008-07-08 09:37:17 dforsi Exp $
 
   G N O K I I
 
@@ -1416,7 +1416,6 @@ static gn_error AT_SetDateTime(gn_data *data, struct gn_statemachine *state)
 	AT_PrepareDateTime(data, state);
 
 	data->datetime = dt;
-	memset(req, 0, 64);
 	if (drvinst->timezone)
 		snprintf(req, sizeof(req), "AT+CCLK=\"%02d/%02d/%02d,%02d:%02d:%02d%s\"\r",
 			 dt->year % 100, dt->month, dt->day,

@@ -1,6 +1,6 @@
 /*
 
-  $Id: atsoer.c,v 1.27 2008-06-17 14:49:48 hadess Exp $
+  $Id: atsoer.c,v 1.28 2008-07-08 09:37:17 dforsi Exp $
 
   G N O K I I
 
@@ -132,7 +132,6 @@ static gn_error AT_GetMemoryStatus(gn_data *data, struct gn_statemachine *state)
 	at_set_charset(data, state, AT_CHAR_UCS2);
 	top = (bottom + PHONEBOOKREAD_CHUNK_SIZE > drvinst->memorysize) ? drvinst->memorysize : bottom + PHONEBOOKREAD_CHUNK_SIZE;
 	while (top <= drvinst->memorysize) {
-		memset(req, 0, sizeof(req));
 		snprintf(req, sizeof(req) - 1, "AT+CPBR=%d,%d\r", drvinst->memoryoffset + 1 + bottom, top + drvinst->memoryoffset);
 		ret = sm_message_send(strlen(req), GN_OP_GetMemoryStatus, req, state);
 		if (ret)
