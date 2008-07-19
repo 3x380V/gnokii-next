@@ -1,6 +1,6 @@
 /*
 
-  $Id: sms.h,v 1.73 2008-06-26 10:48:58 dforsi Exp $
+  $Id: sms.h,v 1.74 2008-07-19 13:12:27 dforsi Exp $
 
   G N O K I I
 
@@ -466,7 +466,7 @@ typedef struct {
 	unsigned int locations[GN_SMS_MESSAGE_MAX_NUMBER];
 	/* number of SMS messages in that folder*/
 	unsigned int number;
-	/* ID od fthe current folder */
+	/* ID of the current folder */
 	unsigned int folder_id;
 } gn_sms_folder;
 
