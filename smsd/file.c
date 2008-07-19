@@ -1,6 +1,6 @@
 /*
 
-  $Id: file.c,v 1.18 2008-07-19 08:06:34 ja Exp $
+  $Id: file.c,v 1.19 2008-07-19 08:10:31 ja Exp $
 
   S M S D
 
@@ -206,8 +206,7 @@ GNOKII_API void DB_Look (const gchar * const phone)
     /* Initialize SMS text */
     memset (&sms.user_data[0].u.text, 0, sizeof (sms.user_data[0].u.text));
     
-    fgets ((gchar *) sms.user_data[0].u.text, GN_SMS_MAX_LENGTH + 1, smsFile);
-    slen = strlen ((gchar *) sms.user_data[0].u.text);
+    slen = fread ((gchar *) sms.user_data[0].u.text, 1, GN_SMS_MAX_LENGTH, smsFile);
     if (slen > 0 && sms.user_data[0].u.text[slen - 1] == '\n')
       sms.user_data[0].u.text[slen - 1] = '\0';
      
