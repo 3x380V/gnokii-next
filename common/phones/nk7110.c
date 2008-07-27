@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk7110.c,v 1.188 2008-05-30 19:10:07 pkot Exp $
+  $Id: nk7110.c,v 1.189 2008-07-27 16:35:48 pkot Exp $
 
   G N O K I I
 
@@ -338,7 +338,7 @@ static gn_error NK7110_Functions(gn_operation op, gn_data *data, struct gn_state
 static gn_error NK7110_Initialise(struct gn_statemachine *state)
 {
 	gn_data data;
-	char model[10];
+	char model[GN_MODEL_MAX_LENGTH+1];
 	gn_error err = GN_ERR_NONE;
 	bool connected = false;
 	unsigned int attempt = 0;

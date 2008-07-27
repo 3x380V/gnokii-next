@@ -1,6 +1,6 @@
 /*
 
-  $Id: fake.c,v 1.21 2007-12-04 19:27:34 hadess Exp $
+  $Id: fake.c,v 1.22 2008-07-27 16:35:48 pkot Exp $
 
   G N O K I I
 
@@ -72,7 +72,7 @@ gn_driver driver_fake = {
 static gn_error fake_initialise(struct gn_statemachine *state)
 {
 	gn_data data;
-	char model[10];
+	char model[GN_MODEL_MAX_LENGTH+1];
 
 	dprintf("Initializing...\n");
 
