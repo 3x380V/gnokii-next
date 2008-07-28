@@ -1,6 +1,6 @@
 /*
 
-  $Id: fake.c,v 1.22 2008-07-27 16:35:48 pkot Exp $
+  $Id: fake.c,v 1.23 2008-07-28 14:47:36 dforsi Exp $
 
   G N O K I I
 
@@ -96,6 +96,7 @@ static gn_error at_sms_write(gn_data *data, struct gn_statemachine *state, char*
 	if (!data->raw_sms) return GN_ERR_INTERNALERROR;
 
 	/* Do not fill message center so we don't have to emulate that */
+	req2[offset] = 0;
 	offset += 0;
 
 	req2[offset + 1] = 0x01 | 0x10; /* Validity period in relative format */
