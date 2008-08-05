@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-sms.c,v 1.51 2008-06-26 10:48:57 dforsi Exp $
+  $Id: gnokii-sms.c,v 1.52 2008-08-05 21:55:23 pkot Exp $
 
   G N O K I I
 
@@ -1184,15 +1184,15 @@ gn_error showsmsfolderstatus(gn_data *data, struct gn_statemachine *state)
 		return error;
 	}
 
-	fprintf(stdout, _("No. Name                             Id #Msg\n"));
-	fprintf(stdout, _("============================================\n"));
+	fprintf(stdout, _("No. Name                              Id #Msg\n"));
+	fprintf(stdout, _("=============================================\n"));
 	for (i = 0; i < folders.number; i++) {
 		data->sms_folder = folders.folder + i;
 		if ((error = gn_sm_functions(GN_OP_GetSMSFolderStatus, data, state)) != GN_ERR_NONE) {
 			fprintf(stderr, _("Cannot stat folder \"%s\": %s\n"), folders.folder[i].name, gn_error_print(error));
 			return error;
 		}
-		fprintf(stdout, _("%3d %-32s %2s %4u\n"), i, folders.folder[i].name, gn_memory_type2str(folders.folder_id[i]), folders.folder[i].number);
+		fprintf(stdout, _("%3d %-32s %3s %4u\n"), i, folders.folder[i].name, gn_memory_type2str(folders.folder_id[i]), folders.folder[i].number);
 	}
 
 	return GN_ERR_NONE;
