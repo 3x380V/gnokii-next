@@ -1,6 +1,6 @@
 /*
 
-  $Id: misc.h,v 1.56 2007-12-04 19:27:35 hadess Exp $
+  $Id: misc.h,v 1.57 2008-08-08 22:56:59 pkot Exp $
 
   G N O K I I
 
@@ -116,6 +116,8 @@
 #define PM_AUTHENTICATION	0x0200
 #define PM_FOLDERS		0x0400
 #define PM_FULLPBK		0x0800
+#define PM_SMSFILE		0x1000
+
 /* This one indicated reported cases of breaking the phone by xgnokii
  * in FBUS orver IrDA mode */
 #define PM_XGNOKIIBREAKAGE	0x8000

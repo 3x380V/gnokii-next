@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.h,v 1.35 2008-05-31 10:37:12 pkot Exp $
+  $Id: nk6510.h,v 1.36 2008-08-08 22:56:59 pkot Exp $
 
   G N O K I I
 
@@ -205,6 +205,9 @@ typedef struct {
 	void (*call_notification)(gn_call_status call_status, gn_call_info *call_info, struct gn_statemachine *state, void *callback_data);
 	gn_error (*on_sms)(gn_sms *message, struct gn_statemachine *state, void *callback_data);
 	void (*progress_indication)(int progress, void *callback_data);
+
+	/* phone model capabilities */
+	gn_phone_model *pm;
 
 	/* callback local data */
 	void *cb_callback_data;		/* to be passed as callback_data to on_cell_broadcast */
