@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.198 2008-08-08 23:05:54 dforsi Exp $
+  $Id: atgen.c,v 1.199 2008-08-09 09:42:33 dforsi Exp $
 
   G N O K I I
 
@@ -212,9 +212,10 @@ static char *strip_brackets(char *s)
 }
 
 /*
- * Compare the string passed in @c with the echoed command passed in @l1 and
- * the response passed in @l2 and copy the response from @l1 to @t if one of
- * the comparisons is successful, stripping the command prefix if present.
+ * Compare the string passed in @c with the echoed command passed in @l1
+ * without the leading "AT" chars and the response passed in @l2 and copy
+ * the response from @l1 to @t if one of the comparisons is successful,
+ * stripping the command prefix if present.
  *
  * Comparing both strings is needed to workaround some firmwares that reply
  * to AT+GMM with +CGMM: or to AT+CGMM with +GMM:
