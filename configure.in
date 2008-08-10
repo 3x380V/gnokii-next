@@ -5,7 +5,7 @@ dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janik ml.
 dnl                2000 Karel Zak, Pawel Kot
 dnl                2002 BORBELY Zoltan
 dnl
-dnl  $Id: configure.in,v 1.224 2008-08-10 19:32:36 pkot Exp $
+dnl  $Id: configure.in,v 1.225 2008-08-10 22:08:00 pkot Exp $
 dnl
 
 
@@ -310,6 +310,8 @@ AC_CHECK_FUNC(getopt_long, , [
 dnl ======================== readline support
 # Readline included by default unless explicitly asked not to
 test "${with_readline+set}" != "set" && with_readline=yes
+
+USE_READLINE="no"
 
 AC_MSG_CHECKING(whether to use readline)
 AC_ARG_WITH(readline,
