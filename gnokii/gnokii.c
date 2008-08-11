@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.487 2008-08-10 18:41:21 pkot Exp $
+  $Id: gnokii.c,v 1.488 2008-08-11 06:37:45 pkot Exp $
 
   G N O K I I
 
@@ -776,8 +776,8 @@ static int parse_options(int argc, char *argv[])
 	}
 
 	/* Initialise the code for the GSM interface. */
-	if (c != OPT_FOOGLE && state == NULL)
-		businit();
+	if (c != OPT_FOOGLE && state == NULL && businit())
+		return -1;
 
 	switch (c) {
 	/* Monitoring options */
