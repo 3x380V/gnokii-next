@@ -1,6 +1,6 @@
 /*
 
-  $Id: misc.c,v 1.136 2008-02-21 11:23:40 dforsi Exp $
+  $Id: misc.c,v 1.137 2008-08-11 10:42:54 dforsi Exp $
 
   G N O K I I
 
@@ -569,7 +569,7 @@ char **gnokii_strsplit(const char *string, const char *delimiter, int tokens)
 	if (!string || !delimiter || !tokens)
 		return NULL;
 
-	strings = calloc(tokens + 1, sizeof(char *));
+	strings = calloc(tokens + 2, sizeof(char *));
 
 	while ((tmp = strstr(left, delimiter)) != NULL && (count < tokens)) {
 		str = malloc((tmp - left) + 1);
@@ -581,6 +581,7 @@ char **gnokii_strsplit(const char *string, const char *delimiter, int tokens)
 	}
 
 	strings[count] = strdup(left);
+	strings[count + 1] = NULL;
 
 	for (count = 0; count < tokens; count++) {
 		dprintf("strings[%d] = %s\n", count, strings[count]);
