@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.201 2008-08-09 14:55:21 dforsi Exp $
+  $Id: atgen.c,v 1.202 2008-08-11 10:23:35 dforsi Exp $
 
   G N O K I I
 
@@ -1594,6 +1594,7 @@ static gn_error ReplyReadPhonebook(int messagetype, unsigned char *buffer, int l
 				if (!quoted) {
 					*pos = '\0';
 					part[parts] = pos + 1;
+					/* Some phones add a space after a comma */
 					while (*part[parts] == ' ')
 						part[parts]++;
 					parts++;
