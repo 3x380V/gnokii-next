@@ -1,6 +1,6 @@
 /*
 
-  $Id: misc.c,v 1.139 2008-08-17 22:24:43 dforsi Exp $
+  $Id: misc.c,v 1.140 2008-08-27 17:54:24 dforsi Exp $
 
   G N O K I I
 
@@ -158,6 +158,7 @@ static gn_phone_model models[] = {
 	{"3390",  "NPB-1",	PM_OLD_DEFAULT },
 	{"3395",  "NPB-1B",	PM_OLD_DEFAULT },
 	{"3410",  "NHM-2",	PM_OLD_DEFAULT | PM_NETMONITOR },
+	{"3500c", "RM-272",	PM_DEFAULT },
 	{"3510",  "NHM-8",	PM_DEFAULT },
 	{"3510i", "RH-9",	PM_DEFAULT },
 	{"3520",  "RH-21",	PM_DEFAULT },
