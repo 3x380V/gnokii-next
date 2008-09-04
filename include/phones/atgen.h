@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.h,v 1.35 2008-06-17 14:49:48 hadess Exp $
+  $Id: atgen.h,v 1.36 2008-09-04 20:04:53 pkot Exp $
 
   G N O K I I
 
@@ -154,6 +154,13 @@ typedef struct {
 	 * the bytes swapped. Default is the natural order.
 	 */
 	int lac_swapped;
+
+	/*
+	 * Some phones support extended phonebook commands:
+	 * AT+SPBR/AT+SPBW
+	 */
+	int extended_phonebook;
+
 } at_driver_instance;
 
 #define AT_DRVINST(s) (*((at_driver_instance **)(&(s)->driver.driver_instance)))
