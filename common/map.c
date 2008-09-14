@@ -1,6 +1,6 @@
 /*
 
-  $Id: map.c,v 1.2 2008-09-14 20:10:17 pkot Exp $
+  $Id: map.c,v 1.3 2008-09-14 20:22:08 pkot Exp $
 
   G N O K I I
 
@@ -31,6 +31,9 @@
 #include "config.h"
 #include "compat.h"
 #include "map.h"
+#include "misc.h"
+#include "gnokii.h"
+
 #include <string.h>
 #include <stdlib.h>
 
