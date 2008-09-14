@@ -1,6 +1,6 @@
 /*
 
-  $Id: fbus-phonet.c,v 1.47 2007-12-04 19:27:34 hadess Exp $
+  $Id: fbus-phonet.c,v 1.48 2008-09-14 20:04:37 pkot Exp $
 
   G N O K I I
 
@@ -175,7 +175,15 @@ static void phonet_rx_statemachine(unsigned char rx_byte, struct gn_statemachine
 		i->buffer_count++;
 
 		if (i->buffer_count > PHONET_FRAME_MAX_LENGTH) {
-			dprintf("PHONET: Message buffer overun - resetting\n");
+			dprintf("PHONET: Message buffer overun - resetting (buffer count: %d, max: %d)\n", i->buffer_count, PHONET_FRAME_MAX_LENGTH);
+{
+	int j;
+	for (j = 0; j < i->buffer_count; j++) {
+		if (j % 16 == 0)
+			dprintf("\n");
+		dprintf("%02x ", i->message_buffer[j]);
+	}
+}
 			i->state = FBUS_RX_Sync;
 			break;
 		}
