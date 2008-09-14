@@ -1,6 +1,6 @@
 /*
 
-  $Id: map.h,v 1.1 2008-05-20 22:14:35 pkot Exp $
+  $Id: map.h,v 1.2 2008-09-14 20:10:18 pkot Exp $
 
   G N O K I I
 
@@ -31,9 +31,12 @@
 #ifndef __map_h_
 #define __map_h_
 
+#include <time.h>
+
 struct map {
 	char *key;
 	void *data;
+	time_t timestamp;
 
 	struct map *next;
 	struct map *prev;
@@ -41,7 +44,7 @@ struct map {
 
 void map_free(struct map **map);
 int map_add(struct map **map, char *key, void *data);
-void *map_get(struct map *map, char *key);
+void *map_get(struct map **map, char *key, time_t timeout);
 int map_del(struct map **map, char *key);
 
 #endif /* __map_h_ */

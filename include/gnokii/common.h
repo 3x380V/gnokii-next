@@ -1,6 +1,6 @@
 /*
 
-  $Id: common.h,v 1.159 2008-07-02 22:20:05 pkot Exp $
+  $Id: common.h,v 1.160 2008-09-14 20:10:18 pkot Exp $
 
   G N O K I I
 
@@ -854,12 +854,11 @@ typedef struct {
 	unsigned char *file;	/* file contents */
 } gn_file;
 
-#define GN_FILES_MAX_COUNT 1024
-
 typedef struct {
 	char path[512];
-	gn_file *files[GN_FILES_MAX_COUNT];
+	gn_file **files;
 	int file_count;
+	int size;
 } gn_file_list;
 
 #endif	/* _gnokii_common_h */
