@@ -1,6 +1,6 @@
 /*
 
-  $Id: sms.h,v 1.74 2008-07-19 13:12:27 dforsi Exp $
+  $Id: sms.h,v 1.75 2008-09-15 08:31:54 dforsi Exp $
 
   G N O K I I
 
@@ -54,7 +54,7 @@
 #define GN_SMS_UDH_MAX_NUMBER          10
 
 /* Maximal number of SMS folders */
-#define GN_SMS_FOLDER_MAX_NUMBER       24
+#define GN_SMS_FOLDER_MAX_NUMBER       64
 #define GN_SMS_MESSAGE_MAX_NUMBER     190
 
 #define GN_SMS_DATETIME_MAX_LENGTH      7
