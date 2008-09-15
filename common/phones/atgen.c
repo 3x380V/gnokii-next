@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.206 2008-09-14 20:10:17 pkot Exp $
+  $Id: atgen.c,v 1.207 2008-09-15 08:49:49 dforsi Exp $
 
   G N O K I I
 
@@ -729,6 +729,7 @@ gn_error AT_SetSMSMemoryType(gn_memory_type mt, struct gn_statemachine *state)
 	gn_data data;
 	char req[32];
 	const char *memory_name;
+	int len;
 	gn_error ret = GN_ERR_NONE;
 
 	if (mt != drvinst->smsmemorytype) {
@@ -736,7 +737,8 @@ gn_error AT_SetSMSMemoryType(gn_memory_type mt, struct gn_statemachine *state)
 		if (!memory_name)
 			return GN_ERR_INVALIDMEMORYTYPE;
 		snprintf(req, sizeof(req), "AT+CPMS=\"%s\"\r", memory_name);
-		ret = sm_message_send(13, GN_OP_Init, req, state);
+		len = strlen(req);
+		ret = sm_message_send(len, GN_OP_Init, req, state);
 		if (ret != GN_ERR_NONE)
 			return ret;
 		gn_data_clear(&data);
