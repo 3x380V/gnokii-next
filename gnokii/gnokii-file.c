@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-file.c,v 1.14 2008-08-10 18:41:20 pkot Exp $
+  $Id: gnokii-file.c,v 1.15 2008-09-29 13:32:20 dforsi Exp $
 
   G N O K I I
 
@@ -451,6 +451,7 @@ gn_error putfile(int argc, char *argv[], gn_data *data, struct gn_statemachine *
 		fprintf(stderr, _("Failed to put file to %s: %s\n"), argv[optind], gn_error_print(error));
 
 	free(fi.file);
+//fclose(f);
 
 	return error;
 }

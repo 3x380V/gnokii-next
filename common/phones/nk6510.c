@@ -1,7 +1,7 @@
 
 /*
 
-  $Id: nk6510.c,v 1.275 2008-09-15 08:21:48 dforsi Exp $
+  $Id: nk6510.c,v 1.276 2008-09-29 13:32:20 dforsi Exp $
 
   G N O K I I
 
@@ -1984,10 +1984,14 @@ static gn_error NK6510_GetFileListCache(gn_data *data, struct gn_statemachine *s
 	gn_error error = GN_ERR_NONE;
 	gn_file_list *fl;
 	static struct map *map = NULL;
+	int count = NK6510_FILE_CACHE_TIMEOUT;
 
 	dprintf("Trying to retrieve filelist of %s from cache\n", data->file_list->path);
 
-	fl = map_get(&map, data->file_list->path, NK6510_FILE_CACHE_TIMEOUT);
+	fl = map_get(&map, data->file_list->path, 0);
+	if (fl)
+		count *= fl->file_count;
+	fl = map_get(&map, data->file_list->path, count);
 	if (!fl) {
 		dprintf("Cache empty or expired\n");
 		error = NK6510_GetFileList(data, state);
