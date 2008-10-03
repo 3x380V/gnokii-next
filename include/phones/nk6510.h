@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.h,v 1.37 2008-09-14 20:10:18 pkot Exp $
+  $Id: nk6510.h,v 1.38 2008-10-03 13:15:28 dforsi Exp $
 
   G N O K I I
 
@@ -212,7 +212,7 @@ typedef enum {
  * data is cached.
  */
 #define NK6510_FILE_CACHE_TIMEOUT	10	/* seconds */
-#define NK6510_GETFILELIST_TIMEOUT	10000	/* miliseconds */
+#define NK6510_GETFILELIST_TIMEOUT	500	/* miliseconds */
 
 typedef struct {
 	/* callbacks */
