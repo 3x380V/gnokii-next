@@ -1,6 +1,6 @@
 /*
 
-  $Id: sms.h,v 1.75 2008-09-15 08:31:54 dforsi Exp $
+  $Id: sms.h,v 1.76 2008-10-05 10:39:43 pkot Exp $
 
   G N O K I I
 
@@ -454,9 +454,9 @@ typedef struct {
 
 /*** FOLDERS ***/
 
-/*** Datatype for SMS folders in 6210/7110 ***/
-/* Max name length is 15 characters and trailing \0 */
-#define GN_SMS_FOLDER_NAME_MAX_LENGTH	16
+/*** Datatype for SMS folders ***/
+/* Max name length is 32 characters and trailing \0 */
+#define GN_SMS_FOLDER_NAME_MAX_LENGTH	33
 typedef struct {
 	/* Name for SMS folder. */
 	char name[GN_SMS_FOLDER_NAME_MAX_LENGTH];
