@@ -1,7 +1,7 @@
 
 /*
 
-  $Id: nk6510.c,v 1.276 2008-09-29 13:32:20 dforsi Exp $
+  $Id: nk6510.c,v 1.277 2008-10-05 10:50:02 pkot Exp $
 
   G N O K I I
 
@@ -1988,6 +1988,11 @@ static gn_error NK6510_GetFileListCache(gn_data *data, struct gn_statemachine *s
 
 	dprintf("Trying to retrieve filelist of %s from cache\n", data->file_list->path);
 
+	/*
+	 * We call here map_get() twice. First time it is to ensure that we
+	 * use proper timeout: the more files are in the folder the longer
+	 * it takes to get the file list.
+	 */
 	fl = map_get(&map, data->file_list->path, 0);
 	if (fl)
 		count *= fl->file_count;
