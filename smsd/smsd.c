@@ -1,6 +1,6 @@
 /*
 
-  $Id: smsd.c,v 1.67 2008-05-25 11:47:44 pkot Exp $
+  $Id: smsd.c,v 1.68 2008-10-05 19:12:52 pkot Exp $
 
   S M S D
 
@@ -203,7 +203,7 @@ static void ReadConfig (gint argc, gchar *argv[])
   connection.db = g_strdup ("sms");
   connection.host = g_strdup ("");
   connection.schema = g_strdup ("public");
-  smsdConfig.dbMod = g_strdup ("pq");
+  smsdConfig.dbMod = g_strdup ("file");
   smsdConfig.libDir = g_strdup (MODULES_DIR);
   smsdConfig.logFile = NULL;
   smsdConfig.phone = g_strdup ("");
