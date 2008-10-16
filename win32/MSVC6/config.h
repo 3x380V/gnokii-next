@@ -1,6 +1,6 @@
 /*
 
-  $Id: config.h,v 1.37 2008-10-05 12:14:13 pkot Exp $
+  $Id: config.h,v 1.38 2008-10-16 12:21:18 pkot Exp $
 
   G N O K I I
 
@@ -39,7 +39,7 @@
 #endif
 	
 #undef VERSION
-#define VERSION "0.6.27"
+#define VERSION "0.6.28cvs"
 
 /* No bluetooth and no IRDA */
 #undef HAVE_BLUETOOTH
