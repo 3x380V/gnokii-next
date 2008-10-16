@@ -1,6 +1,6 @@
 /*
 
-  $Id: error.h,v 1.23 2007-10-30 09:12:23 pkot Exp $
+  $Id: error.h,v 1.24 2008-10-16 12:17:05 pkot Exp $
 
   G N O K I I
 
@@ -88,6 +88,7 @@ typedef enum {
 	GN_ERR_NOMODEL,			/* No phone model specified */
 	GN_ERR_NOPORT,			/* No port specified */
 	GN_ERR_NOCONNECTION,		/* No connection type specified */
+	GN_ERR_LOCKED,			/* Device is locked and cannot unlock */
 
 	GN_ERR_ASYNC			/* The actual response will be sent asynchronously */
 } gn_error;

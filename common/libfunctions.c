@@ -1,5 +1,5 @@
 /*
-  $Id: libfunctions.c,v 1.39 2008-01-03 21:19:30 dforsi Exp $
+  $Id: libfunctions.c,v 1.40 2008-10-16 12:17:05 pkot Exp $
 
   G N O K I I
 
@@ -129,7 +129,7 @@ GNOKII_API gn_error gn_lib_phone_open( struct gn_statemachine *state )
 		state->lockfile = gn_device_lock(state->config.port_device);
 		if (state->lockfile == NULL) {
 			fprintf(stderr, _("Lock file error. Exiting.\n"));
-			return LASTERROR(state, GN_ERR_BUSY);
+			return LASTERROR(state, GN_ERR_LOCKED);
 		}
 	}
 
