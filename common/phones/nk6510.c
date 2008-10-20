@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.c,v 1.278 2008-10-05 10:52:49 pkot Exp $
+  $Id: nk6510.c,v 1.279 2008-10-20 13:23:57 dforsi Exp $
 
   G N O K I I
 
@@ -2420,8 +2420,6 @@ static gn_error NK6510_IncomingFile(int messagetype, unsigned char *message, int
 		break;
 	case 0x6d:
 	case 0x69:
-		if (data->file)
-			dprintf("   Filesize: %x\n", data->file->file_length);
 		if (message[4] == 0x06) {
 			dprintf("Invalid path\n");
 			error =  GN_ERR_INVALIDLOCATION;
