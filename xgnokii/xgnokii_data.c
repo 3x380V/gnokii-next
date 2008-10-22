@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_data.c,v 1.16 2007-12-04 19:27:37 hadess Exp $
+  $Id: xgnokii_data.c,v 1.17 2008-10-22 21:22:16 pkot Exp $
 
   X G N O K I I
 
@@ -67,7 +67,7 @@ static void UpdateStatus(void)
 }
 
 
-inline void GUI_ShowData(void)
+void GUI_ShowData(void)
 {
 	if (!phoneMonitor.supported & PM_DATA)
 		return;
@@ -82,8 +82,7 @@ inline void GUI_ShowData(void)
 	gtk_window_present(GTK_WINDOW(GUI_DataWindow));
 }
 
-
-inline void GUI_HideData(void)
+static void GUI_HideData(void)
 {
 	gtk_widget_hide(GUI_DataWindow);
 }

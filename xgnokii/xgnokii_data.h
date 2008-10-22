@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_data.h,v 1.5 2005-08-10 07:33:43 ja Exp $
+  $Id: xgnokii_data.h,v 1.6 2008-10-22 21:22:16 pkot Exp $
 
   X G N O K I I
 
@@ -30,8 +30,7 @@
 #ifndef XGNOKII_DATA_H
 #define XGNOKII_DATA_H
 
-void GUI_CreateDataWindow(void);
-inline void GUI_ShowData(void);
-inline void GUI_HideData(void);
+extern void GUI_CreateDataWindow(void);
+extern void GUI_ShowData(void);
 
 #endif

@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_lowlevel.h,v 1.34 2007-11-19 14:07:23 dforsi Exp $
+  $Id: xgnokii_lowlevel.h,v 1.35 2008-10-22 21:22:16 pkot Exp $
   
   X G N O K I I
 
@@ -231,6 +231,6 @@ extern void *GUI_Connect(void *a);
 extern void GUI_InsertEvent(PhoneEvent * event);
 extern gn_error GUI_InitSMSFolders(void);
 extern int isSMSactivated;
-struct gn_statemachine *statemachine;
+extern struct gn_statemachine *statemachine;
 
 #endif
