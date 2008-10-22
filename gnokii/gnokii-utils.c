@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-utils.c,v 1.12 2008-06-12 22:12:35 dforsi Exp $
+  $Id: gnokii-utils.c,v 1.13 2008-10-22 21:10:08 pkot Exp $
 
   G N O K I I
 
@@ -43,6 +43,9 @@
 
 #include <stdio.h>
 #include <signal.h>
+#ifdef HAVE_SYS_STAT_H
+#  include <sys/stat.h>
+#endif
 
 #include "gnokii-app.h"
 #include "gnokii.h"
