@@ -5,7 +5,7 @@ dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janik ml.
 dnl                2000 Karel Zak, Pawel Kot
 dnl                2002 BORBELY Zoltan
 dnl
-dnl  $Id: configure.in,v 1.232 2008-10-25 08:24:44 pkot Exp $
+dnl  $Id: configure.in,v 1.233 2008-10-26 10:56:19 pkot Exp $
 dnl
 
 
@@ -701,9 +701,11 @@ AM_CONDITIONAL(HAVE_POSTGRES, test "x$have_postgres" = "xyes")
 
 have_mysql=no
 dnl Prefer mysql_config5 if it is installed
-AC_PATH_PROG(MYSQLCONFIG, mysql_config5, no)
-if test x$MYSQLCONFIG == xno ; then
+AC_PATH_PROG(MYSQLCONFIG5, mysql_config5, no)
+if test x$MYSQLCONFIG5 == xno ; then
 	AC_PATH_PROG(MYSQLCONFIG, mysql_config, no)
+else
+	MYSQLCONFIG="yes"
 fi
 if test x$MYSQLCONFIG != xno ; then
 	have_mysql=yes
