@@ -5,7 +5,7 @@ dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janik ml.
 dnl                2000 Karel Zak, Pawel Kot
 dnl                2002 BORBELY Zoltan
 dnl
-dnl  $Id: configure.in,v 1.233 2008-10-26 10:56:19 pkot Exp $
+dnl  $Id: configure.in,v 1.234 2008-10-26 17:47:48 pkot Exp $
 dnl
 
 
@@ -705,7 +705,7 @@ AC_PATH_PROG(MYSQLCONFIG5, mysql_config5, no)
 if test x$MYSQLCONFIG5 == xno ; then
 	AC_PATH_PROG(MYSQLCONFIG, mysql_config, no)
 else
-	MYSQLCONFIG="yes"
+	MYSQLCONFIG=$MYSQLCONFIG5
 fi
 if test x$MYSQLCONFIG != xno ; then
 	have_mysql=yes
