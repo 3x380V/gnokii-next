@@ -5,7 +5,7 @@ dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janik ml.
 dnl                2000 Karel Zak, Pawel Kot
 dnl                2002 BORBELY Zoltan
 dnl
-dnl  $Id: configure.in,v 1.234 2008-10-26 17:47:48 pkot Exp $
+dnl  $Id: configure.in,v 1.235 2008-10-27 16:49:05 dforsi Exp $
 dnl
 
 
@@ -86,6 +86,19 @@ if test `uname -s` = "FreeBSD" ; then
 	LDFLAGS="$LDFLAGS -L/usr/local/lib"
 else
 	AC_MSG_RESULT(no)
+fi
+
+dnl -----------------------------
+dnl Checks for NetBSD Build
+dnl -----------------------------
+AC_MSG_CHECKING(if building on NetBSD)
+
+if test `uname -s` = "NetBSD" ; then
+        AC_MSG_RESULT(yes)
+        CPPFLAGS="$CFLAGS -I/usr/pkg/include/"
+        LDFLAGS="$LDFLAGS -L/usr/pkg/lib/"
+else
+        AC_MSG_RESULT(no)
 fi
 
 dnl ======================== Libtool versioning
