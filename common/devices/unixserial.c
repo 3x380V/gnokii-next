@@ -1,6 +1,6 @@
 /*
 
-  $Id: unixserial.c,v 1.47 2008-01-09 13:09:47 ladis Exp $
+  $Id: unixserial.c,v 1.48 2008-11-01 16:45:31 pkot Exp $
 
   G N O K I I
 
@@ -101,8 +101,8 @@ static void device_script_cfgfunc(const char *section, const char *key, const ch
 	setenv(key, value, 1 /* overwrite */); /* errors ignored */
 #  else
 	char *str;
-	asprintf(&str, "%s=%s", key, value);
-	putenv(str);
+	if (asprintf(&str, "%s=%s", key, value) > 0)
+		putenv(str);
 #  endif
 #endif
 }
