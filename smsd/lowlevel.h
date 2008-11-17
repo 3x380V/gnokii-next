@@ -1,6 +1,6 @@
 /*
 
-  $Id: lowlevel.h,v 1.14 2008-01-27 20:17:04 ja Exp $
+  $Id: lowlevel.h,v 1.15 2008-11-17 09:00:30 ja Exp $
 
   S M S D
 
@@ -51,7 +51,6 @@ typedef struct {
 } D_SMSMessage;
 
 typedef struct {
-//  bool working;
   struct {
     gchar *model;
     gchar *revision;

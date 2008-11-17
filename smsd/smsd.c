@@ -1,6 +1,6 @@
 /*
 
-  $Id: smsd.c,v 1.68 2008-10-05 19:12:52 pkot Exp $
+  $Id: smsd.c,v 1.69 2008-11-17 09:00:30 ja Exp $
 
   S M S D
 
@@ -416,7 +416,7 @@ GNOKII_API gint WriteSMS (gn_sms *sms)
 }
 
 
-static void ReadSMS(gpointer d, gpointer userData)
+static void ReadSMS (gpointer d, gpointer userData)
 {
   gn_sms *data = (gn_sms *)d;
   PhoneEvent *e;
