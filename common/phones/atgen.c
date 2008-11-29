@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.212 2008-11-23 14:53:00 pkot Exp $
+  $Id: atgen.c,v 1.213 2008-11-29 18:49:20 pkot Exp $
 
   G N O K I I
 
@@ -3138,6 +3138,8 @@ static gn_error Initialise(gn_data *setupdata, struct gn_statemachine *state)
 	drvinst->cb_callback_data = NULL;
 	drvinst->on_sms = NULL;
 	drvinst->sms_callback_data = NULL;
+	drvinst->reg_notification = NULL;
+	drvinst->reg_callback_data = NULL;
 	drvinst->clip_supported = 0;
 	drvinst->last_call_type = GN_CALL_Voice;
 	drvinst->last_call_status = GN_CALL_Idle;
