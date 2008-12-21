@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.214 2008-12-21 17:43:55 dforsi Exp $
+  $Id: atgen.c,v 1.215 2008-12-21 18:56:21 dforsi Exp $
 
   G N O K I I
 
@@ -2762,11 +2762,10 @@ static gn_error creg_parse(char **strings, int i, gn_network_info *ninfo, int la
 	char *pos;
 	int first = 0, second = 1;
 
-	if (!strings[i] || strlen(strings[i]) < 6 || !strings[i + 1] || strlen(strings[i + 1]) < 6)
+	if (!strings[i] || strlen(strings[i]) < 4 || !strings[i + 1] || strlen(strings[i + 1]) < 4)
 		return GN_ERR_FAILED;
 
-	pos = strings[i];
-	pos++;
+	pos = strip_quotes(strings[i]);
 
 	/*
 	 * Some phones have reverse order of the bytes in LAC.
@@ -2784,8 +2783,7 @@ static gn_error creg_parse(char **strings, int i, gn_network_info *ninfo, int la
 	tmp[1] = pos[3];
 	ninfo->LAC[second] = strtol(tmp, NULL, 16);
 
-	pos = strings[i + 1];
-	pos++;
+	pos = strip_quotes(strings[i + 1]);
 
 	tmp[0] = pos[0];
 	tmp[1] = pos[1];
