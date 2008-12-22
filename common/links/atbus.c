@@ -1,6 +1,6 @@
 /*
 
-  $Id: atbus.c,v 1.59 2008-10-03 13:21:27 dforsi Exp $
+  $Id: atbus.c,v 1.60 2008-12-22 00:04:38 dforsi Exp $
 
   G N O K I I
 
@@ -155,7 +155,7 @@ static void atbus_rx_statemachine(unsigned char rx_char, struct gn_statemachine 
 	if (!bi)
 		return;
 
-	if (bi->rbuf_pos >= bi->rbuf_size) {
+	if (bi->rbuf_pos >= bi->rbuf_size - 1) {
 		bi->rbuf_size += RBUF_SEG;
 		bi->rbuf = realloc(bi->rbuf, bi->rbuf_size);
 	}
