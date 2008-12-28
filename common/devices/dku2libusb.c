@@ -1,6 +1,6 @@
 /*
 
-  $Id: dku2libusb.c,v 1.9 2008-10-05 10:27:45 pkot Exp $
+  $Id: dku2libusb.c,v 1.10 2008-12-28 22:36:51 dforsi Exp $
  
   G N O K I I
 
@@ -254,8 +254,10 @@ static int usbfbus_find_interfaces(struct gn_statemachine *state)
 	/* For connection type dku2libusb port denotes number of DKU2 device */
 	n = atoi(state->config.port_device);
 	/* Assume default is first interface */
-	if (n < 1)
+	if (n < 1) {
 		n = 1;
+		dprintf("port = %s is not valid for connection = dku2libusb using port = %d instead\n", state->config.port_device, n);
+	}
 
 	usb_init();
 	usb_find_busses();

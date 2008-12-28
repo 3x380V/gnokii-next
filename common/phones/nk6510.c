@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.c,v 1.281 2008-12-18 20:49:01 pkot Exp $
+  $Id: nk6510.c,v 1.282 2008-12-28 22:36:50 dforsi Exp $
 
   G N O K I I
 
@@ -581,6 +581,7 @@ static gn_error NK6510_Initialise(struct gn_statemachine *state)
 			 * The main secret of this is that they use RFCOMM channel 14 for their
 			 * communication protocol."
 			 */
+			dprintf("Forcing rfcomm_channel = 14 for FBUS connection\n");
 			state->config.rfcomm_cn = 14;
 		case GN_CT_Infrared:
 		case GN_CT_DKU2:
