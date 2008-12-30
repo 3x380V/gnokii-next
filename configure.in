@@ -5,7 +5,7 @@ dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janik ml.
 dnl                2000 Karel Zak, Pawel Kot
 dnl                2002 BORBELY Zoltan
 dnl
-dnl  $Id: configure.in,v 1.237 2008-11-10 18:33:51 pkot Exp $
+dnl  $Id: configure.in,v 1.238 2008-12-30 00:22:04 dforsi Exp $
 dnl
 
 
@@ -561,6 +561,31 @@ if test "$enable_bluetooth" = "yes"; then
 		AC_DEFINE(HAVE_BLUETOOTH, 1, [Whether Bluetooth is available])
 		AC_DEFINE(HAVE_BLUETOOTH_NETGRAPH, [], [Compile on FreeBSD])
 		USE_BLUETOOTH="yes"
+		AC_CHECK_LIB(bluetooth, bt_aton,
+			[BLUETOOTH_LIBS="-lbluetooth" ac_cv_have_bt_lib=yes],
+			ac_cv_have_bt_lib=no)
+		if test $ac_cv_have_bt_lib = yes; then
+			AC_CHECK_LIB(sdp, sdp_open,
+				[BLUETOOTH_LIBS="$BLUETOOTH_LIBS -lsdp"])
+			AC_SUBST(BLUETOOTH_LIBS)
+		fi
+	fi
+fi
+
+dnl ======================== Checks for NetBSD/netbt Bluetooth support
+if test "$enable_bluetooth" = "yes"; then
+	AC_MSG_CHECKING([for the NetBSD/netbt Bluetooth support])
+	AC_CACHE_CHECK(for the struct sockaddr_bt from <bluetooth.h>, ac_cv_have_sockaddr_bt,
+		[AC_TRY_COMPILE([#include <bluetooth.h>],
+			[struct sockaddr_bt rc;],
+			ac_cv_have_sockaddr_bt=yes,
+			ac_cv_have_sockaddr_bt=no)])
+
+	if test $ac_cv_have_sockaddr_bt = yes; then
+		AC_DEFINE(HAVE_BLUETOOTH, 1, [Whether Bluetooth is available])
+		AC_DEFINE(HAVE_BLUETOOTH_NETBT, [], [Compile on NetBSD])
+		USE_BLUETOOTH="yes"
+		CFLAGS="$CFLAGS -DCOMPAT_BLUEZ"
 		AC_CHECK_LIB(bluetooth, bt_aton,
 			[BLUETOOTH_LIBS="-lbluetooth" ac_cv_have_bt_lib=yes],
 			ac_cv_have_bt_lib=no)
