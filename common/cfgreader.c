@@ -1,6 +1,6 @@
 /*
 
-  $Id: cfgreader.c,v 1.91 2008-06-21 12:07:32 pkot Exp $
+  $Id: cfgreader.c,v 1.92 2009-01-05 15:04:40 pkot Exp $
 
   G N O K I I
 
@@ -459,7 +459,7 @@ struct gn_cfg_header *cfg_memory_read(const char **lines)
 		}
 
 		/* Line not part of any heading */
-		fprintf(stderr, _("Orphaned line: %s\n"), line);
+		fprintf(stderr, _("Orphaned line: %s\nIf in doubt place this line into [global] section.\n"), line);
 
 		free(buf);
 	}
