@@ -1,5 +1,5 @@
 /*
-  $Id: libfunctions.c,v 1.40 2008-10-16 12:17:05 pkot Exp $
+  $Id: libfunctions.c,v 1.41 2009-01-06 16:35:43 dforsi Exp $
 
   G N O K I I
 
@@ -49,6 +49,24 @@
 
 /* this macro sets the "lasterror" code */
 #define LASTERROR(state,nr)	((state->lasterror = nr)) /* do not delete the double brackets! */
+
+/**
+ * gn_lib_init:
+ *
+ * returns: GN_ERR_NONE on success, an error on failure
+ *
+ * Initializes the library for use by programs.
+ * Call this function before any other in this library.
+ */
+GNOKII_API gn_error gn_lib_init()
+{
+#ifdef ENABLE_NLS
+	setlocale (LC_ALL, "");
+	bindtextdomain (GETTEXT_PACKAGE, LOCALEDIR);
+	textdomain (GETTEXT_PACKAGE);
+#endif
+	return GN_ERR_NONE;
+}
 
 GNOKII_API unsigned int gn_lib_version()
 {

@@ -1,6 +1,6 @@
 /*
 
-  $Id: compat.h,v 1.66 2008-09-10 12:32:01 dforsi Exp $
+  $Id: compat.h,v 1.67 2009-01-06 16:35:42 dforsi Exp $
 
   G N O K I I
 
@@ -252,8 +252,13 @@ time_t timegm(struct tm *tm);
 /* This one is for NLS. */
 #ifdef ENABLE_NLS
 #  include <libintl.h>
-#  define _(x) gettext(x)
-#  define N_(x) gettext_noop(x)
+#  ifdef COMPILYNG_LIBGNOKII
+#    define _(x) dgettext(GETTEXT_PACKAGE, x)
+#    define N_(x) dgettext_noop(GETTEXT_PACKAGE, x)
+#  else
+#    define _(x) gettext(x)
+#    define N_(x) gettext_noop(x)
+#  endif
 #else
 #  define _(x) (x)
 #  define N_(x) (x)
