@@ -1,6 +1,6 @@
 /*
 
-  $Id: cfgreader.c,v 1.92 2009-01-05 15:04:40 pkot Exp $
+  $Id: cfgreader.c,v 1.93 2009-01-06 22:30:07 dforsi Exp $
 
   G N O K I I
 
@@ -929,6 +929,12 @@ static gn_error cfg_file_or_memory_read(const char *file, const char **lines)
 {
 	char *val;
 	gn_error error;
+
+	error = gn_lib_init();
+	if (error != GN_ERR_NONE) {
+		fprintf(stderr, _("Failed to initialize libgnokii.\n"));
+		return error;
+	}
 
 	if (file == NULL && lines == NULL) {
 		fprintf(stderr, _("Couldn't open a config file or memory.\n"));
