@@ -1,5 +1,5 @@
 /*
-  $Id: libfunctions.c,v 1.41 2009-01-06 16:35:43 dforsi Exp $
+  $Id: libfunctions.c,v 1.42 2009-01-20 11:47:38 pkot Exp $
 
   G N O K I I
 
@@ -46,6 +46,10 @@
 #include "misc.h"
 #include "gnokii.h"
 #include "device.h"
+
+#ifdef ENABLE_NLS
+#  include <locale.h>
+#endif
 
 /* this macro sets the "lasterror" code */
 #define LASTERROR(state,nr)	((state->lasterror = nr)) /* do not delete the double brackets! */
