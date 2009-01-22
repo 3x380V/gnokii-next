@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.216 2008-12-23 19:38:54 pkot Exp $
+  $Id: atgen.c,v 1.217 2009-01-22 12:02:58 pkot Exp $
 
   G N O K I I
 
@@ -1836,7 +1836,7 @@ static gn_error ReplyReadPhonebook(int messagetype, unsigned char *buffer, int l
 			pos++;
 		}
 		/* DEBUG */
-		for (parts=0; part[parts]; parts++) {
+		for (parts = 0; parts < (sizeof(part) / sizeof(*part)) && part[parts]; parts++) {
 			dprintf("part[%d] = \"%s\"\n", parts, part[parts]);
 		}
 
