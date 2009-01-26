@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-monitor.c,v 1.18 2008-08-10 18:41:20 pkot Exp $
+  $Id: gnokii-monitor.c,v 1.19 2009-01-26 16:25:35 pkot Exp $
 
   G N O K I I
 
@@ -157,7 +157,7 @@ static void displaycall(int call_id)
 		break;
 	}
 
-	fprintf(stderr, _("CALL%d: %s %s(%s) (callid: %d, duration: %d sec)\n"),
+	fprintf(stdout, _("CALL%d: %s %s (%s) (callid: %d, duration: %d sec)\n"),
 		call_id, s, call->remote_number, call->remote_name,
 		call->call_id, (int)delta.tv_sec);
 #endif
