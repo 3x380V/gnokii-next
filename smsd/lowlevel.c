@@ -1,6 +1,6 @@
 /*
 
-  $Id: lowlevel.c,v 1.56 2008-12-07 20:43:48 bozo Exp $
+  $Id: lowlevel.c,v 1.57 2009-02-04 08:54:19 pkot Exp $
 
   S M S D
 
@@ -473,8 +473,7 @@ static void RealConnect (void *phone)
 	consequetive_errors++;
 	if (consequetive_errors > MAX_CONSEQUETIVE_ERRORS)
 	{
-	  g_print (_("Too many consequetive errors, restarting connection.\n"),
-		 __FILE__, __LINE__);
+	  g_print (_("Too many consequetive errors, restarting connection.\n"));
 	  break;
 	}
       }
