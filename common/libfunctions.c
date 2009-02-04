@@ -1,5 +1,5 @@
 /*
-  $Id: libfunctions.c,v 1.42 2009-01-20 11:47:38 pkot Exp $
+  $Id: libfunctions.c,v 1.43 2009-02-04 12:39:31 dforsi Exp $
 
   G N O K I I
 
@@ -64,11 +64,18 @@
  */
 GNOKII_API gn_error gn_lib_init()
 {
+	static bool initialized = false;
+
+	if (initialized == true)
+		return GN_ERR_NONE;
+
 #ifdef ENABLE_NLS
 	setlocale (LC_ALL, "");
 	bindtextdomain (GETTEXT_PACKAGE, LOCALEDIR);
 	textdomain (GETTEXT_PACKAGE);
 #endif
+	initialized = true;
+
 	return GN_ERR_NONE;
 }
 
