@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii.c,v 1.492 2009-01-21 09:12:57 pkot Exp $
+  $Id: gnokii.c,v 1.493 2009-02-04 08:56:58 pkot Exp $
 
   G N O K I I
 
@@ -1081,7 +1081,7 @@ int shell(gn_data *data, struct gn_statemachine *state)
 			else
 				len = strlen(input);
 			if (len > 0)
-				argv[argc++] = strndup(input, len);
+				argv[argc++] = strdup(input);
 			input = tmp;
 		} while (input);
 		argv[argc] = NULL;
