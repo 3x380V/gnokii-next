@@ -1,5 +1,5 @@
 /*
-  $Id: libfunctions.c,v 1.43 2009-02-04 12:39:31 dforsi Exp $
+  $Id: libfunctions.c,v 1.44 2009-02-08 17:49:37 dforsi Exp $
 
   G N O K I I
 
@@ -586,6 +586,7 @@ GNOKII_API gn_error gn_lib_search_one_connected_phone(struct gn_statemachine **s
 
 	/* not yet implemented */
 	free(*state);
-	return LASTERROR((*state), GN_ERR_UNKNOWNMODEL);
+	*state = NULL;
+	return GN_ERR_NOTIMPLEMENTED;
 }
 
