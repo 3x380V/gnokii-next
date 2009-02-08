@@ -1,6 +1,6 @@
 /*
 
-  $Id: lowlevel.c,v 1.57 2009-02-04 08:54:19 pkot Exp $
+  $Id: lowlevel.c,v 1.58 2009-02-08 18:48:21 dforsi Exp $
 
   S M S D
 
@@ -84,6 +84,7 @@ static gn_error InitModelInf (void)
   char model[GN_MODEL_MAX_LENGTH], rev[GN_REVISION_MAX_LENGTH], 
 	manufacturer[GN_MANUFACTURER_MAX_LENGTH];
 
+  gn_data_clear(&data);
   data.manufacturer = manufacturer;
   data.model = model;
   data.revision = rev;
