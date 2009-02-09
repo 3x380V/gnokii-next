@@ -1,6 +1,6 @@
 /*
 
-  $Id: smsd.h,v 1.21 2008-05-25 11:47:44 pkot Exp $
+  $Id: smsd.h,v 1.22 2009-02-09 22:08:14 ja Exp $
 
   S M S D
 
@@ -52,7 +52,7 @@ typedef struct {
   gint   refreshInt;
   gint   maxSMS;
   gint   firstSMS;
-  gint   smsSets:4;
+//  gint   smsSets:4;
   gn_memory_type memoryType;
 } SmsdConfig;
 
