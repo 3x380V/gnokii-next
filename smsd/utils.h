@@ -1,6 +1,6 @@
 /*
 
-  $Id: utils.h,v 1.2 2007-07-09 16:46:15 pkot Exp $
+  $Id: utils.h,v 1.3 2009-02-09 23:48:00 ja Exp $
 
   S M S D
 
@@ -33,8 +33,6 @@
 #define __smsd_utils_h_
 
 #include <glib.h>
-
-#define MAX_SQL_CMD_LEN	65536
 
 extern gchar *strEscape (const gchar *const s);
 
