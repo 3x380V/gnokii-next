@@ -1,6 +1,6 @@
 /*
 
-  $Id: data.h,v 1.86 2008-05-31 10:37:12 pkot Exp $
+  $Id: data.h,v 1.87 2009-03-09 23:31:50 dforsi Exp $
 
   G N O K I I
 
@@ -33,6 +33,7 @@
 
 #include <gnokii/common.h>
 #include <gnokii/sms.h>
+#include <gnokii/mms.h>
 #include <gnokii/call.h>
 #include <gnokii/error.h>
 #include <gnokii/rlp-common.h>
@@ -127,6 +128,16 @@ typedef struct {
 	 * progress is value in range [0, 100].
 	 */
 	void (*progress_indication)(int progress, void *callback_data);
+	/*
+	 * This is for phone driver, application using libgnokii should not
+	 * touch this.
+	 */
+	gn_mms_raw *raw_mms;
+	/*
+	 * This is for user communication, phone driver should not have to
+	 * touch this one.
+	 */
+	gn_mms *mms;
 } gn_data;
 
 /* 
@@ -274,6 +285,7 @@ typedef enum {
 	GN_OP_GetFileDetailsById,
 	GN_OP_GetFileById,
 	GN_OP_DeleteFileById,
+	GN_OP_GetMMS,
 	GN_OP_Max,	/* don't append anything after this entry */
 } gn_operation;
 
