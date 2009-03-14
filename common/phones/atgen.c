@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.217 2009-01-22 12:02:58 pkot Exp $
+  $Id: atgen.c,v 1.218 2009-03-14 18:35:59 dforsi Exp $
 
   G N O K I I
 
@@ -48,6 +48,7 @@
 #include "phones/atgen.h"
 #include "phones/atbosch.h"
 #include "phones/ateric.h"
+#include "phones/athuawei.h"
 #include "phones/atmot.h"
 #include "phones/atnok.h"
 #include "phones/atsie.h"
@@ -3236,6 +3237,8 @@ static gn_error Initialise(gn_data *setupdata, struct gn_statemachine *state)
 		at_sagem_init(model, setupdata->model, state);
 	else if (!at_manufacturer_compare("lg"))
 		at_lg_init(model, setupdata->model, state);
+	else if (!at_manufacturer_compare("huawei"))
+		at_huawei_init(model, setupdata->model, state);
 
 	StoreDefaultCharset(state);
 
