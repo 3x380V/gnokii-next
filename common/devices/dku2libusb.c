@@ -1,6 +1,6 @@
 /*
 
-  $Id: dku2libusb.c,v 1.10 2008-12-28 22:36:51 dforsi Exp $
+  $Id: dku2libusb.c,v 1.11 2009-03-20 23:03:06 dforsi Exp $
  
   G N O K I I
 
@@ -69,8 +69,6 @@ int fbusdku2usb_select(struct timeval *timeout, struct gn_statemachine *state)
 #include <fcntl.h>
 #include <errno.h>
 #include <string.h>
-#include <sys/time.h>
-#include <sys/socket.h>
 
 #define	DEVINSTANCE(s) (*((fbus_usb_interface **)(&(s)->device.device_instance)))
 

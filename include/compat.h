@@ -1,6 +1,6 @@
 /*
 
-  $Id: compat.h,v 1.68 2009-02-04 12:41:05 dforsi Exp $
+  $Id: compat.h,v 1.69 2009-03-20 23:03:06 dforsi Exp $
 
   G N O K I I
 
@@ -290,7 +290,7 @@ time_t timegm(struct tm *tm);
 #endif
 
 #ifndef HAVE_U_INT8_T
-	typedef u_int_8_t;
+	typedef unsigned char u_int8_t;
 #endif
 
 #ifdef HAVE_WCRTOMB
