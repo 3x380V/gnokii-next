@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-app.h,v 1.50 2009-03-09 23:31:49 dforsi Exp $
+  $Id: gnokii-app.h,v 1.51 2009-03-27 20:32:03 pkot Exp $
 
   G N O K I I
 
@@ -47,7 +47,7 @@ extern int shell(gn_data *data, struct gn_statemachine *state);
 /* Utils functions */
 int writefile(char *filename, char *text, int mode);
 int writebuffer(const char *filename, const char *buffer, size_t nitems, int mode);
-extern gn_error readtext(gn_sms_user_data *udata, int input_len); 
+extern gn_error readtext(gn_sms_user_data *udata); 
 extern gn_error loadbitmap(gn_bmp *bitmap, char *s, int type, struct gn_statemachine *state);
 extern int parse_end_value_option(int argc, char *argv[], int pos, int start_value);
 extern void interrupted(int sig);

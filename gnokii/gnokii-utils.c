@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-utils.c,v 1.15 2009-03-14 14:58:21 dforsi Exp $
+  $Id: gnokii-utils.c,v 1.16 2009-03-27 20:32:03 pkot Exp $
 
   G N O K I I
 
@@ -125,7 +125,7 @@ int writebuffer(const char *filename, const char *buffer, size_t nitems, int mod
 	return 2;
 }
 
-gn_error readtext(gn_sms_user_data *udata, int input_len)
+gn_error readtext(gn_sms_user_data *udata)
 {
 	/* The maximum length of an uncompressed concatenated short message is
 	   255 * 153 = 39015 default alphabet characters */
@@ -146,8 +146,8 @@ gn_error readtext(gn_sms_user_data *udata, int input_len)
 	}
 	if (udata->type != GN_SMS_DATA_iMelody && chars_read > 0 && message_buffer[chars_read - 1] == '\n')
 		message_buffer[--chars_read] = 0;
-	if (chars_read > GNOKII_MIN(input_len, sizeof(udata->u.text) - 1)) {
-		fprintf(stderr, _("Input too long! (%d, maximum is %d)\n"), chars_read, GNOKII_MIN(input_len, sizeof(udata->u.text) - 1));
+	if (chars_read > (sizeof(udata->u.text) - 1)) {
+		fprintf(stderr, _("Input too long! (%d, maximum is %d)\n"), chars_read, (sizeof(udata->u.text) - 1));
 		return GN_ERR_INTERNALERROR;
 	}
 

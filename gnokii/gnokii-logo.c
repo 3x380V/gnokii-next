@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-logo.c,v 1.13 2008-04-12 12:53:48 pkot Exp $
+  $Id: gnokii-logo.c,v 1.14 2009-03-27 20:32:03 pkot Exp $
 
   G N O K I I
 
@@ -132,7 +132,7 @@ gn_error sendlogo(int argc, char *argv[], gn_data *data, struct gn_statemachine 
 	sms.user_data[1].type = GN_SMS_DATA_None;
 	if (sms.user_data[0].u.bitmap.type == GN_BMP_PictureMessage) {
 		sms.user_data[1].type = GN_SMS_DATA_NokiaText;
-		readtext(&sms.user_data[1], 120);
+		readtext(&sms.user_data[1]);
 		sms.user_data[2].type = GN_SMS_DATA_None;
 	}
 
