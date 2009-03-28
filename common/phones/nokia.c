@@ -1,6 +1,6 @@
 /*
 
-  $Id: nokia.c,v 1.46 2008-05-30 19:10:07 pkot Exp $
+  $Id: nokia.c,v 1.47 2009-03-28 20:20:21 pkot Exp $
 
   G N O K I I
 
@@ -271,12 +271,14 @@ gn_error pnok_call_divert_incoming(int messagetype, unsigned char *message, int 
 
 	/* FIXME: is this common between models? - bozo */
 	/* get prepaid info */
-	case 0x05:
-		n = char_7bit_unpack(0, message[7], sizeof(buf), message + 8, buf);
-		char_ascii_decode(buf, buf, n);
+	case 0x05: {
+		char *aux = calloc(sizeof(buf) + 1, 1);
+		n = char_7bit_unpack(0, message[7], sizeof(buf), message + 8, aux);
+		char_default_alphabet_decode(buf, aux, n);
+		free(aux);
 		dprintf("Message: Prepaid info received: \"%s\"\n", buf);
 		return GN_ERR_UNSOLICITED;
-
+	}
 	default:
 		return GN_ERR_UNHANDLEDFRAME;
 	}

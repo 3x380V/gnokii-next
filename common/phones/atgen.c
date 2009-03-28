@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.220 2009-03-28 19:25:14 dforsi Exp $
+  $Id: atgen.c,v 1.221 2009-03-28 20:20:20 pkot Exp $
 
   G N O K I I
 
@@ -401,7 +401,7 @@ void at_decode(int charset, char *dst, char *src, int len)
 	switch (charset) {
 	/* char_*_decode() functions null terminate the strings */
 	case AT_CHAR_GSM:
-		char_ascii_decode(dst, src, len);
+		char_default_alphabet_decode(dst, src, len);
 		break;
 	case AT_CHAR_HEXGSM:
 		char_hex_decode(dst, src, len);
