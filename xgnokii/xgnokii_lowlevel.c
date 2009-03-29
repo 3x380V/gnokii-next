@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_lowlevel.c,v 1.105 2008-05-25 12:43:34 pkot Exp $
+  $Id: xgnokii_lowlevel.c,v 1.106 2009-03-29 22:08:00 pkot Exp $
   
   X G N O K I I
 
@@ -798,6 +798,7 @@ static gint A_SendSMSMessage(gpointer data)
 		gdat.sms = d->sms;
 		pthread_mutex_lock(&sendSMSMutex);
 		error = d->status = gn_sms_send(&gdat, statemachine);
+		free(gdat.sms->reference);
 		pthread_cond_signal(&sendSMSCond);
 		pthread_mutex_unlock(&sendSMSMutex);
 	}

@@ -1,6 +1,6 @@
 /*
 
-  $Id: lowlevel.c,v 1.60 2009-02-09 23:48:00 ja Exp $
+  $Id: lowlevel.c,v 1.61 2009-03-29 22:08:00 pkot Exp $
 
   S M S D
 
@@ -294,6 +294,7 @@ static gint A_SendSMSMessage (gpointer data)
   gn_data_clear (dt);
   dt->sms = d->sms;
   d->status = gn_sms_send (dt, sm);
+  free (dt->sms->reference);
   free (dt);
   pthread_cond_signal (&sendSMSCond);
   pthread_mutex_unlock (&sendSMSMutex);
