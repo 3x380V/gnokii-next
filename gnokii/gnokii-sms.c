@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-sms.c,v 1.60 2009-03-29 21:16:31 pkot Exp $
+  $Id: gnokii-sms.c,v 1.61 2009-03-29 21:31:33 pkot Exp $
 
   G N O K I I
 
@@ -886,7 +886,7 @@ parsefile:
 		}
 		if (mode == -1)
 			cont = false;
-		if (count > end_message)
+		if (count >= end_message)
 			cont = false;
 		if ((folder_count > 0) && (messages_read >= (folder_count - start_message + 1)))
 			cont = false;
