@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-sms.c,v 1.61 2009-03-29 21:31:33 pkot Exp $
+  $Id: gnokii-sms.c,v 1.62 2009-03-29 21:52:44 pkot Exp $
 
   G N O K I I
 
@@ -336,7 +336,6 @@ gn_error sendsms(int argc, char *argv[], gn_data *data, struct gn_statemachine *
 	error = gn_sms_send(data, state);
 
 	if (error == GN_ERR_NONE) {
-		dprintf("%d\n", sms.parts);
 		if (sms.parts > 1) {
 			int j;
 			fprintf(stderr, _("Message sent in %d parts with reference numbers:"), sms.parts);
