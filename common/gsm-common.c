@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-common.c,v 1.29 2008-09-15 08:15:57 dforsi Exp $
+  $Id: gsm-common.c,v 1.30 2009-03-30 13:57:56 dforsi Exp $
 
   G N O K I I
 
@@ -208,6 +208,8 @@ GNOKII_API const char *gn_power_source2str(gn_power_source s)
 	switch (s) {
 	case GN_PS_ACDC:	return _("AC-DC");
 	case GN_PS_BATTERY:	return _("Battery");
+	case GN_PS_NOBATTERY:	return _("No battery");
+	case GN_PS_FAULT:	return _("Power fault");
 	default:		return _("Unknown");
 	}
 }
