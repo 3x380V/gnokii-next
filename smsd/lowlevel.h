@@ -1,6 +1,6 @@
 /*
 
-  $Id: lowlevel.h,v 1.16 2008-12-07 20:43:48 bozo Exp $
+  $Id: lowlevel.h,v 1.17 2009-03-30 22:40:56 dforsi Exp $
 
   S M S D
 
@@ -34,7 +34,7 @@
 #include <glib.h>
 #include "gnokii.h"
 
-#define	MAX_CONSEQUETIVE_ERRORS	5
+#define	MAX_CONSECUTIVE_ERRORS	5
 
 typedef enum {
   Event_SendSMSMessage,
