@@ -1,6 +1,6 @@
 /*
 
-  $Id: fake.c,v 1.25 2009-03-29 21:13:28 pkot Exp $
+  $Id: fake.c,v 1.26 2009-03-31 21:35:37 dforsi Exp $
 
   G N O K I I
 
@@ -33,6 +33,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include <time.h>
 
 #include "compat.h"
 #include "misc.h"
