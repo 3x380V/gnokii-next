@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii.h,v 1.28 2006-12-17 17:17:43 pkot Exp $
+  $Id: xgnokii.h,v 1.29 2009-03-31 21:21:09 pkot Exp $
 
   X G N O K I I
 
@@ -59,12 +59,10 @@ typedef struct {
 	gn_connection_type connection;	/* Connection type from .gnokiirc file */
 	const gchar *bindir;
 	gchar *xgnokiidir;
-	gchar *helpviewer;	/* Program to showing help files */
 	gchar *mailbox;		/* Mailbox, where we can save SMS's */
 	gchar *maxSIMLen;	/* Max length of names on SIM card */
 	gchar *maxPhoneLen;	/* Max length of names in phone */
 	gchar *locale;		/* Locale for the app translations */
-	gchar *help_locale;	/* Locale for HTML help */
 	gn_sms_message_center smsSetting[MAX_SMS_CENTER];
 	UserInf user;
 	gint allowBreakage;

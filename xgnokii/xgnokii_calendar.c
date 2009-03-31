@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_calendar.c,v 1.35 2008-02-14 12:54:06 dforsi Exp $
+  $Id: xgnokii_calendar.c,v 1.36 2009-03-31 21:21:10 pkot Exp $
 
   X G N O K I I
 
@@ -130,13 +130,6 @@ static void FunctionNotImplemented(void)
 {
 	gtk_label_set_text(GTK_LABEL(errorDialog.text), _("Function not implemented!"));  
 	gtk_widget_show(errorDialog.dialog);
-}
-
-static inline void Help1(GtkWidget * w, gpointer data)
-{
-	gchar *indx = g_strdup_printf("/help/%s/windows/calendar/index.html", xgnokiiConfig.help_locale);
-	Help(w, indx);
-	g_free(indx);
 }
 
 static inline void CloseCalendar(GtkWidget * w, gpointer data)
@@ -1495,7 +1488,6 @@ static GtkItemFactoryEntry menu_items[] = {
 	{NULL, NULL, NULL, 0, "<Separator>"},
 	{NULL, "<control>A", NULL, 0, NULL},
 	{NULL, NULL, NULL, 0, "<LastBranch>"},
-	{NULL, NULL, Help1, 0, NULL},
 	{NULL, NULL, GUI_ShowAbout, 0, NULL},
 };
 
@@ -1523,8 +1515,7 @@ static void InitMainMenu(void)
 	menu_items[16].path = _("/Edit/Sep4");
 	menu_items[17].path = _("/Edit/Select _all");
 	menu_items[18].path = _("/_Help");
-	menu_items[19].path = _("/Help/_Help");
-	menu_items[20].path = _("/Help/_About");
+	menu_items[19].path = _("/Help/_About");
 }
 
 void GUI_CreateCalendarWindow()

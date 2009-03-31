@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_netmon.c,v 1.19 2007-12-04 19:27:37 hadess Exp $
+  $Id: xgnokii_netmon.c,v 1.20 2009-03-31 21:21:11 pkot Exp $
 
   X G N O K I I
 
@@ -48,14 +48,6 @@ static GtkWidget *GUI_NetmonWindow;
 static DisplayData displayData = { NULL, NULL, 0 };
 static GtkWidget *tableLabels[4][7];
 static GtkWidget *tableProgress[7];
-
-
-static inline void Help1(GtkWidget * w, gpointer data)
-{
-	gchar *indx = g_strdup_printf("/help/%s/windows/netmon/index.html", xgnokiiConfig.help_locale);
-	Help(w, indx);
-	g_free(indx);
-}
 
 
 static inline void CloseNetmon(GtkWidget * w, gpointer data)
@@ -257,7 +249,6 @@ static GtkItemFactoryEntry menu_items[] = {
 	{NULL, NULL, NetmonOnOff, 1, NULL},
 	{NULL, NULL, NetmonOnOff, 0, NULL},
 	{NULL, NULL, NULL, 0, "<LastBranch>"},
-	{NULL, NULL, Help1, 0, NULL},
 	{NULL, NULL, GUI_ShowAbout, 0, NULL},
 };
 
@@ -270,8 +261,7 @@ static void InitMainMenu(void)
 	menu_items[3].path = _("/Tools/Net monitor o_n");
 	menu_items[4].path = _("/Tools/Net monitor o_ff");
 	menu_items[5].path = _("/_Help");
-	menu_items[6].path = _("/Help/_Help");
-	menu_items[7].path = _("/Help/_About");
+	menu_items[6].path = _("/Help/_About");
 }
 
 

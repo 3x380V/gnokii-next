@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_data.c,v 1.17 2008-10-22 21:22:16 pkot Exp $
+  $Id: xgnokii_data.c,v 1.18 2009-03-31 21:21:11 pkot Exp $
 
   X G N O K I I
 
@@ -43,13 +43,6 @@ static GtkWidget *GUI_DataWindow;
 bool GTerminateThread = false;
 bool enabled = false;
 static GtkWidget *label = NULL;
-
-static inline void Help1(GtkWidget * w, gpointer data)
-{
-	gchar *indx = g_strdup_printf("/help/%s/windows/data/index.html", xgnokiiConfig.help_locale);
-	Help(w, indx);
-	g_free(indx);
-}
 
 static void UpdateStatus(void)
 {

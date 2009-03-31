@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_cfg.c,v 1.20 2008-10-05 19:06:33 pkot Exp $
+  $Id: xgnokii_cfg.c,v 1.21 2009-03-31 21:21:10 pkot Exp $
 
   X G N O K I I
 
@@ -52,8 +52,6 @@ ConfigEntry config[] = {
 	,
 	{"address", &(xgnokiiConfig.user.address)}
 	,
-	{"viewer", &(xgnokiiConfig.helpviewer)}
-	,
 	{"mailbox", &(xgnokiiConfig.mailbox)}
 	,
 	{"simlen", &(xgnokiiConfig.maxSIMLen)}
@@ -75,7 +73,6 @@ static void GetDefaultValues()
 	xgnokiiConfig.user.fax = g_strdup("");
 	xgnokiiConfig.user.email = g_strdup("");
 	xgnokiiConfig.user.address = g_strdup("");
-	xgnokiiConfig.helpviewer = g_strdup("firefox");
 	if ((homedir = g_get_home_dir()) == NULL)
 		homedir = "";
 	xgnokiiConfig.mailbox = g_strdup_printf("%s/Mail/smsbox", homedir);

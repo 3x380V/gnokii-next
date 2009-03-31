@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_common.c,v 1.20 2007-12-04 19:27:37 hadess Exp $
+  $Id: xgnokii_common.c,v 1.21 2009-03-31 21:21:10 pkot Exp $
 
   X G N O K I I
 
@@ -248,18 +248,6 @@ void RemoveZombie(const gint sign)
 	gint status;
 
 	wait(&status);
-}
-
-
-void Help(const GtkWidget * w, const gpointer data)
-{
-	gchar buf[255] = "file:";
-
-	strncat(buf, xgnokiiConfig.xgnokiidir, 255 - strlen(buf));
-	buf[254] = '\0';
-	strncat(buf, (gchar *) data, 255 - strlen(buf));
-	buf[254] = '\0';
-	LaunchProcess(xgnokiiConfig.helpviewer, buf, STDIN_FILENO, STDOUT_FILENO, STDERR_FILENO);
 }
 
 

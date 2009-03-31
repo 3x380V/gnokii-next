@@ -1,6 +1,6 @@
 /*
 
-  $Id: xgnokii_speed.c,v 1.26 2007-12-04 19:27:37 hadess Exp $
+  $Id: xgnokii_speed.c,v 1.27 2009-03-31 21:21:12 pkot Exp $
 
   X G N O K I I
 
@@ -56,15 +56,6 @@ static GtkWidget *clist;
 static QuestMark questMark;
 static gint selectedKey;
 static bool speedDialInitialized;
-
-
-static inline void Help1(GtkWidget * w, gpointer data)
-{
-	gchar *indx =
-	    g_strdup_printf("/help/%s/windows/speeddial/index.html", xgnokiiConfig.help_locale);
-	Help(w, indx);
-	g_free(indx);
-}
 
 
 static void CloseSpeedDial(GtkWidget * w, gpointer data)
@@ -516,7 +507,6 @@ static GtkItemFactoryEntry menu_items[] = {
 	{NULL, NULL, NULL, 0, "<Branch>"},
 	{NULL, NULL, EditKey, 0, NULL},
 	{NULL, NULL, NULL, 0, "<LastBranch>"},
-	{NULL, NULL, Help1, 0, NULL},
 	{NULL, NULL, GUI_ShowAbout, 0, NULL},
 };
 
@@ -534,8 +524,7 @@ static void InitMainMenu(void)
 	menu_items[8].path = _("/_Edit");
 	menu_items[9].path = _("/Edit/_Edit");
 	menu_items[10].path = _("/_Help");
-	menu_items[11].path = _("/Help/_Help");
-	menu_items[12].path = _("/Help/_About");
+	menu_items[11].path = _("/Help/_About");
 }
 
 
