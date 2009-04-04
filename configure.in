@@ -5,7 +5,7 @@ dnl  Copyright (C) 1999 Hugh Blemings & Pavel Janik ml.
 dnl                2000 Karel Zak, Pawel Kot
 dnl                2002 BORBELY Zoltan
 dnl
-dnl  $Id: configure.in,v 1.241 2009-04-02 09:48:06 pkot Exp $
+dnl  $Id: configure.in,v 1.242 2009-04-04 14:02:20 pkot Exp $
 dnl
 
 
@@ -413,7 +413,7 @@ if test "$enable_libical" = "yes"; then
 	CFLAGS="$CFLAGS $ICAL_CFLAGS"
 	AC_MSG_CHECKING(whether libical is installed)
 	AC_TRY_LINK([
-	   #include <ical.h>
+	   #include <libical/ical.h>
 	   ],[
 	   int priority;
 	   icalcomponent *pIcal=NULL;
