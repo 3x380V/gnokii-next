@@ -1,6 +1,6 @@
 /*
 
-  $Id: sms.h,v 1.78 2009-03-29 21:16:29 pkot Exp $
+  $Id: sms.h,v 1.79 2009-04-05 22:19:46 dforsi Exp $
 
   G N O K I I
 
@@ -318,6 +318,7 @@ typedef enum {
 
 /* Datatype for SMS status */
 typedef enum {
+	GN_SMS_Unknown= 0x00,
 	GN_SMS_Read   = 0x01,
 	GN_SMS_Unread = 0x03,
 	GN_SMS_Sent   = 0x05,

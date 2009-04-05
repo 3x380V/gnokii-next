@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.c,v 1.291 2009-04-05 22:03:07 dforsi Exp $
+  $Id: nk6510.c,v 1.292 2009-04-05 22:19:46 dforsi Exp $
 
   G N O K I I
 
@@ -133,7 +133,7 @@ static int match_sms_folder_str(const char *str)
 static gn_sms_message_status GetMessageStatus_S40_30(const char *filename)
 {
 	if (!filename || strlen(filename) < 27)
-		return 0;
+		return GN_SMS_Unknown;
 
 	switch (filename[26]) {
 	case '4':
@@ -145,7 +145,7 @@ static gn_sms_message_status GetMessageStatus_S40_30(const char *filename)
 		return GN_SMS_Unread;
 	default:
 		dprintf("Unknown message status '%c'\n", filename[26]);
-		return 0;
+		return GN_SMS_Unknown;
 	}
 }
 
