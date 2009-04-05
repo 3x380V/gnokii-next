@@ -1,6 +1,6 @@
 /*
 
-  $Id: gsm-mms.c,v 1.2 2009-04-01 17:32:48 dforsi Exp $
+  $Id: gsm-mms.c,v 1.3 2009-04-05 22:03:07 dforsi Exp $
 
   G N O K I I
 
@@ -407,6 +407,8 @@ GNOKII_API gn_error gn_mms_get(gn_data *data, struct gn_statemachine *state)
 
 	if (!data->file)
 		return GN_ERR_INTERNALERROR;
+
+	data->mms->status = rawmms.status;
 
 	switch (data->mms->buffer_format) {
 	case GN_MMS_FORMAT_TEXT:

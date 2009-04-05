@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.c,v 1.290 2009-04-05 15:33:21 dforsi Exp $
+  $Id: nk6510.c,v 1.291 2009-04-05 22:03:07 dforsi Exp $
 
   G N O K I I
 
@@ -2084,6 +2084,8 @@ static gn_error NK6510_GetMMS_S40_30(gn_data *data, struct gn_statemachine *stat
 	data->file = &fi;
 	/* Get file */
 	error = NK6510_GetFile(data, state);
+
+	data->raw_mms->status = GetMessageStatus_S40_30(fl2.files[data->raw_mms->number - 1]->name);
 
 	return error;
 }
