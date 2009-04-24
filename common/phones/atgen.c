@@ -1,6 +1,6 @@
 /*
 
-  $Id: atgen.c,v 1.222 2009-03-28 21:45:17 pkot Exp $
+  $Id: atgen.c,v 1.223 2009-04-24 18:18:54 pkot Exp $
 
   G N O K I I
 
@@ -1448,7 +1448,7 @@ static gn_error AT_WriteSMS(gn_data *data, struct gn_statemachine *state,
 	if (sm_message_send(strlen(req), GN_OP_AT_Prompt, req, state))
 		return GN_ERR_NOTREADY;
 	error = sm_block_no_retry(GN_OP_AT_Prompt, data, state);
-	dprintf("Got response %d\n", error);
+	dprintf("Got response: %s\n", gn_error_print(error));
 	if (error)
 		return error;
 
