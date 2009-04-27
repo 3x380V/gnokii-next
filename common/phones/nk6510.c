@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.c,v 1.294 2009-04-27 14:13:50 dforsi Exp $
+  $Id: nk6510.c,v 1.295 2009-04-27 14:31:13 dforsi Exp $
 
   G N O K I I
 
@@ -136,6 +136,11 @@ static gn_sms_message_status GetMessageStatus_S40_30(const char *filename)
 		return GN_SMS_Unknown;
 
 	switch (filename[26]) {
+	case '1':
+	case '6':
+		return GN_SMS_Unsent;
+	case '2':
+		return GN_SMS_Sent;
 	case '4':
 		return GN_SMS_Unread;
 	case '5':
