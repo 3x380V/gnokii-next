@@ -1,6 +1,6 @@
 /*
 
-  $Id: nk6510.c,v 1.293 2009-04-27 14:03:59 dforsi Exp $
+  $Id: nk6510.c,v 1.294 2009-04-27 14:13:50 dforsi Exp $
 
   G N O K I I
 
@@ -1584,7 +1584,7 @@ static gn_error NK6510_GetSMS_S40_30(gn_data *data, struct gn_statemachine *stat
     	gn_file_list fl, fl2;
     	gn_file fi;
 	gn_error error;
-	int j, i, cont_len, tota_len, offset, tmp;
+	int j, i, cont_len, tota_len, offset;
 	unsigned char *bin;
 
 	if (!data->raw_sms)
