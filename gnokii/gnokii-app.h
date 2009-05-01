@@ -1,6 +1,6 @@
 /*
 
-  $Id: gnokii-app.h,v 1.51 2009-03-27 20:32:03 pkot Exp $
+  $Id: gnokii-app.h,v 1.52 2009-05-01 19:01:02 dforsi Exp $
 
   G N O K I I
 
@@ -92,6 +92,8 @@ extern void mms_usage(FILE *f);
 
 extern int getmms_usage(FILE *f, int exitval);
 extern gn_error getmms(int argc, char *argv[], gn_data *data, struct gn_statemachine *state);
+extern int deletemms_usage(FILE *f, int exitval);
+extern gn_error deletemms(int argc, char *argv[], gn_data *data, struct gn_statemachine *state);
 
 /* Phonebook functions */
 extern void phonebook_usage(FILE *f);

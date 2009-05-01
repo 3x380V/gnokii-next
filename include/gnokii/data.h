@@ -1,6 +1,6 @@
 /*
 
-  $Id: data.h,v 1.87 2009-03-09 23:31:50 dforsi Exp $
+  $Id: data.h,v 1.88 2009-05-01 19:01:03 dforsi Exp $
 
   G N O K I I
 
@@ -286,6 +286,7 @@ typedef enum {
 	GN_OP_GetFileById,
 	GN_OP_DeleteFileById,
 	GN_OP_GetMMS,
+	GN_OP_DeleteMMS,
 	GN_OP_Max,	/* don't append anything after this entry */
 } gn_operation;
 
