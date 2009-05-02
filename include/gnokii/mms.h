@@ -1,6 +1,6 @@
 /*
 
-  $Id: mms.h,v 1.3 2009-04-05 22:03:08 dforsi Exp $
+  $Id: mms.h,v 1.4 2009-05-02 16:26:47 dforsi Exp $
 
   G N O K I I
 
@@ -144,6 +144,7 @@ typedef struct {
 typedef struct {
 	char id;
 	char type;
+	int x;
 	char *header;
 } gn_mms_field;
 
