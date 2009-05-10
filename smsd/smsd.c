@@ -1,6 +1,6 @@
 /*
 
-  $Id: smsd.c,v 1.72 2009-03-27 17:09:41 pkot Exp $
+  $Id: smsd.c,v 1.73 2009-05-10 11:29:17 pkot Exp $
 
   S M S D
 
@@ -561,11 +561,10 @@ int main (int argc, char *argv[])
   textdomain(GETTEXT_PACKAGE);
 #endif
 
-  /* Introduce yourself */
-  Short_Version ();
-
   gn_elog_handler = NULL;
   ReadConfig (argc, argv);
+  /* Introduce yourself */
+  Short_Version ();
   GTerminateThread = false;
   Run ();
 
